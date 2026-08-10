@@ -12,6 +12,8 @@ export default defineUserConfig({
       { text: 'Theming', link: '/theming.md' },
     ],
     sidebar: {
+      '/': false,
+      '/theming.html': 'heading',
       '/components/': [
         {
           text: 'Components',
