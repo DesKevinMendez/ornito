@@ -29,6 +29,9 @@ jobs:
       - name: Build library
         run: pnpm build:types
 
+      - name: Copy README into dist
+        run: cp README.md dist/README.md
+
       - name: Publish dist to builds branch
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
