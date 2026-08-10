@@ -32,6 +32,24 @@ of the variables below on `:root` (or any ancestor scope):
 }
 ```
 
+### Registering ornito with the consuming app's Tailwind build
+
+The consuming app's own Tailwind entry CSS always needs both
+`ornito/theme.css` and `ornito/style.css` imported, alongside a `@source`
+pointing at `ornito`, so Tailwind picks up the utility classes used inside
+the package's components:
+
+```css
+@import 'tailwindcss';
+@import 'ornito/theme.css';
+@import 'ornito/style.css';
+
+/* dist/ is gitignored inside the package, so it needs an explicit @source */
+@source '../../node_modules/ornito';
+```
+
+Adjust the relative path to match where your Tailwind CSS file lives.
+
 ### Per dark-mode override
 
 The package's `dark:` variant matches `.dark` on an ancestor
