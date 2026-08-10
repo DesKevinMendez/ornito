@@ -1,7 +1,7 @@
 {
   "name": "ornito",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "packageManager": "pnpm@11.15.1",
   "main": "./dist/ornito.js",
@@ -52,7 +52,7 @@
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/language-core": "^3.3.9",
     "@vue/tsconfig": "^0.9.1",
-    "@vuepress/bundler-vite": "2.0.0-rc.31",
+    "@vuepress/bundler-vite": "2.0.0-rc.30",
     "@vuepress/theme-default": "2.0.0-rc.132",
     "oxlint": "^1.77.0",
     "sass-embedded": "^1.100.0",
@@ -62,7 +62,7 @@
     "vite": "^8.2.0",
     "vue": "^3.5.41",
     "vue-tsc": "^3.3.8",
-    "vuepress": "2.0.0-rc.31"
+    "vuepress": "2.0.0-rc.30"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
