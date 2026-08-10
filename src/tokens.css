@@ -1,0 +1,83 @@
+/*
+ * Design tokens for ds-deskevinmendez.
+ * These are real runtime CSS custom properties — override any of them from a
+ * consuming app's own CSS (e.g. on `:root` or `.dark`) to re-skin the design
+ * system without rebuilding this package. See style.css for how they're wired
+ * into Tailwind's theme via `@theme inline`.
+ */
+:root {
+    /* Primary - indigo */
+    --ds-color-primary-50: #eef2ff;
+    --ds-color-primary-100: #e0e7ff;
+    --ds-color-primary-200: #c7d2fe;
+    --ds-color-primary-300: #a5b4fc;
+    --ds-color-primary-400: #818cf8;
+    --ds-color-primary-500: #6366f1;
+    --ds-color-primary-600: #4f46e5;
+    --ds-color-primary-700: #4338ca;
+    --ds-color-primary-800: #3730a3;
+    --ds-color-primary-900: #312e81;
+    --ds-color-primary-950: #1e1b4b;
+
+    /* Secondary - sky */
+    --ds-color-secondary-50: #f0f9ff;
+    --ds-color-secondary-100: #e0f2fe;
+    --ds-color-secondary-200: #bae6fd;
+    --ds-color-secondary-300: #7dd3fc;
+    --ds-color-secondary-400: #38bdf8;
+    --ds-color-secondary-500: #0ea5e9;
+    --ds-color-secondary-600: #0284c7;
+    --ds-color-secondary-700: #0369a1;
+    --ds-color-secondary-800: #075985;
+    --ds-color-secondary-900: #0c4a6e;
+    --ds-color-secondary-950: #082f49;
+
+    /* Tertiary - violet */
+    --ds-color-tertiary-50: #f5f3ff;
+    --ds-color-tertiary-100: #ede9fe;
+    --ds-color-tertiary-200: #ddd6fe;
+    --ds-color-tertiary-300: #c4b5fd;
+    --ds-color-tertiary-400: #a78bfa;
+    --ds-color-tertiary-500: #8b5cf6;
+    --ds-color-tertiary-600: #7c3aed;
+    --ds-color-tertiary-700: #6d28d9;
+    --ds-color-tertiary-800: #5b21b6;
+    --ds-color-tertiary-900: #4c1d95;
+    --ds-color-tertiary-950: #2e1065;
+
+    /* Semantic status - success (emerald) */
+    --ds-color-success-50: #ecfdf5;
+    --ds-color-success-100: #d1fae5;
+    --ds-color-success-200: #a7f3d0;
+    --ds-color-success-400: #34d399;
+    --ds-color-success-500: #10b981;
+    --ds-color-success-600: #059669;
+    --ds-color-success-700: #047857;
+    --ds-color-success-900: #064e3b;
+
+    /* Semantic status - warning (amber) */
+    --ds-color-warning-50: #fffbeb;
+    --ds-color-warning-100: #fef3c7;
+    --ds-color-warning-200: #fde68a;
+    --ds-color-warning-400: #fbbf24;
+    --ds-color-warning-500: #f59e0b;
+    --ds-color-warning-600: #d97706;
+    --ds-color-warning-700: #b45309;
+    --ds-color-warning-900: #78350f;
+
+    /* Semantic status - danger (red) */
+    --ds-color-danger-50: #fef2f2;
+    --ds-color-danger-100: #fee2e2;
+    --ds-color-danger-200: #fecaca;
+    --ds-color-danger-400: #f87171;
+    --ds-color-danger-500: #ef4444;
+    --ds-color-danger-600: #dc2626;
+    --ds-color-danger-700: #b91c1c;
+    --ds-color-danger-900: #7f1d1d;
+
+    /* Utility brand color */
+    --ds-color-whatsapp: #25d366;
+
+    /* Component-specific surfaces */
+    --ds-color-datepicker-dark-bg: #172030;
+}
