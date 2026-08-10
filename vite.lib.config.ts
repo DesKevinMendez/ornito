@@ -28,7 +28,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: [
-      { find: /^ds-deskevinmendez$/, replacement: resolve(root, 'src/index.ts') },
+      { find: /^ornito$/, replacement: resolve(root, 'src/index.ts') },
       { find: /^@\//, replacement: `${localSrc}/` },
       { find: /^~\//, replacement: `${localSrc}/` },
     ],

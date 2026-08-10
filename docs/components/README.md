@@ -1,6 +1,6 @@
 # Components
 
-Prop reference for every component exported by `ds-deskevinmendez`, grouped
+Prop reference for every component exported by `ornito`, grouped
 by category. Each page lists the component's props, their types, and the
 available variants for any enum-like prop.
 

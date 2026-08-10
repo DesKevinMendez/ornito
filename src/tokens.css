@@ -1,5 +1,5 @@
 /*
- * Design tokens for ds-deskevinmendez.
+ * Design tokens for ornito.
  * These are real runtime CSS custom properties — override any of them from a
  * consuming app's own CSS (e.g. on `:root` or `.dark`) to re-skin the design
  * system without rebuilding this package. See style.css for how they're wired

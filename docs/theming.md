@@ -1,6 +1,6 @@
 # CSS variables configuration
 
-`ds-deskevinmendez` ships its color palette as real, runtime CSS custom
+`ornito` ships its color palette as real, runtime CSS custom
 properties — not just build-time Tailwind values. Any consuming app can
 override them after loading the package's stylesheet to re-skin the design
 system without rebuilding it.
@@ -24,7 +24,7 @@ Import the package's compiled stylesheet, then set your own values for any
 of the variables below on `:root` (or any ancestor scope):
 
 ```css
-@import 'ds-deskevinmendez/style.css';
+@import 'ornito/style.css';
 
 :root {
   --ds-color-primary-500: #16a34a;
