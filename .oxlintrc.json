@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "oxc",
+    "vue"
+  ],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {},
+  "env": {
+    "builtin": true
+  },
+  "ignorePatterns": [
+    "dist",
+    "build",
+    "docs/.vuepress/dist",
+    "docs/.vuepress/.cache",
+    "docs/.vuepress/.temp",
+    "auto-imports.d.ts",
+    "components.d.ts"
+  ]
+}
