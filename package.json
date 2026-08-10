@@ -55,6 +55,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.31",
     "@vuepress/theme-default": "2.0.0-rc.132",
     "oxlint": "^1.77.0",
+    "sass-embedded": "^1.100.0",
     "simple-git-hooks": "^2.13.1",
     "typescript": "~6.0.2",
     "unplugin-dts": "^1.0.3",
