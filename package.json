@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "packageManager": "pnpm@11.15.1",
-  "main": "./dist/ds-deskevinmendez.js",
-  "module": "./dist/ds-deskevinmendez.js",
+  "main": "./dist/ornito.js",
+  "module": "./dist/ornito.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
@@ -15,9 +15,9 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/ds-deskevinmendez.js"
+      "import": "./dist/ornito.js"
     },
-    "./style.css": "./dist/ds-deskevinmendez.css",
+    "./style.css": "./dist/ornito.css",
     "./tokens.css": "./src/tokens.css",
     "./theme.css": "./src/theme.css"
   },

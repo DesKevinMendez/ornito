@@ -39,7 +39,7 @@ export default defineConfig({
     lib: {
       entry: resolve(root, 'src/index.ts'),
       formats: ['es'],
-      fileName: 'ds-deskevinmendez',
+      fileName: 'ornito',
     },
     rolldownOptions: {
       external: ['vue', 'vue-router', 'pinia', '@vueuse/core', 'vee-validate', 'yup', '@vuepic/vue-datepicker', '@tabler/icons-vue'],
