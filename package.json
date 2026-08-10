@@ -1,0 +1,75 @@
+{
+  "name": "ornito",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@11.15.1",
+  "main": "./dist/ornito.js",
+  "module": "./dist/ornito.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/tokens.css",
+    "src/theme.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/ornito.js"
+    },
+    "./style.css": "./dist/ornito.css",
+    "./tokens.css": "./src/tokens.css",
+    "./theme.css": "./src/theme.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json && vite build",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:types": "DTS=true vite build --config vite.lib.config.ts",
+    "preview": "vite preview",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-push": "pnpm lint"
+  },
+  "peerDependencies": {
+    "@tabler/icons-vue": "^3.41.1",
+    "@vuepic/vue-datepicker": "^12.1.0",
+    "@vueuse/core": "^13.0.0",
+    "pinia": "^3.0.0",
+    "vee-validate": "^4.15.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.0",
+    "yup": "^1.7.0"
+  },
+  "devDependencies": {
+    "@tabler/icons-vue": "^3.41.1",
+    "@types/node": "^24.13.3",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/language-core": "^3.3.9",
+    "@vue/tsconfig": "^0.9.1",
+    "@vuepress/bundler-vite": "2.0.0-rc.31",
+    "@vuepress/theme-default": "2.0.0-rc.132",
+    "oxlint": "^1.77.0",
+    "sass-embedded": "^1.100.0",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "~6.0.2",
+    "unplugin-dts": "^1.0.3",
+    "vite": "^8.2.0",
+    "vue": "^3.5.41",
+    "vue-tsc": "^3.3.8",
+    "vuepress": "2.0.0-rc.31"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "date-fns": "^4.1.0",
+    "maska": "^3.2.0",
+    "unplugin-auto-import": "^19.3.0",
+    "unplugin-vue-components": "^28.8.0",
+    "v-money3": "^3.24.1"
+  }
+}

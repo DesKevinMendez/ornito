@@ -1,0 +1,83 @@
+/*
+ * Tailwind v4 theme mapping for ornito.
+ * Import this directly in your app's main CSS file, after `@import "tailwindcss";`,
+ * alongside a `@source` covering this package's dist output. Importing it here
+ * (instead of relying on style.css) keeps the mapping as plain source CSS, so the
+ * consuming app's own Tailwind build resolves it against real usage instead of
+ * this package's isolated build pruning it as unused.
+ */
+@import './tokens.css';
+
+@theme inline {
+    /* Primary - indigo */
+    --color-primary-50: var(--ds-color-primary-50);
+    --color-primary-100: var(--ds-color-primary-100);
+    --color-primary-200: var(--ds-color-primary-200);
+    --color-primary-300: var(--ds-color-primary-300);
+    --color-primary-400: var(--ds-color-primary-400);
+    --color-primary-500: var(--ds-color-primary-500);
+    --color-primary-600: var(--ds-color-primary-600);
+    --color-primary-700: var(--ds-color-primary-700);
+    --color-primary-800: var(--ds-color-primary-800);
+    --color-primary-900: var(--ds-color-primary-900);
+    --color-primary-950: var(--ds-color-primary-950);
+
+    /* Secondary - sky */
+    --color-secondary-50: var(--ds-color-secondary-50);
+    --color-secondary-100: var(--ds-color-secondary-100);
+    --color-secondary-200: var(--ds-color-secondary-200);
+    --color-secondary-300: var(--ds-color-secondary-300);
+    --color-secondary-400: var(--ds-color-secondary-400);
+    --color-secondary-500: var(--ds-color-secondary-500);
+    --color-secondary-600: var(--ds-color-secondary-600);
+    --color-secondary-700: var(--ds-color-secondary-700);
+    --color-secondary-800: var(--ds-color-secondary-800);
+    --color-secondary-900: var(--ds-color-secondary-900);
+    --color-secondary-950: var(--ds-color-secondary-950);
+
+    /* Tertiary - violet */
+    --color-tertiary-50: var(--ds-color-tertiary-50);
+    --color-tertiary-100: var(--ds-color-tertiary-100);
+    --color-tertiary-200: var(--ds-color-tertiary-200);
+    --color-tertiary-300: var(--ds-color-tertiary-300);
+    --color-tertiary-400: var(--ds-color-tertiary-400);
+    --color-tertiary-500: var(--ds-color-tertiary-500);
+    --color-tertiary-600: var(--ds-color-tertiary-600);
+    --color-tertiary-700: var(--ds-color-tertiary-700);
+    --color-tertiary-800: var(--ds-color-tertiary-800);
+    --color-tertiary-900: var(--ds-color-tertiary-900);
+    --color-tertiary-950: var(--ds-color-tertiary-950);
+
+    /* Semantic status - success (emerald) */
+    --color-success-50: var(--ds-color-success-50);
+    --color-success-100: var(--ds-color-success-100);
+    --color-success-200: var(--ds-color-success-200);
+    --color-success-400: var(--ds-color-success-400);
+    --color-success-500: var(--ds-color-success-500);
+    --color-success-600: var(--ds-color-success-600);
+    --color-success-700: var(--ds-color-success-700);
+    --color-success-900: var(--ds-color-success-900);
+
+    /* Semantic status - warning (amber) */
+    --color-warning-50: var(--ds-color-warning-50);
+    --color-warning-100: var(--ds-color-warning-100);
+    --color-warning-200: var(--ds-color-warning-200);
+    --color-warning-400: var(--ds-color-warning-400);
+    --color-warning-500: var(--ds-color-warning-500);
+    --color-warning-600: var(--ds-color-warning-600);
+    --color-warning-700: var(--ds-color-warning-700);
+    --color-warning-900: var(--ds-color-warning-900);
+
+    /* Semantic status - danger (red) */
+    --color-danger-50: var(--ds-color-danger-50);
+    --color-danger-100: var(--ds-color-danger-100);
+    --color-danger-200: var(--ds-color-danger-200);
+    --color-danger-400: var(--ds-color-danger-400);
+    --color-danger-500: var(--ds-color-danger-500);
+    --color-danger-600: var(--ds-color-danger-600);
+    --color-danger-700: var(--ds-color-danger-700);
+    --color-danger-900: var(--ds-color-danger-900);
+
+    /* Utility brand color */
+    --color-whatsapp: var(--ds-color-whatsapp);
+}
