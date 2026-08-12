@@ -1,3 +1,4 @@
+export * as yup from 'yup';
 export { default as Alert } from './components/Alert.vue';
 export { default as BaseButton } from './components/BaseButton.vue';
 export { default as BaseButtonIcon } from './components/BaseButtonIcon.vue';
