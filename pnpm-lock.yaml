@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@tabler/icons-vue':
+        specifier: ^3.41.1
+        version: 3.46.0(vue@3.5.41(typescript@6.0.3))
       '@tailwindcss/vite':
         specifier: ^4.2.2
         version: 4.3.3(vite@8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.100.0)(yaml@2.9.0))
@@ -15,7 +18,7 @@ importers:
         specifier: ^12.1.0
         version: 12.1.0(vue@3.5.41(typescript@6.0.3))
       '@vueuse/core':
-        specifier: ^13.0.0
+        specifier: ^12.8.2 || ^13.0.0
         version: 13.9.0(vue@3.5.41(typescript@6.0.3))
       date-fns:
         specifier: ^4.1.0
@@ -23,15 +26,6 @@ importers:
       maska:
         specifier: ^3.2.0
         version: 3.2.0
-      pinia:
-        specifier: ^3.0.0
-        version: 3.0.4(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
-      unplugin-auto-import:
-        specifier: ^19.3.0
-        version: 19.3.0(@vueuse/core@13.9.0(vue@3.5.41(typescript@6.0.3)))
-      unplugin-vue-components:
-        specifier: ^28.8.0
-        version: 28.8.0(@babel/parser@7.29.8)(supports-color@8.1.1)(vue@3.5.41(typescript@6.0.3))
       v-money3:
         specifier: ^3.24.1
         version: 3.26.1(vue@3.5.41(typescript@6.0.3))
@@ -45,9 +39,6 @@ importers:
         specifier: ^1.7.0
         version: 1.7.1
     devDependencies:
-      '@tabler/icons-vue':
-        specifier: ^3.41.1
-        version: 3.46.0(vue@3.5.41(typescript@6.0.3))
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
@@ -75,9 +66,15 @@ importers:
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
+      unplugin-auto-import:
+        specifier: ^19.3.0
+        version: 19.3.0(@vueuse/core@13.9.0(vue@3.5.41(typescript@6.0.3)))
       unplugin-dts:
         specifier: ^1.0.3
         version: 1.0.3(@vue/language-core@3.3.9)(esbuild@0.28.2)(rolldown@1.2.3)(supports-color@8.1.1)(typescript@6.0.3)(vite@8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.100.0)(yaml@2.9.0))
+      unplugin-vue-components:
+        specifier: ^28.8.0
+        version: 28.8.0(@babel/parser@7.29.8)(supports-color@8.1.1)(vue@3.5.41(typescript@6.0.3))
       vite:
         specifier: ^8.2.0
         version: 8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.100.0)(yaml@2.9.0)
@@ -4196,6 +4193,7 @@ snapshots:
       vue: 3.5.41(typescript@6.0.3)
     optionalDependencies:
       typescript: 6.0.3
+    optional: true
 
   pkg-types@1.3.1:
     dependencies:

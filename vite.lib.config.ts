@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { readFileSync } from 'node:fs'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
@@ -9,6 +10,12 @@ import dts from 'unplugin-dts/vite'
 const root = import.meta.dirname
 const localSrc = resolve(root, 'src')
 const emitTypes = process.env.DTS === 'true'
+const packageJson = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8')) as {
+  peerDependencies?: Record<string, string>
+}
+const peerDependencies = Object.keys(packageJson.peerDependencies ?? {})
+const isExternal = (id: string) =>
+  peerDependencies.some((dependency) => id === dependency || id.startsWith(`${dependency}/`))
 
 export default defineConfig({
   plugins: [
@@ -42,7 +49,7 @@ export default defineConfig({
       fileName: 'ornito',
     },
     rolldownOptions: {
-      external: ['vue', 'vue-router', 'pinia', '@vueuse/core', 'vee-validate', 'yup', '@vuepic/vue-datepicker', '@tabler/icons-vue'],
+      external: isExternal,
     },
   },
 })
