@@ -14,6 +14,11 @@ pnpm docs:dev     # component docs, served locally
 pnpm docs:build   # production docs build
 ```
 
+Install hook manually with 
+```bash
+pnpm exec simple-git-hooks
+```
+
 `build:lib` skips type declaration generation (`unplugin-dts`), which is the
 slowest part of the build (~80% of build time), so it stays fast for local
 iteration. It never empties `dist/`, so `.d.ts` files from a previous
