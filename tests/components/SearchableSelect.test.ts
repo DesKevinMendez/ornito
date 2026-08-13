@@ -305,6 +305,18 @@ describe('SearchableSelect', () => {
     expect(wrapper.text()).toContain('Ada Byron')
     expect(wrapper.text()).not.toContain('Ada Lovelace')
 
+    await wrapper.find('.cursor-pointer').trigger('click')
+    await nextTick()
+
+    const searchableSelect = wrapper.getComponent(SearchableSelect)
+    expect(wrapper.get('input').element.value).toBe('Ada Byron')
+    expect(searchableSelect.emitted('select')?.[0]).toEqual([
+      { label: 'Ada Byron', value: 3, icon: undefined, subtitles: ['Mathematician'] },
+    ])
+    expect(searchableSelect.emitted('data')?.[0]).toEqual([
+      { id: 3, name: 'Ada Byron', role: 'Mathematician' },
+    ])
+
     vi.useRealTimers()
   })
 
@@ -319,6 +331,16 @@ describe('SearchableSelect', () => {
     expect(get).toHaveBeenCalledTimes(1)
     expect(wrapper.text()).toContain('Grace Hopper')
     expect(wrapper.text()).not.toContain('Ada Lovelace')
+
+    await wrapper.find('.cursor-pointer').trigger('click')
+    await nextTick()
+
+    const searchableSelect = wrapper.getComponent(SearchableSelect)
+    expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+    expect(searchableSelect.emitted('select')?.[0]).toEqual([
+      { label: 'Grace Hopper', value: 2, icon: undefined, subtitles: ['Admiral'] },
+    ])
+    expect(searchableSelect.emitted('data')?.[0]).toEqual([rawOptions[1]])
 
     vi.useRealTimers()
   })
@@ -338,6 +360,18 @@ describe('SearchableSelect', () => {
     expect(get).toHaveBeenLastCalledWith('/users?filter[name]=Linus')
     expect(wrapper.text()).toContain('Linus Torvalds')
     expect(wrapper.text()).not.toContain('Ada Lovelace')
+
+    await wrapper.find('.cursor-pointer').trigger('click')
+    await nextTick()
+
+    const searchableSelect = wrapper.getComponent(SearchableSelect)
+    expect(wrapper.get('input').element.value).toBe('Linus Torvalds')
+    expect(searchableSelect.emitted('select')?.[0]).toEqual([
+      { label: 'Linus Torvalds', value: 3, icon: undefined, subtitles: ['Maintainer'] },
+    ])
+    expect(searchableSelect.emitted('data')?.[0]).toEqual([
+      { id: 3, name: 'Linus Torvalds', role: 'Maintainer' },
+    ])
 
     vi.useRealTimers()
   })
