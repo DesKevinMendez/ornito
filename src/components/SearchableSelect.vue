@@ -1,7 +1,7 @@
 <template>
   <div class="relative" ref="selectRef">
     <label
-      v-if="label && !small"
+      v-if="label && !props.small"
       :for="id"
       class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
     >
@@ -33,7 +33,7 @@
           leftIcon ? 'pl-10' : 'pl-4',
           'pr-10',
           errorMessage ? 'border-danger-500 dark:border-danger-500' : '',
-          small ? 'py-2' : 'py-3',
+          props.small ? 'py-2' : 'py-3',
         ]"
         :disabled="disabled"
       />
@@ -44,7 +44,7 @@
         <component
           :is="leftIcon"
           :class="[
-            small ? 'h-4 w-4' : 'h-5 w-5',
+            props.small ? 'h-4 w-4' : 'h-5 w-5',
             'text-gray-400 dark:text-gray-400',
           ]"
         />
@@ -55,7 +55,7 @@
         <component
           :is="IconChevronDown"
           :class="[
-            small ? 'h-4 w-4' : 'h-5 w-5',
+            props.small ? 'h-4 w-4' : 'h-5 w-5',
             'text-gray-400 dark:text-gray-400 transition-transform duration-200',
             isOpen ? 'rotate-180' : '',
           ]"
@@ -184,7 +184,6 @@ const props = defineProps<Props>();
 const {
   placeholder = "Buscar...",
   id = "searchable-select",
-  small = false,
   labelKey = "label",
   valueKey = "value",
   multiple = false,

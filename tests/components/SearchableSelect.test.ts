@@ -28,6 +28,7 @@ function mountSearchableSelect(options: {
   rules?: unknown
   multiple?: boolean
   placeholder?: string
+  label?: string
   id?: string
   small?: boolean
   labelKey?: string
@@ -43,14 +44,20 @@ function mountSearchableSelect(options: {
 
   const Host = defineComponent({
     components: { Form, SearchableSelect },
+    props: {
+      small: {
+        type: Boolean,
+        default: false,
+      },
+    },
     setup() {
       return {
         selected,
         rules: options.rules,
         multiple: options.multiple ?? false,
+        label: options.label,
         placeholder: options.placeholder,
         id: options.id ?? 'user',
-        small: options.small ?? false,
         localSearchFirst: options.localSearchFirst ?? false,
         labelKey: options.labelKey ?? 'name',
         valueKey: options.valueKey ?? 'id',
@@ -62,6 +69,7 @@ function mountSearchableSelect(options: {
           v-model="selected"
           url="/users"
           search-by="filter[name]"
+          :label="label"
           :placeholder="placeholder"
           :id="id"
           :small="small"
@@ -86,6 +94,9 @@ function mountSearchableSelect(options: {
         DropdownAnimation: DropdownAnimationStub,
         LoadingSVG: LoadingSVGStub,
       },
+    },
+    props: {
+      small: options.small ?? false,
     },
   })
 
@@ -207,6 +218,18 @@ describe('SearchableSelect', () => {
 
     expect(selected.value).toBe('grace')
     expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+  })
+
+  it('renders the label prop and hides it when small is true', async () => {
+    const { wrapper } = mountSearchableSelect({ label: 'Select a person' })
+
+    expect(wrapper.get('label').text()).toBe('Select a person')
+    expect(wrapper.get('label').attributes('for')).toBe('user')
+
+    await wrapper.setProps({ small: true })
+
+    expect(wrapper.find('label').exists()).toBeFalsy()
+    expect(wrapper.get('input').classes()).toContain('py-2')
   })
 
   it('focus triggers initial request and renders options', async () => {
