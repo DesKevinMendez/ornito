@@ -15,6 +15,7 @@
         placeholder="Search by plate, driver, or model..."
         label-key="name"
         value-key="id"
+        :localSearchFirst="true"
         :subtitle-key="['plate', '{driver} · {model}']"
         @data="selectedVehicle = $event"
       />

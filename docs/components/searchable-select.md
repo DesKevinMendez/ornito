@@ -35,6 +35,7 @@ import SearchableSelectDemo from '../.vuepress/components/SearchableSelectDemo.v
 | `subtitleKey` | `string \| string[]` | No | — optional secondary text field(s) per option |
 | `disabled` | `boolean` | No | `false` |
 | `multiple` | `boolean` | No | `false` — allows selecting more than one item |
+| `localSearchFirst` | `boolean` | No | `false` — when `true`, typed searches check loaded initial options by label/subtitles before calling the server |
 
 ```vue
 <SearchableSelect
@@ -44,5 +45,19 @@ import SearchableSelectDemo from '../.vuepress/components/SearchableSelectDemo.v
   placeholder="Search driver..."
   name="driver_id"
   rules="required"
+/>
+```
+
+Use `local-search-first` when the initial option set is useful as a client-side
+cache but the server should still be queried for misses:
+
+```vue
+<SearchableSelect
+  v-model="form.driver_id"
+  url="/api/v1/drivers"
+  search-by="name"
+  label-key="name"
+  subtitle-key="license_number"
+  local-search-first
 />
 ```

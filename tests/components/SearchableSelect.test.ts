@@ -1,7 +1,7 @@
 import { mount, flushPromises } from '@vue/test-utils'
 import { Form } from 'vee-validate'
 import { defineComponent, h, nextTick, ref } from 'vue'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import SearchableSelect from '../../src/components/SearchableSelect.vue'
 import { useRequestKey } from '../../src/composables/useDataRequest'
@@ -33,8 +33,12 @@ function mountSearchableSelect(options: {
   labelKey?: string
   valueKey?: string
   items?: Array<Record<string, unknown>>
+  searchItems?: Array<Record<string, unknown>>
+  localSearchFirst?: boolean
 } = {}) {
-  const get = vi.fn(async () => ({ data: ref(options.items ?? rawOptions) }))
+  const get = vi.fn(async (url: string) => ({
+    data: ref(url.includes('?') ? (options.searchItems ?? options.items ?? rawOptions) : (options.items ?? rawOptions)),
+  }))
   const selected = ref(options.modelValue)
 
   const Host = defineComponent({
@@ -47,6 +51,7 @@ function mountSearchableSelect(options: {
         placeholder: options.placeholder,
         id: options.id ?? 'user',
         small: options.small ?? false,
+        localSearchFirst: options.localSearchFirst ?? false,
         labelKey: options.labelKey ?? 'name',
         valueKey: options.valueKey ?? 'id',
       }
@@ -60,6 +65,7 @@ function mountSearchableSelect(options: {
           :placeholder="placeholder"
           :id="id"
           :small="small"
+          :local-search-first="localSearchFirst"
           :label-key="labelKey"
           :value-key="valueKey"
           subtitle-key="role"
@@ -130,7 +136,24 @@ async function focusAndResolveInitialRequest(wrapper: ReturnType<typeof mount>) 
   await nextTick()
 }
 
+async function primeSearchWatcher(wrapper: ReturnType<typeof mount>) {
+  await wrapper.get('input').setValue('__prime__')
+  await vi.advanceTimersByTimeAsync(500)
+  await flushPromises()
+  await nextTick()
+}
+
+async function searchFor(wrapper: ReturnType<typeof mount>, query: string) {
+  await wrapper.get('input').setValue(query)
+  await vi.advanceTimersByTimeAsync(500)
+  await flushPromises()
+  await nextTick()
+}
+
 describe('SearchableSelect', () => {
+  afterEach(() => {
+    vi.useRealTimers()
+  })
   it('throws when the request provider is missing', () => {
     expect(() =>
       mount(SearchableSelect, {
@@ -264,6 +287,59 @@ describe('SearchableSelect', () => {
       { label: 'Ada Lovelace', value: 1, icon: undefined, subtitles: ['Engineer'] },
     ])
     expect(searchableSelect.emitted('data')?.[0]).toEqual([rawOptions[0]])
+  })
+
+
+  it('keeps server search behavior when localSearchFirst is omitted', async () => {
+    vi.useFakeTimers()
+    const { wrapper, get } = mountSearchableSelect({
+      searchItems: [{ id: 3, name: 'Ada Byron', role: 'Mathematician' }],
+    })
+
+    await focusAndResolveInitialRequest(wrapper)
+    await primeSearchWatcher(wrapper)
+    await searchFor(wrapper, 'Ada')
+
+    expect(get).toHaveBeenCalledTimes(2)
+    expect(get).toHaveBeenLastCalledWith('/users?filter[name]=Ada')
+    expect(wrapper.text()).toContain('Ada Byron')
+    expect(wrapper.text()).not.toContain('Ada Lovelace')
+
+    vi.useRealTimers()
+  })
+
+  it('returns a local match without a second request when localSearchFirst is true', async () => {
+    vi.useFakeTimers()
+    const { wrapper, get } = mountSearchableSelect({ localSearchFirst: true })
+
+    await focusAndResolveInitialRequest(wrapper)
+    await primeSearchWatcher(wrapper)
+    await searchFor(wrapper, 'admiral')
+
+    expect(get).toHaveBeenCalledTimes(1)
+    expect(wrapper.text()).toContain('Grace Hopper')
+    expect(wrapper.text()).not.toContain('Ada Lovelace')
+
+    vi.useRealTimers()
+  })
+
+  it('falls back to server search when localSearchFirst is true and there is no local match', async () => {
+    vi.useFakeTimers()
+    const { wrapper, get } = mountSearchableSelect({
+      localSearchFirst: true,
+      searchItems: [{ id: 3, name: 'Linus Torvalds', role: 'Maintainer' }],
+    })
+
+    await focusAndResolveInitialRequest(wrapper)
+    await primeSearchWatcher(wrapper)
+    await searchFor(wrapper, 'Linus')
+
+    expect(get).toHaveBeenCalledTimes(2)
+    expect(get).toHaveBeenLastCalledWith('/users?filter[name]=Linus')
+    expect(wrapper.text()).toContain('Linus Torvalds')
+    expect(wrapper.text()).not.toContain('Ada Lovelace')
+
+    vi.useRealTimers()
   })
 
   it('an empty required rule shows the Field/ErrorMessage validation error after blur', async () => {

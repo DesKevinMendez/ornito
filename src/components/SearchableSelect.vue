@@ -176,6 +176,7 @@ interface Props {
   subtitleKey?: string | string[];
   disabled?: boolean;
   multiple?: boolean;
+  localSearchFirst?: boolean;
 }
 
 const props = defineProps<Props>();
@@ -238,6 +239,16 @@ const dropdownClasses = computed(() => {
 const selectedValues = computed<(string | number)[]>(() =>
   Array.isArray(modelValue.value) ? modelValue.value : []
 );
+
+const itemMatchesQuery = (item: SelectItem, query: string): boolean => {
+  const normalizedQuery = query.toLocaleLowerCase();
+  return [item.label, ...item.subtitles].some((text) =>
+    text.toLocaleLowerCase().includes(normalizedQuery)
+  );
+};
+
+const searchInitialItems = (query: string): SelectItem[] =>
+  initialItems.value.filter((item) => itemMatchesQuery(item, query));
 
 const isItemSelected = (item: SelectItem): boolean =>
   multiple
@@ -385,6 +396,14 @@ const searchData = async (query: string) => {
   if (!props.url || !query.trim()) {
     items.value = initialItems.value;
     return;
+  }
+
+  if (props.localSearchFirst) {
+    const localMatches = searchInitialItems(query);
+    if (localMatches.length > 0) {
+      items.value = localMatches;
+      return;
+    }
   }
 
   isLoading.value = true;
