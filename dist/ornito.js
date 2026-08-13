@@ -4665,55 +4665,55 @@ var Ta = f({
 	}),
 	emits: /*@__PURE__*/ y(["select", "data"], ["update:modelValue"]),
 	setup(e, { emit: n }) {
-		let r = e, { placeholder: l = "Buscar...", id: f = "searchable-select", small: p = !1, labelKey: m = "label", valueKey: h = "value", multiple: v = !1 } = r, y = U(e, "modelValue"), b = g(Ea);
-		if (!b) throw Error("SearchableSelect: no request instance provided. Call app.provide(useRequestKey, useRequest) in the consuming app.");
-		let { get: x } = b(), C = N(!1), w = N(""), T = N([]), E = N([]), A = N(/* @__PURE__ */ new Map()), j = N(null), M = N([]), F = N(!1), I = N(), R = N(), B = N(""), V = N(!1), W = N(!1), G = N(!1), q = i(() => y.value ? j.value && j.value.value === y.value ? j.value : T.value.find((e) => e.value === y.value) || E.value.find((e) => e.value === y.value) : null), ee = i(() => "absolute w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden"), te = i(() => Array.isArray(y.value) ? y.value : []), re = (e, t) => {
+		let r = e, { placeholder: l = "Buscar...", id: f = "searchable-select", labelKey: p = "label", valueKey: m = "value", multiple: h = !1 } = r, v = U(e, "modelValue"), y = g(Ea);
+		if (!y) throw Error("SearchableSelect: no request instance provided. Call app.provide(useRequestKey, useRequest) in the consuming app.");
+		let { get: b } = y(), x = N(!1), C = N(""), w = N([]), T = N([]), E = N(/* @__PURE__ */ new Map()), A = N(null), j = N([]), M = N(!1), F = N(), I = N(), R = N(""), B = N(!1), V = N(!1), W = N(!1), G = i(() => v.value ? A.value && A.value.value === v.value ? A.value : w.value.find((e) => e.value === v.value) || T.value.find((e) => e.value === v.value) : null), q = i(() => "absolute w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden"), ee = i(() => Array.isArray(v.value) ? v.value : []), te = (e, t) => {
 			let n = t.toLocaleLowerCase();
 			return [e.label, ...e.subtitles].some((e) => e.toLocaleLowerCase().includes(n));
-		}, X = (e) => E.value.filter((t) => re(t, e)), ie = (e) => v ? te.value.includes(e.value) : q.value?.value === e.value, ae = 0, oe = async () => {
-			let e = ++ae, t = te.value;
+		}, re = (e) => T.value.filter((t) => te(t, e)), X = (e) => h ? ee.value.includes(e.value) : G.value?.value === e.value, ie = 0, ae = async () => {
+			let e = ++ie, t = ee.value;
 			if (t.length === 0) {
-				M.value = [];
+				j.value = [];
 				return;
 			}
 			let n = /* @__PURE__ */ new Map();
-			for (let e of M.value) n.set(e.value, e);
+			for (let e of j.value) n.set(e.value, e);
+			for (let e of w.value) n.set(e.value, e);
 			for (let e of T.value) n.set(e.value, e);
-			for (let e of E.value) n.set(e.value, e);
 			let i = t.filter((e) => !n.has(e));
 			if (i.length && r.url) {
-				if (E.value.length === 0) {
-					if (await pe(), e !== ae) return;
-					for (let e of E.value) n.set(e.value, e);
+				if (T.value.length === 0) {
+					if (await fe(), e !== ie) return;
+					for (let e of T.value) n.set(e.value, e);
 					i = t.filter((e) => !n.has(e));
 				}
 				for (let t of i) try {
-					let i = r.url.includes("?") ? "&" : "?", { data: a } = await x(`${r.url}${i}filter[${h}]=${t}`);
-					if (e !== ae) return;
+					let i = r.url.includes("?") ? "&" : "?", { data: a } = await b(`${r.url}${i}filter[${m}]=${t}`);
+					if (e !== ie) return;
 					let o = Array.isArray(a.value) ? a.value : a.value?.data || [];
-					o.length && n.set(t, fe(o[0]));
+					o.length && n.set(t, de(o[0]));
 				} catch {}
 			}
-			e === ae && (M.value = t.map((e) => n.get(e) ?? {
+			e === ie && (j.value = t.map((e) => n.get(e) ?? {
 				label: String(e),
 				value: e,
 				subtitles: []
 			}));
-		}, se = (e, t) => {
-			G.value = !0;
-			let n = te.value.filter((t) => t !== e);
-			y.value = n, t(n), M.value = M.value.filter((t) => t.value !== e);
+		}, oe = (e, t) => {
+			W.value = !0;
+			let n = ee.value.filter((t) => t !== e);
+			v.value = n, t(n), j.value = j.value.filter((t) => t.value !== e);
 		};
-		function ce(e, t) {
+		function se(e, t) {
 			return t.trim().split(".").reduce((e, t) => e?.[t], e);
 		}
-		function le(e, t) {
+		function ce(e, t) {
 			let n = [...e.matchAll(/\{([^}]+)\}/g)];
 			if (n.length === 0) {
-				let n = ce(t, e);
+				let n = se(t, e);
 				return n == null ? "" : String(n);
 			}
-			let r = n.map((e) => ce(t, e[1]));
+			let r = n.map((e) => se(t, e[1]));
 			if (r.every((e) => e == null || e === "")) return "";
 			let i = e;
 			return n.forEach((e, t) => {
@@ -4721,144 +4721,144 @@ var Ta = f({
 				i = i.replace(e[0], n == null ? "" : String(n));
 			}), i.replace(/^[\s\-:|,·]+/, "").replace(/[\s\-:|,·]+$/, "").replace(/\s+/g, " ").trim();
 		}
-		function de(e) {
-			return r.subtitleKey ? (Array.isArray(r.subtitleKey) ? r.subtitleKey : [r.subtitleKey]).map((t) => le(t, e)).filter(Boolean) : [];
+		function le(e) {
+			return r.subtitleKey ? (Array.isArray(r.subtitleKey) ? r.subtitleKey : [r.subtitleKey]).map((t) => ce(t, e)).filter(Boolean) : [];
 		}
-		let fe = (e) => {
+		let de = (e) => {
 			let t = {
-				label: le(m, e),
-				value: ce(e, h),
+				label: ce(p, e),
+				value: se(e, m),
 				icon: e.icon,
-				subtitles: de(e)
+				subtitles: le(e)
 			};
-			return A.value.set(t.value, e), t;
-		}, pe = async (e = {}) => {
+			return E.value.set(t.value, e), t;
+		}, fe = async (e = {}) => {
 			if (!r.url) return;
 			let t = r.url;
-			if (e.searchWithId && y.value) {
+			if (e.searchWithId && v.value) {
 				let e = r.url.includes("?") ? "&" : "?";
-				t = `${r.url}${e}filter[${r.valueKey}]=${y.value}`;
+				t = `${r.url}${e}filter[${r.valueKey}]=${v.value}`;
 			}
-			F.value = !0;
+			M.value = !0;
 			try {
-				let { data: e } = await x(t);
+				let { data: e } = await b(t);
 				if (e.value) {
-					let t = (Array.isArray(e.value) ? e.value : e.value.data || []).map(fe);
-					T.value = t, E.value = t;
+					let t = (Array.isArray(e.value) ? e.value : e.value.data || []).map(de);
+					w.value = t, T.value = t;
 				}
 			} catch (e) {
-				console.error("Error fetching initial data:", e), T.value = [], E.value = [];
+				console.error("Error fetching initial data:", e), w.value = [], T.value = [];
 			} finally {
-				F.value = !1;
+				M.value = !1;
 			}
-		}, me = async (e) => {
+		}, pe = async (e) => {
 			if (!r.url || !e.trim()) {
-				T.value = E.value;
+				w.value = T.value;
 				return;
 			}
 			if (r.localSearchFirst) {
-				let t = X(e);
+				let t = re(e);
 				if (t.length > 0) {
-					T.value = t;
+					w.value = t;
 					return;
 				}
 			}
-			F.value = !0;
+			M.value = !0;
 			try {
-				let t = r.url.includes("?") ? "&" : "?", n = `${r.url}${t}${r.searchBy}=${encodeURIComponent(e)}`, { data: i } = await x(n);
+				let t = r.url.includes("?") ? "&" : "?", n = `${r.url}${t}${r.searchBy}=${encodeURIComponent(e)}`, { data: i } = await b(n);
 				if (i.value) {
-					let e = (Array.isArray(i.value) ? i.value : i.value.data || []).map(fe);
-					T.value = e;
+					let e = (Array.isArray(i.value) ? i.value : i.value.data || []).map(de);
+					w.value = e;
 				}
 			} catch (e) {
-				console.error("Error searching data:", e), T.value = [];
+				console.error("Error searching data:", e), w.value = [];
 			} finally {
-				F.value = !1;
+				M.value = !1;
 			}
+		}, me = () => {
+			x.value = !0, R.value = C.value, V.value = !0, C.value = "", T.value.length === 0 ? fe() : (w.value = T.value, A.value && !w.value.find((e) => e.value === A.value.value) && (w.value = [A.value, ...w.value])), I.value && I.value.select();
 		}, he = () => {
-			C.value = !0, B.value = w.value, W.value = !0, w.value = "", E.value.length === 0 ? pe() : (T.value = E.value, j.value && !T.value.find((e) => e.value === j.value.value) && (T.value = [j.value, ...T.value])), R.value && R.value.select();
-		}, ge = () => {
 			setTimeout(() => {
-				C.value = !1, W.value = !0, v ? w.value = "" : y.value && q.value ? w.value = q.value.label : y.value || (w.value = ""), B.value = "";
+				x.value = !1, V.value = !0, h ? C.value = "" : v.value && G.value ? C.value = G.value.label : v.value || (C.value = ""), R.value = "";
 			}, 200);
 		};
-		ue(w, (e) => {
-			if (W.value) {
-				W.value = !1;
+		ue(C, (e) => {
+			if (V.value) {
+				V.value = !1;
 				return;
 			}
 			let t = e.trim();
-			t && !V.value ? (me(t), V.value = !1) : T.value = E.value;
+			t && !B.value ? (pe(t), B.value = !1) : w.value = T.value;
 		}, { debounce: 500 });
-		let _e = n, ve = (e, t, n) => {
-			if (t && (t.preventDefault(), t.stopPropagation()), v) {
-				if (W.value = !0, G.value = !0, te.value.includes(e.value)) {
-					let t = te.value.filter((t) => t !== e.value);
-					y.value = t, n(t), M.value = M.value.filter((t) => t.value !== e.value);
+		let ge = n, _e = (e, t, n) => {
+			if (t && (t.preventDefault(), t.stopPropagation()), h) {
+				if (V.value = !0, W.value = !0, ee.value.includes(e.value)) {
+					let t = ee.value.filter((t) => t !== e.value);
+					v.value = t, n(t), j.value = j.value.filter((t) => t.value !== e.value);
 				} else {
-					let t = [...te.value, e.value];
-					y.value = t, n(t), M.value.find((t) => t.value === e.value) || M.value.push(e);
+					let t = [...ee.value, e.value];
+					v.value = t, n(t), j.value.find((t) => t.value === e.value) || j.value.push(e);
 				}
-				w.value = "", T.value = E.value, _e("select", e);
-				let t = A.value.get(e.value);
-				t !== void 0 && _e("data", t), R.value && R.value.focus();
+				C.value = "", w.value = T.value, ge("select", e);
+				let t = E.value.get(e.value);
+				t !== void 0 && ge("data", t), I.value && I.value.focus();
 				return;
 			}
-			W.value = !0, y.value = e.value, n(e.value), w.value = e.label, j.value = e, C.value = !1, R.value && R.value.blur(), _e("select", e);
-			let r = A.value.get(e.value);
-			r !== void 0 && _e("data", r);
-		}, ye = (e) => {
+			V.value = !0, v.value = e.value, n(e.value), C.value = e.label, A.value = e, x.value = !1, I.value && I.value.blur(), ge("select", e);
+			let r = E.value.get(e.value);
+			r !== void 0 && ge("data", r);
+		}, ve = (e) => {
 			let t = e.target;
-			I.value && !I.value.contains(t) && (C.value = !1);
+			F.value && !F.value.contains(t) && (x.value = !1);
 		};
 		D(() => {
-			if (document.addEventListener("click", ye), v) {
-				oe();
+			if (document.addEventListener("click", ve), h) {
+				ae();
 				return;
 			}
-			y.value && y.value !== "" ? be(y.value) : y.value && q.value && (w.value = q.value.label, j.value = q.value);
+			v.value && v.value !== "" ? ye(v.value) : v.value && G.value && (C.value = G.value.label, A.value = G.value);
 		}), O(() => {
-			document.removeEventListener("click", ye);
-		}), J(y, (e, t) => {
-			if (v) {
-				if (G.value) {
-					G.value = !1;
+			document.removeEventListener("click", ve);
+		}), J(v, (e, t) => {
+			if (h) {
+				if (W.value) {
+					W.value = !1;
 					return;
 				}
-				oe();
+				ae();
 				return;
 			}
-			e && e !== t ? q.value && q.value.value === e ? (w.value = q.value.label, j.value ||= q.value) : (!j.value || j.value.value !== e) && be(e) : e || (w.value = "", j.value = null);
+			e && e !== t ? G.value && G.value.value === e ? (C.value = G.value.label, A.value ||= G.value) : (!A.value || A.value.value !== e) && ye(e) : e || (C.value = "", A.value = null);
 		});
-		let be = async (e) => {
-			V.value = !0, await pe();
-			let t = T.value.find((t) => t.value === e);
-			if (t) W.value = !0, w.value = t.label, j.value = t;
+		let ye = async (e) => {
+			B.value = !0, await fe();
+			let t = w.value.find((t) => t.value === e);
+			if (t) V.value = !0, C.value = t.label, A.value = t;
 			else {
 				let t = r.url.includes("?") ? "&" : "?", n = `${r.url}${t}filter[${r.valueKey}]=${e}`;
 				try {
-					let { data: e } = await x(n);
+					let { data: e } = await b(n);
 					if (e.value) {
 						let t = Array.isArray(e.value) ? e.value : e.value.data || [];
 						if (t.length > 0) {
-							let e = fe(t[0]);
-							T.value = [e, ...T.value], E.value = [e, ...E.value], j.value = e, W.value = !0, w.value = e.label;
+							let e = de(t[0]);
+							w.value = [e, ...w.value], T.value = [e, ...T.value], A.value = e, V.value = !0, C.value = e.label;
 						}
 					}
 				} catch (e) {
 					console.error("Error fetching item by ID:", e);
 				}
 			}
-			V.value = !1;
+			B.value = !1;
 		};
-		return (n, r) => {
-			let i = dr, m = ur;
+		return (n, i) => {
+			let p = dr, m = ur;
 			return k(), s("div", {
 				class: "relative",
 				ref_key: "selectRef",
-				ref: I
+				ref: F
 			}, [
-				e.label && !H(p) ? (k(), s("label", {
+				e.label && !r.small ? (k(), s("label", {
 					key: 0,
 					for: H(f),
 					class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
@@ -4866,19 +4866,19 @@ var Ta = f({
 				d(H(ha), {
 					name: e.name || H(f),
 					rules: e.rules,
-					modelValue: y.value,
-					"onUpdate:modelValue": r[1] ||= (e) => y.value = e
+					modelValue: v.value,
+					"onUpdate:modelValue": i[1] ||= (e) => v.value = e
 				}, {
-					default: Y(({ field: n, errorMessage: h, handleChange: g }) => [
+					default: Y(({ field: n, errorMessage: g, handleChange: v }) => [
 						c("div", Oa, [
 							ne(c("input", {
 								id: H(f),
 								ref_key: "inputRef",
-								ref: R,
-								"onUpdate:modelValue": r[0] ||= (e) => _(w) ? w.value = e : null,
-								onFocus: he,
+								ref: I,
+								"onUpdate:modelValue": i[0] ||= (e) => _(C) ? C.value = e : null,
+								onFocus: me,
 								onBlur: (e) => {
-									n.onBlur(e), ge();
+									n.onBlur(e), he();
 								},
 								placeholder: H(l),
 								name: n.name,
@@ -4892,36 +4892,36 @@ var Ta = f({
 									"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500",
 									e.leftIcon ? "pl-10" : "pl-4",
 									"pr-10",
-									h ? "border-danger-500 dark:border-danger-500" : "",
-									H(p) ? "py-2" : "py-3"
+									g ? "border-danger-500 dark:border-danger-500" : "",
+									r.small ? "py-2" : "py-3"
 								]),
 								disabled: e.disabled
-							}, null, 42, ka), [[K, H(w)]]),
-							e.leftIcon ? (k(), s("div", Aa, [(k(), a(L(e.leftIcon), { class: S([H(p) ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400"]) }, null, 8, ["class"]))])) : o("", !0),
+							}, null, 42, ka), [[K, H(C)]]),
+							e.leftIcon ? (k(), s("div", Aa, [(k(), a(L(e.leftIcon), { class: S([r.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400"]) }, null, 8, ["class"]))])) : o("", !0),
 							c("div", ja, [(k(), a(L(H(mn)), { class: S([
-								H(p) ? "h-4 w-4" : "h-5 w-5",
+								r.small ? "h-4 w-4" : "h-5 w-5",
 								"text-gray-400 dark:text-gray-400 transition-transform duration-200",
-								H(C) ? "rotate-180" : ""
+								H(x) ? "rotate-180" : ""
 							]) }, null, 8, ["class"]))])
 						]),
-						H(v) && H(M).length ? (k(), s("div", Ma, [(k(!0), s(t, null, P(H(M), (e) => (k(), s("span", {
+						H(h) && H(j).length ? (k(), s("div", Ma, [(k(!0), s(t, null, P(H(j), (e) => (k(), s("span", {
 							key: e.value,
 							class: "inline-flex items-center gap-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-3 py-1"
 						}, [u(z(e.label) + " ", 1), c("button", {
 							type: "button",
-							onClick: (t) => se(e.value, g),
+							onClick: (t) => oe(e.value, v),
 							class: "hover:text-primary-900 dark:hover:text-primary-100"
 						}, [d(H(On), { class: "h-4 w-4" })], 8, Na)]))), 128))])) : o("", !0),
 						d(m, null, {
-							default: Y(() => [H(C) ? (k(), s("div", {
+							default: Y(() => [H(x) ? (k(), s("div", {
 								key: 0,
-								class: S(H(ee))
-							}, [H(F) ? (k(), s("div", Pa, [d(i)])) : H(T).length === 0 ? (k(), s("div", Fa, " No se encontraron datos ")) : (k(), s("div", Ia, [(k(!0), s(t, null, P(H(T), (e) => (k(), s("div", {
+								class: S(H(q))
+							}, [H(M) ? (k(), s("div", Pa, [d(p)])) : H(w).length === 0 ? (k(), s("div", Fa, " No se encontraron datos ")) : (k(), s("div", Ia, [(k(!0), s(t, null, P(H(w), (e) => (k(), s("div", {
 								key: e.value,
-								onClick: (t) => ve(e, t, g),
+								onClick: (t) => _e(e, t, v),
 								class: S(["rounded-lg p-3 border cursor-pointer transition-colors", {
-									"border-primary-500 bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30": ie(e),
-									"bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700": !ie(e)
+									"border-primary-500 bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30": X(e),
+									"bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700": !X(e)
 								}])
 							}, [c("div", Ra, [c("div", za, [e.icon ? (k(), a(L(e.icon), {
 								key: 0,
@@ -4929,7 +4929,7 @@ var Ta = f({
 							})) : o("", !0), c("div", Ba, [c("span", Va, z(e.label), 1), (k(!0), s(t, null, P(e.subtitles, (e, t) => (k(), s("span", {
 								key: t,
 								class: "text-xs text-gray-500 dark:text-gray-400"
-							}, z(e), 1))), 128))])]), ie(e) ? (k(), s("div", Ha, [d(H(pn), { class: "h-6 w-6" })])) : o("", !0)])], 10, La))), 128))]))], 2)) : o("", !0)]),
+							}, z(e), 1))), 128))])]), X(e) ? (k(), s("div", Ha, [d(H(pn), { class: "h-6 w-6" })])) : o("", !0)])], 10, La))), 128))]))], 2)) : o("", !0)]),
 							_: 2
 						}, 1024)
 					]),
