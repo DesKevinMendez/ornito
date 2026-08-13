@@ -1,14 +1,27 @@
 <template>
   <div class="relative" ref="selectRef">
-    <div class="relative">
+    <label
+      v-if="label && !small"
+      :for="id"
+      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+    >
+      {{ label }}
+    </label>
+    <Field
+      :name="name || id"
+      :rules="rules"
+      v-model="modelValue"
+      v-slot="{ field, errorMessage, handleChange }"
+    >
+      <div class="relative">
       <input
         :id="id"
         ref="inputRef"
         v-model="searchQuery"
         @focus="handleFocus"
-        @blur="handleBlur"
+        @blur="(event) => { field.onBlur(event); handleBlur() }"
         :placeholder="placeholder"
-        :name="autocompleteName"
+        :name="field.name"
         autocomplete="off"
         aria-autocomplete="none"
         data-lpignore="true"
@@ -19,6 +32,7 @@
           'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500',
           leftIcon ? 'pl-10' : 'pl-4',
           'pr-10',
+          errorMessage ? 'border-danger-500 dark:border-danger-500' : '',
           small ? 'py-2' : 'py-3',
         ]"
         :disabled="disabled"
@@ -47,9 +61,9 @@
           ]"
         />
       </div>
-    </div>
+      </div>
 
-    <div
+      <div
       v-if="multiple && selectedItemsData.length"
       class="flex flex-wrap gap-2 mt-2"
     >
@@ -61,7 +75,7 @@
         {{ item.label }}
         <button
           type="button"
-          @click="removeItem(item.value)"
+          @click="removeItem(item.value, handleChange)"
           class="hover:text-primary-900 dark:hover:text-primary-100"
         >
           <IconX class="h-4 w-4" />
@@ -69,7 +83,7 @@
       </span>
     </div>
 
-    <DropdownAnimation>
+      <DropdownAnimation>
       <div v-if="isOpen" :class="dropdownClasses">
         <div
           v-if="isLoading"
@@ -87,7 +101,7 @@
           <div
             v-for="item in items"
             :key="item.value"
-            @click="(e) => selectItem(item, e)"
+            @click="(e) => selectItem(item, e, handleChange)"
             class="rounded-lg p-3 border cursor-pointer transition-colors"
             :class="{
               'border-primary-500 bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
@@ -124,12 +138,18 @@
           </div>
         </div>
       </div>
-    </DropdownAnimation>
+      </DropdownAnimation>
+    </Field>
+    <ErrorMessage
+      :name="name || id"
+      class="mt-1 text-sm text-danger-600 dark:text-danger-400"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { inject } from "vue";
+import { Field, ErrorMessage } from "vee-validate";
 import { IconChevronDown, IconCheck, IconX } from "@tabler/icons-vue";
 import { watchDebounced } from "@vueuse/core";
 import { useRequestKey } from "../composables/useDataRequest";
@@ -147,6 +167,9 @@ interface Props {
   placeholder?: string;
   leftIcon?: any;
   id?: string;
+  name?: string;
+  label?: string;
+  rules?: any;
   small?: boolean;
   labelKey?: string;
   valueKey?: string;
@@ -177,8 +200,6 @@ if (!requestFactory) {
   );
 }
 const { get } = requestFactory();
-
-const autocompleteName = `searchable-${Math.random().toString(36).slice(2)}`;
 
 const isOpen = ref(false);
 const searchQuery = ref("");
@@ -270,9 +291,11 @@ const resolveSelectedLabels = async () => {
   );
 };
 
-const removeItem = (value: string | number) => {
+const removeItem = (value: string | number, handleChange: (value: any) => void) => {
   isInternalModelUpdate.value = true;
-  modelValue.value = selectedValues.value.filter((current) => current !== value);
+  const newValue = selectedValues.value.filter((current) => current !== value);
+  modelValue.value = newValue;
+  handleChange(newValue);
   selectedItemsData.value = selectedItemsData.value.filter(
     (item) => item.value !== value
   );
@@ -444,7 +467,11 @@ const emit = defineEmits<{
   data: [raw: any];
 }>();
 
-const selectItem = (item: SelectItem, event?: Event) => {
+const selectItem = (
+  item: SelectItem,
+  event: Event | undefined,
+  handleChange: (value: any) => void
+) => {
   if (event) {
     event.preventDefault();
     event.stopPropagation();
@@ -453,12 +480,16 @@ const selectItem = (item: SelectItem, event?: Event) => {
     isSelecting.value = true;
     isInternalModelUpdate.value = true;
     if (selectedValues.value.includes(item.value)) {
-      modelValue.value = selectedValues.value.filter((v) => v !== item.value);
+      const newValue = selectedValues.value.filter((v) => v !== item.value);
+      modelValue.value = newValue;
+      handleChange(newValue);
       selectedItemsData.value = selectedItemsData.value.filter(
         (i) => i.value !== item.value
       );
     } else {
-      modelValue.value = [...selectedValues.value, item.value];
+      const newValue = [...selectedValues.value, item.value];
+      modelValue.value = newValue;
+      handleChange(newValue);
       if (!selectedItemsData.value.find((i) => i.value === item.value)) {
         selectedItemsData.value.push(item);
       }
@@ -475,6 +506,7 @@ const selectItem = (item: SelectItem, event?: Event) => {
   }
   isSelecting.value = true;
   modelValue.value = item.value;
+  handleChange(item.value);
   searchQuery.value = item.label;
   selectedItemData.value = item;
   isOpen.value = false;

@@ -13,6 +13,9 @@ Uses `v-model` for the value.
 | `placeholder` | `string` | No | `'Buscar...'` |
 | `leftIcon` | `any` (component) | No | — |
 | `id` | `string` | No | `'searchable-select'` |
+| `name` | `string` | No | `id` — field name used by VeeValidate when `rules` is set |
+| `label` | `string` | No | — field label used in validation messages |
+| `rules` | `any` | No | — VeeValidate validation rules |
 | `small` | `boolean` | No | `false` |
 | `labelKey` | `string` | No | `'label'` — field read from each result to display |
 | `valueKey` | `string` | No | `'value'` — field read from each result to use as the value |
@@ -26,5 +29,7 @@ Uses `v-model` for the value.
   url="/api/v1/drivers"
   search-by="name"
   placeholder="Search driver..."
+  name="driver_id"
+  rules="required"
 />
 ```
