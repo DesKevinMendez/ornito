@@ -4,3 +4,6 @@
 /build
 /.atl
 .pnpm-store
+
+*storybook.log
+storybook-static
