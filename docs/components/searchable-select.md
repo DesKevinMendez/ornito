@@ -14,6 +14,7 @@ vehicle to see the Yup required validation.
 
 <script setup>
 import SearchableSelectDemo from '../.vuepress/components/SearchableSelectDemo.vue'
+
 </script>
 
 ## Props
