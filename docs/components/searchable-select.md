@@ -1,9 +1,22 @@
 # SearchableSelect
 
-Async, searchable select that fetches options from an API endpoint as the
-user types. Requires a request factory to be provided by the consuming app
-via `useRequestKey` (see the composables section of the design system).
-Uses `v-model` for the value.
+Async, searchable select that fetches options from a request factory provided by
+the consuming app through `useRequestKey`. It supports initial loading, text
+search, and resolving an existing value by id.
+
+## Live preview
+
+This demo mounts the real component with an in-memory request implementation, so
+it works without API credentials. Click **Validate selection** before choosing a
+vehicle to see the Yup required validation.
+
+<SearchableSelectDemo />
+
+<script setup>
+import SearchableSelectDemo from '../.vuepress/components/SearchableSelectDemo.vue'
+</script>
+
+## Props
 
 | Prop | Type | Required | Default |
 | --- | --- | --- | --- |

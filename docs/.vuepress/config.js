@@ -1,10 +1,30 @@
+import { fileURLToPath } from 'node:url'
+
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
+import tailwindcss from '@tailwindcss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
 export default defineUserConfig({
   base: '/ornito/',
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    viteOptions: {
+      plugins: [
+        AutoImport({
+          imports: ['vue'],
+          dts: false,
+        }),
+        Components({
+          dirs: [fileURLToPath(new URL('../../src/components', import.meta.url))],
+          deep: true,
+          dts: false,
+        }),
+        tailwindcss(),
+      ],
+    },
+  }),
   theme: defaultTheme({
     navbar: [
       { text: 'Home', link: '/' },
