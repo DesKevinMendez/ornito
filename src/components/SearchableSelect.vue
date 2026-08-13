@@ -215,7 +215,6 @@ const savedSearchQuery = ref("");
 const preventSearch = ref(false);
 const isSelecting = ref(false);
 const isInternalModelUpdate = ref(false);
-
 const selectedItem = computed(() => {
   if (!modelValue.value) return null;
   if (
