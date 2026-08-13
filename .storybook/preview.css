@@ -1,0 +1,4 @@
+@import 'tailwindcss' source('../src');
+@import '../src/theme.css';
+
+@variant dark (&:is(.dark *));
