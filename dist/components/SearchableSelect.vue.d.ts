@@ -10,12 +10,16 @@ interface Props {
     placeholder?: string;
     leftIcon?: any;
     id?: string;
+    name?: string;
+    label?: string;
+    rules?: any;
     small?: boolean;
     labelKey?: string;
     valueKey?: string;
     subtitleKey?: string | string[];
     disabled?: boolean;
     multiple?: boolean;
+    localSearchFirst?: boolean;
 }
 type __VLS_Props = Props;
 type __VLS_ModelProps = {
