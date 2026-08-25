@@ -46,6 +46,63 @@ Emits `row-selected`, `pagination-loaded`.
 </DataTable>
 ```
 
+## useTable
+
+`useTable` is the public composable for building custom server-side tables.
+It is exported from `ornito` and requires the consuming app to provide a
+request factory through `useRequestKey`.
+
+```ts
+import { provide } from 'vue'
+import { useRequestKey, useTable } from 'ornito'
+
+// `useRequest` must return an object with a `get` method. The method returns
+// `{ data }`, where `data` is a ref containing the server response below.
+provide(useRequestKey, useRequest)
+
+const {
+  isLoading,
+  error,
+  internalData,
+  internalPaginationServer,
+  fetchData,
+  refreshTable,
+} = useTable()
+
+await fetchData('/api/v1/vehicles', 1, '10', 'sedan', ['name', 'status'])
+refreshTable()
+```
+
+`fetchData` adds `page` and `per_page` query parameters. When a search query
+and `searchBy` are provided, it also adds one `filter[field]` parameter per
+field. The request must resolve to this shape:
+
+```ts
+{
+  data: Vehicle[]
+  pagination: {
+    total: number
+    per_page: number
+    current_page: number
+    from: number
+    to: number
+    last_page: number
+  }
+}
+```
+
+### `useTable` return values
+
+| Value | Type | Description |
+| --- | --- | --- |
+| `isLoading` | `Ref<boolean>` | Whether a request is in progress |
+| `error` | `Ref<string \| null>` | Last request error, if any |
+| `internalData` | `Ref<any[]>` | Rows returned by the last successful request |
+| `internalPaginationServer` | `Ref<tApiPagination>` | Pagination returned by the server |
+| `fetchData` | `(url, currentPage, selectedPageSize, searchQuery?, searchBy?) => Promise<void>` | Fetches a page of server-side data |
+| `refreshData` | `Ref<boolean>` | Brief refresh signal toggled by `refreshTable` |
+| `refreshTable` | `() => void` | Emits a short refresh signal for consumers |
+
 ## TableHeader
 
 Renders just the `<thead>` row for a table using the same `TableField`
