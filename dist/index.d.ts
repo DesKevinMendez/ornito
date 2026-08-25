@@ -53,5 +53,6 @@ export { useTheme, initTheme } from './composables/useTheme';
 export { useSidebar } from './composables/useSidebar';
 export { useActiveIndicator } from './composables/useActiveIndicator';
 export { default as useMessages } from './composables/useMessages';
+export { default as useTable } from './composables/useTable';
 export { useRequestKey } from './composables/useDataRequest';
 export type { GetFn, UseRequestFactory } from './composables/useDataRequest';
