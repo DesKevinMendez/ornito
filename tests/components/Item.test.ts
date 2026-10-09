@@ -102,13 +102,26 @@ describe('Item', () => {
 
     expect(wrapper.classes()).toContain('hover:bg-gray-50')
     expect(wrapper.classes()).toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).toContain('cursor-pointer')
     expect(wrapper.classes()).toContain('border')
 
     await wrapper.setProps({ hoverable: false })
 
     expect(wrapper.classes()).not.toContain('hover:bg-gray-50')
     expect(wrapper.classes()).not.toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).not.toContain('cursor-pointer')
     expect(wrapper.classes()).toContain('border')
+  })
+
+  it.each([
+    { hoverable: false, clickable: false, pointer: false },
+    { hoverable: true, clickable: false, pointer: true },
+    { hoverable: false, clickable: true, pointer: true },
+    { hoverable: true, clickable: true, pointer: true },
+  ])('uses a pointer cursor when hover is active: %o', ({ hoverable, clickable, pointer }) => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', hoverable, clickable } })
+
+    expect(wrapper.classes().includes('cursor-pointer')).toBe(pointer)
   })
 
   it('clips the image and custom image slot to a circular container', () => {
@@ -198,7 +211,7 @@ describe('Item', () => {
       expect(wrapper.element.tagName).toBe('DIV')
       expect(wrapper.emitted('click')).toBeUndefined()
       expect(onClick).not.toHaveBeenCalled()
-      expect(wrapper.classes()).not.toContain('cursor-pointer')
+      expect(wrapper.classes()).toContain('cursor-pointer')
     }
   })
 

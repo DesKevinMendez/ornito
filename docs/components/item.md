@@ -2,7 +2,7 @@
 
 A horizontal row with an optional circular image on the left, a title and subtitle
 in the center, and an optional icon on the right. Supports light and dark mode,
-an optional border, and a background color transition on hover.
+an optional border, and a background color transition with a pointer cursor on hover.
 Long text wraps while the image and icon keep their size.
 
 | Prop | Type | Required | Default |
@@ -37,8 +37,8 @@ import { IconChevronRight } from '@tabler/icons-vue'
 
 Omit `border` or set `:border="false"` for a borderless item. The hover
 background is available with or without a border, in both light and dark mode.
-Set `:hoverable="false"` to disable the hover background and transition on
-non-clickable items. `clickable` always enables hover, even when `hoverable`
+Set `:hoverable="false"` to disable the hover background, pointer cursor and transition on
+non-clickable items. `clickable` always enables hover and the pointer cursor, even when `hoverable`
 is `false`.
 
 ## Click event
@@ -79,14 +79,13 @@ buttons or links inside a clickable item.
 
 ## Lists and dark mode
 
-Compose items inside a shared container for a notification list. Apply the
-border and row dividers to the container, leaving each item's `border` off.
-The child selector removes individual row rounding; the container clips the
-outer corners. Use the `title` slot for inline emphasis and the `subtitle`
+Compose items inside [List](./list.md) for a notification list. `List` handles
+the optional outer border, row dividers and shared rounded corners, leaving
+each item's `border` off. Use the `title` slot for inline emphasis and the `subtitle`
 slot for timestamps or other secondary content.
 
 ```vue
-<ul class="m-0 list-none divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 p-0 dark:divide-gray-700 dark:border-gray-700 [&>li>*]:rounded-none">
+<List border aria-label="Notifications">
   <li v-for="notification in notifications" :key="notification.id">
     <Item
       :id="notification.id"
@@ -106,12 +105,12 @@ slot for timestamps or other secondary content.
       </template>
     </Item>
   </li>
-</ul>
+</List>
 ```
 
 As with other Ornito components, a `.dark` class on an ancestor activates
-dark surfaces, text, borders, dividers, and hover colors. Storybook includes
-`NotificationsList`, `DarkNotificationsList` and clickable list examples.
+dark surfaces, text, borders, dividers, and hover colors. Storybook's `List`
+section includes `NotificationsList`, `DarkNotificationsList` and clickable list examples.
 
 ## Slots
 

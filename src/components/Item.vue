@@ -7,8 +7,8 @@
     :class="{
       'border border-gray-200 dark:border-gray-700': border,
       'border-0': !border,
-      'transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-gray-800': clickable || hoverable,
-      'cursor-pointer [font:inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500': clickable,
+      'cursor-pointer transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-gray-800': clickable || hoverable,
+      '[font:inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500': clickable,
     }"
     @click="handleClick"
   >
