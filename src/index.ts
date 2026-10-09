@@ -53,6 +53,7 @@ export type { BreadcrumbItem } from './types/Breadcrumb'
 export type { RoutesLink } from './types/RoutesLink'
 export type { TableField } from './types/Table'
 export type { DropdownMenuItem } from './types/DropdownMenuItem'
+export type { ItemId } from './types/Item'
 
 export { useMobile, isMobile, isTablet, isDesktop } from './composables/useMobile'
 export { useTheme, initTheme } from './composables/useTheme'

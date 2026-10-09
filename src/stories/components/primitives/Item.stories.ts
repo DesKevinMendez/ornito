@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { IconChevronRight } from '@tabler/icons-vue';
+import { ref } from 'vue';
+import type { ItemId } from '../../../types/Item';
 import Item from '../../../components/Item.vue';
 import UserAvatar from '../../../components/UserAvatar.vue';
 
@@ -17,6 +19,9 @@ const meta: Meta<ItemStoryArgs> = {
     icon: { control: false },
     border: { control: 'boolean' },
     hoverable: { control: 'boolean' },
+    clickable: { control: 'boolean' },
+    id: { control: 'text' },
+    onClick: { action: 'click', control: false },
   },
   args: {
     title: 'Ana Rivera',
@@ -24,6 +29,7 @@ const meta: Meta<ItemStoryArgs> = {
     icon: IconChevronRight,
     border: false,
     hoverable: true,
+    clickable: false,
   },
   render: (args) => ({
     components: { Item },
@@ -46,6 +52,22 @@ export const WithImage: Story = {
 };
 export const WithBorder: Story = { args: { ...WithImage.args, border: true } };
 export const WithoutHover: Story = { args: { ...WithImage.args, border: true, hoverable: false } };
+export const Clickable: Story = {
+  args: { ...WithImage.args, id: 'driver-42', border: true, clickable: true, hoverable: false },
+  render: (args) => ({
+    components: { Item },
+    setup() {
+      const lastClick = ref<ItemId>();
+      return { args, lastClick };
+    },
+    template: `
+      <div class="flex w-full max-w-md flex-col gap-3">
+        <Item v-bind="args" @click="lastClick = $event" />
+        <pre v-if="lastClick !== undefined" class="whitespace-pre-wrap break-words rounded-lg bg-gray-100 p-3 text-xs text-gray-900 dark:bg-gray-800 dark:text-white">Clicked ID: {{ lastClick }}</pre>
+      </div>
+    `,
+  }),
+};
 export const TitleOnly: Story = { args: { subtitle: '', icon: undefined } };
 export const WithoutIcon: Story = { args: { icon: undefined } };
 export const LongContent: Story = {
@@ -84,6 +106,7 @@ export const NotificationsList: Story = {
   render: (args) => ({
     components: { Item },
     setup() {
+      const lastClick = ref<ItemId>();
       const notifications = [
         {
           id: 1,
@@ -126,36 +149,52 @@ export const NotificationsList: Story = {
           image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop',
         },
       ];
-      return { args, notifications };
+      return { args, notifications, lastClick };
     },
     template: `
-      <ul
-        class="m-0 w-full max-w-sm list-none divide-y divide-gray-200 overflow-hidden rounded-xl bg-white p-0 dark:divide-gray-700 dark:bg-gray-900 [&>li>div]:rounded-none"
-        :class="{ 'border border-gray-200 dark:border-gray-700': args.border }"
-      >
-        <li v-for="notification in notifications" :key="notification.id">
-          <Item
-            :title="notification.name"
-            :image="notification.image"
-            :hoverable="args.hoverable"
-            :icon="args.icon"
-          >
-            <template #title>
-              <span class="font-normal text-gray-500 dark:text-gray-400">
-                {{ notification.prefix }}<strong class="font-medium text-gray-900 dark:text-white">{{ notification.name }}</strong>{{ notification.connector }}<strong v-if="notification.emphasis" class="font-medium text-gray-900 dark:text-white">{{ notification.emphasis }}</strong>{{ notification.detail }}
-              </span>
-            </template>
-            <template #subtitle>
-              <span class="mt-1 block text-xs text-secondary-600 dark:text-secondary-400">{{ notification.time }}</span>
-            </template>
-          </Item>
-        </li>
-      </ul>
+      <div class="flex w-full max-w-sm flex-col gap-3">
+        <ul
+          class="m-0 w-full list-none divide-y divide-gray-200 overflow-hidden rounded-xl bg-white p-0 dark:divide-gray-700 dark:bg-gray-900 [&>li>*]:rounded-none"
+          :class="{ 'border border-gray-200 dark:border-gray-700': args.border }"
+        >
+          <li v-for="notification in notifications" :key="notification.id">
+            <Item
+              :id="notification.id"
+              :title="notification.name"
+              :image="notification.image"
+              :clickable="args.clickable"
+              :hoverable="args.hoverable"
+              :icon="args.icon"
+              @click="lastClick = $event"
+            >
+              <template #title>
+                <span class="font-normal text-gray-500 dark:text-gray-400">
+                  {{ notification.prefix }}<strong class="font-medium text-gray-900 dark:text-white">{{ notification.name }}</strong>{{ notification.connector }}<strong v-if="notification.emphasis" class="font-medium text-gray-900 dark:text-white">{{ notification.emphasis }}</strong>{{ notification.detail }}
+                </span>
+              </template>
+              <template #subtitle>
+                <span class="mt-1 block text-xs text-secondary-600 dark:text-secondary-400">{{ notification.time }}</span>
+              </template>
+            </Item>
+          </li>
+        </ul>
+        <pre v-if="lastClick !== undefined" class="whitespace-pre-wrap break-words rounded-lg bg-gray-100 p-3 text-xs text-gray-900 dark:bg-gray-800 dark:text-white">Clicked ID: {{ lastClick }}</pre>
+      </div>
     `,
   }),
 };
 
 export const DarkNotificationsList: Story = {
   ...NotificationsList,
+  decorators: Dark.decorators,
+};
+
+export const ClickableNotificationsList: Story = {
+  ...NotificationsList,
+  args: { ...NotificationsList.args, clickable: true, hoverable: false },
+};
+
+export const DarkClickableNotificationsList: Story = {
+  ...ClickableNotificationsList,
   decorators: Dark.decorators,
 };

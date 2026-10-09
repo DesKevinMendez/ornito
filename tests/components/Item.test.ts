@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { defineComponent, h } from 'vue'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import Item from '../../src/components/Item.vue'
 
@@ -16,7 +16,7 @@ describe('Item', () => {
     const wrapper = mount(Item, { props: { title: 'Ana Rivera' } })
 
     expect(wrapper.text()).toBe('Ana Rivera')
-    expect(wrapper.findAll('p')).toHaveLength(1)
+    expect(wrapper.findAll('.break-words')).toHaveLength(1)
     expect(wrapper.find('img').exists()).toBe(false)
     expect(wrapper.find('svg').exists()).toBe(false)
     expect(wrapper.element.children).toHaveLength(1)
@@ -136,7 +136,7 @@ describe('Item', () => {
     await wrapper.setProps({ subtitle: '', image: '', icon: undefined })
 
     expect(wrapper.text()).toBe('Luis Torres')
-    expect(wrapper.findAll('p')).toHaveLength(1)
+    expect(wrapper.findAll('.break-words')).toHaveLength(1)
     expect(wrapper.element.children).toHaveLength(1)
   })
 
@@ -186,5 +186,116 @@ describe('Item', () => {
     expect(wrapper.attributes('aria-label')).toBe('Assigned driver')
     expect(wrapper.classes()).toContain('custom-item')
     expect(wrapper.classes()).toContain('dark:bg-gray-900')
+  })
+
+  it('does not emit a click or call the listener when clickable is omitted or false', async () => {
+    for (const clickable of [undefined, false]) {
+      const onClick = vi.fn()
+      const wrapper = mount(Item, { props: { title: 'Ana Rivera', clickable, onClick } })
+
+      await wrapper.trigger('click')
+
+      expect(wrapper.element.tagName).toBe('DIV')
+      expect(wrapper.emitted('click')).toBeUndefined()
+      expect(onClick).not.toHaveBeenCalled()
+      expect(wrapper.classes()).not.toContain('cursor-pointer')
+    }
+  })
+
+  it('emits only the id once through the click listener', async () => {
+    const onClick = vi.fn()
+    const wrapper = mount(Item, {
+      props: {
+        id: 'driver-42',
+        title: 'Ana Rivera',
+        subtitle: 'Assigned driver',
+        image: '/ana.jpg',
+        imageAlt: 'Portrait of Ana',
+        icon: TestIcon,
+        clickable: true,
+        onClick,
+      },
+    })
+
+    await wrapper.trigger('click')
+
+    expect(wrapper.element.tagName).toBe('BUTTON')
+    expect(wrapper.attributes('type')).toBe('button')
+    expect(wrapper.attributes('id')).toBe('driver-42')
+    expect(wrapper.classes()).toContain('focus-visible:ring-2')
+    expect(wrapper.emitted('click')).toEqual([['driver-42']])
+    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(onClick).toHaveBeenCalledWith('driver-42')
+  })
+
+  it.each([0, 42, 'notification-1', undefined])('preserves optional id=%s in the click payload', async (id) => {
+    const wrapper = mount(Item, { props: { title: 'Notification', id, clickable: true } })
+
+    await wrapper.trigger('click')
+
+    expect(wrapper.emitted('click')?.[0]).toEqual([id])
+    expect(wrapper.attributes('id')).toBe(id === undefined ? undefined : String(id))
+  })
+
+  it('forces light and dark hover when clickable is true even if hoverable is false', async () => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', clickable: true, hoverable: false } })
+
+    expect(wrapper.classes()).toContain('hover:bg-gray-50')
+    expect(wrapper.classes()).toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).toContain('cursor-pointer')
+
+    await wrapper.setProps({ clickable: false })
+
+    expect(wrapper.element.tagName).toBe('DIV')
+    expect(wrapper.classes()).not.toContain('hover:bg-gray-50')
+    expect(wrapper.classes()).not.toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).not.toContain('cursor-pointer')
+    await wrapper.trigger('click')
+    expect(wrapper.emitted('click')).toBeUndefined()
+  })
+
+  it('emits the latest id after updates without including display props', async () => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', id: 1, clickable: true } })
+
+    await wrapper.setProps({ title: 'Luis Torres', subtitle: 'Dispatcher', image: '/luis.jpg', id: 2 })
+    await wrapper.trigger('click')
+
+    expect(wrapper.emitted('click')?.[0]).toEqual([2])
+  })
+
+  it('emits only the id when content is customized with slots', async () => {
+    const wrapper = mount(Item, {
+      props: { title: 'Ana Rivera', id: 'driver-42', clickable: true },
+      slots: { subtitle: '<span>Available · 10 minutes ago</span>' },
+    })
+
+    await wrapper.trigger('click')
+
+    expect(wrapper.emitted('click')?.[0]).toEqual(['driver-42'])
+  })
+
+  it('calls the listener exactly once per activation', async () => {
+    const onClick = vi.fn()
+    const wrapper = mount(Item, { props: { title: 'Notification', id: 42, clickable: true, onClick } })
+
+    await wrapper.trigger('click')
+    await wrapper.trigger('click')
+
+    expect(wrapper.emitted('click')).toEqual([[42], [42]])
+    expect(onClick.mock.calls).toEqual([[42], [42]])
+  })
+
+  it('does not submit its parent form when clicked', async () => {
+    const onSubmit = vi.fn()
+    const host = defineComponent({
+      components: { Item },
+      setup: () => ({ onSubmit }),
+      template: '<form @submit.prevent="onSubmit"><Item title="Ana Rivera" clickable /></form>',
+    })
+    const wrapper = mount(host)
+
+    await wrapper.get('button').trigger('click')
+
+    expect(onSubmit).not.toHaveBeenCalled()
   })
 })
