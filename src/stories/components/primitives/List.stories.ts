@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { IconChevronRight } from '@tabler/icons-vue';
-import { ref } from 'vue';
+import { onScopeDispose, ref } from 'vue';
 import type { ItemId } from '../../../types/Item';
+import type { ListPagination } from '../../../types/List';
 import Item from '../../../components/Item.vue';
 import List from '../../../components/List.vue';
 
@@ -13,8 +14,12 @@ const meta: Meta<ListStoryArgs> = {
   tags: ['autodocs'],
   argTypes: {
     border: { control: 'boolean' },
+    pagination: { control: 'object' },
+    scrollDistance: { control: { type: 'number', min: 0, step: 10 } },
+    loading: { control: 'boolean' },
+    onRequest: { action: 'request', control: false },
   },
-  args: { border: false },
+  args: { border: false, scrollDistance: 50, loading: false },
   render: (args) => ({
     components: { List, Item },
     setup() {
@@ -138,5 +143,64 @@ export const DarkNotificationsList: Story = {
 export const ClickableNotificationsList: Story = notificationsStory(true);
 export const DarkClickableNotificationsList: Story = {
   ...ClickableNotificationsList,
+  decorators: Dark.decorators,
+};
+
+export const InfiniteScroll: Story = {
+  args: { border: true },
+  parameters: { controls: { exclude: ['pagination', 'loading'] } },
+  render: (args) => ({
+    components: { List, Item },
+    setup() {
+      const pageSize = 8;
+      const names = ['Ana Rivera', 'Luis Torres', 'Marta Garcia', 'Jose Lopez', 'Sofia Ruiz', 'Diego Perez', 'Elena Cruz', 'Carlos Vega'];
+      const createPage = (page: number) => names.map((title, index) => ({
+        id: (page - 1) * pageSize + index + 1,
+        title,
+        subtitle: `Driver #${(page - 1) * pageSize + index + 1} · Page ${page}`,
+      }));
+      const drivers = ref(createPage(1));
+      const pagination = ref<ListPagination>({ current_page: 1, last_page: 4 });
+      const loading = ref(false);
+      const requestedPages = ref<number[]>([]);
+      const lastClick = ref<ItemId>();
+      let timer: ReturnType<typeof setTimeout> | undefined;
+
+      const loadNextPage = (page: number) => {
+        if (loading.value || page !== pagination.value.current_page + 1) return;
+        loading.value = true;
+        requestedPages.value.push(page);
+        // Simulate an API response; the consuming app owns fetching and appending rows.
+        timer = setTimeout(() => {
+          drivers.value.push(...createPage(page));
+          pagination.value = { ...pagination.value, current_page: page };
+          loading.value = false;
+        }, 600);
+      };
+
+      onScopeDispose(() => clearTimeout(timer));
+      return { args, drivers, pagination, loading, requestedPages, lastClick, loadNextPage, IconChevronRight };
+    },
+    template: `
+      <div class="flex w-full max-w-sm flex-col gap-3">
+        <p class="text-sm text-gray-600 dark:text-gray-400">Scroll to load more · Distance: {{ args.scrollDistance }}px</p>
+        <List v-bind="args" :pagination="pagination" :loading="loading" class="max-h-80" aria-label="Paginated drivers" @request="loadNextPage">
+          <li v-for="driver in drivers" :key="driver.id">
+            <Item v-bind="driver" :icon="IconChevronRight" clickable @click="lastClick = $event" />
+          </li>
+        </List>
+        <p role="status" class="text-sm text-gray-600 dark:text-gray-400">
+          {{ loading ? 'Loading more drivers…' : pagination.current_page === pagination.last_page ? 'All drivers loaded' : 'Scroll for the next page' }}
+          · Page {{ pagination.current_page }} / {{ pagination.last_page }} · {{ drivers.length }} drivers
+        </p>
+        <pre class="whitespace-pre-wrap rounded-lg bg-gray-100 p-3 text-xs text-gray-900 dark:bg-gray-800 dark:text-white">Requested pages: {{ requestedPages.length ? requestedPages.join(' → ') : 'None yet' }}</pre>
+        <p v-if="lastClick !== undefined" class="text-xs text-gray-600 dark:text-gray-400">Clicked ID: {{ lastClick }}</p>
+      </div>
+    `,
+  }),
+};
+
+export const DarkInfiniteScroll: Story = {
+  ...InfiniteScroll,
   decorators: Dark.decorators,
 };
