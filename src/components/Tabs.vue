@@ -8,7 +8,7 @@
         :aria-label="label"
         class="relative flex"
         :class="variant === 'pills'
-          ? 'flex-wrap items-center gap-2'
+          ? 'pill-tab-list flex-wrap items-center gap-2'
           : 'w-full space-x-2 rounded-lg bg-gray-200 px-3 py-2 dark:bg-gray-800'"
       >
         <!-- Animated background slider -->
@@ -19,9 +19,18 @@
           :style="sliderStyle"
         ></div>
 
+        <div
+          v-if="variant === 'pills' && pillBounds"
+          data-tabs-indicator="pills"
+          aria-hidden="true"
+          class="pill-indicator pointer-events-none absolute left-0 top-0 rounded-xl bg-primary-600 transition-all duration-300 ease-in-out motion-reduce:transition-none"
+          :style="pillSliderStyle"
+        ></div>
+
         <!-- Tab buttons -->
         <button
           v-for="(tab, index) in tabs"
+          ref="tabButtons"
           :key="tab.id"
           :id="`${componentId}-tab-${index}`"
           type="button"
@@ -37,7 +46,7 @@
               ? 'cursor-not-allowed text-gray-400 dark:text-gray-600'
               : variant === 'pills'
                 ? activeTabIndex === index
-                  ? 'cursor-pointer bg-primary-600 text-white hover:bg-primary-700'
+                  ? ['cursor-pointer text-white', !pillBounds && 'bg-primary-600 hover:bg-primary-700']
                   : 'cursor-pointer text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white'
                 : activeTabIndex === index
                   ? 'cursor-pointer text-gray-900 dark:text-white'
@@ -87,7 +96,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, toRaw, useId } from 'vue';
+import { useResizeObserver } from '@vueuse/core';
+import { computed, onMounted, ref, toRaw, useId, watch } from 'vue';
 import type { Tab, TabsVariant } from '../types/Tabs';
 
 interface Props {
@@ -110,6 +120,8 @@ const emit = defineEmits<{
 
 const componentId = useId();
 const tabList = ref<HTMLDivElement | null>(null);
+const tabButtons = ref<HTMLButtonElement[]>([]);
+const pillBounds = ref<{ left: number; top: number; width: number; height: number } | null>(null);
 
 const activeTabIndex = computed({
   get: () => props.modelValue,
@@ -124,6 +136,50 @@ const sliderStyle = computed(() => ({
   left: `${1 + activeTabIndex.value * (98 / props.tabs.length)}%`,
   width: `${98 / props.tabs.length}%`,
 }));
+
+const pillSliderStyle = computed(() => pillBounds.value ? {
+  transform: `translate3d(${pillBounds.value.left}px, ${pillBounds.value.top}px, 0)`,
+  width: `${pillBounds.value.width}px`,
+  height: `${pillBounds.value.height}px`,
+} : {});
+
+function updatePillIndicator() {
+  if (props.variant !== 'pills' || !activeTab.value || activeTab.value.disabled) {
+    pillBounds.value = null;
+    return;
+  }
+
+  // Query DOM order: Vue does not guarantee the order of refs collected by v-for.
+  const button = tabList.value?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[activeTabIndex.value];
+  if (!button || !button.offsetWidth || !button.offsetHeight) {
+    pillBounds.value = null;
+    return;
+  }
+
+  const nextBounds = {
+    left: button.offsetLeft,
+    top: button.offsetTop,
+    width: button.offsetWidth,
+    height: button.offsetHeight,
+  };
+  const previous = pillBounds.value;
+  if (!previous || previous.left !== nextBounds.left || previous.top !== nextBounds.top
+    || previous.width !== nextBounds.width || previous.height !== nextBounds.height) {
+    pillBounds.value = nextBounds;
+  }
+}
+
+onMounted(updatePillIndicator);
+watch(
+  [activeTabIndex, () => props.variant, () => props.tabs.map(tab => [tab.id, tab.label, tab.icon, tab.disabled])],
+  updatePillIndicator,
+  { flush: 'post' },
+);
+useResizeObserver(
+  computed(() => props.variant === 'pills' ? [tabList.value, ...tabButtons.value] : []),
+  updatePillIndicator,
+  { box: 'border-box' },
+);
 
 function selectTab(index: number) {
   if (!props.tabs[index] || props.tabs[index].disabled) return;
@@ -163,6 +219,10 @@ function handleKeydown(event: KeyboardEvent, index: number) {
 </script>
 
 <style scoped>
+.pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
+  background-color: var(--ds-color-primary-700);
+}
+
 /* Tab content transition animations */
 .tab-content-enter-active,
 .tab-content-leave-active {

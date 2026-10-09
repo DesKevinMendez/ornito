@@ -111,6 +111,11 @@ export const InitiallySettings: Story = {
 export const Pills: Story = { args: { tabs: pillTabs, variant: 'pills' } };
 export const WithIcons: Story = { args: { tabs: iconTabs.slice(0, 3) } };
 export const PillsWithIcons: Story = { args: { tabs: iconTabs, variant: 'pills' } };
+export const WrappedPills: Story = {
+  ...PillsWithIcons,
+  args: { ...PillsWithIcons.args, modelValue: 3 },
+  decorators: [() => ({ template: '<div class="max-w-xs"><story /></div>' })],
+};
 export const DarkPills: Story = {
   ...Pills,
   decorators: [() => ({ template: '<div class="dark rounded-xl bg-gray-950 p-2"><story /></div>' })],

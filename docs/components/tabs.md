@@ -30,7 +30,10 @@ with `activeTab` and `activeTabIndex` slot props.
 
 `variant="pills"` renders individual rounded buttons without a shared track.
 The selected pill uses Ornito's primary theme tokens; inactive pills show a
-neutral hover background. Pills wrap when the available width is small.
+neutral hover background. The active background slides between pills with the
+same 300ms easing as the segmented variant, resizing to fit each label and icon.
+Pills wrap when the available width is small; the indicator follows the selected
+row and stays aligned when buttons or the container resize.
 
 ```vue
 <script setup lang="ts">
