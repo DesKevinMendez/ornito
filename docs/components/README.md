@@ -41,6 +41,8 @@ available variants for any enum-like prop.
 
 ## Data display
 
+- [Item](./item.md)
+- [List](./list.md)
 - [DataTable](./data-table.md) — `DataTable`, `TableHeader`, `TablePagination`, `ResultCount`, `TableSkeleton`
 - [UserAvatar](./user-avatar.md) — `UserAvatar`, `UserAvatars`
 

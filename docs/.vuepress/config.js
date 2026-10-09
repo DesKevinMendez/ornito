@@ -61,6 +61,8 @@ export default defineUserConfig({
             'tabs.md',
             'breadcrumb.md',
             'data-table.md',
+            'item.md',
+            'list.md',
             'user-avatar.md',
           ],
         },
