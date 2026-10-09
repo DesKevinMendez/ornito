@@ -1,0 +1,15 @@
+import { Meta, StoryObj } from '@storybook/vue3-vite';
+import { default as List } from '../../../components/List.vue';
+type ListStoryArgs = InstanceType<typeof List>['$props'];
+declare const meta: Meta<ListStoryArgs>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const WithBorder: Story;
+export declare const Dark: Story;
+export declare const NotificationsList: Story;
+export declare const DarkNotificationsList: Story;
+export declare const ClickableNotificationsList: Story;
+export declare const DarkClickableNotificationsList: Story;
+export declare const InfiniteScroll: Story;
+export declare const DarkInfiniteScroll: Story;

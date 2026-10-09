@@ -1,0 +1,16 @@
+import { Meta, StoryObj } from '@storybook/vue3-vite';
+import { default as Item } from '../../../components/Item.vue';
+type ItemStoryArgs = InstanceType<typeof Item>['$props'];
+declare const meta: Meta<ItemStoryArgs>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const WithImage: Story;
+export declare const WithBorder: Story;
+export declare const WithoutHover: Story;
+export declare const Clickable: Story;
+export declare const TitleOnly: Story;
+export declare const WithoutIcon: Story;
+export declare const LongContent: Story;
+export declare const CustomSlots: Story;
+export declare const Dark: Story;
