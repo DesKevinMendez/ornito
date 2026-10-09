@@ -1,8 +1,14 @@
 <template>
-  <div class="flex w-full items-center gap-3 rounded-lg bg-white px-4 py-3 dark:bg-gray-900">
+  <div
+    class="flex w-full items-center gap-3 rounded-lg bg-white px-4 py-3 dark:bg-gray-900"
+    :class="{
+      'border border-gray-200 dark:border-gray-700': border,
+      'transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-gray-800': hoverable,
+    }"
+  >
     <div
       v-if="image || $slots.image"
-      class="h-12 w-12 shrink-0 overflow-hidden rounded-lg"
+      class="h-12 w-12 shrink-0 overflow-hidden rounded-full"
     >
       <slot name="image">
         <img :src="image" :alt="imageAlt" class="h-full w-full object-cover" />
@@ -41,7 +47,9 @@ interface Props {
   image?: string;
   imageAlt?: string;
   icon?: Component;
+  border?: boolean;
+  hoverable?: boolean;
 }
 
-const { title, subtitle, image, imageAlt = '', icon } = defineProps<Props>();
+const { title, subtitle, image, imageAlt = '', icon, border = false, hoverable = true } = defineProps<Props>();
 </script>

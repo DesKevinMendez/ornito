@@ -52,6 +52,77 @@ describe('Item', () => {
     expect(wrapper.get('img').attributes('alt')).toBe('')
   })
 
+  it('does not render a border by default or when explicitly disabled', () => {
+    const defaultItem = mount(Item, { props: { title: 'Ana Rivera' } })
+    const borderlessItem = mount(Item, { props: { title: 'Ana Rivera', border: false } })
+
+    for (const wrapper of [defaultItem, borderlessItem]) {
+      expect(wrapper.classes()).not.toContain('border')
+      expect(wrapper.classes()).not.toContain('border-gray-200')
+      expect(wrapper.classes()).not.toContain('dark:border-gray-700')
+    }
+  })
+
+  it('reactively toggles the light and dark border styles', async () => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', border: true } })
+
+    expect(wrapper.classes()).toContain('border')
+    expect(wrapper.classes()).toContain('border-gray-200')
+    expect(wrapper.classes()).toContain('dark:border-gray-700')
+
+    await wrapper.setProps({ border: false })
+
+    expect(wrapper.classes()).not.toContain('border')
+    expect(wrapper.classes()).not.toContain('border-gray-200')
+    expect(wrapper.classes()).not.toContain('dark:border-gray-700')
+  })
+
+  it.each([false, true])('includes light and dark hover styles with border=%s', (border) => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', border } })
+
+    expect(wrapper.classes()).toContain('hover:bg-gray-50')
+    expect(wrapper.classes()).toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).toContain('transition-colors')
+  })
+
+  it.each([false, true])('removes hover styles when hoverable is false with border=%s', (border) => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', border, hoverable: false } })
+
+    expect(wrapper.classes()).not.toContain('hover:bg-gray-50')
+    expect(wrapper.classes()).not.toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).not.toContain('transition-colors')
+    expect(wrapper.classes()).toContain('bg-white')
+    expect(wrapper.classes()).toContain('dark:bg-gray-900')
+  })
+
+  it('reactively enables and disables hover without changing the border', async () => {
+    const wrapper = mount(Item, { props: { title: 'Ana Rivera', border: true, hoverable: false } })
+
+    await wrapper.setProps({ hoverable: true })
+
+    expect(wrapper.classes()).toContain('hover:bg-gray-50')
+    expect(wrapper.classes()).toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).toContain('border')
+
+    await wrapper.setProps({ hoverable: false })
+
+    expect(wrapper.classes()).not.toContain('hover:bg-gray-50')
+    expect(wrapper.classes()).not.toContain('dark:hover:bg-gray-800')
+    expect(wrapper.classes()).toContain('border')
+  })
+
+  it('clips the image and custom image slot to a circular container', () => {
+    const imageItem = mount(Item, { props: { title: 'Ana Rivera', image: '/ana.jpg' } })
+    const slotItem = mount(Item, { props: { title: 'Ana Rivera' }, slots: { image: '<span>AR</span>' } })
+
+    for (const wrapper of [imageItem, slotItem]) {
+      const imageContainer = wrapper.element.children[0]
+      expect(imageContainer.classList.contains('rounded-full')).toBe(true)
+      expect(imageContainer.classList.contains('overflow-hidden')).toBe(true)
+      expect(imageContainer.classList.contains('rounded-lg')).toBe(false)
+    }
+  })
+
   it('updates and removes optional content when props change', async () => {
     const wrapper = mount(Item, { props: { title: 'Ana Rivera' } })
 
