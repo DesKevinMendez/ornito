@@ -48,7 +48,28 @@ describe('Tabs backwards compatibility and variants', () => {
     expect(buttons[1].classes()).toContain('cursor-pointer')
   })
 
-  it.each(['segmented', 'pills'] as const)('renders optional decorative icons before labels with variant=%s', (variant) => {
+  it('renders underline tabs with a baseline, primary selection and horizontal overflow', () => {
+    const wrapper = renderTabs({ props: { tabs, variant: 'underline' } })
+    const list = wrapper.get('[role="tablist"]')
+    const buttons = wrapper.findAll('[role="tab"]')
+    expect(list.classes()).toContain('border-b')
+    expect(list.classes()).toContain('dark:border-gray-800')
+    expect(list.classes()).toContain('min-w-max')
+    expect(list.classes()).not.toContain('flex-wrap')
+    expect(list.element.parentElement?.classList.contains('overflow-x-auto')).toBe(true)
+    expect(buttons[0].classes()).toContain('border-primary-600')
+    expect(buttons[0].classes()).toContain('dark:border-primary-400')
+    expect(buttons[0].classes()).toContain('text-primary-600')
+    expect(buttons[0].classes()).toContain('dark:text-primary-400')
+    expect(buttons[0].classes()).not.toContain('bg-primary-600')
+    expect(buttons[0].classes()).toContain('focus-visible:ring-inset')
+    expect(buttons[1].classes()).toContain('border-transparent')
+    expect(buttons[1].classes()).toContain('hover:bg-gray-50')
+    expect(buttons[1].classes()).toContain('dark:hover:bg-gray-900')
+    expect(buttons.every(button => button.classes().includes('whitespace-nowrap'))).toBe(true)
+  })
+
+  it.each(['segmented', 'pills', 'underline'] as const)('renders optional decorative icons before labels with variant=%s', (variant) => {
     const wrapper = renderTabs({ props: { tabs: [{ ...tabs[0], icon: TestIcon }, tabs[1]], variant } })
     const buttons = wrapper.findAll('[role="tab"]')
     const icon = buttons[0].get('svg')
@@ -100,7 +121,7 @@ describe('Tabs backwards compatibility and variants', () => {
     expect(wrapper.get('.tab-panel').text()).toBe('Activity content')
   })
 
-  it.each(['segmented', 'pills'] as const)('prevents disabled tab activation with variant=%s', async (variant) => {
+  it.each(['segmented', 'pills', 'underline'] as const)('prevents disabled tab activation with variant=%s', async (variant) => {
     const wrapper = renderTabs({ props: { tabs: [tabs[0], { ...tabs[1], disabled: true }], variant } })
     const disabled = wrapper.findAll('[role="tab"]')[1]
     expect(disabled.attributes('disabled')).toBeDefined()
@@ -134,7 +155,7 @@ describe('Tabs backwards compatibility and variants', () => {
     expect(new Set(ids).size).toBe(ids.length)
   })
 
-  it.each(['segmented', 'pills'] as const)('supports arrows, wraparound, Home/End and skips disabled tabs with variant=%s', async (variant) => {
+  it.each(['segmented', 'pills', 'underline'] as const)('supports arrows, wraparound, Home/End and skips disabled tabs with variant=%s', async (variant) => {
     const host = defineComponent({
       components: { Tabs },
       setup: () => ({ active: ref(0), variant, tabs: [tabs[0], { ...tabs[1], disabled: true }, tabs[2]] }),

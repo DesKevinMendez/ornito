@@ -36,7 +36,7 @@ const meta: Meta<TabsStoryArgs> = {
   argTypes: {
     tabs: { control: false },
     modelValue: { control: { type: 'number', min: 0, step: 1 } },
-    variant: { control: 'select', options: ['segmented', 'pills'] },
+    variant: { control: 'select', options: ['segmented', 'pills', 'underline'] },
     label: { control: 'text' },
   },
   args: {
@@ -122,3 +122,12 @@ export const DarkPills: Story = {
 };
 export const DarkWithIcons: Story = { ...WithIcons, decorators: DarkPills.decorators };
 export const DarkPillsWithIcons: Story = { ...PillsWithIcons, decorators: DarkPills.decorators };
+
+export const Underline: Story = { args: { tabs: pillTabs, variant: 'underline' } };
+export const UnderlineWithIcons: Story = { args: { tabs: iconTabs, variant: 'underline' } };
+export const ScrollingUnderline: Story = {
+  ...UnderlineWithIcons,
+  decorators: [() => ({ template: '<div class="max-w-xs"><story /></div>' })],
+};
+export const DarkUnderline: Story = { ...Underline, decorators: DarkPills.decorators };
+export const DarkUnderlineWithIcons: Story = { ...UnderlineWithIcons, decorators: DarkPills.decorators };

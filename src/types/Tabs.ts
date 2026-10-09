@@ -1,6 +1,6 @@
 import type { Component } from 'vue';
 
-export type TabsVariant = 'segmented' | 'pills';
+export type TabsVariant = 'segmented' | 'pills' | 'underline';
 
 export interface Tab {
   id: string;

@@ -1,15 +1,15 @@
 <template>
   <div class="space-y-4">
     <!-- Tab Navigation -->
-    <div :class="variant === 'pills' ? 'flex items-center' : 'h-16 flex items-center transition-transform duration-300'">
+    <div :class="variant === 'segmented'
+      ? 'h-16 flex items-center transition-transform duration-300'
+      : ['flex items-center', variant === 'underline' && 'overflow-x-auto']">
       <div
         ref="tabList"
         role="tablist"
         :aria-label="label"
         class="relative flex"
-        :class="variant === 'pills'
-          ? 'pill-tab-list flex-wrap items-center gap-2'
-          : 'w-full space-x-2 rounded-lg bg-gray-200 px-3 py-2 dark:bg-gray-800'"
+        :class="tabListClasses"
       >
         <!-- Animated background slider -->
         <div
@@ -20,11 +20,12 @@
         ></div>
 
         <div
-          v-if="variant === 'pills' && pillBounds"
-          data-tabs-indicator="pills"
+          v-if="variant !== 'segmented' && indicatorBounds"
+          :data-tabs-indicator="variant"
           aria-hidden="true"
-          class="pill-indicator pointer-events-none absolute left-0 top-0 rounded-xl bg-primary-600 transition-all duration-300 ease-in-out motion-reduce:transition-none"
-          :style="pillSliderStyle"
+          class="pointer-events-none absolute left-0 top-0 bg-primary-600 transition-all duration-300 ease-in-out motion-reduce:transition-none"
+          :class="variant === 'pills' ? 'pill-indicator rounded-xl' : 'rounded-full dark:bg-primary-400'"
+          :style="measuredIndicatorStyle"
         ></div>
 
         <!-- Tab buttons -->
@@ -40,18 +41,7 @@
           :disabled="tab.disabled"
           :tabindex="index === focusableTabIndex && !tab.disabled ? 0 : -1"
           class="relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 motion-reduce:transition-none dark:focus-visible:ring-offset-gray-950"
-          :class="[
-            variant === 'pills' ? 'shrink-0 rounded-xl px-4 py-2.5' : 'flex-1 rounded-lg px-3 py-2',
-            tab.disabled
-              ? 'cursor-not-allowed text-gray-400 dark:text-gray-600'
-              : variant === 'pills'
-                ? activeTabIndex === index
-                  ? ['cursor-pointer text-white', !pillBounds && 'bg-primary-600 hover:bg-primary-700']
-                  : 'cursor-pointer text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white'
-                : activeTabIndex === index
-                  ? 'cursor-pointer text-gray-900 dark:text-white'
-                  : 'cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300',
-          ]"
+          :class="[tabButtonClasses, tabStateClasses(tab, index)]"
           @click="selectTab(index)"
           @keydown="handleKeydown($event, index)"
         >
@@ -121,7 +111,18 @@ const emit = defineEmits<{
 const componentId = useId();
 const tabList = ref<HTMLDivElement | null>(null);
 const tabButtons = ref<HTMLButtonElement[]>([]);
-const pillBounds = ref<{ left: number; top: number; width: number; height: number } | null>(null);
+const indicatorBounds = ref<{ left: number; top: number; width: number; height: number } | null>(null);
+
+const tabListClasses = computed(() => ({
+  segmented: 'w-full space-x-2 rounded-lg bg-gray-200 px-3 py-2 dark:bg-gray-800',
+  pills: 'pill-tab-list flex-wrap items-center gap-2',
+  underline: 'w-full min-w-max items-center gap-2 border-b border-gray-200 dark:border-gray-800',
+})[props.variant]);
+const tabButtonClasses = computed(() => ({
+  segmented: 'flex-1 rounded-lg px-3 py-2',
+  pills: 'shrink-0 rounded-xl px-4 py-2.5',
+  underline: '-mb-px shrink-0 whitespace-nowrap rounded-t-lg border-b-2 px-4 py-2.5 focus-visible:ring-inset',
+})[props.variant]);
 
 const activeTabIndex = computed({
   get: () => props.modelValue,
@@ -137,22 +138,43 @@ const sliderStyle = computed(() => ({
   width: `${98 / props.tabs.length}%`,
 }));
 
-const pillSliderStyle = computed(() => pillBounds.value ? {
-  transform: `translate3d(${pillBounds.value.left}px, ${pillBounds.value.top}px, 0)`,
-  width: `${pillBounds.value.width}px`,
-  height: `${pillBounds.value.height}px`,
+const measuredIndicatorStyle = computed(() => indicatorBounds.value ? {
+  transform: `translate3d(${indicatorBounds.value.left}px, ${props.variant === 'underline'
+    ? indicatorBounds.value.top + indicatorBounds.value.height - 2
+    : indicatorBounds.value.top}px, 0)`,
+  width: `${indicatorBounds.value.width}px`,
+  height: `${props.variant === 'underline' ? 2 : indicatorBounds.value.height}px`,
 } : {});
 
-function updatePillIndicator() {
-  if (props.variant !== 'pills' || !activeTab.value || activeTab.value.disabled) {
-    pillBounds.value = null;
+function tabStateClasses(tab: Tab, index: number) {
+  const selected = activeTabIndex.value === index;
+  const underlineBorder = props.variant === 'underline'
+    ? selected && !tab.disabled && !indicatorBounds.value
+      ? 'border-primary-600 dark:border-primary-400'
+      : 'border-transparent'
+    : '';
+  if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-gray-400 dark:text-gray-600'];
+  if (props.variant === 'underline') return [underlineBorder, selected
+    ? 'cursor-pointer text-primary-600 dark:text-primary-400'
+    : 'cursor-pointer text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white'];
+  if (props.variant === 'pills') return selected
+    ? ['cursor-pointer text-white', !indicatorBounds.value && 'bg-primary-600 hover:bg-primary-700']
+    : 'cursor-pointer text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white';
+  return selected
+    ? 'cursor-pointer text-gray-900 dark:text-white'
+    : 'cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300';
+}
+
+function updateMeasuredIndicator() {
+  if (props.variant === 'segmented' || !activeTab.value || activeTab.value.disabled) {
+    indicatorBounds.value = null;
     return;
   }
 
   // Query DOM order: Vue does not guarantee the order of refs collected by v-for.
   const button = tabList.value?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[activeTabIndex.value];
   if (!button || !button.offsetWidth || !button.offsetHeight) {
-    pillBounds.value = null;
+    indicatorBounds.value = null;
     return;
   }
 
@@ -162,22 +184,22 @@ function updatePillIndicator() {
     width: button.offsetWidth,
     height: button.offsetHeight,
   };
-  const previous = pillBounds.value;
+  const previous = indicatorBounds.value;
   if (!previous || previous.left !== nextBounds.left || previous.top !== nextBounds.top
     || previous.width !== nextBounds.width || previous.height !== nextBounds.height) {
-    pillBounds.value = nextBounds;
+    indicatorBounds.value = nextBounds;
   }
 }
 
-onMounted(updatePillIndicator);
+onMounted(updateMeasuredIndicator);
 watch(
   [activeTabIndex, () => props.variant, () => props.tabs.map(tab => [tab.id, tab.label, tab.icon, tab.disabled])],
-  updatePillIndicator,
+  updateMeasuredIndicator,
   { flush: 'post' },
 );
 useResizeObserver(
-  computed(() => props.variant === 'pills' ? [tabList.value, ...tabButtons.value] : []),
-  updatePillIndicator,
+  computed(() => props.variant !== 'segmented' ? [tabList.value, ...tabButtons.value] : []),
+  updateMeasuredIndicator,
   { box: 'border-box' },
 );
 

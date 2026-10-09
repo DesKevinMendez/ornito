@@ -1,14 +1,14 @@
 # Tabs
 
-Animated tab switcher with the original segmented style and an optional
-`pills` variant. Both styles support optional leading icons, disabled tabs,
+Animated tab switcher with the original segmented style and optional
+`pills` and `underline` variants. All styles support optional leading icons, disabled tabs,
 light/dark mode and keyboard navigation.
 
 | Prop | Type | Required | Default |
 | --- | --- | --- | --- |
 | `modelValue` (`v-model`) | `number` | No | `0` — active tab index |
 | `tabs` | `Tab[]` | Yes | — |
-| `variant` | `'segmented' \| 'pills'` | No | `'segmented'` |
+| `variant` | `'segmented' \| 'pills' \| 'underline'` | No | `'segmented'` |
 | `label` | `string` — accessible name of the tab list | No | `'Tabs'` |
 
 ## Backwards compatibility
@@ -58,7 +58,7 @@ const tabs: Tab[] = [
 </template>
 ```
 
-Omit `icon` for text-only tabs. Icons work with both variants and are decorative:
+Omit `icon` for text-only tabs. Icons work with all variants and are decorative:
 the visible `label` remains the accessible name. `Tab` and `TabsVariant` are
 exported from `ornito` for typed consumers.
 
@@ -72,6 +72,24 @@ exported from `ornito` for typed consumers.
 Disabled tabs do not activate by click or keyboard and are skipped during
 navigation. Prefer an enabled tab as the initial `modelValue`.
 
+## Underline
+
+`variant="underline"` renders tabs on a neutral bottom border, without an active
+background. The selected label and its 2px underline use the primary theme
+tokens. A single indicator slides and resizes between tabs in 300ms, including
+tabs with icons. The underline stays aligned when labels or the container resize.
+
+```vue
+<Tabs v-model="activeTab" :tabs="tabs" variant="underline" label="Workspace sections">
+  <template #tab-0>Overview content</template>
+  <template #tab-1>Recent activity</template>
+  <template #tab-2>Settings content</template>
+</Tabs>
+```
+
+Underline tabs remain on one row and scroll horizontally on narrow containers.
+The same `v-model`, events, slots, disabled states and keyboard navigation apply.
+
 ## Keyboard and accessibility
 
 Tab lists, tabs and panels have linked ARIA roles and unique IDs per instance.
@@ -82,5 +100,6 @@ tab. These interactions follow the [WAI-ARIA tabs pattern](https://www.w3.org/WA
 Buttons use `type="button"` and do not submit parent forms. Keyboard focus is
 visible, and users who prefer reduced motion do not get the sliding transitions.
 An ancestor's `.dark` class activates the dark theme. Storybook includes
-`Pills`, `WithIcons`, `PillsWithIcons` and their dark variants, alongside the
+`Pills`, `WithIcons`, `PillsWithIcons`, `Underline`, `UnderlineWithIcons` and their
+dark variants, plus narrow-container examples, alongside the
 existing default and initially selected tab examples.
