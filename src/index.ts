@@ -56,6 +56,7 @@ export type { TableField } from './types/Table'
 export type { DropdownMenuItem } from './types/DropdownMenuItem'
 export type { ItemId } from './types/Item'
 export type { ListPagination } from './types/List'
+export type { Tab, TabsVariant } from './types/Tabs'
 
 export { useMobile, isMobile, isTablet, isDesktop } from './composables/useMobile'
 export { useTheme, initTheme } from './composables/useTheme'
