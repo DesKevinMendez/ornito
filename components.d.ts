@@ -30,6 +30,7 @@ declare module 'vue' {
     IconButton: typeof import('./src/components/IconButton.vue')['default']
     ImageLightbox: typeof import('./src/components/ImageLightbox.vue')['default']
     InfoItem: typeof import('./src/components/InfoItem.vue')['default']
+    Item: typeof import('./src/components/Item.vue')['default']
     LoadingSVG: typeof import('./src/components/LoadingSVG.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
