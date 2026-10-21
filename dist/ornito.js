@@ -11889,43 +11889,75 @@ var hf = {
 	},
 	emits: ["select"],
 	setup(e, { emit: t }) {
-		let r = t, i = F(!1), a = F(null);
-		de(a, () => {
-			i.value = !1;
-		});
-		function u(e) {
-			r("select", e), i.value = !1;
+		let i = t, a = F(!1), u = F(null), d = F(null), p = F({
+			top: "0px",
+			left: "0px"
+		}), m = F(!1);
+		de(u, () => {
+			a.value = !1;
+		}, { ignore: [d] }), q(a, async (e) => {
+			if (!e) {
+				m.value = !1, g();
+				return;
+			}
+			await S(), a.value && (h(), m.value = !0, window.addEventListener("resize", h), window.addEventListener("scroll", h, !0), window.addEventListener("keydown", _));
+		}), A(g);
+		function h() {
+			let t = u.value?.querySelector("button"), n = d.value;
+			if (!t || !n) return;
+			let r = t.getBoundingClientRect(), i = n.getBoundingClientRect(), a = e.position === "bottom-right" ? r.right - i.width : r.left;
+			a = Math.max(8, Math.min(a, window.innerWidth - i.width - 8));
+			let o = r.bottom + 4, s = o + i.height <= window.innerHeight - 8, c = r.top - i.height - 4 >= 8;
+			o = !s && c ? r.top - i.height - 4 : Math.max(8, Math.min(o, window.innerHeight - i.height - 8)), p.value = {
+				top: `${o}px`,
+				left: `${a}px`
+			};
 		}
-		return (t, r) => {
-			let d = et, p = Ot;
+		function g() {
+			window.removeEventListener("resize", h), window.removeEventListener("scroll", h, !0), window.removeEventListener("keydown", _);
+		}
+		function _(e) {
+			e.key !== "Escape" || !a.value || (a.value = !1, u.value?.querySelector("button")?.focus());
+		}
+		function v(e) {
+			i("select", e), a.value = !1;
+		}
+		return (t, i) => {
+			let h = et, g = Ot;
 			return j(), c("div", {
 				ref_key: "menuRef",
-				ref: a,
-				class: C(["relative", { "z-[9999]": U(i) }])
-			}, [f(d, {
+				ref: u,
+				class: C(["relative", { "z-[9999]": a.value }])
+			}, [f(h, {
 				icon: e.icon,
 				variant: e.buttonVariant,
 				"aria-label": e.ariaLabel,
-				onClick: r[0] ||= (e) => i.value = !U(i)
+				onClick: i[0] ||= (e) => a.value = !a.value
 			}, null, 8, [
 				"icon",
 				"variant",
 				"aria-label"
-			]), f(p, null, {
-				default: J(() => [U(i) ? (j(), c("div", {
+			]), (j(), o(r, { to: "body" }, [f(g, null, {
+				default: J(() => [a.value ? (j(), c("div", {
 					key: 0,
-					class: C(["absolute w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-10 py-1", e.position === "bottom-right" ? "right-0 top-full mt-1" : "left-0 top-full mt-1"])
+					ref_key: "dropdownRef",
+					ref: d,
+					style: T({
+						...p.value,
+						visibility: m.value ? "visible" : "hidden"
+					}),
+					class: "fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-gray-800"
 				}, [(j(!0), c(n, null, I(e.items, (e) => (j(), c("button", {
 					key: e.action,
 					type: "button",
-					class: C(["w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-700/30 cursor-pointer", [e.variant === "danger" ? "text-danger-600 dark:text-danger-400" : e.variant === "success" ? "text-success-600 dark:text-success-400" : "text-gray-700 dark:text-gray-200"]]),
-					onClick: (t) => u(e)
+					class: C(["flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 hover:bg-gray-100 dark:hover:bg-gray-700/30", [e.variant === "danger" ? "text-danger-600 dark:text-danger-400" : e.variant === "success" ? "text-success-600 dark:text-success-400" : "text-gray-700 dark:text-gray-200"]]),
+					onClick: (t) => v(e)
 				}, [e.icon ? (j(), o(z(e.icon), {
 					key: 0,
-					class: "w-4 h-4"
-				})) : s("", !0), l("span", null, B(e.label), 1)], 10, zf))), 128))], 2)) : s("", !0)]),
+					class: "h-4 w-4"
+				})) : s("", !0), l("span", null, B(e.label), 1)], 10, zf))), 128))], 4)) : s("", !0)]),
 				_: 1
-			})], 2);
+			})]))], 2);
 		};
 	}
 }), Vf = ["for"], Hf = { class: "relative" }, Uf = [
