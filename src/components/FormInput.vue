@@ -11,6 +11,7 @@
       :name="name"
       :label="label?.toLowerCase()"
       :rules="rules"
+      :model-value="modelValue"
       v-slot="{ field, errorMessage }"
     >
       <div>
@@ -122,7 +123,8 @@
           <input
             v-else
             :id="id"
-            v-model.lazy="internalValue"
+            :value="internalValue"
+            @input="(event) => handleMoneyInput(event, field)"
             type="text"
             :placeholder="placeholder"
             :autocomplete="autocomplete"
@@ -217,7 +219,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import { Field, ErrorMessage } from "vee-validate";
+import { Field, ErrorMessage, type FieldSlotProps } from "vee-validate";
 import { IconCurrencyDollar, IconEye, IconEyeOff, IconLoader2 } from "@tabler/icons-vue";
 import { Money3Directive, unformat } from "v-money3";
 import { vMaska } from "maska/vue";
@@ -347,6 +349,21 @@ function handleDatePickerUpdate(
   }
 
   field.onChange(val);
+}
+
+function handleMoneyInput(
+  event: Event,
+  field: FieldSlotProps["field"]
+): void {
+  const input = event.target as HTMLInputElement;
+  internalValue.value = input.value;
+
+  const unformattedValue = unformat(input.value, money.value.config);
+  const amount = Number.parseFloat(String(unformattedValue));
+  const cents = Number.isFinite(amount) ? Math.round(amount * 100) : 0;
+
+  modelValue.value = cents;
+  field.onChange(cents);
 }
 
 const money = computed(() => {

@@ -109,6 +109,18 @@ export const Password: Story = {
   },
 };
 
+export const MoneyInCents: Story = {
+  args: {
+    modelValue: 987,
+    label: 'Precio',
+    id: 'price',
+    name: 'price',
+    type: 'money',
+    rules: requiredRule,
+    help: '987 centavos equivalen a $9.87. Pulsa Validate input para enviar el valor inicial sin editarlo.',
+  },
+};
+
 export const Range: Story = {
   args: {
     modelValue: 40,
