@@ -1,8 +1,10 @@
 import type { ComponentPropsAndSlots, Meta, StoryObj } from '@storybook/vue3-vite';
+import { IconArchive, IconDotsVertical, IconPencil, IconTrash } from '@tabler/icons-vue';
 import { fn } from 'storybook/test';
 import { provide, ref, type Ref } from 'vue';
 
 import DataTable from '../../../components/DataTable.vue';
+import DropdownMenu from '../../../components/DropdownMenu.vue';
 import { useRequestKey, type UseRequestFactory } from '../../../composables/useDataRequest';
 import type { TableField } from '../../../types/Table';
 
@@ -19,6 +21,17 @@ const employees: Employee[] = [
   { id: 3, name: 'Sofía Herrera', department: 'Finance', status: 'Active' },
   { id: 4, name: 'Diego Cruz', department: 'Support', status: 'Active' },
   { id: 5, name: 'Lucía Mejía', department: 'Operations', status: 'On leave' },
+];
+
+const dropdownEmployees: Employee[] = [
+  { id: 1, name: 'Ana Rivera', department: 'Operations', status: 'Active' },
+  { id: 2, name: 'Marco Soto', department: 'Logistics', status: 'On leave' },
+];
+
+const rowActions = [
+  { action: 'edit', label: 'Edit item', icon: IconPencil },
+  { action: 'archive', label: 'Archive item', icon: IconArchive, variant: 'success' as const },
+  { action: 'delete', label: 'Delete item', icon: IconTrash, variant: 'danger' as const },
 ];
 
 const columns: TableField<Employee>[] = [
@@ -59,9 +72,68 @@ const mockRequest: UseRequestFactory = () => ({
   },
 });
 
+const dropdownItemsRequest: UseRequestFactory = () => ({
+  get<T>() {
+    return Promise.resolve({
+      data: ref({
+        data: dropdownEmployees,
+        pagination: {
+          total: dropdownEmployees.length,
+          per_page: 10,
+          current_page: 1,
+          from: 1,
+          to: dropdownEmployees.length,
+          last_page: 1,
+        },
+      }) as Ref<T | null>,
+    });
+  },
+});
+
 type DataTableStoryArgs = ComponentPropsAndSlots<typeof DataTable> & {
   onRowSelected: (row: Employee) => void;
 };
+
+const renderTable = (requestFactory: UseRequestFactory, withRowActions = false) =>
+  (args: DataTableStoryArgs) => ({
+    components: { DataTable, DropdownMenu },
+    setup() {
+      provide(useRequestKey, requestFactory);
+      const { onRowSelected, ...componentArgs } = args;
+      return {
+        componentArgs,
+        onRowSelected,
+        rowActions,
+        onActionSelected: fn(),
+        actionIcon: IconDotsVertical,
+      };
+    },
+    template: `
+      <div class="max-w-4xl p-4">
+        <DataTable v-bind="componentArgs" @row-selected="onRowSelected">
+          <template #status="{ row }">
+            <span
+              class="rounded-full px-2 py-1 text-xs font-medium"
+              :class="row.status === 'Active' ? 'bg-success-100 text-success-700' : 'bg-warning-100 text-warning-700'"
+            >
+              {{ row.status }}
+            </span>
+          </template>
+          ${withRowActions ? `
+          <template #actions>
+            <div @click.stop>
+              <DropdownMenu
+                :items="rowActions"
+                aria-label="Employee actions"
+                :icon="actionIcon"
+                @select="onActionSelected"
+              />
+            </div>
+          </template>` : ''}
+        </DataTable>
+      </div>
+    `,
+  });
 
 const meta = {
   title: 'Components/Data/DataTable',
@@ -82,28 +154,7 @@ const meta = {
     searchBy: ['name', 'department', 'status'],
     onRowSelected: fn(),
   },
-  render: (args) => ({
-    components: { DataTable },
-    setup() {
-      provide(useRequestKey, mockRequest);
-      const { onRowSelected, ...componentArgs } = args;
-      return { componentArgs, onRowSelected };
-    },
-    template: `
-      <div class="max-w-4xl p-4">
-        <DataTable v-bind="componentArgs" @row-selected="onRowSelected">
-          <template #status="{ row }">
-            <span
-              class="rounded-full px-2 py-1 text-xs font-medium"
-              :class="row.status === 'Active' ? 'bg-success-100 text-success-700' : 'bg-warning-100 text-warning-700'"
-            >
-              {{ row.status }}
-            </span>
-          </template>
-        </DataTable>
-      </div>
-    `,
-  }),
+  render: renderTable(mockRequest),
 } satisfies Meta<DataTableStoryArgs>;
 
 export default meta;
@@ -115,4 +166,11 @@ export const WithoutSearch: Story = {
   args: {
     showSearch: false,
   },
+};
+
+export const TwoItemsWithDropdown: Story = {
+  args: {
+    actionsLabel: 'Options',
+  },
+  render: renderTable(dropdownItemsRequest, true),
 };
