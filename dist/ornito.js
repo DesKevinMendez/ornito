@@ -11021,6 +11021,8 @@ var Ed = {
 	"autocomplete"
 ], Bd = [
 	"id",
+	"value",
+	"onInput",
 	"placeholder",
 	"autocomplete"
 ], Vd = {
@@ -11104,7 +11106,13 @@ var Ed = {
 		function _(e, t) {
 			(r.type !== "datetime" || g(String(e || "")) !== null) && t.onChange(e);
 		}
-		let v = a(() => ({ config: {
+		function v(e, t) {
+			let n = e.target;
+			d.value = n.value;
+			let r = xn(n.value, y.value.config), a = Number.parseFloat(String(r)), o = Number.isFinite(a) ? Math.round(a * 100) : 0;
+			i.value = o, t.onChange(o);
+		}
+		let y = a(() => ({ config: {
 			prefix: "",
 			suffix: "",
 			thousands: ",",
@@ -11132,7 +11140,7 @@ var Ed = {
 					i.value = 0;
 					return;
 				}
-				let t = xn(e, v.value.config), n = parseFloat(String(t));
+				let t = xn(e, y.value.config), n = parseFloat(String(t));
 				Number.isNaN(n) ? i.value = 0 : i.value = Math.round(n * 100);
 			}
 		}), q(() => p.value, (e) => {
@@ -11141,8 +11149,8 @@ var Ed = {
 				t !== null && (i.value = t);
 			}
 		});
-		let y = F(!1), b = a(() => r.type === "password"), S = a(() => r.type === "password" ? y.value ? "text" : "password" : r.type), w = a(() => r.type === "password" ? y.value ? Le : Re : null), T = () => {
-			y.value = !y.value;
+		let b = F(!1), S = a(() => r.type === "password"), w = a(() => r.type === "password" ? b.value ? "text" : "password" : r.type), T = a(() => r.type === "password" ? b.value ? Le : Re : null), E = () => {
+			b.value = !b.value;
 		};
 		return (a, p) => {
 			let h = qt;
@@ -11153,7 +11161,8 @@ var Ed = {
 			}, B(e.label), 9, Md)) : s("", !0), f(U(le), {
 				name: e.name,
 				label: e.label?.toLowerCase(),
-				rules: e.rules
+				rules: e.rules,
+				"model-value": i.value
 			}, {
 				default: J(({ field: a, errorMessage: g }) => [l("div", null, [
 					e.url && e.searchBy ? (j(), o(h, {
@@ -11213,7 +11222,7 @@ var Ed = {
 								class: C([
 									"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500",
 									e.leftIcon ? "pl-10" : "pl-4",
-									e.rightIcon || b.value ? "pr-10" : "pr-4",
+									e.rightIcon || S.value ? "pr-10" : "pr-4",
 									g ? "border-danger-500 dark:border-danger-500" : "",
 									e.small ? "py-2" : "py-3"
 								]),
@@ -11253,22 +11262,18 @@ var Ed = {
 						])])) : e.type === "money" ? Y((j(), c("input", {
 							key: 3,
 							id: e.id,
-							"onUpdate:modelValue": p[2] ||= (e) => d.value = e,
+							value: d.value,
+							onInput: (e) => v(e, a),
 							type: "text",
 							placeholder: e.placeholder,
 							autocomplete: e.autocomplete,
 							class: C([
 								"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 pl-10",
-								e.rightIcon || b.value || e.type === "money" ? "pr-10" : "pr-4",
+								e.rightIcon || S.value || e.type === "money" ? "pr-10" : "pr-4",
 								g ? "border-danger-500 dark:border-danger-500" : "",
 								e.small ? "py-2" : "py-3"
 							])
-						}, null, 10, Bd)), [[
-							ne,
-							d.value,
-							void 0,
-							{ lazy: !0 }
-						], [U(t), v.value.config]]) : Y((j(), c("input", x({
+						}, null, 42, Bd)), [[U(t), y.value.config]]) : Y((j(), c("input", x({
 							key: 2,
 							id: e.id
 						}, a, {
@@ -11276,27 +11281,27 @@ var Ed = {
 							onInput: (e) => {
 								a.onChange(e), i.value = e.target.value;
 							},
-							type: S.value,
+							type: w.value,
 							placeholder: e.placeholder,
 							disabled: e.disabled,
 							autocomplete: e.autocomplete,
 							class: [
 								"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 disabled:cursor-not-allowed",
 								e.leftIcon ? "pl-10" : "pl-4",
-								e.rightIcon || b.value ? "pr-10" : "pr-4",
+								e.rightIcon || S.value ? "pr-10" : "pr-4",
 								g ? "border-danger-500 dark:border-danger-500" : "",
 								e.small ? "py-2" : "py-3"
 							]
 						}), null, 16, zd)), [[U($n), n.value]]),
 						e.type === "money" ? (j(), c("div", Vd, [(j(), o(z(U(Fe)), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
 						e.leftIcon ? (j(), c("div", Hd, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
-						r.loading ? (j(), c("div", Ud, [f(U(Be), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 animate-spin"]) }, null, 8, ["class"])])) : e.rightIcon && !b.value ? (j(), c("div", Wd, [(j(), o(z(e.rightIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
-						b.value ? (j(), c("button", {
+						r.loading ? (j(), c("div", Ud, [f(U(Be), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 animate-spin"]) }, null, 8, ["class"])])) : e.rightIcon && !S.value ? (j(), c("div", Wd, [(j(), o(z(e.rightIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
+						S.value ? (j(), c("button", {
 							key: 8,
 							type: "button",
-							onClick: T,
+							onClick: E,
 							class: "absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer transition-colors duration-200"
-						}, [(j(), o(z(w.value), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0)
+						}, [(j(), o(z(T.value), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0)
 					])),
 					f(U(ce), {
 						name: e.name,
@@ -11308,7 +11313,8 @@ var Ed = {
 			}, 8, [
 				"name",
 				"label",
-				"rules"
+				"rules",
+				"model-value"
 			])]);
 		};
 	}
