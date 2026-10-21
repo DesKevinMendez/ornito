@@ -86,6 +86,7 @@ watch(isOpen, async (open) => {
   isPositioned.value = true;
   window.addEventListener("resize", updateDropdownPosition);
   window.addEventListener("scroll", updateDropdownPosition, true);
+  window.addEventListener("keydown", handleKeydown);
 });
 
 onUnmounted(stopPositionTracking);
@@ -126,6 +127,14 @@ function updateDropdownPosition() {
 function stopPositionTracking() {
   window.removeEventListener("resize", updateDropdownPosition);
   window.removeEventListener("scroll", updateDropdownPosition, true);
+  window.removeEventListener("keydown", handleKeydown);
+}
+
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key !== "Escape" || !isOpen.value) return;
+
+  isOpen.value = false;
+  menuRef.value?.querySelector("button")?.focus();
 }
 
 function handleItemClick(item: MenuItem) {
