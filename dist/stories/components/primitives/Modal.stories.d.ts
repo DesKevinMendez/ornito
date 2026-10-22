@@ -12,11 +12,11 @@ declare const meta: {
             subtitle?: string;
             size?: "sm" | "md" | "lg" | "xl" | "2xl";
         }> & Readonly<{
-            onClose?: ((...args: any[]) => any) | undefined;
             "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+            onClose?: ((...args: any[]) => any) | undefined;
         }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-            close: (...args: any[]) => void;
             "update:open": (...args: any[]) => void;
+            close: (...args: any[]) => void;
         }, import('vue').PublicProps, {}, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, any, import('vue').ComponentProvideOptions, {
             P: {};
             B: {};
@@ -30,8 +30,8 @@ declare const meta: {
             subtitle?: string;
             size?: "sm" | "md" | "lg" | "xl" | "2xl";
         }> & Readonly<{
-            onClose?: ((...args: any[]) => any) | undefined;
             "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+            onClose?: ((...args: any[]) => any) | undefined;
         }>, {}, {}, {}, {}, {}>;
         __isFragment?: never;
         __isTeleport?: never;
@@ -42,11 +42,11 @@ declare const meta: {
         subtitle?: string;
         size?: "sm" | "md" | "lg" | "xl" | "2xl";
     }> & Readonly<{
-        onClose?: ((...args: any[]) => any) | undefined;
         "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+        onClose?: ((...args: any[]) => any) | undefined;
     }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-        close: (...args: any[]) => void;
         "update:open": (...args: any[]) => void;
+        close: (...args: any[]) => void;
     }, string, {}, {}, string, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, import('vue').ComponentProvideOptions> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
         $slots: {
             default?: (props: {}) => any;
@@ -87,11 +87,11 @@ declare const meta: {
                     subtitle?: string;
                     size?: "sm" | "md" | "lg" | "xl" | "2xl";
                 }> & Readonly<{
-                    onClose?: ((...args: any[]) => any) | undefined;
                     "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+                    onClose?: ((...args: any[]) => any) | undefined;
                 }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-                    close: (...args: any[]) => void;
                     "update:open": (...args: any[]) => void;
+                    close: (...args: any[]) => void;
                 }, import('vue').PublicProps, {}, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, any, import('vue').ComponentProvideOptions, {
                     P: {};
                     B: {};
@@ -105,8 +105,8 @@ declare const meta: {
                     subtitle?: string;
                     size?: "sm" | "md" | "lg" | "xl" | "2xl";
                 }> & Readonly<{
-                    onClose?: ((...args: any[]) => any) | undefined;
                     "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+                    onClose?: ((...args: any[]) => any) | undefined;
                 }>, {}, {}, {}, {}, {}>;
                 __isFragment?: never;
                 __isTeleport?: never;
@@ -117,11 +117,11 @@ declare const meta: {
                 subtitle?: string;
                 size?: "sm" | "md" | "lg" | "xl" | "2xl";
             }> & Readonly<{
-                onClose?: ((...args: any[]) => any) | undefined;
                 "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+                onClose?: ((...args: any[]) => any) | undefined;
             }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-                close: (...args: any[]) => void;
                 "update:open": (...args: any[]) => void;
+                close: (...args: any[]) => void;
             }, string, {}, {}, string, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, import('vue').ComponentProvideOptions> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
                 $slots: {
                     default?: (props: {}) => any;
@@ -135,8 +135,8 @@ declare const meta: {
                 title?: string;
                 subtitle?: string;
                 size?: "sm" | "md" | "lg" | "xl" | "2xl";
-                onClose?: ((...args: any[]) => any) | undefined;
                 "onUpdate:open"?: ((...args: any[]) => any) | undefined;
+                onClose?: ((...args: any[]) => any) | undefined;
                 key?: PropertyKey;
                 ref?: import('vue').VNodeRef;
                 ref_for?: boolean;
