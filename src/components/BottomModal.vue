@@ -196,40 +196,28 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .bottom-modal__scrim {
-  background: rgb(0 0 0 / 32%);
+  background-color: rgb(0 0 0 / 32%);
   backdrop-filter: blur(8px);
   transition:
-    opacity 360ms cubic-bezier(0.2, 0, 0, 1),
+    background-color 360ms cubic-bezier(0.2, 0, 0, 1),
     backdrop-filter 360ms cubic-bezier(0.2, 0, 0, 1);
-}
-
-.bottom-modal-enter-active {
-  transition: opacity 360ms cubic-bezier(0.2, 0, 0, 1);
-}
-
-.bottom-modal-leave-active {
-  transition: opacity 280ms ease-in;
-}
-
-.bottom-modal-enter-from,
-.bottom-modal-leave-to {
-  opacity: 0;
 }
 
 .bottom-modal-enter-active .bottom-modal__scrim {
   transition:
-    opacity 360ms cubic-bezier(0.2, 0, 0, 1),
+    background-color 360ms cubic-bezier(0.2, 0, 0, 1),
     backdrop-filter 360ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .bottom-modal-leave-active .bottom-modal__scrim {
-  transition-duration: 280ms;
-  transition-timing-function: ease-in;
+  transition:
+    background-color 280ms ease-in,
+    backdrop-filter 280ms ease-in;
 }
 
 .bottom-modal-enter-from .bottom-modal__scrim,
 .bottom-modal-leave-to .bottom-modal__scrim {
-  opacity: 0;
+  background-color: transparent;
   backdrop-filter: blur(0);
 }
 
@@ -264,11 +252,11 @@ onBeforeUnmount(() => {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bottom-modal-enter-active,
-  .bottom-modal-leave-active,
   .bottom-modal-enter-active .bottom-modal__panel,
   .bottom-modal-leave-active .bottom-modal__panel,
-  .bottom-modal__scrim {
+  .bottom-modal__scrim,
+  .bottom-modal-enter-active .bottom-modal__scrim,
+  .bottom-modal-leave-active .bottom-modal__scrim {
     transition-duration: 1ms;
   }
 }
