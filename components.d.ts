@@ -12,6 +12,7 @@ declare module 'vue' {
     Badge: typeof import('./src/components/Badge.vue')['default']
     BaseButton: typeof import('./src/components/BaseButton.vue')['default']
     BaseButtonIcon: typeof import('./src/components/BaseButtonIcon.vue')['default']
+    BottomModal: typeof import('./src/components/BottomModal.vue')['default']
     Breadcrumb: typeof import('./src/components/Breadcrumb.vue')['default']
     Card: typeof import('./src/components/Card.vue')['default']
     CardPaginations: typeof import('./src/components/CardPaginations.vue')['default']
