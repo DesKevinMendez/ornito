@@ -18,7 +18,7 @@
       >
         <div class="bottom-modal__scrim absolute inset-0" aria-hidden="true" @click="requestClose" />
         <section
-          class="bottom-modal__panel relative z-10 flex w-full max-w-[640px] flex-col overflow-hidden rounded-t-3xl bg-[#f7f2fa] text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
+          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-[#f7f2fa] text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
         >
           <header class="shrink-0">
             <div class="flex justify-center py-[22px]" aria-hidden="true">
@@ -200,11 +200,29 @@ onBeforeUnmount(() => {
 <style scoped>
 .bottom-modal__scrim {
   background: rgb(0 0 0 / 32%);
+  backdrop-filter: blur(8px);
+  transition:
+    opacity 360ms cubic-bezier(0.2, 0, 0, 1),
+    backdrop-filter 360ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.bottom-modal-enter-active {
   transition: opacity 360ms cubic-bezier(0.2, 0, 0, 1);
 }
 
+.bottom-modal-leave-active {
+  transition: opacity 280ms ease-in;
+}
+
+.bottom-modal-enter-from,
+.bottom-modal-leave-to {
+  opacity: 0;
+}
+
 .bottom-modal-enter-active .bottom-modal__scrim {
-  transition: opacity 360ms cubic-bezier(0.2, 0, 0, 1);
+  transition:
+    opacity 360ms cubic-bezier(0.2, 0, 0, 1),
+    backdrop-filter 360ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .bottom-modal-leave-active .bottom-modal__scrim {
@@ -215,6 +233,7 @@ onBeforeUnmount(() => {
 .bottom-modal-enter-from .bottom-modal__scrim,
 .bottom-modal-leave-to .bottom-modal__scrim {
   opacity: 0;
+  backdrop-filter: blur(0);
 }
 
 .bottom-modal__overlay {
@@ -242,17 +261,14 @@ onBeforeUnmount(() => {
 }
 
 @media (min-width: 641px) {
-  .bottom-modal__overlay {
-    padding-inline: 56px;
-  }
-
   .bottom-modal__panel {
-    width: min(100%, 640px);
     max-height: calc(100dvh - 56px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .bottom-modal-enter-active,
+  .bottom-modal-leave-active,
   .bottom-modal-enter-active .bottom-modal__panel,
   .bottom-modal-leave-active .bottom-modal__panel,
   .bottom-modal__scrim {
