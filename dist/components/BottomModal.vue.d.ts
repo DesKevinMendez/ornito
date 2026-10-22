@@ -3,11 +3,11 @@ type __VLS_Props = {
     title?: string;
     subtitle?: string;
 };
-declare var __VLS_13: {}, __VLS_15: {};
+declare var __VLS_15: {}, __VLS_17: {};
 type __VLS_Slots = {} & {
-    default?: (props: typeof __VLS_13) => any;
+    default?: (props: typeof __VLS_15) => any;
 } & {
-    footer?: (props: typeof __VLS_15) => any;
+    footer?: (props: typeof __VLS_17) => any;
 };
 declare const __VLS_base: import('vue').DefineComponent<__VLS_Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
     "update:open": (value: boolean) => any;

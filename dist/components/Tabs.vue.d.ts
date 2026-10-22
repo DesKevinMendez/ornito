@@ -13,11 +13,11 @@ type __VLS_Slots = {} & {
     [K in NonNullable<typeof __VLS_13>]?: (props: typeof __VLS_14) => any;
 };
 declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-    "update:modelValue": (value: number) => any;
     change: (tab: Tab, index: number) => any;
+    "update:modelValue": (value: number) => any;
 }, string, import('vue').PublicProps, Readonly<Props> & Readonly<{
-    "onUpdate:modelValue"?: ((value: number) => any) | undefined;
     onChange?: ((tab: Tab, index: number) => any) | undefined;
+    "onUpdate:modelValue"?: ((value: number) => any) | undefined;
 }>, {
     label: string;
     variant: TabsVariant;

@@ -478,15 +478,15 @@ var ye = Object.defineProperty, be = Object.getOwnPropertyDescriptor, xe = Objec
 			U(r)
 		]) }, [L(e.$slots, "default")], 2));
 	}
-}), st = ["aria-label"], ct = { class: "bottom-modal__panel flex max-h-[90dvh] w-full flex-col overflow-hidden rounded-t-3xl border-t border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-900" }, lt = { class: "shrink-0" }, ut = { class: "flex items-start justify-between gap-4 px-5 pb-4 pt-3" }, dt = { class: "min-w-0 flex-1" }, ft = {
+}), st = ["aria-label"], ct = { class: "bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-[#f7f2fa] text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]" }, lt = { class: "shrink-0" }, ut = { class: "flex items-start justify-between gap-4 px-5 pb-4 pt-3" }, dt = { class: "min-w-0 flex-1" }, ft = {
 	key: 0,
-	class: "text-lg font-semibold text-gray-900 dark:text-white"
+	class: "text-base font-medium text-[#1d1b20] dark:text-[#e6e1e5]"
 }, pt = {
 	key: 1,
-	class: "mt-1 text-sm text-gray-600 dark:text-gray-400"
-}, mt = { class: "min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-4" }, ht = {
+	class: "mt-1 text-sm text-[#49454f] dark:text-[#cac4d0]"
+}, mt = { class: "bottom-modal__content min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-4" }, ht = {
 	key: 0,
-	class: "shrink-0 border-t border-gray-200 px-5 py-4 dark:border-gray-700"
+	class: "shrink-0 border-t border-[#79747e]/30 px-5 py-4 dark:border-[#938f99]/30"
 }, gt = /*#__PURE__*/ Ye(/* @__PURE__ */ p({
 	__name: "BottomModal",
 	props: {
@@ -496,63 +496,104 @@ var ye = Object.defineProperty, be = Object.getOwnPropertyDescriptor, xe = Objec
 	},
 	emits: ["update:open", "close"],
 	setup(e, { emit: t }) {
-		let n = e, a = t, u = F(null);
-		function d() {
-			let e = u.value;
-			n.open && e && !e.open && e.showModal();
+		let n = e, u = t, d = F(null), p = typeof window < "u" && typeof window.matchMedia == "function" ? window.matchMedia("(prefers-reduced-motion: reduce)") : null, m = F(p?.matches ?? !1), h = a(() => m.value ? 1 : {
+			enter: 460,
+			leave: 320
+		}), g = [
+			"a[href]",
+			"area[href]",
+			"button:not([disabled])",
+			"input:not([disabled]):not([type=\"hidden\"])",
+			"select:not([disabled])",
+			"textarea:not([disabled])",
+			"[tabindex]:not([tabindex=\"-1\"])"
+		].join(","), _ = null, v = "", y = "", b = "", x = !1;
+		function S(e) {
+			m.value = e.matches;
 		}
-		function p() {
-			a("update:open", !1), a("close");
+		function C(e) {
+			return Array.from(e.querySelectorAll(g)).filter((e) => e.getClientRects().length > 0);
+		}
+		function w() {
+			let e = d.value;
+			if (!n.open || !e || x) return;
+			_ = document.activeElement instanceof HTMLElement ? document.activeElement : null, v = document.documentElement.style.overflow, y = document.body.style.overflow, b = document.body.style.paddingRight;
+			let t = window.innerWidth - document.documentElement.clientWidth;
+			if (t > 0) {
+				let e = Number.parseFloat(window.getComputedStyle(document.body).paddingRight) || 0;
+				document.body.style.paddingRight = `${e + t}px`;
+			}
+			document.documentElement.style.overflow = "hidden", document.body.style.overflow = "hidden", x = !0, (C(e)[0] ?? e).focus({ preventScroll: !0 });
+		}
+		function T() {
+			x && (document.documentElement.style.overflow = v, document.body.style.overflow = y, document.body.style.paddingRight = b, x = !1, _?.isConnected && _.focus({ preventScroll: !0 }), _ = null);
+		}
+		function D(e) {
+			let t = d.value;
+			if (!t) return;
+			if (e.key === "Escape") {
+				e.preventDefault(), k();
+				return;
+			}
+			if (e.key !== "Tab") return;
+			let n = C(t), r = n[0], i = n[n.length - 1];
+			!r || !i ? (e.preventDefault(), t.focus({ preventScroll: !0 })) : e.shiftKey && (document.activeElement === r || !t.contains(document.activeElement)) ? (e.preventDefault(), i.focus({ preventScroll: !0 })) : !e.shiftKey && (document.activeElement === i || !t.contains(document.activeElement)) && (e.preventDefault(), r.focus({ preventScroll: !0 }));
+		}
+		function k() {
+			u("update:open", !1), u("close");
 		}
 		return K(() => n.open, (e) => {
-			e && d();
-		}, { flush: "post" }), O(d), E(() => {
-			u.value?.open && u.value.close();
+			e && w();
+		}, { flush: "post" }), O(() => {
+			p?.addEventListener("change", S), w();
+		}), E(() => {
+			p?.removeEventListener("change", S), T();
 		}), (t, n) => (j(), o(r, { to: "body" }, [f(i, {
 			name: "bottom-modal",
-			appear: ""
+			duration: h.value,
+			appear: "",
+			onAfterLeave: T
 		}, {
-			default: q(() => [e.open ? (j(), c("dialog", {
+			default: q(() => [e.open ? (j(), c("div", {
 				key: 0,
-				ref_key: "dialogRef",
-				ref: u,
-				class: "fixed inset-0 z-[100] m-0 flex h-dvh w-full max-h-none max-w-none items-end justify-center overflow-hidden border-0 bg-transparent p-0 text-left focus:outline-none",
+				ref_key: "overlayRef",
+				ref: d,
+				class: "bottom-modal__overlay fixed inset-0 z-[100] flex h-dvh w-full items-end justify-center overflow-hidden text-left focus:outline-none",
+				role: "dialog",
+				"aria-modal": "true",
 				"aria-label": e.title || "Bottom modal",
-				onClick: oe(p, ["self"]),
-				onCancel: oe(p, ["prevent"])
-			}, [l("section", ct, [
-				l("header", lt, [
-					n[1] ||= l("div", {
-						class: "flex justify-center pt-3",
-						"aria-hidden": "true"
-					}, [l("span", { class: "h-1 w-10 rounded-full bg-gray-300 dark:bg-gray-600" })], -1),
-					l("div", ut, [l("div", dt, [e.title ? (j(), c("h2", ft, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", pt, B(e.subtitle), 1)) : s("", !0)]), l("button", {
-						class: "shrink-0 rounded-lg p-1 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200",
-						type: "button",
-						"aria-label": "Close",
-						onClick: p
-					}, [...n[0] ||= [l("svg", {
-						xmlns: "http://www.w3.org/2000/svg",
-						class: "h-5 w-5",
-						fill: "none",
-						viewBox: "0 0 24 24",
-						stroke: "currentColor",
-						"aria-hidden": "true"
-					}, [l("path", {
-						"stroke-linecap": "round",
-						"stroke-linejoin": "round",
-						"stroke-width": "2",
-						d: "M6 18L18 6M6 6l12 12"
-					})], -1)]])]),
-					n[2] ||= l("div", { class: "border-t border-gray-200 dark:border-gray-700" }, null, -1)
-				]),
+				tabindex: "-1",
+				onKeydown: D
+			}, [l("div", {
+				class: "bottom-modal__scrim absolute inset-0",
+				"aria-hidden": "true",
+				onClick: k
+			}), l("section", ct, [
+				l("header", lt, [l("div", ut, [l("div", dt, [e.title ? (j(), c("h2", ft, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", pt, B(e.subtitle), 1)) : s("", !0)]), l("button", {
+					class: "shrink-0 rounded-full p-2 text-[#49454f] hover:bg-black/5 hover:text-[#1d1b20] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#49454f] dark:text-[#cac4d0] dark:hover:bg-white/10 dark:hover:text-[#e6e1e5] dark:focus-visible:ring-[#cac4d0]",
+					type: "button",
+					"aria-label": "Close",
+					onClick: k
+				}, [...n[0] ||= [l("svg", {
+					xmlns: "http://www.w3.org/2000/svg",
+					class: "h-5 w-5",
+					fill: "none",
+					viewBox: "0 0 24 24",
+					stroke: "currentColor",
+					"aria-hidden": "true"
+				}, [l("path", {
+					"stroke-linecap": "round",
+					"stroke-linejoin": "round",
+					"stroke-width": "2",
+					d: "M6 18L18 6M6 6l12 12"
+				})], -1)]])])]),
 				l("div", mt, [L(t.$slots, "default", {}, void 0, !0)]),
 				t.$slots.footer ? (j(), c("footer", ht, [L(t.$slots, "footer", {}, void 0, !0)])) : s("", !0)
 			])], 40, st)) : s("", !0)]),
 			_: 3
-		})]));
+		}, 8, ["duration"])]));
 	}
-}), [["__scopeId", "data-v-ba4ac151"]]), _t = {
+}), [["__scopeId", "data-v-ce8e3a6e"]]), _t = {
 	key: 0,
 	class: "px-6 pt-5"
 }, vt = { class: "flex-1 min-w-0" }, yt = {
