@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm"
+    class="bg-white dark:bg-gray-900 rounded-xl border border-transparent dark:border-gray-700 shadow-sm"
     :class="{ 'overflow-hidden flex flex-col': noPadding }"
   >
     <div v-if="showHeader" class="px-6 pt-5">
