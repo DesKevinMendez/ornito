@@ -21,9 +21,6 @@
           class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-[#f7f2fa] text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
         >
           <header class="shrink-0">
-            <div class="flex justify-center py-[22px]" aria-hidden="true">
-              <span class="h-1 w-8 rounded-full bg-[#49454f] dark:bg-[#cac4d0]" />
-            </div>
             <div class="flex items-start justify-between gap-4 px-5 pb-4 pt-3">
               <div class="min-w-0 flex-1">
                 <h2 v-if="title" class="text-base font-medium text-[#1d1b20] dark:text-[#e6e1e5]">
