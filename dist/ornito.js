@@ -621,7 +621,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	},
 	setup(e) {
 		let t = te(), n = a(() => e.title || e.subtitle || t.headerButtons);
-		return (t, r) => (j(), c("div", { class: C(["bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm", { "overflow-hidden flex flex-col": e.noPadding }]) }, [U(n) ? (j(), c("div", gt, [l("div", { class: C(["flex items-start justify-between gap-4 pb-4 border-b border-gray-300 dark:border-gray-600", { "flex-col gap-3 sm:flex-row sm:items-start": e.colInMobile }]) }, [l("div", _t, [e.title ? (j(), c("h3", vt, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", yt, B(e.subtitle), 1)) : s("", !0)]), t.$slots.headerButtons ? (j(), c("div", bt, [L(t.$slots, "headerButtons")])) : s("", !0)], 2)])) : s("", !0), l("div", { class: C(e.noPadding ? "flex-1 flex flex-col" : "p-4") }, [L(t.$slots, "default")], 2)], 2));
+		return (t, r) => (j(), c("div", { class: C(["bg-white dark:bg-gray-900 rounded-xl border border-transparent dark:border-gray-700 shadow-sm", { "overflow-hidden flex flex-col": e.noPadding }]) }, [U(n) ? (j(), c("div", gt, [l("div", { class: C(["flex items-start justify-between gap-4 pb-4 border-b border-gray-300 dark:border-gray-600", { "flex-col gap-3 sm:flex-row sm:items-start": e.colInMobile }]) }, [l("div", _t, [e.title ? (j(), c("h3", vt, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", yt, B(e.subtitle), 1)) : s("", !0)]), t.$slots.headerButtons ? (j(), c("div", bt, [L(t.$slots, "headerButtons")])) : s("", !0)], 2)])) : s("", !0), l("div", { class: C(e.noPadding ? "flex-1 flex flex-col" : "p-4") }, [L(t.$slots, "default")], 2)], 2));
 	}
 }), St = {
 	key: 0,
