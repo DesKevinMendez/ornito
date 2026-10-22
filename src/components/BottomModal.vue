@@ -1,32 +1,40 @@
 <template>
   <Teleport to="body">
-    <Transition name="bottom-modal" appear>
-      <dialog
+    <Transition
+      name="bottom-modal"
+      :duration="transitionDuration"
+      appear
+      @after-leave="restoreModalState"
+    >
+      <div
         v-if="open"
-        ref="dialogRef"
-        class="fixed inset-0 z-[100] m-0 flex h-dvh w-full max-h-none max-w-none items-end justify-center overflow-hidden border-0 bg-transparent p-0 text-left focus:outline-none"
+        ref="overlayRef"
+        class="bottom-modal__overlay fixed inset-0 z-[100] flex h-dvh w-full items-end justify-center overflow-hidden text-left focus:outline-none"
+        role="dialog"
+        aria-modal="true"
         :aria-label="title || 'Bottom modal'"
-        @click.self="requestClose"
-        @cancel.prevent="requestClose"
+        tabindex="-1"
+        @keydown="trapFocus"
       >
+        <div class="bottom-modal__scrim absolute inset-0" aria-hidden="true" @click="requestClose" />
         <section
-          class="bottom-modal__panel flex max-h-[90dvh] w-full flex-col overflow-hidden rounded-t-3xl border-t border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-900"
+          class="bottom-modal__panel relative z-10 flex w-full max-w-[640px] flex-col overflow-hidden rounded-t-3xl bg-[#f7f2fa] text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
         >
           <header class="shrink-0">
-            <div class="flex justify-center pt-3" aria-hidden="true">
-              <span class="h-1 w-10 rounded-full bg-gray-300 dark:bg-gray-600" />
+            <div class="flex justify-center py-[22px]" aria-hidden="true">
+              <span class="h-1 w-8 rounded-full bg-[#49454f] dark:bg-[#cac4d0]" />
             </div>
             <div class="flex items-start justify-between gap-4 px-5 pb-4 pt-3">
               <div class="min-w-0 flex-1">
-                <h2 v-if="title" class="text-lg font-semibold text-gray-900 dark:text-white">
+                <h2 v-if="title" class="text-base font-medium text-[#1d1b20] dark:text-[#e6e1e5]">
                   {{ title }}
                 </h2>
-                <p v-if="subtitle" class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                <p v-if="subtitle" class="mt-1 text-sm text-[#49454f] dark:text-[#cac4d0]">
                   {{ subtitle }}
                 </p>
               </div>
               <button
-                class="shrink-0 rounded-lg p-1 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                class="shrink-0 rounded-full p-2 text-[#49454f] hover:bg-black/5 hover:text-[#1d1b20] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#49454f] dark:text-[#cac4d0] dark:hover:bg-white/10 dark:hover:text-[#e6e1e5] dark:focus-visible:ring-[#cac4d0]"
                 type="button"
                 aria-label="Close"
                 @click="requestClose"
@@ -36,24 +44,23 @@
                 </svg>
               </button>
             </div>
-            <div class="border-t border-gray-200 dark:border-gray-700" />
           </header>
 
-          <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-4">
+          <div class="bottom-modal__content min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-4">
             <slot />
           </div>
 
-          <footer v-if="$slots.footer" class="shrink-0 border-t border-gray-200 px-5 py-4 dark:border-gray-700">
+          <footer v-if="$slots.footer" class="shrink-0 border-t border-[#79747e]/30 px-5 py-4 dark:border-[#938f99]/30">
             <slot name="footer" />
           </footer>
         </section>
-      </dialog>
+      </div>
     </Transition>
   </Teleport>
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 const props = defineProps<{
   open: boolean;
@@ -66,12 +73,103 @@ const emit = defineEmits<{
   (event: 'close'): void;
 }>();
 
-const dialogRef = ref<HTMLDialogElement | null>(null);
+const overlayRef = ref<HTMLDivElement | null>(null);
+const motionPreference = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+  ? window.matchMedia('(prefers-reduced-motion: reduce)')
+  : null;
+const prefersReducedMotion = ref(motionPreference?.matches ?? false);
+const transitionDuration = computed(() =>
+  prefersReducedMotion.value ? 1 : { enter: 460, leave: 320 },
+);
+const focusableSelector = [
+  'a[href]',
+  'area[href]',
+  'button:not([disabled])',
+  'input:not([disabled]):not([type="hidden"])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',');
 
-function showDialog() {
-  const dialog = dialogRef.value;
-  if (props.open && dialog && !dialog.open) {
-    dialog.showModal();
+let previouslyFocusedElement: HTMLElement | null = null;
+let originalHtmlOverflow = '';
+let originalBodyOverflow = '';
+let originalBodyPaddingRight = '';
+let modalActive = false;
+
+function updateMotionPreference(event: MediaQueryListEvent) {
+  prefersReducedMotion.value = event.matches;
+}
+
+function getFocusableElements(overlay: HTMLDivElement) {
+  return Array.from(overlay.querySelectorAll<HTMLElement>(focusableSelector))
+    .filter((element) => element.getClientRects().length > 0);
+}
+
+function activateModal() {
+  const overlay = overlayRef.value;
+  if (!props.open || !overlay || modalActive) return;
+
+  previouslyFocusedElement = document.activeElement instanceof HTMLElement
+    ? document.activeElement
+    : null;
+  originalHtmlOverflow = document.documentElement.style.overflow;
+  originalBodyOverflow = document.body.style.overflow;
+  originalBodyPaddingRight = document.body.style.paddingRight;
+
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  if (scrollbarWidth > 0) {
+    const bodyPaddingRight = Number.parseFloat(window.getComputedStyle(document.body).paddingRight) || 0;
+    document.body.style.paddingRight = `${bodyPaddingRight + scrollbarWidth}px`;
+  }
+
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+  modalActive = true;
+
+  const initialFocus = getFocusableElements(overlay)[0];
+  (initialFocus ?? overlay).focus({ preventScroll: true });
+}
+
+function restoreModalState() {
+  if (!modalActive) return;
+
+  document.documentElement.style.overflow = originalHtmlOverflow;
+  document.body.style.overflow = originalBodyOverflow;
+  document.body.style.paddingRight = originalBodyPaddingRight;
+  modalActive = false;
+
+  if (previouslyFocusedElement?.isConnected) {
+    previouslyFocusedElement.focus({ preventScroll: true });
+  }
+  previouslyFocusedElement = null;
+}
+
+function trapFocus(event: KeyboardEvent) {
+  const overlay = overlayRef.value;
+  if (!overlay) return;
+
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    requestClose();
+    return;
+  }
+
+  if (event.key !== 'Tab') return;
+
+  const focusableElements = getFocusableElements(overlay);
+  const first = focusableElements[0];
+  const last = focusableElements[focusableElements.length - 1];
+
+  if (!first || !last) {
+    event.preventDefault();
+    overlay.focus({ preventScroll: true });
+  } else if (event.shiftKey && (document.activeElement === first || !overlay.contains(document.activeElement))) {
+    event.preventDefault();
+    last.focus({ preventScroll: true });
+  } else if (!event.shiftKey && (document.activeElement === last || !overlay.contains(document.activeElement))) {
+    event.preventDefault();
+    first.focus({ preventScroll: true });
   }
 }
 
@@ -83,79 +181,81 @@ function requestClose() {
 watch(
   () => props.open,
   (isOpen) => {
-    if (isOpen) showDialog();
+    if (isOpen) activateModal();
   },
   { flush: 'post' },
 );
 
-onMounted(showDialog);
+onMounted(() => {
+  motionPreference?.addEventListener('change', updateMotionPreference);
+  activateModal();
+});
 
 onBeforeUnmount(() => {
-  if (dialogRef.value?.open) {
-    dialogRef.value.close();
-  }
+  motionPreference?.removeEventListener('change', updateMotionPreference);
+  restoreModalState();
 });
 </script>
 
 <style scoped>
-dialog::backdrop {
-  background: rgb(0 0 0 / 38%);
-  backdrop-filter: blur(8px);
-  transition:
-    background-color 360ms cubic-bezier(0.2, 0, 0, 1),
-    backdrop-filter 360ms cubic-bezier(0.2, 0, 0, 1);
-}
-
-.bottom-modal-enter-from::backdrop,
-.bottom-modal-leave-to::backdrop {
-  background: transparent;
-  backdrop-filter: blur(0);
-}
-
-.bottom-modal-enter-active {
+.bottom-modal__scrim {
+  background: rgb(0 0 0 / 32%);
   transition: opacity 360ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-.bottom-modal-leave-active {
-  transition: opacity 280ms ease-in;
+.bottom-modal-enter-active .bottom-modal__scrim {
+  transition: opacity 360ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-.bottom-modal-leave-active::backdrop {
+.bottom-modal-leave-active .bottom-modal__scrim {
   transition-duration: 280ms;
   transition-timing-function: ease-in;
 }
 
-.bottom-modal__panel {
-  transform: translateY(0);
-}
-
-.bottom-modal-enter-from,
-.bottom-modal-leave-to {
+.bottom-modal-enter-from .bottom-modal__scrim,
+.bottom-modal-leave-to .bottom-modal__scrim {
   opacity: 0;
 }
 
+.bottom-modal__overlay {
+  isolation: isolate;
+}
+
+.bottom-modal__panel {
+  transform: translateY(0);
+  max-height: calc(100dvh - 72px);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+}
+
 .bottom-modal-enter-active .bottom-modal__panel {
-  transition: transform 360ms cubic-bezier(0.2, 0, 0, 1);
+  transition: transform 420ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .bottom-modal-leave-active .bottom-modal__panel {
   transition: transform 280ms cubic-bezier(0.4, 0, 1, 1);
 }
 
-.bottom-modal-enter-from .bottom-modal__panel {
-  transform: translateY(100%);
-}
-
+.bottom-modal-enter-from .bottom-modal__panel,
 .bottom-modal-leave-to .bottom-modal__panel {
   transform: translateY(100%);
 }
 
+@media (min-width: 641px) {
+  .bottom-modal__overlay {
+    padding-inline: 56px;
+  }
+
+  .bottom-modal__panel {
+    width: min(100%, 640px);
+    max-height: calc(100dvh - 56px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .bottom-modal-enter-active,
-  .bottom-modal-leave-active,
   .bottom-modal-enter-active .bottom-modal__panel,
   .bottom-modal-leave-active .bottom-modal__panel,
-  dialog::backdrop {
+  .bottom-modal__scrim {
     transition-duration: 1ms;
   }
 }
