@@ -36,7 +36,6 @@ declare const __VLS_base: import('vue').DefineComponent<__VLS_Props, {}, {}, {},
     "onRow-selected"?: ((...args: any[]) => any) | undefined;
     "onPagination-loaded"?: ((...args: any[]) => any) | undefined;
 }>, {
-    data: any[];
     actionsLabel: string;
     showSearch: boolean;
     searchPlaceholder: string;
