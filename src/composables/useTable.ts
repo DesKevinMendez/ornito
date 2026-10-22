@@ -1,16 +1,11 @@
 import { inject } from 'vue'
 import type { tApiPagination, tServerResponse } from '@/types/api'
-import { useRequestKey } from './useDataRequest'
+import { useRequestKey, type UseRequestFactory } from './useDataRequest'
 
 const refreshData = ref(false);
 export default function () {
-    const requestFactory = inject(useRequestKey);
-    if (!requestFactory) {
-        throw new Error(
-            'useTable: no request instance provided. Call app.provide(useRequestKey, useRequest) in the consuming app.'
-        );
-    }
-    const { get } = requestFactory();
+    const requestFactory = inject(useRequestKey, undefined as unknown as UseRequestFactory);
+    const get = requestFactory?.().get;
 
     const isLoading = ref(false);
     const error = ref<string | null>(null);
@@ -32,6 +27,11 @@ export default function () {
         searchBy?: string | string[]
     ) => {
         if (!url) return;
+
+        if (!get) {
+            error.value = 'useTable: no request instance provided. Call app.provide(useRequestKey, useRequest) in the consuming app.';
+            return;
+        }
 
         isLoading.value = true;
         error.value = null;

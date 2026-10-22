@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Controls Bar - Search on right, pagination on left -->
-    <div v-if="showSearch" class="mb-4 flex justify-between items-center">
+    <div v-if="showSearch && !isLocalData" class="mb-4 flex justify-between items-center">
       <!-- Pagination Dropdown - Left side -->
       <div class="flex items-center relative">
         <Dropdown
@@ -63,7 +63,7 @@
         <!-- Table Body - Normal State -->
         <tbody v-else class="bg-white dark:bg-gray-800/20 divide-y divide-gray-200 dark:divide-gray-700">
           <tr
-            v-for="(row, rowIndex) in internalData"
+            v-for="(row, rowIndex) in tableData"
             :key="rowIndex"
             class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200 cursor-pointer"
             @click="handleRowClick(row)"
@@ -142,7 +142,7 @@
       <!-- Normal State for Mobile -->
       <div
         v-else
-        v-for="(row, rowIndex) in internalData"
+        v-for="(row, rowIndex) in tableData"
         :key="rowIndex"
         class="bg-white dark:bg-gray-800/20 rounded-lg p-4 border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200"
         @click="handleRowClick(row)"
@@ -217,11 +217,12 @@
     </div>
 
     <ResultCount
-      :internal-pagination-server="internalPaginationServer"
-      :total-items="internalData.length"
+      :internal-pagination-server="resultCountPagination"
+      :total-items="tableData.length"
     />
 
     <TablePagination
+      v-if="!isLocalData"
       :internal-pagination-server="internalPaginationServer"
       @page-change="goToPage"
     />
@@ -275,7 +276,6 @@ const pageSizeOptions = [
 ];
 
 const props = withDefaults(defineProps<Props>(), {
-  data: () => [],
   showSearch: true,
   searchPlaceholder: "Buscar...",
   actionsLabel: "Actions",
@@ -286,6 +286,13 @@ const slots = useSlots();
 
 // Check if actions slot is being used
 const hasActionsSlot = computed(() => !!slots.actions);
+const isLocalData = computed(() => props.data !== undefined);
+const tableData = computed(() => props.data ?? internalData.value);
+const resultCountPagination = computed(() =>
+  isLocalData.value
+    ? { ...internalPaginationServer.value, total: tableData.value.length }
+    : internalPaginationServer.value
+);
 
 // Create a more specific mobile check for < 640px (sm breakpoint)
 const isSmallMobile = ref(false);
@@ -361,7 +368,7 @@ const useFixedLayout = computed(() => {
 
 // Function to fetch data from URL
 const fetchTableData = async () => {
-  if (!props.url) return;
+  if (!props.url || isLocalData.value) return;
   await fetchData(
     props.url,
     currentPage.value,
@@ -377,7 +384,7 @@ const fetchTableData = async () => {
 watch(
   () => props.url,
   () => {
-    if (props.url) {
+    if (props.url && !isLocalData.value) {
       fetchTableData();
     }
   },
@@ -387,7 +394,16 @@ watch(
 watch(
   () => [selectedPageSize.value, currentPage.value],
   () => {
-    if (props.url) {
+    if (props.url && !isLocalData.value) {
+      fetchTableData();
+    }
+  }
+);
+
+watch(
+  () => isLocalData.value,
+  (usingLocalData) => {
+    if (!usingLocalData && props.url) {
       fetchTableData();
     }
   }
@@ -397,7 +413,7 @@ watch(
 watchDebounced(
   () => searchQuery.value,
   async () => {
-    if (props.url && props.searchBy) {
+    if (!isLocalData.value && props.url && props.searchBy) {
       // Reset to first page when searching
       currentPage.value = 1;
 
@@ -416,7 +432,7 @@ watchDebounced(
 watch(
   () => refreshData.value,
   (newValue) => {
-    if (newValue && props.url) {
+    if (newValue && props.url && !isLocalData.value) {
       fetchTableData();
     }
   }

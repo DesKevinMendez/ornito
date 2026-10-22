@@ -2,21 +2,27 @@
 
 ## DataTable
 
-Table with client-side (`data`) or server-side (`url`) data, built-in
-search, sorting, and pagination. Purely presentational regarding column
-visibility — the parent must pre-filter `columns` before passing them (the
-table itself has no concept of permissions). Requires a request factory to
-be provided by the consuming app via `useRequestKey` when `url` is used.
-Emits `row-selected`, `pagination-loaded`.
+Responsive table with local array or server-side data. When `data` is passed,
+it is the reactive source for both desktop and mobile layouts. This mode does
+not require `url` or a request provider, and it does not make requests. If
+both `data` and `url` are passed, `data` takes precedence. Local mode displays
+all supplied rows and hides the server-side search, page-size, and pagination
+controls.
+
+When `data` is omitted, `url` enables server-side loading, search, and
+pagination. In that mode the consuming app must provide a request factory via
+`useRequestKey`. Column visibility is presentational: the parent must
+pre-filter `columns` before passing them. Emits `row-selected` and
+`pagination-loaded`.
 
 | Prop | Type | Required | Default |
 | --- | --- | --- | --- |
 | `columns` | `TableField<T>[]` (see below) | Yes | — |
-| `data` | `T[]` | No | — client-side mode; omit when using `url` |
-| `url` | `string` | No | — server-side mode; omit when using `data` |
-| `showSearch` | `boolean` | No | — |
-| `searchPlaceholder` | `string` | No | — |
-| `actionsLabel` | `string` | No | — header label for the actions column |
+| `data` | `T[]` | No | — reactive local rows; takes precedence over `url` |
+| `url` | `string` | No | — server-side mode when `data` is omitted |
+| `showSearch` | `boolean` | No | `true` — server-side search and page-size controls |
+| `searchPlaceholder` | `string` | No | `Buscar...` |
+| `actionsLabel` | `string` | No | `Actions` — header label for the actions column |
 | `searchBy` | `string[] \| string` | No | — field(s) sent as the search query param(s) in server-side mode |
 
 ### `TableField<T>`
@@ -32,6 +38,44 @@ Emits `row-selected`, `pagination-loaded`.
 | `searchable` | `boolean` | No |
 
 ```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+import type { TableField } from 'ornito'
+
+interface Vehicle {
+  id: number
+  name: string
+  status: string
+}
+
+const vehicles = ref<Vehicle[]>([
+  { id: 1, name: 'Civic', status: 'Available' },
+  { id: 2, name: 'Corolla', status: 'In service' },
+])
+
+const columns: TableField<Vehicle>[] = [
+  { label: 'Vehicle', key: 'name' },
+  { label: 'Code', key: 'id', format: (row) => `VH-${row.id}` },
+  { label: 'Status', key: 'status', slot: 'status' },
+]
+</script>
+
+<template>
+  <DataTable :columns="columns" :data="vehicles" :show-search="false">
+    <template #status="{ row }">
+      <span>{{ row.status }}</span>
+    </template>
+  </DataTable>
+</template>
+```
+
+`data` can be replaced or updated reactively; the table reflects those changes
+without a request. `format` and named slots work in both the desktop table and
+the mobile card layout.
+
+## Server-side data
+
+```vue
 <DataTable
   :columns="[
     { label: 'Name', key: 'name', sortable: true },
@@ -44,6 +88,16 @@ Emits `row-selected`, `pagination-loaded`.
     <Badge :variant="statusVariant(row.status)">{{ row.status }}</Badge>
   </template>
 </DataTable>
+```
+
+The local array example does not need `useRequestKey`. For server-side data,
+provide it as shown below:
+
+```ts
+import { provide } from 'vue'
+import { useRequestKey } from 'ornito'
+
+provide(useRequestKey, useRequest)
 ```
 
 ## useTable

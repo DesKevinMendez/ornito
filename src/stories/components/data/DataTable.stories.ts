@@ -40,6 +40,12 @@ const columns: TableField<Employee>[] = [
   { label: 'Status', key: 'status', slot: 'status' },
 ];
 
+const localDataColumns: TableField<Employee>[] = [
+  { label: 'Employee ID', key: 'id', format: (row) => `EMP-${row.id}` },
+  { label: 'Name', key: 'name', width: 220 },
+  { label: 'Status', key: 'status', slot: 'status' },
+];
+
 const mockRequest: UseRequestFactory = () => ({
   get<T>(url: string) {
     const request = new URL(url, window.location.origin);
@@ -94,11 +100,11 @@ type DataTableStoryArgs = ComponentPropsAndSlots<typeof DataTable> & {
   onRowSelected: (row: Employee) => void;
 };
 
-const renderTable = (requestFactory: UseRequestFactory, withRowActions = false) =>
+const renderTable = (requestFactory?: UseRequestFactory, withRowActions = false) =>
   (args: DataTableStoryArgs) => ({
     components: { DataTable, DropdownMenu },
     setup() {
-      provide(useRequestKey, requestFactory);
+      if (requestFactory) provide(useRequestKey, requestFactory);
       const { onRowSelected, ...componentArgs } = args;
       return {
         componentArgs,
@@ -161,6 +167,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const LocalData: Story = {
+  args: {
+    columns: localDataColumns,
+    data: employees,
+    url: undefined,
+    showSearch: false,
+    searchBy: undefined,
+  },
+  render: renderTable(),
+};
 
 export const WithoutSearch: Story = {
   args: {
