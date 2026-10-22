@@ -38,6 +38,7 @@ scrolls inside the sheet; an optional footer stays below it. Emits
 | `open` | `boolean` | Yes | — |
 | `title` | `string` | No | — |
 | `subtitle` | `string` | No | — |
+| `showFooterDivider` | `boolean` | No | `true` — controls the line between the body and footer |
 
 ```vue
 <script setup lang="ts">
@@ -54,6 +55,7 @@ const isOpen = ref(false)
     v-model:open="isOpen"
     title="Choose an option"
     subtitle="Select the action you want to take."
+    :show-footer-divider="false"
   >
     <p>Place the sheet content here.</p>
 

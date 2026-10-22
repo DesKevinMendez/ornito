@@ -18,10 +18,10 @@
       >
         <div class="bottom-modal__scrim absolute inset-0" aria-hidden="true" @click="requestClose" />
         <section
-          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-[#f7f2fa] text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
+          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-white text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
         >
           <header class="shrink-0">
-            <div class="flex items-start justify-between gap-4 px-5 pb-4 pt-3">
+            <div class="flex items-start justify-between gap-4 px-6 pb-5 pt-6">
               <div class="min-w-0 flex-1">
                 <h2 v-if="title" class="text-base font-medium text-[#1d1b20] dark:text-[#e6e1e5]">
                   {{ title }}
@@ -47,7 +47,11 @@
             <slot />
           </div>
 
-          <footer v-if="$slots.footer" class="shrink-0 border-t border-[#79747e]/30 px-5 py-4 dark:border-[#938f99]/30">
+          <footer
+            v-if="$slots.footer"
+            class="shrink-0 px-5 py-4"
+            :class="props.showFooterDivider && 'border-t border-[#79747e]/30 dark:border-[#938f99]/30'"
+          >
             <slot name="footer" />
           </footer>
         </section>
@@ -59,11 +63,14 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   open: boolean;
   title?: string;
   subtitle?: string;
-}>();
+  showFooterDivider?: boolean;
+}>(), {
+  showFooterDivider: true,
+});
 
 const emit = defineEmits<{
   (event: 'update:open', value: boolean): void;
