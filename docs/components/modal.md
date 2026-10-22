@@ -26,6 +26,50 @@ Content goes in the default slot. Emits `update:open`, `close`.
 </Modal>
 ```
 
+## BottomModal
+
+Android-style bottom sheet, teleported to `body`, using the native `<dialog>`
+element. It slides up from the bottom and blurs the page behind it. The body
+scrolls inside the sheet; an optional footer stays below it. Emits
+`update:open`, `close`.
+
+| Prop | Type | Required | Default |
+| --- | --- | --- | --- |
+| `open` | `boolean` | Yes | — |
+| `title` | `string` | No | — |
+| `subtitle` | `string` | No | — |
+
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+import { BottomModal } from 'ornito'
+
+const isOpen = ref(false)
+</script>
+
+<template>
+  <button type="button" @click="isOpen = true">Choose an option</button>
+
+  <BottomModal
+    v-model:open="isOpen"
+    title="Choose an option"
+    subtitle="Select the action you want to take."
+  >
+    <p>Place the sheet content here.</p>
+
+    <template #footer>
+      <button type="button" @click="isOpen = false">Cancel</button>
+      <button type="button" @click="isOpen = false">Continue</button>
+    </template>
+  </BottomModal>
+</template>
+```
+
+Clicking the backdrop, the close button or pressing `Escape` emits
+`update:open` with `false` and emits `close`. Use the `footer` slot for actions
+that should remain below the scrollable body. The sheet supports dark mode and
+is limited to 90% of the viewport height.
+
 ## ConfirmationModal
 
 Preset confirmation dialog requiring the user to type "Confirmar" before

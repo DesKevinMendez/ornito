@@ -12,7 +12,7 @@ available variants for any enum-like prop.
 
 - [Badge](./badge.md)
 - [Alerts](./alerts.md) — `Alert`, `WarningAlert`
-- [Modal](./modal.md) — `Modal`, `ConfirmationModal`
+- [Modal](./modal.md) — `Modal`, `BottomModal`, `ConfirmationModal`
 - [Snackbar](./snackbar.md) — `SnackBar`, `SnackBarItem`
 - [LoadingSVG](./loading-svg.md)
 - [ImageLightbox](./image-lightbox.md)
