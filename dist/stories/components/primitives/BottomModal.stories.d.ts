@@ -10,13 +10,16 @@ declare const meta: {
             open: boolean;
             title?: string;
             subtitle?: string;
+            showFooterDivider?: boolean;
         }> & Readonly<{
             "onUpdate:open"?: ((value: boolean) => any) | undefined;
             onClose?: (() => any) | undefined;
         }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
             "update:open": (value: boolean) => any;
             close: () => any;
-        }, import('vue').PublicProps, {}, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, any, import('vue').ComponentProvideOptions, {
+        }, import('vue').PublicProps, {
+            showFooterDivider: boolean;
+        }, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, any, import('vue').ComponentProvideOptions, {
             P: {};
             B: {};
             D: {};
@@ -27,10 +30,13 @@ declare const meta: {
             open: boolean;
             title?: string;
             subtitle?: string;
+            showFooterDivider?: boolean;
         }> & Readonly<{
             "onUpdate:open"?: ((value: boolean) => any) | undefined;
             onClose?: (() => any) | undefined;
-        }>, {}, {}, {}, {}, {}>;
+        }>, {}, {}, {}, {}, {
+            showFooterDivider: boolean;
+        }>;
         __isFragment?: never;
         __isTeleport?: never;
         __isSuspense?: never;
@@ -38,13 +44,16 @@ declare const meta: {
         open: boolean;
         title?: string;
         subtitle?: string;
+        showFooterDivider?: boolean;
     }> & Readonly<{
         "onUpdate:open"?: ((value: boolean) => any) | undefined;
         onClose?: (() => any) | undefined;
     }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
         "update:open": (value: boolean) => any;
         close: () => any;
-    }, string, {}, {}, string, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, import('vue').ComponentProvideOptions> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
+    }, string, {
+        showFooterDivider: boolean;
+    }, {}, string, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, import('vue').ComponentProvideOptions> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
         $slots: {
             default?: (props: {}) => any;
         } & {
@@ -62,6 +71,9 @@ declare const meta: {
         subtitle: {
             control: "text";
         };
+        showFooterDivider: {
+            control: "boolean";
+        };
         body: {
             control: "text";
         };
@@ -73,6 +85,7 @@ declare const meta: {
         open: true;
         title: string;
         subtitle: string;
+        showFooterDivider: true;
         body: string;
         onClose: import('storybook/test').Mock<(...args: any[]) => any>;
     };
@@ -83,13 +96,16 @@ declare const meta: {
                     open: boolean;
                     title?: string;
                     subtitle?: string;
+                    showFooterDivider?: boolean;
                 }> & Readonly<{
                     "onUpdate:open"?: ((value: boolean) => any) | undefined;
                     onClose?: (() => any) | undefined;
                 }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
                     "update:open": (value: boolean) => any;
                     close: () => any;
-                }, import('vue').PublicProps, {}, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, any, import('vue').ComponentProvideOptions, {
+                }, import('vue').PublicProps, {
+                    showFooterDivider: boolean;
+                }, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, any, import('vue').ComponentProvideOptions, {
                     P: {};
                     B: {};
                     D: {};
@@ -100,10 +116,13 @@ declare const meta: {
                     open: boolean;
                     title?: string;
                     subtitle?: string;
+                    showFooterDivider?: boolean;
                 }> & Readonly<{
                     "onUpdate:open"?: ((value: boolean) => any) | undefined;
                     onClose?: (() => any) | undefined;
-                }>, {}, {}, {}, {}, {}>;
+                }>, {}, {}, {}, {}, {
+                    showFooterDivider: boolean;
+                }>;
                 __isFragment?: never;
                 __isTeleport?: never;
                 __isSuspense?: never;
@@ -111,13 +130,16 @@ declare const meta: {
                 open: boolean;
                 title?: string;
                 subtitle?: string;
+                showFooterDivider?: boolean;
             }> & Readonly<{
                 "onUpdate:open"?: ((value: boolean) => any) | undefined;
                 onClose?: (() => any) | undefined;
             }>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
                 "update:open": (value: boolean) => any;
                 close: () => any;
-            }, string, {}, {}, string, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, import('vue').ComponentProvideOptions> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
+            }, string, {
+                showFooterDivider: boolean;
+            }, {}, string, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, import('vue').ComponentProvideOptions> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
                 $slots: {
                     default?: (props: {}) => any;
                 } & {
@@ -132,6 +154,7 @@ declare const meta: {
             componentArgs: {
                 title?: string;
                 subtitle?: string;
+                showFooterDivider?: boolean;
                 "onUpdate:open"?: ((value: boolean) => any) | undefined;
                 key?: PropertyKey;
                 ref?: import('vue').VNodeRef;
