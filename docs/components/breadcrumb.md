@@ -24,5 +24,5 @@ Navigation trail showing the current page's position in the hierarchy.
 Light and dark colors are independently configurable with the
 `--ds-color-breadcrumb-*` tokens for the separator, links, hover state, current
 page, and plain items. For example, override
-`--ds-color-breadcrumb-current-light` on `:root` and
-`--ds-color-breadcrumb-current-dark` under `.dark`.
+`--ds-color-breadcrumb-current-light` and
+`--ds-color-breadcrumb-current-dark`, both on `:root`.

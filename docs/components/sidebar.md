@@ -37,9 +37,7 @@ independently in the consuming app; the current colors remain the defaults.
   --ds-color-sidebar-bg-light: #f8fafc;
   --ds-color-sidebar-tab-bg-active-light: #ea580c;
   --ds-color-sidebar-collapse-bg-light: #e2e8f0;
-}
 
-.dark {
   --ds-color-sidebar-bg-dark: #111827;
   --ds-color-sidebar-tab-bg-active-dark: #f97316;
   --ds-color-sidebar-theme-toggle-bg-dark: #292524;

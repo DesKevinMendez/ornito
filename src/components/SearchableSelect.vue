@@ -29,10 +29,10 @@
         data-form-type="other"
         spellcheck="false"
         :class="[
-          'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
+          'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark',
           leftIcon ? 'pl-10' : 'pl-4',
           'pr-10',
-          errorMessage ? 'border-danger' : '',
+          errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
           props.small ? 'py-2' : 'py-3',
         ]"
         :disabled="disabled"
@@ -106,9 +106,9 @@
             @click="(e) => selectItem(item, e, handleChange)"
             class="rounded-lg p-3 border cursor-pointer transition-colors"
             :class="{
-              'border-primary-subtle bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
+              'border-primary-subtle-light dark:border-primary-subtle-dark bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
                 isItemSelected(item),
-              'bg-form-control-bg-light dark:bg-form-control-bg-dark border-default hover:bg-form-suggestion-hover-bg-light dark:hover:bg-form-suggestion-hover-bg-dark':
+              'bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-hover-bg-light dark:hover:bg-form-suggestion-hover-bg-dark':
                 !isItemSelected(item),
             }"
           >
@@ -233,7 +233,7 @@ const selectedItem = computed(() => {
 
 const dropdownClasses = computed(() => {
   const baseClasses =
-    "absolute w-full bg-form-suggestion-panel-bg-light dark:bg-form-suggestion-panel-bg-dark border border-default rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden";
+    "absolute w-full bg-form-suggestion-panel-bg-light dark:bg-form-suggestion-panel-bg-dark border border-default-light dark:border-default-dark rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden";
   return baseClasses;
 });
 

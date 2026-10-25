@@ -17,9 +17,9 @@
       <DropdownAnimation>
         <div
           v-if="isNotificationDropdownOpen && !isMobile"
-          class="absolute right-0 top-14 w-80 bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default dark:border-default/50 rounded-lg shadow-lg z-50"
+          class="absolute right-0 top-14 w-80 bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
         >
-          <div class="py-2 px-4 border-b border-default text-sm text-profile-notification-title-light dark:text-profile-notification-title-dark font-semibold">
+          <div class="py-2 px-4 border-b border-default-light dark:border-default-dark text-sm text-profile-notification-title-light dark:text-profile-notification-title-dark font-semibold">
             Notificaciones
           </div>
           <div class="max-h-96 overflow-y-auto">
@@ -27,7 +27,7 @@
           </div>
           <div
             v-if="unreadNotificationsCount > 0"
-            class="py-2 px-4 border-t border-default text-center"
+            class="py-2 px-4 border-t border-default-light dark:border-default-dark text-center"
           >
             <button
               @click="emit('mark-all-read')"
@@ -79,7 +79,7 @@
     <DropdownAnimation>
       <div
         v-if="isDropdownOpen"
-        class="absolute right-0 top-14 w-56 sm:w-full bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default dark:border-default/50 rounded-lg shadow-lg z-50"
+        class="absolute right-0 top-14 w-56 sm:w-full bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
       >
         <ul class="py-2">
           <DropdownItem

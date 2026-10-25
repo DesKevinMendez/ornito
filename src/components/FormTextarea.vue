@@ -23,8 +23,8 @@
             :rows="rows"
             :maxlength="maxLength"
             :class="[
-              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
-              errorMessage ? 'border-danger' : '',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark',
+              errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
               small ? 'py-2' : 'py-3'
             ]"
           ></textarea>

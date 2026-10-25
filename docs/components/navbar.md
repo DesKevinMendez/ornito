@@ -17,7 +17,7 @@ Top app bar with a mobile menu toggle and a `right` slot for actions
 ### CSS color variants
 
 The navbar surface and mobile menu button use paired light/dark variables.
-Override light values on `:root` and dark values under `.dark`.
+Override both the light and dark values on `:root`.
 
 | Part | Variables |
 | --- | --- |

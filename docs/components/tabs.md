@@ -101,9 +101,7 @@ the states they need:
   --ds-color-tabs-segmented-bg-light: #f1f5f9;
   --ds-color-tabs-pills-active-bg-light: #ea580c;
   --ds-color-tabs-underline-indicator-light: #ea580c;
-}
 
-.dark {
   --ds-color-tabs-segmented-bg-dark: #0f172a;
   --ds-color-tabs-pills-active-bg-dark: #f97316;
   --ds-color-tabs-underline-indicator-dark: #fb923c;

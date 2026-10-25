@@ -28,7 +28,7 @@ const meta = {
       return { args, handleClick };
     },
     template: `
-      <div class="max-w-xs rounded-xl border border-default bg-white p-1 shadow-sm dark:bg-gray-800">
+      <div class="max-w-xs rounded-xl border border-default-light dark:border-default-dark bg-white p-1 shadow-sm dark:bg-gray-800">
         <DropdownItem v-bind="args" @click="handleClick" />
       </div>
     `,

@@ -1,9 +1,9 @@
 <template>
   <ul
     ref="listElement"
-    class="m-0 w-full list-none divide-y divide-default rounded-xl bg-list-bg-light p-0 dark:bg-list-bg-dark [&>li>*]:rounded-none"
+    class="m-0 w-full list-none divide-y divide-default-light dark:divide-default-dark rounded-xl bg-list-bg-light p-0 dark:bg-list-bg-dark [&>li>*]:rounded-none"
     :class="{
-      'border border-default': border,
+      'border border-default-light dark:border-default-dark': border,
       'border-0': !border,
       'overflow-x-hidden overflow-y-auto': pagination,
       'overflow-hidden': !pagination,

@@ -5,7 +5,7 @@
     :type="clickable ? 'button' : undefined"
     class="flex w-full items-center gap-3 rounded-lg bg-item-bg-light px-4 py-3 text-left dark:bg-item-bg-dark"
     :class="{
-      'border border-default': border,
+      'border border-default-light dark:border-default-dark': border,
       'border-0': !border,
       'cursor-pointer transition-colors duration-150 hover:bg-item-hover-bg-light dark:hover:bg-item-hover-bg-dark': clickable || hoverable,
       '[font:inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500': clickable,

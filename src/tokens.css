@@ -311,33 +311,6 @@
     --ds-color-border-pink-light: var(--ds-color-pink-500);
     --ds-color-border-pink-dark: var(--ds-color-pink-500);
 
-    /* Mode-aware aliases for the existing semantic border utilities */
-    --ds-color-border-default: var(--ds-color-border-default-light);
-    --ds-color-border-input: var(--ds-color-border-input-light);
-    --ds-color-border-muted: var(--ds-color-border-muted-light);
-    --ds-color-border-strong: var(--ds-color-border-strong-light);
-    --ds-color-border-hover: var(--ds-color-border-hover-light);
-    --ds-color-border-tooltip: var(--ds-color-border-tooltip-light);
-    --ds-color-border-card: var(--ds-color-border-card-light);
-    --ds-color-border-divider: var(--ds-color-border-divider-light);
-    --ds-color-border-avatar: var(--ds-color-border-avatar-light);
-    --ds-color-border-primary: var(--ds-color-border-primary-light);
-    --ds-color-border-primary-active: var(--ds-color-border-primary-active-light);
-    --ds-color-border-primary-subtle: var(--ds-color-border-primary-subtle-light);
-    --ds-color-border-secondary: var(--ds-color-border-secondary-light);
-    --ds-color-border-secondary-subtle: var(--ds-color-border-secondary-subtle-light);
-    --ds-color-border-success: var(--ds-color-border-success-light);
-    --ds-color-border-success-subtle: var(--ds-color-border-success-subtle-light);
-    --ds-color-border-success-muted: var(--ds-color-border-success-muted-light);
-    --ds-color-border-warning: var(--ds-color-border-warning-light);
-    --ds-color-border-warning-subtle: var(--ds-color-border-warning-subtle-light);
-    --ds-color-border-warning-muted: var(--ds-color-border-warning-muted-light);
-    --ds-color-border-danger: var(--ds-color-border-danger-light);
-    --ds-color-border-danger-emphasis: var(--ds-color-border-danger-emphasis-light);
-    --ds-color-border-danger-subtle: var(--ds-color-border-danger-subtle-light);
-    --ds-color-border-danger-muted: var(--ds-color-border-danger-muted-light);
-    --ds-color-border-pink: var(--ds-color-border-pink-light);
-
     /* Sidebar colors - light and dark */
     --ds-color-sidebar-bg-light: var(--ds-color-white);
     --ds-color-sidebar-bg-dark: var(--ds-color-neutral-900);
@@ -645,8 +618,8 @@
     --ds-color-icon-button-gray-bg-hover-dark: var(--ds-color-neutral-600);
     --ds-color-icon-button-gray-text-light: var(--ds-color-white);
     --ds-color-icon-button-gray-text-dark: var(--ds-color-white);
-    --ds-color-icon-button-gray-outline-border-light: var(--ds-color-border-input);
-    --ds-color-icon-button-gray-outline-border-dark: var(--ds-color-border-input);
+    --ds-color-icon-button-gray-outline-border-light: var(--ds-color-border-input-light);
+    --ds-color-icon-button-gray-outline-border-dark: var(--ds-color-border-input-dark);
     --ds-color-icon-button-gray-outline-text-light: var(--ds-color-neutral-700);
     --ds-color-icon-button-gray-outline-text-dark: var(--ds-color-neutral-300);
     --ds-color-icon-button-gray-outline-bg-hover-light: var(--ds-color-neutral-100);
@@ -658,8 +631,8 @@
     --ds-color-icon-button-primary-bg-hover-dark: var(--ds-color-primary-600);
     --ds-color-icon-button-primary-text-light: var(--ds-color-white);
     --ds-color-icon-button-primary-text-dark: var(--ds-color-white);
-    --ds-color-icon-button-primary-outline-border-light: var(--ds-color-border-primary-subtle);
-    --ds-color-icon-button-primary-outline-border-dark: var(--ds-color-border-primary-subtle);
+    --ds-color-icon-button-primary-outline-border-light: var(--ds-color-border-primary-subtle-light);
+    --ds-color-icon-button-primary-outline-border-dark: var(--ds-color-border-primary-subtle-dark);
     --ds-color-icon-button-primary-outline-text-light: var(--ds-color-primary-600);
     --ds-color-icon-button-primary-outline-text-dark: var(--ds-color-primary-400);
     --ds-color-icon-button-primary-outline-bg-hover-light: var(--ds-color-primary-50);
@@ -671,8 +644,8 @@
     --ds-color-icon-button-secondary-bg-hover-dark: var(--ds-color-secondary-600);
     --ds-color-icon-button-secondary-text-light: var(--ds-color-white);
     --ds-color-icon-button-secondary-text-dark: var(--ds-color-white);
-    --ds-color-icon-button-secondary-outline-border-light: var(--ds-color-border-secondary);
-    --ds-color-icon-button-secondary-outline-border-dark: var(--ds-color-border-secondary);
+    --ds-color-icon-button-secondary-outline-border-light: var(--ds-color-border-secondary-light);
+    --ds-color-icon-button-secondary-outline-border-dark: var(--ds-color-border-secondary-dark);
     --ds-color-icon-button-secondary-outline-text-light: var(--ds-color-secondary-600);
     --ds-color-icon-button-secondary-outline-text-dark: var(--ds-color-secondary-400);
     --ds-color-icon-button-secondary-outline-bg-hover-light: var(--ds-color-secondary-50);
@@ -684,8 +657,8 @@
     --ds-color-icon-button-success-bg-hover-dark: var(--ds-color-success-600);
     --ds-color-icon-button-success-text-light: var(--ds-color-white);
     --ds-color-icon-button-success-text-dark: var(--ds-color-white);
-    --ds-color-icon-button-success-outline-border-light: var(--ds-color-border-success);
-    --ds-color-icon-button-success-outline-border-dark: var(--ds-color-border-success);
+    --ds-color-icon-button-success-outline-border-light: var(--ds-color-border-success-light);
+    --ds-color-icon-button-success-outline-border-dark: var(--ds-color-border-success-dark);
     --ds-color-icon-button-success-outline-text-light: var(--ds-color-success-600);
     --ds-color-icon-button-success-outline-text-dark: var(--ds-color-success-400);
     --ds-color-icon-button-success-outline-bg-hover-light: var(--ds-color-success-50);
@@ -697,8 +670,8 @@
     --ds-color-icon-button-danger-bg-hover-dark: color-mix(in oklab, var(--ds-color-error-900) 80%, transparent);
     --ds-color-icon-button-danger-text-light: var(--ds-color-error-700);
     --ds-color-icon-button-danger-text-dark: var(--ds-color-error-200);
-    --ds-color-icon-button-danger-outline-border-light: var(--ds-color-border-danger);
-    --ds-color-icon-button-danger-outline-border-dark: var(--ds-color-border-danger);
+    --ds-color-icon-button-danger-outline-border-light: var(--ds-color-border-danger-light);
+    --ds-color-icon-button-danger-outline-border-dark: var(--ds-color-border-danger-dark);
     --ds-color-icon-button-danger-outline-text-light: var(--ds-color-error-600);
     --ds-color-icon-button-danger-outline-text-dark: var(--ds-color-error-400);
     --ds-color-icon-button-danger-outline-bg-hover-light: var(--ds-color-error-50);
@@ -710,8 +683,8 @@
     --ds-color-icon-button-warning-bg-hover-dark: var(--ds-color-warning-600);
     --ds-color-icon-button-warning-text-light: var(--ds-color-white);
     --ds-color-icon-button-warning-text-dark: var(--ds-color-white);
-    --ds-color-icon-button-warning-outline-border-light: var(--ds-color-border-warning);
-    --ds-color-icon-button-warning-outline-border-dark: var(--ds-color-border-warning);
+    --ds-color-icon-button-warning-outline-border-light: var(--ds-color-border-warning-light);
+    --ds-color-icon-button-warning-outline-border-dark: var(--ds-color-border-warning-dark);
     --ds-color-icon-button-warning-outline-text-light: var(--ds-color-warning-600);
     --ds-color-icon-button-warning-outline-text-dark: var(--ds-color-warning-400);
     --ds-color-icon-button-warning-outline-bg-hover-light: var(--ds-color-warning-50);
@@ -723,8 +696,8 @@
     --ds-color-icon-button-pink-bg-hover-dark: var(--ds-color-pink-600);
     --ds-color-icon-button-pink-text-light: var(--ds-color-white);
     --ds-color-icon-button-pink-text-dark: var(--ds-color-white);
-    --ds-color-icon-button-pink-outline-border-light: var(--ds-color-border-pink);
-    --ds-color-icon-button-pink-outline-border-dark: var(--ds-color-border-pink);
+    --ds-color-icon-button-pink-outline-border-light: var(--ds-color-border-pink-light);
+    --ds-color-icon-button-pink-outline-border-dark: var(--ds-color-border-pink-dark);
     --ds-color-icon-button-pink-outline-text-light: var(--ds-color-pink-600);
     --ds-color-icon-button-pink-outline-text-dark: var(--ds-color-pink-400);
     --ds-color-icon-button-pink-outline-bg-hover-light: var(--ds-color-pink-50);
@@ -768,35 +741,9 @@
     --ds-color-loading-svg-light: var(--ds-color-neutral-900);
     --ds-color-loading-svg-dark: var(--ds-color-white);
 
-    /* Component-specific surfaces */
-    --ds-color-datepicker-dark-bg: var(--ds-color-neutral-900);
-}
-
-.dark {
-    /* Keep the existing semantic border utilities aligned with dark mode. */
-    --ds-color-border-default: var(--ds-color-border-default-dark);
-    --ds-color-border-input: var(--ds-color-border-input-dark);
-    --ds-color-border-muted: var(--ds-color-border-muted-dark);
-    --ds-color-border-strong: var(--ds-color-border-strong-dark);
-    --ds-color-border-hover: var(--ds-color-border-hover-dark);
-    --ds-color-border-tooltip: var(--ds-color-border-tooltip-dark);
-    --ds-color-border-card: var(--ds-color-border-card-dark);
-    --ds-color-border-divider: var(--ds-color-border-divider-dark);
-    --ds-color-border-avatar: var(--ds-color-border-avatar-dark);
-    --ds-color-border-primary: var(--ds-color-border-primary-dark);
-    --ds-color-border-primary-active: var(--ds-color-border-primary-active-dark);
-    --ds-color-border-primary-subtle: var(--ds-color-border-primary-subtle-dark);
-    --ds-color-border-secondary: var(--ds-color-border-secondary-dark);
-    --ds-color-border-secondary-subtle: var(--ds-color-border-secondary-subtle-dark);
-    --ds-color-border-success: var(--ds-color-border-success-dark);
-    --ds-color-border-success-subtle: var(--ds-color-border-success-subtle-dark);
-    --ds-color-border-success-muted: var(--ds-color-border-success-muted-dark);
-    --ds-color-border-warning: var(--ds-color-border-warning-dark);
-    --ds-color-border-warning-subtle: var(--ds-color-border-warning-subtle-dark);
-    --ds-color-border-warning-muted: var(--ds-color-border-warning-muted-dark);
-    --ds-color-border-danger: var(--ds-color-border-danger-dark);
-    --ds-color-border-danger-emphasis: var(--ds-color-border-danger-emphasis-dark);
-    --ds-color-border-danger-subtle: var(--ds-color-border-danger-subtle-dark);
-    --ds-color-border-danger-muted: var(--ds-color-border-danger-muted-dark);
-    --ds-color-border-pink: var(--ds-color-border-pink-dark);
+    /* Datepicker colors - light and dark */
+    --ds-color-datepicker-bg-light: var(--ds-color-white);
+    --ds-color-datepicker-bg-dark: var(--ds-color-neutral-900);
+    --ds-color-datepicker-primary-light: var(--ds-color-primary-600);
+    --ds-color-datepicker-primary-dark: var(--ds-color-primary-600);
 }

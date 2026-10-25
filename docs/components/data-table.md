@@ -189,7 +189,7 @@ theme; the defaults preserve the existing table appearance.
 | Footer | `--ds-color-table-footer-bg-light`, `--ds-color-table-footer-bg-dark`, `--ds-color-table-footer-text-light`, `--ds-color-table-footer-text-dark` |
 | Loading placeholders | `--ds-color-table-skeleton-placeholder-bg-{light|dark}` |
 
-Set light values on `:root` and dark values under `.dark`:
+Set light and dark values on `:root`:
 
 ```css
 :root {
@@ -198,9 +198,7 @@ Set light values on `:root` and dark values under `.dark`:
   --ds-color-table-body-bg-light: #fff;
   --ds-color-table-body-hover-bg-light: #f8fafc;
   --ds-color-table-footer-text-light: #475569;
-}
 
-.dark {
   --ds-color-table-header-bg-dark: #172554;
   --ds-color-table-header-text-dark: #dbeafe;
   --ds-color-table-body-bg-dark: #0f172a;

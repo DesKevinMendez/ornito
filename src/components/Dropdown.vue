@@ -11,7 +11,7 @@
       @click="toggleDropdown"
       class="backdrop-blur-sm focus:ring-0"
       :class="[
-        'bg-dropdown-trigger-bg-light dark:bg-dropdown-trigger-bg-dark border-dropdown-trigger-border-light dark:border-dropdown-trigger-border-dark hover:bg-dropdown-trigger-hover-bg-light dark:hover:bg-dropdown-trigger-hover-bg-dark focus:border-hover',
+        'bg-dropdown-trigger-bg-light dark:bg-dropdown-trigger-bg-dark border-dropdown-trigger-border-light dark:border-dropdown-trigger-border-dark hover:bg-dropdown-trigger-hover-bg-light dark:hover:bg-dropdown-trigger-hover-bg-dark focus:border-hover-light dark:focus:border-hover-dark',
         triggerVariant === 'outline' ? 'text-dropdown-trigger-text-light dark:text-dropdown-trigger-text-dark' : '',
       ]"
     >

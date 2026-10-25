@@ -32,7 +32,7 @@ Defaults preserve the current appearance.
 | Title | `--ds-color-card-title-{light|dark}` |
 | Subtitle | `--ds-color-card-subtitle-{light|dark}` |
 
-Set light values on `:root` and dark values under `.dark`.
+Set both the light and dark values on `:root`.
 
 ## CardPaginations
 

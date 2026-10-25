@@ -38,35 +38,35 @@ const typeClasses = computed(() => {
   switch (props.type) {
     case "warning":
       return {
-        border: "border-warning-subtle",
+        border: "border-warning-subtle-light dark:border-warning-subtle-dark",
         background: "bg-warning-50/85 dark:bg-warning-900/40",
         icon: "text-warning-700 dark:text-warning-100",
         text: "text-warning-700 dark:text-warning-100"
       };
     case "danger":
       return {
-        border: "border-danger-subtle",
+        border: "border-danger-subtle-light dark:border-danger-subtle-dark",
         background: "bg-danger-50/85 dark:bg-danger-900/40",
         icon: "text-danger-700 dark:text-danger-100",
         text: "text-danger-700 dark:text-danger-100"
       };
     case "info":
       return {
-        border: "border-secondary-subtle",
+        border: "border-secondary-subtle-light dark:border-secondary-subtle-dark",
         background: "bg-secondary-50/85 dark:bg-secondary-900/40",
         icon: "text-secondary-700 dark:text-secondary-100",
         text: "text-secondary-700 dark:text-secondary-100"
       };
     case "success":
       return {
-        border: "border-success-subtle",
+        border: "border-success-subtle-light dark:border-success-subtle-dark",
         background: "bg-success-50/85 dark:bg-success-900/40",
         icon: "text-success-700 dark:text-success-100",
         text: "text-success-700 dark:text-success-100"
       };
     default:
       return {
-        border: "border-warning-subtle",
+        border: "border-warning-subtle-light dark:border-warning-subtle-dark",
         background: "bg-warning-50/85 dark:bg-warning-900/40",
         icon: "text-warning-700 dark:text-warning-100",
         text: "text-warning-700 dark:text-warning-100"

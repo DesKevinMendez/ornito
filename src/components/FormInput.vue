@@ -70,10 +70,10 @@
                 @keypress="slotProps.onKeypress"
                 @paste="slotProps.onPaste"
                 :class="[
-                  'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
+                  'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark',
                   leftIcon ? 'pl-10' : 'pl-4',
                   rightIcon || isPasswordField ? 'pr-10' : 'pr-4',
-                  errorMessage ? 'border-danger' : '',
+                  errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
                   small ? 'py-2' : 'py-3',
                 ]"
                 :disabled="disabled"
@@ -117,10 +117,10 @@
             :disabled="disabled"
             :autocomplete="autocomplete"
             :class="[
-              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle disabled:cursor-not-allowed',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark disabled:cursor-not-allowed',
               leftIcon ? 'pl-10' : 'pl-4',
               rightIcon || isPasswordField ? 'pr-10' : 'pr-4',
-              errorMessage ? 'border-danger' : '',
+              errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
               small ? 'py-2' : 'py-3',
             ]"
           />
@@ -134,11 +134,11 @@
             :autocomplete="autocomplete"
             v-money3="money.config"
             :class="[
-              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle pl-10',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark pl-10',
               rightIcon || isPasswordField || type === 'money'
                 ? 'pr-10'
                 : 'pr-4',
-              errorMessage ? 'border-danger' : '',
+              errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
               small ? 'py-2' : 'py-3',
             ]"
           />
@@ -469,10 +469,11 @@ const togglePasswordVisibility = () => {
 
 <style global>
 .dp__theme_dark {
-  --dp-primary-color: var(--ds-color-primary-600);
-  --dp-background-color: var(--ds-color-datepicker-dark-bg);
+  --dp-primary-color: var(--ds-color-datepicker-primary-dark);
+  --dp-background-color: var(--ds-color-datepicker-bg-dark);
 }
 .dp__theme_light {
-  --dp-primary-color: var(--ds-color-primary-600);
+  --dp-primary-color: var(--ds-color-datepicker-primary-light);
+  --dp-background-color: var(--ds-color-datepicker-bg-light);
 }
 </style>

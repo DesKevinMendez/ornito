@@ -119,9 +119,7 @@ independently. `green`, `red`, and `yellow` use the same tokens as `success`,
   --ds-color-icon-button-primary-bg-light: var(--ds-color-secondary-600);
   --ds-color-icon-button-primary-bg-hover-light: var(--ds-color-secondary-500);
   --ds-color-icon-button-primary-outline-text-light: var(--ds-color-secondary-600);
-}
 
-.dark {
   --ds-color-icon-button-primary-bg-dark: var(--ds-color-secondary-700);
   --ds-color-icon-button-primary-bg-hover-dark: var(--ds-color-secondary-600);
   --ds-color-icon-button-primary-outline-text-dark: var(--ds-color-secondary-400);

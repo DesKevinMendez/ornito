@@ -50,7 +50,7 @@
           <footer
             v-if="$slots.footer"
             class="shrink-0 px-5 py-4"
-            :class="props.showFooterDivider && 'border-t border-divider'"
+            :class="props.showFooterDivider && 'border-t border-divider-light dark:border-divider-dark'"
           >
             <slot name="footer" />
           </footer>

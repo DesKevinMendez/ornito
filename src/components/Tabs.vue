@@ -118,7 +118,7 @@ const indicatorBounds = ref<{ left: number; top: number; width: number; height: 
 const tabListClasses = computed(() => ({
   segmented: 'w-full space-x-2 rounded-lg bg-tabs-segmented-bg-light px-3 py-2 dark:bg-tabs-segmented-bg-dark',
   pills: 'pill-tab-list flex-wrap items-center gap-2',
-  underline: 'w-full min-w-max items-center gap-2 border-b border-muted',
+  underline: 'w-full min-w-max items-center gap-2 border-b border-muted-light dark:border-muted-dark',
 })[props.variant]);
 const tabButtonClasses = computed(() => ({
   segmented: 'flex-1 rounded-lg px-3 py-2',
@@ -152,7 +152,7 @@ function tabStateClasses(tab: Tab, index: number) {
   const selected = activeTabIndex.value === index;
   const underlineBorder = props.variant === 'underline'
     ? selected && !tab.disabled && !indicatorBounds.value
-      ? 'border-primary-active'
+      ? 'border-primary-active-light dark:border-primary-active-dark'
       : 'border-transparent'
     : '';
   if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-tabs-disabled-light dark:text-tabs-disabled-dark'];
@@ -247,7 +247,7 @@ function handleKeydown(event: KeyboardEvent, index: number) {
   background-color: var(--ds-color-tabs-pills-active-bg-hover-light);
 }
 
-:global(.dark) .pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
+.dark .pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
   background-color: var(--ds-color-tabs-pills-active-bg-hover-dark);
 }
 

@@ -56,31 +56,31 @@ const meta: Meta<TabsStoryArgs> = {
       <div class="max-w-2xl p-4">
         <Tabs v-bind="args" v-model="modelValue">
           <template #tab-0>
-            <div class="rounded-lg border border-default p-4">
+            <div class="rounded-lg border border-default-light dark:border-default-dark p-4">
               <h3 class="font-semibold text-gray-900 dark:text-white">Overview</h3>
               <p class="mt-1 text-sm text-gray-500">A quick summary of the current workspace.</p>
             </div>
           </template>
           <template #tab-1>
-            <div class="rounded-lg border border-default p-4">
+            <div class="rounded-lg border border-default-light dark:border-default-dark p-4">
               <h3 class="font-semibold text-gray-900 dark:text-white">Recent activity</h3>
               <p class="mt-1 text-sm text-gray-500">No new activity has been recorded.</p>
             </div>
           </template>
           <template #tab-2>
-            <div class="rounded-lg border border-default p-4">
+            <div class="rounded-lg border border-default-light dark:border-default-dark p-4">
               <h3 class="font-semibold text-gray-900 dark:text-white">Settings</h3>
               <p class="mt-1 text-sm text-gray-500">Manage workspace preferences here.</p>
             </div>
           </template>
           <template #tab-3>
-            <div class="rounded-lg border border-default p-4">
+            <div class="rounded-lg border border-default-light dark:border-default-dark p-4">
               <h3 class="font-semibold text-gray-900 dark:text-white">Fourth tab</h3>
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Content for the fourth tab.</p>
             </div>
           </template>
           <template #tab-4>
-            <div class="rounded-lg border border-default p-4">
+            <div class="rounded-lg border border-default-light dark:border-default-dark p-4">
               <h3 class="font-semibold text-gray-900 dark:text-white">Fifth tab</h3>
             </div>
           </template>

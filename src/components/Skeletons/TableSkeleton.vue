@@ -1,5 +1,5 @@
 <template>
-    <tbody class="bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default animate-pulse">
+    <tbody class="bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default-light dark:divide-default-dark animate-pulse">
         <tr
             v-for="row in rows"
             :key="row"

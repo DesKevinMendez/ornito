@@ -30,7 +30,7 @@
           class="absolute right-3 top-1/2 transform -translate-y-1/2"
         >
           <div
-            class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-subtle"
+            class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-subtle-light dark:border-primary-subtle-dark"
           ></div>
         </div>
       </div>
@@ -39,7 +39,7 @@
     <!-- Desktop Table View -->
     <div v-if="!isSmallMobile" class="overflow-x-auto min-w-full">
       <table
-        class="min-w-full divide-y divide-default"
+        class="min-w-full divide-y divide-default-light dark:divide-default-dark"
         :style="{
           width: tableWidth,
           tableLayout: useFixedLayout ? 'fixed' : 'auto',
@@ -61,7 +61,7 @@
         />
 
         <!-- Table Body - Normal State -->
-        <tbody v-else class="bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default">
+        <tbody v-else class="bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default-light dark:divide-default-dark">
           <tr
             v-for="(row, rowIndex) in tableData"
             :key="rowIndex"
@@ -144,7 +144,7 @@
         v-else
         v-for="(row, rowIndex) in tableData"
         :key="rowIndex"
-        class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 border border-default cursor-pointer hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200"
+        class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 border border-default-light dark:border-default-dark cursor-pointer hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200"
         @click="handleRowClick(row)"
       >
         <div class="space-y-3">
@@ -155,7 +155,7 @@
             :class="[
               'flex justify-between items-start',
               columnIndex < props.columns.length - 1
-                ? 'pb-3 border-b border-default'
+                ? 'pb-3 border-b border-default-light dark:border-default-dark'
                 : '',
             ]"
           >
@@ -188,7 +188,7 @@
           <!-- Actions row for mobile -->
           <div
             v-if="hasActionsSlot"
-            class="flex justify-between items-center pt-3 border-t border-default"
+            class="flex justify-between items-center pt-3 border-t border-default-light dark:border-default-dark"
           >
             <span
               class="text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider"

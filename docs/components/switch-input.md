@@ -32,9 +32,7 @@ appearance by default.
   --ds-color-switch-input-track-on-light: #2563eb;
   --ds-color-switch-input-track-off-light: #cbd5e1;
   --ds-color-switch-input-thumb-light: #fff;
-}
 
-.dark {
   --ds-color-switch-input-label-dark: #bfdbfe;
   --ds-color-switch-input-track-on-dark: #3b82f6;
   --ds-color-switch-input-track-off-dark: #334155;

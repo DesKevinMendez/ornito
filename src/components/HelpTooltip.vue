@@ -27,7 +27,7 @@ const recalc = () => {
       :style="{ transform: `translateX(calc(-50% + ${offsetX}px))` }"
     >
       {{ tooltip }}
-      <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-border-tooltip" />
+      <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-help-tooltip-panel-bg-light dark:border-t-help-tooltip-panel-bg-dark" />
     </div>
   </div>
 </template>

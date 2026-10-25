@@ -10,8 +10,8 @@ system without rebuilding it.
 - `src/tokens.css` defines primitive palettes and semantic tokens as
   `--ds-color-*` variables (e.g. `--ds-color-primary-500: #6366f1;`), along
   with `--ds-font-family` for the shared typeface.
-- Semantic border tokens have explicit `-light` and `-dark` values. The
-  existing unsuffixed border utilities remain mode-aware through aliases.
+- Semantic border tokens have explicit `-light` and `-dark` values. Components
+  always pair them, e.g. `border-default-light dark:border-default-dark`.
 - Sidebar, `Tabs`, `DataTable`, `Dropdown`, form controls, `SwitchInput`,
   `Breadcrumb`, `InfoItem`, `LoadingSVG`, and dashboard component colors have
   paired `-light` and `-dark` tokens, so each mode can be configured
@@ -20,9 +20,9 @@ system without rebuilding it.
   `@theme inline`, so utilities like `.bg-primary-500` compile to
   `background-color: var(--ds-color-primary-500)` instead of a literal hex
   value. The shared font family is mapped to Tailwind's `font-sans` theme token.
-- Border utilities use the shorter semantic names, such as `.border-default`
-  and `.border-danger-subtle`, while resolving to `--ds-color-border-*` at
-  runtime.
+- Border utilities use the semantic role plus the mode, such as
+  `border-default-light` and `dark:border-danger-subtle-dark`, while resolving
+  to `--ds-color-border-*-{light|dark}` at runtime.
 
 Because the utilities reference the variable and not its value, changing
 `--ds-color-primary-500` anywhere above a component in the DOM changes what
@@ -45,9 +45,7 @@ of the variables below on `:root` (or any ancestor scope):
   --ds-color-sidebar-bg-light: #f8fafc;
   --ds-color-sidebar-tab-bg-active-light: #ea580c;
   --ds-color-tabs-pills-active-bg-light: #ea580c;
-}
 
-.dark {
   --ds-color-border-default-dark: #52525b;
   --ds-color-border-input-dark: #3f3f46;
   --ds-color-sidebar-bg-dark: #111827;
@@ -80,13 +78,15 @@ Adjust the relative path to match where your Tailwind CSS file lives.
 
 ### Per dark-mode override
 
-The package's `dark:` variant matches `.dark` on an ancestor
-(`@variant dark (&:is(.dark *));`), so scope overrides the same way:
+Dark mode has its own `-dark` tokens, read only through the `dark:` variant
+(`@variant dark (&:is(.dark *));`). Declare them on `:root` next to their
+`-light` pair; no `.dark` selector is needed:
 
 ```css
-.dark {
-  --ds-color-primary-500: #22c55e;
+:root {
+  --ds-color-border-default-light: #d4d4d8;
   --ds-color-border-default-dark: #52525b;
+  --ds-color-switch-input-track-on-dark: #22c55e;
 }
 ```
 
@@ -111,7 +111,7 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 | `pink` | 50–950 | `--ds-color-pink-50` … `--ds-color-pink-950` |
 | — | — | `--ds-color-whatsapp` |
 | Neutral | — | `--ds-color-white`, `--ds-color-black` |
-| — | — | `--ds-color-datepicker-dark-bg` |
+| Datepicker | — | `--ds-color-datepicker-{bg|primary}-{light|dark}` |
 | Typography | — | `--ds-font-family` |
 
 ### Primitive color tokens
@@ -154,8 +154,8 @@ the base palette also updates the translucent states.
 
 These variables keep the current component border colors as their defaults.
 Each role has paired `-light` and `-dark` tokens, so a consuming app can
-override either mode independently. The existing unsuffixed tokens still
-select the active mode for utilities such as `border-default`.
+override either mode independently. There are no unsuffixed, mode-switching
+aliases: every usage names its mode explicitly.
 
 | Role | Variables |
 | --- | --- |
@@ -163,10 +163,10 @@ select the active mode for utilities such as `border-default`.
 | Primary and secondary | `--ds-color-border-{primary|primary-active|primary-subtle|secondary|secondary-subtle}-{light|dark}` |
 | Status | `--ds-color-border-{success|success-subtle|success-muted|warning|warning-subtle|warning-muted|danger|danger-emphasis|danger-subtle|danger-muted|pink}-{light|dark}` |
 
-The corresponding Tailwind classes use the role directly, for example
-`border-default`, `border-input`, `border-danger`, and `border-danger-subtle`.
-Paired utilities are also available when a class needs an explicit mode, such
-as `border-default-light` and `border-default-dark`.
+The corresponding Tailwind classes always pair both modes, for example
+`border-default-light dark:border-default-dark`,
+`border-input-light dark:border-input-dark`, or
+`divide-default-light dark:divide-default-dark`.
 
 ### Component color variables
 

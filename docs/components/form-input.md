@@ -47,8 +47,8 @@ range sliders, masked input, and money input, depending on `type`. Uses
 ## CSS color variants
 
 `FormInput`, `FormSelect`, `FormTextarea`, and `SearchableSelect` share paired
-light/dark CSS variables for their neutral colors. Set light values on `:root`
-and dark values under `.dark`.
+light/dark CSS variables for their neutral colors. Set both the light and dark
+values on `:root`.
 
 | Role | Variables |
 | --- | --- |
@@ -65,9 +65,7 @@ and dark values under `.dark`.
   --ds-color-form-control-text-light: #172554;
   --ds-color-form-control-placeholder-light: #64748b;
   --ds-color-form-suggestion-panel-bg-light: #eff6ff;
-}
 
-.dark {
   --ds-color-form-label-dark: #bfdbfe;
   --ds-color-form-control-bg-dark: #0f172a;
   --ds-color-form-control-text-dark: #dbeafe;
@@ -77,4 +75,5 @@ and dark values under `.dark`.
 ```
 
 Focus and validation colors continue to use the shared `primary` and `danger`
-tokens; input borders use the semantic `border-input` and `border-danger` roles.
+tokens; input borders use the semantic `border-input-{light|dark}` and
+`border-danger-{light|dark}` roles.

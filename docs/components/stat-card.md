@@ -22,8 +22,8 @@ optional help tooltip.
 ### CSS color variants
 
 The title, value, empty state, description, and all four change states have
-paired light/dark variables. Override light values on `:root` and dark values
-under `.dark`.
+paired light/dark variables. Override both the light and dark values on
+`:root`.
 
 | Part | Variables |
 | --- | --- |

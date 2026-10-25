@@ -20,8 +20,7 @@ Long text wraps while the image and icon keep their size.
 ## CSS color variants
 
 The Item surface, hover state, title, subtitle, and trailing icon have paired
-light/dark variables. Override light values on `:root` and dark values under
-`.dark`.
+light/dark variables. Override both the light and dark values on `:root`.
 
 | Part | Variables |
 | --- | --- |

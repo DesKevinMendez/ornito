@@ -13,7 +13,7 @@
           v-if="isOpen"
           ref="dropdownRef"
           :style="{ ...dropdownStyle, visibility: isPositioned ? 'visible' : 'hidden' }"
-          class="fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-default bg-dropdown-menu-panel-bg-light py-1 shadow-lg dark:bg-dropdown-menu-panel-bg-dark"
+          class="fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-default-light dark:border-default-dark bg-dropdown-menu-panel-bg-light py-1 shadow-lg dark:bg-dropdown-menu-panel-bg-dark"
         >
           <button
             v-for="item in items"

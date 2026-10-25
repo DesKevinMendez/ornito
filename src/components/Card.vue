@@ -1,11 +1,11 @@
 <template>
   <div
-    class="bg-card-bg-light dark:bg-card-bg-dark rounded-xl border border-card shadow-sm"
+    class="bg-card-bg-light dark:bg-card-bg-dark rounded-xl border border-card-light dark:border-card-dark shadow-sm"
     :class="{ 'overflow-hidden flex flex-col': noPadding }"
   >
     <div v-if="showHeader" class="px-6 pt-5">
       <div
-        class="flex items-start justify-between gap-4 pb-4 border-b border-strong"
+        class="flex items-start justify-between gap-4 pb-4 border-b border-strong-light dark:border-strong-dark"
         :class="{ 'flex-col gap-3 sm:flex-row sm:items-start': colInMobile }"
       >
         <div class="flex-1 min-w-0">

@@ -29,7 +29,7 @@ Content goes in the default slot. Emits `update:open`, `close`.
 ### CSS color variants
 
 The scrim, panel, title, subtitle, and close control have paired light/dark
-variables. Override light values on `:root` and dark values under `.dark`.
+variables. Override both the light and dark values on `:root`.
 
 | Part | Variables |
 | --- | --- |
@@ -86,7 +86,7 @@ is limited to 90% of the viewport height.
 ### CSS color variants
 
 The scrim, panel, title, subtitle, and close control have paired light/dark
-variables. The footer divider uses the shared `border-divider` token.
+variables. The footer divider uses the shared `border-divider-{light|dark}` tokens.
 
 | Part | Variables |
 | --- | --- |

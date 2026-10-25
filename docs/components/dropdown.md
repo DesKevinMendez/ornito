@@ -18,8 +18,8 @@ Select-style dropdown backed by a fixed list of `DropdownItem`s. Uses
 ### CSS color variants
 
 The trigger, panel, and items use paired light/dark runtime CSS variables. Their
-defaults preserve the current appearance. Override the variables on `:root`
-for light mode and `.dark` for dark mode.
+defaults preserve the current appearance. Override both the `-light` and
+`-dark` variables on `:root`.
 
 | Part | Variables |
 | --- | --- |
@@ -34,9 +34,7 @@ for light mode and `.dark` for dark mode.
   --ds-color-dropdown-panel-bg-light: #eff6ff;
   --ds-color-dropdown-item-hover-bg-light: #dbeafe;
   --ds-color-dropdown-item-active-bg-light: #bfdbfe;
-}
 
-.dark {
   --ds-color-dropdown-trigger-bg-dark: #172554;
   --ds-color-dropdown-trigger-text-dark: #dbeafe;
   --ds-color-dropdown-panel-bg-dark: #0f172a;

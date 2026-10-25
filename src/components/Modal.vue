@@ -10,7 +10,7 @@
       @keydown="handleKeydown"
     >
       <div
-        class="relative bg-modal-panel-bg-light dark:bg-modal-panel-bg-dark rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-default"
+        class="relative bg-modal-panel-bg-light dark:bg-modal-panel-bg-dark rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-default-light dark:border-default-dark"
         :class="[sizeClass, open ? 'scale-100 opacity-100' : 'scale-95 opacity-0']"
       >
         <div >

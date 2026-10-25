@@ -52,7 +52,7 @@ Native attributes and additional classes are forwarded to the `ul`.
 ## CSS color variants
 
 The list surface uses `--ds-color-list-bg-{light|dark}`. Row dividers use
-the shared `border-default` token; each Item controls its own surface, text,
+the shared `border-default-{light|dark}` tokens; each Item controls its own surface, text,
 and hover colors.
 
 ## Infinite scroll
