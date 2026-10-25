@@ -14,9 +14,9 @@ const meta = {
     },
     template: `
       <div class="max-w-xs">
-        <button class="rounded border border-gray-300 px-3 py-2 text-sm" @click="open = !open">Toggle menu</button>
+        <button class="rounded border border-input px-3 py-2 text-sm" @click="open = !open">Toggle menu</button>
         <DropdownAnimation>
-          <div v-if="open" class="mt-2 rounded-lg border border-gray-200 bg-white p-3 text-sm shadow-lg">Animated dropdown content</div>
+          <div v-if="open" class="mt-2 rounded-lg border border-default bg-white p-3 text-sm shadow-lg">Animated dropdown content</div>
         </DropdownAnimation>
       </div>
     `,

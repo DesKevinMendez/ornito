@@ -1,10 +1,10 @@
 <template>
   <aside
-    class="h-screen flex flex-col border-r-2 transition-all duration-300 bg-white text-gray-900 border-gray-200 dark:bg-gray-900 dark:text-white dark:border-gray-700"
+    class="h-screen flex flex-col border-r-2 transition-all duration-300 bg-white text-gray-900 border-default dark:bg-gray-900 dark:text-white"
     :class="sidebarClasses"
   >
     <!-- Top Section with Window Controls and Branding -->
-    <div class="p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex items-center">
+    <div class="p-4 border-b-2 border-default h-20 flex items-center">
       <!-- Stakent Branding -->
       <div class="flex items-center w-full" :class="props.isCollapsed ? 'justify-center' : 'justify-between'">
         <div v-if="!props.isCollapsed" class="flex items-center space-x-2">
@@ -61,7 +61,7 @@
     </p>
 
     <!-- Bottom Section - Theme Toggle -->
-    <div class="p-4 border-t-2 border-gray-200 dark:border-gray-700">
+    <div class="p-4 border-t-2 border-default">
       <button
         @click="toggleTheme"
         class="w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"

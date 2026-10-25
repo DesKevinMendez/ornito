@@ -10,7 +10,7 @@
       @keydown="handleKeydown"
     >
       <div
-        class="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-gray-200 dark:border-gray-700"
+        class="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-default"
         :class="[sizeClass, open ? 'scale-100 opacity-100' : 'scale-95 opacity-0']"
       >
         <div >

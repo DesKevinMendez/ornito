@@ -116,7 +116,7 @@ const indicatorBounds = ref<{ left: number; top: number; width: number; height: 
 const tabListClasses = computed(() => ({
   segmented: 'w-full space-x-2 rounded-lg bg-gray-200 px-3 py-2 dark:bg-gray-800',
   pills: 'pill-tab-list flex-wrap items-center gap-2',
-  underline: 'w-full min-w-max items-center gap-2 border-b border-gray-200 dark:border-gray-800',
+  underline: 'w-full min-w-max items-center gap-2 border-b border-muted',
 })[props.variant]);
 const tabButtonClasses = computed(() => ({
   segmented: 'flex-1 rounded-lg px-3 py-2',
@@ -150,7 +150,7 @@ function tabStateClasses(tab: Tab, index: number) {
   const selected = activeTabIndex.value === index;
   const underlineBorder = props.variant === 'underline'
     ? selected && !tab.disabled && !indicatorBounds.value
-      ? 'border-primary-600 dark:border-primary-400'
+      ? 'border-primary-active'
       : 'border-transparent'
     : '';
   if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-gray-400 dark:text-gray-600'];

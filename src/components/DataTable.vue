@@ -30,7 +30,7 @@
           class="absolute right-3 top-1/2 transform -translate-y-1/2"
         >
           <div
-            class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-500"
+            class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-subtle"
           ></div>
         </div>
       </div>
@@ -39,7 +39,7 @@
     <!-- Desktop Table View -->
     <div v-if="!isSmallMobile" class="overflow-x-auto min-w-full">
       <table
-        class="min-w-full divide-y divide-gray-200 dark:divide-gray-700"
+        class="min-w-full divide-y divide-default"
         :style="{
           width: tableWidth,
           tableLayout: useFixedLayout ? 'fixed' : 'auto',
@@ -61,7 +61,7 @@
         />
 
         <!-- Table Body - Normal State -->
-        <tbody v-else class="bg-white dark:bg-gray-800/20 divide-y divide-gray-200 dark:divide-gray-700">
+        <tbody v-else class="bg-white dark:bg-gray-800/20 divide-y divide-default">
           <tr
             v-for="(row, rowIndex) in tableData"
             :key="rowIndex"
@@ -144,7 +144,7 @@
         v-else
         v-for="(row, rowIndex) in tableData"
         :key="rowIndex"
-        class="bg-white dark:bg-gray-800/20 rounded-lg p-4 border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200"
+        class="bg-white dark:bg-gray-800/20 rounded-lg p-4 border border-default cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200"
         @click="handleRowClick(row)"
       >
         <div class="space-y-3">
@@ -155,7 +155,7 @@
             :class="[
               'flex justify-between items-start',
               columnIndex < props.columns.length - 1
-                ? 'pb-3 border-b border-gray-200 dark:border-gray-700'
+                ? 'pb-3 border-b border-default'
                 : '',
             ]"
           >
@@ -188,7 +188,7 @@
           <!-- Actions row for mobile -->
           <div
             v-if="hasActionsSlot"
-            class="flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700"
+            class="flex justify-between items-center pt-3 border-t border-default"
           >
             <span
               class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"

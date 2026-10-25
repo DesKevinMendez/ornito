@@ -80,4 +80,32 @@
 
     /* Utility brand color */
     --color-whatsapp: var(--ds-color-whatsapp);
+
+    /* Semantic borders */
+    --color-default: var(--ds-color-border-default);
+    --color-input: var(--ds-color-border-input);
+    --color-muted: var(--ds-color-border-muted);
+    --color-strong: var(--ds-color-border-strong);
+    --color-hover: var(--ds-color-border-hover);
+    --color-tooltip: var(--ds-color-border-tooltip);
+    --color-card: var(--ds-color-border-card);
+    --color-divider: var(--ds-color-border-divider);
+    --color-avatar: var(--ds-color-border-avatar);
+
+    --color-primary: var(--ds-color-border-primary);
+    --color-primary-active: var(--ds-color-border-primary-active);
+    --color-primary-subtle: var(--ds-color-border-primary-subtle);
+    --color-secondary: var(--ds-color-border-secondary);
+    --color-secondary-subtle: var(--ds-color-border-secondary-subtle);
+    --color-success: var(--ds-color-border-success);
+    --color-success-subtle: var(--ds-color-border-success-subtle);
+    --color-success-muted: var(--ds-color-border-success-muted);
+    --color-warning: var(--ds-color-border-warning);
+    --color-warning-subtle: var(--ds-color-border-warning-subtle);
+    --color-warning-muted: var(--ds-color-border-warning-muted);
+    --color-danger: var(--ds-color-border-danger);
+    --color-danger-emphasis: var(--ds-color-border-danger-emphasis);
+    --color-danger-subtle: var(--ds-color-border-danger-subtle);
+    --color-danger-muted: var(--ds-color-border-danger-muted);
+    --color-pink: var(--ds-color-border-pink);
 }

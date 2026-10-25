@@ -19,8 +19,8 @@
             :rows="rows"
             :maxlength="maxLength"
             :class="[
-              'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500',
-              errorMessage ? 'border-danger-500 dark:border-danger-500' : '',
+              'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
+              errorMessage ? 'border-danger' : '',
               small ? 'py-2' : 'py-3'
             ]"
           ></textarea>

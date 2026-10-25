@@ -7,12 +7,17 @@ system without rebuilding it.
 
 ## How it works
 
-- `src/tokens.css` defines every color on `:root` as a `--ds-color-*`
-  variable (e.g. `--ds-color-primary-500: #6366f1;`).
+- `src/tokens.css` defines the color palette and semantic tokens as
+  `--ds-color-*` variables (e.g. `--ds-color-primary-500: #6366f1;`).
+- Semantic border tokens have light defaults on `:root` and dark values under
+  `.dark`. Their names describe their role rather than the gray shade used.
 - `src/style.css` maps Tailwind's theme onto those variables with
   `@theme inline`, so utilities like `.bg-primary-500` compile to
   `background-color: var(--ds-color-primary-500)` instead of a literal hex
   value.
+- Border utilities use the shorter semantic names, such as `.border-default`
+  and `.border-danger-subtle`, while resolving to `--ds-color-border-*` at
+  runtime.
 
 Because the utilities reference the variable and not its value, changing
 `--ds-color-primary-500` anywhere above a component in the DOM changes what
@@ -29,6 +34,13 @@ of the variables below on `:root` (or any ancestor scope):
 :root {
   --ds-color-primary-500: #16a34a;
   --ds-color-primary-600: #15803d;
+  --ds-color-border-default: #d4d4d8;
+  --ds-color-border-input: #a1a1aa;
+}
+
+.dark {
+  --ds-color-border-default: #52525b;
+  --ds-color-border-input: #3f3f46;
 }
 ```
 
@@ -58,6 +70,7 @@ The package's `dark:` variant matches `.dark` on an ancestor
 ```css
 .dark {
   --ds-color-primary-500: #22c55e;
+  --ds-color-border-default: #52525b;
 }
 ```
 
@@ -79,6 +92,21 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 | `danger` (red) | 50, 100, 200, 400, 500, 600, 700, 900 | `--ds-color-danger-50` … `--ds-color-danger-900` |
 | — | — | `--ds-color-whatsapp` |
 | — | — | `--ds-color-datepicker-dark-bg` |
+
+### Semantic border variables
+
+These variables keep the current component border colors as their defaults.
+Light values live on `:root`; `.dark` overrides the values that change in dark
+mode. A consuming app can override only the roles it needs.
+
+| Role | Variables |
+| --- | --- |
+| Neutral and component | `--ds-color-border-default`, `--ds-color-border-input`, `--ds-color-border-muted`, `--ds-color-border-strong`, `--ds-color-border-hover`, `--ds-color-border-tooltip`, `--ds-color-border-card`, `--ds-color-border-divider`, `--ds-color-border-avatar` |
+| Primary and secondary | `--ds-color-border-primary`, `--ds-color-border-primary-active`, `--ds-color-border-primary-subtle`, `--ds-color-border-secondary`, `--ds-color-border-secondary-subtle` |
+| Status | `--ds-color-border-success`, `--ds-color-border-success-subtle`, `--ds-color-border-success-muted`, `--ds-color-border-warning`, `--ds-color-border-warning-subtle`, `--ds-color-border-warning-muted`, `--ds-color-border-danger`, `--ds-color-border-danger-emphasis`, `--ds-color-border-danger-subtle`, `--ds-color-border-danger-muted`, `--ds-color-border-pink` |
+
+The corresponding Tailwind classes use the role directly, for example
+`border-default`, `border-input`, `border-danger`, and `border-danger-subtle`.
 
 Each palette follows the standard Tailwind shade scale (50 = lightest, 950 =
 darkest). `primary`/`secondary`/`tertiary` define the full 50–950 range;

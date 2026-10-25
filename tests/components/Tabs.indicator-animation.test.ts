@@ -73,7 +73,7 @@ describe.each(['pills', 'underline'] as const)('%s magnetic indicator', (variant
     if (variant === 'underline') {
       expect(indicator.classes()).toContain('dark:bg-primary-400')
       expect(buttons[0].classes()).toContain('border-transparent')
-      expect(buttons[0].classes()).not.toContain('border-primary-600')
+      expect(buttons[0].classes()).not.toContain('border-primary-active')
     }
     expect(buttons[0].classes()).not.toContain('bg-primary-600')
     expect(buttons[0].classes()).not.toContain('hover:bg-primary-700')
@@ -145,13 +145,13 @@ describe.each(['pills', 'underline'] as const)('%s magnetic indicator', (variant
     geometry[0].height = 0
     await resize()
     expect(wrapper.find(`[data-tabs-indicator="${variant}"]`).exists()).toBe(false)
-    expect(buttons[0].classes()).toContain(variant === 'pills' ? 'bg-primary-600' : 'border-primary-600')
+    expect(buttons[0].classes()).toContain(variant === 'pills' ? 'bg-primary-600' : 'border-primary-active')
     geometry[0].width = 64
     geometry[0].height = 40
     await resize()
     expect(wrapper.get(`[data-tabs-indicator="${variant}"]`).attributes('style')).toContain('width: 64px')
     expect(buttons[0].classes()).not.toContain('bg-primary-600')
-    expect(buttons[0].classes()).not.toContain('border-primary-600')
+    expect(buttons[0].classes()).not.toContain('border-primary-active')
   })
 
   it('keeps the original segmented indicator and restores the measured variant on changes', async () => {

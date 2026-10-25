@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white border-b-2 border-gray-200 dark:bg-gray-900 dark:border-gray-700 px-6 h-20 flex items-center">
+  <nav class="bg-white border-b-2 border-default dark:bg-gray-900 px-6 h-20 flex items-center">
     <div class="flex items-center justify-between w-full">
       <!-- Left Section - Mobile Menu Button -->
       <div class="flex gap-4">

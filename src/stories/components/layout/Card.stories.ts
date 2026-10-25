@@ -26,7 +26,7 @@ const meta = {
       <div class="max-w-lg">
         <Card v-bind="componentArgs">
           <template v-if="showActions" #headerButtons>
-            <button class="rounded border border-gray-300 px-2 py-1 text-xs">Edit</button>
+            <button class="rounded border border-input px-2 py-1 text-xs">Edit</button>
           </template>
           <p class="text-sm text-gray-600 dark:text-gray-300">{{ body }}</p>
         </Card>

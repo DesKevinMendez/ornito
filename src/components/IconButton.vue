@@ -58,16 +58,16 @@ const colorClasses = computed(() => {
   };
 
   const outlineMap: Record<string, string> = {
-    gray: "border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800",
-    primary: "border border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30",
-    secondary: "border border-secondary-500 text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-900/30",
-    success: "border border-success-500 text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
-    green: "border border-success-500 text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
-    danger: "border border-danger-500 text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
-    red: "border border-danger-500 text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
-    warning: "border border-warning-500 text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
-    yellow: "border border-warning-500 text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
-    pink: "border border-pink-500 text-pink-600 dark:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/30",
+    gray: "border border-input text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800",
+    primary: "border border-primary-subtle text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30",
+    secondary: "border border-secondary text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-900/30",
+    success: "border border-success text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
+    green: "border border-success text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
+    danger: "border border-danger text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
+    red: "border border-danger text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
+    warning: "border border-warning text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
+    yellow: "border border-warning text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
+    pink: "border border-pink text-pink-600 dark:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/30",
   };
 
   const map = props.outline ? outlineMap : filledMap;

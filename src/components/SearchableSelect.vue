@@ -29,10 +29,10 @@
         data-form-type="other"
         spellcheck="false"
         :class="[
-          'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500',
+          'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
           leftIcon ? 'pl-10' : 'pl-4',
           'pr-10',
-          errorMessage ? 'border-danger-500 dark:border-danger-500' : '',
+          errorMessage ? 'border-danger' : '',
           props.small ? 'py-2' : 'py-3',
         ]"
         :disabled="disabled"
@@ -104,9 +104,9 @@
             @click="(e) => selectItem(item, e, handleChange)"
             class="rounded-lg p-3 border cursor-pointer transition-colors"
             :class="{
-              'border-primary-500 bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
+              'border-primary-subtle bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
                 isItemSelected(item),
-              'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700':
+              'bg-white dark:bg-gray-800 border-default hover:bg-gray-50 dark:hover:bg-gray-700':
                 !isItemSelected(item),
             }"
           >
@@ -231,7 +231,7 @@ const selectedItem = computed(() => {
 
 const dropdownClasses = computed(() => {
   const baseClasses =
-    "absolute w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden";
+    "absolute w-full bg-white dark:bg-gray-900 border border-default rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden";
   return baseClasses;
 });
 

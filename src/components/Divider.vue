@@ -1,7 +1,7 @@
 <template>
   <div class="relative py-4">
     <div class="absolute inset-0 flex items-center">
-      <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
+      <div class="w-full border-t border-default"></div>
     </div>
   </div>
 </template>

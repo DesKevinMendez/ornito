@@ -15,13 +15,13 @@
       variant === 'primary' && 'bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-600',
       variant === 'secondary' && 'bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700',
       variant === 'outline' &&
-        'border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white',
+        'border border-input text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white',
       variant === 'primary-outline' &&
-        'border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-500 dark:text-primary-400 dark:hover:bg-primary-500',
+        'border border-primary text-primary-600 hover:bg-primary-600 hover:text-white dark:text-primary-400 dark:hover:bg-primary-500',
       variant === 'danger' &&
         'bg-danger-600 hover:bg-danger-700 text-white dark:bg-danger-500 dark:hover:bg-danger-600',
       variant === 'danger-outline' &&
-        'border border-danger-600 text-danger-600 hover:bg-danger-600 hover:text-white dark:border-danger-500 dark:text-danger-400 dark:hover:bg-danger-500 dark:hover:text-white',
+        'border border-danger-emphasis text-danger-600 hover:bg-danger-600 hover:text-white dark:text-danger-400 dark:hover:bg-danger-500 dark:hover:text-white',
       variant === 'overlay' &&
         'bg-black/60 hover:bg-black/80 text-white text-sm',
     ]"

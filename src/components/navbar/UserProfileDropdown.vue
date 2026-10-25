@@ -17,9 +17,9 @@
       <DropdownAnimation>
         <div
           v-if="isNotificationDropdownOpen && !isMobile"
-          class="absolute right-0 top-14 w-80 bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg shadow-lg z-50"
+          class="absolute right-0 top-14 w-80 bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-default dark:border-default/50 rounded-lg shadow-lg z-50"
         >
-          <div class="py-2 px-4 border-b border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white font-semibold">
+          <div class="py-2 px-4 border-b border-default text-sm text-gray-900 dark:text-white font-semibold">
             Notificaciones
           </div>
           <div class="max-h-96 overflow-y-auto">
@@ -27,7 +27,7 @@
           </div>
           <div
             v-if="unreadNotificationsCount > 0"
-            class="py-2 px-4 border-t border-gray-200 dark:border-gray-700 text-center"
+            class="py-2 px-4 border-t border-default text-center"
           >
             <button
               @click="emit('mark-all-read')"
@@ -79,7 +79,7 @@
     <DropdownAnimation>
       <div
         v-if="isDropdownOpen"
-        class="absolute right-0 top-14 w-56 sm:w-full bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg shadow-lg z-50"
+        class="absolute right-0 top-14 w-56 sm:w-full bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-default dark:border-default/50 rounded-lg shadow-lg z-50"
       >
         <ul class="py-2">
           <DropdownItem

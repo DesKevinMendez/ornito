@@ -9,7 +9,7 @@
       :small="triggerSmall"
       :iconClass="isOpen ? 'rotate-180 transition-transform duration-200' : 'transition-transform duration-200'"
       @click="toggleDropdown"
-      class="bg-white dark:bg-gray-800/70 backdrop-blur-sm border-gray-300 dark:border-gray-700/70 hover:bg-gray-50 dark:hover:bg-gray-700/70 focus:ring-0 focus:border-gray-400 dark:focus:border-gray-600"
+      class="bg-white dark:bg-gray-800/70 backdrop-blur-sm border-input dark:border-input/70 hover:bg-gray-50 dark:hover:bg-gray-700/70 focus:ring-0 focus:border-hover"
     >
       {{ selectedItem?.label || placeholder }}
     </BaseButton>
@@ -72,7 +72,7 @@ const selectedItem = computed(() => {
 });
 
 const dropdownClasses = computed(() => {
-  const baseClasses = `absolute w-48 max-h-60 bg-white dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg z-[9999]`;
+  const baseClasses = `absolute w-48 max-h-60 bg-white dark:bg-gray-800/80 backdrop-blur-sm border border-default dark:border-default/50 rounded-xl shadow-lg z-[9999]`;
 
   const positionClasses = {
     'bottom-left': 'left-0 top-full mt-2',
