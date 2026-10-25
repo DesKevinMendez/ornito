@@ -15,7 +15,7 @@
         <div
           v-if="variant === 'segmented' && activeTab"
           aria-hidden="true"
-          class="absolute top-1 bottom-1 rounded-lg bg-tabs-segmented-indicator-light dark:bg-tabs-segmented-indicator-dark shadow-sm transition-all duration-300 ease-in-out motion-reduce:transition-none"
+          class="absolute top-1 bottom-1 rounded-lg bg-tabs-segmented-indicator-bg-light dark:bg-tabs-segmented-indicator-bg-dark shadow-sm transition-all duration-300 ease-in-out motion-reduce:transition-none"
           :style="sliderStyle"
         ></div>
 
@@ -25,8 +25,8 @@
           aria-hidden="true"
           class="pointer-events-none absolute left-0 top-0 transition-all duration-300 ease-in-out motion-reduce:transition-none"
           :class="variant === 'pills'
-            ? 'bg-tabs-pills-active-bg-light dark:bg-tabs-pills-active-bg-dark pill-indicator rounded-xl'
-            : 'bg-tabs-underline-indicator-light dark:bg-tabs-underline-indicator-dark rounded-full'"
+            ? 'bg-tabs-pills-bg-active-light dark:bg-tabs-pills-bg-active-dark pill-indicator rounded-xl'
+            : 'bg-tabs-underline-indicator-bg-light dark:bg-tabs-underline-indicator-bg-dark rounded-full'"
           :style="measuredIndicatorStyle"
         ></div>
 
@@ -42,7 +42,7 @@
           :aria-controls="`${componentId}-panel-${index}`"
           :disabled="tab.disabled"
           :tabindex="index === focusableTabIndex && !tab.disabled ? 0 : -1"
-          class="relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tabs-focus-light focus-visible:ring-offset-2 focus-visible:ring-offset-tabs-focus-offset-light dark:focus-visible:ring-tabs-focus-dark dark:focus-visible:ring-offset-tabs-focus-offset-dark motion-reduce:transition-none"
+          class="relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tabs-ring-focus-light focus-visible:ring-offset-2 focus-visible:ring-offset-tabs-ring-offset-focus-light dark:focus-visible:ring-tabs-ring-focus-dark dark:focus-visible:ring-offset-tabs-ring-offset-focus-dark motion-reduce:transition-none"
           :class="[tabButtonClasses, tabStateClasses(tab, index)]"
           @click="selectTab(index)"
           @keydown="handleKeydown($event, index)"
@@ -155,16 +155,16 @@ function tabStateClasses(tab: Tab, index: number) {
       ? 'border-primary-active-light dark:border-primary-active-dark'
       : 'border-transparent'
     : '';
-  if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-tabs-disabled-light dark:text-tabs-disabled-dark'];
+  if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-tabs-text-disabled-light dark:text-tabs-text-disabled-dark'];
   if (props.variant === 'underline') return [underlineBorder, selected
-    ? 'cursor-pointer text-tabs-underline-active-text-light dark:text-tabs-underline-active-text-dark'
-    : 'cursor-pointer text-tabs-underline-inactive-text-light hover:bg-tabs-underline-hover-bg-light hover:text-tabs-underline-hover-text-light dark:text-tabs-underline-inactive-text-dark dark:hover:bg-tabs-underline-hover-bg-dark dark:hover:text-tabs-underline-hover-text-dark'];
+    ? 'cursor-pointer text-tabs-underline-text-active-light dark:text-tabs-underline-text-active-dark'
+    : 'cursor-pointer text-tabs-underline-text-inactive-light hover:bg-tabs-underline-bg-hover-light hover:text-tabs-underline-text-hover-light dark:text-tabs-underline-text-inactive-dark dark:hover:bg-tabs-underline-bg-hover-dark dark:hover:text-tabs-underline-text-hover-dark'];
   if (props.variant === 'pills') return selected
-    ? ['cursor-pointer text-tabs-pills-active-text-light dark:text-tabs-pills-active-text-dark', !indicatorBounds.value && 'bg-tabs-pills-active-bg-light hover:bg-tabs-pills-active-bg-hover-light dark:bg-tabs-pills-active-bg-dark dark:hover:bg-tabs-pills-active-bg-hover-dark']
-    : 'cursor-pointer text-tabs-pills-inactive-text-light hover:bg-tabs-pills-inactive-hover-bg-light hover:text-tabs-pills-inactive-hover-text-light dark:text-tabs-pills-inactive-text-dark dark:hover:bg-tabs-pills-inactive-hover-bg-dark dark:hover:text-tabs-pills-inactive-hover-text-dark';
+    ? ['cursor-pointer text-tabs-pills-text-active-light dark:text-tabs-pills-text-active-dark', !indicatorBounds.value && 'bg-tabs-pills-bg-active-light hover:bg-tabs-pills-bg-active-hover-light dark:bg-tabs-pills-bg-active-dark dark:hover:bg-tabs-pills-bg-active-hover-dark']
+    : 'cursor-pointer text-tabs-pills-text-inactive-light hover:bg-tabs-pills-bg-inactive-hover-light hover:text-tabs-pills-text-inactive-hover-light dark:text-tabs-pills-text-inactive-dark dark:hover:bg-tabs-pills-bg-inactive-hover-dark dark:hover:text-tabs-pills-text-inactive-hover-dark';
   return selected
-    ? 'cursor-pointer text-tabs-segmented-active-text-light dark:text-tabs-segmented-active-text-dark'
-    : 'cursor-pointer text-tabs-segmented-inactive-text-light hover:text-tabs-segmented-inactive-hover-text-light dark:text-tabs-segmented-inactive-text-dark dark:hover:text-tabs-segmented-inactive-hover-text-dark';
+    ? 'cursor-pointer text-tabs-segmented-text-active-light dark:text-tabs-segmented-text-active-dark'
+    : 'cursor-pointer text-tabs-segmented-text-inactive-light hover:text-tabs-segmented-text-inactive-hover-light dark:text-tabs-segmented-text-inactive-dark dark:hover:text-tabs-segmented-text-inactive-hover-dark';
 }
 
 function updateMeasuredIndicator() {
@@ -244,11 +244,11 @@ function handleKeydown(event: KeyboardEvent, index: number) {
 
 <style scoped>
 .pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
-  background-color: var(--ds-color-tabs-pills-active-bg-hover-light);
+  background-color: var(--ds-color-tabs-pills-bg-active-hover-light);
 }
 
 .dark .pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
-  background-color: var(--ds-color-tabs-pills-active-bg-hover-dark);
+  background-color: var(--ds-color-tabs-pills-bg-active-hover-dark);
 }
 
 /* Tab content transition animations */

@@ -53,7 +53,7 @@ const isActive = computed(() => {
       :class="[
         isActive
           ? 'text-sidebar-tab-text-active-light dark:text-sidebar-tab-text-active-dark'
-          : 'text-sidebar-tab-icon-light group-hover:text-sidebar-tab-icon-hover-light dark:text-sidebar-tab-icon-dark dark:group-hover:text-sidebar-tab-icon-hover-dark'
+          : 'text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark'
       ]"
     />
     <div
@@ -75,7 +75,7 @@ const isActive = computed(() => {
         class="text-[10px] font-medium px-1.5 py-0.5 rounded-full shrink-0 tabular-nums"
         :class="[
           isActive
-            ? 'bg-sidebar-tab-badge-active-bg-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-active-bg-dark dark:text-sidebar-tab-badge-text-dark'
+            ? 'bg-sidebar-tab-badge-bg-active-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-bg-active-dark dark:text-sidebar-tab-badge-text-dark'
             : 'bg-sidebar-tab-badge-bg-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-bg-dark dark:text-sidebar-tab-badge-text-dark'
         ]"
       >

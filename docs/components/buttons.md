@@ -47,14 +47,14 @@ which case it renders a `RouterLink`.
 | `danger-outline` | `danger-outline` | Destructive border and text; fills on hover |
 | `overlay` | `overlay` | Translucent dark background for media |
 
-The utilities include base, hover, and active backgrounds, plus text, border, and focus-ring colors. For example: `bg-btn-primary-light`, `dark:bg-btn-primary-dark`, `hover:bg-btn-primary-light-hover`, and `text-btn-primary-light`.
+The utilities include base, hover, and active backgrounds, plus text, border, and focus-ring colors. For example: `bg-button-primary-bg-light`, `dark:bg-button-primary-bg-dark`, `hover:bg-button-primary-bg-hover-light`, and `text-button-primary-text-light`.
 
-The corresponding CSS variables live in `src/tokens.css` and follow `--ds-color-btn-{variant}-{light|dark}`. Background states add `-hover` or `-active`; text variables add `-text`, `-text-hover`, or `-text-active`; border variables add `-border`. The danger focus-ring variables add `-focus`. Override these variables to re-skin button variants without editing their components.
+The corresponding CSS variables live in `src/tokens.css` and follow the shared token grammar `--ds-color-button-{variant}-{property}[-{state}]-{light|dark}`: `--ds-color-button-{variant}-bg-{light|dark}`, `-bg-hover-`, `-bg-active-`, `-text-`, `-text-hover-`, `-text-active-`, `-border-`, and `--ds-color-button-danger-ring-focus-{light|dark}`. Loading spinners use `--ds-color-button-{variant}-spinner-text-{light|dark}` (`BaseButton`) and `--ds-color-button-icon-{variant}-spinner-text-{light|dark}` (`BaseButtonIcon`). Active states default to their hover tokens. Override these variables to re-skin button variants without editing their components.
 
 Default values reference design-system color primitives, including
 `--ds-color-primary-*`, `--ds-color-error-*`, `--ds-color-neutral-*`, and
-`--ds-color-white`, which default to Tailwind's base palettes. The `danger`
-button variant continues to use the `error` palette.
+`--ds-color-white` (see the primitive palettes in the theming guide). The
+`danger` button variant continues to use the `error` palette.
 
 ```vue
 <BaseButton variant="primary" size="auto">Save</BaseButton>

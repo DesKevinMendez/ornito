@@ -16,13 +16,13 @@
         <div >
           <div class="flex items-start justify-between">
             <div class="flex-1 min-w-0">
-              <div v-if="title" class="text-lg font-semibold text-modal-title-light dark:text-modal-title-dark">{{ title }}</div>
-              <div v-if="subtitle" class="text-sm text-modal-subtitle-light dark:text-modal-subtitle-dark mt-1">{{ subtitle }}</div>
+              <div v-if="title" class="text-lg font-semibold text-modal-title-text-light dark:text-modal-title-text-dark">{{ title }}</div>
+              <div v-if="subtitle" class="text-sm text-modal-subtitle-text-light dark:text-modal-subtitle-text-dark mt-1">{{ subtitle }}</div>
             </div>
             <button
               @click="emitClose"
               aria-label="Cerrar"
-              class="text-modal-close-text-light dark:text-modal-close-text-dark hover:text-modal-close-hover-text-light dark:hover:text-modal-close-hover-text-dark rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-modal-close-focus-light dark:focus:ring-modal-close-focus-dark ml-4"
+              class="text-modal-close-text-light dark:text-modal-close-text-dark hover:text-modal-close-text-hover-light dark:hover:text-modal-close-text-hover-dark rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-modal-close-ring-focus-light dark:focus:ring-modal-close-ring-focus-dark ml-4"
               type="button"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

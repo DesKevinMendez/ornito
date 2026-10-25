@@ -25,8 +25,8 @@ light/dark variables. Override both the light and dark values on `:root`.
 | Part | Variables |
 | --- | --- |
 | Surface | `--ds-color-item-bg-{light|dark}` |
-| Hover | `--ds-color-item-hover-bg-{light|dark}` |
-| Text and icon | `--ds-color-item-title-{light|dark}`, `--ds-color-item-subtitle-{light|dark}`, `--ds-color-item-icon-{light|dark}` |
+| Hover | `--ds-color-item-bg-hover-{light|dark}` |
+| Text and icon | `--ds-color-item-title-text-{light|dark}`, `--ds-color-item-subtitle-text-{light|dark}`, `--ds-color-item-icon-text-{light|dark}` |
 
 ```vue
 <script setup lang="ts">

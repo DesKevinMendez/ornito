@@ -74,7 +74,7 @@ watch(() => props.isCollapsed, () => {
             class="group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 outline-none"
             :class="[
               isChildActive(item)
-                ? 'text-sidebar-tab-group-active-light dark:text-sidebar-tab-group-active-dark'
+                ? 'text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark'
                 : 'text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark'
             ]"
             @click="toggleGroup(item.route)"
@@ -84,8 +84,8 @@ watch(() => props.isCollapsed, () => {
               class="w-5 h-5 shrink-0 transition-colors duration-200"
               :class="[
                 isChildActive(item)
-                  ? 'text-sidebar-tab-group-active-light dark:text-sidebar-tab-group-active-dark'
-                  : 'text-sidebar-tab-icon-light group-hover:text-sidebar-tab-icon-hover-light dark:text-sidebar-tab-icon-dark dark:group-hover:text-sidebar-tab-icon-hover-dark'
+                  ? 'text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark'
+                  : 'text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark'
               ]"
             />
             <div

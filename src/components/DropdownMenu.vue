@@ -19,7 +19,7 @@
             v-for="item in items"
             :key="item.action"
             type="button"
-            class="flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 text-dropdown-item-text-light dark:text-dropdown-item-text-dark hover:bg-dropdown-item-hover-bg-light dark:hover:bg-dropdown-item-hover-bg-dark"
+            class="flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 text-dropdown-item-text-light dark:text-dropdown-item-text-dark hover:bg-dropdown-item-bg-hover-light dark:hover:bg-dropdown-item-bg-hover-dark"
             :class="{
               'text-danger-600 dark:text-danger-400': item.variant === 'danger',
               'text-success-600 dark:text-success-400': item.variant === 'success',

@@ -3,7 +3,7 @@
     <label
       v-if="label && !props.small"
       :for="id"
-      class="block text-sm font-medium text-form-label-light dark:text-form-label-dark mb-2"
+      class="block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
     >
       {{ label }}
     </label>
@@ -29,7 +29,7 @@
         data-form-type="other"
         spellcheck="false"
         :class="[
-          'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark',
+          'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
           leftIcon ? 'pl-10' : 'pl-4',
           'pr-10',
           errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
@@ -45,7 +45,7 @@
           :is="leftIcon"
           :class="[
             props.small ? 'h-4 w-4' : 'h-5 w-5',
-            'text-form-control-icon-light dark:text-form-control-icon-dark',
+            'text-form-control-icon-text-light dark:text-form-control-icon-text-dark',
           ]"
         />
       </div>
@@ -56,7 +56,7 @@
           :is="IconChevronDown"
           :class="[
             props.small ? 'h-4 w-4' : 'h-5 w-5',
-            'text-form-control-icon-light dark:text-form-control-icon-dark transition-transform duration-200',
+            'text-form-control-icon-text-light dark:text-form-control-icon-text-dark transition-transform duration-200',
             isOpen ? 'rotate-180' : '',
           ]"
         />
@@ -108,7 +108,7 @@
             :class="{
               'border-primary-subtle-light dark:border-primary-subtle-dark bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
                 isItemSelected(item),
-              'bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-hover-bg-light dark:hover:bg-form-suggestion-hover-bg-dark':
+              'bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-bg-hover-light dark:hover:bg-form-suggestion-bg-hover-dark':
                 !isItemSelected(item),
             }"
           >
@@ -117,7 +117,7 @@
                 <component
                   v-if="item.icon"
                   :is="item.icon"
-                  class="w-5 h-5 text-form-suggestion-icon-light dark:text-form-suggestion-icon-dark"
+                  class="w-5 h-5 text-form-suggestion-icon-text-light dark:text-form-suggestion-icon-text-dark"
                 />
                 <div class="flex flex-col">
                   <span

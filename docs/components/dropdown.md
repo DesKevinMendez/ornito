@@ -23,23 +23,23 @@ defaults preserve the current appearance. Override both the `-light` and
 
 | Part | Variables |
 | --- | --- |
-| Trigger | `--ds-color-dropdown-trigger-bg-{light\|dark}`, `--ds-color-dropdown-trigger-text-{light\|dark}`, `--ds-color-dropdown-trigger-border-{light\|dark}`, `--ds-color-dropdown-trigger-hover-bg-{light\|dark}` |
+| Trigger | `--ds-color-dropdown-trigger-bg-{light\|dark}`, `--ds-color-dropdown-trigger-text-{light\|dark}`, `--ds-color-dropdown-trigger-border-{light\|dark}`, `--ds-color-dropdown-trigger-bg-hover-{light\|dark}` |
 | Panel | `--ds-color-dropdown-panel-bg-{light\|dark}`, `--ds-color-dropdown-panel-border-{light\|dark}` |
-| Items | `--ds-color-dropdown-item-text-{light\|dark}`, `--ds-color-dropdown-item-hover-bg-{light\|dark}`, `--ds-color-dropdown-item-hover-text-{light\|dark}`, `--ds-color-dropdown-item-active-bg-{light\|dark}`, `--ds-color-dropdown-item-active-text-{light\|dark}` |
+| Items | `--ds-color-dropdown-item-text-{light\|dark}`, `--ds-color-dropdown-item-bg-hover-{light\|dark}`, `--ds-color-dropdown-item-text-hover-{light\|dark}`, `--ds-color-dropdown-item-bg-active-{light\|dark}`, `--ds-color-dropdown-item-text-active-{light\|dark}` |
 
 ```css
 :root {
   --ds-color-dropdown-trigger-bg-light: #fff;
   --ds-color-dropdown-trigger-text-light: #1e3a8a;
   --ds-color-dropdown-panel-bg-light: #eff6ff;
-  --ds-color-dropdown-item-hover-bg-light: #dbeafe;
-  --ds-color-dropdown-item-active-bg-light: #bfdbfe;
+  --ds-color-dropdown-item-bg-hover-light: #dbeafe;
+  --ds-color-dropdown-item-bg-active-light: #bfdbfe;
 
   --ds-color-dropdown-trigger-bg-dark: #172554;
   --ds-color-dropdown-trigger-text-dark: #dbeafe;
   --ds-color-dropdown-panel-bg-dark: #0f172a;
-  --ds-color-dropdown-item-hover-bg-dark: #1e3a8a;
-  --ds-color-dropdown-item-active-bg-dark: #1d4ed8;
+  --ds-color-dropdown-item-bg-hover-dark: #1e3a8a;
+  --ds-color-dropdown-item-bg-active-dark: #1d4ed8;
 }
 ```
 

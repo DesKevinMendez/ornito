@@ -3,7 +3,7 @@
     <label
       v-if="label && !small"
       :for="id"
-      class="block text-sm font-medium text-form-label-light dark:text-form-label-dark mb-2"
+      class="block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
     >
       {{ label }}
     </label>
@@ -70,7 +70,7 @@
                 @keypress="slotProps.onKeypress"
                 @paste="slotProps.onPaste"
                 :class="[
-                  'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark',
+                  'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
                   leftIcon ? 'pl-10' : 'pl-4',
                   rightIcon || isPasswordField ? 'pr-10' : 'pr-4',
                   errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
@@ -96,11 +96,11 @@
               class="w-full accent-primary-600"
             />
             <div
-              class="flex justify-between text-xs text-form-range-bound-light dark:text-form-range-bound-dark"
+              class="flex justify-between text-xs text-form-range-bound-text-light dark:text-form-range-bound-text-dark"
             >
               <span>{{ min }}</span>
               <span
-                class="font-medium text-form-range-value-light dark:text-form-range-value-dark"
+                class="font-medium text-form-range-value-text-light dark:text-form-range-value-text-dark"
               >{{ modelValue }}</span>
               <span>{{ max }}</span>
             </div>
@@ -117,7 +117,7 @@
             :disabled="disabled"
             :autocomplete="autocomplete"
             :class="[
-              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark disabled:cursor-not-allowed',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark disabled:cursor-not-allowed',
               leftIcon ? 'pl-10' : 'pl-4',
               rightIcon || isPasswordField ? 'pr-10' : 'pr-4',
               errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
@@ -134,7 +134,7 @@
             :autocomplete="autocomplete"
             v-money3="money.config"
             :class="[
-              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle-light dark:focus:border-primary-subtle-dark pl-10',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark pl-10',
               rightIcon || isPasswordField || type === 'money'
                 ? 'pr-10'
                 : 'pr-4',
@@ -151,7 +151,7 @@
               :is="IconCurrencyDollar"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
+                'text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200',
               ]"
             />
           </div>
@@ -163,7 +163,7 @@
               :is="leftIcon"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
+                'text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200',
               ]"
             />
           </div>
@@ -174,7 +174,7 @@
             <IconLoader2
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-form-control-icon-light dark:text-form-control-icon-dark animate-spin',
+                'text-form-control-icon-text-light dark:text-form-control-icon-text-dark animate-spin',
               ]"
             />
           </div>
@@ -187,7 +187,7 @@
               :is="rightIcon"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
+                'text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200',
               ]"
             />
           </div>
@@ -202,7 +202,7 @@
               :is="toggleIcon"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
+                'text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200',
               ]"
             />
           </button>
@@ -469,11 +469,11 @@ const togglePasswordVisibility = () => {
 
 <style global>
 .dp__theme_dark {
-  --dp-primary-color: var(--ds-color-datepicker-primary-dark);
+  --dp-primary-color: var(--ds-color-datepicker-primary-bg-dark);
   --dp-background-color: var(--ds-color-datepicker-bg-dark);
 }
 .dp__theme_light {
-  --dp-primary-color: var(--ds-color-datepicker-primary-light);
+  --dp-primary-color: var(--ds-color-datepicker-primary-bg-light);
   --dp-background-color: var(--ds-color-datepicker-bg-light);
 }
 </style>

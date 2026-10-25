@@ -185,7 +185,7 @@ theme; the defaults preserve the existing table appearance.
 | Area | Variables |
 | --- | --- |
 | Header | `--ds-color-table-header-bg-light`, `--ds-color-table-header-bg-dark`, `--ds-color-table-header-text-light`, `--ds-color-table-header-text-dark` |
-| Body | `--ds-color-table-body-bg-light`, `--ds-color-table-body-bg-dark`, `--ds-color-table-body-text-light`, `--ds-color-table-body-text-dark`, `--ds-color-table-body-hover-bg-light`, `--ds-color-table-body-hover-bg-dark` |
+| Body | `--ds-color-table-body-bg-light`, `--ds-color-table-body-bg-dark`, `--ds-color-table-body-text-light`, `--ds-color-table-body-text-dark`, `--ds-color-table-body-bg-hover-light`, `--ds-color-table-body-bg-hover-dark` |
 | Footer | `--ds-color-table-footer-bg-light`, `--ds-color-table-footer-bg-dark`, `--ds-color-table-footer-text-light`, `--ds-color-table-footer-text-dark` |
 | Loading placeholders | `--ds-color-table-skeleton-placeholder-bg-{light|dark}` |
 
@@ -196,13 +196,13 @@ Set light and dark values on `:root`:
   --ds-color-table-header-bg-light: #eff6ff;
   --ds-color-table-header-text-light: #1e3a8a;
   --ds-color-table-body-bg-light: #fff;
-  --ds-color-table-body-hover-bg-light: #f8fafc;
+  --ds-color-table-body-bg-hover-light: #f8fafc;
   --ds-color-table-footer-text-light: #475569;
 
   --ds-color-table-header-bg-dark: #172554;
   --ds-color-table-header-text-dark: #dbeafe;
   --ds-color-table-body-bg-dark: #0f172a;
-  --ds-color-table-body-hover-bg-dark: #1e293b;
+  --ds-color-table-body-bg-hover-dark: #1e293b;
   --ds-color-table-footer-text-dark: #94a3b8;
 }
 ```

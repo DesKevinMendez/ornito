@@ -34,8 +34,8 @@ variables. Override both the light and dark values on `:root`.
 | Part | Variables |
 | --- | --- |
 | Scrim and panel | `--ds-color-modal-scrim-bg-{light|dark}`, `--ds-color-modal-panel-bg-{light|dark}` |
-| Title and subtitle | `--ds-color-modal-title-{light|dark}`, `--ds-color-modal-subtitle-{light|dark}` |
-| Close control | `--ds-color-modal-close-text-{light|dark}`, `--ds-color-modal-close-hover-text-{light|dark}`, `--ds-color-modal-close-focus-{light|dark}` |
+| Title and subtitle | `--ds-color-modal-title-text-{light|dark}`, `--ds-color-modal-subtitle-text-{light|dark}` |
+| Close control | `--ds-color-modal-close-text-{light|dark}`, `--ds-color-modal-close-text-hover-{light|dark}`, `--ds-color-modal-close-ring-focus-{light|dark}` |
 
 ## BottomModal
 
@@ -91,8 +91,8 @@ variables. The footer divider uses the shared `border-divider-{light|dark}` toke
 | Part | Variables |
 | --- | --- |
 | Scrim and panel | `--ds-color-bottom-modal-scrim-bg-{light|dark}`, `--ds-color-bottom-modal-panel-bg-{light|dark}`, `--ds-color-bottom-modal-text-{light|dark}` |
-| Title and subtitle | `--ds-color-bottom-modal-title-{light|dark}`, `--ds-color-bottom-modal-subtitle-{light|dark}` |
-| Close control | `--ds-color-bottom-modal-close-text-{light|dark}`, `--ds-color-bottom-modal-close-hover-bg-{light|dark}`, `--ds-color-bottom-modal-close-hover-text-{light|dark}`, `--ds-color-bottom-modal-close-focus-{light|dark}` |
+| Title and subtitle | `--ds-color-bottom-modal-title-text-{light|dark}`, `--ds-color-bottom-modal-subtitle-text-{light|dark}` |
+| Close control | `--ds-color-bottom-modal-close-text-{light|dark}`, `--ds-color-bottom-modal-close-bg-hover-{light|dark}`, `--ds-color-bottom-modal-close-text-hover-{light|dark}`, `--ds-color-bottom-modal-close-ring-focus-{light|dark}` |
 
 ## ConfirmationModal
 

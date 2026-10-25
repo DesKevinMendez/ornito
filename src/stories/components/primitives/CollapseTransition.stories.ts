@@ -14,7 +14,7 @@ const meta = {
     },
     template: `
       <div class="max-w-md">
-        <button class="rounded border border-input-light dark:border-input-dark px-3 py-2 text-sm" @click="expanded = !expanded">Toggle details</button>
+        <button class="rounded border border-gray-300 px-3 py-2 text-sm" @click="expanded = !expanded">Toggle details</button>
         <CollapseTransition>
           <div v-if="expanded" class="mt-3 rounded-lg bg-gray-100 p-4 text-sm text-gray-700">The content expands and collapses with a height transition.</div>
         </CollapseTransition>

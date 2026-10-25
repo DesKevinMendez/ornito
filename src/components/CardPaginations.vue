@@ -31,7 +31,7 @@ const goToPage = (page: number) => {
       <button
         type="button"
         :disabled="pagination.current_page === 1"
-        class="w-8 h-8 flex items-center justify-center rounded-full bg-card-pagination-button-bg-light text-card-pagination-button-text-light hover:bg-card-pagination-button-hover-bg-light dark:bg-card-pagination-button-bg-dark dark:text-card-pagination-button-text-dark dark:hover:bg-card-pagination-button-hover-bg-dark disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-card-pagination-button-bg-light text-card-pagination-button-text-light hover:bg-card-pagination-button-bg-hover-light dark:bg-card-pagination-button-bg-dark dark:text-card-pagination-button-text-dark dark:hover:bg-card-pagination-button-bg-hover-dark disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
         @click="goToPage(pagination.current_page - 1)"
       >
         <IconChevronLeft class="w-4 h-4" />
@@ -42,7 +42,7 @@ const goToPage = (page: number) => {
       <button
         type="button"
         :disabled="pagination.current_page === pagination.last_page"
-        class="w-8 h-8 flex items-center justify-center rounded-full bg-card-pagination-button-bg-light text-card-pagination-button-text-light hover:bg-card-pagination-button-hover-bg-light dark:bg-card-pagination-button-bg-dark dark:text-card-pagination-button-text-dark dark:hover:bg-card-pagination-button-hover-bg-dark disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-card-pagination-button-bg-light text-card-pagination-button-text-light hover:bg-card-pagination-button-bg-hover-light dark:bg-card-pagination-button-bg-dark dark:text-card-pagination-button-text-dark dark:hover:bg-card-pagination-button-bg-hover-dark disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
         @click="goToPage(pagination.current_page + 1)"
       >
         <IconChevronRight class="w-4 h-4" />

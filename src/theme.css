@@ -166,24 +166,24 @@
     /* Sidebar */
     --color-sidebar-bg-light: var(--ds-color-sidebar-bg-light);
     --color-sidebar-bg-dark: var(--ds-color-sidebar-bg-dark);
-    --color-sidebar-title-light: var(--ds-color-sidebar-title-light);
-    --color-sidebar-title-dark: var(--ds-color-sidebar-title-dark);
-    --color-sidebar-subtitle-light: var(--ds-color-sidebar-subtitle-light);
-    --color-sidebar-subtitle-dark: var(--ds-color-sidebar-subtitle-dark);
-    --color-sidebar-version-light: var(--ds-color-sidebar-version-light);
-    --color-sidebar-version-dark: var(--ds-color-sidebar-version-dark);
+    --color-sidebar-title-text-light: var(--ds-color-sidebar-title-text-light);
+    --color-sidebar-title-text-dark: var(--ds-color-sidebar-title-text-dark);
+    --color-sidebar-subtitle-text-light: var(--ds-color-sidebar-subtitle-text-light);
+    --color-sidebar-subtitle-text-dark: var(--ds-color-sidebar-subtitle-text-dark);
+    --color-sidebar-version-text-light: var(--ds-color-sidebar-version-text-light);
+    --color-sidebar-version-text-dark: var(--ds-color-sidebar-version-text-dark);
     --color-sidebar-collapse-bg-light: var(--ds-color-sidebar-collapse-bg-light);
     --color-sidebar-collapse-bg-dark: var(--ds-color-sidebar-collapse-bg-dark);
     --color-sidebar-collapse-bg-hover-light: var(--ds-color-sidebar-collapse-bg-hover-light);
     --color-sidebar-collapse-bg-hover-dark: var(--ds-color-sidebar-collapse-bg-hover-dark);
-    --color-sidebar-collapse-icon-light: var(--ds-color-sidebar-collapse-icon-light);
-    --color-sidebar-collapse-icon-dark: var(--ds-color-sidebar-collapse-icon-dark);
+    --color-sidebar-collapse-icon-text-light: var(--ds-color-sidebar-collapse-icon-text-light);
+    --color-sidebar-collapse-icon-text-dark: var(--ds-color-sidebar-collapse-icon-text-dark);
     --color-sidebar-theme-toggle-bg-light: var(--ds-color-sidebar-theme-toggle-bg-light);
     --color-sidebar-theme-toggle-bg-dark: var(--ds-color-sidebar-theme-toggle-bg-dark);
     --color-sidebar-theme-toggle-bg-hover-light: var(--ds-color-sidebar-theme-toggle-bg-hover-light);
     --color-sidebar-theme-toggle-bg-hover-dark: var(--ds-color-sidebar-theme-toggle-bg-hover-dark);
-    --color-sidebar-theme-toggle-content-light: var(--ds-color-sidebar-theme-toggle-content-light);
-    --color-sidebar-theme-toggle-content-dark: var(--ds-color-sidebar-theme-toggle-content-dark);
+    --color-sidebar-theme-toggle-content-text-light: var(--ds-color-sidebar-theme-toggle-content-text-light);
+    --color-sidebar-theme-toggle-content-text-dark: var(--ds-color-sidebar-theme-toggle-content-text-dark);
     --color-sidebar-tab-bg-active-light: var(--ds-color-sidebar-tab-bg-active-light);
     --color-sidebar-tab-bg-active-dark: var(--ds-color-sidebar-tab-bg-active-dark);
     --color-sidebar-tab-text-active-light: var(--ds-color-sidebar-tab-text-active-light);
@@ -192,58 +192,58 @@
     --color-sidebar-tab-text-inactive-dark: var(--ds-color-sidebar-tab-text-inactive-dark);
     --color-sidebar-tab-bg-hover-light: var(--ds-color-sidebar-tab-bg-hover-light);
     --color-sidebar-tab-bg-hover-dark: var(--ds-color-sidebar-tab-bg-hover-dark);
-    --color-sidebar-tab-icon-light: var(--ds-color-sidebar-tab-icon-light);
-    --color-sidebar-tab-icon-dark: var(--ds-color-sidebar-tab-icon-dark);
-    --color-sidebar-tab-icon-hover-light: var(--ds-color-sidebar-tab-icon-hover-light);
-    --color-sidebar-tab-icon-hover-dark: var(--ds-color-sidebar-tab-icon-hover-dark);
-    --color-sidebar-tab-group-active-light: var(--ds-color-sidebar-tab-group-active-light);
-    --color-sidebar-tab-group-active-dark: var(--ds-color-sidebar-tab-group-active-dark);
+    --color-sidebar-tab-icon-text-light: var(--ds-color-sidebar-tab-icon-text-light);
+    --color-sidebar-tab-icon-text-dark: var(--ds-color-sidebar-tab-icon-text-dark);
+    --color-sidebar-tab-icon-text-hover-light: var(--ds-color-sidebar-tab-icon-text-hover-light);
+    --color-sidebar-tab-icon-text-hover-dark: var(--ds-color-sidebar-tab-icon-text-hover-dark);
+    --color-sidebar-tab-group-text-active-light: var(--ds-color-sidebar-tab-group-text-active-light);
+    --color-sidebar-tab-group-text-active-dark: var(--ds-color-sidebar-tab-group-text-active-dark);
     --color-sidebar-tab-badge-bg-light: var(--ds-color-sidebar-tab-badge-bg-light);
     --color-sidebar-tab-badge-bg-dark: var(--ds-color-sidebar-tab-badge-bg-dark);
     --color-sidebar-tab-badge-text-light: var(--ds-color-sidebar-tab-badge-text-light);
     --color-sidebar-tab-badge-text-dark: var(--ds-color-sidebar-tab-badge-text-dark);
-    --color-sidebar-tab-badge-active-bg-light: var(--ds-color-sidebar-tab-badge-active-bg-light);
-    --color-sidebar-tab-badge-active-bg-dark: var(--ds-color-sidebar-tab-badge-active-bg-dark);
+    --color-sidebar-tab-badge-bg-active-light: var(--ds-color-sidebar-tab-badge-bg-active-light);
+    --color-sidebar-tab-badge-bg-active-dark: var(--ds-color-sidebar-tab-badge-bg-active-dark);
 
     /* Tabs */
     --color-tabs-segmented-bg-light: var(--ds-color-tabs-segmented-bg-light);
     --color-tabs-segmented-bg-dark: var(--ds-color-tabs-segmented-bg-dark);
-    --color-tabs-segmented-indicator-light: var(--ds-color-tabs-segmented-indicator-light);
-    --color-tabs-segmented-indicator-dark: var(--ds-color-tabs-segmented-indicator-dark);
-    --color-tabs-segmented-active-text-light: var(--ds-color-tabs-segmented-active-text-light);
-    --color-tabs-segmented-active-text-dark: var(--ds-color-tabs-segmented-active-text-dark);
-    --color-tabs-segmented-inactive-text-light: var(--ds-color-tabs-segmented-inactive-text-light);
-    --color-tabs-segmented-inactive-text-dark: var(--ds-color-tabs-segmented-inactive-text-dark);
-    --color-tabs-segmented-inactive-hover-text-light: var(--ds-color-tabs-segmented-inactive-hover-text-light);
-    --color-tabs-segmented-inactive-hover-text-dark: var(--ds-color-tabs-segmented-inactive-hover-text-dark);
-    --color-tabs-pills-active-bg-light: var(--ds-color-tabs-pills-active-bg-light);
-    --color-tabs-pills-active-bg-dark: var(--ds-color-tabs-pills-active-bg-dark);
-    --color-tabs-pills-active-bg-hover-light: var(--ds-color-tabs-pills-active-bg-hover-light);
-    --color-tabs-pills-active-bg-hover-dark: var(--ds-color-tabs-pills-active-bg-hover-dark);
-    --color-tabs-pills-active-text-light: var(--ds-color-tabs-pills-active-text-light);
-    --color-tabs-pills-active-text-dark: var(--ds-color-tabs-pills-active-text-dark);
-    --color-tabs-pills-inactive-text-light: var(--ds-color-tabs-pills-inactive-text-light);
-    --color-tabs-pills-inactive-text-dark: var(--ds-color-tabs-pills-inactive-text-dark);
-    --color-tabs-pills-inactive-hover-bg-light: var(--ds-color-tabs-pills-inactive-hover-bg-light);
-    --color-tabs-pills-inactive-hover-bg-dark: var(--ds-color-tabs-pills-inactive-hover-bg-dark);
-    --color-tabs-pills-inactive-hover-text-light: var(--ds-color-tabs-pills-inactive-hover-text-light);
-    --color-tabs-pills-inactive-hover-text-dark: var(--ds-color-tabs-pills-inactive-hover-text-dark);
-    --color-tabs-underline-active-text-light: var(--ds-color-tabs-underline-active-text-light);
-    --color-tabs-underline-active-text-dark: var(--ds-color-tabs-underline-active-text-dark);
-    --color-tabs-underline-inactive-text-light: var(--ds-color-tabs-underline-inactive-text-light);
-    --color-tabs-underline-inactive-text-dark: var(--ds-color-tabs-underline-inactive-text-dark);
-    --color-tabs-underline-hover-bg-light: var(--ds-color-tabs-underline-hover-bg-light);
-    --color-tabs-underline-hover-bg-dark: var(--ds-color-tabs-underline-hover-bg-dark);
-    --color-tabs-underline-hover-text-light: var(--ds-color-tabs-underline-hover-text-light);
-    --color-tabs-underline-hover-text-dark: var(--ds-color-tabs-underline-hover-text-dark);
-    --color-tabs-underline-indicator-light: var(--ds-color-tabs-underline-indicator-light);
-    --color-tabs-underline-indicator-dark: var(--ds-color-tabs-underline-indicator-dark);
-    --color-tabs-disabled-light: var(--ds-color-tabs-disabled-light);
-    --color-tabs-disabled-dark: var(--ds-color-tabs-disabled-dark);
-    --color-tabs-focus-light: var(--ds-color-tabs-focus-light);
-    --color-tabs-focus-dark: var(--ds-color-tabs-focus-dark);
-    --color-tabs-focus-offset-light: var(--ds-color-tabs-focus-offset-light);
-    --color-tabs-focus-offset-dark: var(--ds-color-tabs-focus-offset-dark);
+    --color-tabs-segmented-indicator-bg-light: var(--ds-color-tabs-segmented-indicator-bg-light);
+    --color-tabs-segmented-indicator-bg-dark: var(--ds-color-tabs-segmented-indicator-bg-dark);
+    --color-tabs-segmented-text-active-light: var(--ds-color-tabs-segmented-text-active-light);
+    --color-tabs-segmented-text-active-dark: var(--ds-color-tabs-segmented-text-active-dark);
+    --color-tabs-segmented-text-inactive-light: var(--ds-color-tabs-segmented-text-inactive-light);
+    --color-tabs-segmented-text-inactive-dark: var(--ds-color-tabs-segmented-text-inactive-dark);
+    --color-tabs-segmented-text-inactive-hover-light: var(--ds-color-tabs-segmented-text-inactive-hover-light);
+    --color-tabs-segmented-text-inactive-hover-dark: var(--ds-color-tabs-segmented-text-inactive-hover-dark);
+    --color-tabs-pills-bg-active-light: var(--ds-color-tabs-pills-bg-active-light);
+    --color-tabs-pills-bg-active-dark: var(--ds-color-tabs-pills-bg-active-dark);
+    --color-tabs-pills-bg-active-hover-light: var(--ds-color-tabs-pills-bg-active-hover-light);
+    --color-tabs-pills-bg-active-hover-dark: var(--ds-color-tabs-pills-bg-active-hover-dark);
+    --color-tabs-pills-text-active-light: var(--ds-color-tabs-pills-text-active-light);
+    --color-tabs-pills-text-active-dark: var(--ds-color-tabs-pills-text-active-dark);
+    --color-tabs-pills-text-inactive-light: var(--ds-color-tabs-pills-text-inactive-light);
+    --color-tabs-pills-text-inactive-dark: var(--ds-color-tabs-pills-text-inactive-dark);
+    --color-tabs-pills-bg-inactive-hover-light: var(--ds-color-tabs-pills-bg-inactive-hover-light);
+    --color-tabs-pills-bg-inactive-hover-dark: var(--ds-color-tabs-pills-bg-inactive-hover-dark);
+    --color-tabs-pills-text-inactive-hover-light: var(--ds-color-tabs-pills-text-inactive-hover-light);
+    --color-tabs-pills-text-inactive-hover-dark: var(--ds-color-tabs-pills-text-inactive-hover-dark);
+    --color-tabs-underline-text-active-light: var(--ds-color-tabs-underline-text-active-light);
+    --color-tabs-underline-text-active-dark: var(--ds-color-tabs-underline-text-active-dark);
+    --color-tabs-underline-text-inactive-light: var(--ds-color-tabs-underline-text-inactive-light);
+    --color-tabs-underline-text-inactive-dark: var(--ds-color-tabs-underline-text-inactive-dark);
+    --color-tabs-underline-bg-hover-light: var(--ds-color-tabs-underline-bg-hover-light);
+    --color-tabs-underline-bg-hover-dark: var(--ds-color-tabs-underline-bg-hover-dark);
+    --color-tabs-underline-text-hover-light: var(--ds-color-tabs-underline-text-hover-light);
+    --color-tabs-underline-text-hover-dark: var(--ds-color-tabs-underline-text-hover-dark);
+    --color-tabs-underline-indicator-bg-light: var(--ds-color-tabs-underline-indicator-bg-light);
+    --color-tabs-underline-indicator-bg-dark: var(--ds-color-tabs-underline-indicator-bg-dark);
+    --color-tabs-text-disabled-light: var(--ds-color-tabs-text-disabled-light);
+    --color-tabs-text-disabled-dark: var(--ds-color-tabs-text-disabled-dark);
+    --color-tabs-ring-focus-light: var(--ds-color-tabs-ring-focus-light);
+    --color-tabs-ring-focus-dark: var(--ds-color-tabs-ring-focus-dark);
+    --color-tabs-ring-offset-focus-light: var(--ds-color-tabs-ring-offset-focus-light);
+    --color-tabs-ring-offset-focus-dark: var(--ds-color-tabs-ring-offset-focus-dark);
     --color-tabs-empty-text-light: var(--ds-color-tabs-empty-text-light);
     --color-tabs-empty-text-dark: var(--ds-color-tabs-empty-text-dark);
 
@@ -256,8 +256,8 @@
     --color-table-body-bg-dark: var(--ds-color-table-body-bg-dark);
     --color-table-body-text-light: var(--ds-color-table-body-text-light);
     --color-table-body-text-dark: var(--ds-color-table-body-text-dark);
-    --color-table-body-hover-bg-light: var(--ds-color-table-body-hover-bg-light);
-    --color-table-body-hover-bg-dark: var(--ds-color-table-body-hover-bg-dark);
+    --color-table-body-bg-hover-light: var(--ds-color-table-body-bg-hover-light);
+    --color-table-body-bg-hover-dark: var(--ds-color-table-body-bg-hover-dark);
     --color-table-footer-bg-light: var(--ds-color-table-footer-bg-light);
     --color-table-footer-bg-dark: var(--ds-color-table-footer-bg-dark);
     --color-table-footer-text-light: var(--ds-color-table-footer-text-light);
@@ -270,126 +270,132 @@
     --color-dropdown-trigger-text-dark: var(--ds-color-dropdown-trigger-text-dark);
     --color-dropdown-trigger-border-light: var(--ds-color-dropdown-trigger-border-light);
     --color-dropdown-trigger-border-dark: var(--ds-color-dropdown-trigger-border-dark);
-    --color-dropdown-trigger-hover-bg-light: var(--ds-color-dropdown-trigger-hover-bg-light);
-    --color-dropdown-trigger-hover-bg-dark: var(--ds-color-dropdown-trigger-hover-bg-dark);
+    --color-dropdown-trigger-bg-hover-light: var(--ds-color-dropdown-trigger-bg-hover-light);
+    --color-dropdown-trigger-bg-hover-dark: var(--ds-color-dropdown-trigger-bg-hover-dark);
+    --color-dropdown-trigger-bg-active-light: var(--ds-color-dropdown-trigger-bg-active-light);
+    --color-dropdown-trigger-bg-active-dark: var(--ds-color-dropdown-trigger-bg-active-dark);
     --color-dropdown-panel-bg-light: var(--ds-color-dropdown-panel-bg-light);
     --color-dropdown-panel-bg-dark: var(--ds-color-dropdown-panel-bg-dark);
     --color-dropdown-panel-border-light: var(--ds-color-dropdown-panel-border-light);
     --color-dropdown-panel-border-dark: var(--ds-color-dropdown-panel-border-dark);
     --color-dropdown-item-text-light: var(--ds-color-dropdown-item-text-light);
     --color-dropdown-item-text-dark: var(--ds-color-dropdown-item-text-dark);
-    --color-dropdown-item-hover-bg-light: var(--ds-color-dropdown-item-hover-bg-light);
-    --color-dropdown-item-hover-bg-dark: var(--ds-color-dropdown-item-hover-bg-dark);
-    --color-dropdown-item-hover-text-light: var(--ds-color-dropdown-item-hover-text-light);
-    --color-dropdown-item-hover-text-dark: var(--ds-color-dropdown-item-hover-text-dark);
-    --color-dropdown-item-active-bg-light: var(--ds-color-dropdown-item-active-bg-light);
-    --color-dropdown-item-active-bg-dark: var(--ds-color-dropdown-item-active-bg-dark);
-    --color-dropdown-item-active-text-light: var(--ds-color-dropdown-item-active-text-light);
-    --color-dropdown-item-active-text-dark: var(--ds-color-dropdown-item-active-text-dark);
+    --color-dropdown-item-bg-hover-light: var(--ds-color-dropdown-item-bg-hover-light);
+    --color-dropdown-item-bg-hover-dark: var(--ds-color-dropdown-item-bg-hover-dark);
+    --color-dropdown-item-text-hover-light: var(--ds-color-dropdown-item-text-hover-light);
+    --color-dropdown-item-text-hover-dark: var(--ds-color-dropdown-item-text-hover-dark);
+    --color-dropdown-item-bg-active-light: var(--ds-color-dropdown-item-bg-active-light);
+    --color-dropdown-item-bg-active-dark: var(--ds-color-dropdown-item-bg-active-dark);
+    --color-dropdown-item-text-active-light: var(--ds-color-dropdown-item-text-active-light);
+    --color-dropdown-item-text-active-dark: var(--ds-color-dropdown-item-text-active-dark);
 
     /* Form controls */
-    --color-form-label-light: var(--ds-color-form-label-light);
-    --color-form-label-dark: var(--ds-color-form-label-dark);
+    --color-form-label-text-light: var(--ds-color-form-label-text-light);
+    --color-form-label-text-dark: var(--ds-color-form-label-text-dark);
     --color-form-control-bg-light: var(--ds-color-form-control-bg-light);
     --color-form-control-bg-dark: var(--ds-color-form-control-bg-dark);
     --color-form-control-text-light: var(--ds-color-form-control-text-light);
     --color-form-control-text-dark: var(--ds-color-form-control-text-dark);
-    --color-form-control-placeholder-light: var(--ds-color-form-control-placeholder-light);
-    --color-form-control-placeholder-dark: var(--ds-color-form-control-placeholder-dark);
-    --color-form-control-icon-light: var(--ds-color-form-control-icon-light);
-    --color-form-control-icon-dark: var(--ds-color-form-control-icon-dark);
-    --color-form-control-icon-hover-light: var(--ds-color-form-control-icon-hover-light);
-    --color-form-control-icon-hover-dark: var(--ds-color-form-control-icon-hover-dark);
+    --color-form-control-placeholder-text-light: var(--ds-color-form-control-placeholder-text-light);
+    --color-form-control-placeholder-text-dark: var(--ds-color-form-control-placeholder-text-dark);
+    --color-form-control-border-focus-light: var(--ds-color-form-control-border-focus-light);
+    --color-form-control-border-focus-dark: var(--ds-color-form-control-border-focus-dark);
+    --color-form-control-icon-text-light: var(--ds-color-form-control-icon-text-light);
+    --color-form-control-icon-text-dark: var(--ds-color-form-control-icon-text-dark);
+    --color-form-control-icon-text-hover-light: var(--ds-color-form-control-icon-text-hover-light);
+    --color-form-control-icon-text-hover-dark: var(--ds-color-form-control-icon-text-hover-dark);
     --color-form-supporting-text-light: var(--ds-color-form-supporting-text-light);
     --color-form-supporting-text-dark: var(--ds-color-form-supporting-text-dark);
-    --color-form-range-bound-light: var(--ds-color-form-range-bound-light);
-    --color-form-range-bound-dark: var(--ds-color-form-range-bound-dark);
-    --color-form-range-value-light: var(--ds-color-form-range-value-light);
-    --color-form-range-value-dark: var(--ds-color-form-range-value-dark);
+    --color-form-range-bound-text-light: var(--ds-color-form-range-bound-text-light);
+    --color-form-range-bound-text-dark: var(--ds-color-form-range-bound-text-dark);
+    --color-form-range-value-text-light: var(--ds-color-form-range-value-text-light);
+    --color-form-range-value-text-dark: var(--ds-color-form-range-value-text-dark);
     --color-form-select-placeholder-bg-light: var(--ds-color-form-select-placeholder-bg-light);
     --color-form-select-placeholder-bg-dark: var(--ds-color-form-select-placeholder-bg-dark);
     --color-form-select-placeholder-text-light: var(--ds-color-form-select-placeholder-text-light);
     --color-form-select-placeholder-text-dark: var(--ds-color-form-select-placeholder-text-dark);
     --color-form-suggestion-panel-bg-light: var(--ds-color-form-suggestion-panel-bg-light);
     --color-form-suggestion-panel-bg-dark: var(--ds-color-form-suggestion-panel-bg-dark);
-    --color-form-suggestion-hover-bg-light: var(--ds-color-form-suggestion-hover-bg-light);
-    --color-form-suggestion-hover-bg-dark: var(--ds-color-form-suggestion-hover-bg-dark);
-    --color-form-suggestion-icon-light: var(--ds-color-form-suggestion-icon-light);
-    --color-form-suggestion-icon-dark: var(--ds-color-form-suggestion-icon-dark);
+    --color-form-suggestion-bg-hover-light: var(--ds-color-form-suggestion-bg-hover-light);
+    --color-form-suggestion-bg-hover-dark: var(--ds-color-form-suggestion-bg-hover-dark);
+    --color-form-suggestion-icon-text-light: var(--ds-color-form-suggestion-icon-text-light);
+    --color-form-suggestion-icon-text-dark: var(--ds-color-form-suggestion-icon-text-dark);
 
     /* SwitchInput */
-    --color-switch-input-label-light: var(--ds-color-switch-input-label-light);
-    --color-switch-input-label-dark: var(--ds-color-switch-input-label-dark);
-    --color-switch-input-track-on-light: var(--ds-color-switch-input-track-on-light);
-    --color-switch-input-track-on-dark: var(--ds-color-switch-input-track-on-dark);
-    --color-switch-input-track-off-light: var(--ds-color-switch-input-track-off-light);
-    --color-switch-input-track-off-dark: var(--ds-color-switch-input-track-off-dark);
-    --color-switch-input-thumb-light: var(--ds-color-switch-input-thumb-light);
-    --color-switch-input-thumb-dark: var(--ds-color-switch-input-thumb-dark);
+    --color-switch-input-label-text-light: var(--ds-color-switch-input-label-text-light);
+    --color-switch-input-label-text-dark: var(--ds-color-switch-input-label-text-dark);
+    --color-switch-input-track-bg-on-light: var(--ds-color-switch-input-track-bg-on-light);
+    --color-switch-input-track-bg-on-dark: var(--ds-color-switch-input-track-bg-on-dark);
+    --color-switch-input-track-bg-off-light: var(--ds-color-switch-input-track-bg-off-light);
+    --color-switch-input-track-bg-off-dark: var(--ds-color-switch-input-track-bg-off-dark);
+    --color-switch-input-thumb-bg-light: var(--ds-color-switch-input-thumb-bg-light);
+    --color-switch-input-thumb-bg-dark: var(--ds-color-switch-input-thumb-bg-dark);
 
     /* Dashboard view header */
-    --color-view-header-title-light: var(--ds-color-view-header-title-light);
-    --color-view-header-title-dark: var(--ds-color-view-header-title-dark);
-    --color-view-header-subtitle-light: var(--ds-color-view-header-subtitle-light);
-    --color-view-header-subtitle-dark: var(--ds-color-view-header-subtitle-dark);
+    --color-view-header-title-text-light: var(--ds-color-view-header-title-text-light);
+    --color-view-header-title-text-dark: var(--ds-color-view-header-title-text-dark);
+    --color-view-header-subtitle-text-light: var(--ds-color-view-header-subtitle-text-light);
+    --color-view-header-subtitle-text-dark: var(--ds-color-view-header-subtitle-text-dark);
 
     /* Card */
     --color-card-bg-light: var(--ds-color-card-bg-light);
     --color-card-bg-dark: var(--ds-color-card-bg-dark);
-    --color-card-title-light: var(--ds-color-card-title-light);
-    --color-card-title-dark: var(--ds-color-card-title-dark);
-    --color-card-subtitle-light: var(--ds-color-card-subtitle-light);
-    --color-card-subtitle-dark: var(--ds-color-card-subtitle-dark);
+    --color-card-title-text-light: var(--ds-color-card-title-text-light);
+    --color-card-title-text-dark: var(--ds-color-card-title-text-dark);
+    --color-card-subtitle-text-light: var(--ds-color-card-subtitle-text-light);
+    --color-card-subtitle-text-dark: var(--ds-color-card-subtitle-text-dark);
 
     /* StatCard */
-    --color-stat-card-title-light: var(--ds-color-stat-card-title-light);
-    --color-stat-card-title-dark: var(--ds-color-stat-card-title-dark);
-    --color-stat-card-value-light: var(--ds-color-stat-card-value-light);
-    --color-stat-card-value-dark: var(--ds-color-stat-card-value-dark);
-    --color-stat-card-empty-light: var(--ds-color-stat-card-empty-light);
-    --color-stat-card-empty-dark: var(--ds-color-stat-card-empty-dark);
-    --color-stat-card-description-light: var(--ds-color-stat-card-description-light);
-    --color-stat-card-description-dark: var(--ds-color-stat-card-description-dark);
-    --color-stat-card-change-positive-light: var(--ds-color-stat-card-change-positive-light);
-    --color-stat-card-change-positive-dark: var(--ds-color-stat-card-change-positive-dark);
-    --color-stat-card-change-negative-light: var(--ds-color-stat-card-change-negative-light);
-    --color-stat-card-change-negative-dark: var(--ds-color-stat-card-change-negative-dark);
-    --color-stat-card-change-neutral-light: var(--ds-color-stat-card-change-neutral-light);
-    --color-stat-card-change-neutral-dark: var(--ds-color-stat-card-change-neutral-dark);
-    --color-stat-card-change-info-light: var(--ds-color-stat-card-change-info-light);
-    --color-stat-card-change-info-dark: var(--ds-color-stat-card-change-info-dark);
+    --color-stat-card-title-text-light: var(--ds-color-stat-card-title-text-light);
+    --color-stat-card-title-text-dark: var(--ds-color-stat-card-title-text-dark);
+    --color-stat-card-value-text-light: var(--ds-color-stat-card-value-text-light);
+    --color-stat-card-value-text-dark: var(--ds-color-stat-card-value-text-dark);
+    --color-stat-card-empty-text-light: var(--ds-color-stat-card-empty-text-light);
+    --color-stat-card-empty-text-dark: var(--ds-color-stat-card-empty-text-dark);
+    --color-stat-card-description-text-light: var(--ds-color-stat-card-description-text-light);
+    --color-stat-card-description-text-dark: var(--ds-color-stat-card-description-text-dark);
+    --color-stat-card-change-positive-text-light: var(--ds-color-stat-card-change-positive-text-light);
+    --color-stat-card-change-positive-text-dark: var(--ds-color-stat-card-change-positive-text-dark);
+    --color-stat-card-change-negative-text-light: var(--ds-color-stat-card-change-negative-text-light);
+    --color-stat-card-change-negative-text-dark: var(--ds-color-stat-card-change-negative-text-dark);
+    --color-stat-card-change-neutral-text-light: var(--ds-color-stat-card-change-neutral-text-light);
+    --color-stat-card-change-neutral-text-dark: var(--ds-color-stat-card-change-neutral-text-dark);
+    --color-stat-card-change-info-text-light: var(--ds-color-stat-card-change-info-text-light);
+    --color-stat-card-change-info-text-dark: var(--ds-color-stat-card-change-info-text-dark);
+    --color-stat-card-change-default-text-light: var(--ds-color-stat-card-change-default-text-light);
+    --color-stat-card-change-default-text-dark: var(--ds-color-stat-card-change-default-text-dark);
 
     /* Navbar */
     --color-navbar-bg-light: var(--ds-color-navbar-bg-light);
     --color-navbar-bg-dark: var(--ds-color-navbar-bg-dark);
     --color-navbar-mobile-menu-bg-light: var(--ds-color-navbar-mobile-menu-bg-light);
     --color-navbar-mobile-menu-bg-dark: var(--ds-color-navbar-mobile-menu-bg-dark);
-    --color-navbar-mobile-menu-hover-bg-light: var(--ds-color-navbar-mobile-menu-hover-bg-light);
-    --color-navbar-mobile-menu-hover-bg-dark: var(--ds-color-navbar-mobile-menu-hover-bg-dark);
-    --color-navbar-mobile-menu-icon-light: var(--ds-color-navbar-mobile-menu-icon-light);
-    --color-navbar-mobile-menu-icon-dark: var(--ds-color-navbar-mobile-menu-icon-dark);
+    --color-navbar-mobile-menu-bg-hover-light: var(--ds-color-navbar-mobile-menu-bg-hover-light);
+    --color-navbar-mobile-menu-bg-hover-dark: var(--ds-color-navbar-mobile-menu-bg-hover-dark);
+    --color-navbar-mobile-menu-icon-text-light: var(--ds-color-navbar-mobile-menu-icon-text-light);
+    --color-navbar-mobile-menu-icon-text-dark: var(--ds-color-navbar-mobile-menu-icon-text-dark);
 
     /* User profile dropdown */
     --color-profile-notification-trigger-bg-light: var(--ds-color-profile-notification-trigger-bg-light);
     --color-profile-notification-trigger-bg-dark: var(--ds-color-profile-notification-trigger-bg-dark);
-    --color-profile-notification-trigger-hover-bg-light: var(--ds-color-profile-notification-trigger-hover-bg-light);
-    --color-profile-notification-trigger-hover-bg-dark: var(--ds-color-profile-notification-trigger-hover-bg-dark);
-    --color-profile-notification-trigger-icon-light: var(--ds-color-profile-notification-trigger-icon-light);
-    --color-profile-notification-trigger-icon-dark: var(--ds-color-profile-notification-trigger-icon-dark);
+    --color-profile-notification-trigger-bg-hover-light: var(--ds-color-profile-notification-trigger-bg-hover-light);
+    --color-profile-notification-trigger-bg-hover-dark: var(--ds-color-profile-notification-trigger-bg-hover-dark);
+    --color-profile-notification-trigger-icon-text-light: var(--ds-color-profile-notification-trigger-icon-text-light);
+    --color-profile-notification-trigger-icon-text-dark: var(--ds-color-profile-notification-trigger-icon-text-dark);
     --color-profile-panel-bg-light: var(--ds-color-profile-panel-bg-light);
     --color-profile-panel-bg-dark: var(--ds-color-profile-panel-bg-dark);
-    --color-profile-notification-title-light: var(--ds-color-profile-notification-title-light);
-    --color-profile-notification-title-dark: var(--ds-color-profile-notification-title-dark);
+    --color-profile-notification-title-text-light: var(--ds-color-profile-notification-title-text-light);
+    --color-profile-notification-title-text-dark: var(--ds-color-profile-notification-title-text-dark);
     --color-profile-avatar-bg-light: var(--ds-color-profile-avatar-bg-light);
     --color-profile-avatar-bg-dark: var(--ds-color-profile-avatar-bg-dark);
     --color-profile-avatar-text-light: var(--ds-color-profile-avatar-text-light);
     --color-profile-avatar-text-dark: var(--ds-color-profile-avatar-text-dark);
-    --color-profile-name-light: var(--ds-color-profile-name-light);
-    --color-profile-name-dark: var(--ds-color-profile-name-dark);
-    --color-profile-role-light: var(--ds-color-profile-role-light);
-    --color-profile-role-dark: var(--ds-color-profile-role-dark);
-    --color-profile-chevron-light: var(--ds-color-profile-chevron-light);
-    --color-profile-chevron-dark: var(--ds-color-profile-chevron-dark);
+    --color-profile-name-text-light: var(--ds-color-profile-name-text-light);
+    --color-profile-name-text-dark: var(--ds-color-profile-name-text-dark);
+    --color-profile-role-text-light: var(--ds-color-profile-role-text-light);
+    --color-profile-role-text-dark: var(--ds-color-profile-role-text-dark);
+    --color-profile-chevron-text-light: var(--ds-color-profile-chevron-text-light);
+    --color-profile-chevron-text-dark: var(--ds-color-profile-chevron-text-dark);
 
     --color-dropdown-menu-panel-bg-light: var(--ds-color-dropdown-menu-panel-bg-light);
     --color-dropdown-menu-panel-bg-dark: var(--ds-color-dropdown-menu-panel-bg-dark);
@@ -397,44 +403,46 @@
     --color-modal-scrim-bg-dark: var(--ds-color-modal-scrim-bg-dark);
     --color-modal-panel-bg-light: var(--ds-color-modal-panel-bg-light);
     --color-modal-panel-bg-dark: var(--ds-color-modal-panel-bg-dark);
-    --color-modal-title-light: var(--ds-color-modal-title-light);
-    --color-modal-title-dark: var(--ds-color-modal-title-dark);
-    --color-modal-subtitle-light: var(--ds-color-modal-subtitle-light);
-    --color-modal-subtitle-dark: var(--ds-color-modal-subtitle-dark);
+    --color-modal-title-text-light: var(--ds-color-modal-title-text-light);
+    --color-modal-title-text-dark: var(--ds-color-modal-title-text-dark);
+    --color-modal-subtitle-text-light: var(--ds-color-modal-subtitle-text-light);
+    --color-modal-subtitle-text-dark: var(--ds-color-modal-subtitle-text-dark);
     --color-modal-close-text-light: var(--ds-color-modal-close-text-light);
     --color-modal-close-text-dark: var(--ds-color-modal-close-text-dark);
-    --color-modal-close-hover-text-light: var(--ds-color-modal-close-hover-text-light);
-    --color-modal-close-hover-text-dark: var(--ds-color-modal-close-hover-text-dark);
-    --color-modal-close-focus-light: var(--ds-color-modal-close-focus-light);
-    --color-modal-close-focus-dark: var(--ds-color-modal-close-focus-dark);
+    --color-modal-close-text-hover-light: var(--ds-color-modal-close-text-hover-light);
+    --color-modal-close-text-hover-dark: var(--ds-color-modal-close-text-hover-dark);
+    --color-modal-close-ring-focus-light: var(--ds-color-modal-close-ring-focus-light);
+    --color-modal-close-ring-focus-dark: var(--ds-color-modal-close-ring-focus-dark);
     --color-bottom-modal-scrim-bg-light: var(--ds-color-bottom-modal-scrim-bg-light);
     --color-bottom-modal-scrim-bg-dark: var(--ds-color-bottom-modal-scrim-bg-dark);
     --color-bottom-modal-panel-bg-light: var(--ds-color-bottom-modal-panel-bg-light);
     --color-bottom-modal-panel-bg-dark: var(--ds-color-bottom-modal-panel-bg-dark);
     --color-bottom-modal-text-light: var(--ds-color-bottom-modal-text-light);
     --color-bottom-modal-text-dark: var(--ds-color-bottom-modal-text-dark);
-    --color-bottom-modal-title-light: var(--ds-color-bottom-modal-title-light);
-    --color-bottom-modal-title-dark: var(--ds-color-bottom-modal-title-dark);
-    --color-bottom-modal-subtitle-light: var(--ds-color-bottom-modal-subtitle-light);
-    --color-bottom-modal-subtitle-dark: var(--ds-color-bottom-modal-subtitle-dark);
+    --color-bottom-modal-title-text-light: var(--ds-color-bottom-modal-title-text-light);
+    --color-bottom-modal-title-text-dark: var(--ds-color-bottom-modal-title-text-dark);
+    --color-bottom-modal-subtitle-text-light: var(--ds-color-bottom-modal-subtitle-text-light);
+    --color-bottom-modal-subtitle-text-dark: var(--ds-color-bottom-modal-subtitle-text-dark);
     --color-bottom-modal-close-text-light: var(--ds-color-bottom-modal-close-text-light);
     --color-bottom-modal-close-text-dark: var(--ds-color-bottom-modal-close-text-dark);
-    --color-bottom-modal-close-hover-bg-light: var(--ds-color-bottom-modal-close-hover-bg-light);
-    --color-bottom-modal-close-hover-bg-dark: var(--ds-color-bottom-modal-close-hover-bg-dark);
-    --color-bottom-modal-close-hover-text-light: var(--ds-color-bottom-modal-close-hover-text-light);
-    --color-bottom-modal-close-hover-text-dark: var(--ds-color-bottom-modal-close-hover-text-dark);
-    --color-bottom-modal-close-focus-light: var(--ds-color-bottom-modal-close-focus-light);
-    --color-bottom-modal-close-focus-dark: var(--ds-color-bottom-modal-close-focus-dark);
+    --color-bottom-modal-close-bg-hover-light: var(--ds-color-bottom-modal-close-bg-hover-light);
+    --color-bottom-modal-close-bg-hover-dark: var(--ds-color-bottom-modal-close-bg-hover-dark);
+    --color-bottom-modal-close-text-hover-light: var(--ds-color-bottom-modal-close-text-hover-light);
+    --color-bottom-modal-close-text-hover-dark: var(--ds-color-bottom-modal-close-text-hover-dark);
+    --color-bottom-modal-close-ring-focus-light: var(--ds-color-bottom-modal-close-ring-focus-light);
+    --color-bottom-modal-close-ring-focus-dark: var(--ds-color-bottom-modal-close-ring-focus-dark);
+    --color-bottom-modal-divider-border-light: var(--ds-color-bottom-modal-divider-border-light);
+    --color-bottom-modal-divider-border-dark: var(--ds-color-bottom-modal-divider-border-dark);
     --color-item-bg-light: var(--ds-color-item-bg-light);
     --color-item-bg-dark: var(--ds-color-item-bg-dark);
-    --color-item-hover-bg-light: var(--ds-color-item-hover-bg-light);
-    --color-item-hover-bg-dark: var(--ds-color-item-hover-bg-dark);
-    --color-item-title-light: var(--ds-color-item-title-light);
-    --color-item-title-dark: var(--ds-color-item-title-dark);
-    --color-item-subtitle-light: var(--ds-color-item-subtitle-light);
-    --color-item-subtitle-dark: var(--ds-color-item-subtitle-dark);
-    --color-item-icon-light: var(--ds-color-item-icon-light);
-    --color-item-icon-dark: var(--ds-color-item-icon-dark);
+    --color-item-bg-hover-light: var(--ds-color-item-bg-hover-light);
+    --color-item-bg-hover-dark: var(--ds-color-item-bg-hover-dark);
+    --color-item-title-text-light: var(--ds-color-item-title-text-light);
+    --color-item-title-text-dark: var(--ds-color-item-title-text-dark);
+    --color-item-subtitle-text-light: var(--ds-color-item-subtitle-text-light);
+    --color-item-subtitle-text-dark: var(--ds-color-item-subtitle-text-dark);
+    --color-item-icon-text-light: var(--ds-color-item-icon-text-light);
+    --color-item-icon-text-dark: var(--ds-color-item-icon-text-dark);
     --color-list-bg-light: var(--ds-color-list-bg-light);
     --color-list-bg-dark: var(--ds-color-list-bg-dark);
     --color-help-tooltip-trigger-bg-light: var(--ds-color-help-tooltip-trigger-bg-light);
@@ -541,128 +549,181 @@
     --color-card-pagination-page-text-dark: var(--ds-color-card-pagination-page-text-dark);
     --color-card-pagination-button-bg-light: var(--ds-color-card-pagination-button-bg-light);
     --color-card-pagination-button-bg-dark: var(--ds-color-card-pagination-button-bg-dark);
-    --color-card-pagination-button-hover-bg-light: var(--ds-color-card-pagination-button-hover-bg-light);
-    --color-card-pagination-button-hover-bg-dark: var(--ds-color-card-pagination-button-hover-bg-dark);
+    --color-card-pagination-button-bg-hover-light: var(--ds-color-card-pagination-button-bg-hover-light);
+    --color-card-pagination-button-bg-hover-dark: var(--ds-color-card-pagination-button-bg-hover-dark);
     --color-card-pagination-button-text-light: var(--ds-color-card-pagination-button-text-light);
     --color-card-pagination-button-text-dark: var(--ds-color-card-pagination-button-text-dark);
     --color-table-skeleton-placeholder-bg-light: var(--ds-color-table-skeleton-placeholder-bg-light);
     --color-table-skeleton-placeholder-bg-dark: var(--ds-color-table-skeleton-placeholder-bg-dark);
-    --color-breadcrumb-separator-light: var(--ds-color-breadcrumb-separator-light);
-    --color-breadcrumb-separator-dark: var(--ds-color-breadcrumb-separator-dark);
-    --color-breadcrumb-link-light: var(--ds-color-breadcrumb-link-light);
-    --color-breadcrumb-link-dark: var(--ds-color-breadcrumb-link-dark);
-    --color-breadcrumb-link-hover-light: var(--ds-color-breadcrumb-link-hover-light);
-    --color-breadcrumb-link-hover-dark: var(--ds-color-breadcrumb-link-hover-dark);
-    --color-breadcrumb-current-light: var(--ds-color-breadcrumb-current-light);
-    --color-breadcrumb-current-dark: var(--ds-color-breadcrumb-current-dark);
-    --color-breadcrumb-item-light: var(--ds-color-breadcrumb-item-light);
-    --color-breadcrumb-item-dark: var(--ds-color-breadcrumb-item-dark);
-    --color-info-item-label-light: var(--ds-color-info-item-label-light);
-    --color-info-item-label-dark: var(--ds-color-info-item-label-dark);
-    --color-info-item-value-light: var(--ds-color-info-item-value-light);
-    --color-info-item-value-dark: var(--ds-color-info-item-value-dark);
-    --color-loading-svg-light: var(--ds-color-loading-svg-light);
-    --color-loading-svg-dark: var(--ds-color-loading-svg-dark);
+    --color-table-card-label-text-light: var(--ds-color-table-card-label-text-light);
+    --color-table-card-label-text-dark: var(--ds-color-table-card-label-text-dark);
+    --color-table-card-skeleton-bg-light: var(--ds-color-table-card-skeleton-bg-light);
+    --color-table-card-skeleton-bg-dark: var(--ds-color-table-card-skeleton-bg-dark);
+    --color-breadcrumb-separator-text-light: var(--ds-color-breadcrumb-separator-text-light);
+    --color-breadcrumb-separator-text-dark: var(--ds-color-breadcrumb-separator-text-dark);
+    --color-breadcrumb-link-text-light: var(--ds-color-breadcrumb-link-text-light);
+    --color-breadcrumb-link-text-dark: var(--ds-color-breadcrumb-link-text-dark);
+    --color-breadcrumb-link-text-hover-light: var(--ds-color-breadcrumb-link-text-hover-light);
+    --color-breadcrumb-link-text-hover-dark: var(--ds-color-breadcrumb-link-text-hover-dark);
+    --color-breadcrumb-current-text-light: var(--ds-color-breadcrumb-current-text-light);
+    --color-breadcrumb-current-text-dark: var(--ds-color-breadcrumb-current-text-dark);
+    --color-breadcrumb-item-text-light: var(--ds-color-breadcrumb-item-text-light);
+    --color-breadcrumb-item-text-dark: var(--ds-color-breadcrumb-item-text-dark);
+    --color-info-item-label-text-light: var(--ds-color-info-item-label-text-light);
+    --color-info-item-label-text-dark: var(--ds-color-info-item-label-text-dark);
+    --color-info-item-value-text-light: var(--ds-color-info-item-value-text-light);
+    --color-info-item-value-text-dark: var(--ds-color-info-item-value-text-dark);
+    --color-loading-svg-text-light: var(--ds-color-loading-svg-text-light);
+    --color-loading-svg-text-dark: var(--ds-color-loading-svg-text-dark);
+
+    /* BaseButton and BaseButtonIcon */
+    --color-button-primary-bg-light: var(--ds-color-button-primary-bg-light);
+    --color-button-primary-bg-hover-light: var(--ds-color-button-primary-bg-hover-light);
+    --color-button-primary-bg-active-light: var(--ds-color-button-primary-bg-active-light);
+    --color-button-primary-text-light: var(--ds-color-button-primary-text-light);
+    --color-button-primary-text-hover-light: var(--ds-color-button-primary-text-hover-light);
+    --color-button-primary-text-active-light: var(--ds-color-button-primary-text-active-light);
+    --color-button-primary-border-light: var(--ds-color-button-primary-border-light);
+    --color-button-primary-bg-dark: var(--ds-color-button-primary-bg-dark);
+    --color-button-primary-bg-hover-dark: var(--ds-color-button-primary-bg-hover-dark);
+    --color-button-primary-bg-active-dark: var(--ds-color-button-primary-bg-active-dark);
+    --color-button-primary-text-dark: var(--ds-color-button-primary-text-dark);
+    --color-button-primary-text-hover-dark: var(--ds-color-button-primary-text-hover-dark);
+    --color-button-primary-text-active-dark: var(--ds-color-button-primary-text-active-dark);
+    --color-button-primary-border-dark: var(--ds-color-button-primary-border-dark);
+
+    --color-button-secondary-bg-light: var(--ds-color-button-secondary-bg-light);
+    --color-button-secondary-bg-hover-light: var(--ds-color-button-secondary-bg-hover-light);
+    --color-button-secondary-bg-active-light: var(--ds-color-button-secondary-bg-active-light);
+    --color-button-secondary-text-light: var(--ds-color-button-secondary-text-light);
+    --color-button-secondary-text-hover-light: var(--ds-color-button-secondary-text-hover-light);
+    --color-button-secondary-text-active-light: var(--ds-color-button-secondary-text-active-light);
+    --color-button-secondary-border-light: var(--ds-color-button-secondary-border-light);
+    --color-button-secondary-bg-dark: var(--ds-color-button-secondary-bg-dark);
+    --color-button-secondary-bg-hover-dark: var(--ds-color-button-secondary-bg-hover-dark);
+    --color-button-secondary-bg-active-dark: var(--ds-color-button-secondary-bg-active-dark);
+    --color-button-secondary-text-dark: var(--ds-color-button-secondary-text-dark);
+    --color-button-secondary-text-hover-dark: var(--ds-color-button-secondary-text-hover-dark);
+    --color-button-secondary-text-active-dark: var(--ds-color-button-secondary-text-active-dark);
+    --color-button-secondary-border-dark: var(--ds-color-button-secondary-border-dark);
+
+    --color-button-outline-bg-light: var(--ds-color-button-outline-bg-light);
+    --color-button-outline-bg-hover-light: var(--ds-color-button-outline-bg-hover-light);
+    --color-button-outline-bg-active-light: var(--ds-color-button-outline-bg-active-light);
+    --color-button-outline-text-light: var(--ds-color-button-outline-text-light);
+    --color-button-outline-text-hover-light: var(--ds-color-button-outline-text-hover-light);
+    --color-button-outline-text-active-light: var(--ds-color-button-outline-text-active-light);
+    --color-button-outline-border-light: var(--ds-color-button-outline-border-light);
+    --color-button-outline-bg-dark: var(--ds-color-button-outline-bg-dark);
+    --color-button-outline-bg-hover-dark: var(--ds-color-button-outline-bg-hover-dark);
+    --color-button-outline-bg-active-dark: var(--ds-color-button-outline-bg-active-dark);
+    --color-button-outline-text-dark: var(--ds-color-button-outline-text-dark);
+    --color-button-outline-text-hover-dark: var(--ds-color-button-outline-text-hover-dark);
+    --color-button-outline-text-active-dark: var(--ds-color-button-outline-text-active-dark);
+    --color-button-outline-border-dark: var(--ds-color-button-outline-border-dark);
+
+    --color-button-primary-outline-bg-light: var(--ds-color-button-primary-outline-bg-light);
+    --color-button-primary-outline-bg-hover-light: var(--ds-color-button-primary-outline-bg-hover-light);
+    --color-button-primary-outline-bg-active-light: var(--ds-color-button-primary-outline-bg-active-light);
+    --color-button-primary-outline-text-light: var(--ds-color-button-primary-outline-text-light);
+    --color-button-primary-outline-text-hover-light: var(--ds-color-button-primary-outline-text-hover-light);
+    --color-button-primary-outline-text-active-light: var(--ds-color-button-primary-outline-text-active-light);
+    --color-button-primary-outline-border-light: var(--ds-color-button-primary-outline-border-light);
+    --color-button-primary-outline-bg-dark: var(--ds-color-button-primary-outline-bg-dark);
+    --color-button-primary-outline-bg-hover-dark: var(--ds-color-button-primary-outline-bg-hover-dark);
+    --color-button-primary-outline-bg-active-dark: var(--ds-color-button-primary-outline-bg-active-dark);
+    --color-button-primary-outline-text-dark: var(--ds-color-button-primary-outline-text-dark);
+    --color-button-primary-outline-text-hover-dark: var(--ds-color-button-primary-outline-text-hover-dark);
+    --color-button-primary-outline-text-active-dark: var(--ds-color-button-primary-outline-text-active-dark);
+    --color-button-primary-outline-border-dark: var(--ds-color-button-primary-outline-border-dark);
+
+    --color-button-danger-bg-light: var(--ds-color-button-danger-bg-light);
+    --color-button-danger-bg-hover-light: var(--ds-color-button-danger-bg-hover-light);
+    --color-button-danger-bg-active-light: var(--ds-color-button-danger-bg-active-light);
+    --color-button-danger-ring-focus-light: var(--ds-color-button-danger-ring-focus-light);
+    --color-button-danger-text-light: var(--ds-color-button-danger-text-light);
+    --color-button-danger-text-hover-light: var(--ds-color-button-danger-text-hover-light);
+    --color-button-danger-text-active-light: var(--ds-color-button-danger-text-active-light);
+    --color-button-danger-border-light: var(--ds-color-button-danger-border-light);
+    --color-button-danger-bg-dark: var(--ds-color-button-danger-bg-dark);
+    --color-button-danger-bg-hover-dark: var(--ds-color-button-danger-bg-hover-dark);
+    --color-button-danger-bg-active-dark: var(--ds-color-button-danger-bg-active-dark);
+    --color-button-danger-ring-focus-dark: var(--ds-color-button-danger-ring-focus-dark);
+    --color-button-danger-text-dark: var(--ds-color-button-danger-text-dark);
+    --color-button-danger-text-hover-dark: var(--ds-color-button-danger-text-hover-dark);
+    --color-button-danger-text-active-dark: var(--ds-color-button-danger-text-active-dark);
+    --color-button-danger-border-dark: var(--ds-color-button-danger-border-dark);
+
+    --color-button-danger-outline-bg-light: var(--ds-color-button-danger-outline-bg-light);
+    --color-button-danger-outline-bg-hover-light: var(--ds-color-button-danger-outline-bg-hover-light);
+    --color-button-danger-outline-bg-active-light: var(--ds-color-button-danger-outline-bg-active-light);
+    --color-button-danger-outline-text-light: var(--ds-color-button-danger-outline-text-light);
+    --color-button-danger-outline-text-hover-light: var(--ds-color-button-danger-outline-text-hover-light);
+    --color-button-danger-outline-text-active-light: var(--ds-color-button-danger-outline-text-active-light);
+    --color-button-danger-outline-border-light: var(--ds-color-button-danger-outline-border-light);
+    --color-button-danger-outline-bg-dark: var(--ds-color-button-danger-outline-bg-dark);
+    --color-button-danger-outline-bg-hover-dark: var(--ds-color-button-danger-outline-bg-hover-dark);
+    --color-button-danger-outline-bg-active-dark: var(--ds-color-button-danger-outline-bg-active-dark);
+    --color-button-danger-outline-text-dark: var(--ds-color-button-danger-outline-text-dark);
+    --color-button-danger-outline-text-hover-dark: var(--ds-color-button-danger-outline-text-hover-dark);
+    --color-button-danger-outline-text-active-dark: var(--ds-color-button-danger-outline-text-active-dark);
+    --color-button-danger-outline-border-dark: var(--ds-color-button-danger-outline-border-dark);
+
+    --color-button-overlay-bg-light: var(--ds-color-button-overlay-bg-light);
+    --color-button-overlay-bg-hover-light: var(--ds-color-button-overlay-bg-hover-light);
+    --color-button-overlay-bg-active-light: var(--ds-color-button-overlay-bg-active-light);
+    --color-button-overlay-text-light: var(--ds-color-button-overlay-text-light);
+    --color-button-overlay-text-hover-light: var(--ds-color-button-overlay-text-hover-light);
+    --color-button-overlay-text-active-light: var(--ds-color-button-overlay-text-active-light);
+    --color-button-overlay-border-light: var(--ds-color-button-overlay-border-light);
+    --color-button-overlay-bg-dark: var(--ds-color-button-overlay-bg-dark);
+    --color-button-overlay-bg-hover-dark: var(--ds-color-button-overlay-bg-hover-dark);
+    --color-button-overlay-bg-active-dark: var(--ds-color-button-overlay-bg-active-dark);
+    --color-button-overlay-text-dark: var(--ds-color-button-overlay-text-dark);
+    --color-button-overlay-text-hover-dark: var(--ds-color-button-overlay-text-hover-dark);
+    --color-button-overlay-text-active-dark: var(--ds-color-button-overlay-text-active-dark);
+    --color-button-overlay-border-dark: var(--ds-color-button-overlay-border-dark);
+
+    --color-button-primary-spinner-text-light: var(--ds-color-button-primary-spinner-text-light);
+    --color-button-primary-spinner-text-dark: var(--ds-color-button-primary-spinner-text-dark);
+
+    --color-button-secondary-spinner-text-light: var(--ds-color-button-secondary-spinner-text-light);
+    --color-button-secondary-spinner-text-dark: var(--ds-color-button-secondary-spinner-text-dark);
+
+    --color-button-outline-spinner-text-light: var(--ds-color-button-outline-spinner-text-light);
+    --color-button-outline-spinner-text-dark: var(--ds-color-button-outline-spinner-text-dark);
+
+    --color-button-primary-outline-spinner-text-light: var(--ds-color-button-primary-outline-spinner-text-light);
+    --color-button-primary-outline-spinner-text-dark: var(--ds-color-button-primary-outline-spinner-text-dark);
+
+    --color-button-danger-spinner-text-light: var(--ds-color-button-danger-spinner-text-light);
+    --color-button-danger-spinner-text-dark: var(--ds-color-button-danger-spinner-text-dark);
+
+    --color-button-danger-outline-spinner-text-light: var(--ds-color-button-danger-outline-spinner-text-light);
+    --color-button-danger-outline-spinner-text-dark: var(--ds-color-button-danger-outline-spinner-text-dark);
+
+    --color-button-overlay-spinner-text-light: var(--ds-color-button-overlay-spinner-text-light);
+    --color-button-overlay-spinner-text-dark: var(--ds-color-button-overlay-spinner-text-dark);
+
+    --color-button-icon-primary-spinner-text-light: var(--ds-color-button-icon-primary-spinner-text-light);
+    --color-button-icon-primary-spinner-text-dark: var(--ds-color-button-icon-primary-spinner-text-dark);
+
+    --color-button-icon-secondary-spinner-text-light: var(--ds-color-button-icon-secondary-spinner-text-light);
+    --color-button-icon-secondary-spinner-text-dark: var(--ds-color-button-icon-secondary-spinner-text-dark);
+
+    --color-button-icon-outline-spinner-text-light: var(--ds-color-button-icon-outline-spinner-text-light);
+    --color-button-icon-outline-spinner-text-dark: var(--ds-color-button-icon-outline-spinner-text-dark);
+
+    --color-button-icon-primary-outline-spinner-text-light: var(--ds-color-button-icon-primary-outline-spinner-text-light);
+    --color-button-icon-primary-outline-spinner-text-dark: var(--ds-color-button-icon-primary-outline-spinner-text-dark);
+
+    --color-button-icon-danger-spinner-text-light: var(--ds-color-button-icon-danger-spinner-text-light);
+    --color-button-icon-danger-spinner-text-dark: var(--ds-color-button-icon-danger-spinner-text-dark);
+
+    --color-button-icon-danger-outline-spinner-text-light: var(--ds-color-button-icon-danger-outline-spinner-text-light);
+    --color-button-icon-danger-outline-spinner-text-dark: var(--ds-color-button-icon-danger-outline-spinner-text-dark);
+
+    --color-button-icon-overlay-spinner-text-light: var(--ds-color-button-icon-overlay-spinner-text-light);
+    --color-button-icon-overlay-spinner-text-dark: var(--ds-color-button-icon-overlay-spinner-text-dark);
 }
 
-/* Semantic color utilities shared by BaseButton and BaseButtonIcon. */
-@utility bg-btn-primary-light { background-color: var(--ds-color-btn-primary-light); }
-@utility bg-btn-primary-light-hover { background-color: var(--ds-color-btn-primary-light-hover); }
-@utility bg-btn-primary-light-active { background-color: var(--ds-color-btn-primary-light-active); }
-@utility text-btn-primary-light { color: var(--ds-color-btn-primary-light-text); }
-@utility text-btn-primary-light-hover { color: var(--ds-color-btn-primary-light-text-hover); }
-@utility text-btn-primary-light-active { color: var(--ds-color-btn-primary-light-text-active); }
-@utility border-btn-primary-light { border-color: var(--ds-color-btn-primary-light-border); }
-@utility bg-btn-primary-dark { background-color: var(--ds-color-btn-primary-dark); }
-@utility bg-btn-primary-dark-hover { background-color: var(--ds-color-btn-primary-dark-hover); }
-@utility bg-btn-primary-dark-active { background-color: var(--ds-color-btn-primary-dark-active); }
-@utility text-btn-primary-dark { color: var(--ds-color-btn-primary-dark-text); }
-@utility text-btn-primary-dark-hover { color: var(--ds-color-btn-primary-dark-text-hover); }
-@utility text-btn-primary-dark-active { color: var(--ds-color-btn-primary-dark-text-active); }
-@utility border-btn-primary-dark { border-color: var(--ds-color-btn-primary-dark-border); }
-@utility bg-btn-secondary-light { background-color: var(--ds-color-btn-secondary-light); }
-@utility bg-btn-secondary-light-hover { background-color: var(--ds-color-btn-secondary-light-hover); }
-@utility bg-btn-secondary-light-active { background-color: var(--ds-color-btn-secondary-light-active); }
-@utility text-btn-secondary-light { color: var(--ds-color-btn-secondary-light-text); }
-@utility text-btn-secondary-light-hover { color: var(--ds-color-btn-secondary-light-text-hover); }
-@utility text-btn-secondary-light-active { color: var(--ds-color-btn-secondary-light-text-active); }
-@utility border-btn-secondary-light { border-color: var(--ds-color-btn-secondary-light-border); }
-@utility bg-btn-secondary-dark { background-color: var(--ds-color-btn-secondary-dark); }
-@utility bg-btn-secondary-dark-hover { background-color: var(--ds-color-btn-secondary-dark-hover); }
-@utility bg-btn-secondary-dark-active { background-color: var(--ds-color-btn-secondary-dark-active); }
-@utility text-btn-secondary-dark { color: var(--ds-color-btn-secondary-dark-text); }
-@utility text-btn-secondary-dark-hover { color: var(--ds-color-btn-secondary-dark-text-hover); }
-@utility text-btn-secondary-dark-active { color: var(--ds-color-btn-secondary-dark-text-active); }
-@utility border-btn-secondary-dark { border-color: var(--ds-color-btn-secondary-dark-border); }
-@utility bg-btn-outline-light { background-color: var(--ds-color-btn-outline-light); }
-@utility bg-btn-outline-light-hover { background-color: var(--ds-color-btn-outline-light-hover); }
-@utility bg-btn-outline-light-active { background-color: var(--ds-color-btn-outline-light-active); }
-@utility text-btn-outline-light { color: var(--ds-color-btn-outline-light-text); }
-@utility text-btn-outline-light-hover { color: var(--ds-color-btn-outline-light-text-hover); }
-@utility text-btn-outline-light-active { color: var(--ds-color-btn-outline-light-text-active); }
-@utility border-btn-outline-light { border-color: var(--ds-color-btn-outline-light-border); }
-@utility bg-btn-outline-dark { background-color: var(--ds-color-btn-outline-dark); }
-@utility bg-btn-outline-dark-hover { background-color: var(--ds-color-btn-outline-dark-hover); }
-@utility bg-btn-outline-dark-active { background-color: var(--ds-color-btn-outline-dark-active); }
-@utility text-btn-outline-dark { color: var(--ds-color-btn-outline-dark-text); }
-@utility text-btn-outline-dark-hover { color: var(--ds-color-btn-outline-dark-text-hover); }
-@utility text-btn-outline-dark-active { color: var(--ds-color-btn-outline-dark-text-active); }
-@utility border-btn-outline-dark { border-color: var(--ds-color-btn-outline-dark-border); }
-@utility bg-btn-primary-outline-light { background-color: var(--ds-color-btn-primary-outline-light); }
-@utility bg-btn-primary-outline-light-hover { background-color: var(--ds-color-btn-primary-outline-light-hover); }
-@utility bg-btn-primary-outline-light-active { background-color: var(--ds-color-btn-primary-outline-light-active); }
-@utility text-btn-primary-outline-light { color: var(--ds-color-btn-primary-outline-light-text); }
-@utility text-btn-primary-outline-light-hover { color: var(--ds-color-btn-primary-outline-light-text-hover); }
-@utility text-btn-primary-outline-light-active { color: var(--ds-color-btn-primary-outline-light-text-active); }
-@utility border-btn-primary-outline-light { border-color: var(--ds-color-btn-primary-outline-light-border); }
-@utility bg-btn-primary-outline-dark { background-color: var(--ds-color-btn-primary-outline-dark); }
-@utility bg-btn-primary-outline-dark-hover { background-color: var(--ds-color-btn-primary-outline-dark-hover); }
-@utility bg-btn-primary-outline-dark-active { background-color: var(--ds-color-btn-primary-outline-dark-active); }
-@utility text-btn-primary-outline-dark { color: var(--ds-color-btn-primary-outline-dark-text); }
-@utility text-btn-primary-outline-dark-hover { color: var(--ds-color-btn-primary-outline-dark-text-hover); }
-@utility text-btn-primary-outline-dark-active { color: var(--ds-color-btn-primary-outline-dark-text-active); }
-@utility border-btn-primary-outline-dark { border-color: var(--ds-color-btn-primary-outline-dark-border); }
-@utility bg-btn-danger-light { background-color: var(--ds-color-btn-danger-light); }
-@utility bg-btn-danger-light-hover { background-color: var(--ds-color-btn-danger-light-hover); }
-@utility bg-btn-danger-light-active { background-color: var(--ds-color-btn-danger-light-active); }
-@utility text-btn-danger-light { color: var(--ds-color-btn-danger-light-text); }
-@utility text-btn-danger-light-hover { color: var(--ds-color-btn-danger-light-text-hover); }
-@utility text-btn-danger-light-active { color: var(--ds-color-btn-danger-light-text-active); }
-@utility border-btn-danger-light { border-color: var(--ds-color-btn-danger-light-border); }
-@utility bg-btn-danger-dark { background-color: var(--ds-color-btn-danger-dark); }
-@utility bg-btn-danger-dark-hover { background-color: var(--ds-color-btn-danger-dark-hover); }
-@utility bg-btn-danger-dark-active { background-color: var(--ds-color-btn-danger-dark-active); }
-@utility text-btn-danger-dark { color: var(--ds-color-btn-danger-dark-text); }
-@utility text-btn-danger-dark-hover { color: var(--ds-color-btn-danger-dark-text-hover); }
-@utility text-btn-danger-dark-active { color: var(--ds-color-btn-danger-dark-text-active); }
-@utility border-btn-danger-dark { border-color: var(--ds-color-btn-danger-dark-border); }
-@utility bg-btn-danger-outline-light { background-color: var(--ds-color-btn-danger-outline-light); }
-@utility bg-btn-danger-outline-light-hover { background-color: var(--ds-color-btn-danger-outline-light-hover); }
-@utility bg-btn-danger-outline-light-active { background-color: var(--ds-color-btn-danger-outline-light-active); }
-@utility text-btn-danger-outline-light { color: var(--ds-color-btn-danger-outline-light-text); }
-@utility text-btn-danger-outline-light-hover { color: var(--ds-color-btn-danger-outline-light-text-hover); }
-@utility text-btn-danger-outline-light-active { color: var(--ds-color-btn-danger-outline-light-text-active); }
-@utility border-btn-danger-outline-light { border-color: var(--ds-color-btn-danger-outline-light-border); }
-@utility bg-btn-danger-outline-dark { background-color: var(--ds-color-btn-danger-outline-dark); }
-@utility bg-btn-danger-outline-dark-hover { background-color: var(--ds-color-btn-danger-outline-dark-hover); }
-@utility bg-btn-danger-outline-dark-active { background-color: var(--ds-color-btn-danger-outline-dark-active); }
-@utility text-btn-danger-outline-dark { color: var(--ds-color-btn-danger-outline-dark-text); }
-@utility text-btn-danger-outline-dark-hover { color: var(--ds-color-btn-danger-outline-dark-text-hover); }
-@utility text-btn-danger-outline-dark-active { color: var(--ds-color-btn-danger-outline-dark-text-active); }
-@utility border-btn-danger-outline-dark { border-color: var(--ds-color-btn-danger-outline-dark-border); }
-@utility bg-btn-overlay-light { background-color: var(--ds-color-btn-overlay-light); }
-@utility bg-btn-overlay-light-hover { background-color: var(--ds-color-btn-overlay-light-hover); }
-@utility bg-btn-overlay-light-active { background-color: var(--ds-color-btn-overlay-light-active); }
-@utility text-btn-overlay-light { color: var(--ds-color-btn-overlay-light-text); }
-@utility text-btn-overlay-light-hover { color: var(--ds-color-btn-overlay-light-text-hover); }
-@utility text-btn-overlay-light-active { color: var(--ds-color-btn-overlay-light-text-active); }
-@utility border-btn-overlay-light { border-color: var(--ds-color-btn-overlay-light-border); }
-@utility bg-btn-overlay-dark { background-color: var(--ds-color-btn-overlay-dark); }
-@utility bg-btn-overlay-dark-hover { background-color: var(--ds-color-btn-overlay-dark-hover); }
-@utility bg-btn-overlay-dark-active { background-color: var(--ds-color-btn-overlay-dark-active); }
-@utility text-btn-overlay-dark { color: var(--ds-color-btn-overlay-dark-text); }
-@utility text-btn-overlay-dark-hover { color: var(--ds-color-btn-overlay-dark-text-hover); }
-@utility text-btn-overlay-dark-active { color: var(--ds-color-btn-overlay-dark-text-active); }
-@utility border-btn-overlay-dark { border-color: var(--ds-color-btn-overlay-dark-border); }
-@utility ring-btn-danger-light { --tw-ring-color: var(--ds-color-btn-danger-light-focus); }
-@utility ring-btn-danger-dark { --tw-ring-color: var(--ds-color-btn-danger-dark-focus); }

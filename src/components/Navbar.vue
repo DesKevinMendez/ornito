@@ -6,9 +6,9 @@
         <div class="flex items-center lg:hidden">
           <button
             @click="$emit('toggle-mobile-sidebar')"
-            class="w-10 h-10 bg-navbar-mobile-menu-bg-light hover:bg-navbar-mobile-menu-hover-bg-light dark:bg-navbar-mobile-menu-bg-dark dark:hover:bg-navbar-mobile-menu-hover-bg-dark rounded-lg flex items-center justify-center transition-colors"
+            class="w-10 h-10 bg-navbar-mobile-menu-bg-light hover:bg-navbar-mobile-menu-bg-hover-light dark:bg-navbar-mobile-menu-bg-dark dark:hover:bg-navbar-mobile-menu-bg-hover-dark rounded-lg flex items-center justify-center transition-colors"
           >
-            <IconMenu2 class="w-5 h-5 text-navbar-mobile-menu-icon-light dark:text-navbar-mobile-menu-icon-dark" />
+            <IconMenu2 class="w-5 h-5 text-navbar-mobile-menu-icon-text-light dark:text-navbar-mobile-menu-icon-text-dark" />
           </button>
         </div>
         <!-- Search Bar -->

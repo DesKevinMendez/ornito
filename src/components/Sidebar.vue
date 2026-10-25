@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="h-screen flex flex-col border-r-2 transition-all duration-300 bg-sidebar-bg-light dark:bg-sidebar-bg-dark text-sidebar-title-light dark:text-sidebar-title-dark border-default-light dark:border-default-dark"
+    class="h-screen flex flex-col border-r-2 transition-all duration-300 bg-sidebar-bg-light dark:bg-sidebar-bg-dark text-sidebar-title-text-light dark:text-sidebar-title-text-dark border-default-light dark:border-default-dark"
     :class="sidebarClasses"
   >
     <!-- Top Section with Window Controls and Branding -->
@@ -12,10 +12,10 @@
             <img :src="logo" :alt="title" class="w-full h-full object-contain">
           </div>
           <div class="overflow-hidden transition-all duration-300 w-auto">
-            <h1 class="text-lg font-semibold whitespace-nowrap text-sidebar-title-light dark:text-sidebar-title-dark">
+            <h1 class="text-lg font-semibold whitespace-nowrap text-sidebar-title-text-light dark:text-sidebar-title-text-dark">
               {{ title }}
             </h1>
-            <p class="text-sm whitespace-nowrap text-sidebar-subtitle-light dark:text-sidebar-subtitle-dark">
+            <p class="text-sm whitespace-nowrap text-sidebar-subtitle-text-light dark:text-sidebar-subtitle-text-dark">
               {{ subtitle }}
             </p>
           </div>
@@ -27,7 +27,7 @@
           @click="$emit('close')"
           class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
         >
-          <IconX class="w-4 h-4 text-sidebar-collapse-icon-light dark:text-sidebar-collapse-icon-dark" />
+          <IconX class="w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" />
         </button>
 
         <!-- Desktop Collapse/Expand Button -->
@@ -36,14 +36,14 @@
           @click="toggleCollapse"
           class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
         >
-          <IconChevronLeft class="w-4 h-4 text-sidebar-collapse-icon-light dark:text-sidebar-collapse-icon-dark" />
+          <IconChevronLeft class="w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" />
         </button>
         <button
           v-else
           @click="toggleCollapse"
           class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
         >
-          <IconChevronRight class="w-4 h-4 text-sidebar-collapse-icon-light dark:text-sidebar-collapse-icon-dark" />
+          <IconChevronRight class="w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" />
         </button>
       </div>
     </div>
@@ -55,7 +55,7 @@
 
     <p
       v-if="!props.isCollapsed"
-      class="px-4 pb-1 text-left text-[10px] text-sidebar-version-light dark:text-sidebar-version-dark"
+      class="px-4 pb-1 text-left text-[10px] text-sidebar-version-text-light dark:text-sidebar-version-text-dark"
     >
       v{{ version }}
     </p>
@@ -68,8 +68,8 @@
         :class="props.isCollapsed ? 'justify-center' : ''"
         aria-label="Toggle theme"
       >
-        <component :is="themeIcon" class="w-5 h-5 text-sidebar-theme-toggle-content-light dark:text-sidebar-theme-toggle-content-dark flex-shrink-0" />
-        <span v-if="!props.isCollapsed" class="text-sm text-sidebar-theme-toggle-content-light dark:text-sidebar-theme-toggle-content-dark whitespace-nowrap">
+        <component :is="themeIcon" class="w-5 h-5 text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark flex-shrink-0" />
+        <span v-if="!props.isCollapsed" class="text-sm text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark whitespace-nowrap">
           {{ isDarkMode ? 'Modo claro' : 'Modo oscuro' }}
         </span>
       </button>

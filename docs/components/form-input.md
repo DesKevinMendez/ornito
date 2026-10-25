@@ -52,24 +52,24 @@ values on `:root`.
 
 | Role | Variables |
 | --- | --- |
-| Label and control | `--ds-color-form-label-{light\|dark}`, `--ds-color-form-control-bg-{light\|dark}`, `--ds-color-form-control-text-{light\|dark}`, `--ds-color-form-control-placeholder-{light\|dark}` |
-| Icons and supporting text | `--ds-color-form-control-icon-{light\|dark}`, `--ds-color-form-control-icon-hover-{light\|dark}`, `--ds-color-form-supporting-text-{light\|dark}` |
-| Range labels and value | `--ds-color-form-range-bound-{light\|dark}`, `--ds-color-form-range-value-{light\|dark}` |
+| Label and control | `--ds-color-form-label-text-{light\|dark}`, `--ds-color-form-control-bg-{light\|dark}`, `--ds-color-form-control-text-{light\|dark}`, `--ds-color-form-control-placeholder-text-{light\|dark}` |
+| Icons and supporting text | `--ds-color-form-control-icon-text-{light\|dark}`, `--ds-color-form-control-icon-text-hover-{light\|dark}`, `--ds-color-form-supporting-text-{light\|dark}` |
+| Range labels and value | `--ds-color-form-range-bound-text-{light\|dark}`, `--ds-color-form-range-value-text-{light\|dark}` |
 | Select placeholder option | `--ds-color-form-select-placeholder-bg-{light\|dark}`, `--ds-color-form-select-placeholder-text-{light\|dark}` |
-| Search results | `--ds-color-form-suggestion-panel-bg-{light\|dark}`, `--ds-color-form-suggestion-hover-bg-{light\|dark}`, `--ds-color-form-suggestion-icon-{light\|dark}` |
+| Search results | `--ds-color-form-suggestion-panel-bg-{light\|dark}`, `--ds-color-form-suggestion-bg-hover-{light\|dark}`, `--ds-color-form-suggestion-icon-text-{light\|dark}` |
 
 ```css
 :root {
-  --ds-color-form-label-light: #1e3a8a;
+  --ds-color-form-label-text-light: #1e3a8a;
   --ds-color-form-control-bg-light: #fff;
   --ds-color-form-control-text-light: #172554;
-  --ds-color-form-control-placeholder-light: #64748b;
+  --ds-color-form-control-placeholder-text-light: #64748b;
   --ds-color-form-suggestion-panel-bg-light: #eff6ff;
 
-  --ds-color-form-label-dark: #bfdbfe;
+  --ds-color-form-label-text-dark: #bfdbfe;
   --ds-color-form-control-bg-dark: #0f172a;
   --ds-color-form-control-text-dark: #dbeafe;
-  --ds-color-form-control-placeholder-dark: #94a3b8;
+  --ds-color-form-control-placeholder-text-dark: #94a3b8;
   --ds-color-form-suggestion-panel-bg-dark: #172554;
 }
 ```

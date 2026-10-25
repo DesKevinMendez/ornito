@@ -29,8 +29,8 @@ Defaults preserve the current appearance.
 | Part | Variables |
 | --- | --- |
 | Surface | `--ds-color-card-bg-{light|dark}` |
-| Title | `--ds-color-card-title-{light|dark}` |
-| Subtitle | `--ds-color-card-subtitle-{light|dark}` |
+| Title | `--ds-color-card-title-text-{light|dark}` |
+| Subtitle | `--ds-color-card-subtitle-text-{light|dark}` |
 
 Set both the light and dark values on `:root`.
 
@@ -52,4 +52,4 @@ buttons use their own light/dark variables, defaulting to the primary palette.
 | Part | Variables |
 | --- | --- |
 | Summary and page | `--ds-color-card-pagination-summary-text-{light|dark}`, `--ds-color-card-pagination-page-text-{light|dark}` |
-| Arrow buttons | `--ds-color-card-pagination-button-bg-{light|dark}`, `--ds-color-card-pagination-button-hover-bg-{light|dark}`, `--ds-color-card-pagination-button-text-{light|dark}` |
+| Arrow buttons | `--ds-color-card-pagination-button-bg-{light|dark}`, `--ds-color-card-pagination-button-bg-hover-{light|dark}`, `--ds-color-card-pagination-button-text-{light|dark}` |

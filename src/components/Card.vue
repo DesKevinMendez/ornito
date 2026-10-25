@@ -11,13 +11,13 @@
         <div class="flex-1 min-w-0">
           <h3
             v-if="title"
-            class="text-base font-semibold tracking-tight text-card-title-light dark:text-card-title-dark"
+            class="text-base font-semibold tracking-tight text-card-title-text-light dark:text-card-title-text-dark"
           >
             {{ title }}
           </h3>
           <p
             v-if="subtitle"
-            class="mt-0.5 text-sm text-card-subtitle-light dark:text-card-subtitle-dark"
+            class="mt-0.5 text-sm text-card-subtitle-text-light dark:text-card-subtitle-text-dark"
           >
             {{ subtitle }}
           </p>

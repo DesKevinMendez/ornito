@@ -46,12 +46,12 @@ independently in the consuming app; the current colors remain the defaults.
 
 Token groups:
 
-- `--ds-color-sidebar-{bg,title,subtitle,version}-{light|dark}` — surface and text.
-- `--ds-color-sidebar-collapse-{bg,bg-hover,icon}-{light|dark}` — close/collapse controls.
-- `--ds-color-sidebar-theme-toggle-{bg,bg-hover,content}-{light|dark}` — theme toggle.
-- `--ds-color-sidebar-tab-{bg-active,text-active,text-inactive,bg-hover,icon,icon-hover,group-active}-{light|dark}`
+- `--ds-color-sidebar-{bg,title-text,subtitle-text,version-text}-{light|dark}` — surface and text.
+- `--ds-color-sidebar-collapse-{bg,bg-hover,icon-text}-{light|dark}` — close/collapse controls.
+- `--ds-color-sidebar-theme-toggle-{bg,bg-hover,content-text}-{light|dark}` — theme toggle.
+- `--ds-color-sidebar-tab-{bg-active,text-active,text-inactive,bg-hover,icon-text,icon-text-hover,group-text-active}-{light|dark}`
   — menu links and active group labels.
-- `--ds-color-sidebar-tab-badge-{bg,text,active-bg}-{light|dark}` — notification badges.
+- `--ds-color-sidebar-tab-badge-{bg,text,bg-active}-{light|dark}` — notification badges.
 
 ## SidebarNav
 

@@ -98,31 +98,31 @@ const componentToRender = computed(() => {
 
 const variantClassMap: Record<ButtonVariant, string> = {
   primary:
-    "bg-btn-primary-light dark:bg-btn-primary-dark text-btn-primary-light dark:text-btn-primary-dark hover:bg-btn-primary-light-hover dark:hover:bg-btn-primary-dark-hover active:bg-btn-primary-light-active dark:active:bg-btn-primary-dark-active hover:text-btn-primary-light-hover dark:hover:text-btn-primary-dark-hover active:text-btn-primary-light-active dark:active:text-btn-primary-dark-active",
+    "bg-button-primary-bg-light dark:bg-button-primary-bg-dark text-button-primary-text-light dark:text-button-primary-text-dark hover:bg-button-primary-bg-hover-light dark:hover:bg-button-primary-bg-hover-dark active:bg-button-primary-bg-active-light dark:active:bg-button-primary-bg-active-dark hover:text-button-primary-text-hover-light dark:hover:text-button-primary-text-hover-dark active:text-button-primary-text-active-light dark:active:text-button-primary-text-active-dark",
   secondary:
-    "bg-btn-secondary-light dark:bg-btn-secondary-dark text-btn-secondary-light dark:text-btn-secondary-dark hover:bg-btn-secondary-light-hover dark:hover:bg-btn-secondary-dark-hover active:bg-btn-secondary-light-active dark:active:bg-btn-secondary-dark-active hover:text-btn-secondary-light-hover dark:hover:text-btn-secondary-dark-hover active:text-btn-secondary-light-active dark:active:text-btn-secondary-dark-active",
+    "bg-button-secondary-bg-light dark:bg-button-secondary-bg-dark text-button-secondary-text-light dark:text-button-secondary-text-dark hover:bg-button-secondary-bg-hover-light dark:hover:bg-button-secondary-bg-hover-dark active:bg-button-secondary-bg-active-light dark:active:bg-button-secondary-bg-active-dark hover:text-button-secondary-text-hover-light dark:hover:text-button-secondary-text-hover-dark active:text-button-secondary-text-active-light dark:active:text-button-secondary-text-active-dark",
   outline:
-    "border border-btn-outline-light dark:border-btn-outline-dark bg-btn-outline-light dark:bg-btn-outline-dark text-btn-outline-light dark:text-btn-outline-dark hover:bg-btn-outline-light-hover dark:hover:bg-btn-outline-dark-hover active:bg-btn-outline-light-active dark:active:bg-btn-outline-dark-active hover:text-btn-outline-light-hover dark:hover:text-btn-outline-dark-hover active:text-btn-outline-light-active dark:active:text-btn-outline-dark-active",
+    "border border-button-outline-border-light dark:border-button-outline-border-dark bg-button-outline-bg-light dark:bg-button-outline-bg-dark text-button-outline-text-light dark:text-button-outline-text-dark hover:bg-button-outline-bg-hover-light dark:hover:bg-button-outline-bg-hover-dark active:bg-button-outline-bg-active-light dark:active:bg-button-outline-bg-active-dark hover:text-button-outline-text-hover-light dark:hover:text-button-outline-text-hover-dark active:text-button-outline-text-active-light dark:active:text-button-outline-text-active-dark",
   "primary-outline":
-    "border border-btn-primary-outline-light dark:border-btn-primary-outline-dark bg-btn-primary-outline-light dark:bg-btn-primary-outline-dark text-btn-primary-outline-light dark:text-btn-primary-outline-dark hover:bg-btn-primary-outline-light-hover dark:hover:bg-btn-primary-outline-dark-hover active:bg-btn-primary-outline-light-active dark:active:bg-btn-primary-outline-dark-active hover:text-btn-primary-outline-light-hover dark:hover:text-btn-primary-outline-dark-hover active:text-btn-primary-outline-light-active dark:active:text-btn-primary-outline-dark-active",
+    "border border-button-primary-outline-border-light dark:border-button-primary-outline-border-dark bg-button-primary-outline-bg-light dark:bg-button-primary-outline-bg-dark text-button-primary-outline-text-light dark:text-button-primary-outline-text-dark hover:bg-button-primary-outline-bg-hover-light dark:hover:bg-button-primary-outline-bg-hover-dark active:bg-button-primary-outline-bg-active-light dark:active:bg-button-primary-outline-bg-active-dark hover:text-button-primary-outline-text-hover-light dark:hover:text-button-primary-outline-text-hover-dark active:text-button-primary-outline-text-active-light dark:active:text-button-primary-outline-text-active-dark",
   danger:
-    "bg-btn-danger-light dark:bg-btn-danger-dark text-btn-danger-light dark:text-btn-danger-dark hover:bg-btn-danger-light-hover dark:hover:bg-btn-danger-dark-hover active:bg-btn-danger-light-active dark:active:bg-btn-danger-dark-active hover:text-btn-danger-light-hover dark:hover:text-btn-danger-dark-hover active:text-btn-danger-light-active dark:active:text-btn-danger-dark-active",
+    "bg-button-danger-bg-light dark:bg-button-danger-bg-dark text-button-danger-text-light dark:text-button-danger-text-dark hover:bg-button-danger-bg-hover-light dark:hover:bg-button-danger-bg-hover-dark active:bg-button-danger-bg-active-light dark:active:bg-button-danger-bg-active-dark hover:text-button-danger-text-hover-light dark:hover:text-button-danger-text-hover-dark active:text-button-danger-text-active-light dark:active:text-button-danger-text-active-dark",
   "danger-outline":
-    "border border-btn-danger-outline-light dark:border-btn-danger-outline-dark bg-btn-danger-outline-light dark:bg-btn-danger-outline-dark text-btn-danger-outline-light dark:text-btn-danger-outline-dark hover:bg-btn-danger-outline-light-hover dark:hover:bg-btn-danger-outline-dark-hover active:bg-btn-danger-outline-light-active dark:active:bg-btn-danger-outline-dark-active hover:text-btn-danger-outline-light-hover dark:hover:text-btn-danger-outline-dark-hover active:text-btn-danger-outline-light-active dark:active:text-btn-danger-outline-dark-active",
+    "border border-button-danger-outline-border-light dark:border-button-danger-outline-border-dark bg-button-danger-outline-bg-light dark:bg-button-danger-outline-bg-dark text-button-danger-outline-text-light dark:text-button-danger-outline-text-dark hover:bg-button-danger-outline-bg-hover-light dark:hover:bg-button-danger-outline-bg-hover-dark active:bg-button-danger-outline-bg-active-light dark:active:bg-button-danger-outline-bg-active-dark hover:text-button-danger-outline-text-hover-light dark:hover:text-button-danger-outline-text-hover-dark active:text-button-danger-outline-text-active-light dark:active:text-button-danger-outline-text-active-dark",
   overlay:
-    "bg-btn-overlay-light dark:bg-btn-overlay-dark text-btn-overlay-light dark:text-btn-overlay-dark hover:bg-btn-overlay-light-hover dark:hover:bg-btn-overlay-dark-hover active:bg-btn-overlay-light-active dark:active:bg-btn-overlay-dark-active hover:text-btn-overlay-light-hover dark:hover:text-btn-overlay-dark-hover active:text-btn-overlay-light-active dark:active:text-btn-overlay-dark-active text-sm",
+    "bg-button-overlay-bg-light dark:bg-button-overlay-bg-dark text-button-overlay-text-light dark:text-button-overlay-text-dark hover:bg-button-overlay-bg-hover-light dark:hover:bg-button-overlay-bg-hover-dark active:bg-button-overlay-bg-active-light dark:active:bg-button-overlay-bg-active-dark hover:text-button-overlay-text-hover-light dark:hover:text-button-overlay-text-hover-dark active:text-button-overlay-text-active-light dark:active:text-button-overlay-text-active-dark text-sm",
 };
 
 const variantClasses = computed(() => variantClassMap[props.variant]);
 const spinnerColorClass = computed(() => {
   const textClassMap: Record<ButtonVariant, string> = {
-    primary: "text-btn-primary-light dark:text-btn-primary-dark",
-    secondary: "text-btn-secondary-light dark:text-btn-secondary-dark",
-    outline: "text-btn-outline-light dark:text-btn-outline-dark",
-    "primary-outline": "text-btn-primary-outline-light dark:text-btn-primary-outline-dark",
-    danger: "text-btn-danger-light dark:text-btn-danger-dark",
-    "danger-outline": "text-btn-danger-outline-light dark:text-btn-danger-outline-dark",
-    overlay: "text-btn-overlay-light dark:text-btn-overlay-dark",
+    primary: "text-button-primary-spinner-text-light dark:text-button-primary-spinner-text-dark",
+    secondary: "text-button-secondary-spinner-text-light dark:text-button-secondary-spinner-text-dark",
+    outline: "text-button-outline-spinner-text-light dark:text-button-outline-spinner-text-dark",
+    "primary-outline": "text-button-primary-outline-spinner-text-light dark:text-button-primary-outline-spinner-text-dark",
+    danger: "text-button-danger-spinner-text-light dark:text-button-danger-spinner-text-dark",
+    "danger-outline": "text-button-danger-outline-spinner-text-light dark:text-button-danger-outline-spinner-text-dark",
+    overlay: "text-button-overlay-spinner-text-light dark:text-button-overlay-spinner-text-dark",
   };
   return textClassMap[props.variant];
 });

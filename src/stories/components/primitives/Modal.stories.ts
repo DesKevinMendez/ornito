@@ -29,7 +29,7 @@ const meta = {
         <Modal v-bind="componentArgs" v-model:open="isOpen">
           <p class="text-sm leading-6 text-gray-600 dark:text-gray-300">{{ body }}</p>
           <div class="mt-5 flex justify-end">
-            <button class="rounded border border-input-light dark:border-input-dark px-3 py-2 text-sm" @click="isOpen = false">Close</button>
+            <button class="rounded border border-gray-300 px-3 py-2 text-sm" @click="isOpen = false">Close</button>
           </div>
         </Modal>
       </div>

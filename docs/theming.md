@@ -44,13 +44,13 @@ of the variables below on `:root` (or any ancestor scope):
   --ds-color-border-input-light: #a1a1aa;
   --ds-color-sidebar-bg-light: #f8fafc;
   --ds-color-sidebar-tab-bg-active-light: #ea580c;
-  --ds-color-tabs-pills-active-bg-light: #ea580c;
+  --ds-color-tabs-pills-bg-active-light: #ea580c;
 
   --ds-color-border-default-dark: #52525b;
   --ds-color-border-input-dark: #3f3f46;
   --ds-color-sidebar-bg-dark: #111827;
   --ds-color-sidebar-tab-bg-active-dark: #f97316;
-  --ds-color-tabs-pills-active-bg-dark: #f97316;
+  --ds-color-tabs-pills-bg-active-dark: #f97316;
 }
 ```
 
@@ -86,7 +86,7 @@ Dark mode has its own `-dark` tokens, read only through the `dark:` variant
 :root {
   --ds-color-border-default-light: #d4d4d8;
   --ds-color-border-default-dark: #52525b;
-  --ds-color-switch-input-track-on-dark: #22c55e;
+  --ds-color-switch-input-track-bg-on-dark: #22c55e;
 }
 ```
 
@@ -95,6 +95,30 @@ Dark mode has its own `-dark` tokens, read only through the `dark:` variant
 ```js
 document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 ```
+
+## Token naming convention
+
+Every color token belongs to one of three layers, and each layer has a single
+naming grammar. Values only point downwards: components reference semantic or
+primitive tokens, semantic tokens reference primitives, and only primitives
+hold raw colors or Tailwind variables.
+
+| Layer | Grammar | Example |
+| --- | --- | --- |
+| Primitive | `--ds-color-{palette}-{shade}[-alpha-{n}]` | `--ds-color-primary-600`, `--ds-color-neutral-800-alpha-30` |
+| Semantic | `--ds-color-border-{role}[-{modifier}]-{mode}` | `--ds-color-border-danger-subtle-dark` |
+| Component | `--ds-color-{component}-{element…}-{property}-{state…}-{mode}` | `--ds-color-button-primary-bg-hover-light` |
+
+- `property` is what the token colors: `bg`, `text`, `border`, `ring`, or
+  `ring-offset`. Every component token names it, e.g.
+  `--ds-color-sidebar-title-text-light`.
+- `state` follows the property: `hover`, `active`, `focus`, `disabled`,
+  `inactive`, `on`, or `off`, e.g. `--ds-color-tabs-pills-bg-active-hover-dark`.
+- `mode` is always the last segment, and every token has both its `-light` and
+  `-dark` pair.
+- The Tailwind utility uses the same name without `--ds-color-`:
+  `bg-button-primary-bg-hover-light`. Semantic border utilities drop the
+  `border-` prefix: `border-danger-subtle-light`.
 
 ## Available variables
 
@@ -111,20 +135,24 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 | `pink` | 50–950 | `--ds-color-pink-50` … `--ds-color-pink-950` |
 | — | — | `--ds-color-whatsapp` |
 | Neutral | — | `--ds-color-white`, `--ds-color-black` |
-| Datepicker | — | `--ds-color-datepicker-{bg|primary}-{light|dark}` |
+| `material-neutral` / `material-neutral-variant` | 10, 90 / 30, 50, 60, 80 | `--ds-color-material-neutral-10` … `--ds-color-material-neutral-variant-80` |
+| — | — | `--ds-color-midnight` |
+| Datepicker | — | `--ds-color-datepicker-{bg|primary-bg}-{light|dark}` |
 | Typography | — | `--ds-font-family` |
 
 ### Primitive color tokens
 
-Primitive palettes use design-system names and default to Tailwind's base
-palette variables: `neutral` uses `gray`, `informative` and `secondary` use
-`sky`, `primary` uses `indigo`, `tertiary` uses `violet`, `success` uses
-`emerald`, `warning` uses `amber`, `error` uses `red`, and `pink` uses Tailwind
-`pink`. White and black use Tailwind's matching base variables. For example,
-the table header and body hover both default to `--ds-color-neutral-50`.
-Changing that primitive updates its defaults; an individual component token
-can still be overridden on its own. Divider, BottomModal, and datepicker
-neutrals also use the shared Tailwind-backed neutral scale.
+Primitive palettes use design-system names and keep exactly the colors the
+components rendered before tokenization. `primary` (indigo), `informative`
+(sky, also the default for `secondary`), `tertiary` (violet), `success`
+(emerald), `warning` (amber), and `error` (red) hold Tailwind's v3 hex values,
+as the original `--ds-color-*` palette did. `neutral` (gray), `pink`, `white`,
+and `black` reference Tailwind's base variables, because components used those
+utilities directly. `BottomModal` uses the `material-neutral` and
+`material-neutral-variant` tones, and the datepicker's dark surface uses
+`--ds-color-midnight`. For example, the table header and body hover both default
+to `--ds-color-neutral-50`. Changing that primitive updates its defaults; an
+individual component token can still be overridden on its own.
 
 ```css
 :root {
@@ -135,7 +163,7 @@ neutrals also use the shared Tailwind-backed neutral scale.
   --ds-color-border-strong-light: #9ca3af;
 
   /* Changes only this table state, without changing neutral-50. */
-  --ds-color-table-body-hover-bg-light: #eef2f7;
+  --ds-color-table-body-bg-hover-light: #eef2f7;
 }
 ```
 
@@ -144,7 +172,7 @@ they do not depend on Tailwind names. To change one role, override its semantic
 token directly, such as `--ds-color-border-strong-light`. To change all roles
 that use a primitive, override that primitive instead.
 
-Tailwind's base palettes remain the source of these defaults. `outline` names
+Tailwind palettes remain the source of these defaults. `outline` names
 a button style, not a color palette; outlined buttons use the palette selected
 for their variant. Translucent primitives such as
 `--ds-color-neutral-800-alpha-30` are derived from their base color, so changing

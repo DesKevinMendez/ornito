@@ -23,15 +23,15 @@
           <header class="shrink-0">
             <div class="flex items-start justify-between gap-4 px-6 pb-5 pt-6">
               <div class="min-w-0 flex-1">
-                <h2 v-if="title" class="text-base font-medium text-bottom-modal-title-light dark:text-bottom-modal-title-dark">
+                <h2 v-if="title" class="text-base font-medium text-bottom-modal-title-text-light dark:text-bottom-modal-title-text-dark">
                   {{ title }}
                 </h2>
-                <p v-if="subtitle" class="mt-1 text-sm text-bottom-modal-subtitle-light dark:text-bottom-modal-subtitle-dark">
+                <p v-if="subtitle" class="mt-1 text-sm text-bottom-modal-subtitle-text-light dark:text-bottom-modal-subtitle-text-dark">
                   {{ subtitle }}
                 </p>
               </div>
               <button
-                class="shrink-0 rounded-full p-2 text-bottom-modal-close-text-light hover:bg-bottom-modal-close-hover-bg-light hover:text-bottom-modal-close-hover-text-light focus:outline-none focus-visible:ring-2 focus-visible:ring-bottom-modal-close-focus-light dark:text-bottom-modal-close-text-dark dark:hover:bg-bottom-modal-close-hover-bg-dark dark:hover:text-bottom-modal-close-hover-text-dark dark:focus-visible:ring-bottom-modal-close-focus-dark"
+                class="shrink-0 rounded-full p-2 text-bottom-modal-close-text-light hover:bg-bottom-modal-close-bg-hover-light hover:text-bottom-modal-close-text-hover-light focus:outline-none focus-visible:ring-2 focus-visible:ring-bottom-modal-close-ring-focus-light dark:text-bottom-modal-close-text-dark dark:hover:bg-bottom-modal-close-bg-hover-dark dark:hover:text-bottom-modal-close-text-hover-dark dark:focus-visible:ring-bottom-modal-close-ring-focus-dark"
                 type="button"
                 aria-label="Close"
                 @click="requestClose"
@@ -50,7 +50,7 @@
           <footer
             v-if="$slots.footer"
             class="shrink-0 px-5 py-4"
-            :class="props.showFooterDivider && 'border-t border-divider-light dark:border-divider-dark'"
+            :class="props.showFooterDivider && 'border-t border-bottom-modal-divider-border-light dark:border-bottom-modal-divider-border-dark'"
           >
             <slot name="footer" />
           </footer>

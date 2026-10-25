@@ -30,8 +30,8 @@ slot for filters/actions.
 ### CSS color variants
 
 The title and subtitle use paired light/dark CSS variables:
-`--ds-color-view-header-title-{light|dark}` and
-`--ds-color-view-header-subtitle-{light|dark}`. Override both the light and
+`--ds-color-view-header-title-text-{light|dark}` and
+`--ds-color-view-header-subtitle-text-{light|dark}`. Override both the light and
 dark values on `:root`.
 
 ## InfoItem
@@ -51,8 +51,8 @@ slot.
 ```
 
 The label and value colors use independent light/dark tokens:
-`--ds-color-info-item-label-{light|dark}` and
-`--ds-color-info-item-value-{light|dark}`.
+`--ds-color-info-item-label-text-{light|dark}` and
+`--ds-color-info-item-value-text-{light|dark}`.
 
 ## CollapseTransition
 

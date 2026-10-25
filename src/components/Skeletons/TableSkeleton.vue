@@ -3,7 +3,7 @@
         <tr
             v-for="row in rows"
             :key="row"
-            class="hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200"
+            class="hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200"
         >
             <td
                 v-for="(_, colIndex) in columns"

@@ -27,9 +27,9 @@ paired light/dark variables. Override both the light and dark values on
 
 | Part | Variables |
 | --- | --- |
-| Title and value | `--ds-color-stat-card-title-{light|dark}`, `--ds-color-stat-card-value-{light|dark}` |
-| Empty state and description | `--ds-color-stat-card-empty-{light|dark}`, `--ds-color-stat-card-description-{light|dark}` |
-| Change states | `--ds-color-stat-card-change-{positive|negative|neutral|info}-{light|dark}` |
+| Title and value | `--ds-color-stat-card-title-text-{light|dark}`, `--ds-color-stat-card-value-text-{light|dark}` |
+| Empty state and description | `--ds-color-stat-card-empty-text-{light|dark}`, `--ds-color-stat-card-description-text-{light|dark}` |
+| Change states | `--ds-color-stat-card-change-{positive|negative|neutral|info|default}-text-{light|dark}` |
 
 ```vue
 <StatCard title="Active vehicles" value="42" change="+3" change-type="positive" description="vs. last month" />

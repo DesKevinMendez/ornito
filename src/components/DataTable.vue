@@ -65,7 +65,7 @@
           <tr
             v-for="(row, rowIndex) in tableData"
             :key="rowIndex"
-            class="hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200 cursor-pointer"
+            class="hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200 cursor-pointer"
             @click="handleRowClick(row)"
           >
             <td
@@ -129,7 +129,7 @@
         <div
           v-for="n in 5"
           :key="n"
-          class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 animate-pulse"
+          class="bg-table-card-skeleton-bg-light dark:bg-table-card-skeleton-bg-dark rounded-lg p-4 animate-pulse"
         >
           <div class="space-y-3">
             <div class="h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-3/4"></div>
@@ -144,7 +144,7 @@
         v-else
         v-for="(row, rowIndex) in tableData"
         :key="rowIndex"
-        class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 border border-default-light dark:border-default-dark cursor-pointer hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200"
+        class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 border border-default-light dark:border-default-dark cursor-pointer hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200"
         @click="handleRowClick(row)"
       >
         <div class="space-y-3">
@@ -160,7 +160,7 @@
             ]"
           >
             <span
-              class="text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider w-1/3"
+              class="text-xs font-medium text-table-card-label-text-light dark:text-table-card-label-text-dark uppercase tracking-wider w-1/3"
             >
               {{ column.label }}
             </span>
@@ -191,7 +191,7 @@
             class="flex justify-between items-center pt-3 border-t border-default-light dark:border-default-dark"
           >
             <span
-              class="text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider"
+              class="text-xs font-medium text-table-card-label-text-light dark:text-table-card-label-text-dark uppercase tracking-wider"
             >
               {{ actionsLabel || "Actions" }}
             </span>
@@ -217,7 +217,7 @@
     </div>
 
     <div
-      class="mt-4 bg-table-footer-bg-light text-table-footer-text-light dark:bg-table-footer-bg-dark dark:text-table-footer-text-dark"
+      class="bg-table-footer-bg-light text-table-footer-text-light dark:bg-table-footer-bg-dark dark:text-table-footer-text-dark"
     >
       <ResultCount
         :internal-pagination-server="resultCountPagination"

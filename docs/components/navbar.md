@@ -22,7 +22,7 @@ Override both the light and dark values on `:root`.
 | Part | Variables |
 | --- | --- |
 | Navbar surface | `--ds-color-navbar-bg-{light|dark}` |
-| Mobile menu button | `--ds-color-navbar-mobile-menu-bg-{light|dark}`, `--ds-color-navbar-mobile-menu-hover-bg-{light|dark}`, `--ds-color-navbar-mobile-menu-icon-{light|dark}` |
+| Mobile menu button | `--ds-color-navbar-mobile-menu-bg-{light|dark}`, `--ds-color-navbar-mobile-menu-bg-hover-{light|dark}`, `--ds-color-navbar-mobile-menu-icon-text-{light|dark}` |
 
 ## UserProfileDropdown
 
@@ -69,7 +69,7 @@ the shared `DropdownItem` tokens documented in
 
 | Part | Variables |
 | --- | --- |
-| Notification trigger | `--ds-color-profile-notification-trigger-bg-{light|dark}`, `--ds-color-profile-notification-trigger-hover-bg-{light|dark}`, `--ds-color-profile-notification-trigger-icon-{light|dark}` |
-| Dropdown panel and notification heading | `--ds-color-profile-panel-bg-{light|dark}`, `--ds-color-profile-notification-title-{light|dark}` |
+| Notification trigger | `--ds-color-profile-notification-trigger-bg-{light|dark}`, `--ds-color-profile-notification-trigger-bg-hover-{light|dark}`, `--ds-color-profile-notification-trigger-icon-text-{light|dark}` |
+| Dropdown panel and notification heading | `--ds-color-profile-panel-bg-{light|dark}`, `--ds-color-profile-notification-title-text-{light|dark}` |
 | Avatar | `--ds-color-profile-avatar-bg-{light|dark}`, `--ds-color-profile-avatar-text-{light|dark}` |
-| Profile text | `--ds-color-profile-name-{light|dark}`, `--ds-color-profile-role-{light|dark}`, `--ds-color-profile-chevron-{light|dark}` |
+| Profile text | `--ds-color-profile-name-text-{light|dark}`, `--ds-color-profile-role-text-{light|dark}`, `--ds-color-profile-chevron-text-{light|dark}` |
