@@ -3,7 +3,7 @@
     <label
       v-if="label && !props.small"
       :for="id"
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+      class="block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
     >
       {{ label }}
     </label>
@@ -29,10 +29,10 @@
         data-form-type="other"
         spellcheck="false"
         :class="[
-          'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500',
+          'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
           leftIcon ? 'pl-10' : 'pl-4',
           'pr-10',
-          errorMessage ? 'border-danger-500 dark:border-danger-500' : '',
+          errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
           props.small ? 'py-2' : 'py-3',
         ]"
         :disabled="disabled"
@@ -45,7 +45,7 @@
           :is="leftIcon"
           :class="[
             props.small ? 'h-4 w-4' : 'h-5 w-5',
-            'text-gray-400 dark:text-gray-400',
+            'text-form-control-icon-text-light dark:text-form-control-icon-text-dark',
           ]"
         />
       </div>
@@ -56,7 +56,7 @@
           :is="IconChevronDown"
           :class="[
             props.small ? 'h-4 w-4' : 'h-5 w-5',
-            'text-gray-400 dark:text-gray-400 transition-transform duration-200',
+            'text-form-control-icon-text-light dark:text-form-control-icon-text-dark transition-transform duration-200',
             isOpen ? 'rotate-180' : '',
           ]"
         />
@@ -89,11 +89,13 @@
           v-if="isLoading"
           class="py-4 px-4 flex items-center justify-center"
         >
-          <LoadingSVG />
+          <LoadingSVG
+            custom-class="animate-spin -ml-1 mr-3 h-12 w-12 text-form-control-text-light dark:text-form-control-text-dark"
+          />
         </div>
         <div
           v-else-if="items.length === 0"
-          class="py-4 px-4 text-center text-gray-500 dark:text-gray-400"
+          class="py-4 px-4 text-center text-form-supporting-text-light dark:text-form-supporting-text-dark"
         >
           No se encontraron datos
         </div>
@@ -104,9 +106,9 @@
             @click="(e) => selectItem(item, e, handleChange)"
             class="rounded-lg p-3 border cursor-pointer transition-colors"
             :class="{
-              'border-primary-500 bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
+              'border-primary-subtle-light dark:border-primary-subtle-dark bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30':
                 isItemSelected(item),
-              'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700':
+              'bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-bg-hover-light dark:hover:bg-form-suggestion-bg-hover-dark':
                 !isItemSelected(item),
             }"
           >
@@ -115,16 +117,16 @@
                 <component
                   v-if="item.icon"
                   :is="item.icon"
-                  class="w-5 h-5 text-gray-600 dark:text-gray-400"
+                  class="w-5 h-5 text-form-suggestion-icon-text-light dark:text-form-suggestion-icon-text-dark"
                 />
                 <div class="flex flex-col">
                   <span
-                    class="font-semibold text-gray-900 dark:text-white"
+                    class="font-semibold text-form-control-text-light dark:text-form-control-text-dark"
                   >{{ item.label }}</span>
                   <span
                     v-for="(line, index) in item.subtitles"
                     :key="index"
-                    class="text-xs text-gray-500 dark:text-gray-400"
+                    class="text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark"
                   >{{ line }}</span>
                 </div>
               </div>
@@ -231,7 +233,7 @@ const selectedItem = computed(() => {
 
 const dropdownClasses = computed(() => {
   const baseClasses =
-    "absolute w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden";
+    "absolute w-full bg-form-suggestion-panel-bg-light dark:bg-form-suggestion-panel-bg-dark border border-default-light dark:border-default-dark rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden";
   return baseClasses;
 });
 

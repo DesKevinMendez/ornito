@@ -27,3 +27,6 @@ VeeValidate-wired native `<select>` with a fixed list of `Option`s. Uses
   ]"
 />
 ```
+
+The control uses the shared light/dark form color variables documented in
+[FormInput](form-input.md#css-color-variants).

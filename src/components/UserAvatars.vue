@@ -6,7 +6,7 @@
       class="relative"
     >
       <div
-        class="w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white text-xs font-medium border-2 border-white"
+        class="w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white text-xs font-medium border-2 border-avatar-light dark:border-avatar-dark"
         :style="{ zIndex: users.length - index }"
       >
         {{ user.initials }}

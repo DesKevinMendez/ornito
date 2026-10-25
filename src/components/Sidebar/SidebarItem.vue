@@ -40,11 +40,11 @@ const isActive = computed(() => {
     :class="[
       isActive
         ? showActiveBackground
-          ? 'bg-primary-600 text-white dark:bg-primary-500'
+          ? 'bg-sidebar-tab-bg-active-light text-sidebar-tab-text-active-light dark:bg-sidebar-tab-bg-active-dark dark:text-sidebar-tab-text-active-dark'
           : useExternalIndicator
-            ? 'bg-primary-600 text-white dark:bg-primary-500 lg:bg-transparent lg:dark:bg-transparent'
-            : 'text-white'
-        : 'text-gray-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800/50'
+            ? 'bg-sidebar-tab-bg-active-light text-sidebar-tab-text-active-light dark:bg-sidebar-tab-bg-active-dark dark:text-sidebar-tab-text-active-dark lg:bg-transparent lg:dark:bg-transparent'
+            : 'text-sidebar-tab-text-active-light dark:text-sidebar-tab-text-active-dark'
+        : 'text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark'
     ]"
   >
     <component
@@ -52,8 +52,8 @@ const isActive = computed(() => {
       class="w-5 h-5 shrink-0 transition-colors duration-200"
       :class="[
         isActive
-          ? 'text-white'
-          : 'text-gray-400 group-hover:text-gray-600 dark:text-gray-200 dark:group-hover:text-gray-100'
+          ? 'text-sidebar-tab-text-active-light dark:text-sidebar-tab-text-active-dark'
+          : 'text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark'
       ]"
     />
     <div
@@ -75,8 +75,8 @@ const isActive = computed(() => {
         class="text-[10px] font-medium px-1.5 py-0.5 rounded-full shrink-0 tabular-nums"
         :class="[
           isActive
-            ? 'bg-white/20 text-white'
-            : 'bg-primary-600 text-white dark:bg-primary-500'
+            ? 'bg-sidebar-tab-badge-bg-active-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-bg-active-dark dark:text-sidebar-tab-badge-text-dark'
+            : 'bg-sidebar-tab-badge-bg-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-bg-dark dark:text-sidebar-tab-badge-text-dark'
         ]"
       >
         {{ badgeText }}

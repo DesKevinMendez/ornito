@@ -19,24 +19,24 @@ describe('List', () => {
     const wrapper = mount(List, { props: { border } })
 
     expect(wrapper.classes()).not.toContain('border')
-    expect(wrapper.classes()).not.toContain('border-gray-200')
-    expect(wrapper.classes()).not.toContain('dark:border-gray-700')
+    expect(wrapper.classes()).not.toContain('border-default-light')
+    expect(wrapper.classes()).not.toContain('dark:border-default-dark')
     expect(wrapper.classes()).toContain('border-0')
   })
 
-  it('reactively enables and disables the light and dark outer border', async () => {
+  it('reactively enables and disables the semantic outer border', async () => {
     const wrapper = mount(List, { props: { border: true } })
 
     expect(wrapper.classes()).toContain('border')
-    expect(wrapper.classes()).toContain('border-gray-200')
-    expect(wrapper.classes()).toContain('dark:border-gray-700')
+    expect(wrapper.classes()).toContain('border-default-light')
+    expect(wrapper.classes()).toContain('dark:border-default-dark')
     expect(wrapper.classes()).not.toContain('border-0')
 
     await wrapper.setProps({ border: false })
 
     expect(wrapper.classes()).not.toContain('border')
-    expect(wrapper.classes()).not.toContain('border-gray-200')
-    expect(wrapper.classes()).not.toContain('dark:border-gray-700')
+    expect(wrapper.classes()).not.toContain('border-default-light')
+    expect(wrapper.classes()).not.toContain('dark:border-default-dark')
     expect(wrapper.classes()).toContain('border-0')
   })
 
@@ -44,8 +44,8 @@ describe('List', () => {
     const wrapper = mount(List, { props: { border } })
 
     expect(wrapper.classes()).toContain('divide-y')
-    expect(wrapper.classes()).toContain('divide-gray-200')
-    expect(wrapper.classes()).toContain('dark:divide-gray-700')
+    expect(wrapper.classes()).toContain('divide-default-light')
+    expect(wrapper.classes()).toContain('dark:divide-default-dark')
     expect(wrapper.classes()).toContain('bg-white')
     expect(wrapper.classes()).toContain('dark:bg-gray-900')
     expect(wrapper.classes()).toContain('rounded-xl')

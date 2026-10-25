@@ -4,25 +4,25 @@
     <dialog
       v-if="open"
       ref="dialogRef"
-      class="rutely-modal fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-0 m-0 border-0 w-full h-full focus:outline-none"
+      class="rutely-modal fixed inset-0 z-[100] flex items-center justify-center bg-modal-scrim-bg-light dark:bg-modal-scrim-bg-dark backdrop-blur-sm p-0 m-0 border-0 w-full h-full focus:outline-none"
       @close="emitClose"
       @click.self="handleBackdropClick"
       @keydown="handleKeydown"
     >
       <div
-        class="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-gray-200 dark:border-gray-700"
+        class="relative bg-modal-panel-bg-light dark:bg-modal-panel-bg-dark rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-default-light dark:border-default-dark"
         :class="[sizeClass, open ? 'scale-100 opacity-100' : 'scale-95 opacity-0']"
       >
         <div >
           <div class="flex items-start justify-between">
             <div class="flex-1 min-w-0">
-              <div v-if="title" class="text-lg font-semibold text-gray-900 dark:text-white">{{ title }}</div>
-              <div v-if="subtitle" class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ subtitle }}</div>
+              <div v-if="title" class="text-lg font-semibold text-modal-title-text-light dark:text-modal-title-text-dark">{{ title }}</div>
+              <div v-if="subtitle" class="text-sm text-modal-subtitle-text-light dark:text-modal-subtitle-text-dark mt-1">{{ subtitle }}</div>
             </div>
             <button
               @click="emitClose"
               aria-label="Cerrar"
-              class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-gray-500 ml-4"
+              class="text-modal-close-text-light dark:text-modal-close-text-dark hover:text-modal-close-text-hover-light dark:hover:text-modal-close-text-hover-dark rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-modal-close-ring-focus-light dark:focus:ring-modal-close-ring-focus-dark ml-4"
               type="button"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

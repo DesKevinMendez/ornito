@@ -18,3 +18,6 @@ VeeValidate-wired `<textarea>` with an optional character counter. Uses
 ```vue
 <FormTextarea v-model="form.notes" id="notes" name="notes" label="Notes" :rows="5" :max-length="500" />
 ```
+
+The control uses the shared light/dark form color variables documented in
+[FormInput](form-input.md#css-color-variants).

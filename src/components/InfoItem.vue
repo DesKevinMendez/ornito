@@ -1,7 +1,7 @@
 <template>
   <div :class="layoutClasses">
-    <span class="text-base font-medium text-gray-600 dark:text-gray-400 block mb-1">{{ label }}</span>
-    <div class="text-gray-900 dark:text-white text-base w-fit">
+    <span class="text-base font-medium text-info-item-label-text-light dark:text-info-item-label-text-dark block mb-1">{{ label }}</span>
+    <div class="text-info-item-value-text-light dark:text-info-item-value-text-dark text-base w-fit">
       <slot />
     </div>
   </div>

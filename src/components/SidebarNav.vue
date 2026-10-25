@@ -23,7 +23,7 @@ const { isInitialized, activeIndicatorStyle } = useActiveIndicator(navRef);
     class="relative space-y-2 flex gap-4 overflow-x-auto lg:flex-col lg:gap-0 lg:overflow-x-hidden"
   >
     <div
-      class="absolute left-0 right-0 bg-primary-600 dark:bg-primary-500 rounded-xl hidden lg:block"
+      class="absolute left-0 right-0 bg-sidebar-tab-bg-active-light dark:bg-sidebar-tab-bg-active-dark rounded-xl hidden lg:block"
       :class="isInitialized ? 'transition-all duration-300 ease-out' : ''"
       :style="{
         top: activeIndicatorStyle.top,

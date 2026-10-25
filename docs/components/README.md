@@ -15,6 +15,7 @@ available variants for any enum-like prop.
 - [Modal](./modal.md) — `Modal`, `BottomModal`, `ConfirmationModal`
 - [Snackbar](./snackbar.md) — `SnackBar`, `SnackBarItem`
 - [LoadingSVG](./loading-svg.md)
+- [HelpTooltip](./help-tooltip.md)
 - [ImageLightbox](./image-lightbox.md)
 
 ## Forms

@@ -2,8 +2,8 @@
   <RouterLink
     v-if="to"
     :to="to"
-    class="w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700/30 hover:text-gray-900 dark:hover:text-white"
-    :class="{ 'bg-gray-100 dark:bg-gray-700/50 text-gray-900 dark:text-white': active }"
+    class="w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 hover:bg-dropdown-item-bg-hover-light dark:hover:bg-dropdown-item-bg-hover-dark hover:text-dropdown-item-text-hover-light dark:hover:text-dropdown-item-text-hover-dark"
+    :class="stateClasses"
   >
     <component v-if="icon" :is="icon" class="w-4 h-4" />
     <span>{{ label }}</span>
@@ -12,8 +12,8 @@
     v-else
     type="button"
     @click="handleClick"
-    class="w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 cursor-pointer text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700/30 hover:text-gray-900 dark:hover:text-white"
-    :class="{ 'bg-gray-100 dark:bg-gray-700/50 text-gray-900 dark:text-white': active }"
+    class="w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 cursor-pointer hover:bg-dropdown-item-bg-hover-light dark:hover:bg-dropdown-item-bg-hover-dark hover:text-dropdown-item-text-hover-light dark:hover:text-dropdown-item-text-hover-dark"
+    :class="stateClasses"
   >
     <component v-if="icon" :is="icon" class="w-4 h-4" />
     <span>{{ label }}</span>
@@ -33,6 +33,13 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   active: false
 });
+
+// Base and active text colors are exclusive so the active color never depends on utility order.
+const stateClasses = computed(() =>
+  props.active
+    ? 'bg-dropdown-item-bg-active-light dark:bg-dropdown-item-bg-active-dark text-dropdown-item-text-active-light dark:text-dropdown-item-text-active-dark'
+    : 'text-dropdown-item-text-light dark:text-dropdown-item-text-dark'
+);
 
 const emit = defineEmits<{
   click: [value: string]

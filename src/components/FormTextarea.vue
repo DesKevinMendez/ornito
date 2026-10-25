@@ -1,6 +1,10 @@
 <template>
   <div>
-    <label v-if="label && !small" :for="id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+    <label
+      v-if="label && !small"
+      :for="id"
+      class="block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
+    >
       {{ label }}
     </label>
     <Field
@@ -19,8 +23,8 @@
             :rows="rows"
             :maxlength="maxLength"
             :class="[
-              'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500',
-              errorMessage ? 'border-danger-500 dark:border-danger-500' : '',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
+              errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
               small ? 'py-2' : 'py-3'
             ]"
           ></textarea>
@@ -29,7 +33,7 @@
           <ErrorMessage :name="name" class="text-sm text-danger-600 dark:text-danger-400" />
           <span
             v-if="maxLength"
-            class="text-xs text-gray-500 dark:text-gray-400 ml-auto shrink-0"
+            class="text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark ml-auto shrink-0"
             :class="charCount >= maxLength ? 'text-danger-600 dark:text-danger-400' : ''"
           >
             {{ charCount }} / {{ maxLength }}

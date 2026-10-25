@@ -1,17 +1,17 @@
 <template>
-    <tbody class="bg-white dark:bg-gray-800/20 divide-y divide-gray-200 dark:divide-gray-700 animate-pulse">
+    <tbody class="bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default-light dark:divide-default-dark animate-pulse">
         <tr
             v-for="row in rows"
             :key="row"
-            class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200"
+            class="hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200"
         >
             <td
                 v-for="(_, colIndex) in columns"
                 :key="colIndex"
-                class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 overflow-hidden text-ellipsis"
+                class="px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis"
             >
                 <div
-                    class="h-4 bg-gray-200 dark:bg-gray-700 rounded"
+                    class="h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded"
                     :style="{ width: getRandomWidth() }"
                 />
             </td>
@@ -20,9 +20,9 @@
             <td
                 v-if="showActions"
                 style="width: 120px; min-width: 120px; max-width: 120px;"
-                class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 overflow-hidden text-ellipsis"
+                class="px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis"
             >
-                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-16" />
+                <div class="h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-16" />
             </td>
         </tr>
     </tbody>

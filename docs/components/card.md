@@ -21,6 +21,19 @@ a `headerButtons` slot. Content goes in the default slot.
 </Card>
 ```
 
+### CSS color variants
+
+The card surface, title, and subtitle use paired light/dark CSS variables.
+Defaults preserve the current appearance.
+
+| Part | Variables |
+| --- | --- |
+| Surface | `--ds-color-card-bg-{light|dark}` |
+| Title | `--ds-color-card-title-text-{light|dark}` |
+| Subtitle | `--ds-color-card-subtitle-text-{light|dark}` |
+
+Set both the light and dark values on `:root`.
+
 ## CardPaginations
 
 Server-side pagination controls (page numbers + prev/next), styled for use
@@ -30,3 +43,13 @@ parent.
 | Prop | Type | Required | Default |
 | --- | --- | --- | --- |
 | `pagination` | `tApiPagination \| null` — `{ total, per_page, current_page, from, to, last_page }` | Yes | — |
+
+### CSS color variants
+
+Summary and page-number text can be overridden separately by mode. The arrow
+buttons use their own light/dark variables, defaulting to the primary palette.
+
+| Part | Variables |
+| --- | --- |
+| Summary and page | `--ds-color-card-pagination-summary-text-{light|dark}`, `--ds-color-card-pagination-page-text-{light|dark}` |
+| Arrow buttons | `--ds-color-card-pagination-button-bg-{light|dark}`, `--ds-color-card-pagination-button-bg-hover-{light|dark}`, `--ds-color-card-pagination-button-text-{light|dark}` |

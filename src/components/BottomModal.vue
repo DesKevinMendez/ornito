@@ -16,22 +16,22 @@
         tabindex="-1"
         @keydown="trapFocus"
       >
-        <div class="bottom-modal__scrim absolute inset-0" aria-hidden="true" @click="requestClose" />
+        <div class="bottom-modal__scrim absolute inset-0 bg-bottom-modal-scrim-bg-light dark:bg-bottom-modal-scrim-bg-dark" aria-hidden="true" @click="requestClose" />
         <section
-          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-white text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]"
+          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-bottom-modal-panel-bg-light text-bottom-modal-text-light shadow-[0_-2px_8px_var(--ds-color-black-alpha-12)] dark:bg-bottom-modal-panel-bg-dark dark:text-bottom-modal-text-dark"
         >
           <header class="shrink-0">
             <div class="flex items-start justify-between gap-4 px-6 pb-5 pt-6">
               <div class="min-w-0 flex-1">
-                <h2 v-if="title" class="text-base font-medium text-[#1d1b20] dark:text-[#e6e1e5]">
+                <h2 v-if="title" class="text-base font-medium text-bottom-modal-title-text-light dark:text-bottom-modal-title-text-dark">
                   {{ title }}
                 </h2>
-                <p v-if="subtitle" class="mt-1 text-sm text-[#49454f] dark:text-[#cac4d0]">
+                <p v-if="subtitle" class="mt-1 text-sm text-bottom-modal-subtitle-text-light dark:text-bottom-modal-subtitle-text-dark">
                   {{ subtitle }}
                 </p>
               </div>
               <button
-                class="shrink-0 rounded-full p-2 text-[#49454f] hover:bg-black/5 hover:text-[#1d1b20] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#49454f] dark:text-[#cac4d0] dark:hover:bg-white/10 dark:hover:text-[#e6e1e5] dark:focus-visible:ring-[#cac4d0]"
+                class="shrink-0 rounded-full p-2 text-bottom-modal-close-text-light hover:bg-bottom-modal-close-bg-hover-light hover:text-bottom-modal-close-text-hover-light focus:outline-none focus-visible:ring-2 focus-visible:ring-bottom-modal-close-ring-focus-light dark:text-bottom-modal-close-text-dark dark:hover:bg-bottom-modal-close-bg-hover-dark dark:hover:text-bottom-modal-close-text-hover-dark dark:focus-visible:ring-bottom-modal-close-ring-focus-dark"
                 type="button"
                 aria-label="Close"
                 @click="requestClose"
@@ -50,7 +50,7 @@
           <footer
             v-if="$slots.footer"
             class="shrink-0 px-5 py-4"
-            :class="props.showFooterDivider && 'border-t border-[#79747e]/30 dark:border-[#938f99]/30'"
+            :class="props.showFooterDivider && 'border-t border-bottom-modal-divider-border-light dark:border-bottom-modal-divider-border-dark'"
           >
             <slot name="footer" />
           </footer>
@@ -203,7 +203,6 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .bottom-modal__scrim {
-  background-color: rgb(0 0 0 / 32%);
   backdrop-filter: blur(8px);
   transition:
     background-color 360ms cubic-bezier(0.2, 0, 0, 1),

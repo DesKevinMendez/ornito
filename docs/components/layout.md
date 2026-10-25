@@ -27,6 +27,13 @@ slot for filters/actions.
 </ViewHeader>
 ```
 
+### CSS color variants
+
+The title and subtitle use paired light/dark CSS variables:
+`--ds-color-view-header-title-text-{light|dark}` and
+`--ds-color-view-header-subtitle-text-{light|dark}`. Override both the light and
+dark values on `:root`.
+
 ## InfoItem
 
 Label + value pair for read-only detail views. Value goes in the default
@@ -42,6 +49,10 @@ slot.
   <Badge variant="success">Active</Badge>
 </InfoItem>
 ```
+
+The label and value colors use independent light/dark tokens:
+`--ds-color-info-item-label-text-{light|dark}` and
+`--ds-color-info-item-value-text-{light|dark}`.
 
 ## CollapseTransition
 

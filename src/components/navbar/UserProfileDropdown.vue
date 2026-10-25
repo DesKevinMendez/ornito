@@ -3,10 +3,10 @@
     <div v-if="showNotifications" class="relative" ref="notificationDropdownRef">
       <button
         @click.stop="handleNotificationClick"
-        class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 relative cursor-pointer"
+        class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-profile-notification-trigger-bg-light hover:bg-profile-notification-trigger-bg-hover-light dark:bg-profile-notification-trigger-bg-dark dark:hover:bg-profile-notification-trigger-bg-hover-dark relative cursor-pointer"
         aria-label="Show notifications"
       >
-        <IconBell class="w-5 h-5 text-gray-900 dark:text-white" />
+        <IconBell class="w-5 h-5 text-profile-notification-trigger-icon-text-light dark:text-profile-notification-trigger-icon-text-dark" />
         <div
           v-if="unreadNotificationsCount > 0"
           class="absolute -top-1 -right-1 bg-danger-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium tabular-nums"
@@ -17,9 +17,9 @@
       <DropdownAnimation>
         <div
           v-if="isNotificationDropdownOpen && !isMobile"
-          class="absolute right-0 top-14 w-80 bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg shadow-lg z-50"
+          class="absolute right-0 top-14 w-80 bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
         >
-          <div class="py-2 px-4 border-b border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white font-semibold">
+          <div class="py-2 px-4 border-b border-default-light dark:border-default-dark text-sm text-profile-notification-title-text-light dark:text-profile-notification-title-text-dark font-semibold">
             Notificaciones
           </div>
           <div class="max-h-96 overflow-y-auto">
@@ -27,7 +27,7 @@
           </div>
           <div
             v-if="unreadNotificationsCount > 0"
-            class="py-2 px-4 border-t border-gray-200 dark:border-gray-700 text-center"
+            class="py-2 px-4 border-t border-default-light dark:border-default-dark text-center"
           >
             <button
               @click="emit('mark-all-read')"
@@ -43,23 +43,23 @@
     <div class="items-center cursor-pointer relative" ref="profileDropdownRef">
       <div class="flex items-center" @click="toggleDropdown">
         <div
-          class="w-10 h-10 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center sm:mr-3 overflow-hidden"
+          class="w-10 h-10 bg-profile-avatar-bg-light dark:bg-profile-avatar-bg-dark rounded-full flex items-center justify-center sm:mr-3 overflow-hidden"
         >
           <slot name="avatar">
-            <span class="text-gray-900 dark:text-white text-lg">
+            <span class="text-profile-avatar-text-light dark:text-profile-avatar-text-dark text-lg">
               {{ userInitials }}
             </span>
           </slot>
         </div>
         <div class="hidden sm:flex items-center" style="gap: 0">
           <div class="mr-3">
-            <div class="text-gray-900 dark:text-white font-medium">{{ userName }}</div>
+            <div class="text-profile-name-text-light dark:text-profile-name-text-dark font-medium">{{ userName }}</div>
             <div class="flex items-center">
-              <span class="text-sm text-gray-600 dark:text-gray-400">{{ userRole }}</span>
+              <span class="text-sm text-profile-role-text-light dark:text-profile-role-text-dark">{{ userRole }}</span>
             </div>
           </div>
           <IconChevronDown
-            class="w-4 h-4 text-gray-600 dark:text-gray-400"
+            class="w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark"
             :class="
               isDropdownOpen
                 ? 'rotate-180 transition-transform duration-200'
@@ -68,7 +68,7 @@
           />
         </div>
         <IconChevronDown
-          class="sm:hidden w-4 h-4 text-gray-600 dark:text-gray-400 ml-2"
+          class="sm:hidden w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark ml-2"
           :class="
             isDropdownOpen
               ? 'rotate-180 transition-transform duration-200'
@@ -79,7 +79,7 @@
     <DropdownAnimation>
       <div
         v-if="isDropdownOpen"
-        class="absolute right-0 top-14 w-56 sm:w-full bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg shadow-lg z-50"
+        class="absolute right-0 top-14 w-56 sm:w-full bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
       >
         <ul class="py-2">
           <DropdownItem

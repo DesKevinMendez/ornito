@@ -1,23 +1,23 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-900 rounded-xl border border-transparent dark:border-gray-700 shadow-sm"
+    class="bg-card-bg-light dark:bg-card-bg-dark rounded-xl border border-card-light dark:border-card-dark shadow-sm"
     :class="{ 'overflow-hidden flex flex-col': noPadding }"
   >
     <div v-if="showHeader" class="px-6 pt-5">
       <div
-        class="flex items-start justify-between gap-4 pb-4 border-b border-gray-300 dark:border-gray-600"
+        class="flex items-start justify-between gap-4 pb-4 border-b border-strong-light dark:border-strong-dark"
         :class="{ 'flex-col gap-3 sm:flex-row sm:items-start': colInMobile }"
       >
         <div class="flex-1 min-w-0">
           <h3
             v-if="title"
-            class="text-base font-semibold tracking-tight text-gray-900 dark:text-white"
+            class="text-base font-semibold tracking-tight text-card-title-text-light dark:text-card-title-text-dark"
           >
             {{ title }}
           </h3>
           <p
             v-if="subtitle"
-            class="mt-0.5 text-sm text-gray-500 dark:text-gray-400"
+            class="mt-0.5 text-sm text-card-subtitle-text-light dark:text-card-subtitle-text-dark"
           >
             {{ subtitle }}
           </p>

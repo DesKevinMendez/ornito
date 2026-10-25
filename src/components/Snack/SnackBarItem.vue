@@ -58,8 +58,8 @@ const cancel = (event?: Event) => {
         class="min-h-12 mb-4 snack-content flex items-center justify-between rounded-lg pointer-events-auto"
         :class="[
           error
-            ? 'border border-danger-200 dark:border-danger-800 bg-danger-50 dark:bg-danger-900'
-            : 'border border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-900'
+            ? 'border border-danger-muted-light dark:border-danger-muted-dark bg-danger-50 dark:bg-danger-900'
+            : 'border border-success-muted-light dark:border-success-muted-dark bg-success-50 dark:bg-success-900'
         ]">
       <div
         class="p-4 flex-1"

@@ -43,3 +43,37 @@ range sliders, masked input, and money input, depending on `type`. Uses
 <FormInput v-model="form.start" id="start" name="start" label="Start date" type="date" />
 <FormInput v-model="form.amount" id="amount" name="amount" label="Price" type="money" />
 ```
+
+## CSS color variants
+
+`FormInput`, `FormSelect`, `FormTextarea`, and `SearchableSelect` share paired
+light/dark CSS variables for their neutral colors. Set both the light and dark
+values on `:root`.
+
+| Role | Variables |
+| --- | --- |
+| Label and control | `--ds-color-form-label-text-{light\|dark}`, `--ds-color-form-control-bg-{light\|dark}`, `--ds-color-form-control-text-{light\|dark}`, `--ds-color-form-control-placeholder-text-{light\|dark}` |
+| Icons and supporting text | `--ds-color-form-control-icon-text-{light\|dark}`, `--ds-color-form-control-icon-text-hover-{light\|dark}`, `--ds-color-form-supporting-text-{light\|dark}` |
+| Range labels and value | `--ds-color-form-range-bound-text-{light\|dark}`, `--ds-color-form-range-value-text-{light\|dark}` |
+| Select placeholder option | `--ds-color-form-select-placeholder-bg-{light\|dark}`, `--ds-color-form-select-placeholder-text-{light\|dark}` |
+| Search results | `--ds-color-form-suggestion-panel-bg-{light\|dark}`, `--ds-color-form-suggestion-bg-hover-{light\|dark}`, `--ds-color-form-suggestion-icon-text-{light\|dark}` |
+
+```css
+:root {
+  --ds-color-form-label-text-light: #1e3a8a;
+  --ds-color-form-control-bg-light: #fff;
+  --ds-color-form-control-text-light: #172554;
+  --ds-color-form-control-placeholder-text-light: #64748b;
+  --ds-color-form-suggestion-panel-bg-light: #eff6ff;
+
+  --ds-color-form-label-text-dark: #bfdbfe;
+  --ds-color-form-control-bg-dark: #0f172a;
+  --ds-color-form-control-text-dark: #dbeafe;
+  --ds-color-form-control-placeholder-text-dark: #94a3b8;
+  --ds-color-form-suggestion-panel-bg-dark: #172554;
+}
+```
+
+Focus and validation colors continue to use the shared `primary` and `danger`
+tokens; input borders use the semantic `border-input-{light|dark}` and
+`border-danger-{light|dark}` roles.

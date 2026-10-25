@@ -49,6 +49,9 @@ import SearchableSelectDemo from '../.vuepress/components/SearchableSelectDemo.v
 />
 ```
 
+The control uses the shared light/dark form color variables documented in
+[FormInput](form-input.md#css-color-variants).
+
 Use `local-search-first` when the initial option set is useful as a client-side
 cache but the server should still be queried for misses:
 

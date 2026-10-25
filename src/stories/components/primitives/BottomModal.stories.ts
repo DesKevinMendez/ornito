@@ -62,7 +62,7 @@ const meta = {
           <p class="text-sm leading-6 text-gray-600 dark:text-gray-300">{{ body }}</p>
           <template #footer>
             <div class="flex justify-end gap-3">
-              <button class="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 dark:border-gray-600 dark:text-gray-200" @click="isOpen = false">Cancel</button>
+              <button class="rounded-lg border border-strong-light dark:border-strong-dark px-4 py-2 text-sm text-gray-700 dark:text-gray-200" @click="isOpen = false">Cancel</button>
               <button class="rounded-lg bg-primary-600 px-4 py-2 text-sm text-white" @click="isOpen = false">Continue</button>
             </div>
           </template>

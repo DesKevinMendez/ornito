@@ -58,23 +58,23 @@ describe('Item', () => {
 
     for (const wrapper of [defaultItem, borderlessItem]) {
       expect(wrapper.classes()).not.toContain('border')
-      expect(wrapper.classes()).not.toContain('border-gray-200')
-      expect(wrapper.classes()).not.toContain('dark:border-gray-700')
+      expect(wrapper.classes()).not.toContain('border-default-light')
+      expect(wrapper.classes()).not.toContain('dark:border-default-dark')
     }
   })
 
-  it('reactively toggles the light and dark border styles', async () => {
+  it('reactively toggles the semantic border token', async () => {
     const wrapper = mount(Item, { props: { title: 'Ana Rivera', border: true } })
 
     expect(wrapper.classes()).toContain('border')
-    expect(wrapper.classes()).toContain('border-gray-200')
-    expect(wrapper.classes()).toContain('dark:border-gray-700')
+    expect(wrapper.classes()).toContain('border-default-light')
+    expect(wrapper.classes()).toContain('dark:border-default-dark')
 
     await wrapper.setProps({ border: false })
 
     expect(wrapper.classes()).not.toContain('border')
-    expect(wrapper.classes()).not.toContain('border-gray-200')
-    expect(wrapper.classes()).not.toContain('dark:border-gray-700')
+    expect(wrapper.classes()).not.toContain('border-default-light')
+    expect(wrapper.classes()).not.toContain('dark:border-default-dark')
   })
 
   it.each([false, true])('includes light and dark hover styles with border=%s', (border) => {

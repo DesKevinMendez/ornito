@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-between">
     <!-- Page Info -->
-    <div class="text-sm text-gray-600 dark:text-gray-400 tabular-nums">
+    <div class="text-sm text-table-footer-text-light dark:text-table-footer-text-dark tabular-nums">
       Página {{ internalPaginationServer.current_page }} de {{ internalPaginationServer.last_page }}
     </div>
 
@@ -32,7 +32,7 @@
           >
             {{ page }}
           </BaseButton>
-          <span v-else class="px-2 text-gray-600 dark:text-gray-400">...</span>
+          <span v-else class="px-2 text-table-footer-text-light dark:text-table-footer-text-dark">...</span>
         </template>
       </div>
 

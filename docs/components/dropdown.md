@@ -15,6 +15,37 @@ Select-style dropdown backed by a fixed list of `DropdownItem`s. Uses
 | `triggerSmall` | `boolean` | No | — |
 | `position` | `'bottom-left' \| 'bottom-right' \| 'top-left' \| 'top-right'` | No | — menu placement relative to the trigger |
 
+### CSS color variants
+
+The trigger, panel, and items use paired light/dark runtime CSS variables. Their
+defaults preserve the current appearance. Override both the `-light` and
+`-dark` variables on `:root`.
+
+| Part | Variables |
+| --- | --- |
+| Trigger | `--ds-color-dropdown-trigger-bg-{light\|dark}`, `--ds-color-dropdown-trigger-text-{light\|dark}`, `--ds-color-dropdown-trigger-border-{light\|dark}`, `--ds-color-dropdown-trigger-bg-hover-{light\|dark}` |
+| Panel | `--ds-color-dropdown-panel-bg-{light\|dark}`, `--ds-color-dropdown-panel-border-{light\|dark}` |
+| Items | `--ds-color-dropdown-item-text-{light\|dark}`, `--ds-color-dropdown-item-bg-hover-{light\|dark}`, `--ds-color-dropdown-item-text-hover-{light\|dark}`, `--ds-color-dropdown-item-bg-active-{light\|dark}`, `--ds-color-dropdown-item-text-active-{light\|dark}` |
+
+```css
+:root {
+  --ds-color-dropdown-trigger-bg-light: #fff;
+  --ds-color-dropdown-trigger-text-light: #1e3a8a;
+  --ds-color-dropdown-panel-bg-light: #eff6ff;
+  --ds-color-dropdown-item-bg-hover-light: #dbeafe;
+  --ds-color-dropdown-item-bg-active-light: #bfdbfe;
+
+  --ds-color-dropdown-trigger-bg-dark: #172554;
+  --ds-color-dropdown-trigger-text-dark: #dbeafe;
+  --ds-color-dropdown-panel-bg-dark: #0f172a;
+  --ds-color-dropdown-item-bg-hover-dark: #1e3a8a;
+  --ds-color-dropdown-item-bg-active-dark: #1d4ed8;
+}
+```
+
+Item variables also affect `DropdownItem` in `UserProfileDropdown`, where that
+row component is shared.
+
 ## DropdownItem
 
 Single row inside a dropdown/menu (used by `Dropdown` and
@@ -45,6 +76,16 @@ Icon-triggered contextual action menu (e.g. a row's "⋮" menu). Emits
 - `default` — neutral text color.
 - `danger` — red text, for destructive actions.
 - `success` — green text.
+
+### CSS color variants
+
+The context menu panel has its own light/dark surface variables. Its default
+row text and hover background reuse the shared DropdownItem variables above;
+danger and success rows continue to use the semantic status palettes.
+
+| Part | Variables |
+| --- | --- |
+| Panel | `--ds-color-dropdown-menu-panel-bg-{light|dark}` |
 
 ## DropdownAnimation
 

@@ -1,6 +1,6 @@
 <template>
     <!-- Results Count -->
-    <div class="mt-4 text-sm text-gray-600 dark:text-gray-400 tabular-nums">
+    <div class="mt-4 text-sm text-table-footer-text-light dark:text-table-footer-text-dark tabular-nums">
         Mostrando {{ totalItems }} de
         {{ total }} resultados
     </div>

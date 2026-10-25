@@ -59,7 +59,7 @@ watch(() => props.isCollapsed, () => {
 <template>
   <nav ref="navRef" class="flex-1 px-3 py-2 relative">
     <div
-      class="absolute left-3 right-3 bg-primary-600 dark:bg-primary-500 rounded-xl"
+      class="absolute left-3 right-3 bg-sidebar-tab-bg-active-light dark:bg-sidebar-tab-bg-active-dark rounded-xl"
       :class="isInitialized ? (isAnimating ? 'transition-opacity duration-150 ease-out' : 'transition-all duration-300 ease-out') : ''"
       :style="{
         top: activeIndicatorStyle.top,
@@ -74,8 +74,8 @@ watch(() => props.isCollapsed, () => {
             class="group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 outline-none"
             :class="[
               isChildActive(item)
-                ? 'text-primary-500 dark:text-primary-400'
-                : 'text-gray-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800/50'
+                ? 'text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark'
+                : 'text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark'
             ]"
             @click="toggleGroup(item.route)"
           >
@@ -84,8 +84,8 @@ watch(() => props.isCollapsed, () => {
               class="w-5 h-5 shrink-0 transition-colors duration-200"
               :class="[
                 isChildActive(item)
-                  ? 'text-primary-500 dark:text-primary-400'
-                  : 'text-gray-400 group-hover:text-gray-600 dark:text-gray-200 dark:group-hover:text-gray-100'
+                  ? 'text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark'
+                  : 'text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark'
               ]"
             />
             <div
