@@ -11,29 +11,33 @@
         ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
 
-    /* Primitive neutral palette */
+    /* Primitive white and black */
     --ds-color-white: var(--color-white);
     --ds-color-black: var(--color-black);
+
+    /* Neutral - gray (Tailwind). Change --ds-color-neutral to recolor the whole palette. */
+    --ds-color-neutral: var(--color-gray-600);
     --ds-color-neutral-50: var(--color-gray-50);
     --ds-color-neutral-100: var(--color-gray-100);
     --ds-color-neutral-200: var(--color-gray-200);
     --ds-color-neutral-300: var(--color-gray-300);
     --ds-color-neutral-400: var(--color-gray-400);
     --ds-color-neutral-500: var(--color-gray-500);
-    --ds-color-neutral-600: var(--color-gray-600);
+    --ds-color-neutral-600: var(--ds-color-neutral);
     --ds-color-neutral-700: var(--color-gray-700);
     --ds-color-neutral-800: var(--color-gray-800);
     --ds-color-neutral-900: var(--color-gray-900);
     --ds-color-neutral-950: var(--color-gray-950);
 
-    /* Primitive pink palette */
+    /* Pink (Tailwind). Change --ds-color-pink to recolor the whole palette. */
+    --ds-color-pink: var(--color-pink-600);
     --ds-color-pink-50: var(--color-pink-50);
     --ds-color-pink-100: var(--color-pink-100);
     --ds-color-pink-200: var(--color-pink-200);
     --ds-color-pink-300: var(--color-pink-300);
     --ds-color-pink-400: var(--color-pink-400);
     --ds-color-pink-500: var(--color-pink-500);
-    --ds-color-pink-600: var(--color-pink-600);
+    --ds-color-pink-600: var(--ds-color-pink);
     --ds-color-pink-700: var(--color-pink-700);
     --ds-color-pink-800: var(--color-pink-800);
     --ds-color-pink-900: var(--color-pink-900);
@@ -61,87 +65,94 @@
     --ds-color-neutral-700-alpha-50: color-mix(in oklab, var(--ds-color-neutral-700) 50%, transparent);
     --ds-color-neutral-700-alpha-70: color-mix(in oklab, var(--ds-color-neutral-700) 70%, transparent);
 
-    /* Primary - indigo (Tailwind v3 values, same as main) */
+    /* Primary - indigo (Tailwind v3 values, same as main). Change --ds-color-primary to recolor the whole palette. */
+    --ds-color-primary: #4f46e5;
     --ds-color-primary-50: #eef2ff;
     --ds-color-primary-100: #e0e7ff;
     --ds-color-primary-200: #c7d2fe;
     --ds-color-primary-300: #a5b4fc;
     --ds-color-primary-400: #818cf8;
     --ds-color-primary-500: #6366f1;
-    --ds-color-primary-600: #4f46e5;
+    --ds-color-primary-600: var(--ds-color-primary);
     --ds-color-primary-700: #4338ca;
     --ds-color-primary-800: #3730a3;
     --ds-color-primary-900: #312e81;
     --ds-color-primary-950: #1e1b4b;
 
-    /* Informative palette - sky (Tailwind v3 values, same as main) */
+    /* Informative - sky (Tailwind v3 values, same as main). Change --ds-color-informative to recolor the whole palette. */
+    --ds-color-informative: #0284c7;
     --ds-color-informative-50: #f0f9ff;
     --ds-color-informative-100: #e0f2fe;
     --ds-color-informative-200: #bae6fd;
     --ds-color-informative-300: #7dd3fc;
     --ds-color-informative-400: #38bdf8;
     --ds-color-informative-500: #0ea5e9;
-    --ds-color-informative-600: #0284c7;
+    --ds-color-informative-600: var(--ds-color-informative);
     --ds-color-informative-700: #0369a1;
     --ds-color-informative-800: #075985;
     --ds-color-informative-900: #0c4a6e;
     --ds-color-informative-950: #082f49;
 
-    /* Secondary defaults to informative; override per shade when needed. */
+    /* Secondary - defaults to informative. Change --ds-color-secondary to recolor the whole palette. */
+    --ds-color-secondary: var(--ds-color-informative);
     --ds-color-secondary-50: var(--ds-color-informative-50);
     --ds-color-secondary-100: var(--ds-color-informative-100);
     --ds-color-secondary-200: var(--ds-color-informative-200);
     --ds-color-secondary-300: var(--ds-color-informative-300);
     --ds-color-secondary-400: var(--ds-color-informative-400);
     --ds-color-secondary-500: var(--ds-color-informative-500);
-    --ds-color-secondary-600: var(--ds-color-informative-600);
+    --ds-color-secondary-600: var(--ds-color-secondary);
     --ds-color-secondary-700: var(--ds-color-informative-700);
     --ds-color-secondary-800: var(--ds-color-informative-800);
     --ds-color-secondary-900: var(--ds-color-informative-900);
     --ds-color-secondary-950: var(--ds-color-informative-950);
 
-    /* Tertiary - violet (Tailwind v3 values, same as main) */
+    /* Tertiary - violet (Tailwind v3 values, same as main). Change --ds-color-tertiary to recolor the whole palette. */
+    --ds-color-tertiary: #7c3aed;
     --ds-color-tertiary-50: #f5f3ff;
     --ds-color-tertiary-100: #ede9fe;
     --ds-color-tertiary-200: #ddd6fe;
     --ds-color-tertiary-300: #c4b5fd;
     --ds-color-tertiary-400: #a78bfa;
     --ds-color-tertiary-500: #8b5cf6;
-    --ds-color-tertiary-600: #7c3aed;
+    --ds-color-tertiary-600: var(--ds-color-tertiary);
     --ds-color-tertiary-700: #6d28d9;
     --ds-color-tertiary-800: #5b21b6;
     --ds-color-tertiary-900: #4c1d95;
     --ds-color-tertiary-950: #2e1065;
 
-    /* Primitive status palette - success (emerald, Tailwind v3 values) */
+    /* Success - emerald (Tailwind v3 values, same as main). Change --ds-color-success to recolor the whole palette. */
+    --ds-color-success: #059669;
     --ds-color-success-50: #ecfdf5;
     --ds-color-success-100: #d1fae5;
     --ds-color-success-200: #a7f3d0;
     --ds-color-success-400: #34d399;
     --ds-color-success-500: #10b981;
-    --ds-color-success-600: #059669;
+    --ds-color-success-600: var(--ds-color-success);
     --ds-color-success-700: #047857;
     --ds-color-success-800: #065f46;
     --ds-color-success-900: #064e3b;
 
-    /* Primitive status palette - warning (amber, Tailwind v3 values) */
+    /* Warning - amber (Tailwind v3 values, same as main). Change --ds-color-warning to recolor the whole palette. */
+    --ds-color-warning: #d97706;
     --ds-color-warning-50: #fffbeb;
     --ds-color-warning-100: #fef3c7;
     --ds-color-warning-200: #fde68a;
     --ds-color-warning-400: #fbbf24;
     --ds-color-warning-500: #f59e0b;
-    --ds-color-warning-600: #d97706;
+    --ds-color-warning-600: var(--ds-color-warning);
     --ds-color-warning-700: #b45309;
     --ds-color-warning-800: #92400e;
     --ds-color-warning-900: #78350f;
 
-    /* Primitive status palette - error (red, Tailwind v3 values) */
+    /* Error - red (Tailwind v3 values, same as main). Change --ds-color-error to recolor the whole palette. */
+    --ds-color-error: #dc2626;
     --ds-color-error-50: #fef2f2;
     --ds-color-error-100: #fee2e2;
     --ds-color-error-200: #fecaca;
     --ds-color-error-400: #f87171;
     --ds-color-error-500: #ef4444;
-    --ds-color-error-600: #dc2626;
+    --ds-color-error-600: var(--ds-color-error);
     --ds-color-error-700: #b91c1c;
     --ds-color-error-800: #991b1b;
     --ds-color-error-900: #7f1d1d;
@@ -804,4 +815,108 @@
     --ds-color-datepicker-bg-dark: var(--ds-color-midnight);
     --ds-color-datepicker-primary-bg-light: var(--ds-color-primary-600);
     --ds-color-datepicker-primary-bg-dark: var(--ds-color-primary-600);
+}
+
+/*
+ * Palettes derived from their key color. Each shade keeps the lightness, chroma and hue
+ * relationship of the default palette, so the defaults above are reproduced exactly and
+ * overriding --ds-color-{palette} recolors every shade. Browsers without relative color
+ * syntax keep the static shades above.
+ */
+@supports (color: oklch(from red calc(l * 0.5) c h)) {
+    :root {
+        /* neutral */
+        --ds-color-neutral-50: oklch(from var(--ds-color-neutral) calc(l + (1 - l) * 0.972924) calc(c * 0.066667) calc(h - 8.963));
+        --ds-color-neutral-100: oklch(from var(--ds-color-neutral) calc(l + (1 - l) * 0.940433) calc(c * 0.1) calc(h + 7.74));
+        --ds-color-neutral-200: oklch(from var(--ds-color-neutral) calc(l + (1 - l) * 0.870036) calc(c * 0.2) calc(h + 7.729));
+        --ds-color-neutral-300: oklch(from var(--ds-color-neutral) calc(l + (1 - l) * 0.768953) calc(c * 0.333333) calc(h + 1.536));
+        --ds-color-neutral-400: oklch(from var(--ds-color-neutral) calc(l + (1 - l) * 0.471119) calc(c * 0.733333) calc(h + 4.523));
+        --ds-color-neutral-500: oklch(from var(--ds-color-neutral) calc(l + (1 - l) * 0.189531) calc(c * 0.9) calc(h + 7.562));
+        --ds-color-neutral-700: oklch(from var(--ds-color-neutral) calc(l * 0.836323) calc(c * 1.133333) calc(h + 2.931));
+        --ds-color-neutral-800: oklch(from var(--ds-color-neutral) calc(l * 0.623318) calc(c * 1.1) calc(h + 0.046));
+        --ds-color-neutral-900: oklch(from var(--ds-color-neutral) calc(l * 0.470852) calc(c * 1.133333) calc(h + 7.863));
+        --ds-color-neutral-950: oklch(from var(--ds-color-neutral) calc(l * 0.29148) calc(c * 0.933333) calc(h + 4.89));
+        /* pink */
+        --ds-color-pink-50: oklch(from var(--ds-color-pink) calc(l + (1 - l) * 0.928922) calc(c * 0.056225) calc(h - 17.386));
+        --ds-color-pink-100: oklch(from var(--ds-color-pink) calc(l + (1 - l) * 0.872549) calc(c * 0.11245) calc(h - 18.326));
+        --ds-color-pink-200: oklch(from var(--ds-color-pink) calc(l + (1 - l) * 0.752451) calc(c * 0.24498) calc(h - 17.353));
+        --ds-color-pink-300: oklch(from var(--ds-color-pink) calc(l + (1 - l) * 0.566176) calc(c * 0.481928) calc(h - 14.566));
+        --ds-color-pink-400: oklch(from var(--ds-color-pink) calc(l + (1 - l) * 0.308824) calc(c * 0.811245) calc(h - 10.823));
+        --ds-color-pink-500: oklch(from var(--ds-color-pink) calc(l + (1 - l) * 0.156863) calc(c * 0.967871) calc(h - 6.276));
+        --ds-color-pink-700: oklch(from var(--ds-color-pink) calc(l * 0.886824) calc(c * 0.895582) calc(h + 3.374));
+        --ds-color-pink-800: oklch(from var(--ds-color-pink) calc(l * 0.775338) calc(c * 0.751004) calc(h + 3.231));
+        --ds-color-pink-900: oklch(from var(--ds-color-pink) calc(l * 0.689189) calc(c * 0.614458) calc(h + 1.848));
+        --ds-color-pink-950: oklch(from var(--ds-color-pink) calc(l * 0.47973) calc(c * 0.437751) calc(h + 3.323));
+        /* primary */
+        --ds-color-primary-50: oklch(from var(--ds-color-primary) calc(l + (1 - l) * 0.922165) calc(c * 0.077954) calc(h - 4.651238));
+        --ds-color-primary-100: oklch(from var(--ds-color-primary) calc(l + (1 - l) * 0.856854) calc(c * 0.145297) calc(h - 4.177755));
+        --ds-color-primary-200: oklch(from var(--ds-color-primary) calc(l + (1 - l) * 0.734095) calc(c * 0.270472) calc(h - 2.926997));
+        --ds-color-primary-300: oklch(from var(--ds-color-primary) calc(l + (1 - l) * 0.56132) calc(c * 0.452656) calc(h - 2.252205));
+        --ds-color-primary-400: oklch(from var(--ds-color-primary) calc(l + (1 - l) * 0.346404) calc(c * 0.688112) calc(h - 0.030733));
+        --ds-color-primary-500: oklch(from var(--ds-color-primary) calc(l + (1 - l) * 0.152896) calc(c * 0.886991) calc(h + 0.151657));
+        --ds-color-primary-700: oklch(from var(--ds-color-primary) calc(l * 0.894632) calc(c * 0.932731) calc(h + 0.057269));
+        --ds-color-primary-800: oklch(from var(--ds-color-primary) calc(l * 0.780362) calc(c * 0.770862) calc(h + 0.400582));
+        --ds-color-primary-900: oklch(from var(--ds-color-primary) calc(l * 0.702645) calc(c * 0.588631) calc(h + 1.731659));
+        --ds-color-primary-950: oklch(from var(--ds-color-primary) calc(l * 0.504008) calc(c * 0.374122) calc(h + 4.322635));
+        /* informative */
+        --ds-color-informative-50: oklch(from var(--ds-color-informative) calc(l + (1 - l) * 0.944489) calc(c * 0.089912) calc(h - 5.346307));
+        --ds-color-informative-100: oklch(from var(--ds-color-informative) calc(l + (1 - l) * 0.882194) calc(c * 0.18026) calc(h - 5.141868));
+        --ds-color-informative-200: oklch(from var(--ds-color-informative) calc(l + (1 - l) * 0.760852) calc(c * 0.399559) calc(h - 11.063636));
+        --ds-color-informative-300: oklch(from var(--ds-color-informative) calc(l + (1 - l) * 0.581909) calc(c * 0.729301) calc(h - 11.648158));
+        --ds-color-informative-400: oklch(from var(--ds-color-informative) calc(l + (1 - l) * 0.402286) calc(c * 1.000869) calc(h - 9.304571));
+        --ds-color-informative-500: oklch(from var(--ds-color-informative) calc(l + (1 - l) * 0.235388) calc(c * 1.064812) calc(h - 4.643534));
+        --ds-color-informative-700: oklch(from var(--ds-color-informative) calc(l * 0.850864) calc(c * 0.859014) calc(h + 0.782968));
+        --ds-color-informative-800: oklch(from var(--ds-color-informative) calc(l * 0.754532) calc(c * 0.720341) calc(h - 1.176323));
+        --ds-color-informative-900: oklch(from var(--ds-color-informative) calc(l * 0.66579) calc(c * 0.608682) calc(h - 1.090135));
+        --ds-color-informative-950: oklch(from var(--ds-color-informative) calc(l * 0.499398) calc(c * 0.455391) calc(h + 1.191018));
+        /* secondary */
+        --ds-color-secondary-50: oklch(from var(--ds-color-secondary) calc(l + (1 - l) * 0.944489) calc(c * 0.089912) calc(h - 5.346307));
+        --ds-color-secondary-100: oklch(from var(--ds-color-secondary) calc(l + (1 - l) * 0.882194) calc(c * 0.18026) calc(h - 5.141868));
+        --ds-color-secondary-200: oklch(from var(--ds-color-secondary) calc(l + (1 - l) * 0.760852) calc(c * 0.399559) calc(h - 11.063636));
+        --ds-color-secondary-300: oklch(from var(--ds-color-secondary) calc(l + (1 - l) * 0.581909) calc(c * 0.729301) calc(h - 11.648158));
+        --ds-color-secondary-400: oklch(from var(--ds-color-secondary) calc(l + (1 - l) * 0.402286) calc(c * 1.000869) calc(h - 9.304571));
+        --ds-color-secondary-500: oklch(from var(--ds-color-secondary) calc(l + (1 - l) * 0.235388) calc(c * 1.064812) calc(h - 4.643534));
+        --ds-color-secondary-700: oklch(from var(--ds-color-secondary) calc(l * 0.850864) calc(c * 0.859014) calc(h + 0.782968));
+        --ds-color-secondary-800: oklch(from var(--ds-color-secondary) calc(l * 0.754532) calc(c * 0.720341) calc(h - 1.176323));
+        --ds-color-secondary-900: oklch(from var(--ds-color-secondary) calc(l * 0.66579) calc(c * 0.608682) calc(h - 1.090135));
+        --ds-color-secondary-950: oklch(from var(--ds-color-secondary) calc(l * 0.499398) calc(c * 0.455391) calc(h + 1.191018));
+        /* tertiary */
+        --ds-color-tertiary-50: oklch(from var(--ds-color-tertiary) calc(l + (1 - l) * 0.932723) calc(c * 0.065126) calc(h + 0.746791));
+        --ds-color-tertiary-100: oklch(from var(--ds-color-tertiary) calc(l + (1 - l) * 0.876484) calc(c * 0.115196) calc(h + 1.578855));
+        --ds-color-tertiary-200: oklch(from var(--ds-color-tertiary) calc(l + (1 - l) * 0.769478) calc(c * 0.222568) calc(h + 0.273903));
+        --ds-color-tertiary-300: oklch(from var(--ds-color-tertiary) calc(l + (1 - l) * 0.588286) calc(c * 0.410757) calc(h + 0.562219));
+        --ds-color-tertiary-400: oklch(from var(--ds-color-tertiary) calc(l + (1 - l) * 0.365479) calc(c * 0.645488) calc(h + 0.532232));
+        --ds-color-tertiary-500: oklch(from var(--ds-color-tertiary) calc(l + (1 - l) * 0.140176) calc(c * 0.887784) calc(h - 0.291743));
+        --ds-color-tertiary-700: oklch(from var(--ds-color-tertiary) calc(l * 0.906397) calc(c * 0.978287) calc(h - 0.428028));
+        --ds-color-tertiary-800: oklch(from var(--ds-color-tertiary) calc(l * 0.797997) calc(c * 0.854009) calc(h - 0.249893));
+        --ds-color-tertiary-900: oklch(from var(--ds-color-tertiary) calc(l * 0.701305) calc(c * 0.723094) calc(h + 0.735598));
+        --ds-color-tertiary-950: oklch(from var(--ds-color-tertiary) calc(l * 0.52217) calc(c * 0.548021) calc(h - 1.919521));
+        /* success */
+        --ds-color-success-50: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.948813) calc(c * 0.162298) calc(h + 2.887452));
+        --ds-color-success-100: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.877378) calc(c * 0.398222) calc(h - 0.174599));
+        --ds-color-success-200: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.764721) calc(c * 0.702315) calc(h + 0.924681));
+        --ds-color-success-400: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.438021) calc(c * 1.20462) calc(h - 0.002327));
+        --ds-color-success-500: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.247264) calc(c * 1.16996) calc(h - 0.7458));
+        --ds-color-success-700: oklch(from var(--ds-color-success) calc(l * 0.852604) calc(c * 0.823577) calc(h + 2.386679));
+        --ds-color-success-800: oklch(from var(--ds-color-success) calc(l * 0.724532) calc(c * 0.678661) calc(h + 3.68737));
+        --ds-color-success-900: oklch(from var(--ds-color-success) calc(l * 0.63434) calc(c * 0.57318) calc(h + 5.714351));
+        /* warning */
+        --ds-color-warning-50: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.960735) calc(c * 0.135959) calc(h + 36.959083));
+        --ds-color-warning-100: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.885971) calc(c * 0.368608) calc(h + 37.299104));
+        --ds-color-warning-200: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.773393) calc(c * 0.731325) calc(h + 37.42752));
+        --ds-color-warning-400: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.511793) calc(c * 1.044463) calc(h + 26.110288));
+        --ds-color-warning-500: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.307489) calc(c * 1.045973) calc(h + 11.76205));
+        --ds-color-warning-700: oklch(from var(--ds-color-warning) calc(l * 0.833959) calc(c * 0.924299) calc(h - 9.320811));
+        --ds-color-warning-800: oklch(from var(--ds-color-warning) calc(l * 0.710665) calc(c * 0.792128) calc(h - 12.11769));
+        --ds-color-warning-900: oklch(from var(--ds-color-warning) calc(l * 0.621332) calc(c * 0.669314) calc(h - 12.414576));
+        /* error */
+        --ds-color-error-50: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.930309) calc(c * 0.060174) calc(h - 9.94535));
+        --ds-color-error-100: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.847815) calc(c * 0.143597) calc(h - 9.607884));
+        --ds-color-error-200: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.726987) calc(c * 0.275417) calc(h - 8.99098));
+        --ds-color-error-400: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.315744) calc(c * 0.772218) calc(h - 5.108825));
+        --ds-color-error-500: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.14125) calc(c * 0.966035) calc(h - 1.993721));
+        --ds-color-error-700: oklch(from var(--ds-color-error) calc(l * 0.875794) calc(c * 0.88537) calc(h + 0.193054));
+        --ds-color-error-800: oklch(from var(--ds-color-error) calc(l * 0.768824) calc(c * 0.749784) calc(h - 0.425609));
+        --ds-color-error-900: oklch(from var(--ds-color-error) calc(l * 0.685918) calc(c * 0.618494) calc(h - 1.602054));
+    }
 }

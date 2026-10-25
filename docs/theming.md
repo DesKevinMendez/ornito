@@ -24,22 +24,47 @@ system without rebuilding it.
   `border-default-light` and `dark:border-danger-subtle-dark`, while resolving
   to `--ds-color-border-*-{light|dark}` at runtime.
 
-Because the utilities reference the variable and not its value, changing
-`--ds-color-primary-500` anywhere above a component in the DOM changes what
-that component renders — no rebuild required.
+Because the utilities reference the variable and not its value, overriding a
+token on `:root` changes what every component renders — no rebuild required.
+Override tokens on `:root` (or on `<html>`, where the `.dark` class lives):
+component tokens resolve their references there, so an override on a nested
+element only reaches utilities that use a primitive directly.
+
+## Change a color in one place
+
+Each palette has a key color, `--ds-color-{palette}`, which is its 600 shade
+(the color of the primary button, the active switch, the selected tab…). Every
+other shade is derived from it with CSS relative colors, keeping the lightness,
+chroma and hue steps of the default palette. Changing the key color recolors the
+whole palette, and every semantic and component token that uses it, in light
+and dark mode:
+
+```css
+:root {
+  --ds-color-primary: #16a34a; /* button, switch, tabs, sidebar, focus rings… */
+}
+```
+
+Key colors: `--ds-color-primary`, `--ds-color-informative`, `--ds-color-secondary`
+(defaults to informative), `--ds-color-tertiary`, `--ds-color-success`,
+`--ds-color-warning`, `--ds-color-error`, `--ds-color-neutral`, and
+`--ds-color-pink`. With their default values the derived shades are identical to
+the static palette. Browsers without relative color syntax (Chrome < 119,
+Safari < 18, Firefox < 128) keep the default shades; only the 600 shade follows
+the key color there. A single shade can still be overridden after the key color,
+e.g. `--ds-color-primary-50`.
 
 ## Overriding from a consuming app
 
 Import the package's compiled stylesheet, then set your own values for any
-of the variables below on `:root` (or any ancestor scope):
+of the variables below on `:root`:
 
 ```css
 @import 'ornito/style.css';
 
 :root {
   --ds-font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --ds-color-primary-500: #16a34a;
-  --ds-color-primary-600: #15803d;
+  --ds-color-primary: #16a34a;
   --ds-color-border-default-light: #d4d4d8;
   --ds-color-border-input-light: #a1a1aa;
   --ds-color-sidebar-bg-light: #f8fafc;
@@ -93,7 +118,7 @@ Dark mode has its own `-dark` tokens, read only through the `dark:` variant
 ### At runtime (JavaScript)
 
 ```js
-document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
+document.documentElement.style.setProperty('--ds-color-primary', '#16a34a')
 ```
 
 ## Token naming convention
@@ -105,7 +130,7 @@ hold raw colors or Tailwind variables.
 
 | Layer | Grammar | Example |
 | --- | --- | --- |
-| Primitive | `--ds-color-{palette}-{shade}[-alpha-{n}]` | `--ds-color-primary-600`, `--ds-color-neutral-800-alpha-30` |
+| Primitive | `--ds-color-{palette}` (key color) and `--ds-color-{palette}-{shade}[-alpha-{n}]` | `--ds-color-primary`, `--ds-color-primary-600`, `--ds-color-neutral-800-alpha-30` |
 | Semantic | `--ds-color-border-{role}[-{modifier}]-{mode}` | `--ds-color-border-danger-subtle-dark` |
 | Component | `--ds-color-{component}-{element…}-{property}-{state…}-{mode}` | `--ds-color-button-primary-bg-hover-light` |
 
@@ -124,6 +149,7 @@ hold raw colors or Tailwind variables.
 
 | Palette | Shades | Variables |
 | --- | --- | --- |
+| Key colors | 600 | `--ds-color-{primary\|informative\|secondary\|tertiary\|success\|warning\|error\|neutral\|pink}` |
 | `primary` (indigo) | 50–950 | `--ds-color-primary-50` … `--ds-color-primary-950` |
 | `informative` (sky) | 50–950 | `--ds-color-informative-50` … `--ds-color-informative-950` |
 | `secondary` (defaults to informative) | 50–950 | `--ds-color-secondary-50` … `--ds-color-secondary-950` |
@@ -172,7 +198,8 @@ they do not depend on Tailwind names. To change one role, override its semantic
 token directly, such as `--ds-color-border-strong-light`. To change all roles
 that use a primitive, override that primitive instead.
 
-Tailwind palettes remain the source of these defaults. `outline` names
+Tailwind palettes remain the source of these defaults, and each palette is
+derived from its key color (see "Change a color in one place"). `outline` names
 a button style, not a color palette; outlined buttons use the palette selected
 for their variant. Translucent primitives such as
 `--ds-color-neutral-800-alpha-30` are derived from their base color, so changing
