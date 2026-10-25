@@ -10,8 +10,8 @@ system without rebuilding it.
 - `src/tokens.css` defines the color palette and semantic tokens as
   `--ds-color-*` variables (e.g. `--ds-color-primary-500: #6366f1;`), along
   with `--ds-font-family` for the shared typeface.
-- Semantic border tokens have light defaults on `:root` and dark values under
-  `.dark`. Their names describe their role rather than the gray shade used.
+- Semantic border tokens have explicit `-light` and `-dark` values. The
+  existing unsuffixed border utilities remain mode-aware through aliases.
 - Sidebar, `Tabs`, `DataTable`, `Dropdown`, form controls, `SwitchInput`, and dashboard
   component colors have paired `-light` and `-dark` tokens, so each mode can
   be configured independently
@@ -40,16 +40,16 @@ of the variables below on `:root` (or any ancestor scope):
   --ds-font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   --ds-color-primary-500: #16a34a;
   --ds-color-primary-600: #15803d;
-  --ds-color-border-default: #d4d4d8;
-  --ds-color-border-input: #a1a1aa;
+  --ds-color-border-default-light: #d4d4d8;
+  --ds-color-border-input-light: #a1a1aa;
   --ds-color-sidebar-bg-light: #f8fafc;
   --ds-color-sidebar-tab-bg-active-light: #ea580c;
   --ds-color-tabs-pills-active-bg-light: #ea580c;
 }
 
 .dark {
-  --ds-color-border-default: #52525b;
-  --ds-color-border-input: #3f3f46;
+  --ds-color-border-default-dark: #52525b;
+  --ds-color-border-input-dark: #3f3f46;
   --ds-color-sidebar-bg-dark: #111827;
   --ds-color-sidebar-tab-bg-active-dark: #f97316;
   --ds-color-tabs-pills-active-bg-dark: #f97316;
@@ -86,7 +86,7 @@ The package's `dark:` variant matches `.dark` on an ancestor
 ```css
 .dark {
   --ds-color-primary-500: #22c55e;
-  --ds-color-border-default: #52525b;
+  --ds-color-border-default-dark: #52525b;
 }
 ```
 
@@ -113,17 +113,20 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 ### Semantic border variables
 
 These variables keep the current component border colors as their defaults.
-Light values live on `:root`; `.dark` overrides the values that change in dark
-mode. A consuming app can override only the roles it needs.
+Each role has paired `-light` and `-dark` tokens, so a consuming app can
+override either mode independently. The existing unsuffixed tokens still
+select the active mode for utilities such as `border-default`.
 
 | Role | Variables |
 | --- | --- |
-| Neutral and component | `--ds-color-border-default`, `--ds-color-border-input`, `--ds-color-border-muted`, `--ds-color-border-strong`, `--ds-color-border-hover`, `--ds-color-border-tooltip`, `--ds-color-border-card`, `--ds-color-border-divider`, `--ds-color-border-avatar` |
-| Primary and secondary | `--ds-color-border-primary`, `--ds-color-border-primary-active`, `--ds-color-border-primary-subtle`, `--ds-color-border-secondary`, `--ds-color-border-secondary-subtle` |
-| Status | `--ds-color-border-success`, `--ds-color-border-success-subtle`, `--ds-color-border-success-muted`, `--ds-color-border-warning`, `--ds-color-border-warning-subtle`, `--ds-color-border-warning-muted`, `--ds-color-border-danger`, `--ds-color-border-danger-emphasis`, `--ds-color-border-danger-subtle`, `--ds-color-border-danger-muted`, `--ds-color-border-pink` |
+| Neutral and component | `--ds-color-border-{default|input|muted|strong|hover|tooltip|card|divider|avatar}-{light|dark}` |
+| Primary and secondary | `--ds-color-border-{primary|primary-active|primary-subtle|secondary|secondary-subtle}-{light|dark}` |
+| Status | `--ds-color-border-{success|success-subtle|success-muted|warning|warning-subtle|warning-muted|danger|danger-emphasis|danger-subtle|danger-muted|pink}-{light|dark}` |
 
 The corresponding Tailwind classes use the role directly, for example
 `border-default`, `border-input`, `border-danger`, and `border-danger-subtle`.
+Paired utilities are also available when a class needs an explicit mode, such
+as `border-default-light` and `border-default-dark`.
 
 ### Component color variables
 

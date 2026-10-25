@@ -191,33 +191,85 @@
     --ds-color-btn-overlay-dark-text-active: var(--color-white);
     --ds-color-btn-overlay-dark-border: transparent;
 
-    /* Semantic borders - light */
-    --ds-color-border-default: #e5e7eb;
-    --ds-color-border-input: #d1d5db;
-    --ds-color-border-muted: #e5e7eb;
-    --ds-color-border-strong: #d1d5db;
-    --ds-color-border-hover: #9ca3af;
-    --ds-color-border-tooltip: #111827;
-    --ds-color-border-card: transparent;
-    --ds-color-border-divider: rgb(121 116 126 / 30%);
-    --ds-color-border-avatar: #fff;
+    /* Semantic borders - light and dark */
+    --ds-color-border-default-light: #e5e7eb;
+    --ds-color-border-default-dark: #374151;
+    --ds-color-border-input-light: #d1d5db;
+    --ds-color-border-input-dark: #374151;
+    --ds-color-border-muted-light: #e5e7eb;
+    --ds-color-border-muted-dark: #1f2937;
+    --ds-color-border-strong-light: #d1d5db;
+    --ds-color-border-strong-dark: #4b5563;
+    --ds-color-border-hover-light: #9ca3af;
+    --ds-color-border-hover-dark: #4b5563;
+    --ds-color-border-tooltip-light: #111827;
+    --ds-color-border-tooltip-dark: #374151;
+    --ds-color-border-card-light: transparent;
+    --ds-color-border-card-dark: #374151;
+    --ds-color-border-divider-light: rgb(121 116 126 / 30%);
+    --ds-color-border-divider-dark: rgb(147 143 153 / 30%);
+    --ds-color-border-avatar-light: #fff;
+    --ds-color-border-avatar-dark: #fff;
 
-    --ds-color-border-primary: var(--ds-color-primary-600);
-    --ds-color-border-primary-active: var(--ds-color-primary-600);
-    --ds-color-border-primary-subtle: var(--ds-color-primary-500);
-    --ds-color-border-secondary: var(--ds-color-secondary-500);
-    --ds-color-border-secondary-subtle: var(--ds-color-secondary-200);
-    --ds-color-border-success: var(--ds-color-success-500);
-    --ds-color-border-success-subtle: var(--ds-color-success-200);
-    --ds-color-border-success-muted: var(--ds-color-success-200);
-    --ds-color-border-warning: var(--ds-color-warning-500);
-    --ds-color-border-warning-subtle: var(--ds-color-warning-200);
-    --ds-color-border-warning-muted: var(--ds-color-warning-200);
-    --ds-color-border-danger: var(--ds-color-danger-500);
-    --ds-color-border-danger-emphasis: var(--ds-color-danger-600);
-    --ds-color-border-danger-subtle: var(--ds-color-danger-200);
-    --ds-color-border-danger-muted: var(--ds-color-danger-200);
-    --ds-color-border-pink: var(--color-pink-500);
+    --ds-color-border-primary-light: var(--ds-color-primary-600);
+    --ds-color-border-primary-dark: var(--ds-color-primary-500);
+    --ds-color-border-primary-active-light: var(--ds-color-primary-600);
+    --ds-color-border-primary-active-dark: var(--ds-color-primary-400);
+    --ds-color-border-primary-subtle-light: var(--ds-color-primary-500);
+    --ds-color-border-primary-subtle-dark: var(--ds-color-primary-500);
+    --ds-color-border-secondary-light: var(--ds-color-secondary-500);
+    --ds-color-border-secondary-dark: var(--ds-color-secondary-500);
+    --ds-color-border-secondary-subtle-light: var(--ds-color-secondary-200);
+    --ds-color-border-secondary-subtle-dark: color-mix(in oklab, var(--ds-color-secondary-900) 50%, transparent);
+    --ds-color-border-success-light: var(--ds-color-success-500);
+    --ds-color-border-success-dark: var(--ds-color-success-500);
+    --ds-color-border-success-subtle-light: var(--ds-color-success-200);
+    --ds-color-border-success-subtle-dark: color-mix(in oklab, var(--ds-color-success-900) 50%, transparent);
+    --ds-color-border-success-muted-light: var(--ds-color-success-200);
+    --ds-color-border-success-muted-dark: #065f46;
+    --ds-color-border-warning-light: var(--ds-color-warning-500);
+    --ds-color-border-warning-dark: var(--ds-color-warning-500);
+    --ds-color-border-warning-subtle-light: var(--ds-color-warning-200);
+    --ds-color-border-warning-subtle-dark: color-mix(in oklab, var(--ds-color-warning-900) 50%, transparent);
+    --ds-color-border-warning-muted-light: var(--ds-color-warning-200);
+    --ds-color-border-warning-muted-dark: #92400e;
+    --ds-color-border-danger-light: var(--ds-color-danger-500);
+    --ds-color-border-danger-dark: var(--ds-color-danger-500);
+    --ds-color-border-danger-emphasis-light: var(--ds-color-danger-600);
+    --ds-color-border-danger-emphasis-dark: var(--ds-color-danger-500);
+    --ds-color-border-danger-subtle-light: var(--ds-color-danger-200);
+    --ds-color-border-danger-subtle-dark: color-mix(in oklab, var(--ds-color-danger-900) 50%, transparent);
+    --ds-color-border-danger-muted-light: var(--ds-color-danger-200);
+    --ds-color-border-danger-muted-dark: #991b1b;
+    --ds-color-border-pink-light: var(--color-pink-500);
+    --ds-color-border-pink-dark: var(--color-pink-500);
+
+    /* Mode-aware aliases for the existing semantic border utilities */
+    --ds-color-border-default: var(--ds-color-border-default-light);
+    --ds-color-border-input: var(--ds-color-border-input-light);
+    --ds-color-border-muted: var(--ds-color-border-muted-light);
+    --ds-color-border-strong: var(--ds-color-border-strong-light);
+    --ds-color-border-hover: var(--ds-color-border-hover-light);
+    --ds-color-border-tooltip: var(--ds-color-border-tooltip-light);
+    --ds-color-border-card: var(--ds-color-border-card-light);
+    --ds-color-border-divider: var(--ds-color-border-divider-light);
+    --ds-color-border-avatar: var(--ds-color-border-avatar-light);
+    --ds-color-border-primary: var(--ds-color-border-primary-light);
+    --ds-color-border-primary-active: var(--ds-color-border-primary-active-light);
+    --ds-color-border-primary-subtle: var(--ds-color-border-primary-subtle-light);
+    --ds-color-border-secondary: var(--ds-color-border-secondary-light);
+    --ds-color-border-secondary-subtle: var(--ds-color-border-secondary-subtle-light);
+    --ds-color-border-success: var(--ds-color-border-success-light);
+    --ds-color-border-success-subtle: var(--ds-color-border-success-subtle-light);
+    --ds-color-border-success-muted: var(--ds-color-border-success-muted-light);
+    --ds-color-border-warning: var(--ds-color-border-warning-light);
+    --ds-color-border-warning-subtle: var(--ds-color-border-warning-subtle-light);
+    --ds-color-border-warning-muted: var(--ds-color-border-warning-muted-light);
+    --ds-color-border-danger: var(--ds-color-border-danger-light);
+    --ds-color-border-danger-emphasis: var(--ds-color-border-danger-emphasis-light);
+    --ds-color-border-danger-subtle: var(--ds-color-border-danger-subtle-light);
+    --ds-color-border-danger-muted: var(--ds-color-border-danger-muted-light);
+    --ds-color-border-pink: var(--ds-color-border-pink-light);
 
     /* Sidebar colors - light and dark */
     --ds-color-sidebar-bg-light: #fff;
@@ -632,25 +684,30 @@
 }
 
 .dark {
-    /* Semantic borders - dark */
-    --ds-color-border-default: #374151;
-    --ds-color-border-input: #374151;
-    --ds-color-border-muted: #1f2937;
-    --ds-color-border-strong: #4b5563;
-    --ds-color-border-hover: #4b5563;
-    --ds-color-border-tooltip: #374151;
-    --ds-color-border-card: #374151;
-    --ds-color-border-divider: rgb(147 143 153 / 30%);
-
-    --ds-color-border-primary: var(--ds-color-primary-500);
-    --ds-color-border-primary-active: var(--ds-color-primary-400);
-    --ds-color-border-secondary: var(--ds-color-secondary-500);
-    --ds-color-border-secondary-subtle: color-mix(in oklab, var(--ds-color-secondary-900) 50%, transparent);
-    --ds-color-border-success-subtle: color-mix(in oklab, var(--ds-color-success-900) 50%, transparent);
-    --ds-color-border-warning-subtle: color-mix(in oklab, var(--ds-color-warning-900) 50%, transparent);
-    --ds-color-border-warning-muted: #92400e;
-    --ds-color-border-danger-emphasis: var(--ds-color-danger-500);
-    --ds-color-border-danger-subtle: color-mix(in oklab, var(--ds-color-danger-900) 50%, transparent);
-    --ds-color-border-danger-muted: #991b1b;
-    --ds-color-border-success-muted: #065f46;
+    /* Keep the existing semantic border utilities aligned with dark mode. */
+    --ds-color-border-default: var(--ds-color-border-default-dark);
+    --ds-color-border-input: var(--ds-color-border-input-dark);
+    --ds-color-border-muted: var(--ds-color-border-muted-dark);
+    --ds-color-border-strong: var(--ds-color-border-strong-dark);
+    --ds-color-border-hover: var(--ds-color-border-hover-dark);
+    --ds-color-border-tooltip: var(--ds-color-border-tooltip-dark);
+    --ds-color-border-card: var(--ds-color-border-card-dark);
+    --ds-color-border-divider: var(--ds-color-border-divider-dark);
+    --ds-color-border-avatar: var(--ds-color-border-avatar-dark);
+    --ds-color-border-primary: var(--ds-color-border-primary-dark);
+    --ds-color-border-primary-active: var(--ds-color-border-primary-active-dark);
+    --ds-color-border-primary-subtle: var(--ds-color-border-primary-subtle-dark);
+    --ds-color-border-secondary: var(--ds-color-border-secondary-dark);
+    --ds-color-border-secondary-subtle: var(--ds-color-border-secondary-subtle-dark);
+    --ds-color-border-success: var(--ds-color-border-success-dark);
+    --ds-color-border-success-subtle: var(--ds-color-border-success-subtle-dark);
+    --ds-color-border-success-muted: var(--ds-color-border-success-muted-dark);
+    --ds-color-border-warning: var(--ds-color-border-warning-dark);
+    --ds-color-border-warning-subtle: var(--ds-color-border-warning-subtle-dark);
+    --ds-color-border-warning-muted: var(--ds-color-border-warning-muted-dark);
+    --ds-color-border-danger: var(--ds-color-border-danger-dark);
+    --ds-color-border-danger-emphasis: var(--ds-color-border-danger-emphasis-dark);
+    --ds-color-border-danger-subtle: var(--ds-color-border-danger-subtle-dark);
+    --ds-color-border-danger-muted: var(--ds-color-border-danger-muted-dark);
+    --ds-color-border-pink: var(--ds-color-border-pink-dark);
 }
