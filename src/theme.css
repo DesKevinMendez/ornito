@@ -266,6 +266,16 @@
     --color-form-suggestion-icon-light: var(--ds-color-form-suggestion-icon-light);
     --color-form-suggestion-icon-dark: var(--ds-color-form-suggestion-icon-dark);
 
+    /* SwitchInput */
+    --color-switch-input-label-light: var(--ds-color-switch-input-label-light);
+    --color-switch-input-label-dark: var(--ds-color-switch-input-label-dark);
+    --color-switch-input-track-on-light: var(--ds-color-switch-input-track-on-light);
+    --color-switch-input-track-on-dark: var(--ds-color-switch-input-track-on-dark);
+    --color-switch-input-track-off-light: var(--ds-color-switch-input-track-off-light);
+    --color-switch-input-track-off-dark: var(--ds-color-switch-input-track-off-dark);
+    --color-switch-input-thumb-light: var(--ds-color-switch-input-thumb-light);
+    --color-switch-input-thumb-dark: var(--ds-color-switch-input-thumb-dark);
+
     /* Dashboard view header */
     --color-view-header-title-light: var(--ds-color-view-header-title-light);
     --color-view-header-title-dark: var(--ds-color-view-header-title-dark);

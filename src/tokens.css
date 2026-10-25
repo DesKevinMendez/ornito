@@ -385,6 +385,16 @@
     --ds-color-form-suggestion-icon-light: #4b5563;
     --ds-color-form-suggestion-icon-dark: #9ca3af;
 
+    /* SwitchInput colors - light and dark */
+    --ds-color-switch-input-label-light: #374151;
+    --ds-color-switch-input-label-dark: #d1d5db;
+    --ds-color-switch-input-track-on-light: var(--ds-color-primary-600);
+    --ds-color-switch-input-track-on-dark: var(--ds-color-primary-600);
+    --ds-color-switch-input-track-off-light: #d1d5db;
+    --ds-color-switch-input-track-off-dark: #4b5563;
+    --ds-color-switch-input-thumb-light: #fff;
+    --ds-color-switch-input-thumb-dark: #fff;
+
     /* Dashboard view header colors */
     --ds-color-view-header-title-light: #111827;
     --ds-color-view-header-title-dark: #fff;

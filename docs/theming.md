@@ -12,7 +12,7 @@ system without rebuilding it.
   with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have light defaults on `:root` and dark values under
   `.dark`. Their names describe their role rather than the gray shade used.
-- Sidebar, `Tabs`, `DataTable`, `Dropdown`, form controls, and dashboard
+- Sidebar, `Tabs`, `DataTable`, `Dropdown`, form controls, `SwitchInput`, and dashboard
   component colors have paired `-light` and `-dark` tokens, so each mode can
   be configured independently
   while retaining the current appearance by default.
@@ -138,6 +138,8 @@ guides list each state token. Dropdown tokens use
 `DropdownMenu` uses the same item colors with a separate panel surface token.
 Form control tokens use `--ds-color-form-*-{light|dark}` and
 are shared by `FormInput`, `FormSelect`, `FormTextarea`, and `SearchableSelect`.
+`SwitchInput` has separate tokens for labels, on/off track states, and the
+thumb using the `--ds-color-switch-input-*-{light|dark}` pattern.
 Dashboard and shared component tokens cover `ViewHeader`, `StatCard`,
 `Card`, `Navbar`, `UserProfileDropdown`, `DropdownMenu`, `Modal`,
 `BottomModal`, `Item`, `List`, `HelpTooltip`, `IconButton`,
@@ -148,6 +150,7 @@ See the component guides for the available token groups:
 [DataTable](components/data-table.md#css-color-variants),
 [Dropdown](components/dropdown.md#css-color-variants),
 [FormInput](components/form-input.md#css-color-variants),
+[SwitchInput](components/switch-input.md#css-color-variants),
 [ViewHeader](components/layout.md#css-color-variants),
 [Card](components/card.md#css-color-variants),
 [StatCard](components/stat-card.md#css-color-variants),
