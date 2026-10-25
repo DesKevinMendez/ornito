@@ -28,6 +28,6 @@ const props = defineProps<{
 }>();
 
 const cClass = computed(
-  () => props.customClass || 'animate-spin -ml-1 mr-3 h-12 w-12 text-gray-900 dark:text-white',
+  () => props.customClass || 'animate-spin -ml-1 mr-3 h-12 w-12 text-loading-svg-light dark:text-loading-svg-dark',
 );
 </script>

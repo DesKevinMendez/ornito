@@ -12,10 +12,10 @@ system without rebuilding it.
   with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have explicit `-light` and `-dark` values. The
   existing unsuffixed border utilities remain mode-aware through aliases.
-- Sidebar, `Tabs`, `DataTable`, `Dropdown`, form controls, `SwitchInput`, and dashboard
-  component colors have paired `-light` and `-dark` tokens, so each mode can
-  be configured independently
-  while retaining the current appearance by default.
+- Sidebar, `Tabs`, `DataTable`, `Dropdown`, form controls, `SwitchInput`,
+  `Breadcrumb`, `InfoItem`, `LoadingSVG`, and dashboard component colors have
+  paired `-light` and `-dark` tokens, so each mode can be configured
+  independently while retaining the current appearance by default.
 - `src/style.css` maps Tailwind's theme onto those variables with
   `@theme inline`, so utilities like `.bg-primary-500` compile to
   `background-color: var(--ds-color-primary-500)` instead of a literal hex

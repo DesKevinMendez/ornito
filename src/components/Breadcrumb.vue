@@ -8,7 +8,7 @@
       >
         <div v-if="index > 0" class="flex items-center">
           <svg
-            class="w-3 h-3 text-gray-500 dark:text-gray-500 mx-1"
+            class="w-3 h-3 text-breadcrumb-separator-light dark:text-breadcrumb-separator-dark mx-1"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -27,7 +27,7 @@
         <RouterLink
           v-if="item.to && index < items.length - 1"
           :to="item.to"
-          class="inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+          class="inline-flex items-center text-sm font-medium text-breadcrumb-link-light dark:text-breadcrumb-link-dark hover:text-breadcrumb-link-hover-light dark:hover:text-breadcrumb-link-hover-dark transition-colors"
         >
           <component
             v-if="item.icon"
@@ -40,7 +40,7 @@
         <span
           v-else
           class="inline-flex items-center text-sm font-medium"
-          :class="index === items.length - 1 ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-400'"
+          :class="index === items.length - 1 ? 'text-breadcrumb-current-light dark:text-breadcrumb-current-dark' : 'text-breadcrumb-item-light dark:text-breadcrumb-item-dark'"
         >
           <component
             v-if="item.icon"

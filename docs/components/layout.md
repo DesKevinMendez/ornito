@@ -50,6 +50,10 @@ slot.
 </InfoItem>
 ```
 
+The label and value colors use independent light/dark tokens:
+`--ds-color-info-item-label-{light|dark}` and
+`--ds-color-info-item-value-{light|dark}`.
+
 ## CollapseTransition
 
 Transition wrapper that animates height + opacity for its slot content

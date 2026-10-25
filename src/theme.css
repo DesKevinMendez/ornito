@@ -572,6 +572,22 @@
     --color-card-pagination-button-text-dark: var(--ds-color-card-pagination-button-text-dark);
     --color-table-skeleton-placeholder-bg-light: var(--ds-color-table-skeleton-placeholder-bg-light);
     --color-table-skeleton-placeholder-bg-dark: var(--ds-color-table-skeleton-placeholder-bg-dark);
+    --color-breadcrumb-separator-light: var(--ds-color-breadcrumb-separator-light);
+    --color-breadcrumb-separator-dark: var(--ds-color-breadcrumb-separator-dark);
+    --color-breadcrumb-link-light: var(--ds-color-breadcrumb-link-light);
+    --color-breadcrumb-link-dark: var(--ds-color-breadcrumb-link-dark);
+    --color-breadcrumb-link-hover-light: var(--ds-color-breadcrumb-link-hover-light);
+    --color-breadcrumb-link-hover-dark: var(--ds-color-breadcrumb-link-hover-dark);
+    --color-breadcrumb-current-light: var(--ds-color-breadcrumb-current-light);
+    --color-breadcrumb-current-dark: var(--ds-color-breadcrumb-current-dark);
+    --color-breadcrumb-item-light: var(--ds-color-breadcrumb-item-light);
+    --color-breadcrumb-item-dark: var(--ds-color-breadcrumb-item-dark);
+    --color-info-item-label-light: var(--ds-color-info-item-label-light);
+    --color-info-item-label-dark: var(--ds-color-info-item-label-dark);
+    --color-info-item-value-light: var(--ds-color-info-item-value-light);
+    --color-info-item-value-dark: var(--ds-color-info-item-value-dark);
+    --color-loading-svg-light: var(--ds-color-loading-svg-light);
+    --color-loading-svg-dark: var(--ds-color-loading-svg-dark);
 }
 
 /* Semantic color utilities shared by BaseButton and BaseButtonIcon. */

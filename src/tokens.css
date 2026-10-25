@@ -746,6 +746,28 @@
     --ds-color-table-skeleton-placeholder-bg-light: var(--ds-color-neutral-200);
     --ds-color-table-skeleton-placeholder-bg-dark: var(--ds-color-neutral-700);
 
+    /* Breadcrumb colors - light and dark */
+    --ds-color-breadcrumb-separator-light: var(--ds-color-neutral-500);
+    --ds-color-breadcrumb-separator-dark: var(--ds-color-neutral-500);
+    --ds-color-breadcrumb-link-light: var(--ds-color-neutral-600);
+    --ds-color-breadcrumb-link-dark: var(--ds-color-neutral-500);
+    --ds-color-breadcrumb-link-hover-light: var(--ds-color-neutral-900);
+    --ds-color-breadcrumb-link-hover-dark: var(--ds-color-neutral-300);
+    --ds-color-breadcrumb-current-light: var(--ds-color-neutral-900);
+    --ds-color-breadcrumb-current-dark: var(--ds-color-white);
+    --ds-color-breadcrumb-item-light: var(--ds-color-neutral-600);
+    --ds-color-breadcrumb-item-dark: var(--ds-color-neutral-400);
+
+    /* InfoItem colors - light and dark */
+    --ds-color-info-item-label-light: var(--ds-color-neutral-600);
+    --ds-color-info-item-label-dark: var(--ds-color-neutral-400);
+    --ds-color-info-item-value-light: var(--ds-color-neutral-900);
+    --ds-color-info-item-value-dark: var(--ds-color-white);
+
+    /* LoadingSVG colors - light and dark */
+    --ds-color-loading-svg-light: var(--ds-color-neutral-900);
+    --ds-color-loading-svg-dark: var(--ds-color-white);
+
     /* Component-specific surfaces */
     --ds-color-datepicker-dark-bg: var(--ds-color-neutral-900);
 }
