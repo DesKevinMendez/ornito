@@ -235,6 +235,36 @@
     --color-dropdown-item-active-bg-dark: var(--ds-color-dropdown-item-active-bg-dark);
     --color-dropdown-item-active-text-light: var(--ds-color-dropdown-item-active-text-light);
     --color-dropdown-item-active-text-dark: var(--ds-color-dropdown-item-active-text-dark);
+
+    /* Form controls */
+    --color-form-label-light: var(--ds-color-form-label-light);
+    --color-form-label-dark: var(--ds-color-form-label-dark);
+    --color-form-control-bg-light: var(--ds-color-form-control-bg-light);
+    --color-form-control-bg-dark: var(--ds-color-form-control-bg-dark);
+    --color-form-control-text-light: var(--ds-color-form-control-text-light);
+    --color-form-control-text-dark: var(--ds-color-form-control-text-dark);
+    --color-form-control-placeholder-light: var(--ds-color-form-control-placeholder-light);
+    --color-form-control-placeholder-dark: var(--ds-color-form-control-placeholder-dark);
+    --color-form-control-icon-light: var(--ds-color-form-control-icon-light);
+    --color-form-control-icon-dark: var(--ds-color-form-control-icon-dark);
+    --color-form-control-icon-hover-light: var(--ds-color-form-control-icon-hover-light);
+    --color-form-control-icon-hover-dark: var(--ds-color-form-control-icon-hover-dark);
+    --color-form-supporting-text-light: var(--ds-color-form-supporting-text-light);
+    --color-form-supporting-text-dark: var(--ds-color-form-supporting-text-dark);
+    --color-form-range-bound-light: var(--ds-color-form-range-bound-light);
+    --color-form-range-bound-dark: var(--ds-color-form-range-bound-dark);
+    --color-form-range-value-light: var(--ds-color-form-range-value-light);
+    --color-form-range-value-dark: var(--ds-color-form-range-value-dark);
+    --color-form-select-placeholder-bg-light: var(--ds-color-form-select-placeholder-bg-light);
+    --color-form-select-placeholder-bg-dark: var(--ds-color-form-select-placeholder-bg-dark);
+    --color-form-select-placeholder-text-light: var(--ds-color-form-select-placeholder-text-light);
+    --color-form-select-placeholder-text-dark: var(--ds-color-form-select-placeholder-text-dark);
+    --color-form-suggestion-panel-bg-light: var(--ds-color-form-suggestion-panel-bg-light);
+    --color-form-suggestion-panel-bg-dark: var(--ds-color-form-suggestion-panel-bg-dark);
+    --color-form-suggestion-hover-bg-light: var(--ds-color-form-suggestion-hover-bg-light);
+    --color-form-suggestion-hover-bg-dark: var(--ds-color-form-suggestion-hover-bg-dark);
+    --color-form-suggestion-icon-light: var(--ds-color-form-suggestion-icon-light);
+    --color-form-suggestion-icon-dark: var(--ds-color-form-suggestion-icon-dark);
 }
 
 /* Semantic color utilities shared by BaseButton and BaseButtonIcon. */

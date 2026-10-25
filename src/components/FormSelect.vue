@@ -3,7 +3,7 @@
     <label
       v-if="label && !small"
       :for="id"
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+      class="block text-sm font-medium text-form-label-light dark:text-form-label-dark mb-2"
     >
       {{ label }}
     </label>
@@ -21,7 +21,7 @@
           @blur="field.onBlur"
           :value
           :class="[
-            'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
+            'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
             leftIcon ? 'pl-10' : 'pl-4',
             'pr-4',
             errorMessage ? 'border-danger' : '',
@@ -31,7 +31,7 @@
           <option
             v-if="placeholder"
             value=""
-            class="bg-white dark:bg-gray-500 text-gray-600 dark:text-white"
+            class="bg-form-select-placeholder-bg-light dark:bg-form-select-placeholder-bg-dark text-form-select-placeholder-text-light dark:text-form-select-placeholder-text-dark"
             disabled
           >
             {{ placeholder }}
@@ -41,7 +41,7 @@
             :key="option.value"
             :value="option.value"
             :selected="value != null && String(value) === String(option.value)"
-            class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+            class="bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark"
           >
             {{ option.label }}
           </option>
@@ -54,7 +54,7 @@
             :is="leftIcon"
             :class="[
               small ? 'h-4 w-4' : 'h-5 w-5',
-              'text-gray-400 dark:text-gray-400',
+              'text-form-control-icon-light dark:text-form-control-icon-dark',
             ]"
           />
         </div>

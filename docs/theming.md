@@ -12,7 +12,7 @@ system without rebuilding it.
   with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have light defaults on `:root` and dark values under
   `.dark`. Their names describe their role rather than the gray shade used.
-- Sidebar, `Tabs`, `DataTable`, and `Dropdown` component colors have paired
+- Sidebar, `Tabs`, `DataTable`, `Dropdown`, and form control colors have paired
   `-light` and `-dark` tokens, so each mode can be configured independently
   while retaining the current appearance by default.
 - `src/style.css` maps Tailwind's theme onto those variables with
@@ -134,11 +134,14 @@ colors. DataTable tokens use `--ds-color-table-*-{light|dark}` for header,
 body, and footer surfaces and text, including body row hover. The component
 guides list each state token. Dropdown tokens use
 `--ds-color-dropdown-*-{light|dark}` for the trigger, panel, and item hover and
-selected states:
+selected states. Form control tokens use `--ds-color-form-*-{light|dark}` and
+are shared by `FormInput`, `FormSelect`, `FormTextarea`, and `SearchableSelect`.
+See the component guides for the available token groups:
 [Sidebar](components/sidebar.md#css-color-variants),
-[Tabs](components/tabs.md#css-color-variants), and
-[DataTable](components/data-table.md#css-color-variants), and
-[Dropdown](components/dropdown.md#css-color-variants).
+[Tabs](components/tabs.md#css-color-variants),
+[DataTable](components/data-table.md#css-color-variants),
+[Dropdown](components/dropdown.md#css-color-variants), and
+[FormInput](components/form-input.md#css-color-variants).
 
 Each palette follows the standard Tailwind shade scale (50 = lightest, 950 =
 darkest). `primary`/`secondary`/`tertiary` define the full 50–950 range;

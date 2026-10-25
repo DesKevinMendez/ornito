@@ -3,7 +3,7 @@
     <label
       v-if="label && !small"
       :for="id"
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+      class="block text-sm font-medium text-form-label-light dark:text-form-label-dark mb-2"
     >
       {{ label }}
     </label>
@@ -70,7 +70,7 @@
                 @keypress="slotProps.onKeypress"
                 @paste="slotProps.onPaste"
                 :class="[
-                  'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
+                  'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle',
                   leftIcon ? 'pl-10' : 'pl-4',
                   rightIcon || isPasswordField ? 'pr-10' : 'pr-4',
                   errorMessage ? 'border-danger' : '',
@@ -95,9 +95,13 @@
               :autocomplete="autocomplete"
               class="w-full accent-primary-600"
             />
-            <div class="flex justify-between text-xs text-gray-400">
+            <div
+              class="flex justify-between text-xs text-form-range-bound-light dark:text-form-range-bound-dark"
+            >
               <span>{{ min }}</span>
-              <span class="font-medium text-gray-600 dark:text-gray-300">{{ modelValue }}</span>
+              <span
+                class="font-medium text-form-range-value-light dark:text-form-range-value-dark"
+              >{{ modelValue }}</span>
               <span>{{ max }}</span>
             </div>
           </div>
@@ -113,7 +117,7 @@
             :disabled="disabled"
             :autocomplete="autocomplete"
             :class="[
-              'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle disabled:cursor-not-allowed',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle disabled:cursor-not-allowed',
               leftIcon ? 'pl-10' : 'pl-4',
               rightIcon || isPasswordField ? 'pr-10' : 'pr-4',
               errorMessage ? 'border-danger' : '',
@@ -130,7 +134,7 @@
             :autocomplete="autocomplete"
             v-money3="money.config"
             :class="[
-              'w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle pl-10',
+              'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-light dark:placeholder-form-control-placeholder-dark border border-input px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-subtle pl-10',
               rightIcon || isPasswordField || type === 'money'
                 ? 'pr-10'
                 : 'pr-4',
@@ -147,7 +151,7 @@
               :is="IconCurrencyDollar"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200',
+                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
               ]"
             />
           </div>
@@ -159,7 +163,7 @@
               :is="leftIcon"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200',
+                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
               ]"
             />
           </div>
@@ -170,7 +174,7 @@
             <IconLoader2
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-gray-400 dark:text-gray-400 animate-spin',
+                'text-form-control-icon-light dark:text-form-control-icon-dark animate-spin',
               ]"
             />
           </div>
@@ -183,7 +187,7 @@
               :is="rightIcon"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200',
+                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
               ]"
             />
           </div>
@@ -198,7 +202,7 @@
               :is="toggleIcon"
               :class="[
                 small ? 'h-4 w-4' : 'h-5 w-5',
-                'text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200',
+                'text-form-control-icon-light dark:text-form-control-icon-dark hover:text-form-control-icon-hover-light dark:hover:text-form-control-icon-hover-dark transition-colors duration-200',
               ]"
             />
           </button>
@@ -209,7 +213,10 @@
           class="mt-1 text-sm text-danger-600 dark:text-danger-400"
         />
         <!-- Help Text -->
-        <p v-if="help" class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p
+          v-if="help"
+          class="mt-1 text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark"
+        >
           {{ help }}
         </p>
       </div>

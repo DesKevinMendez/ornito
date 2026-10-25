@@ -353,6 +353,38 @@
     --ds-color-dropdown-item-active-text-light: #111827;
     --ds-color-dropdown-item-active-text-dark: #fff;
 
+    /* Form control colors shared by input, select, textarea, and searchable select */
+    --ds-color-form-label-light: #374151;
+    --ds-color-form-label-dark: #d1d5db;
+    --ds-color-form-control-bg-light: #fff;
+    --ds-color-form-control-bg-dark: #1f2937;
+    --ds-color-form-control-text-light: #111827;
+    --ds-color-form-control-text-dark: #fff;
+    --ds-color-form-control-placeholder-light: #9ca3af;
+    --ds-color-form-control-placeholder-dark: #9ca3af;
+    --ds-color-form-control-icon-light: #9ca3af;
+    --ds-color-form-control-icon-dark: #9ca3af;
+    --ds-color-form-control-icon-hover-light: #4b5563;
+    --ds-color-form-control-icon-hover-dark: #d1d5db;
+    --ds-color-form-supporting-text-light: #6b7280;
+    --ds-color-form-supporting-text-dark: #9ca3af;
+    --ds-color-form-range-bound-light: #9ca3af;
+    --ds-color-form-range-bound-dark: #9ca3af;
+    --ds-color-form-range-value-light: #4b5563;
+    --ds-color-form-range-value-dark: #d1d5db;
+
+    --ds-color-form-select-placeholder-bg-light: #fff;
+    --ds-color-form-select-placeholder-bg-dark: #6b7280;
+    --ds-color-form-select-placeholder-text-light: #4b5563;
+    --ds-color-form-select-placeholder-text-dark: #fff;
+
+    --ds-color-form-suggestion-panel-bg-light: #fff;
+    --ds-color-form-suggestion-panel-bg-dark: #111827;
+    --ds-color-form-suggestion-hover-bg-light: #f9fafb;
+    --ds-color-form-suggestion-hover-bg-dark: #374151;
+    --ds-color-form-suggestion-icon-light: #4b5563;
+    --ds-color-form-suggestion-icon-dark: #9ca3af;
+
     /* Component-specific surfaces */
     --ds-color-datepicker-dark-bg: #172030;
 }
