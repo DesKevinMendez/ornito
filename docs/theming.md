@@ -8,13 +8,14 @@ system without rebuilding it.
 ## How it works
 
 - `src/tokens.css` defines the color palette and semantic tokens as
-  `--ds-color-*` variables (e.g. `--ds-color-primary-500: #6366f1;`).
+  `--ds-color-*` variables (e.g. `--ds-color-primary-500: #6366f1;`), along
+  with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have light defaults on `:root` and dark values under
   `.dark`. Their names describe their role rather than the gray shade used.
 - `src/style.css` maps Tailwind's theme onto those variables with
   `@theme inline`, so utilities like `.bg-primary-500` compile to
   `background-color: var(--ds-color-primary-500)` instead of a literal hex
-  value.
+  value. The shared font family is mapped to Tailwind's `font-sans` theme token.
 - Border utilities use the shorter semantic names, such as `.border-default`
   and `.border-danger-subtle`, while resolving to `--ds-color-border-*` at
   runtime.
@@ -32,6 +33,7 @@ of the variables below on `:root` (or any ancestor scope):
 @import 'ornito/style.css';
 
 :root {
+  --ds-font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   --ds-color-primary-500: #16a34a;
   --ds-color-primary-600: #15803d;
   --ds-color-border-default: #d4d4d8;
@@ -43,6 +45,10 @@ of the variables below on `:root` (or any ancestor scope):
   --ds-color-border-input: #3f3f46;
 }
 ```
+
+`--ds-font-family` accepts a normal CSS font stack. Load any custom font in the
+consuming app before selecting it here. The DS's typography inherits this
+shared family through Tailwind's sans-serif base and `font-sans` utility.
 
 ### Registering ornito with the consuming app's Tailwind build
 
@@ -92,6 +98,7 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 | `danger` (red) | 50, 100, 200, 400, 500, 600, 700, 900 | `--ds-color-danger-50` … `--ds-color-danger-900` |
 | — | — | `--ds-color-whatsapp` |
 | — | — | `--ds-color-datepicker-dark-bg` |
+| Typography | — | `--ds-font-family` |
 
 ### Semantic border variables
 

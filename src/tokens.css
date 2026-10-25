@@ -6,6 +6,11 @@
  * into Tailwind's theme via `@theme inline`.
  */
 :root {
+    /* Shared typography */
+    --ds-font-family:
+        ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
     /* Primary - indigo */
     --ds-color-primary-50: #eef2ff;
     --ds-color-primary-100: #e0e7ff;
