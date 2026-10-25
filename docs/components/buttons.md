@@ -33,6 +33,24 @@ which case it renders a `RouterLink`.
 - `auto` — intrinsic width.
 - `small` — smaller text (`text-sm`), same padding.
 
+### Semantic color tokens
+
+`BaseButton` and `BaseButtonIcon` use semantic color utilities for every `ButtonVariant` in light and dark mode. These are the available variants:
+
+| Variant | Token segment | Appearance |
+| --- | --- | --- |
+| `primary` | `primary` | Solid primary background |
+| `secondary` | `secondary` | Solid neutral background |
+| `outline` | `outline` | Neutral border with transparent background |
+| `primary-outline` | `primary-outline` | Primary border and text; fills on hover |
+| `danger` | `danger` | Solid destructive background |
+| `danger-outline` | `danger-outline` | Destructive border and text; fills on hover |
+| `overlay` | `overlay` | Translucent dark background for media |
+
+The utilities include base, hover, and active backgrounds, plus text, border, and focus-ring colors. For example: `bg-btn-primary-light`, `dark:bg-btn-primary-dark`, `hover:bg-btn-primary-light-hover`, and `text-btn-primary-light`.
+
+The corresponding CSS variables live in `src/tokens.css` and follow `--ds-color-btn-{variant}-{light|dark}`. Background states add `-hover` or `-active`; text variables add `-text`, `-text-hover`, or `-text-active`; border variables add `-border`. The danger focus-ring variables add `-focus`. Override these variables to re-skin button variants without editing their components.
+
 ```vue
 <BaseButton variant="primary" size="auto">Save</BaseButton>
 <BaseButton variant="danger-outline" :icon="IconTrash">Delete</BaseButton>

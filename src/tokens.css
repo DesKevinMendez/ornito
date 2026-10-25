@@ -83,6 +83,114 @@
     /* Utility brand color */
     --ds-color-whatsapp: #25d366;
 
+    /* Button colors - light and dark modes */
+    --ds-color-btn-primary-light: var(--ds-color-primary-600);
+    --ds-color-btn-primary-light-hover: var(--ds-color-primary-700);
+    --ds-color-btn-primary-light-active: var(--ds-color-primary-800);
+    --ds-color-btn-primary-light-text: #fff;
+    --ds-color-btn-primary-light-text-hover: #fff;
+    --ds-color-btn-primary-light-text-active: #fff;
+    --ds-color-btn-primary-light-border: var(--ds-color-primary-600);
+    --ds-color-btn-primary-dark: var(--ds-color-primary-500);
+    --ds-color-btn-primary-dark-hover: var(--ds-color-primary-600);
+    --ds-color-btn-primary-dark-active: var(--ds-color-primary-700);
+    --ds-color-btn-primary-dark-text: #fff;
+    --ds-color-btn-primary-dark-text-hover: #fff;
+    --ds-color-btn-primary-dark-text-active: #fff;
+    --ds-color-btn-primary-dark-border: var(--ds-color-primary-500);
+
+    --ds-color-btn-secondary-light: #e5e7eb;
+    --ds-color-btn-secondary-light-hover: #d1d5db;
+    --ds-color-btn-secondary-light-active: #9ca3af;
+    --ds-color-btn-secondary-light-text: #111827;
+    --ds-color-btn-secondary-light-text-hover: #111827;
+    --ds-color-btn-secondary-light-text-active: #111827;
+    --ds-color-btn-secondary-light-border: #e5e7eb;
+    --ds-color-btn-secondary-dark: #1f2937;
+    --ds-color-btn-secondary-dark-hover: #374151;
+    --ds-color-btn-secondary-dark-active: #4b5563;
+    --ds-color-btn-secondary-dark-text: #fff;
+    --ds-color-btn-secondary-dark-text-hover: #fff;
+    --ds-color-btn-secondary-dark-text-active: #fff;
+    --ds-color-btn-secondary-dark-border: #1f2937;
+
+    --ds-color-btn-outline-light: transparent;
+    --ds-color-btn-outline-light-hover: #f9fafb;
+    --ds-color-btn-outline-light-active: #f3f4f6;
+    --ds-color-btn-outline-light-text: #111827;
+    --ds-color-btn-outline-light-text-hover: #111827;
+    --ds-color-btn-outline-light-text-active: #111827;
+    --ds-color-btn-outline-light-border: #d1d5db;
+    --ds-color-btn-outline-dark: transparent;
+    --ds-color-btn-outline-dark-hover: #374151;
+    --ds-color-btn-outline-dark-active: #4b5563;
+    --ds-color-btn-outline-dark-text: #fff;
+    --ds-color-btn-outline-dark-text-hover: #fff;
+    --ds-color-btn-outline-dark-text-active: #fff;
+    --ds-color-btn-outline-dark-border: #374151;
+
+    --ds-color-btn-primary-outline-light: transparent;
+    --ds-color-btn-primary-outline-light-hover: var(--ds-color-primary-600);
+    --ds-color-btn-primary-outline-light-active: var(--ds-color-primary-700);
+    --ds-color-btn-primary-outline-light-text: var(--ds-color-primary-600);
+    --ds-color-btn-primary-outline-light-text-hover: #fff;
+    --ds-color-btn-primary-outline-light-text-active: #fff;
+    --ds-color-btn-primary-outline-light-border: var(--ds-color-primary-600);
+    --ds-color-btn-primary-outline-dark: transparent;
+    --ds-color-btn-primary-outline-dark-hover: var(--ds-color-primary-500);
+    --ds-color-btn-primary-outline-dark-active: var(--ds-color-primary-600);
+    --ds-color-btn-primary-outline-dark-text: var(--ds-color-primary-400);
+    --ds-color-btn-primary-outline-dark-text-hover: #fff;
+    --ds-color-btn-primary-outline-dark-text-active: #fff;
+    --ds-color-btn-primary-outline-dark-border: var(--ds-color-primary-500);
+
+    --ds-color-btn-danger-light: var(--ds-color-danger-600);
+    --ds-color-btn-danger-light-hover: var(--ds-color-danger-700);
+    --ds-color-btn-danger-light-active: var(--ds-color-danger-900);
+    --ds-color-btn-danger-light-focus: var(--ds-color-danger-500);
+    --ds-color-btn-danger-light-text: #fff;
+    --ds-color-btn-danger-light-text-hover: #fff;
+    --ds-color-btn-danger-light-text-active: #fff;
+    --ds-color-btn-danger-light-border: var(--ds-color-danger-600);
+    --ds-color-btn-danger-dark: var(--ds-color-danger-500);
+    --ds-color-btn-danger-dark-hover: var(--ds-color-danger-600);
+    --ds-color-btn-danger-dark-active: var(--ds-color-danger-700);
+    --ds-color-btn-danger-dark-focus: var(--ds-color-danger-500);
+    --ds-color-btn-danger-dark-text: #fff;
+    --ds-color-btn-danger-dark-text-hover: #fff;
+    --ds-color-btn-danger-dark-text-active: #fff;
+    --ds-color-btn-danger-dark-border: var(--ds-color-danger-500);
+
+    --ds-color-btn-danger-outline-light: transparent;
+    --ds-color-btn-danger-outline-light-hover: var(--ds-color-danger-600);
+    --ds-color-btn-danger-outline-light-active: var(--ds-color-danger-700);
+    --ds-color-btn-danger-outline-light-text: var(--ds-color-danger-600);
+    --ds-color-btn-danger-outline-light-text-hover: #fff;
+    --ds-color-btn-danger-outline-light-text-active: #fff;
+    --ds-color-btn-danger-outline-light-border: var(--ds-color-danger-600);
+    --ds-color-btn-danger-outline-dark: transparent;
+    --ds-color-btn-danger-outline-dark-hover: var(--ds-color-danger-500);
+    --ds-color-btn-danger-outline-dark-active: var(--ds-color-danger-600);
+    --ds-color-btn-danger-outline-dark-text: var(--ds-color-danger-400);
+    --ds-color-btn-danger-outline-dark-text-hover: #fff;
+    --ds-color-btn-danger-outline-dark-text-active: #fff;
+    --ds-color-btn-danger-outline-dark-border: var(--ds-color-danger-500);
+
+    --ds-color-btn-overlay-light: rgb(0 0 0 / 60%);
+    --ds-color-btn-overlay-light-hover: rgb(0 0 0 / 80%);
+    --ds-color-btn-overlay-light-active: rgb(0 0 0 / 90%);
+    --ds-color-btn-overlay-light-text: #fff;
+    --ds-color-btn-overlay-light-text-hover: #fff;
+    --ds-color-btn-overlay-light-text-active: #fff;
+    --ds-color-btn-overlay-light-border: transparent;
+    --ds-color-btn-overlay-dark: rgb(0 0 0 / 60%);
+    --ds-color-btn-overlay-dark-hover: rgb(0 0 0 / 80%);
+    --ds-color-btn-overlay-dark-active: rgb(0 0 0 / 90%);
+    --ds-color-btn-overlay-dark-text: #fff;
+    --ds-color-btn-overlay-dark-text-hover: #fff;
+    --ds-color-btn-overlay-dark-text-active: #fff;
+    --ds-color-btn-overlay-dark-border: transparent;
+
     /* Semantic borders - light */
     --ds-color-border-default: #e5e7eb;
     --ds-color-border-input: #d1d5db;
