@@ -43,3 +43,13 @@ parent.
 | Prop | Type | Required | Default |
 | --- | --- | --- | --- |
 | `pagination` | `tApiPagination \| null` — `{ total, per_page, current_page, from, to, last_page }` | Yes | — |
+
+### CSS color variants
+
+Summary and page-number text can be overridden separately by mode. The arrow
+buttons use their own light/dark variables, defaulting to the primary palette.
+
+| Part | Variables |
+| --- | --- |
+| Summary and page | `--ds-color-card-pagination-summary-text-{light|dark}`, `--ds-color-card-pagination-page-text-{light|dark}` |
+| Arrow buttons | `--ds-color-card-pagination-button-bg-{light|dark}`, `--ds-color-card-pagination-button-hover-bg-{light|dark}`, `--ds-color-card-pagination-button-text-{light|dark}` |

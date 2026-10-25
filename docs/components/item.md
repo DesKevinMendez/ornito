@@ -17,6 +17,18 @@ Long text wraps while the image and icon keep their size.
 | `clickable` | `boolean` | No | `false` |
 | `id` | `string \| number` | No | — |
 
+## CSS color variants
+
+The Item surface, hover state, title, subtitle, and trailing icon have paired
+light/dark variables. Override light values on `:root` and dark values under
+`.dark`.
+
+| Part | Variables |
+| --- | --- |
+| Surface | `--ds-color-item-bg-{light|dark}` |
+| Hover | `--ds-color-item-hover-bg-{light|dark}` |
+| Text and icon | `--ds-color-item-title-{light|dark}`, `--ds-color-item-subtitle-{light|dark}`, `--ds-color-item-icon-{light|dark}` |
+
 ```vue
 <script setup lang="ts">
 import { Item } from 'ornito'

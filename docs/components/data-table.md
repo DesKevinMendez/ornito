@@ -187,6 +187,7 @@ theme; the defaults preserve the existing table appearance.
 | Header | `--ds-color-table-header-bg-light`, `--ds-color-table-header-bg-dark`, `--ds-color-table-header-text-light`, `--ds-color-table-header-text-dark` |
 | Body | `--ds-color-table-body-bg-light`, `--ds-color-table-body-bg-dark`, `--ds-color-table-body-text-light`, `--ds-color-table-body-text-dark`, `--ds-color-table-body-hover-bg-light`, `--ds-color-table-body-hover-bg-dark` |
 | Footer | `--ds-color-table-footer-bg-light`, `--ds-color-table-footer-bg-dark`, `--ds-color-table-footer-text-light`, `--ds-color-table-footer-text-dark` |
+| Loading placeholders | `--ds-color-table-skeleton-placeholder-bg-{light|dark}` |
 
 Set light values on `:root` and dark values under `.dark`:
 
@@ -210,6 +211,8 @@ Set light values on `:root` and dark values under `.dark`:
 
 The `table-body-hover-bg` variables also control the hover color of the mobile
 cards. The footer variables cover the result count and server-side pagination.
+The skeleton placeholder variable is shared by `TableSkeleton` and the mobile
+loading cards in `DataTable`.
 
 ## ResultCount
 

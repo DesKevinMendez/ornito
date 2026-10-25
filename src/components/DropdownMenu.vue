@@ -13,20 +13,17 @@
           v-if="isOpen"
           ref="dropdownRef"
           :style="{ ...dropdownStyle, visibility: isPositioned ? 'visible' : 'hidden' }"
-          class="fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-default bg-white py-1 shadow-lg dark:bg-gray-800"
+          class="fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-default bg-dropdown-menu-panel-bg-light py-1 shadow-lg dark:bg-dropdown-menu-panel-bg-dark"
         >
           <button
             v-for="item in items"
             :key="item.action"
             type="button"
-            class="flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 hover:bg-gray-100 dark:hover:bg-gray-700/30"
-            :class="[
-              item.variant === 'danger'
-                ? 'text-danger-600 dark:text-danger-400'
-                : item.variant === 'success'
-                  ? 'text-success-600 dark:text-success-400'
-                  : 'text-gray-700 dark:text-gray-200'
-            ]"
+            class="flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 text-dropdown-item-text-light dark:text-dropdown-item-text-dark hover:bg-dropdown-item-hover-bg-light dark:hover:bg-dropdown-item-hover-bg-dark"
+            :class="{
+              'text-danger-600 dark:text-danger-400': item.variant === 'danger',
+              'text-success-600 dark:text-success-400': item.variant === 'success',
+            }"
             @click="handleItemClick(item)"
           >
             <component v-if="item.icon" :is="item.icon" class="h-4 w-4" />

@@ -11,7 +11,7 @@
                 class="px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis"
             >
                 <div
-                    class="h-4 bg-gray-200 dark:bg-gray-700 rounded"
+                    class="h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded"
                     :style="{ width: getRandomWidth() }"
                 />
             </td>
@@ -22,7 +22,7 @@
                 style="width: 120px; min-width: 120px; max-width: 120px;"
                 class="px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis"
             >
-                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-16" />
+                <div class="h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-16" />
             </td>
         </tr>
     </tbody>

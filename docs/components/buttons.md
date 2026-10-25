@@ -92,3 +92,17 @@ Compact icon button with a flat palette of named colors instead of
 <IconButton :icon="IconEdit" color="primary" />
 <IconButton :icon="IconTrash" color="danger" outline rounded />
 ```
+
+### CSS color variants
+
+The gray and pink colors use component-specific light/dark variables for the
+filled and outline styles. The primary, secondary, success, danger, and warning
+colors use the corresponding semantic palette variables (and green/red/yellow
+remain aliases).
+
+| Color | Component variables |
+| --- | --- |
+| Gray filled | `--ds-color-icon-button-gray-bg-{light|dark}`, `--ds-color-icon-button-gray-bg-hover-{light|dark}`, `--ds-color-icon-button-gray-text-{light|dark}` |
+| Gray outline | `--ds-color-icon-button-gray-outline-text-{light|dark}`, `--ds-color-icon-button-gray-outline-bg-hover-{light|dark}` |
+| Pink filled | `--ds-color-icon-button-pink-bg-{light|dark}`, `--ds-color-icon-button-pink-bg-hover-{light|dark}`, `--ds-color-icon-button-pink-text-{light|dark}` |
+| Pink outline | `--ds-color-icon-button-pink-outline-text-{light|dark}`, `--ds-color-icon-button-pink-outline-bg-hover-{light|dark}` |

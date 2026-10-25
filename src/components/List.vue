@@ -1,7 +1,7 @@
 <template>
   <ul
     ref="listElement"
-    class="m-0 w-full list-none divide-y divide-default rounded-xl bg-white p-0 dark:bg-gray-900 [&>li>*]:rounded-none"
+    class="m-0 w-full list-none divide-y divide-default rounded-xl bg-list-bg-light p-0 dark:bg-list-bg-dark [&>li>*]:rounded-none"
     :class="{
       'border border-default': border,
       'border-0': !border,

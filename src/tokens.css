@@ -449,6 +449,104 @@
     --ds-color-profile-chevron-light: #4b5563;
     --ds-color-profile-chevron-dark: #9ca3af;
 
+    /* Menus and overlays colors - light and dark */
+    --ds-color-dropdown-menu-panel-bg-light: #fff;
+    --ds-color-dropdown-menu-panel-bg-dark: #1f2937;
+    --ds-color-modal-scrim-bg-light: rgb(0 0 0 / 40%);
+    --ds-color-modal-scrim-bg-dark: rgb(0 0 0 / 40%);
+    --ds-color-modal-panel-bg-light: #fff;
+    --ds-color-modal-panel-bg-dark: #111827;
+    --ds-color-modal-title-light: #111827;
+    --ds-color-modal-title-dark: #fff;
+    --ds-color-modal-subtitle-light: #4b5563;
+    --ds-color-modal-subtitle-dark: #9ca3af;
+    --ds-color-modal-close-text-light: #4b5563;
+    --ds-color-modal-close-text-dark: #9ca3af;
+    --ds-color-modal-close-hover-text-light: #111827;
+    --ds-color-modal-close-hover-text-dark: #e5e7eb;
+    --ds-color-modal-close-focus-light: #6b7280;
+    --ds-color-modal-close-focus-dark: #6b7280;
+    --ds-color-bottom-modal-scrim-bg-light: rgb(0 0 0 / 32%);
+    --ds-color-bottom-modal-scrim-bg-dark: rgb(0 0 0 / 32%);
+    --ds-color-bottom-modal-panel-bg-light: #fff;
+    --ds-color-bottom-modal-panel-bg-dark: #1d1b20;
+    --ds-color-bottom-modal-text-light: #1d1b20;
+    --ds-color-bottom-modal-text-dark: #e6e1e5;
+    --ds-color-bottom-modal-title-light: #1d1b20;
+    --ds-color-bottom-modal-title-dark: #e6e1e5;
+    --ds-color-bottom-modal-subtitle-light: #49454f;
+    --ds-color-bottom-modal-subtitle-dark: #cac4d0;
+    --ds-color-bottom-modal-close-text-light: #49454f;
+    --ds-color-bottom-modal-close-text-dark: #cac4d0;
+    --ds-color-bottom-modal-close-hover-bg-light: rgb(0 0 0 / 5%);
+    --ds-color-bottom-modal-close-hover-bg-dark: rgb(255 255 255 / 10%);
+    --ds-color-bottom-modal-close-hover-text-light: #1d1b20;
+    --ds-color-bottom-modal-close-hover-text-dark: #e6e1e5;
+    --ds-color-bottom-modal-close-focus-light: #49454f;
+    --ds-color-bottom-modal-close-focus-dark: #cac4d0;
+
+    /* Item and List colors - light and dark */
+    --ds-color-item-bg-light: #fff;
+    --ds-color-item-bg-dark: #111827;
+    --ds-color-item-hover-bg-light: #f9fafb;
+    --ds-color-item-hover-bg-dark: #1f2937;
+    --ds-color-item-title-light: #111827;
+    --ds-color-item-title-dark: #fff;
+    --ds-color-item-subtitle-light: #6b7280;
+    --ds-color-item-subtitle-dark: #9ca3af;
+    --ds-color-item-icon-light: #9ca3af;
+    --ds-color-item-icon-dark: #6b7280;
+    --ds-color-list-bg-light: #fff;
+    --ds-color-list-bg-dark: #111827;
+
+    /* HelpTooltip colors - light and dark */
+    --ds-color-help-tooltip-trigger-bg-light: #e5e7eb;
+    --ds-color-help-tooltip-trigger-bg-dark: #374151;
+    --ds-color-help-tooltip-trigger-text-light: #6b7280;
+    --ds-color-help-tooltip-trigger-text-dark: #9ca3af;
+    --ds-color-help-tooltip-panel-bg-light: #111827;
+    --ds-color-help-tooltip-panel-bg-dark: #374151;
+    --ds-color-help-tooltip-panel-text-light: #fff;
+    --ds-color-help-tooltip-panel-text-dark: #fff;
+
+    /* IconButton neutral and pink variants colors - light and dark */
+    --ds-color-icon-button-gray-bg-light: #4b5563;
+    --ds-color-icon-button-gray-bg-dark: #374151;
+    --ds-color-icon-button-gray-bg-hover-light: #6b7280;
+    --ds-color-icon-button-gray-bg-hover-dark: #4b5563;
+    --ds-color-icon-button-gray-text-light: #fff;
+    --ds-color-icon-button-gray-text-dark: #fff;
+    --ds-color-icon-button-gray-outline-text-light: #374151;
+    --ds-color-icon-button-gray-outline-text-dark: #d1d5db;
+    --ds-color-icon-button-gray-outline-bg-hover-light: #f3f4f6;
+    --ds-color-icon-button-gray-outline-bg-hover-dark: #1f2937;
+    --ds-color-icon-button-pink-bg-light: #db2777;
+    --ds-color-icon-button-pink-bg-dark: #be185d;
+    --ds-color-icon-button-pink-bg-hover-light: #ec4899;
+    --ds-color-icon-button-pink-bg-hover-dark: #db2777;
+    --ds-color-icon-button-pink-text-light: #fff;
+    --ds-color-icon-button-pink-text-dark: #fff;
+    --ds-color-icon-button-pink-outline-text-light: #db2777;
+    --ds-color-icon-button-pink-outline-text-dark: #f472b6;
+    --ds-color-icon-button-pink-outline-bg-hover-light: #fdf2f8;
+    --ds-color-icon-button-pink-outline-bg-hover-dark: rgb(131 24 67 / 30%);
+
+    /* CardPaginations colors - light and dark */
+    --ds-color-card-pagination-summary-text-light: #6b7280;
+    --ds-color-card-pagination-summary-text-dark: #9ca3af;
+    --ds-color-card-pagination-page-text-light: #374151;
+    --ds-color-card-pagination-page-text-dark: #d1d5db;
+    --ds-color-card-pagination-button-bg-light: var(--ds-color-primary-600);
+    --ds-color-card-pagination-button-bg-dark: var(--ds-color-primary-600);
+    --ds-color-card-pagination-button-hover-bg-light: var(--ds-color-primary-500);
+    --ds-color-card-pagination-button-hover-bg-dark: var(--ds-color-primary-500);
+    --ds-color-card-pagination-button-text-light: #fff;
+    --ds-color-card-pagination-button-text-dark: #fff;
+
+    /* Table loading placeholders colors - light and dark */
+    --ds-color-table-skeleton-placeholder-bg-light: #e5e7eb;
+    --ds-color-table-skeleton-placeholder-bg-dark: #374151;
+
     /* Component-specific surfaces */
     --ds-color-datepicker-dark-bg: #172030;
 }

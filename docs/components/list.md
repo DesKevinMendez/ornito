@@ -49,6 +49,12 @@ receive its ID. Images, titles, subtitles, icons and their slots stay on `Item`.
 Add `aria-label` or `aria-labelledby` to name the list when useful.
 Native attributes and additional classes are forwarded to the `ul`.
 
+## CSS color variants
+
+The list surface uses `--ds-color-list-bg-{light|dark}`. Row dividers use
+the shared `border-default` token; each Item controls its own surface, text,
+and hover colors.
+
 ## Infinite scroll
 
 Supply `pagination` to enable infinite scroll, powered by VueUse's

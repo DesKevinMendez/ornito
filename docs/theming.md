@@ -134,11 +134,14 @@ segmented, pills, and underline variants, shared disabled labels, and focus
 colors. DataTable tokens use `--ds-color-table-*-{light|dark}` for header,
 body, and footer surfaces and text, including body row hover. The component
 guides list each state token. Dropdown tokens use
-`--ds-color-dropdown-*-{light|dark}` for the trigger, panel, and item hover and
-selected states. Form control tokens use `--ds-color-form-*-{light|dark}` and
+`--ds-color-dropdown-*-{light|dark}` for its trigger, panel, and item states;
+`DropdownMenu` uses the same item colors with a separate panel surface token.
+Form control tokens use `--ds-color-form-*-{light|dark}` and
 are shared by `FormInput`, `FormSelect`, `FormTextarea`, and `SearchableSelect`.
-Dashboard tokens cover `ViewHeader`, `StatCard`, `Card`, `Navbar`, and
-`UserProfileDropdown`.
+Dashboard and shared component tokens cover `ViewHeader`, `StatCard`,
+`Card`, `Navbar`, `UserProfileDropdown`, `DropdownMenu`, `Modal`,
+`BottomModal`, `Item`, `List`, `HelpTooltip`, `IconButton`,
+`CardPaginations`, and table loading placeholders.
 See the component guides for the available token groups:
 [Sidebar](components/sidebar.md#css-color-variants),
 [Tabs](components/tabs.md#css-color-variants),
@@ -147,8 +150,14 @@ See the component guides for the available token groups:
 [FormInput](components/form-input.md#css-color-variants),
 [ViewHeader](components/layout.md#css-color-variants),
 [Card](components/card.md#css-color-variants),
-[StatCard](components/stat-card.md#css-color-variants), and
-[Navbar](components/navbar.md#css-color-variants).
+[StatCard](components/stat-card.md#css-color-variants),
+[Navbar](components/navbar.md#css-color-variants),
+[Modals](components/modal.md#css-color-variants),
+[Item](components/item.md#css-color-variants),
+[List](components/list.md#css-color-variants),
+[HelpTooltip](components/help-tooltip.md#css-color-variants),
+[IconButton](components/buttons.md#css-color-variants), and
+[Card and CardPaginations](components/card.md).
 
 Each palette follows the standard Tailwind shade scale (50 = lightest, 950 =
 darkest). `primary`/`secondary`/`tertiary` define the full 50–950 range;

@@ -26,6 +26,17 @@ Content goes in the default slot. Emits `update:open`, `close`.
 </Modal>
 ```
 
+### CSS color variants
+
+The scrim, panel, title, subtitle, and close control have paired light/dark
+variables. Override light values on `:root` and dark values under `.dark`.
+
+| Part | Variables |
+| --- | --- |
+| Scrim and panel | `--ds-color-modal-scrim-bg-{light|dark}`, `--ds-color-modal-panel-bg-{light|dark}` |
+| Title and subtitle | `--ds-color-modal-title-{light|dark}`, `--ds-color-modal-subtitle-{light|dark}` |
+| Close control | `--ds-color-modal-close-text-{light|dark}`, `--ds-color-modal-close-hover-text-{light|dark}`, `--ds-color-modal-close-focus-{light|dark}` |
+
 ## BottomModal
 
 Android-style bottom sheet, teleported to `body`, using the native `<dialog>`
@@ -71,6 +82,17 @@ Clicking the backdrop, the close button or pressing `Escape` emits
 `update:open` with `false` and emits `close`. Use the `footer` slot for actions
 that should remain below the scrollable body. The sheet supports dark mode and
 is limited to 90% of the viewport height.
+
+### CSS color variants
+
+The scrim, panel, title, subtitle, and close control have paired light/dark
+variables. The footer divider uses the shared `border-divider` token.
+
+| Part | Variables |
+| --- | --- |
+| Scrim and panel | `--ds-color-bottom-modal-scrim-bg-{light|dark}`, `--ds-color-bottom-modal-panel-bg-{light|dark}`, `--ds-color-bottom-modal-text-{light|dark}` |
+| Title and subtitle | `--ds-color-bottom-modal-title-{light|dark}`, `--ds-color-bottom-modal-subtitle-{light|dark}` |
+| Close control | `--ds-color-bottom-modal-close-text-{light|dark}`, `--ds-color-bottom-modal-close-hover-bg-{light|dark}`, `--ds-color-bottom-modal-close-hover-text-{light|dark}`, `--ds-color-bottom-modal-close-focus-{light|dark}` |
 
 ## ConfirmationModal
 

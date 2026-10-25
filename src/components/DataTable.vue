@@ -132,9 +132,9 @@
           class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 animate-pulse"
         >
           <div class="space-y-3">
-            <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
-            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
+            <div class="h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-3/4"></div>
+            <div class="h-3 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-1/2"></div>
+            <div class="h-3 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-2/3"></div>
           </div>
         </div>
       </div>

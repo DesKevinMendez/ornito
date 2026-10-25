@@ -79,6 +79,16 @@ Icon-triggered contextual action menu (e.g. a row's "⋮" menu). Emits
 - `danger` — red text, for destructive actions.
 - `success` — green text.
 
+### CSS color variants
+
+The context menu panel has its own light/dark surface variables. Its default
+row text and hover background reuse the shared DropdownItem variables above;
+danger and success rows continue to use the semantic status palettes.
+
+| Part | Variables |
+| --- | --- |
+| Panel | `--ds-color-dropdown-menu-panel-bg-{light|dark}` |
+
 ## DropdownAnimation
 
 Transition wrapper (fade + scale) used internally by dropdown/menu
