@@ -219,6 +219,114 @@
     --ds-color-border-danger-muted: var(--ds-color-danger-200);
     --ds-color-border-pink: #ec4899;
 
+    /* Sidebar colors - light and dark */
+    --ds-color-sidebar-bg-light: #fff;
+    --ds-color-sidebar-bg-dark: #111827;
+    --ds-color-sidebar-title-light: #111827;
+    --ds-color-sidebar-title-dark: #fff;
+    --ds-color-sidebar-subtitle-light: #6b7280;
+    --ds-color-sidebar-subtitle-dark: #9ca3af;
+    --ds-color-sidebar-version-light: #9ca3af;
+    --ds-color-sidebar-version-dark: #6b7280;
+
+    --ds-color-sidebar-collapse-bg-light: #f3f4f6;
+    --ds-color-sidebar-collapse-bg-dark: #1f2937;
+    --ds-color-sidebar-collapse-bg-hover-light: #e5e7eb;
+    --ds-color-sidebar-collapse-bg-hover-dark: #374151;
+    --ds-color-sidebar-collapse-icon-light: #4b5563;
+    --ds-color-sidebar-collapse-icon-dark: #9ca3af;
+
+    --ds-color-sidebar-theme-toggle-bg-light: #f3f4f6;
+    --ds-color-sidebar-theme-toggle-bg-dark: #1f2937;
+    --ds-color-sidebar-theme-toggle-bg-hover-light: #e5e7eb;
+    --ds-color-sidebar-theme-toggle-bg-hover-dark: #374151;
+    --ds-color-sidebar-theme-toggle-content-light: #111827;
+    --ds-color-sidebar-theme-toggle-content-dark: #fff;
+
+    --ds-color-sidebar-tab-bg-active-light: var(--ds-color-primary-600);
+    --ds-color-sidebar-tab-bg-active-dark: var(--ds-color-primary-500);
+    --ds-color-sidebar-tab-text-active-light: #fff;
+    --ds-color-sidebar-tab-text-active-dark: #fff;
+    --ds-color-sidebar-tab-text-inactive-light: #4b5563;
+    --ds-color-sidebar-tab-text-inactive-dark: #e5e7eb;
+    --ds-color-sidebar-tab-bg-hover-light: #f3f4f6;
+    --ds-color-sidebar-tab-bg-hover-dark: rgb(31 41 55 / 50%);
+    --ds-color-sidebar-tab-icon-light: #9ca3af;
+    --ds-color-sidebar-tab-icon-dark: #e5e7eb;
+    --ds-color-sidebar-tab-icon-hover-light: #4b5563;
+    --ds-color-sidebar-tab-icon-hover-dark: #f3f4f6;
+    --ds-color-sidebar-tab-group-active-light: var(--ds-color-primary-500);
+    --ds-color-sidebar-tab-group-active-dark: var(--ds-color-primary-400);
+    --ds-color-sidebar-tab-badge-bg-light: var(--ds-color-primary-600);
+    --ds-color-sidebar-tab-badge-bg-dark: var(--ds-color-primary-500);
+    --ds-color-sidebar-tab-badge-text-light: #fff;
+    --ds-color-sidebar-tab-badge-text-dark: #fff;
+    --ds-color-sidebar-tab-badge-active-bg-light: rgb(255 255 255 / 20%);
+    --ds-color-sidebar-tab-badge-active-bg-dark: rgb(255 255 255 / 20%);
+
+    /* Tabs colors - segmented, pills and underline variants */
+    --ds-color-tabs-segmented-bg-light: #e5e7eb;
+    --ds-color-tabs-segmented-bg-dark: #1f2937;
+    --ds-color-tabs-segmented-indicator-light: #fff;
+    --ds-color-tabs-segmented-indicator-dark: #374151;
+    --ds-color-tabs-segmented-active-text-light: #111827;
+    --ds-color-tabs-segmented-active-text-dark: #fff;
+    --ds-color-tabs-segmented-inactive-text-light: #6b7280;
+    --ds-color-tabs-segmented-inactive-text-dark: #9ca3af;
+    --ds-color-tabs-segmented-inactive-hover-text-light: #374151;
+    --ds-color-tabs-segmented-inactive-hover-text-dark: #d1d5db;
+
+    --ds-color-tabs-pills-active-bg-light: var(--ds-color-primary-600);
+    --ds-color-tabs-pills-active-bg-dark: var(--ds-color-primary-600);
+    --ds-color-tabs-pills-active-bg-hover-light: var(--ds-color-primary-700);
+    --ds-color-tabs-pills-active-bg-hover-dark: var(--ds-color-primary-700);
+    --ds-color-tabs-pills-active-text-light: #fff;
+    --ds-color-tabs-pills-active-text-dark: #fff;
+    --ds-color-tabs-pills-inactive-text-light: #4b5563;
+    --ds-color-tabs-pills-inactive-text-dark: #9ca3af;
+    --ds-color-tabs-pills-inactive-hover-bg-light: #f3f4f6;
+    --ds-color-tabs-pills-inactive-hover-bg-dark: #111827;
+    --ds-color-tabs-pills-inactive-hover-text-light: #111827;
+    --ds-color-tabs-pills-inactive-hover-text-dark: #fff;
+
+    --ds-color-tabs-underline-active-text-light: var(--ds-color-primary-600);
+    --ds-color-tabs-underline-active-text-dark: var(--ds-color-primary-400);
+    --ds-color-tabs-underline-inactive-text-light: #4b5563;
+    --ds-color-tabs-underline-inactive-text-dark: #9ca3af;
+    --ds-color-tabs-underline-hover-bg-light: #f9fafb;
+    --ds-color-tabs-underline-hover-bg-dark: #111827;
+    --ds-color-tabs-underline-hover-text-light: #111827;
+    --ds-color-tabs-underline-hover-text-dark: #fff;
+    --ds-color-tabs-underline-indicator-light: var(--ds-color-primary-600);
+    --ds-color-tabs-underline-indicator-dark: var(--ds-color-primary-400);
+
+    --ds-color-tabs-disabled-light: #9ca3af;
+    --ds-color-tabs-disabled-dark: #4b5563;
+    --ds-color-tabs-focus-light: var(--ds-color-primary-500);
+    --ds-color-tabs-focus-dark: var(--ds-color-primary-500);
+    --ds-color-tabs-focus-offset-light: #fff;
+    --ds-color-tabs-focus-offset-dark: #030712;
+    --ds-color-tabs-empty-text-light: #6b7280;
+    --ds-color-tabs-empty-text-dark: #9ca3af;
+
+    /* DataTable colors - header, body and footer */
+    --ds-color-table-header-bg-light: #f9fafb;
+    --ds-color-table-header-bg-dark: rgb(31 41 55 / 30%);
+    --ds-color-table-header-text-light: #374151;
+    --ds-color-table-header-text-dark: #d1d5db;
+
+    --ds-color-table-body-bg-light: #fff;
+    --ds-color-table-body-bg-dark: rgb(31 41 55 / 20%);
+    --ds-color-table-body-text-light: #111827;
+    --ds-color-table-body-text-dark: #d1d5db;
+    --ds-color-table-body-hover-bg-light: #f9fafb;
+    --ds-color-table-body-hover-bg-dark: rgb(55 65 81 / 30%);
+
+    --ds-color-table-footer-bg-light: transparent;
+    --ds-color-table-footer-bg-dark: transparent;
+    --ds-color-table-footer-text-light: #4b5563;
+    --ds-color-table-footer-text-dark: #9ca3af;
+
     /* Component-specific surfaces */
     --ds-color-datepicker-dark-bg: #172030;
 }

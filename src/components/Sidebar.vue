@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="h-screen flex flex-col border-r-2 transition-all duration-300 bg-white text-gray-900 border-default dark:bg-gray-900 dark:text-white"
+    class="h-screen flex flex-col border-r-2 transition-all duration-300 bg-sidebar-bg-light dark:bg-sidebar-bg-dark text-sidebar-title-light dark:text-sidebar-title-dark border-default"
     :class="sidebarClasses"
   >
     <!-- Top Section with Window Controls and Branding -->
@@ -12,10 +12,10 @@
             <img :src="logo" :alt="title" class="w-full h-full object-contain">
           </div>
           <div class="overflow-hidden transition-all duration-300 w-auto">
-            <h1 class="text-lg font-semibold whitespace-nowrap text-gray-900 dark:text-white">
+            <h1 class="text-lg font-semibold whitespace-nowrap text-sidebar-title-light dark:text-sidebar-title-dark">
               {{ title }}
             </h1>
-            <p class="text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+            <p class="text-sm whitespace-nowrap text-sidebar-subtitle-light dark:text-sidebar-subtitle-dark">
               {{ subtitle }}
             </p>
           </div>
@@ -25,25 +25,25 @@
         <button
           v-if="isMobile"
           @click="$emit('close')"
-          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
         >
-          <IconX class="w-4 h-4 text-gray-600 dark:text-gray-400" />
+          <IconX class="w-4 h-4 text-sidebar-collapse-icon-light dark:text-sidebar-collapse-icon-dark" />
         </button>
 
         <!-- Desktop Collapse/Expand Button -->
         <button
           v-else-if="!props.isCollapsed"
           @click="toggleCollapse"
-          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
         >
-          <IconChevronLeft class="w-4 h-4 text-gray-600 dark:text-gray-400" />
+          <IconChevronLeft class="w-4 h-4 text-sidebar-collapse-icon-light dark:text-sidebar-collapse-icon-dark" />
         </button>
         <button
           v-else
           @click="toggleCollapse"
-          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
         >
-          <IconChevronRight class="w-4 h-4 text-gray-600 dark:text-gray-400" />
+          <IconChevronRight class="w-4 h-4 text-sidebar-collapse-icon-light dark:text-sidebar-collapse-icon-dark" />
         </button>
       </div>
     </div>
@@ -55,7 +55,7 @@
 
     <p
       v-if="!props.isCollapsed"
-      class="px-4 pb-1 text-left text-[10px] text-gray-400 dark:text-gray-500"
+      class="px-4 pb-1 text-left text-[10px] text-sidebar-version-light dark:text-sidebar-version-dark"
     >
       v{{ version }}
     </p>
@@ -64,12 +64,12 @@
     <div class="p-4 border-t-2 border-default">
       <button
         @click="toggleTheme"
-        class="w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+        class="w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-sidebar-theme-toggle-bg-light hover:bg-sidebar-theme-toggle-bg-hover-light dark:bg-sidebar-theme-toggle-bg-dark dark:hover:bg-sidebar-theme-toggle-bg-hover-dark"
         :class="props.isCollapsed ? 'justify-center' : ''"
         aria-label="Toggle theme"
       >
-        <component :is="themeIcon" class="w-5 h-5 text-gray-900 dark:text-white flex-shrink-0" />
-        <span v-if="!props.isCollapsed" class="text-sm text-gray-900 dark:text-white whitespace-nowrap">
+        <component :is="themeIcon" class="w-5 h-5 text-sidebar-theme-toggle-content-light dark:text-sidebar-theme-toggle-content-dark flex-shrink-0" />
+        <span v-if="!props.isCollapsed" class="text-sm text-sidebar-theme-toggle-content-light dark:text-sidebar-theme-toggle-content-dark whitespace-nowrap">
           {{ isDarkMode ? 'Modo claro' : 'Modo oscuro' }}
         </span>
       </button>

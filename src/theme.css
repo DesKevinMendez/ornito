@@ -111,6 +111,106 @@
     --color-danger-subtle: var(--ds-color-border-danger-subtle);
     --color-danger-muted: var(--ds-color-border-danger-muted);
     --color-pink: var(--ds-color-border-pink);
+
+    /* Sidebar */
+    --color-sidebar-bg-light: var(--ds-color-sidebar-bg-light);
+    --color-sidebar-bg-dark: var(--ds-color-sidebar-bg-dark);
+    --color-sidebar-title-light: var(--ds-color-sidebar-title-light);
+    --color-sidebar-title-dark: var(--ds-color-sidebar-title-dark);
+    --color-sidebar-subtitle-light: var(--ds-color-sidebar-subtitle-light);
+    --color-sidebar-subtitle-dark: var(--ds-color-sidebar-subtitle-dark);
+    --color-sidebar-version-light: var(--ds-color-sidebar-version-light);
+    --color-sidebar-version-dark: var(--ds-color-sidebar-version-dark);
+    --color-sidebar-collapse-bg-light: var(--ds-color-sidebar-collapse-bg-light);
+    --color-sidebar-collapse-bg-dark: var(--ds-color-sidebar-collapse-bg-dark);
+    --color-sidebar-collapse-bg-hover-light: var(--ds-color-sidebar-collapse-bg-hover-light);
+    --color-sidebar-collapse-bg-hover-dark: var(--ds-color-sidebar-collapse-bg-hover-dark);
+    --color-sidebar-collapse-icon-light: var(--ds-color-sidebar-collapse-icon-light);
+    --color-sidebar-collapse-icon-dark: var(--ds-color-sidebar-collapse-icon-dark);
+    --color-sidebar-theme-toggle-bg-light: var(--ds-color-sidebar-theme-toggle-bg-light);
+    --color-sidebar-theme-toggle-bg-dark: var(--ds-color-sidebar-theme-toggle-bg-dark);
+    --color-sidebar-theme-toggle-bg-hover-light: var(--ds-color-sidebar-theme-toggle-bg-hover-light);
+    --color-sidebar-theme-toggle-bg-hover-dark: var(--ds-color-sidebar-theme-toggle-bg-hover-dark);
+    --color-sidebar-theme-toggle-content-light: var(--ds-color-sidebar-theme-toggle-content-light);
+    --color-sidebar-theme-toggle-content-dark: var(--ds-color-sidebar-theme-toggle-content-dark);
+    --color-sidebar-tab-bg-active-light: var(--ds-color-sidebar-tab-bg-active-light);
+    --color-sidebar-tab-bg-active-dark: var(--ds-color-sidebar-tab-bg-active-dark);
+    --color-sidebar-tab-text-active-light: var(--ds-color-sidebar-tab-text-active-light);
+    --color-sidebar-tab-text-active-dark: var(--ds-color-sidebar-tab-text-active-dark);
+    --color-sidebar-tab-text-inactive-light: var(--ds-color-sidebar-tab-text-inactive-light);
+    --color-sidebar-tab-text-inactive-dark: var(--ds-color-sidebar-tab-text-inactive-dark);
+    --color-sidebar-tab-bg-hover-light: var(--ds-color-sidebar-tab-bg-hover-light);
+    --color-sidebar-tab-bg-hover-dark: var(--ds-color-sidebar-tab-bg-hover-dark);
+    --color-sidebar-tab-icon-light: var(--ds-color-sidebar-tab-icon-light);
+    --color-sidebar-tab-icon-dark: var(--ds-color-sidebar-tab-icon-dark);
+    --color-sidebar-tab-icon-hover-light: var(--ds-color-sidebar-tab-icon-hover-light);
+    --color-sidebar-tab-icon-hover-dark: var(--ds-color-sidebar-tab-icon-hover-dark);
+    --color-sidebar-tab-group-active-light: var(--ds-color-sidebar-tab-group-active-light);
+    --color-sidebar-tab-group-active-dark: var(--ds-color-sidebar-tab-group-active-dark);
+    --color-sidebar-tab-badge-bg-light: var(--ds-color-sidebar-tab-badge-bg-light);
+    --color-sidebar-tab-badge-bg-dark: var(--ds-color-sidebar-tab-badge-bg-dark);
+    --color-sidebar-tab-badge-text-light: var(--ds-color-sidebar-tab-badge-text-light);
+    --color-sidebar-tab-badge-text-dark: var(--ds-color-sidebar-tab-badge-text-dark);
+    --color-sidebar-tab-badge-active-bg-light: var(--ds-color-sidebar-tab-badge-active-bg-light);
+    --color-sidebar-tab-badge-active-bg-dark: var(--ds-color-sidebar-tab-badge-active-bg-dark);
+
+    /* Tabs */
+    --color-tabs-segmented-bg-light: var(--ds-color-tabs-segmented-bg-light);
+    --color-tabs-segmented-bg-dark: var(--ds-color-tabs-segmented-bg-dark);
+    --color-tabs-segmented-indicator-light: var(--ds-color-tabs-segmented-indicator-light);
+    --color-tabs-segmented-indicator-dark: var(--ds-color-tabs-segmented-indicator-dark);
+    --color-tabs-segmented-active-text-light: var(--ds-color-tabs-segmented-active-text-light);
+    --color-tabs-segmented-active-text-dark: var(--ds-color-tabs-segmented-active-text-dark);
+    --color-tabs-segmented-inactive-text-light: var(--ds-color-tabs-segmented-inactive-text-light);
+    --color-tabs-segmented-inactive-text-dark: var(--ds-color-tabs-segmented-inactive-text-dark);
+    --color-tabs-segmented-inactive-hover-text-light: var(--ds-color-tabs-segmented-inactive-hover-text-light);
+    --color-tabs-segmented-inactive-hover-text-dark: var(--ds-color-tabs-segmented-inactive-hover-text-dark);
+    --color-tabs-pills-active-bg-light: var(--ds-color-tabs-pills-active-bg-light);
+    --color-tabs-pills-active-bg-dark: var(--ds-color-tabs-pills-active-bg-dark);
+    --color-tabs-pills-active-bg-hover-light: var(--ds-color-tabs-pills-active-bg-hover-light);
+    --color-tabs-pills-active-bg-hover-dark: var(--ds-color-tabs-pills-active-bg-hover-dark);
+    --color-tabs-pills-active-text-light: var(--ds-color-tabs-pills-active-text-light);
+    --color-tabs-pills-active-text-dark: var(--ds-color-tabs-pills-active-text-dark);
+    --color-tabs-pills-inactive-text-light: var(--ds-color-tabs-pills-inactive-text-light);
+    --color-tabs-pills-inactive-text-dark: var(--ds-color-tabs-pills-inactive-text-dark);
+    --color-tabs-pills-inactive-hover-bg-light: var(--ds-color-tabs-pills-inactive-hover-bg-light);
+    --color-tabs-pills-inactive-hover-bg-dark: var(--ds-color-tabs-pills-inactive-hover-bg-dark);
+    --color-tabs-pills-inactive-hover-text-light: var(--ds-color-tabs-pills-inactive-hover-text-light);
+    --color-tabs-pills-inactive-hover-text-dark: var(--ds-color-tabs-pills-inactive-hover-text-dark);
+    --color-tabs-underline-active-text-light: var(--ds-color-tabs-underline-active-text-light);
+    --color-tabs-underline-active-text-dark: var(--ds-color-tabs-underline-active-text-dark);
+    --color-tabs-underline-inactive-text-light: var(--ds-color-tabs-underline-inactive-text-light);
+    --color-tabs-underline-inactive-text-dark: var(--ds-color-tabs-underline-inactive-text-dark);
+    --color-tabs-underline-hover-bg-light: var(--ds-color-tabs-underline-hover-bg-light);
+    --color-tabs-underline-hover-bg-dark: var(--ds-color-tabs-underline-hover-bg-dark);
+    --color-tabs-underline-hover-text-light: var(--ds-color-tabs-underline-hover-text-light);
+    --color-tabs-underline-hover-text-dark: var(--ds-color-tabs-underline-hover-text-dark);
+    --color-tabs-underline-indicator-light: var(--ds-color-tabs-underline-indicator-light);
+    --color-tabs-underline-indicator-dark: var(--ds-color-tabs-underline-indicator-dark);
+    --color-tabs-disabled-light: var(--ds-color-tabs-disabled-light);
+    --color-tabs-disabled-dark: var(--ds-color-tabs-disabled-dark);
+    --color-tabs-focus-light: var(--ds-color-tabs-focus-light);
+    --color-tabs-focus-dark: var(--ds-color-tabs-focus-dark);
+    --color-tabs-focus-offset-light: var(--ds-color-tabs-focus-offset-light);
+    --color-tabs-focus-offset-dark: var(--ds-color-tabs-focus-offset-dark);
+    --color-tabs-empty-text-light: var(--ds-color-tabs-empty-text-light);
+    --color-tabs-empty-text-dark: var(--ds-color-tabs-empty-text-dark);
+
+    /* DataTable */
+    --color-table-header-bg-light: var(--ds-color-table-header-bg-light);
+    --color-table-header-bg-dark: var(--ds-color-table-header-bg-dark);
+    --color-table-header-text-light: var(--ds-color-table-header-text-light);
+    --color-table-header-text-dark: var(--ds-color-table-header-text-dark);
+    --color-table-body-bg-light: var(--ds-color-table-body-bg-light);
+    --color-table-body-bg-dark: var(--ds-color-table-body-bg-dark);
+    --color-table-body-text-light: var(--ds-color-table-body-text-light);
+    --color-table-body-text-dark: var(--ds-color-table-body-text-dark);
+    --color-table-body-hover-bg-light: var(--ds-color-table-body-hover-bg-light);
+    --color-table-body-hover-bg-dark: var(--ds-color-table-body-hover-bg-dark);
+    --color-table-footer-bg-light: var(--ds-color-table-footer-bg-light);
+    --color-table-footer-bg-dark: var(--ds-color-table-footer-bg-dark);
+    --color-table-footer-text-light: var(--ds-color-table-footer-text-light);
+    --color-table-footer-text-dark: var(--ds-color-table-footer-text-dark);
 }
 
 /* Semantic color utilities shared by BaseButton and BaseButtonIcon. */

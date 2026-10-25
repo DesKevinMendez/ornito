@@ -176,6 +176,41 @@ Server-side pagination footer for tables.
 | --- | --- | --- | --- |
 | `internalPaginationServer` | `tApiPagination` | Yes | — |
 
+## CSS color variants
+
+DataTable colors have separate light and dark variables for the header, body,
+and footer. Override these runtime CSS variables to match the consuming app's
+theme; the defaults preserve the existing table appearance.
+
+| Area | Variables |
+| --- | --- |
+| Header | `--ds-color-table-header-bg-light`, `--ds-color-table-header-bg-dark`, `--ds-color-table-header-text-light`, `--ds-color-table-header-text-dark` |
+| Body | `--ds-color-table-body-bg-light`, `--ds-color-table-body-bg-dark`, `--ds-color-table-body-text-light`, `--ds-color-table-body-text-dark`, `--ds-color-table-body-hover-bg-light`, `--ds-color-table-body-hover-bg-dark` |
+| Footer | `--ds-color-table-footer-bg-light`, `--ds-color-table-footer-bg-dark`, `--ds-color-table-footer-text-light`, `--ds-color-table-footer-text-dark` |
+
+Set light values on `:root` and dark values under `.dark`:
+
+```css
+:root {
+  --ds-color-table-header-bg-light: #eff6ff;
+  --ds-color-table-header-text-light: #1e3a8a;
+  --ds-color-table-body-bg-light: #fff;
+  --ds-color-table-body-hover-bg-light: #f8fafc;
+  --ds-color-table-footer-text-light: #475569;
+}
+
+.dark {
+  --ds-color-table-header-bg-dark: #172554;
+  --ds-color-table-header-text-dark: #dbeafe;
+  --ds-color-table-body-bg-dark: #0f172a;
+  --ds-color-table-body-hover-bg-dark: #1e293b;
+  --ds-color-table-footer-text-dark: #94a3b8;
+}
+```
+
+The `table-body-hover-bg` variables also control the hover color of the mobile
+cards. The footer variables cover the result count and server-side pagination.
+
 ## ResultCount
 
 "Showing X–Y of Z" summary text.

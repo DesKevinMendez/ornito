@@ -12,6 +12,9 @@ system without rebuilding it.
   with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have light defaults on `:root` and dark values under
   `.dark`. Their names describe their role rather than the gray shade used.
+- Sidebar, `Tabs`, and `DataTable` component colors have paired `-light` and
+  `-dark` tokens, so each mode can be configured independently while retaining
+  the current appearance by default.
 - `src/style.css` maps Tailwind's theme onto those variables with
   `@theme inline`, so utilities like `.bg-primary-500` compile to
   `background-color: var(--ds-color-primary-500)` instead of a literal hex
@@ -38,11 +41,17 @@ of the variables below on `:root` (or any ancestor scope):
   --ds-color-primary-600: #15803d;
   --ds-color-border-default: #d4d4d8;
   --ds-color-border-input: #a1a1aa;
+  --ds-color-sidebar-bg-light: #f8fafc;
+  --ds-color-sidebar-tab-bg-active-light: #ea580c;
+  --ds-color-tabs-pills-active-bg-light: #ea580c;
 }
 
 .dark {
   --ds-color-border-default: #52525b;
   --ds-color-border-input: #3f3f46;
+  --ds-color-sidebar-bg-dark: #111827;
+  --ds-color-sidebar-tab-bg-active-dark: #f97316;
+  --ds-color-tabs-pills-active-bg-dark: #f97316;
 }
 ```
 
@@ -114,6 +123,19 @@ mode. A consuming app can override only the roles it needs.
 
 The corresponding Tailwind classes use the role directly, for example
 `border-default`, `border-input`, `border-danger`, and `border-danger-subtle`.
+
+### Component color variables
+
+Sidebar tokens use the `--ds-color-sidebar-*-{light|dark}` pattern. They cover
+the sidebar surface and text, collapse control, theme toggle, and navigation
+tab states. `Tabs` tokens use `--ds-color-tabs-*-{light|dark}` and cover the
+segmented, pills, and underline variants, shared disabled labels, and focus
+colors. DataTable tokens use `--ds-color-table-*-{light|dark}` for header,
+body, and footer surfaces and text, including body row hover. The component
+guides list each state token:
+[Sidebar](components/sidebar.md#css-color-variants),
+[Tabs](components/tabs.md#css-color-variants), and
+[DataTable](components/data-table.md#css-color-variants).
 
 Each palette follows the standard Tailwind shade scale (50 = lightest, 950 =
 darkest). `primary`/`secondary`/`tertiary` define the full 50–950 range;

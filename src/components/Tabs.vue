@@ -15,7 +15,7 @@
         <div
           v-if="variant === 'segmented' && activeTab"
           aria-hidden="true"
-          class="absolute top-1 bottom-1 rounded-lg bg-white shadow-sm transition-all duration-300 ease-in-out motion-reduce:transition-none dark:bg-gray-700"
+          class="absolute top-1 bottom-1 rounded-lg bg-tabs-segmented-indicator-light dark:bg-tabs-segmented-indicator-dark shadow-sm transition-all duration-300 ease-in-out motion-reduce:transition-none"
           :style="sliderStyle"
         ></div>
 
@@ -23,8 +23,10 @@
           v-if="variant !== 'segmented' && indicatorBounds"
           :data-tabs-indicator="variant"
           aria-hidden="true"
-          class="pointer-events-none absolute left-0 top-0 bg-primary-600 transition-all duration-300 ease-in-out motion-reduce:transition-none"
-          :class="variant === 'pills' ? 'pill-indicator rounded-xl' : 'rounded-full dark:bg-primary-400'"
+          class="pointer-events-none absolute left-0 top-0 transition-all duration-300 ease-in-out motion-reduce:transition-none"
+          :class="variant === 'pills'
+            ? 'bg-tabs-pills-active-bg-light dark:bg-tabs-pills-active-bg-dark pill-indicator rounded-xl'
+            : 'bg-tabs-underline-indicator-light dark:bg-tabs-underline-indicator-dark rounded-full'"
           :style="measuredIndicatorStyle"
         ></div>
 
@@ -40,7 +42,7 @@
           :aria-controls="`${componentId}-panel-${index}`"
           :disabled="tab.disabled"
           :tabindex="index === focusableTabIndex && !tab.disabled ? 0 : -1"
-          class="relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 motion-reduce:transition-none dark:focus-visible:ring-offset-gray-950"
+          class="relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tabs-focus-light focus-visible:ring-offset-2 focus-visible:ring-offset-tabs-focus-offset-light dark:focus-visible:ring-tabs-focus-dark dark:focus-visible:ring-offset-tabs-focus-offset-dark motion-reduce:transition-none"
           :class="[tabButtonClasses, tabStateClasses(tab, index)]"
           @click="selectTab(index)"
           @keydown="handleKeydown($event, index)"
@@ -75,7 +77,7 @@
             :active-tab-index="activeTabIndex"
           >
             <!-- Default content if no slot is provided -->
-            <div class="text-gray-500 dark:text-gray-400 text-center py-8">
+            <div class="text-tabs-empty-text-light dark:text-tabs-empty-text-dark text-center py-8">
               No content available for this tab
             </div>
           </slot>
@@ -114,7 +116,7 @@ const tabButtons = ref<HTMLButtonElement[]>([]);
 const indicatorBounds = ref<{ left: number; top: number; width: number; height: number } | null>(null);
 
 const tabListClasses = computed(() => ({
-  segmented: 'w-full space-x-2 rounded-lg bg-gray-200 px-3 py-2 dark:bg-gray-800',
+  segmented: 'w-full space-x-2 rounded-lg bg-tabs-segmented-bg-light px-3 py-2 dark:bg-tabs-segmented-bg-dark',
   pills: 'pill-tab-list flex-wrap items-center gap-2',
   underline: 'w-full min-w-max items-center gap-2 border-b border-muted',
 })[props.variant]);
@@ -153,16 +155,16 @@ function tabStateClasses(tab: Tab, index: number) {
       ? 'border-primary-active'
       : 'border-transparent'
     : '';
-  if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-gray-400 dark:text-gray-600'];
+  if (tab.disabled) return [underlineBorder, 'cursor-not-allowed text-tabs-disabled-light dark:text-tabs-disabled-dark'];
   if (props.variant === 'underline') return [underlineBorder, selected
-    ? 'cursor-pointer text-primary-600 dark:text-primary-400'
-    : 'cursor-pointer text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white'];
+    ? 'cursor-pointer text-tabs-underline-active-text-light dark:text-tabs-underline-active-text-dark'
+    : 'cursor-pointer text-tabs-underline-inactive-text-light hover:bg-tabs-underline-hover-bg-light hover:text-tabs-underline-hover-text-light dark:text-tabs-underline-inactive-text-dark dark:hover:bg-tabs-underline-hover-bg-dark dark:hover:text-tabs-underline-hover-text-dark'];
   if (props.variant === 'pills') return selected
-    ? ['cursor-pointer text-white', !indicatorBounds.value && 'bg-primary-600 hover:bg-primary-700']
-    : 'cursor-pointer text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white';
+    ? ['cursor-pointer text-tabs-pills-active-text-light dark:text-tabs-pills-active-text-dark', !indicatorBounds.value && 'bg-tabs-pills-active-bg-light hover:bg-tabs-pills-active-bg-hover-light dark:bg-tabs-pills-active-bg-dark dark:hover:bg-tabs-pills-active-bg-hover-dark']
+    : 'cursor-pointer text-tabs-pills-inactive-text-light hover:bg-tabs-pills-inactive-hover-bg-light hover:text-tabs-pills-inactive-hover-text-light dark:text-tabs-pills-inactive-text-dark dark:hover:bg-tabs-pills-inactive-hover-bg-dark dark:hover:text-tabs-pills-inactive-hover-text-dark';
   return selected
-    ? 'cursor-pointer text-gray-900 dark:text-white'
-    : 'cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300';
+    ? 'cursor-pointer text-tabs-segmented-active-text-light dark:text-tabs-segmented-active-text-dark'
+    : 'cursor-pointer text-tabs-segmented-inactive-text-light hover:text-tabs-segmented-inactive-hover-text-light dark:text-tabs-segmented-inactive-text-dark dark:hover:text-tabs-segmented-inactive-hover-text-dark';
 }
 
 function updateMeasuredIndicator() {
@@ -242,7 +244,11 @@ function handleKeydown(event: KeyboardEvent, index: number) {
 
 <style scoped>
 .pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
-  background-color: var(--ds-color-primary-700);
+  background-color: var(--ds-color-tabs-pills-active-bg-hover-light);
+}
+
+:global(.dark) .pill-tab-list:has([role="tab"][aria-selected="true"]:hover) .pill-indicator {
+  background-color: var(--ds-color-tabs-pills-active-bg-hover-dark);
 }
 
 /* Tab content transition animations */

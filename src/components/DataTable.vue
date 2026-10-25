@@ -61,11 +61,11 @@
         />
 
         <!-- Table Body - Normal State -->
-        <tbody v-else class="bg-white dark:bg-gray-800/20 divide-y divide-default">
+        <tbody v-else class="bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default">
           <tr
             v-for="(row, rowIndex) in tableData"
             :key="rowIndex"
-            class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200 cursor-pointer"
+            class="hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200 cursor-pointer"
             @click="handleRowClick(row)"
           >
             <td
@@ -88,7 +88,7 @@
                     : column.width
                   : 'none',
               }"
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 overflow-hidden text-ellipsis tabular-nums"
+              class="px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis tabular-nums"
             >
               <!-- Dynamic Slot -->
               <slot
@@ -113,7 +113,7 @@
             <td
               v-if="hasActionsSlot"
               style="width: 120px; min-width: 120px; max-width: 120px"
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300"
+              class="px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark"
             >
               <slot name="actions" :row="row" />
             </td>
@@ -129,7 +129,7 @@
         <div
           v-for="n in 5"
           :key="n"
-          class="bg-gray-50 dark:bg-gray-800/20 rounded-lg p-4 animate-pulse"
+          class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 animate-pulse"
         >
           <div class="space-y-3">
             <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
@@ -144,7 +144,7 @@
         v-else
         v-for="(row, rowIndex) in tableData"
         :key="rowIndex"
-        class="bg-white dark:bg-gray-800/20 rounded-lg p-4 border border-default cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200"
+        class="bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 border border-default cursor-pointer hover:bg-table-body-hover-bg-light dark:hover:bg-table-body-hover-bg-dark transition-colors duration-200"
         @click="handleRowClick(row)"
       >
         <div class="space-y-3">
@@ -160,11 +160,11 @@
             ]"
           >
             <span
-              class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider w-1/3"
+              class="text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider w-1/3"
             >
               {{ column.label }}
             </span>
-            <div class="text-sm text-gray-900 dark:text-gray-300 w-2/3 text-right tabular-nums">
+            <div class="text-sm text-table-body-text-light dark:text-table-body-text-dark w-2/3 text-right tabular-nums">
               <!-- Dynamic Slot -->
               <slot
                 v-if="column.slot"
@@ -191,7 +191,7 @@
             class="flex justify-between items-center pt-3 border-t border-default"
           >
             <span
-              class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+              class="text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider"
             >
               {{ actionsLabel || "Actions" }}
             </span>
@@ -216,16 +216,20 @@
       </BaseButton>
     </div>
 
-    <ResultCount
-      :internal-pagination-server="resultCountPagination"
-      :total-items="tableData.length"
-    />
+    <div
+      class="mt-4 bg-table-footer-bg-light text-table-footer-text-light dark:bg-table-footer-bg-dark dark:text-table-footer-text-dark"
+    >
+      <ResultCount
+        :internal-pagination-server="resultCountPagination"
+        :total-items="tableData.length"
+      />
 
-    <TablePagination
-      v-if="!isLocalData"
-      :internal-pagination-server="internalPaginationServer"
-      @page-change="goToPage"
-    />
+      <TablePagination
+        v-if="!isLocalData"
+        :internal-pagination-server="internalPaginationServer"
+        @page-change="goToPage"
+      />
+    </div>
   </div>
 </template>
 

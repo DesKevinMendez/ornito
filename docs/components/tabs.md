@@ -90,6 +90,36 @@ tabs with icons. The underline stays aligned when labels or the container resize
 Underline tabs remain on one row and scroll horizontally on narrow containers.
 The same `v-model`, events, slots, disabled states and keyboard navigation apply.
 
+## CSS color variants
+
+Each visual variant has runtime CSS color tokens for light and dark mode. The
+defaults match the existing component colors, so consumers can override only
+the states they need:
+
+```css
+:root {
+  --ds-color-tabs-segmented-bg-light: #f1f5f9;
+  --ds-color-tabs-pills-active-bg-light: #ea580c;
+  --ds-color-tabs-underline-indicator-light: #ea580c;
+}
+
+.dark {
+  --ds-color-tabs-segmented-bg-dark: #0f172a;
+  --ds-color-tabs-pills-active-bg-dark: #f97316;
+  --ds-color-tabs-underline-indicator-dark: #fb923c;
+}
+```
+
+Token groups:
+
+- `--ds-color-tabs-segmented-{bg,indicator,active-text,inactive-text,inactive-hover-text}-{light|dark}`
+- `--ds-color-tabs-pills-{active-bg,active-bg-hover,active-text,inactive-text,inactive-hover-bg,inactive-hover-text}-{light|dark}`
+- `--ds-color-tabs-underline-{active-text,inactive-text,hover-bg,hover-text,indicator}-{light|dark}`
+- `--ds-color-tabs-{disabled,focus,focus-offset,empty-text}-{light|dark}` for shared states.
+
+These control list surfaces, active indicators, labels, hover states, disabled
+labels and keyboard focus colors.
+
 ## Keyboard and accessibility
 
 Tab lists, tabs and panels have linked ARIA roles and unique IDs per instance.
