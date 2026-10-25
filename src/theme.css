@@ -9,7 +9,10 @@
 @import './tokens.css';
 
 @theme inline {
-    /* Primary - indigo */
+    /* Shared typography */
+    --font-sans: var(--ds-font-family);
+
+    /* Primary - Tailwind indigo defaults */
     --color-primary-50: var(--ds-color-primary-50);
     --color-primary-100: var(--ds-color-primary-100);
     --color-primary-200: var(--ds-color-primary-200);
@@ -22,7 +25,7 @@
     --color-primary-900: var(--ds-color-primary-900);
     --color-primary-950: var(--ds-color-primary-950);
 
-    /* Secondary - sky */
+    /* Secondary defaults to informative */
     --color-secondary-50: var(--ds-color-secondary-50);
     --color-secondary-100: var(--ds-color-secondary-100);
     --color-secondary-200: var(--ds-color-secondary-200);
@@ -35,7 +38,7 @@
     --color-secondary-900: var(--ds-color-secondary-900);
     --color-secondary-950: var(--ds-color-secondary-950);
 
-    /* Tertiary - violet */
+    /* Tertiary - Tailwind violet defaults */
     --color-tertiary-50: var(--ds-color-tertiary-50);
     --color-tertiary-100: var(--ds-color-tertiary-100);
     --color-tertiary-200: var(--ds-color-tertiary-200);
@@ -48,7 +51,20 @@
     --color-tertiary-900: var(--ds-color-tertiary-900);
     --color-tertiary-950: var(--ds-color-tertiary-950);
 
-    /* Semantic status - success (emerald) */
+    /* Informative status (sky) */
+    --color-informative-50: var(--ds-color-informative-50);
+    --color-informative-100: var(--ds-color-informative-100);
+    --color-informative-200: var(--ds-color-informative-200);
+    --color-informative-300: var(--ds-color-informative-300);
+    --color-informative-400: var(--ds-color-informative-400);
+    --color-informative-500: var(--ds-color-informative-500);
+    --color-informative-600: var(--ds-color-informative-600);
+    --color-informative-700: var(--ds-color-informative-700);
+    --color-informative-800: var(--ds-color-informative-800);
+    --color-informative-900: var(--ds-color-informative-900);
+    --color-informative-950: var(--ds-color-informative-950);
+
+    /* Success - Tailwind emerald defaults */
     --color-success-50: var(--ds-color-success-50);
     --color-success-100: var(--ds-color-success-100);
     --color-success-200: var(--ds-color-success-200);
@@ -56,9 +72,10 @@
     --color-success-500: var(--ds-color-success-500);
     --color-success-600: var(--ds-color-success-600);
     --color-success-700: var(--ds-color-success-700);
+    --color-success-800: var(--ds-color-success-800);
     --color-success-900: var(--ds-color-success-900);
 
-    /* Semantic status - warning (amber) */
+    /* Warning - Tailwind amber defaults */
     --color-warning-50: var(--ds-color-warning-50);
     --color-warning-100: var(--ds-color-warning-100);
     --color-warning-200: var(--ds-color-warning-200);
@@ -66,18 +83,647 @@
     --color-warning-500: var(--ds-color-warning-500);
     --color-warning-600: var(--ds-color-warning-600);
     --color-warning-700: var(--ds-color-warning-700);
+    --color-warning-800: var(--ds-color-warning-800);
     --color-warning-900: var(--ds-color-warning-900);
 
-    /* Semantic status - danger (red) */
-    --color-danger-50: var(--ds-color-danger-50);
-    --color-danger-100: var(--ds-color-danger-100);
-    --color-danger-200: var(--ds-color-danger-200);
-    --color-danger-400: var(--ds-color-danger-400);
-    --color-danger-500: var(--ds-color-danger-500);
-    --color-danger-600: var(--ds-color-danger-600);
-    --color-danger-700: var(--ds-color-danger-700);
-    --color-danger-900: var(--ds-color-danger-900);
+    /* Error palette (red); danger remains a Tailwind alias for existing components */
+    --color-error-50: var(--ds-color-error-50);
+    --color-error-100: var(--ds-color-error-100);
+    --color-error-200: var(--ds-color-error-200);
+    --color-error-400: var(--ds-color-error-400);
+    --color-error-500: var(--ds-color-error-500);
+    --color-error-600: var(--ds-color-error-600);
+    --color-error-700: var(--ds-color-error-700);
+    --color-error-800: var(--ds-color-error-800);
+    --color-error-900: var(--ds-color-error-900);
+
+    --color-danger-50: var(--ds-color-error-50);
+    --color-danger-100: var(--ds-color-error-100);
+    --color-danger-200: var(--ds-color-error-200);
+    --color-danger-400: var(--ds-color-error-400);
+    --color-danger-500: var(--ds-color-error-500);
+    --color-danger-600: var(--ds-color-error-600);
+    --color-danger-700: var(--ds-color-error-700);
+    --color-danger-800: var(--ds-color-error-800);
+    --color-danger-900: var(--ds-color-error-900);
 
     /* Utility brand color */
     --color-whatsapp: var(--ds-color-whatsapp);
+
+    /* Semantic borders */
+    --color-default-light: var(--ds-color-border-default-light);
+    --color-default-dark: var(--ds-color-border-default-dark);
+    --color-input-light: var(--ds-color-border-input-light);
+    --color-input-dark: var(--ds-color-border-input-dark);
+    --color-muted-light: var(--ds-color-border-muted-light);
+    --color-muted-dark: var(--ds-color-border-muted-dark);
+    --color-strong-light: var(--ds-color-border-strong-light);
+    --color-strong-dark: var(--ds-color-border-strong-dark);
+    --color-hover-light: var(--ds-color-border-hover-light);
+    --color-hover-dark: var(--ds-color-border-hover-dark);
+    --color-tooltip-light: var(--ds-color-border-tooltip-light);
+    --color-tooltip-dark: var(--ds-color-border-tooltip-dark);
+    --color-card-light: var(--ds-color-border-card-light);
+    --color-card-dark: var(--ds-color-border-card-dark);
+    --color-divider-light: var(--ds-color-border-divider-light);
+    --color-divider-dark: var(--ds-color-border-divider-dark);
+    --color-avatar-light: var(--ds-color-border-avatar-light);
+    --color-avatar-dark: var(--ds-color-border-avatar-dark);
+
+    --color-primary-light: var(--ds-color-border-primary-light);
+    --color-primary-dark: var(--ds-color-border-primary-dark);
+    --color-primary-active-light: var(--ds-color-border-primary-active-light);
+    --color-primary-active-dark: var(--ds-color-border-primary-active-dark);
+    --color-primary-subtle-light: var(--ds-color-border-primary-subtle-light);
+    --color-primary-subtle-dark: var(--ds-color-border-primary-subtle-dark);
+    --color-secondary-light: var(--ds-color-border-secondary-light);
+    --color-secondary-dark: var(--ds-color-border-secondary-dark);
+    --color-secondary-subtle-light: var(--ds-color-border-secondary-subtle-light);
+    --color-secondary-subtle-dark: var(--ds-color-border-secondary-subtle-dark);
+    --color-success-light: var(--ds-color-border-success-light);
+    --color-success-dark: var(--ds-color-border-success-dark);
+    --color-success-subtle-light: var(--ds-color-border-success-subtle-light);
+    --color-success-subtle-dark: var(--ds-color-border-success-subtle-dark);
+    --color-success-muted-light: var(--ds-color-border-success-muted-light);
+    --color-success-muted-dark: var(--ds-color-border-success-muted-dark);
+    --color-warning-light: var(--ds-color-border-warning-light);
+    --color-warning-dark: var(--ds-color-border-warning-dark);
+    --color-warning-subtle-light: var(--ds-color-border-warning-subtle-light);
+    --color-warning-subtle-dark: var(--ds-color-border-warning-subtle-dark);
+    --color-warning-muted-light: var(--ds-color-border-warning-muted-light);
+    --color-warning-muted-dark: var(--ds-color-border-warning-muted-dark);
+    --color-danger-light: var(--ds-color-border-danger-light);
+    --color-danger-dark: var(--ds-color-border-danger-dark);
+    --color-danger-emphasis-light: var(--ds-color-border-danger-emphasis-light);
+    --color-danger-emphasis-dark: var(--ds-color-border-danger-emphasis-dark);
+    --color-danger-subtle-light: var(--ds-color-border-danger-subtle-light);
+    --color-danger-subtle-dark: var(--ds-color-border-danger-subtle-dark);
+    --color-danger-muted-light: var(--ds-color-border-danger-muted-light);
+    --color-danger-muted-dark: var(--ds-color-border-danger-muted-dark);
+    --color-pink-light: var(--ds-color-border-pink-light);
+    --color-pink-dark: var(--ds-color-border-pink-dark);
+
+    /* Sidebar */
+    --color-sidebar-bg-light: var(--ds-color-sidebar-bg-light);
+    --color-sidebar-bg-dark: var(--ds-color-sidebar-bg-dark);
+    --color-sidebar-title-text-light: var(--ds-color-sidebar-title-text-light);
+    --color-sidebar-title-text-dark: var(--ds-color-sidebar-title-text-dark);
+    --color-sidebar-subtitle-text-light: var(--ds-color-sidebar-subtitle-text-light);
+    --color-sidebar-subtitle-text-dark: var(--ds-color-sidebar-subtitle-text-dark);
+    --color-sidebar-version-text-light: var(--ds-color-sidebar-version-text-light);
+    --color-sidebar-version-text-dark: var(--ds-color-sidebar-version-text-dark);
+    --color-sidebar-collapse-bg-light: var(--ds-color-sidebar-collapse-bg-light);
+    --color-sidebar-collapse-bg-dark: var(--ds-color-sidebar-collapse-bg-dark);
+    --color-sidebar-collapse-bg-hover-light: var(--ds-color-sidebar-collapse-bg-hover-light);
+    --color-sidebar-collapse-bg-hover-dark: var(--ds-color-sidebar-collapse-bg-hover-dark);
+    --color-sidebar-collapse-icon-text-light: var(--ds-color-sidebar-collapse-icon-text-light);
+    --color-sidebar-collapse-icon-text-dark: var(--ds-color-sidebar-collapse-icon-text-dark);
+    --color-sidebar-theme-toggle-bg-light: var(--ds-color-sidebar-theme-toggle-bg-light);
+    --color-sidebar-theme-toggle-bg-dark: var(--ds-color-sidebar-theme-toggle-bg-dark);
+    --color-sidebar-theme-toggle-bg-hover-light: var(--ds-color-sidebar-theme-toggle-bg-hover-light);
+    --color-sidebar-theme-toggle-bg-hover-dark: var(--ds-color-sidebar-theme-toggle-bg-hover-dark);
+    --color-sidebar-theme-toggle-content-text-light: var(--ds-color-sidebar-theme-toggle-content-text-light);
+    --color-sidebar-theme-toggle-content-text-dark: var(--ds-color-sidebar-theme-toggle-content-text-dark);
+    --color-sidebar-tab-bg-active-light: var(--ds-color-sidebar-tab-bg-active-light);
+    --color-sidebar-tab-bg-active-dark: var(--ds-color-sidebar-tab-bg-active-dark);
+    --color-sidebar-tab-text-active-light: var(--ds-color-sidebar-tab-text-active-light);
+    --color-sidebar-tab-text-active-dark: var(--ds-color-sidebar-tab-text-active-dark);
+    --color-sidebar-tab-text-inactive-light: var(--ds-color-sidebar-tab-text-inactive-light);
+    --color-sidebar-tab-text-inactive-dark: var(--ds-color-sidebar-tab-text-inactive-dark);
+    --color-sidebar-tab-bg-hover-light: var(--ds-color-sidebar-tab-bg-hover-light);
+    --color-sidebar-tab-bg-hover-dark: var(--ds-color-sidebar-tab-bg-hover-dark);
+    --color-sidebar-tab-icon-text-light: var(--ds-color-sidebar-tab-icon-text-light);
+    --color-sidebar-tab-icon-text-dark: var(--ds-color-sidebar-tab-icon-text-dark);
+    --color-sidebar-tab-icon-text-hover-light: var(--ds-color-sidebar-tab-icon-text-hover-light);
+    --color-sidebar-tab-icon-text-hover-dark: var(--ds-color-sidebar-tab-icon-text-hover-dark);
+    --color-sidebar-tab-group-text-active-light: var(--ds-color-sidebar-tab-group-text-active-light);
+    --color-sidebar-tab-group-text-active-dark: var(--ds-color-sidebar-tab-group-text-active-dark);
+    --color-sidebar-tab-badge-bg-light: var(--ds-color-sidebar-tab-badge-bg-light);
+    --color-sidebar-tab-badge-bg-dark: var(--ds-color-sidebar-tab-badge-bg-dark);
+    --color-sidebar-tab-badge-text-light: var(--ds-color-sidebar-tab-badge-text-light);
+    --color-sidebar-tab-badge-text-dark: var(--ds-color-sidebar-tab-badge-text-dark);
+    --color-sidebar-tab-badge-bg-active-light: var(--ds-color-sidebar-tab-badge-bg-active-light);
+    --color-sidebar-tab-badge-bg-active-dark: var(--ds-color-sidebar-tab-badge-bg-active-dark);
+
+    /* Tabs */
+    --color-tabs-segmented-bg-light: var(--ds-color-tabs-segmented-bg-light);
+    --color-tabs-segmented-bg-dark: var(--ds-color-tabs-segmented-bg-dark);
+    --color-tabs-segmented-indicator-bg-light: var(--ds-color-tabs-segmented-indicator-bg-light);
+    --color-tabs-segmented-indicator-bg-dark: var(--ds-color-tabs-segmented-indicator-bg-dark);
+    --color-tabs-segmented-text-active-light: var(--ds-color-tabs-segmented-text-active-light);
+    --color-tabs-segmented-text-active-dark: var(--ds-color-tabs-segmented-text-active-dark);
+    --color-tabs-segmented-text-inactive-light: var(--ds-color-tabs-segmented-text-inactive-light);
+    --color-tabs-segmented-text-inactive-dark: var(--ds-color-tabs-segmented-text-inactive-dark);
+    --color-tabs-segmented-text-inactive-hover-light: var(--ds-color-tabs-segmented-text-inactive-hover-light);
+    --color-tabs-segmented-text-inactive-hover-dark: var(--ds-color-tabs-segmented-text-inactive-hover-dark);
+    --color-tabs-pills-bg-active-light: var(--ds-color-tabs-pills-bg-active-light);
+    --color-tabs-pills-bg-active-dark: var(--ds-color-tabs-pills-bg-active-dark);
+    --color-tabs-pills-bg-active-hover-light: var(--ds-color-tabs-pills-bg-active-hover-light);
+    --color-tabs-pills-bg-active-hover-dark: var(--ds-color-tabs-pills-bg-active-hover-dark);
+    --color-tabs-pills-text-active-light: var(--ds-color-tabs-pills-text-active-light);
+    --color-tabs-pills-text-active-dark: var(--ds-color-tabs-pills-text-active-dark);
+    --color-tabs-pills-text-inactive-light: var(--ds-color-tabs-pills-text-inactive-light);
+    --color-tabs-pills-text-inactive-dark: var(--ds-color-tabs-pills-text-inactive-dark);
+    --color-tabs-pills-bg-inactive-hover-light: var(--ds-color-tabs-pills-bg-inactive-hover-light);
+    --color-tabs-pills-bg-inactive-hover-dark: var(--ds-color-tabs-pills-bg-inactive-hover-dark);
+    --color-tabs-pills-text-inactive-hover-light: var(--ds-color-tabs-pills-text-inactive-hover-light);
+    --color-tabs-pills-text-inactive-hover-dark: var(--ds-color-tabs-pills-text-inactive-hover-dark);
+    --color-tabs-underline-text-active-light: var(--ds-color-tabs-underline-text-active-light);
+    --color-tabs-underline-text-active-dark: var(--ds-color-tabs-underline-text-active-dark);
+    --color-tabs-underline-text-inactive-light: var(--ds-color-tabs-underline-text-inactive-light);
+    --color-tabs-underline-text-inactive-dark: var(--ds-color-tabs-underline-text-inactive-dark);
+    --color-tabs-underline-bg-hover-light: var(--ds-color-tabs-underline-bg-hover-light);
+    --color-tabs-underline-bg-hover-dark: var(--ds-color-tabs-underline-bg-hover-dark);
+    --color-tabs-underline-text-hover-light: var(--ds-color-tabs-underline-text-hover-light);
+    --color-tabs-underline-text-hover-dark: var(--ds-color-tabs-underline-text-hover-dark);
+    --color-tabs-underline-indicator-bg-light: var(--ds-color-tabs-underline-indicator-bg-light);
+    --color-tabs-underline-indicator-bg-dark: var(--ds-color-tabs-underline-indicator-bg-dark);
+    --color-tabs-text-disabled-light: var(--ds-color-tabs-text-disabled-light);
+    --color-tabs-text-disabled-dark: var(--ds-color-tabs-text-disabled-dark);
+    --color-tabs-ring-focus-light: var(--ds-color-tabs-ring-focus-light);
+    --color-tabs-ring-focus-dark: var(--ds-color-tabs-ring-focus-dark);
+    --color-tabs-ring-offset-focus-light: var(--ds-color-tabs-ring-offset-focus-light);
+    --color-tabs-ring-offset-focus-dark: var(--ds-color-tabs-ring-offset-focus-dark);
+    --color-tabs-empty-text-light: var(--ds-color-tabs-empty-text-light);
+    --color-tabs-empty-text-dark: var(--ds-color-tabs-empty-text-dark);
+
+    /* DataTable */
+    --color-table-header-bg-light: var(--ds-color-table-header-bg-light);
+    --color-table-header-bg-dark: var(--ds-color-table-header-bg-dark);
+    --color-table-header-text-light: var(--ds-color-table-header-text-light);
+    --color-table-header-text-dark: var(--ds-color-table-header-text-dark);
+    --color-table-body-bg-light: var(--ds-color-table-body-bg-light);
+    --color-table-body-bg-dark: var(--ds-color-table-body-bg-dark);
+    --color-table-body-text-light: var(--ds-color-table-body-text-light);
+    --color-table-body-text-dark: var(--ds-color-table-body-text-dark);
+    --color-table-body-bg-hover-light: var(--ds-color-table-body-bg-hover-light);
+    --color-table-body-bg-hover-dark: var(--ds-color-table-body-bg-hover-dark);
+    --color-table-footer-bg-light: var(--ds-color-table-footer-bg-light);
+    --color-table-footer-bg-dark: var(--ds-color-table-footer-bg-dark);
+    --color-table-footer-text-light: var(--ds-color-table-footer-text-light);
+    --color-table-footer-text-dark: var(--ds-color-table-footer-text-dark);
+
+    /* Dropdown */
+    --color-dropdown-trigger-bg-light: var(--ds-color-dropdown-trigger-bg-light);
+    --color-dropdown-trigger-bg-dark: var(--ds-color-dropdown-trigger-bg-dark);
+    --color-dropdown-trigger-text-light: var(--ds-color-dropdown-trigger-text-light);
+    --color-dropdown-trigger-text-dark: var(--ds-color-dropdown-trigger-text-dark);
+    --color-dropdown-trigger-border-light: var(--ds-color-dropdown-trigger-border-light);
+    --color-dropdown-trigger-border-dark: var(--ds-color-dropdown-trigger-border-dark);
+    --color-dropdown-trigger-bg-hover-light: var(--ds-color-dropdown-trigger-bg-hover-light);
+    --color-dropdown-trigger-bg-hover-dark: var(--ds-color-dropdown-trigger-bg-hover-dark);
+    --color-dropdown-trigger-bg-active-light: var(--ds-color-dropdown-trigger-bg-active-light);
+    --color-dropdown-trigger-bg-active-dark: var(--ds-color-dropdown-trigger-bg-active-dark);
+    --color-dropdown-panel-bg-light: var(--ds-color-dropdown-panel-bg-light);
+    --color-dropdown-panel-bg-dark: var(--ds-color-dropdown-panel-bg-dark);
+    --color-dropdown-panel-border-light: var(--ds-color-dropdown-panel-border-light);
+    --color-dropdown-panel-border-dark: var(--ds-color-dropdown-panel-border-dark);
+    --color-dropdown-item-text-light: var(--ds-color-dropdown-item-text-light);
+    --color-dropdown-item-text-dark: var(--ds-color-dropdown-item-text-dark);
+    --color-dropdown-item-bg-hover-light: var(--ds-color-dropdown-item-bg-hover-light);
+    --color-dropdown-item-bg-hover-dark: var(--ds-color-dropdown-item-bg-hover-dark);
+    --color-dropdown-item-text-hover-light: var(--ds-color-dropdown-item-text-hover-light);
+    --color-dropdown-item-text-hover-dark: var(--ds-color-dropdown-item-text-hover-dark);
+    --color-dropdown-item-bg-active-light: var(--ds-color-dropdown-item-bg-active-light);
+    --color-dropdown-item-bg-active-dark: var(--ds-color-dropdown-item-bg-active-dark);
+    --color-dropdown-item-text-active-light: var(--ds-color-dropdown-item-text-active-light);
+    --color-dropdown-item-text-active-dark: var(--ds-color-dropdown-item-text-active-dark);
+
+    /* Form controls */
+    --color-form-label-text-light: var(--ds-color-form-label-text-light);
+    --color-form-label-text-dark: var(--ds-color-form-label-text-dark);
+    --color-form-control-bg-light: var(--ds-color-form-control-bg-light);
+    --color-form-control-bg-dark: var(--ds-color-form-control-bg-dark);
+    --color-form-control-text-light: var(--ds-color-form-control-text-light);
+    --color-form-control-text-dark: var(--ds-color-form-control-text-dark);
+    --color-form-control-placeholder-text-light: var(--ds-color-form-control-placeholder-text-light);
+    --color-form-control-placeholder-text-dark: var(--ds-color-form-control-placeholder-text-dark);
+    --color-form-control-border-focus-light: var(--ds-color-form-control-border-focus-light);
+    --color-form-control-border-focus-dark: var(--ds-color-form-control-border-focus-dark);
+    --color-form-control-icon-text-light: var(--ds-color-form-control-icon-text-light);
+    --color-form-control-icon-text-dark: var(--ds-color-form-control-icon-text-dark);
+    --color-form-control-icon-text-hover-light: var(--ds-color-form-control-icon-text-hover-light);
+    --color-form-control-icon-text-hover-dark: var(--ds-color-form-control-icon-text-hover-dark);
+    --color-form-supporting-text-light: var(--ds-color-form-supporting-text-light);
+    --color-form-supporting-text-dark: var(--ds-color-form-supporting-text-dark);
+    --color-form-range-bound-text-light: var(--ds-color-form-range-bound-text-light);
+    --color-form-range-bound-text-dark: var(--ds-color-form-range-bound-text-dark);
+    --color-form-range-value-text-light: var(--ds-color-form-range-value-text-light);
+    --color-form-range-value-text-dark: var(--ds-color-form-range-value-text-dark);
+    --color-form-select-placeholder-bg-light: var(--ds-color-form-select-placeholder-bg-light);
+    --color-form-select-placeholder-bg-dark: var(--ds-color-form-select-placeholder-bg-dark);
+    --color-form-select-placeholder-text-light: var(--ds-color-form-select-placeholder-text-light);
+    --color-form-select-placeholder-text-dark: var(--ds-color-form-select-placeholder-text-dark);
+    --color-form-suggestion-panel-bg-light: var(--ds-color-form-suggestion-panel-bg-light);
+    --color-form-suggestion-panel-bg-dark: var(--ds-color-form-suggestion-panel-bg-dark);
+    --color-form-suggestion-bg-hover-light: var(--ds-color-form-suggestion-bg-hover-light);
+    --color-form-suggestion-bg-hover-dark: var(--ds-color-form-suggestion-bg-hover-dark);
+    --color-form-suggestion-icon-text-light: var(--ds-color-form-suggestion-icon-text-light);
+    --color-form-suggestion-icon-text-dark: var(--ds-color-form-suggestion-icon-text-dark);
+
+    /* SwitchInput */
+    --color-switch-input-label-text-light: var(--ds-color-switch-input-label-text-light);
+    --color-switch-input-label-text-dark: var(--ds-color-switch-input-label-text-dark);
+    --color-switch-input-track-bg-on-light: var(--ds-color-switch-input-track-bg-on-light);
+    --color-switch-input-track-bg-on-dark: var(--ds-color-switch-input-track-bg-on-dark);
+    --color-switch-input-track-bg-off-light: var(--ds-color-switch-input-track-bg-off-light);
+    --color-switch-input-track-bg-off-dark: var(--ds-color-switch-input-track-bg-off-dark);
+    --color-switch-input-thumb-bg-light: var(--ds-color-switch-input-thumb-bg-light);
+    --color-switch-input-thumb-bg-dark: var(--ds-color-switch-input-thumb-bg-dark);
+
+    /* Dashboard view header */
+    --color-view-header-title-text-light: var(--ds-color-view-header-title-text-light);
+    --color-view-header-title-text-dark: var(--ds-color-view-header-title-text-dark);
+    --color-view-header-subtitle-text-light: var(--ds-color-view-header-subtitle-text-light);
+    --color-view-header-subtitle-text-dark: var(--ds-color-view-header-subtitle-text-dark);
+
+    /* Card */
+    --color-card-bg-light: var(--ds-color-card-bg-light);
+    --color-card-bg-dark: var(--ds-color-card-bg-dark);
+    --color-card-title-text-light: var(--ds-color-card-title-text-light);
+    --color-card-title-text-dark: var(--ds-color-card-title-text-dark);
+    --color-card-subtitle-text-light: var(--ds-color-card-subtitle-text-light);
+    --color-card-subtitle-text-dark: var(--ds-color-card-subtitle-text-dark);
+
+    /* StatCard */
+    --color-stat-card-title-text-light: var(--ds-color-stat-card-title-text-light);
+    --color-stat-card-title-text-dark: var(--ds-color-stat-card-title-text-dark);
+    --color-stat-card-value-text-light: var(--ds-color-stat-card-value-text-light);
+    --color-stat-card-value-text-dark: var(--ds-color-stat-card-value-text-dark);
+    --color-stat-card-empty-text-light: var(--ds-color-stat-card-empty-text-light);
+    --color-stat-card-empty-text-dark: var(--ds-color-stat-card-empty-text-dark);
+    --color-stat-card-description-text-light: var(--ds-color-stat-card-description-text-light);
+    --color-stat-card-description-text-dark: var(--ds-color-stat-card-description-text-dark);
+    --color-stat-card-change-positive-text-light: var(--ds-color-stat-card-change-positive-text-light);
+    --color-stat-card-change-positive-text-dark: var(--ds-color-stat-card-change-positive-text-dark);
+    --color-stat-card-change-negative-text-light: var(--ds-color-stat-card-change-negative-text-light);
+    --color-stat-card-change-negative-text-dark: var(--ds-color-stat-card-change-negative-text-dark);
+    --color-stat-card-change-neutral-text-light: var(--ds-color-stat-card-change-neutral-text-light);
+    --color-stat-card-change-neutral-text-dark: var(--ds-color-stat-card-change-neutral-text-dark);
+    --color-stat-card-change-info-text-light: var(--ds-color-stat-card-change-info-text-light);
+    --color-stat-card-change-info-text-dark: var(--ds-color-stat-card-change-info-text-dark);
+    --color-stat-card-change-default-text-light: var(--ds-color-stat-card-change-default-text-light);
+    --color-stat-card-change-default-text-dark: var(--ds-color-stat-card-change-default-text-dark);
+
+    /* Navbar */
+    --color-navbar-bg-light: var(--ds-color-navbar-bg-light);
+    --color-navbar-bg-dark: var(--ds-color-navbar-bg-dark);
+    --color-navbar-mobile-menu-bg-light: var(--ds-color-navbar-mobile-menu-bg-light);
+    --color-navbar-mobile-menu-bg-dark: var(--ds-color-navbar-mobile-menu-bg-dark);
+    --color-navbar-mobile-menu-bg-hover-light: var(--ds-color-navbar-mobile-menu-bg-hover-light);
+    --color-navbar-mobile-menu-bg-hover-dark: var(--ds-color-navbar-mobile-menu-bg-hover-dark);
+    --color-navbar-mobile-menu-icon-text-light: var(--ds-color-navbar-mobile-menu-icon-text-light);
+    --color-navbar-mobile-menu-icon-text-dark: var(--ds-color-navbar-mobile-menu-icon-text-dark);
+
+    /* User profile dropdown */
+    --color-profile-notification-trigger-bg-light: var(--ds-color-profile-notification-trigger-bg-light);
+    --color-profile-notification-trigger-bg-dark: var(--ds-color-profile-notification-trigger-bg-dark);
+    --color-profile-notification-trigger-bg-hover-light: var(--ds-color-profile-notification-trigger-bg-hover-light);
+    --color-profile-notification-trigger-bg-hover-dark: var(--ds-color-profile-notification-trigger-bg-hover-dark);
+    --color-profile-notification-trigger-icon-text-light: var(--ds-color-profile-notification-trigger-icon-text-light);
+    --color-profile-notification-trigger-icon-text-dark: var(--ds-color-profile-notification-trigger-icon-text-dark);
+    --color-profile-panel-bg-light: var(--ds-color-profile-panel-bg-light);
+    --color-profile-panel-bg-dark: var(--ds-color-profile-panel-bg-dark);
+    --color-profile-notification-title-text-light: var(--ds-color-profile-notification-title-text-light);
+    --color-profile-notification-title-text-dark: var(--ds-color-profile-notification-title-text-dark);
+    --color-profile-avatar-bg-light: var(--ds-color-profile-avatar-bg-light);
+    --color-profile-avatar-bg-dark: var(--ds-color-profile-avatar-bg-dark);
+    --color-profile-avatar-text-light: var(--ds-color-profile-avatar-text-light);
+    --color-profile-avatar-text-dark: var(--ds-color-profile-avatar-text-dark);
+    --color-profile-name-text-light: var(--ds-color-profile-name-text-light);
+    --color-profile-name-text-dark: var(--ds-color-profile-name-text-dark);
+    --color-profile-role-text-light: var(--ds-color-profile-role-text-light);
+    --color-profile-role-text-dark: var(--ds-color-profile-role-text-dark);
+    --color-profile-chevron-text-light: var(--ds-color-profile-chevron-text-light);
+    --color-profile-chevron-text-dark: var(--ds-color-profile-chevron-text-dark);
+
+    --color-dropdown-menu-panel-bg-light: var(--ds-color-dropdown-menu-panel-bg-light);
+    --color-dropdown-menu-panel-bg-dark: var(--ds-color-dropdown-menu-panel-bg-dark);
+    --color-modal-scrim-bg-light: var(--ds-color-modal-scrim-bg-light);
+    --color-modal-scrim-bg-dark: var(--ds-color-modal-scrim-bg-dark);
+    --color-modal-panel-bg-light: var(--ds-color-modal-panel-bg-light);
+    --color-modal-panel-bg-dark: var(--ds-color-modal-panel-bg-dark);
+    --color-modal-title-text-light: var(--ds-color-modal-title-text-light);
+    --color-modal-title-text-dark: var(--ds-color-modal-title-text-dark);
+    --color-modal-subtitle-text-light: var(--ds-color-modal-subtitle-text-light);
+    --color-modal-subtitle-text-dark: var(--ds-color-modal-subtitle-text-dark);
+    --color-modal-close-text-light: var(--ds-color-modal-close-text-light);
+    --color-modal-close-text-dark: var(--ds-color-modal-close-text-dark);
+    --color-modal-close-text-hover-light: var(--ds-color-modal-close-text-hover-light);
+    --color-modal-close-text-hover-dark: var(--ds-color-modal-close-text-hover-dark);
+    --color-modal-close-ring-focus-light: var(--ds-color-modal-close-ring-focus-light);
+    --color-modal-close-ring-focus-dark: var(--ds-color-modal-close-ring-focus-dark);
+    --color-bottom-modal-scrim-bg-light: var(--ds-color-bottom-modal-scrim-bg-light);
+    --color-bottom-modal-scrim-bg-dark: var(--ds-color-bottom-modal-scrim-bg-dark);
+    --color-bottom-modal-panel-bg-light: var(--ds-color-bottom-modal-panel-bg-light);
+    --color-bottom-modal-panel-bg-dark: var(--ds-color-bottom-modal-panel-bg-dark);
+    --color-bottom-modal-text-light: var(--ds-color-bottom-modal-text-light);
+    --color-bottom-modal-text-dark: var(--ds-color-bottom-modal-text-dark);
+    --color-bottom-modal-title-text-light: var(--ds-color-bottom-modal-title-text-light);
+    --color-bottom-modal-title-text-dark: var(--ds-color-bottom-modal-title-text-dark);
+    --color-bottom-modal-subtitle-text-light: var(--ds-color-bottom-modal-subtitle-text-light);
+    --color-bottom-modal-subtitle-text-dark: var(--ds-color-bottom-modal-subtitle-text-dark);
+    --color-bottom-modal-close-text-light: var(--ds-color-bottom-modal-close-text-light);
+    --color-bottom-modal-close-text-dark: var(--ds-color-bottom-modal-close-text-dark);
+    --color-bottom-modal-close-bg-hover-light: var(--ds-color-bottom-modal-close-bg-hover-light);
+    --color-bottom-modal-close-bg-hover-dark: var(--ds-color-bottom-modal-close-bg-hover-dark);
+    --color-bottom-modal-close-text-hover-light: var(--ds-color-bottom-modal-close-text-hover-light);
+    --color-bottom-modal-close-text-hover-dark: var(--ds-color-bottom-modal-close-text-hover-dark);
+    --color-bottom-modal-close-ring-focus-light: var(--ds-color-bottom-modal-close-ring-focus-light);
+    --color-bottom-modal-close-ring-focus-dark: var(--ds-color-bottom-modal-close-ring-focus-dark);
+    --color-bottom-modal-divider-border-light: var(--ds-color-bottom-modal-divider-border-light);
+    --color-bottom-modal-divider-border-dark: var(--ds-color-bottom-modal-divider-border-dark);
+    --color-item-bg-light: var(--ds-color-item-bg-light);
+    --color-item-bg-dark: var(--ds-color-item-bg-dark);
+    --color-item-bg-hover-light: var(--ds-color-item-bg-hover-light);
+    --color-item-bg-hover-dark: var(--ds-color-item-bg-hover-dark);
+    --color-item-title-text-light: var(--ds-color-item-title-text-light);
+    --color-item-title-text-dark: var(--ds-color-item-title-text-dark);
+    --color-item-subtitle-text-light: var(--ds-color-item-subtitle-text-light);
+    --color-item-subtitle-text-dark: var(--ds-color-item-subtitle-text-dark);
+    --color-item-icon-text-light: var(--ds-color-item-icon-text-light);
+    --color-item-icon-text-dark: var(--ds-color-item-icon-text-dark);
+    --color-list-bg-light: var(--ds-color-list-bg-light);
+    --color-list-bg-dark: var(--ds-color-list-bg-dark);
+    --color-help-tooltip-trigger-bg-light: var(--ds-color-help-tooltip-trigger-bg-light);
+    --color-help-tooltip-trigger-bg-dark: var(--ds-color-help-tooltip-trigger-bg-dark);
+    --color-help-tooltip-trigger-text-light: var(--ds-color-help-tooltip-trigger-text-light);
+    --color-help-tooltip-trigger-text-dark: var(--ds-color-help-tooltip-trigger-text-dark);
+    --color-help-tooltip-panel-bg-light: var(--ds-color-help-tooltip-panel-bg-light);
+    --color-help-tooltip-panel-bg-dark: var(--ds-color-help-tooltip-panel-bg-dark);
+    --color-help-tooltip-panel-text-light: var(--ds-color-help-tooltip-panel-text-light);
+    --color-help-tooltip-panel-text-dark: var(--ds-color-help-tooltip-panel-text-dark);
+    --color-icon-button-gray-bg-light: var(--ds-color-icon-button-gray-bg-light);
+    --color-icon-button-gray-bg-dark: var(--ds-color-icon-button-gray-bg-dark);
+    --color-icon-button-gray-bg-hover-light: var(--ds-color-icon-button-gray-bg-hover-light);
+    --color-icon-button-gray-bg-hover-dark: var(--ds-color-icon-button-gray-bg-hover-dark);
+    --color-icon-button-gray-text-light: var(--ds-color-icon-button-gray-text-light);
+    --color-icon-button-gray-text-dark: var(--ds-color-icon-button-gray-text-dark);
+    --color-icon-button-gray-outline-border-light: var(--ds-color-icon-button-gray-outline-border-light);
+    --color-icon-button-gray-outline-border-dark: var(--ds-color-icon-button-gray-outline-border-dark);
+    --color-icon-button-gray-outline-text-light: var(--ds-color-icon-button-gray-outline-text-light);
+    --color-icon-button-gray-outline-text-dark: var(--ds-color-icon-button-gray-outline-text-dark);
+    --color-icon-button-gray-outline-bg-hover-light: var(--ds-color-icon-button-gray-outline-bg-hover-light);
+    --color-icon-button-gray-outline-bg-hover-dark: var(--ds-color-icon-button-gray-outline-bg-hover-dark);
+
+    --color-icon-button-primary-bg-light: var(--ds-color-icon-button-primary-bg-light);
+    --color-icon-button-primary-bg-dark: var(--ds-color-icon-button-primary-bg-dark);
+    --color-icon-button-primary-bg-hover-light: var(--ds-color-icon-button-primary-bg-hover-light);
+    --color-icon-button-primary-bg-hover-dark: var(--ds-color-icon-button-primary-bg-hover-dark);
+    --color-icon-button-primary-text-light: var(--ds-color-icon-button-primary-text-light);
+    --color-icon-button-primary-text-dark: var(--ds-color-icon-button-primary-text-dark);
+    --color-icon-button-primary-outline-border-light: var(--ds-color-icon-button-primary-outline-border-light);
+    --color-icon-button-primary-outline-border-dark: var(--ds-color-icon-button-primary-outline-border-dark);
+    --color-icon-button-primary-outline-text-light: var(--ds-color-icon-button-primary-outline-text-light);
+    --color-icon-button-primary-outline-text-dark: var(--ds-color-icon-button-primary-outline-text-dark);
+    --color-icon-button-primary-outline-bg-hover-light: var(--ds-color-icon-button-primary-outline-bg-hover-light);
+    --color-icon-button-primary-outline-bg-hover-dark: var(--ds-color-icon-button-primary-outline-bg-hover-dark);
+
+    --color-icon-button-secondary-bg-light: var(--ds-color-icon-button-secondary-bg-light);
+    --color-icon-button-secondary-bg-dark: var(--ds-color-icon-button-secondary-bg-dark);
+    --color-icon-button-secondary-bg-hover-light: var(--ds-color-icon-button-secondary-bg-hover-light);
+    --color-icon-button-secondary-bg-hover-dark: var(--ds-color-icon-button-secondary-bg-hover-dark);
+    --color-icon-button-secondary-text-light: var(--ds-color-icon-button-secondary-text-light);
+    --color-icon-button-secondary-text-dark: var(--ds-color-icon-button-secondary-text-dark);
+    --color-icon-button-secondary-outline-border-light: var(--ds-color-icon-button-secondary-outline-border-light);
+    --color-icon-button-secondary-outline-border-dark: var(--ds-color-icon-button-secondary-outline-border-dark);
+    --color-icon-button-secondary-outline-text-light: var(--ds-color-icon-button-secondary-outline-text-light);
+    --color-icon-button-secondary-outline-text-dark: var(--ds-color-icon-button-secondary-outline-text-dark);
+    --color-icon-button-secondary-outline-bg-hover-light: var(--ds-color-icon-button-secondary-outline-bg-hover-light);
+    --color-icon-button-secondary-outline-bg-hover-dark: var(--ds-color-icon-button-secondary-outline-bg-hover-dark);
+
+    --color-icon-button-success-bg-light: var(--ds-color-icon-button-success-bg-light);
+    --color-icon-button-success-bg-dark: var(--ds-color-icon-button-success-bg-dark);
+    --color-icon-button-success-bg-hover-light: var(--ds-color-icon-button-success-bg-hover-light);
+    --color-icon-button-success-bg-hover-dark: var(--ds-color-icon-button-success-bg-hover-dark);
+    --color-icon-button-success-text-light: var(--ds-color-icon-button-success-text-light);
+    --color-icon-button-success-text-dark: var(--ds-color-icon-button-success-text-dark);
+    --color-icon-button-success-outline-border-light: var(--ds-color-icon-button-success-outline-border-light);
+    --color-icon-button-success-outline-border-dark: var(--ds-color-icon-button-success-outline-border-dark);
+    --color-icon-button-success-outline-text-light: var(--ds-color-icon-button-success-outline-text-light);
+    --color-icon-button-success-outline-text-dark: var(--ds-color-icon-button-success-outline-text-dark);
+    --color-icon-button-success-outline-bg-hover-light: var(--ds-color-icon-button-success-outline-bg-hover-light);
+    --color-icon-button-success-outline-bg-hover-dark: var(--ds-color-icon-button-success-outline-bg-hover-dark);
+
+    --color-icon-button-danger-bg-light: var(--ds-color-icon-button-danger-bg-light);
+    --color-icon-button-danger-bg-dark: var(--ds-color-icon-button-danger-bg-dark);
+    --color-icon-button-danger-bg-hover-light: var(--ds-color-icon-button-danger-bg-hover-light);
+    --color-icon-button-danger-bg-hover-dark: var(--ds-color-icon-button-danger-bg-hover-dark);
+    --color-icon-button-danger-text-light: var(--ds-color-icon-button-danger-text-light);
+    --color-icon-button-danger-text-dark: var(--ds-color-icon-button-danger-text-dark);
+    --color-icon-button-danger-outline-border-light: var(--ds-color-icon-button-danger-outline-border-light);
+    --color-icon-button-danger-outline-border-dark: var(--ds-color-icon-button-danger-outline-border-dark);
+    --color-icon-button-danger-outline-text-light: var(--ds-color-icon-button-danger-outline-text-light);
+    --color-icon-button-danger-outline-text-dark: var(--ds-color-icon-button-danger-outline-text-dark);
+    --color-icon-button-danger-outline-bg-hover-light: var(--ds-color-icon-button-danger-outline-bg-hover-light);
+    --color-icon-button-danger-outline-bg-hover-dark: var(--ds-color-icon-button-danger-outline-bg-hover-dark);
+
+    --color-icon-button-warning-bg-light: var(--ds-color-icon-button-warning-bg-light);
+    --color-icon-button-warning-bg-dark: var(--ds-color-icon-button-warning-bg-dark);
+    --color-icon-button-warning-bg-hover-light: var(--ds-color-icon-button-warning-bg-hover-light);
+    --color-icon-button-warning-bg-hover-dark: var(--ds-color-icon-button-warning-bg-hover-dark);
+    --color-icon-button-warning-text-light: var(--ds-color-icon-button-warning-text-light);
+    --color-icon-button-warning-text-dark: var(--ds-color-icon-button-warning-text-dark);
+    --color-icon-button-warning-outline-border-light: var(--ds-color-icon-button-warning-outline-border-light);
+    --color-icon-button-warning-outline-border-dark: var(--ds-color-icon-button-warning-outline-border-dark);
+    --color-icon-button-warning-outline-text-light: var(--ds-color-icon-button-warning-outline-text-light);
+    --color-icon-button-warning-outline-text-dark: var(--ds-color-icon-button-warning-outline-text-dark);
+    --color-icon-button-warning-outline-bg-hover-light: var(--ds-color-icon-button-warning-outline-bg-hover-light);
+    --color-icon-button-warning-outline-bg-hover-dark: var(--ds-color-icon-button-warning-outline-bg-hover-dark);
+
+    --color-icon-button-pink-bg-light: var(--ds-color-icon-button-pink-bg-light);
+    --color-icon-button-pink-bg-dark: var(--ds-color-icon-button-pink-bg-dark);
+    --color-icon-button-pink-bg-hover-light: var(--ds-color-icon-button-pink-bg-hover-light);
+    --color-icon-button-pink-bg-hover-dark: var(--ds-color-icon-button-pink-bg-hover-dark);
+    --color-icon-button-pink-text-light: var(--ds-color-icon-button-pink-text-light);
+    --color-icon-button-pink-text-dark: var(--ds-color-icon-button-pink-text-dark);
+    --color-icon-button-pink-outline-border-light: var(--ds-color-icon-button-pink-outline-border-light);
+    --color-icon-button-pink-outline-border-dark: var(--ds-color-icon-button-pink-outline-border-dark);
+    --color-icon-button-pink-outline-text-light: var(--ds-color-icon-button-pink-outline-text-light);
+    --color-icon-button-pink-outline-text-dark: var(--ds-color-icon-button-pink-outline-text-dark);
+    --color-icon-button-pink-outline-bg-hover-light: var(--ds-color-icon-button-pink-outline-bg-hover-light);
+    --color-icon-button-pink-outline-bg-hover-dark: var(--ds-color-icon-button-pink-outline-bg-hover-dark);
+    --color-card-pagination-summary-text-light: var(--ds-color-card-pagination-summary-text-light);
+    --color-card-pagination-summary-text-dark: var(--ds-color-card-pagination-summary-text-dark);
+    --color-card-pagination-page-text-light: var(--ds-color-card-pagination-page-text-light);
+    --color-card-pagination-page-text-dark: var(--ds-color-card-pagination-page-text-dark);
+    --color-card-pagination-button-bg-light: var(--ds-color-card-pagination-button-bg-light);
+    --color-card-pagination-button-bg-dark: var(--ds-color-card-pagination-button-bg-dark);
+    --color-card-pagination-button-bg-hover-light: var(--ds-color-card-pagination-button-bg-hover-light);
+    --color-card-pagination-button-bg-hover-dark: var(--ds-color-card-pagination-button-bg-hover-dark);
+    --color-card-pagination-button-text-light: var(--ds-color-card-pagination-button-text-light);
+    --color-card-pagination-button-text-dark: var(--ds-color-card-pagination-button-text-dark);
+    --color-table-skeleton-placeholder-bg-light: var(--ds-color-table-skeleton-placeholder-bg-light);
+    --color-table-skeleton-placeholder-bg-dark: var(--ds-color-table-skeleton-placeholder-bg-dark);
+    --color-table-card-label-text-light: var(--ds-color-table-card-label-text-light);
+    --color-table-card-label-text-dark: var(--ds-color-table-card-label-text-dark);
+    --color-table-card-skeleton-bg-light: var(--ds-color-table-card-skeleton-bg-light);
+    --color-table-card-skeleton-bg-dark: var(--ds-color-table-card-skeleton-bg-dark);
+    --color-breadcrumb-separator-text-light: var(--ds-color-breadcrumb-separator-text-light);
+    --color-breadcrumb-separator-text-dark: var(--ds-color-breadcrumb-separator-text-dark);
+    --color-breadcrumb-link-text-light: var(--ds-color-breadcrumb-link-text-light);
+    --color-breadcrumb-link-text-dark: var(--ds-color-breadcrumb-link-text-dark);
+    --color-breadcrumb-link-text-hover-light: var(--ds-color-breadcrumb-link-text-hover-light);
+    --color-breadcrumb-link-text-hover-dark: var(--ds-color-breadcrumb-link-text-hover-dark);
+    --color-breadcrumb-current-text-light: var(--ds-color-breadcrumb-current-text-light);
+    --color-breadcrumb-current-text-dark: var(--ds-color-breadcrumb-current-text-dark);
+    --color-breadcrumb-item-text-light: var(--ds-color-breadcrumb-item-text-light);
+    --color-breadcrumb-item-text-dark: var(--ds-color-breadcrumb-item-text-dark);
+    --color-info-item-label-text-light: var(--ds-color-info-item-label-text-light);
+    --color-info-item-label-text-dark: var(--ds-color-info-item-label-text-dark);
+    --color-info-item-value-text-light: var(--ds-color-info-item-value-text-light);
+    --color-info-item-value-text-dark: var(--ds-color-info-item-value-text-dark);
+    --color-loading-svg-text-light: var(--ds-color-loading-svg-text-light);
+    --color-loading-svg-text-dark: var(--ds-color-loading-svg-text-dark);
+
+    /* BaseButton and BaseButtonIcon */
+    --color-button-primary-bg-light: var(--ds-color-button-primary-bg-light);
+    --color-button-primary-bg-hover-light: var(--ds-color-button-primary-bg-hover-light);
+    --color-button-primary-bg-active-light: var(--ds-color-button-primary-bg-active-light);
+    --color-button-primary-text-light: var(--ds-color-button-primary-text-light);
+    --color-button-primary-text-hover-light: var(--ds-color-button-primary-text-hover-light);
+    --color-button-primary-text-active-light: var(--ds-color-button-primary-text-active-light);
+    --color-button-primary-border-light: var(--ds-color-button-primary-border-light);
+    --color-button-primary-bg-dark: var(--ds-color-button-primary-bg-dark);
+    --color-button-primary-bg-hover-dark: var(--ds-color-button-primary-bg-hover-dark);
+    --color-button-primary-bg-active-dark: var(--ds-color-button-primary-bg-active-dark);
+    --color-button-primary-text-dark: var(--ds-color-button-primary-text-dark);
+    --color-button-primary-text-hover-dark: var(--ds-color-button-primary-text-hover-dark);
+    --color-button-primary-text-active-dark: var(--ds-color-button-primary-text-active-dark);
+    --color-button-primary-border-dark: var(--ds-color-button-primary-border-dark);
+
+    --color-button-secondary-bg-light: var(--ds-color-button-secondary-bg-light);
+    --color-button-secondary-bg-hover-light: var(--ds-color-button-secondary-bg-hover-light);
+    --color-button-secondary-bg-active-light: var(--ds-color-button-secondary-bg-active-light);
+    --color-button-secondary-text-light: var(--ds-color-button-secondary-text-light);
+    --color-button-secondary-text-hover-light: var(--ds-color-button-secondary-text-hover-light);
+    --color-button-secondary-text-active-light: var(--ds-color-button-secondary-text-active-light);
+    --color-button-secondary-border-light: var(--ds-color-button-secondary-border-light);
+    --color-button-secondary-bg-dark: var(--ds-color-button-secondary-bg-dark);
+    --color-button-secondary-bg-hover-dark: var(--ds-color-button-secondary-bg-hover-dark);
+    --color-button-secondary-bg-active-dark: var(--ds-color-button-secondary-bg-active-dark);
+    --color-button-secondary-text-dark: var(--ds-color-button-secondary-text-dark);
+    --color-button-secondary-text-hover-dark: var(--ds-color-button-secondary-text-hover-dark);
+    --color-button-secondary-text-active-dark: var(--ds-color-button-secondary-text-active-dark);
+    --color-button-secondary-border-dark: var(--ds-color-button-secondary-border-dark);
+
+    --color-button-outline-bg-light: var(--ds-color-button-outline-bg-light);
+    --color-button-outline-bg-hover-light: var(--ds-color-button-outline-bg-hover-light);
+    --color-button-outline-bg-active-light: var(--ds-color-button-outline-bg-active-light);
+    --color-button-outline-text-light: var(--ds-color-button-outline-text-light);
+    --color-button-outline-text-hover-light: var(--ds-color-button-outline-text-hover-light);
+    --color-button-outline-text-active-light: var(--ds-color-button-outline-text-active-light);
+    --color-button-outline-border-light: var(--ds-color-button-outline-border-light);
+    --color-button-outline-bg-dark: var(--ds-color-button-outline-bg-dark);
+    --color-button-outline-bg-hover-dark: var(--ds-color-button-outline-bg-hover-dark);
+    --color-button-outline-bg-active-dark: var(--ds-color-button-outline-bg-active-dark);
+    --color-button-outline-text-dark: var(--ds-color-button-outline-text-dark);
+    --color-button-outline-text-hover-dark: var(--ds-color-button-outline-text-hover-dark);
+    --color-button-outline-text-active-dark: var(--ds-color-button-outline-text-active-dark);
+    --color-button-outline-border-dark: var(--ds-color-button-outline-border-dark);
+
+    --color-button-primary-outline-bg-light: var(--ds-color-button-primary-outline-bg-light);
+    --color-button-primary-outline-bg-hover-light: var(--ds-color-button-primary-outline-bg-hover-light);
+    --color-button-primary-outline-bg-active-light: var(--ds-color-button-primary-outline-bg-active-light);
+    --color-button-primary-outline-text-light: var(--ds-color-button-primary-outline-text-light);
+    --color-button-primary-outline-text-hover-light: var(--ds-color-button-primary-outline-text-hover-light);
+    --color-button-primary-outline-text-active-light: var(--ds-color-button-primary-outline-text-active-light);
+    --color-button-primary-outline-border-light: var(--ds-color-button-primary-outline-border-light);
+    --color-button-primary-outline-bg-dark: var(--ds-color-button-primary-outline-bg-dark);
+    --color-button-primary-outline-bg-hover-dark: var(--ds-color-button-primary-outline-bg-hover-dark);
+    --color-button-primary-outline-bg-active-dark: var(--ds-color-button-primary-outline-bg-active-dark);
+    --color-button-primary-outline-text-dark: var(--ds-color-button-primary-outline-text-dark);
+    --color-button-primary-outline-text-hover-dark: var(--ds-color-button-primary-outline-text-hover-dark);
+    --color-button-primary-outline-text-active-dark: var(--ds-color-button-primary-outline-text-active-dark);
+    --color-button-primary-outline-border-dark: var(--ds-color-button-primary-outline-border-dark);
+
+    --color-button-danger-bg-light: var(--ds-color-button-danger-bg-light);
+    --color-button-danger-bg-hover-light: var(--ds-color-button-danger-bg-hover-light);
+    --color-button-danger-bg-active-light: var(--ds-color-button-danger-bg-active-light);
+    --color-button-danger-ring-focus-light: var(--ds-color-button-danger-ring-focus-light);
+    --color-button-danger-text-light: var(--ds-color-button-danger-text-light);
+    --color-button-danger-text-hover-light: var(--ds-color-button-danger-text-hover-light);
+    --color-button-danger-text-active-light: var(--ds-color-button-danger-text-active-light);
+    --color-button-danger-border-light: var(--ds-color-button-danger-border-light);
+    --color-button-danger-bg-dark: var(--ds-color-button-danger-bg-dark);
+    --color-button-danger-bg-hover-dark: var(--ds-color-button-danger-bg-hover-dark);
+    --color-button-danger-bg-active-dark: var(--ds-color-button-danger-bg-active-dark);
+    --color-button-danger-ring-focus-dark: var(--ds-color-button-danger-ring-focus-dark);
+    --color-button-danger-text-dark: var(--ds-color-button-danger-text-dark);
+    --color-button-danger-text-hover-dark: var(--ds-color-button-danger-text-hover-dark);
+    --color-button-danger-text-active-dark: var(--ds-color-button-danger-text-active-dark);
+    --color-button-danger-border-dark: var(--ds-color-button-danger-border-dark);
+
+    --color-button-danger-outline-bg-light: var(--ds-color-button-danger-outline-bg-light);
+    --color-button-danger-outline-bg-hover-light: var(--ds-color-button-danger-outline-bg-hover-light);
+    --color-button-danger-outline-bg-active-light: var(--ds-color-button-danger-outline-bg-active-light);
+    --color-button-danger-outline-text-light: var(--ds-color-button-danger-outline-text-light);
+    --color-button-danger-outline-text-hover-light: var(--ds-color-button-danger-outline-text-hover-light);
+    --color-button-danger-outline-text-active-light: var(--ds-color-button-danger-outline-text-active-light);
+    --color-button-danger-outline-border-light: var(--ds-color-button-danger-outline-border-light);
+    --color-button-danger-outline-bg-dark: var(--ds-color-button-danger-outline-bg-dark);
+    --color-button-danger-outline-bg-hover-dark: var(--ds-color-button-danger-outline-bg-hover-dark);
+    --color-button-danger-outline-bg-active-dark: var(--ds-color-button-danger-outline-bg-active-dark);
+    --color-button-danger-outline-text-dark: var(--ds-color-button-danger-outline-text-dark);
+    --color-button-danger-outline-text-hover-dark: var(--ds-color-button-danger-outline-text-hover-dark);
+    --color-button-danger-outline-text-active-dark: var(--ds-color-button-danger-outline-text-active-dark);
+    --color-button-danger-outline-border-dark: var(--ds-color-button-danger-outline-border-dark);
+
+    --color-button-overlay-bg-light: var(--ds-color-button-overlay-bg-light);
+    --color-button-overlay-bg-hover-light: var(--ds-color-button-overlay-bg-hover-light);
+    --color-button-overlay-bg-active-light: var(--ds-color-button-overlay-bg-active-light);
+    --color-button-overlay-text-light: var(--ds-color-button-overlay-text-light);
+    --color-button-overlay-text-hover-light: var(--ds-color-button-overlay-text-hover-light);
+    --color-button-overlay-text-active-light: var(--ds-color-button-overlay-text-active-light);
+    --color-button-overlay-border-light: var(--ds-color-button-overlay-border-light);
+    --color-button-overlay-bg-dark: var(--ds-color-button-overlay-bg-dark);
+    --color-button-overlay-bg-hover-dark: var(--ds-color-button-overlay-bg-hover-dark);
+    --color-button-overlay-bg-active-dark: var(--ds-color-button-overlay-bg-active-dark);
+    --color-button-overlay-text-dark: var(--ds-color-button-overlay-text-dark);
+    --color-button-overlay-text-hover-dark: var(--ds-color-button-overlay-text-hover-dark);
+    --color-button-overlay-text-active-dark: var(--ds-color-button-overlay-text-active-dark);
+    --color-button-overlay-border-dark: var(--ds-color-button-overlay-border-dark);
+
+    --color-button-primary-spinner-text-light: var(--ds-color-button-primary-spinner-text-light);
+    --color-button-primary-spinner-text-dark: var(--ds-color-button-primary-spinner-text-dark);
+
+    --color-button-secondary-spinner-text-light: var(--ds-color-button-secondary-spinner-text-light);
+    --color-button-secondary-spinner-text-dark: var(--ds-color-button-secondary-spinner-text-dark);
+
+    --color-button-outline-spinner-text-light: var(--ds-color-button-outline-spinner-text-light);
+    --color-button-outline-spinner-text-dark: var(--ds-color-button-outline-spinner-text-dark);
+
+    --color-button-primary-outline-spinner-text-light: var(--ds-color-button-primary-outline-spinner-text-light);
+    --color-button-primary-outline-spinner-text-dark: var(--ds-color-button-primary-outline-spinner-text-dark);
+
+    --color-button-danger-spinner-text-light: var(--ds-color-button-danger-spinner-text-light);
+    --color-button-danger-spinner-text-dark: var(--ds-color-button-danger-spinner-text-dark);
+
+    --color-button-danger-outline-spinner-text-light: var(--ds-color-button-danger-outline-spinner-text-light);
+    --color-button-danger-outline-spinner-text-dark: var(--ds-color-button-danger-outline-spinner-text-dark);
+
+    --color-button-overlay-spinner-text-light: var(--ds-color-button-overlay-spinner-text-light);
+    --color-button-overlay-spinner-text-dark: var(--ds-color-button-overlay-spinner-text-dark);
+
+    --color-button-icon-primary-spinner-text-light: var(--ds-color-button-icon-primary-spinner-text-light);
+    --color-button-icon-primary-spinner-text-dark: var(--ds-color-button-icon-primary-spinner-text-dark);
+
+    --color-button-icon-secondary-spinner-text-light: var(--ds-color-button-icon-secondary-spinner-text-light);
+    --color-button-icon-secondary-spinner-text-dark: var(--ds-color-button-icon-secondary-spinner-text-dark);
+
+    --color-button-icon-outline-spinner-text-light: var(--ds-color-button-icon-outline-spinner-text-light);
+    --color-button-icon-outline-spinner-text-dark: var(--ds-color-button-icon-outline-spinner-text-dark);
+
+    --color-button-icon-primary-outline-spinner-text-light: var(--ds-color-button-icon-primary-outline-spinner-text-light);
+    --color-button-icon-primary-outline-spinner-text-dark: var(--ds-color-button-icon-primary-outline-spinner-text-dark);
+
+    --color-button-icon-danger-spinner-text-light: var(--ds-color-button-icon-danger-spinner-text-light);
+    --color-button-icon-danger-spinner-text-dark: var(--ds-color-button-icon-danger-spinner-text-dark);
+
+    --color-button-icon-danger-outline-spinner-text-light: var(--ds-color-button-icon-danger-outline-spinner-text-light);
+    --color-button-icon-danger-outline-spinner-text-dark: var(--ds-color-button-icon-danger-outline-spinner-text-dark);
+
+    --color-button-icon-overlay-spinner-text-light: var(--ds-color-button-icon-overlay-spinner-text-light);
+    --color-button-icon-overlay-spinner-text-dark: var(--ds-color-button-icon-overlay-spinner-text-dark);
 }
+

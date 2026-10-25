@@ -209,31 +209,31 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 		let t = e, n = a(() => {
 			switch (t.type) {
 				case "warning": return {
-					border: "border-warning-200 dark:border-warning-900/50",
+					border: "border-warning-subtle-light dark:border-warning-subtle-dark",
 					background: "bg-warning-50/85 dark:bg-warning-900/40",
 					icon: "text-warning-700 dark:text-warning-100",
 					text: "text-warning-700 dark:text-warning-100"
 				};
 				case "danger": return {
-					border: "border-danger-200 dark:border-danger-900/50",
+					border: "border-danger-subtle-light dark:border-danger-subtle-dark",
 					background: "bg-danger-50/85 dark:bg-danger-900/40",
 					icon: "text-danger-700 dark:text-danger-100",
 					text: "text-danger-700 dark:text-danger-100"
 				};
 				case "info": return {
-					border: "border-secondary-200 dark:border-secondary-900/50",
+					border: "border-secondary-subtle-light dark:border-secondary-subtle-dark",
 					background: "bg-secondary-50/85 dark:bg-secondary-900/40",
 					icon: "text-secondary-700 dark:text-secondary-100",
 					text: "text-secondary-700 dark:text-secondary-100"
 				};
 				case "success": return {
-					border: "border-success-200 dark:border-success-900/50",
+					border: "border-success-subtle-light dark:border-success-subtle-dark",
 					background: "bg-success-50/85 dark:bg-success-900/40",
 					icon: "text-success-700 dark:text-success-100",
 					text: "text-success-700 dark:text-success-100"
 				};
 				default: return {
-					border: "border-warning-200 dark:border-warning-900/50",
+					border: "border-warning-subtle-light dark:border-warning-subtle-dark",
 					background: "bg-warning-50/85 dark:bg-warning-900/40",
 					icon: "text-warning-700 dark:text-warning-100",
 					text: "text-warning-700 dark:text-warning-100"
@@ -264,7 +264,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	let n = e.__vccOpts || e;
 	for (let [e, r] of t) n[e] = r;
 	return n;
-}, Ye = /*#__PURE__*/ Je(qe, [["__scopeId", "data-v-22e2bebf"]]), Xe = { class: "flex items-center justify-center relative" }, Ze = { class: "flex items-center space-x-2" }, Qe = /* @__PURE__ */ p({
+}, Ye = /*#__PURE__*/ Je(qe, [["__scopeId", "data-v-4b7de30b"]]), Xe = { class: "flex items-center justify-center relative" }, Ze = { class: "flex items-center space-x-2" }, Qe = /* @__PURE__ */ p({
 	__name: "BaseButton",
 	props: {
 		type: { default: "button" },
@@ -284,7 +284,23 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 		to: {}
 	},
 	setup(e) {
-		let t = e, n = a(() => t.to !== void 0), r = a(() => n.value ? oe : "button");
+		let t = e, n = a(() => t.to !== void 0), r = a(() => n.value ? oe : "button"), i = {
+			primary: "bg-button-primary-bg-light dark:bg-button-primary-bg-dark text-button-primary-text-light dark:text-button-primary-text-dark hover:bg-button-primary-bg-hover-light dark:hover:bg-button-primary-bg-hover-dark active:bg-button-primary-bg-active-light dark:active:bg-button-primary-bg-active-dark hover:text-button-primary-text-hover-light dark:hover:text-button-primary-text-hover-dark active:text-button-primary-text-active-light dark:active:text-button-primary-text-active-dark",
+			secondary: "bg-button-secondary-bg-light dark:bg-button-secondary-bg-dark text-button-secondary-text-light dark:text-button-secondary-text-dark hover:bg-button-secondary-bg-hover-light dark:hover:bg-button-secondary-bg-hover-dark active:bg-button-secondary-bg-active-light dark:active:bg-button-secondary-bg-active-dark hover:text-button-secondary-text-hover-light dark:hover:text-button-secondary-text-hover-dark active:text-button-secondary-text-active-light dark:active:text-button-secondary-text-active-dark",
+			outline: "border border-button-outline-border-light dark:border-button-outline-border-dark bg-button-outline-bg-light dark:bg-button-outline-bg-dark text-button-outline-text-light dark:text-button-outline-text-dark hover:bg-button-outline-bg-hover-light dark:hover:bg-button-outline-bg-hover-dark active:bg-button-outline-bg-active-light dark:active:bg-button-outline-bg-active-dark hover:text-button-outline-text-hover-light dark:hover:text-button-outline-text-hover-dark active:text-button-outline-text-active-light dark:active:text-button-outline-text-active-dark",
+			"primary-outline": "border border-button-primary-outline-border-light dark:border-button-primary-outline-border-dark bg-button-primary-outline-bg-light dark:bg-button-primary-outline-bg-dark text-button-primary-outline-text-light dark:text-button-primary-outline-text-dark hover:bg-button-primary-outline-bg-hover-light dark:hover:bg-button-primary-outline-bg-hover-dark active:bg-button-primary-outline-bg-active-light dark:active:bg-button-primary-outline-bg-active-dark hover:text-button-primary-outline-text-hover-light dark:hover:text-button-primary-outline-text-hover-dark active:text-button-primary-outline-text-active-light dark:active:text-button-primary-outline-text-active-dark",
+			danger: "bg-button-danger-bg-light dark:bg-button-danger-bg-dark text-button-danger-text-light dark:text-button-danger-text-dark hover:bg-button-danger-bg-hover-light dark:hover:bg-button-danger-bg-hover-dark active:bg-button-danger-bg-active-light dark:active:bg-button-danger-bg-active-dark hover:text-button-danger-text-hover-light dark:hover:text-button-danger-text-hover-dark active:text-button-danger-text-active-light dark:active:text-button-danger-text-active-dark",
+			"danger-outline": "border border-button-danger-outline-border-light dark:border-button-danger-outline-border-dark bg-button-danger-outline-bg-light dark:bg-button-danger-outline-bg-dark text-button-danger-outline-text-light dark:text-button-danger-outline-text-dark hover:bg-button-danger-outline-bg-hover-light dark:hover:bg-button-danger-outline-bg-hover-dark active:bg-button-danger-outline-bg-active-light dark:active:bg-button-danger-outline-bg-active-dark hover:text-button-danger-outline-text-hover-light dark:hover:text-button-danger-outline-text-hover-dark active:text-button-danger-outline-text-active-light dark:active:text-button-danger-outline-text-active-dark",
+			overlay: "bg-button-overlay-bg-light dark:bg-button-overlay-bg-dark text-button-overlay-text-light dark:text-button-overlay-text-dark hover:bg-button-overlay-bg-hover-light dark:hover:bg-button-overlay-bg-hover-dark active:bg-button-overlay-bg-active-light dark:active:bg-button-overlay-bg-active-dark hover:text-button-overlay-text-hover-light dark:hover:text-button-overlay-text-hover-dark active:text-button-overlay-text-active-light dark:active:text-button-overlay-text-active-dark text-sm"
+		}, u = a(() => i[t.variant]), d = a(() => ({
+			primary: "text-button-primary-spinner-text-light dark:text-button-primary-spinner-text-dark",
+			secondary: "text-button-secondary-spinner-text-light dark:text-button-secondary-spinner-text-dark",
+			outline: "text-button-outline-spinner-text-light dark:text-button-outline-spinner-text-dark",
+			"primary-outline": "text-button-primary-outline-spinner-text-light dark:text-button-primary-outline-spinner-text-dark",
+			danger: "text-button-danger-spinner-text-light dark:text-button-danger-spinner-text-dark",
+			"danger-outline": "text-button-danger-outline-spinner-text-light dark:text-button-danger-outline-spinner-text-dark",
+			overlay: "text-button-overlay-spinner-text-light dark:text-button-overlay-spinner-text-dark"
+		})[t.variant]);
 		return (t, n) => (j(), o(z(U(r)), {
 			to: e.to,
 			type: e.type,
@@ -297,18 +313,12 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 				e.size === "full" && "w-full",
 				e.size === "auto" && "w-auto",
 				e.size === "small" && "text-sm",
-				e.variant === "primary" && "bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-600",
-				e.variant === "secondary" && "bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700",
-				e.variant === "outline" && "border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white",
-				e.variant === "primary-outline" && "border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-500 dark:text-primary-400 dark:hover:bg-primary-500",
-				e.variant === "danger" && "bg-danger-600 hover:bg-danger-700 text-white dark:bg-danger-500 dark:hover:bg-danger-600",
-				e.variant === "danger-outline" && "border border-danger-600 text-danger-600 hover:bg-danger-600 hover:text-white dark:border-danger-500 dark:text-danger-400 dark:hover:bg-danger-500 dark:hover:text-white",
-				e.variant === "overlay" && "bg-black/60 hover:bg-black/80 text-white text-sm"
+				U(u)
 			])
 		}, {
 			default: J(() => [l("div", Xe, [e.loading ? (j(), c("svg", {
 				key: 0,
-				class: C(["animate-spin h-4 w-4 transition-all duration-300 ease-in-out mr-2", e.variant === "primary" ? "text-white" : "text-gray-900 dark:text-white"]),
+				class: C(["animate-spin h-4 w-4 transition-all duration-300 ease-in-out mr-2", U(d)]),
 				xmlns: "http://www.w3.org/2000/svg",
 				fill: "none",
 				viewBox: "0 0 24 24"
@@ -366,15 +376,23 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			md: "w-5 h-5",
 			lg: "w-6 h-6"
 		})[e.size]), r = a(() => ({
-			primary: "bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-600 shadow-sm hover:shadow",
-			secondary: "bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 shadow-sm hover:shadow",
-			outline: "border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700",
-			"primary-outline": "border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-500 dark:text-primary-400 dark:hover:bg-primary-500",
-			danger: "bg-danger-600 hover:bg-danger-700 text-white dark:bg-danger-500 dark:hover:bg-danger-600 focus:ring-danger-500 shadow-sm hover:shadow",
-			"danger-outline": "border-2 border-danger-600 text-danger-600 hover:bg-danger-600 hover:text-white dark:border-danger-500 dark:text-danger-400 dark:hover:bg-danger-500 dark:hover:text-white focus:ring-danger-500",
-			overlay: "bg-black/60 hover:bg-black/80 text-white shadow-sm hover:shadow"
+			primary: "bg-button-primary-bg-light dark:bg-button-primary-bg-dark text-button-primary-text-light dark:text-button-primary-text-dark hover:bg-button-primary-bg-hover-light dark:hover:bg-button-primary-bg-hover-dark active:bg-button-primary-bg-active-light dark:active:bg-button-primary-bg-active-dark hover:text-button-primary-text-hover-light dark:hover:text-button-primary-text-hover-dark active:text-button-primary-text-active-light dark:active:text-button-primary-text-active-dark shadow-sm hover:shadow",
+			secondary: "bg-button-secondary-bg-light dark:bg-button-secondary-bg-dark text-button-secondary-text-light dark:text-button-secondary-text-dark hover:bg-button-secondary-bg-hover-light dark:hover:bg-button-secondary-bg-hover-dark active:bg-button-secondary-bg-active-light dark:active:bg-button-secondary-bg-active-dark hover:text-button-secondary-text-hover-light dark:hover:text-button-secondary-text-hover-dark active:text-button-secondary-text-active-light dark:active:text-button-secondary-text-active-dark shadow-sm hover:shadow",
+			outline: "border-2 border-button-outline-border-light dark:border-button-outline-border-dark bg-button-outline-bg-light dark:bg-button-outline-bg-dark text-button-outline-text-light dark:text-button-outline-text-dark hover:bg-button-outline-bg-hover-light dark:hover:bg-button-outline-bg-hover-dark active:bg-button-outline-bg-active-light dark:active:bg-button-outline-bg-active-dark hover:text-button-outline-text-hover-light dark:hover:text-button-outline-text-hover-dark active:text-button-outline-text-active-light dark:active:text-button-outline-text-active-dark",
+			"primary-outline": "border-2 border-button-primary-outline-border-light dark:border-button-primary-outline-border-dark bg-button-primary-outline-bg-light dark:bg-button-primary-outline-bg-dark text-button-primary-outline-text-light dark:text-button-primary-outline-text-dark hover:bg-button-primary-outline-bg-hover-light dark:hover:bg-button-primary-outline-bg-hover-dark active:bg-button-primary-outline-bg-active-light dark:active:bg-button-primary-outline-bg-active-dark hover:text-button-primary-outline-text-hover-light dark:hover:text-button-primary-outline-text-hover-dark active:text-button-primary-outline-text-active-light dark:active:text-button-primary-outline-text-active-dark",
+			danger: "bg-button-danger-bg-light dark:bg-button-danger-bg-dark text-button-danger-text-light dark:text-button-danger-text-dark hover:bg-button-danger-bg-hover-light dark:hover:bg-button-danger-bg-hover-dark active:bg-button-danger-bg-active-light dark:active:bg-button-danger-bg-active-dark hover:text-button-danger-text-hover-light dark:hover:text-button-danger-text-hover-dark active:text-button-danger-text-active-light dark:active:text-button-danger-text-active-dark focus:ring-button-danger-ring-focus-light dark:focus:ring-button-danger-ring-focus-dark shadow-sm hover:shadow",
+			"danger-outline": "border-2 border-button-danger-outline-border-light dark:border-button-danger-outline-border-dark bg-button-danger-outline-bg-light dark:bg-button-danger-outline-bg-dark text-button-danger-outline-text-light dark:text-button-danger-outline-text-dark hover:bg-button-danger-outline-bg-hover-light dark:hover:bg-button-danger-outline-bg-hover-dark active:bg-button-danger-outline-bg-active-light dark:active:bg-button-danger-outline-bg-active-dark hover:text-button-danger-outline-text-hover-light dark:hover:text-button-danger-outline-text-hover-dark active:text-button-danger-outline-text-active-light dark:active:text-button-danger-outline-text-active-dark focus:ring-button-danger-ring-focus-light dark:focus:ring-button-danger-ring-focus-dark",
+			overlay: "bg-button-overlay-bg-light dark:bg-button-overlay-bg-dark text-button-overlay-text-light dark:text-button-overlay-text-dark hover:bg-button-overlay-bg-hover-light dark:hover:bg-button-overlay-bg-hover-dark active:bg-button-overlay-bg-active-light dark:active:bg-button-overlay-bg-active-dark hover:text-button-overlay-text-hover-light dark:hover:text-button-overlay-text-hover-dark active:text-button-overlay-text-active-light dark:active:text-button-overlay-text-active-dark shadow-sm hover:shadow"
+		})[e.variant]), i = a(() => ({
+			primary: "text-button-icon-primary-spinner-text-light dark:text-button-icon-primary-spinner-text-dark",
+			secondary: "text-button-icon-secondary-spinner-text-light dark:text-button-icon-secondary-spinner-text-dark",
+			outline: "text-button-icon-outline-spinner-text-light dark:text-button-icon-outline-spinner-text-dark",
+			"primary-outline": "text-button-icon-primary-outline-spinner-text-light dark:text-button-icon-primary-outline-spinner-text-dark",
+			danger: "text-button-icon-danger-spinner-text-light dark:text-button-icon-danger-spinner-text-dark",
+			"danger-outline": "text-button-icon-danger-outline-spinner-text-light dark:text-button-icon-danger-outline-spinner-text-dark",
+			overlay: "text-button-icon-overlay-spinner-text-light dark:text-button-icon-overlay-spinner-text-dark"
 		})[e.variant]);
-		return (i, a) => (j(), c("button", {
+		return (a, s) => (j(), c("button", {
 			type: e.type,
 			disabled: e.disabled || e.loading,
 			class: C([
@@ -387,11 +405,11 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			])
 		}, [e.loading ? (j(), c("svg", {
 			key: 0,
-			class: C(["animate-spin", [U(n), e.variant === "primary" || e.variant === "danger" ? "text-white" : "text-gray-900 dark:text-white"]]),
+			class: C(["animate-spin", [U(n), U(i)]]),
 			xmlns: "http://www.w3.org/2000/svg",
 			fill: "none",
 			viewBox: "0 0 24 24"
-		}, [...a[0] ||= [l("circle", {
+		}, [...s[0] ||= [l("circle", {
 			class: "opacity-25",
 			cx: "12",
 			cy: "12",
@@ -421,7 +439,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			key: n,
 			class: "inline-flex items-center"
 		}, [n > 0 ? (j(), c("div", rt, [...r[0] ||= [l("svg", {
-			class: "w-3 h-3 text-gray-500 dark:text-gray-500 mx-1",
+			class: "w-3 h-3 text-breadcrumb-separator-text-light dark:text-breadcrumb-separator-text-dark mx-1",
 			"aria-hidden": "true",
 			xmlns: "http://www.w3.org/2000/svg",
 			fill: "none",
@@ -435,7 +453,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 		})], -1)]])) : s("", !0), t.to && n < e.items.length - 1 ? (j(), o(U(oe), {
 			key: 1,
 			to: t.to,
-			class: "inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+			class: "inline-flex items-center text-sm font-medium text-breadcrumb-link-text-light dark:text-breadcrumb-link-text-dark hover:text-breadcrumb-link-text-hover-light dark:hover:text-breadcrumb-link-text-hover-dark transition-colors"
 		}, {
 			default: J(() => [t.icon ? (j(), o(z(t.icon), {
 				key: 0,
@@ -444,7 +462,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			_: 2
 		}, 1032, ["to"])) : (j(), c("span", {
 			key: 2,
-			class: C(["inline-flex items-center text-sm font-medium", n === e.items.length - 1 ? "text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-400"])
+			class: C(["inline-flex items-center text-sm font-medium", n === e.items.length - 1 ? "text-breadcrumb-current-text-light dark:text-breadcrumb-current-text-dark" : "text-breadcrumb-item-text-light dark:text-breadcrumb-item-text-dark"])
 		}, [t.icon ? (j(), o(z(t.icon), {
 			key: 0,
 			class: "w-4 h-4 mr-2"
@@ -478,12 +496,12 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			U(r)
 		]) }, [L(e.$slots, "default")], 2));
 	}
-}), ot = ["aria-label"], st = { class: "bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-white text-[#1d1b20] shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-[#1d1b20] dark:text-[#e6e1e5]" }, ct = { class: "shrink-0" }, lt = { class: "flex items-start justify-between gap-4 px-6 pb-5 pt-6" }, ut = { class: "min-w-0 flex-1" }, dt = {
+}), ot = ["aria-label"], st = { class: "bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-bottom-modal-panel-bg-light text-bottom-modal-text-light shadow-[0_-2px_8px_var(--ds-color-black-alpha-12)] dark:bg-bottom-modal-panel-bg-dark dark:text-bottom-modal-text-dark" }, ct = { class: "shrink-0" }, lt = { class: "flex items-start justify-between gap-4 px-6 pb-5 pt-6" }, ut = { class: "min-w-0 flex-1" }, dt = {
 	key: 0,
-	class: "text-base font-medium text-[#1d1b20] dark:text-[#e6e1e5]"
+	class: "text-base font-medium text-bottom-modal-title-text-light dark:text-bottom-modal-title-text-dark"
 }, ft = {
 	key: 1,
-	class: "mt-1 text-sm text-[#49454f] dark:text-[#cac4d0]"
+	class: "mt-1 text-sm text-bottom-modal-subtitle-text-light dark:text-bottom-modal-subtitle-text-dark"
 }, pt = { class: "bottom-modal__content min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-4" }, mt = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "BottomModal",
 	props: {
@@ -566,12 +584,12 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 				tabindex: "-1",
 				onKeydown: k
 			}, [l("div", {
-				class: "bottom-modal__scrim absolute inset-0",
+				class: "bottom-modal__scrim absolute inset-0 bg-bottom-modal-scrim-bg-light dark:bg-bottom-modal-scrim-bg-dark",
 				"aria-hidden": "true",
 				onClick: A
 			}), l("section", st, [
 				l("header", ct, [l("div", lt, [l("div", ut, [e.title ? (j(), c("h2", dt, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", ft, B(e.subtitle), 1)) : s("", !0)]), l("button", {
-					class: "shrink-0 rounded-full p-2 text-[#49454f] hover:bg-black/5 hover:text-[#1d1b20] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#49454f] dark:text-[#cac4d0] dark:hover:bg-white/10 dark:hover:text-[#e6e1e5] dark:focus-visible:ring-[#cac4d0]",
+					class: "shrink-0 rounded-full p-2 text-bottom-modal-close-text-light hover:bg-bottom-modal-close-bg-hover-light hover:text-bottom-modal-close-text-hover-light focus:outline-none focus-visible:ring-2 focus-visible:ring-bottom-modal-close-ring-focus-light dark:text-bottom-modal-close-text-dark dark:hover:bg-bottom-modal-close-bg-hover-dark dark:hover:text-bottom-modal-close-text-hover-dark dark:focus-visible:ring-bottom-modal-close-ring-focus-dark",
 					type: "button",
 					"aria-label": "Close",
 					onClick: A
@@ -591,21 +609,21 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 				l("div", pt, [L(t.$slots, "default", {}, void 0, !0)]),
 				t.$slots.footer ? (j(), c("footer", {
 					key: 0,
-					class: C(["shrink-0 px-5 py-4", n.showFooterDivider && "border-t border-[#79747e]/30 dark:border-[#938f99]/30"])
+					class: C(["shrink-0 px-5 py-4", n.showFooterDivider && "border-t border-bottom-modal-divider-border-light dark:border-bottom-modal-divider-border-dark"])
 				}, [L(t.$slots, "footer", {}, void 0, !0)], 2)) : s("", !0)
 			])], 40, ot)) : s("", !0)]),
 			_: 3
 		}, 8, ["duration"])]));
 	}
-}), [["__scopeId", "data-v-95d144e3"]]), ht = {
+}), [["__scopeId", "data-v-6e1c3aa2"]]), ht = {
 	key: 0,
 	class: "px-6 pt-5"
 }, gt = { class: "flex-1 min-w-0" }, _t = {
 	key: 0,
-	class: "text-base font-semibold tracking-tight text-gray-900 dark:text-white"
+	class: "text-base font-semibold tracking-tight text-card-title-text-light dark:text-card-title-text-dark"
 }, vt = {
 	key: 1,
-	class: "mt-0.5 text-sm text-gray-500 dark:text-gray-400"
+	class: "mt-0.5 text-sm text-card-subtitle-text-light dark:text-card-subtitle-text-dark"
 }, yt = {
 	key: 0,
 	class: "flex items-center gap-2 shrink-0"
@@ -625,12 +643,12 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	},
 	setup(e) {
 		let t = te(), n = a(() => e.title || e.subtitle || t.headerButtons);
-		return (t, r) => (j(), c("div", { class: C(["bg-white dark:bg-gray-900 rounded-xl border border-transparent dark:border-gray-700 shadow-sm", { "overflow-hidden flex flex-col": e.noPadding }]) }, [U(n) ? (j(), c("div", ht, [l("div", { class: C(["flex items-start justify-between gap-4 pb-4 border-b border-gray-300 dark:border-gray-600", { "flex-col gap-3 sm:flex-row sm:items-start": e.colInMobile }]) }, [l("div", gt, [e.title ? (j(), c("h3", _t, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", vt, B(e.subtitle), 1)) : s("", !0)]), t.$slots.headerButtons ? (j(), c("div", yt, [L(t.$slots, "headerButtons")])) : s("", !0)], 2)])) : s("", !0), l("div", { class: C(e.noPadding ? "flex-1 flex flex-col" : "p-4") }, [L(t.$slots, "default")], 2)], 2));
+		return (t, r) => (j(), c("div", { class: C(["bg-card-bg-light dark:bg-card-bg-dark rounded-xl border border-card-light dark:border-card-dark shadow-sm", { "overflow-hidden flex flex-col": e.noPadding }]) }, [U(n) ? (j(), c("div", ht, [l("div", { class: C(["flex items-start justify-between gap-4 pb-4 border-b border-strong-light dark:border-strong-dark", { "flex-col gap-3 sm:flex-row sm:items-start": e.colInMobile }]) }, [l("div", gt, [e.title ? (j(), c("h3", _t, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("p", vt, B(e.subtitle), 1)) : s("", !0)]), t.$slots.headerButtons ? (j(), c("div", yt, [L(t.$slots, "headerButtons")])) : s("", !0)], 2)])) : s("", !0), l("div", { class: C(e.noPadding ? "flex-1 flex flex-col" : "p-4") }, [L(t.$slots, "default")], 2)], 2));
 	}
 }), xt = {
 	key: 0,
 	class: "flex items-center justify-between pt-4"
-}, St = { class: "text-base text-gray-500 dark:text-gray-400 tabular-nums" }, Ct = { class: "flex items-center gap-2" }, wt = ["disabled"], Tt = { class: "text-base text-gray-700 dark:text-gray-300 tabular-nums" }, Et = ["disabled"], Dt = /* @__PURE__ */ p({
+}, St = { class: "text-base text-card-pagination-summary-text-light dark:text-card-pagination-summary-text-dark tabular-nums" }, Ct = { class: "flex items-center gap-2" }, wt = ["disabled"], Tt = { class: "text-base text-card-pagination-page-text-light dark:text-card-pagination-page-text-dark tabular-nums" }, Et = ["disabled"], Dt = /* @__PURE__ */ p({
 	__name: "CardPaginations",
 	props: { pagination: {} },
 	emits: ["page-change"],
@@ -642,14 +660,14 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			l("button", {
 				type: "button",
 				disabled: e.pagination.current_page === 1,
-				class: "w-8 h-8 flex items-center justify-center rounded-full bg-primary-600 text-white hover:bg-primary-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors",
+				class: "w-8 h-8 flex items-center justify-center rounded-full bg-card-pagination-button-bg-light text-card-pagination-button-text-light hover:bg-card-pagination-button-bg-hover-light dark:bg-card-pagination-button-bg-dark dark:text-card-pagination-button-text-dark dark:hover:bg-card-pagination-button-bg-hover-dark disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors",
 				onClick: n[0] ||= (t) => r(e.pagination.current_page - 1)
 			}, [f(U(Ne), { class: "w-4 h-4" })], 8, wt),
 			l("span", Tt, B(e.pagination.current_page) + " / " + B(e.pagination.last_page), 1),
 			l("button", {
 				type: "button",
 				disabled: e.pagination.current_page === e.pagination.last_page,
-				class: "w-8 h-8 flex items-center justify-center rounded-full bg-primary-600 text-white hover:bg-primary-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors",
+				class: "w-8 h-8 flex items-center justify-center rounded-full bg-card-pagination-button-bg-light text-card-pagination-button-text-light hover:bg-card-pagination-button-bg-hover-light dark:bg-card-pagination-button-bg-dark dark:text-card-pagination-button-text-dark dark:hover:bg-card-pagination-button-bg-hover-dark disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors",
 				onClick: n[1] ||= (t) => r(e.pagination.current_page + 1)
 			}, [f(U(Pe), { class: "w-4 h-4" })], 8, Et)
 		])])) : s("", !0);
@@ -691,14 +709,14 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 }), kt = { class: "relative py-4" }, At = /* @__PURE__ */ p({
 	__name: "Divider",
 	setup(e) {
-		return (e, t) => (j(), c("div", kt, [...t[0] ||= [l("div", { class: "absolute inset-0 flex items-center" }, [l("div", { class: "w-full border-t border-gray-200 dark:border-gray-700" })], -1)]]));
+		return (e, t) => (j(), c("div", kt, [...t[0] ||= [l("div", { class: "absolute inset-0 flex items-center" }, [l("div", { class: "w-full border-t border-default-light dark:border-default-dark" })], -1)]]));
 	}
 }), jt = { class: "flex items-start justify-between" }, Mt = { class: "flex-1 min-w-0" }, Nt = {
 	key: 0,
-	class: "text-lg font-semibold text-gray-900 dark:text-white"
+	class: "text-lg font-semibold text-modal-title-text-light dark:text-modal-title-text-dark"
 }, Pt = {
 	key: 1,
-	class: "text-sm text-gray-600 dark:text-gray-400 mt-1"
+	class: "text-sm text-modal-subtitle-text-light dark:text-modal-subtitle-text-dark mt-1"
 }, Ft = { class: "overflow-y-auto max-h-[70vh] p-0.5 -m-0.5" }, It = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "Modal",
 	props: {
@@ -741,14 +759,14 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 					key: 0,
 					ref_key: "dialogRef",
 					ref: p,
-					class: "rutely-modal fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-0 m-0 border-0 w-full h-full focus:outline-none",
+					class: "rutely-modal fixed inset-0 z-[100] flex items-center justify-center bg-modal-scrim-bg-light dark:bg-modal-scrim-bg-dark backdrop-blur-sm p-0 m-0 border-0 w-full h-full focus:outline-none",
 					onClose: m,
 					onClick: ae(h, ["self"]),
 					onKeydown: g
-				}, [l("div", { class: C(["relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-gray-200 dark:border-gray-700", [U(u), e.open ? "scale-100 opacity-100" : "scale-95 opacity-0"]]) }, [l("div", null, [l("div", jt, [l("div", Mt, [e.title ? (j(), c("div", Nt, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("div", Pt, B(e.subtitle), 1)) : s("", !0)]), l("button", {
+				}, [l("div", { class: C(["relative bg-modal-panel-bg-light dark:bg-modal-panel-bg-dark rounded-xl shadow-xl w-full p-6 transform transition-all duration-300 border border-default-light dark:border-default-dark", [U(u), e.open ? "scale-100 opacity-100" : "scale-95 opacity-0"]]) }, [l("div", null, [l("div", jt, [l("div", Mt, [e.title ? (j(), c("div", Nt, B(e.title), 1)) : s("", !0), e.subtitle ? (j(), c("div", Pt, B(e.subtitle), 1)) : s("", !0)]), l("button", {
 					onClick: m,
 					"aria-label": "Cerrar",
-					class: "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-gray-500 ml-4",
+					class: "text-modal-close-text-light dark:text-modal-close-text-dark hover:text-modal-close-text-hover-light dark:hover:text-modal-close-text-hover-dark rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-modal-close-ring-focus-light dark:focus:ring-modal-close-ring-focus-dark ml-4",
 					type: "button"
 				}, [...n[0] ||= [l("svg", {
 					xmlns: "http://www.w3.org/2000/svg",
@@ -766,7 +784,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			})]);
 		};
 	}
-}), [["__scopeId", "data-v-558911f3"]]), Lt = /* @__PURE__ */ p({
+}), [["__scopeId", "data-v-63f24e75"]]), Lt = /* @__PURE__ */ p({
 	__name: "DropdownAnimation",
 	setup(e) {
 		return (e, t) => (j(), o(i, {
@@ -785,7 +803,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	__name: "LoadingSVG",
 	props: { customClass: {} },
 	setup(e) {
-		let t = e, n = a(() => t.customClass || "animate-spin -ml-1 mr-3 h-12 w-12 text-gray-900 dark:text-white");
+		let t = e, n = a(() => t.customClass || "animate-spin -ml-1 mr-3 h-12 w-12 text-loading-svg-text-light dark:text-loading-svg-text-dark");
 		return (e, t) => (j(), c("svg", {
 			class: C(U(n)),
 			xmlns: "http://www.w3.org/2000/svg",
@@ -821,11 +839,11 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	class: "py-4 px-4 flex items-center justify-center"
 }, Jt = {
 	key: 1,
-	class: "py-4 px-4 text-center text-gray-500 dark:text-gray-400"
+	class: "py-4 px-4 text-center text-form-supporting-text-light dark:text-form-supporting-text-dark"
 }, Yt = {
 	key: 2,
 	class: "space-y-2 p-2 max-h-64 overflow-y-auto"
-}, Xt = ["onClick"], Zt = { class: "flex justify-between items-center" }, Qt = { class: "flex items-center space-x-2" }, $t = { class: "flex flex-col" }, en = { class: "font-semibold text-gray-900 dark:text-white" }, tn = {
+}, Xt = ["onClick"], Zt = { class: "flex justify-between items-center" }, Qt = { class: "flex items-center space-x-2" }, $t = { class: "flex flex-col" }, en = { class: "font-semibold text-form-control-text-light dark:text-form-control-text-dark" }, tn = {
 	key: 0,
 	class: "text-primary-600 dark:text-primary-400"
 }, nn = /* @__PURE__ */ p({
@@ -854,7 +872,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	setup(e, { emit: t }) {
 		let r = e, { placeholder: i = "Buscar...", id: u = "searchable-select", labelKey: p = "label", valueKey: m = "value", multiple: h = !1 } = r, g = G(e, "modelValue"), y = _(zt);
 		if (!y) throw Error("SearchableSelect: no request instance provided. Call app.provide(useRequestKey, useRequest) in the consuming app.");
-		let { get: b } = y(), x = F(!1), S = F(""), w = F([]), T = F([]), E = F(/* @__PURE__ */ new Map()), D = F(null), k = F([]), M = F(!1), N = F(), P = F(), L = F(""), R = F(!1), V = F(!1), ee = F(!1), H = a(() => g.value ? D.value && D.value.value === g.value ? D.value : w.value.find((e) => e.value === g.value) || T.value.find((e) => e.value === g.value) : null), W = a(() => "absolute w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden"), te = a(() => Array.isArray(g.value) ? g.value : []), K = (e, t) => {
+		let { get: b } = y(), x = F(!1), S = F(""), w = F([]), T = F([]), E = F(/* @__PURE__ */ new Map()), D = F(null), k = F([]), M = F(!1), N = F(), P = F(), L = F(""), R = F(!1), V = F(!1), ee = F(!1), H = a(() => g.value ? D.value && D.value.value === g.value ? D.value : w.value.find((e) => e.value === g.value) || T.value.find((e) => e.value === g.value) : null), W = a(() => "absolute w-full bg-form-suggestion-panel-bg-light dark:bg-form-suggestion-panel-bg-dark border border-default-light dark:border-default-dark rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden"), te = a(() => Array.isArray(g.value) ? g.value : []), K = (e, t) => {
 			let n = t.toLocaleLowerCase();
 			return [e.label, ...e.subtitles].some((e) => e.toLocaleLowerCase().includes(n));
 		}, re = (e) => T.value.filter((t) => K(t, e)), ie = (e) => h ? te.value.includes(e.value) : H.value?.value === e.value, ae = 0, oe = async () => {
@@ -1048,7 +1066,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 				e.label && !r.small ? (j(), c("label", {
 					key: 0,
 					for: U(u),
-					class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+					class: "block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
 				}, B(e.label), 9, Bt)) : s("", !0),
 				f(U(le), {
 					name: e.name || U(u),
@@ -1076,18 +1094,18 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 								"data-form-type": "other",
 								spellcheck: "false",
 								class: C([
-									"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500",
+									"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark",
 									e.leftIcon ? "pl-10" : "pl-4",
 									"pr-10",
-									g ? "border-danger-500 dark:border-danger-500" : "",
+									g ? "border-danger-light dark:border-danger-dark" : "",
 									r.small ? "py-2" : "py-3"
 								]),
 								disabled: e.disabled
 							}, null, 42, Ht), [[ne, U(S)]]),
-							e.leftIcon ? (j(), c("div", Ut, [(j(), o(z(e.leftIcon), { class: C([r.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400"]) }, null, 8, ["class"]))])) : s("", !0),
+							e.leftIcon ? (j(), c("div", Ut, [(j(), o(z(e.leftIcon), { class: C([r.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark"]) }, null, 8, ["class"]))])) : s("", !0),
 							l("div", Wt, [(j(), o(z(U(Me)), { class: C([
 								r.small ? "h-4 w-4" : "h-5 w-5",
-								"text-gray-400 dark:text-gray-400 transition-transform duration-200",
+								"text-form-control-icon-text-light dark:text-form-control-icon-text-dark transition-transform duration-200",
 								U(x) ? "rotate-180" : ""
 							]) }, null, 8, ["class"]))])
 						]),
@@ -1103,19 +1121,19 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 							default: J(() => [U(x) ? (j(), c("div", {
 								key: 0,
 								class: C(U(W))
-							}, [U(M) ? (j(), c("div", qt, [f(p)])) : U(w).length === 0 ? (j(), c("div", Jt, " No se encontraron datos ")) : (j(), c("div", Yt, [(j(!0), c(n, null, I(U(w), (e) => (j(), c("div", {
+							}, [U(M) ? (j(), c("div", qt, [f(p, { "custom-class": "animate-spin -ml-1 mr-3 h-12 w-12 text-form-control-text-light dark:text-form-control-text-dark" })])) : U(w).length === 0 ? (j(), c("div", Jt, " No se encontraron datos ")) : (j(), c("div", Yt, [(j(!0), c(n, null, I(U(w), (e) => (j(), c("div", {
 								key: e.value,
 								onClick: (t) => be(e, t, _),
 								class: C(["rounded-lg p-3 border cursor-pointer transition-colors", {
-									"border-primary-500 bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30": ie(e),
-									"bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700": !ie(e)
+									"border-primary-subtle-light dark:border-primary-subtle-dark bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30": ie(e),
+									"bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-bg-hover-light dark:hover:bg-form-suggestion-bg-hover-dark": !ie(e)
 								}])
 							}, [l("div", Zt, [l("div", Qt, [e.icon ? (j(), o(z(e.icon), {
 								key: 0,
-								class: "w-5 h-5 text-gray-600 dark:text-gray-400"
+								class: "w-5 h-5 text-form-suggestion-icon-text-light dark:text-form-suggestion-icon-text-dark"
 							})) : s("", !0), l("div", $t, [l("span", en, B(e.label), 1), (j(!0), c(n, null, I(e.subtitles, (e, t) => (j(), c("span", {
 								key: t,
-								class: "text-xs text-gray-500 dark:text-gray-400"
+								class: "text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark"
 							}, B(e), 1))), 128))])]), ie(e) ? (j(), c("div", tn, [f(U(je), { class: "h-6 w-6" })])) : s("", !0)])], 10, Xt))), 128))]))], 2)) : s("", !0)]),
 							_: 2
 						}, 1024)
@@ -11130,7 +11148,7 @@ var Fd = {
 	"step",
 	"disabled",
 	"autocomplete"
-], Kd = { class: "flex justify-between text-xs text-gray-400" }, qd = { class: "font-medium text-gray-600 dark:text-gray-300" }, Jd = [
+], Kd = { class: "flex justify-between text-xs text-form-range-bound-text-light dark:text-form-range-bound-text-dark" }, qd = { class: "font-medium text-form-range-value-text-light dark:text-form-range-value-text-dark" }, Jd = [
 	"id",
 	"value",
 	"onInput",
@@ -11158,7 +11176,7 @@ var Fd = {
 	class: "absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer transition-colors duration-200"
 }, ef = {
 	key: 2,
-	class: "mt-1 text-xs text-gray-500 dark:text-gray-400"
+	class: "mt-1 text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark"
 }, tf = /* @__PURE__ */ p({
 	__name: "FormInput",
 	props: /*@__PURE__*/ b({
@@ -11276,7 +11294,7 @@ var Fd = {
 			return j(), c("div", null, [e.label && !e.small ? (j(), c("label", {
 				key: 0,
 				for: e.id,
-				class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+				class: "block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
 			}, B(e.label), 9, Vd)) : s("", !0), f(U(le), {
 				name: e.name,
 				label: e.label?.toLowerCase(),
@@ -11339,10 +11357,10 @@ var Fd = {
 								onKeypress: t.onKeypress,
 								onPaste: t.onPaste,
 								class: C([
-									"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500",
+									"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark",
 									e.leftIcon ? "pl-10" : "pl-4",
 									e.rightIcon || S.value ? "pr-10" : "pr-4",
-									g ? "border-danger-500 dark:border-danger-500" : "",
+									g ? "border-danger-light dark:border-danger-dark" : "",
 									e.small ? "py-2" : "py-3"
 								]),
 								disabled: e.disabled,
@@ -11387,9 +11405,9 @@ var Fd = {
 							placeholder: e.placeholder,
 							autocomplete: e.autocomplete,
 							class: C([
-								"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 pl-10",
+								"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark pl-10",
 								e.rightIcon || S.value || e.type === "money" ? "pr-10" : "pr-4",
-								g ? "border-danger-500 dark:border-danger-500" : "",
+								g ? "border-danger-light dark:border-danger-dark" : "",
 								e.small ? "py-2" : "py-3"
 							])
 						}, null, 42, Yd)), [[U(t), y.value.config]]) : Y((j(), c("input", x({
@@ -11405,22 +11423,22 @@ var Fd = {
 							disabled: e.disabled,
 							autocomplete: e.autocomplete,
 							class: [
-								"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 disabled:cursor-not-allowed",
+								"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark disabled:cursor-not-allowed",
 								e.leftIcon ? "pl-10" : "pl-4",
 								e.rightIcon || S.value ? "pr-10" : "pr-4",
-								g ? "border-danger-500 dark:border-danger-500" : "",
+								g ? "border-danger-light dark:border-danger-dark" : "",
 								e.small ? "py-2" : "py-3"
 							]
 						}), null, 16, Jd)), [[U(cr), n.value]]),
-						e.type === "money" ? (j(), c("div", Xd, [(j(), o(z(U(Fe)), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
-						e.leftIcon ? (j(), c("div", Zd, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
-						r.loading ? (j(), c("div", Qd, [f(U(Be), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 animate-spin"]) }, null, 8, ["class"])])) : e.rightIcon && !S.value ? (j(), c("div", $d, [(j(), o(z(e.rightIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
+						e.type === "money" ? (j(), c("div", Xd, [(j(), o(z(U(Fe)), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
+						e.leftIcon ? (j(), c("div", Zd, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
+						r.loading ? (j(), c("div", Qd, [f(U(Be), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark animate-spin"]) }, null, 8, ["class"])])) : e.rightIcon && !S.value ? (j(), c("div", $d, [(j(), o(z(e.rightIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0),
 						S.value ? (j(), c("button", {
 							key: 8,
 							type: "button",
 							onClick: E,
 							class: "absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer transition-colors duration-200"
-						}, [(j(), o(z(T.value), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0)
+						}, [(j(), o(z(T.value), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-icon-text-hover-light dark:hover:text-form-control-icon-text-hover-dark transition-colors duration-200"]) }, null, 8, ["class"]))])) : s("", !0)
 					])),
 					f(U(ce), {
 						name: e.name,
@@ -11505,7 +11523,7 @@ var Fd = {
 			]);
 		};
 	}
-}), af = { class: "mt-4 text-sm text-gray-600 dark:text-gray-400 tabular-nums" }, of = /* @__PURE__ */ p({
+}), af = { class: "mt-4 text-sm text-table-footer-text-light dark:text-table-footer-text-dark tabular-nums" }, of = /* @__PURE__ */ p({
 	__name: "ResultCount",
 	props: {
 		internalPaginationServer: {},
@@ -11528,13 +11546,13 @@ var Fd = {
 	},
 	emits: ["click"],
 	setup(e, { emit: t }) {
-		let n = e, r = t, i = () => {
-			r("click", n.label);
+		let n = e, r = a(() => n.active ? "bg-dropdown-item-bg-active-light dark:bg-dropdown-item-bg-active-dark text-dropdown-item-text-active-light dark:text-dropdown-item-text-active-dark" : "text-dropdown-item-text-light dark:text-dropdown-item-text-dark"), i = t, u = () => {
+			i("click", n.label);
 		};
 		return (t, n) => e.to ? (j(), o(U(oe), {
 			key: 0,
 			to: e.to,
-			class: C(["w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700/30 hover:text-gray-900 dark:hover:text-white", { "bg-gray-100 dark:bg-gray-700/50 text-gray-900 dark:text-white": e.active }])
+			class: C(["w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 hover:bg-dropdown-item-bg-hover-light dark:hover:bg-dropdown-item-bg-hover-dark hover:text-dropdown-item-text-hover-light dark:hover:text-dropdown-item-text-hover-dark", U(r)])
 		}, {
 			default: J(() => [e.icon ? (j(), o(z(e.icon), {
 				key: 0,
@@ -11544,8 +11562,8 @@ var Fd = {
 		}, 8, ["to", "class"])) : (j(), c("button", {
 			key: 1,
 			type: "button",
-			onClick: i,
-			class: C(["w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 cursor-pointer text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700/30 hover:text-gray-900 dark:hover:text-white", { "bg-gray-100 dark:bg-gray-700/50 text-gray-900 dark:text-white": e.active }])
+			onClick: u,
+			class: C(["w-full text-left px-4 py-2 text-sm transition-colors duration-150 flex items-center space-x-2 cursor-pointer hover:bg-dropdown-item-bg-hover-light dark:hover:bg-dropdown-item-bg-hover-dark hover:text-dropdown-item-text-hover-light dark:hover:text-dropdown-item-text-hover-dark", U(r)])
 		}, [e.icon ? (j(), o(z(e.icon), {
 			key: 0,
 			class: "w-4 h-4"
@@ -11569,7 +11587,7 @@ var Fd = {
 	}),
 	emits: ["update:modelValue"],
 	setup(e) {
-		let t = e, r = G(e, "modelValue"), i = F(!1), u = F(), p = a(() => t.items.find((e) => e.value === r.value)), m = a(() => `absolute w-48 max-h-60 bg-white dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg z-[9999] ${{
+		let t = e, r = G(e, "modelValue"), i = F(!1), u = F(), p = a(() => t.items.find((e) => e.value === r.value)), m = a(() => `absolute w-48 max-h-60 bg-dropdown-panel-bg-light dark:bg-dropdown-panel-bg-dark backdrop-blur-sm border border-dropdown-panel-border-light dark:border-dropdown-panel-border-dark rounded-xl shadow-lg z-[9999] ${{
 			"bottom-left": "left-0 top-full mt-2",
 			"bottom-right": "right-0 top-full mt-2",
 			"top-left": "left-0 bottom-full mb-2",
@@ -11602,7 +11620,7 @@ var Fd = {
 				small: e.triggerSmall,
 				iconClass: U(i) ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200",
 				onClick: h,
-				class: "bg-white dark:bg-gray-800/70 backdrop-blur-sm border-gray-300 dark:border-gray-700/70 hover:bg-gray-50 dark:hover:bg-gray-700/70 focus:ring-0 focus:border-gray-400 dark:focus:border-gray-600"
+				class: C(["backdrop-blur-sm focus:ring-0", ["bg-dropdown-trigger-bg-light dark:bg-dropdown-trigger-bg-dark border-dropdown-trigger-border-light dark:border-dropdown-trigger-border-dark hover:bg-dropdown-trigger-bg-hover-light dark:hover:bg-dropdown-trigger-bg-hover-dark active:bg-dropdown-trigger-bg-active-light dark:active:bg-dropdown-trigger-bg-active-dark focus:border-hover-light dark:focus:border-hover-dark", e.triggerVariant === "outline" ? "text-dropdown-trigger-text-light dark:text-dropdown-trigger-text-dark" : ""]])
 			}, {
 				default: J(() => [d(B(U(p)?.label || e.placeholder), 1)]),
 				_: 1
@@ -11611,7 +11629,8 @@ var Fd = {
 				"size",
 				"icon",
 				"small",
-				"iconClass"
+				"iconClass",
+				"class"
 			]), f(v, null, {
 				default: J(() => [U(i) ? (j(), c("div", {
 					key: 0,
@@ -11632,9 +11651,9 @@ var Fd = {
 			})], 512);
 		};
 	}
-}), uf = { class: "flex items-center justify-between" }, df = { class: "text-sm text-gray-600 dark:text-gray-400 tabular-nums" }, ff = { class: "flex items-center space-x-2" }, pf = { class: "flex items-center space-x-1" }, mf = {
+}), uf = { class: "flex items-center justify-between" }, df = { class: "text-sm text-table-footer-text-light dark:text-table-footer-text-dark tabular-nums" }, ff = { class: "flex items-center space-x-2" }, pf = { class: "flex items-center space-x-1" }, mf = {
 	key: 1,
-	class: "px-2 text-gray-600 dark:text-gray-400"
+	class: "px-2 text-table-footer-text-light dark:text-table-footer-text-dark"
 }, hf = /* @__PURE__ */ p({
 	__name: "TablePagination",
 	props: { internalPaginationServer: {} },
@@ -11690,14 +11709,14 @@ var Fd = {
 			])]);
 		};
 	}
-}), gf = { class: "bg-gray-50 dark:bg-gray-800/30" }, _f = {
+}), gf = { class: "bg-table-header-bg-light dark:bg-table-header-bg-dark" }, _f = {
 	key: 0,
 	style: {
 		width: "120px",
 		"min-width": "120px",
 		"max-width": "120px"
 	},
-	class: "px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider overflow-hidden text-ellipsis"
+	class: "px-6 py-3 text-left text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider overflow-hidden text-ellipsis"
 }, vf = /* @__PURE__ */ p({
 	__name: "TableHeader",
 	props: {
@@ -11713,17 +11732,17 @@ var Fd = {
 				minWidth: e.width ? typeof e.width == "number" ? `${e.width}px` : e.width : "150px",
 				maxWidth: e.width ? typeof e.width == "number" ? `${e.width}px` : e.width : "none"
 			}),
-			class: "px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider overflow-hidden text-ellipsis"
+			class: "px-6 py-3 text-left text-xs font-medium text-table-header-text-light dark:text-table-header-text-dark uppercase tracking-wider overflow-hidden text-ellipsis"
 		}, B(e.label), 5))), 128)), e.showActions ? (j(), c("th", _f, B(e.actionsLabel || "Actions"), 1)) : s("", !0)])]));
 	}
-}), yf = { class: "bg-white dark:bg-gray-800/20 divide-y divide-gray-200 dark:divide-gray-700 animate-pulse" }, bf = {
+}), yf = { class: "bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default-light dark:divide-default-dark animate-pulse" }, bf = {
 	key: 0,
 	style: {
 		width: "120px",
 		"min-width": "120px",
 		"max-width": "120px"
 	},
-	class: "px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 overflow-hidden text-ellipsis"
+	class: "px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis"
 }, xf = /* @__PURE__ */ p({
 	__name: "TableSkeleton",
 	props: {
@@ -11745,14 +11764,14 @@ var Fd = {
 		};
 		return (r, i) => (j(), c("tbody", yf, [(j(!0), c(n, null, I(e.rows, (r) => (j(), c("tr", {
 			key: r,
-			class: "hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200"
+			class: "hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200"
 		}, [(j(!0), c(n, null, I(e.columns, (e, n) => (j(), c("td", {
 			key: n,
-			class: "px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 overflow-hidden text-ellipsis"
+			class: "px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis"
 		}, [l("div", {
-			class: "h-4 bg-gray-200 dark:bg-gray-700 rounded",
+			class: "h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded",
 			style: T({ width: t() })
-		}, null, 4)]))), 128)), e.showActions ? (j(), c("td", bf, [...i[0] ||= [l("div", { class: "h-4 bg-gray-200 dark:bg-gray-700 rounded w-16" }, null, -1)]])) : s("", !0)]))), 128))]));
+		}, null, 4)]))), 128)), e.showActions ? (j(), c("td", bf, [...i[0] ||= [l("div", { class: "h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-16" }, null, -1)]])) : s("", !0)]))), 128))]));
 	}
 }), Sf = F(!1);
 function Cf() {
@@ -11811,7 +11830,7 @@ var wf = {
 	class: "overflow-x-auto min-w-full"
 }, kf = {
 	key: 1,
-	class: "bg-white dark:bg-gray-800/20 divide-y divide-gray-200 dark:divide-gray-700"
+	class: "bg-table-body-bg-light dark:bg-table-body-bg-dark divide-y divide-default-light dark:divide-default-dark"
 }, Af = ["onClick"], jf = { key: 1 }, Mf = { key: 2 }, Nf = {
 	key: 0,
 	style: {
@@ -11819,20 +11838,20 @@ var wf = {
 		"min-width": "120px",
 		"max-width": "120px"
 	},
-	class: "px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300"
+	class: "px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark"
 }, Pf = {
 	key: 2,
 	class: "space-y-4"
 }, Ff = {
 	key: 0,
 	class: "space-y-4"
-}, If = ["onClick"], Lf = { class: "space-y-3" }, Rf = { class: "text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider w-1/3" }, zf = { class: "text-sm text-gray-900 dark:text-gray-300 w-2/3 text-right tabular-nums" }, Bf = { key: 1 }, Vf = { key: 2 }, Hf = {
+}, If = ["onClick"], Lf = { class: "space-y-3" }, Rf = { class: "text-xs font-medium text-table-card-label-text-light dark:text-table-card-label-text-dark uppercase tracking-wider w-1/3" }, zf = { class: "text-sm text-table-body-text-light dark:text-table-body-text-dark w-2/3 text-right tabular-nums" }, Bf = { key: 1 }, Vf = { key: 2 }, Hf = {
 	key: 0,
-	class: "flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700"
-}, Uf = { class: "text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider" }, Wf = { class: "flex space-x-2" }, Gf = {
+	class: "flex justify-between items-center pt-3 border-t border-default-light dark:border-default-dark"
+}, Uf = { class: "text-xs font-medium text-table-card-label-text-light dark:text-table-card-label-text-dark uppercase tracking-wider" }, Wf = { class: "flex space-x-2" }, Gf = {
 	key: 3,
 	class: "text-center py-12 text-danger-600 dark:text-danger-400"
-}, Kf = { class: "text-lg" }, qf = /* @__PURE__ */ p({
+}, Kf = { class: "text-lg" }, qf = { class: "bg-table-footer-bg-light text-table-footer-text-light dark:bg-table-footer-bg-dark dark:text-table-footer-text-dark" }, Jf = /* @__PURE__ */ p({
 	__name: "DataTable",
 	props: {
 		columns: {},
@@ -11931,26 +11950,26 @@ var wf = {
 					"modelValue",
 					"left-icon",
 					"disabled"
-				]), U(y) ? (j(), c("div", Df, [...r[2] ||= [l("div", { class: "animate-spin rounded-full h-4 w-4 border-b-2 border-primary-500" }, null, -1)]])) : s("", !0)])])) : s("", !0),
+				]), U(y) ? (j(), c("div", Df, [...r[2] ||= [l("div", { class: "animate-spin rounded-full h-4 w-4 border-b-2 border-primary-subtle-light dark:border-primary-subtle-dark" }, null, -1)]])) : s("", !0)])])) : s("", !0),
 				U(P) ? (j(), c("div", Pf, [U(u) ? (j(), c("div", Ff, [(j(), c(n, null, I(5, (e) => l("div", {
 					key: e,
-					class: "bg-gray-50 dark:bg-gray-800/20 rounded-lg p-4 animate-pulse"
+					class: "bg-table-card-skeleton-bg-light dark:bg-table-card-skeleton-bg-dark rounded-lg p-4 animate-pulse"
 				}, [...r[3] ||= [l("div", { class: "space-y-3" }, [
-					l("div", { class: "h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4" }),
-					l("div", { class: "h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2" }),
-					l("div", { class: "h-3 bg-gray-200 dark:bg-gray-700 rounded w-2/3" })
+					l("div", { class: "h-4 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-3/4" }),
+					l("div", { class: "h-3 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-1/2" }),
+					l("div", { class: "h-3 bg-table-skeleton-placeholder-bg-light dark:bg-table-skeleton-placeholder-bg-dark rounded w-2/3" })
 				], -1)]])), 64))])) : (j(!0), c(n, { key: 1 }, I(U(M), (r, i) => (j(), c("div", {
 					key: i,
-					class: "bg-white dark:bg-gray-800/20 rounded-lg p-4 border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200",
+					class: "bg-table-body-bg-light dark:bg-table-body-bg-dark rounded-lg p-4 border border-default-light dark:border-default-dark cursor-pointer hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200",
 					onClick: (e) => K(r)
 				}, [l("div", Lf, [(j(!0), c(n, null, I(w.columns, (e, n) => (j(), c("div", {
 					key: e.key,
-					class: C(["flex justify-between items-start", n < w.columns.length - 1 ? "pb-3 border-b border-gray-200 dark:border-gray-700" : ""])
+					class: C(["flex justify-between items-start", n < w.columns.length - 1 ? "pb-3 border-b border-default-light dark:border-default-dark" : ""])
 				}, [l("span", Rf, B(e.label), 1), l("div", zf, [e.slot ? L(t.$slots, e.slot, {
 					row: r,
 					value: G(r, e)
 				}, void 0, void 0, 0) : e.format ? (j(), c("span", Bf, B(e.format(r)), 1)) : (j(), c("span", Vf, B(G(r, e)), 1))])], 2))), 128)), U(D) ? (j(), c("div", Hf, [l("span", Uf, B(e.actionsLabel || "Actions"), 1), l("div", Wf, [L(t.$slots, "actions", { row: r })])])) : s("", !0)])], 8, If))), 128))])) : (j(), c("div", Of, [l("table", {
-					class: "min-w-full divide-y divide-gray-200 dark:divide-gray-700",
+					class: "min-w-full divide-y divide-default-light dark:divide-default-dark",
 					style: T({
 						width: U(ee),
 						tableLayout: U(H) ? "fixed" : "auto"
@@ -11970,7 +11989,7 @@ var wf = {
 					"show-actions": U(D)
 				}, null, 8, ["columns", "show-actions"])) : (j(), c("tbody", kf, [(j(!0), c(n, null, I(U(M), (e, r) => (j(), c("tr", {
 					key: r,
-					class: "hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors duration-200 cursor-pointer",
+					class: "hover:bg-table-body-bg-hover-light dark:hover:bg-table-body-bg-hover-dark transition-colors duration-200 cursor-pointer",
 					onClick: (t) => K(e)
 				}, [(j(!0), c(n, null, I(w.columns, (n) => (j(), c("td", {
 					key: n.key,
@@ -11979,7 +11998,7 @@ var wf = {
 						minWidth: n.width ? typeof n.width == "number" ? `${n.width}px` : n.width : "150px",
 						maxWidth: n.width ? typeof n.width == "number" ? `${n.width}px` : n.width : "none"
 					}),
-					class: "px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 overflow-hidden text-ellipsis tabular-nums"
+					class: "px-6 py-4 whitespace-nowrap text-sm text-table-body-text-light dark:text-table-body-text-dark overflow-hidden text-ellipsis tabular-nums"
 				}, [n.slot ? L(t.$slots, n.slot, {
 					row: e,
 					value: G(e, n)
@@ -11993,19 +12012,18 @@ var wf = {
 					default: J(() => [...r[4] ||= [d(" Reintentar ", -1)]]),
 					_: 1
 				})])) : s("", !0),
-				f(g, {
+				l("div", qf, [f(g, {
 					"internal-pagination-server": U(N),
 					"total-items": U(M).length
-				}, null, 8, ["internal-pagination-server", "total-items"]),
-				U(k) ? s("", !0) : (j(), o(hf, {
-					key: 4,
+				}, null, 8, ["internal-pagination-server", "total-items"]), U(k) ? s("", !0) : (j(), o(hf, {
+					key: 0,
 					"internal-pagination-server": U(h),
 					onPageChange: V
-				}, null, 8, ["internal-pagination-server"]))
+				}, null, 8, ["internal-pagination-server"]))])
 			]);
 		};
 	}
-}), Jf = ["onClick"], Yf = /* @__PURE__ */ p({
+}), Yf = ["onClick"], Xf = /* @__PURE__ */ p({
 	__name: "DropdownMenu",
 	props: {
 		items: {},
@@ -12073,35 +12091,38 @@ var wf = {
 						...p.value,
 						visibility: m.value ? "visible" : "hidden"
 					}),
-					class: "fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-gray-800"
+					class: "fixed z-[10000] max-h-[calc(100vh-1rem)] w-48 overflow-y-auto rounded-xl border border-default-light dark:border-default-dark bg-dropdown-menu-panel-bg-light py-1 shadow-lg dark:bg-dropdown-menu-panel-bg-dark"
 				}, [(j(!0), c(n, null, I(e.items, (e) => (j(), c("button", {
 					key: e.action,
 					type: "button",
-					class: C(["flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 hover:bg-gray-100 dark:hover:bg-gray-700/30", [e.variant === "danger" ? "text-danger-600 dark:text-danger-400" : e.variant === "success" ? "text-success-600 dark:text-success-400" : "text-gray-700 dark:text-gray-200"]]),
+					class: C(["flex w-full cursor-pointer items-center space-x-2 px-4 py-2 text-left text-sm transition-colors duration-150 text-dropdown-item-text-light dark:text-dropdown-item-text-dark hover:bg-dropdown-item-bg-hover-light dark:hover:bg-dropdown-item-bg-hover-dark", {
+						"text-danger-600 dark:text-danger-400": e.variant === "danger",
+						"text-success-600 dark:text-success-400": e.variant === "success"
+					}]),
 					onClick: (t) => v(e)
 				}, [e.icon ? (j(), o(z(e.icon), {
 					key: 0,
 					class: "h-4 w-4"
-				})) : s("", !0), l("span", null, B(e.label), 1)], 10, Jf))), 128))], 4)) : s("", !0)]),
+				})) : s("", !0), l("span", null, B(e.label), 1)], 10, Yf))), 128))], 4)) : s("", !0)]),
 				_: 1
 			})]))], 2);
 		};
 	}
-}), Xf = ["for"], Zf = { class: "relative" }, Qf = [
+}), Zf = ["for"], Qf = { class: "relative" }, $f = [
 	"id",
 	"name",
 	"onChange",
 	"onBlur",
 	"value"
-], $f = {
+], ep = {
 	key: 0,
 	value: "",
-	class: "bg-white dark:bg-gray-500 text-gray-600 dark:text-white",
+	class: "bg-form-select-placeholder-bg-light dark:bg-form-select-placeholder-bg-dark text-form-select-placeholder-text-light dark:text-form-select-placeholder-text-dark",
 	disabled: ""
-}, ep = ["value", "selected"], tp = {
+}, tp = ["value", "selected"], np = {
 	key: 0,
 	class: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-}, np = /* @__PURE__ */ p({
+}, rp = /* @__PURE__ */ p({
 	__name: "FormSelect",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -12126,33 +12147,33 @@ var wf = {
 			e.label && !e.small ? (j(), c("label", {
 				key: 0,
 				for: e.id,
-				class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-			}, B(e.label), 9, Xf)) : s("", !0),
+				class: "block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
+			}, B(e.label), 9, Zf)) : s("", !0),
 			f(U(le), {
 				name: e.name,
 				rules: e.rules,
 				modelValue: i.value,
 				"onUpdate:modelValue": u[0] ||= (e) => i.value = e
 			}, {
-				default: J(({ field: t, value: i, errorMessage: u, handleChange: d }) => [l("div", Zf, [l("select", {
+				default: J(({ field: t, value: i, errorMessage: u, handleChange: d }) => [l("div", Qf, [l("select", {
 					id: e.id,
 					name: t.name,
 					onChange: (e) => a(e, d),
 					onBlur: t.onBlur,
 					value: i,
 					class: C([
-						"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500",
+						"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark",
 						e.leftIcon ? "pl-10" : "pl-4",
 						"pr-4",
-						u ? "border-danger-500 dark:border-danger-500" : "",
+						u ? "border-danger-light dark:border-danger-dark" : "",
 						e.small ? "py-2" : "py-3"
 					])
-				}, [U(r) ? (j(), c("option", $f, B(U(r)), 1)) : s("", !0), (j(!0), c(n, null, I(e.options, (e) => (j(), c("option", {
+				}, [U(r) ? (j(), c("option", ep, B(U(r)), 1)) : s("", !0), (j(!0), c(n, null, I(e.options, (e) => (j(), c("option", {
 					key: e.value,
 					value: e.value,
 					selected: i != null && String(i) === String(e.value),
-					class: "bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-				}, B(e.label), 9, ep))), 128))], 42, Qf), e.leftIcon ? (j(), c("div", tp, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-gray-400 dark:text-gray-400"]) }, null, 8, ["class"]))])) : s("", !0)])]),
+					class: "bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark"
+				}, B(e.label), 9, tp))), 128))], 42, $f), e.leftIcon ? (j(), c("div", np, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark"]) }, null, 8, ["class"]))])) : s("", !0)])]),
 				_: 1
 			}, 8, [
 				"name",
@@ -12165,14 +12186,14 @@ var wf = {
 			}, null, 8, ["name"])
 		]));
 	}
-}), rp = ["for"], ip = { class: "relative" }, ap = [
+}), ip = ["for"], ap = { class: "relative" }, op = [
 	"id",
 	"value",
 	"onInput",
 	"placeholder",
 	"rows",
 	"maxlength"
-], op = { class: "mt-1 flex items-start justify-between gap-2" }, sp = /* @__PURE__ */ p({
+], sp = { class: "mt-1 flex items-start justify-between gap-2" }, cp = /* @__PURE__ */ p({
 	__name: "FormTextarea",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -12193,12 +12214,12 @@ var wf = {
 		return (r, i) => (j(), c("div", null, [e.label && !e.small ? (j(), c("label", {
 			key: 0,
 			for: e.id,
-			class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-		}, B(e.label), 9, rp)) : s("", !0), f(U(le), {
+			class: "block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
+		}, B(e.label), 9, ip)) : s("", !0), f(U(le), {
 			name: e.name,
 			rules: e.rules
 		}, {
-			default: J(({ field: r, errorMessage: i }) => [l("div", null, [l("div", ip, [l("textarea", x({ id: e.id }, r, {
+			default: J(({ field: r, errorMessage: i }) => [l("div", null, [l("div", ap, [l("textarea", x({ id: e.id }, r, {
 				value: t.value,
 				onInput: (e) => {
 					r.onChange(e), t.value = e.target.value;
@@ -12207,21 +12228,21 @@ var wf = {
 				rows: e.rows,
 				maxlength: e.maxLength,
 				class: [
-					"w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500",
-					i ? "border-danger-500 dark:border-danger-500" : "",
+					"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark",
+					i ? "border-danger-light dark:border-danger-dark" : "",
 					e.small ? "py-2" : "py-3"
 				]
-			}), null, 16, ap)]), l("div", op, [f(U(ce), {
+			}), null, 16, op)]), l("div", sp, [f(U(ce), {
 				name: e.name,
 				class: "text-sm text-danger-600 dark:text-danger-400"
 			}, null, 8, ["name"]), e.maxLength ? (j(), c("span", {
 				key: 0,
-				class: C(["text-xs text-gray-500 dark:text-gray-400 ml-auto shrink-0", n.value >= e.maxLength ? "text-danger-600 dark:text-danger-400" : ""])
+				class: C(["text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark ml-auto shrink-0", n.value >= e.maxLength ? "text-danger-600 dark:text-danger-400" : ""])
 			}, B(n.value) + " / " + B(e.maxLength), 3)) : s("", !0)])])]),
 			_: 1
 		}, 8, ["name", "rules"])]));
 	}
-}), cp = /* @__PURE__ */ p({
+}), lp = /* @__PURE__ */ p({
 	__name: "HelpTooltip",
 	props: { tooltip: {} },
 	setup(e) {
@@ -12235,14 +12256,14 @@ var wf = {
 			ref: t,
 			class: "relative group",
 			onMouseenter: i
-		}, [o[1] ||= l("span", { class: "inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-[10px] font-bold cursor-help leading-none" }, "?", -1), l("div", {
+		}, [o[1] ||= l("span", { class: "inline-flex items-center justify-center w-4 h-4 rounded-full bg-help-tooltip-trigger-bg-light dark:bg-help-tooltip-trigger-bg-dark text-help-tooltip-trigger-text-light dark:text-help-tooltip-trigger-text-dark text-[10px] font-bold cursor-help leading-none" }, "?", -1), l("div", {
 			ref_key: "tooltipRef",
 			ref: n,
-			class: "absolute bottom-full left-1/2 mb-2 px-3 py-2 text-xs text-white bg-gray-900 dark:bg-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 w-48 text-center z-50 pointer-events-none",
+			class: "absolute bottom-full left-1/2 mb-2 px-3 py-2 text-xs text-help-tooltip-panel-text-light dark:text-help-tooltip-panel-text-dark bg-help-tooltip-panel-bg-light dark:bg-help-tooltip-panel-bg-dark rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 w-48 text-center z-50 pointer-events-none",
 			style: T({ transform: `translateX(calc(-50% + ${U(r)}px))` })
-		}, [d(B(e.tooltip) + " ", 1), o[0] ||= l("div", { class: "absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700" }, null, -1)], 4)], 544));
+		}, [d(B(e.tooltip) + " ", 1), o[0] ||= l("div", { class: "absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-help-tooltip-panel-bg-light dark:border-t-help-tooltip-panel-bg-dark" }, null, -1)], 4)], 544));
 	}
-}), lp = /* @__PURE__ */ p({
+}), up = /* @__PURE__ */ p({
 	__name: "IconButton",
 	props: {
 		icon: {},
@@ -12260,27 +12281,27 @@ var wf = {
 	setup(e) {
 		let t = e, n = a(() => t.to !== void 0), r = a(() => n.value ? oe : "button"), i = a(() => {
 			let e = t.outline ? {
-				gray: "border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800",
-				primary: "border border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30",
-				secondary: "border border-secondary-500 text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-900/30",
-				success: "border border-success-500 text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
-				green: "border border-success-500 text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
-				danger: "border border-danger-500 text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
-				red: "border border-danger-500 text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
-				warning: "border border-warning-500 text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
-				yellow: "border border-warning-500 text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
-				pink: "border border-pink-500 text-pink-600 dark:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/30"
+				gray: "border border-icon-button-gray-outline-border-light dark:border-icon-button-gray-outline-border-dark text-icon-button-gray-outline-text-light dark:text-icon-button-gray-outline-text-dark hover:bg-icon-button-gray-outline-bg-hover-light dark:hover:bg-icon-button-gray-outline-bg-hover-dark",
+				primary: "border border-icon-button-primary-outline-border-light dark:border-icon-button-primary-outline-border-dark text-icon-button-primary-outline-text-light dark:text-icon-button-primary-outline-text-dark hover:bg-icon-button-primary-outline-bg-hover-light dark:hover:bg-icon-button-primary-outline-bg-hover-dark",
+				secondary: "border border-icon-button-secondary-outline-border-light dark:border-icon-button-secondary-outline-border-dark text-icon-button-secondary-outline-text-light dark:text-icon-button-secondary-outline-text-dark hover:bg-icon-button-secondary-outline-bg-hover-light dark:hover:bg-icon-button-secondary-outline-bg-hover-dark",
+				success: "border border-icon-button-success-outline-border-light dark:border-icon-button-success-outline-border-dark text-icon-button-success-outline-text-light dark:text-icon-button-success-outline-text-dark hover:bg-icon-button-success-outline-bg-hover-light dark:hover:bg-icon-button-success-outline-bg-hover-dark",
+				green: "border border-icon-button-success-outline-border-light dark:border-icon-button-success-outline-border-dark text-icon-button-success-outline-text-light dark:text-icon-button-success-outline-text-dark hover:bg-icon-button-success-outline-bg-hover-light dark:hover:bg-icon-button-success-outline-bg-hover-dark",
+				danger: "border border-icon-button-danger-outline-border-light dark:border-icon-button-danger-outline-border-dark text-icon-button-danger-outline-text-light dark:text-icon-button-danger-outline-text-dark hover:bg-icon-button-danger-outline-bg-hover-light dark:hover:bg-icon-button-danger-outline-bg-hover-dark",
+				red: "border border-icon-button-danger-outline-border-light dark:border-icon-button-danger-outline-border-dark text-icon-button-danger-outline-text-light dark:text-icon-button-danger-outline-text-dark hover:bg-icon-button-danger-outline-bg-hover-light dark:hover:bg-icon-button-danger-outline-bg-hover-dark",
+				warning: "border border-icon-button-warning-outline-border-light dark:border-icon-button-warning-outline-border-dark text-icon-button-warning-outline-text-light dark:text-icon-button-warning-outline-text-dark hover:bg-icon-button-warning-outline-bg-hover-light dark:hover:bg-icon-button-warning-outline-bg-hover-dark",
+				yellow: "border border-icon-button-warning-outline-border-light dark:border-icon-button-warning-outline-border-dark text-icon-button-warning-outline-text-light dark:text-icon-button-warning-outline-text-dark hover:bg-icon-button-warning-outline-bg-hover-light dark:hover:bg-icon-button-warning-outline-bg-hover-dark",
+				pink: "border border-icon-button-pink-outline-border-light dark:border-icon-button-pink-outline-border-dark text-icon-button-pink-outline-text-light dark:text-icon-button-pink-outline-text-dark hover:bg-icon-button-pink-outline-bg-hover-light dark:hover:bg-icon-button-pink-outline-bg-hover-dark"
 			} : {
-				gray: "bg-gray-600 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600 text-white",
-				primary: "bg-primary-600 hover:bg-primary-500 dark:bg-primary-700 dark:hover:bg-primary-600 text-white",
-				secondary: "bg-secondary-600 hover:bg-secondary-500 dark:bg-secondary-700 dark:hover:bg-secondary-600 text-white",
-				success: "bg-success-600 hover:bg-success-500 dark:bg-success-700 dark:hover:bg-success-600 text-white",
-				green: "bg-success-600 hover:bg-success-500 dark:bg-success-700 dark:hover:bg-success-600 text-white",
-				danger: "bg-danger-100 hover:bg-danger-200 dark:bg-danger-900/50 dark:hover:bg-danger-900/80 text-danger-700 dark:text-danger-200",
-				red: "bg-danger-100 hover:bg-danger-200 dark:bg-danger-900/50 dark:hover:bg-danger-900/80 text-danger-700 dark:text-danger-200",
-				warning: "bg-warning-600 hover:bg-warning-500 dark:bg-warning-700 dark:hover:bg-warning-600 text-white",
-				yellow: "bg-warning-600 hover:bg-warning-500 dark:bg-warning-700 dark:hover:bg-warning-600 text-white",
-				pink: "bg-pink-600 hover:bg-pink-500 dark:bg-pink-700 dark:hover:bg-pink-600 text-white"
+				gray: "bg-icon-button-gray-bg-light hover:bg-icon-button-gray-bg-hover-light dark:bg-icon-button-gray-bg-dark dark:hover:bg-icon-button-gray-bg-hover-dark text-icon-button-gray-text-light dark:text-icon-button-gray-text-dark",
+				primary: "bg-icon-button-primary-bg-light hover:bg-icon-button-primary-bg-hover-light dark:bg-icon-button-primary-bg-dark dark:hover:bg-icon-button-primary-bg-hover-dark text-icon-button-primary-text-light dark:text-icon-button-primary-text-dark",
+				secondary: "bg-icon-button-secondary-bg-light hover:bg-icon-button-secondary-bg-hover-light dark:bg-icon-button-secondary-bg-dark dark:hover:bg-icon-button-secondary-bg-hover-dark text-icon-button-secondary-text-light dark:text-icon-button-secondary-text-dark",
+				success: "bg-icon-button-success-bg-light hover:bg-icon-button-success-bg-hover-light dark:bg-icon-button-success-bg-dark dark:hover:bg-icon-button-success-bg-hover-dark text-icon-button-success-text-light dark:text-icon-button-success-text-dark",
+				green: "bg-icon-button-success-bg-light hover:bg-icon-button-success-bg-hover-light dark:bg-icon-button-success-bg-dark dark:hover:bg-icon-button-success-bg-hover-dark text-icon-button-success-text-light dark:text-icon-button-success-text-dark",
+				danger: "bg-icon-button-danger-bg-light hover:bg-icon-button-danger-bg-hover-light dark:bg-icon-button-danger-bg-dark dark:hover:bg-icon-button-danger-bg-hover-dark text-icon-button-danger-text-light dark:text-icon-button-danger-text-dark",
+				red: "bg-icon-button-danger-bg-light hover:bg-icon-button-danger-bg-hover-light dark:bg-icon-button-danger-bg-dark dark:hover:bg-icon-button-danger-bg-hover-dark text-icon-button-danger-text-light dark:text-icon-button-danger-text-dark",
+				warning: "bg-icon-button-warning-bg-light hover:bg-icon-button-warning-bg-hover-light dark:bg-icon-button-warning-bg-dark dark:hover:bg-icon-button-warning-bg-hover-dark text-icon-button-warning-text-light dark:text-icon-button-warning-text-dark",
+				yellow: "bg-icon-button-warning-bg-light hover:bg-icon-button-warning-bg-hover-light dark:bg-icon-button-warning-bg-dark dark:hover:bg-icon-button-warning-bg-hover-dark text-icon-button-warning-text-light dark:text-icon-button-warning-text-dark",
+				pink: "bg-icon-button-pink-bg-light hover:bg-icon-button-pink-bg-hover-light dark:bg-icon-button-pink-bg-dark dark:hover:bg-icon-button-pink-bg-hover-dark text-icon-button-pink-text-light dark:text-icon-button-pink-text-dark"
 			};
 			return e[t.color] || e.gray;
 		});
@@ -12296,7 +12317,7 @@ var wf = {
 			_: 3
 		}, 8, ["to", "class"]));
 	}
-}), up = ["src"], dp = /*#__PURE__*/ Je(/* @__PURE__ */ p({
+}), dp = ["src"], fp = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "ImageLightbox",
 	props: {
 		open: { type: Boolean },
@@ -12325,11 +12346,11 @@ var wf = {
 				src: e.src,
 				alt: "Vista ampliada",
 				class: "max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-			}, null, 8, up)) : s("", !0)])) : s("", !0)]),
+			}, null, 8, dp)) : s("", !0)])) : s("", !0)]),
 			_: 1
 		})]));
 	}
-}), [["__scopeId", "data-v-1bea9514"]]), fp = { class: "text-base font-medium text-gray-600 dark:text-gray-400 block mb-1" }, pp = { class: "text-gray-900 dark:text-white text-base w-fit" }, mp = /* @__PURE__ */ p({
+}), [["__scopeId", "data-v-1bea9514"]]), pp = { class: "text-base font-medium text-info-item-label-text-light dark:text-info-item-label-text-dark block mb-1" }, mp = { class: "text-info-item-value-text-light dark:text-info-item-value-text-dark text-base w-fit" }, hp = /* @__PURE__ */ p({
 	__name: "InfoItem",
 	props: {
 		label: {},
@@ -12340,18 +12361,18 @@ var wf = {
 	},
 	setup(e) {
 		let t = e, n = a(() => t.column ? "" : "flex items-center space-x-2");
-		return (t, r) => (j(), c("div", { class: C(U(n)) }, [l("span", fp, B(e.label), 1), l("div", pp, [L(t.$slots, "default")])], 2));
+		return (t, r) => (j(), c("div", { class: C(U(n)) }, [l("span", pp, B(e.label), 1), l("div", mp, [L(t.$slots, "default")])], 2));
 	}
-}), hp = {
+}), gp = {
 	key: 0,
 	class: "h-12 w-12 shrink-0 overflow-hidden rounded-full"
-}, gp = ["src", "alt"], _p = { class: "min-w-0 flex-1" }, vp = { class: "block break-words text-sm font-medium text-gray-900 dark:text-white" }, yp = {
+}, _p = ["src", "alt"], vp = { class: "min-w-0 flex-1" }, yp = { class: "block break-words text-sm font-medium text-item-title-text-light dark:text-item-title-text-dark" }, bp = {
 	key: 0,
-	class: "mt-0.5 block break-words text-sm text-gray-500 dark:text-gray-400"
-}, bp = {
+	class: "mt-0.5 block break-words text-sm text-item-subtitle-text-light dark:text-item-subtitle-text-dark"
+}, xp = {
 	key: 1,
-	class: "flex shrink-0 items-center justify-center text-gray-400 dark:text-gray-500"
-}, xp = /* @__PURE__ */ p({
+	class: "flex shrink-0 items-center justify-center text-item-icon-text-light dark:text-item-icon-text-dark"
+}, Sp = /* @__PURE__ */ p({
 	__name: "Item",
 	props: {
 		title: {},
@@ -12381,22 +12402,22 @@ var wf = {
 		return (t, n) => (j(), o(z(e.clickable ? "button" : "div"), {
 			id: e.id === void 0 ? void 0 : String(e.id),
 			type: e.clickable ? "button" : void 0,
-			class: C(["flex w-full items-center gap-3 rounded-lg bg-white px-4 py-3 text-left dark:bg-gray-900", {
-				"border border-gray-200 dark:border-gray-700": e.border,
+			class: C(["flex w-full items-center gap-3 rounded-lg bg-item-bg-light px-4 py-3 text-left dark:bg-item-bg-dark", {
+				"border border-default-light dark:border-default-dark": e.border,
 				"border-0": !e.border,
-				"cursor-pointer transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-gray-800": e.clickable || e.hoverable,
+				"cursor-pointer transition-colors duration-150 hover:bg-item-bg-hover-light dark:hover:bg-item-bg-hover-dark": e.clickable || e.hoverable,
 				"[font:inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500": e.clickable
 			}]),
 			onClick: r
 		}, {
 			default: J(() => [
-				e.image || t.$slots.image ? (j(), c("span", hp, [L(t.$slots, "image", {}, () => [l("img", {
+				e.image || t.$slots.image ? (j(), c("span", gp, [L(t.$slots, "image", {}, () => [l("img", {
 					src: e.image,
 					alt: e.imageAlt,
 					class: "h-full w-full object-cover"
-				}, null, 8, gp)])])) : s("", !0),
-				l("span", _p, [l("span", vp, [L(t.$slots, "title", {}, () => [d(B(e.title), 1)])]), e.subtitle || t.$slots.subtitle ? (j(), c("span", yp, [L(t.$slots, "subtitle", {}, () => [d(B(e.subtitle), 1)])])) : s("", !0)]),
-				e.icon || t.$slots.icon ? (j(), c("span", bp, [L(t.$slots, "icon", {}, () => [(j(), o(z(e.icon), {
+				}, null, 8, _p)])])) : s("", !0),
+				l("span", vp, [l("span", yp, [L(t.$slots, "title", {}, () => [d(B(e.title), 1)])]), e.subtitle || t.$slots.subtitle ? (j(), c("span", bp, [L(t.$slots, "subtitle", {}, () => [d(B(e.subtitle), 1)])])) : s("", !0)]),
+				e.icon || t.$slots.icon ? (j(), c("span", xp, [L(t.$slots, "icon", {}, () => [(j(), o(z(e.icon), {
 					class: "h-5 w-5",
 					"aria-hidden": "true",
 					focusable: "false"
@@ -12409,7 +12430,7 @@ var wf = {
 			"class"
 		]));
 	}
-}), Sp = ["aria-busy", "tabindex"], Cp = /* @__PURE__ */ p({
+}), Cp = ["aria-busy", "tabindex"], wp = /* @__PURE__ */ p({
 	__name: "List",
 	props: {
 		border: {
@@ -12465,26 +12486,26 @@ var wf = {
 		}, { flush: "post" }), (t, n) => (j(), c("ul", {
 			ref_key: "listElement",
 			ref: r,
-			class: C(["m-0 w-full list-none divide-y divide-gray-200 rounded-xl bg-white p-0 dark:divide-gray-700 dark:bg-gray-900 [&>li>*]:rounded-none", {
-				"border border-gray-200 dark:border-gray-700": e.border,
+			class: C(["m-0 w-full list-none divide-y divide-default-light dark:divide-default-dark rounded-xl bg-list-bg-light p-0 dark:bg-list-bg-dark [&>li>*]:rounded-none", {
+				"border border-default-light dark:border-default-dark": e.border,
 				"border-0": !e.border,
 				"overflow-x-hidden overflow-y-auto": e.pagination,
 				"overflow-hidden": !e.pagination
 			}]),
 			"aria-busy": e.pagination ? e.loading : void 0,
 			tabindex: e.pagination ? 0 : void 0
-		}, [L(t.$slots, "default")], 10, Sp));
+		}, [L(t.$slots, "default")], 10, Cp));
 	}
-}), wp = { class: "bg-white border-b-2 border-gray-200 dark:bg-gray-900 dark:border-gray-700 px-6 h-20 flex items-center" }, Tp = { class: "flex items-center justify-between w-full" }, Ep = { class: "flex gap-4" }, Dp = { class: "flex items-center lg:hidden" }, Op = { class: "flex items-center space-x-4" }, kp = /* @__PURE__ */ p({
+}), Tp = { class: "bg-navbar-bg-light border-b-2 border-default-light dark:border-default-dark dark:bg-navbar-bg-dark px-6 h-20 flex items-center" }, Ep = { class: "flex items-center justify-between w-full" }, Dp = { class: "flex gap-4" }, Op = { class: "flex items-center lg:hidden" }, kp = { class: "flex items-center space-x-4" }, Ap = /* @__PURE__ */ p({
 	__name: "Navbar",
 	emits: ["toggle-mobile-sidebar"],
 	setup(e) {
-		return (e, t) => (j(), c("nav", wp, [l("div", Tp, [l("div", Ep, [l("div", Dp, [l("button", {
+		return (e, t) => (j(), c("nav", Tp, [l("div", Ep, [l("div", Dp, [l("div", Op, [l("button", {
 			onClick: t[0] ||= (t) => e.$emit("toggle-mobile-sidebar"),
-			class: "w-10 h-10 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
-		}, [f(U(Ve), { class: "w-5 h-5 text-gray-900 dark:text-white" })])])]), l("div", Op, [L(e.$slots, "right")])])]));
+			class: "w-10 h-10 bg-navbar-mobile-menu-bg-light hover:bg-navbar-mobile-menu-bg-hover-light dark:bg-navbar-mobile-menu-bg-dark dark:hover:bg-navbar-mobile-menu-bg-hover-dark rounded-lg flex items-center justify-center transition-colors"
+		}, [f(U(Ve), { class: "w-5 h-5 text-navbar-mobile-menu-icon-text-light dark:text-navbar-mobile-menu-icon-text-dark" })])])]), l("div", kp, [L(e.$slots, "right")])])]));
 	}
-}), Ap = /* @__PURE__ */ p({
+}), jp = /* @__PURE__ */ p({
 	__name: "SidebarItem",
 	props: {
 		to: {},
@@ -12520,9 +12541,9 @@ var wf = {
 			return j(), o(i, {
 				to: e.to,
 				"data-active": r.value,
-				class: C(["group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 focus:outline-none", [r.value ? e.showActiveBackground ? "bg-primary-600 text-white dark:bg-primary-500" : e.useExternalIndicator ? "bg-primary-600 text-white dark:bg-primary-500 lg:bg-transparent lg:dark:bg-transparent" : "text-white" : "text-gray-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800/50"]])
+				class: C(["group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 focus:outline-none", [r.value ? e.showActiveBackground ? "bg-sidebar-tab-bg-active-light text-sidebar-tab-text-active-light dark:bg-sidebar-tab-bg-active-dark dark:text-sidebar-tab-text-active-dark" : e.useExternalIndicator ? "bg-sidebar-tab-bg-active-light text-sidebar-tab-text-active-light dark:bg-sidebar-tab-bg-active-dark dark:text-sidebar-tab-text-active-dark lg:bg-transparent lg:dark:bg-transparent" : "text-sidebar-tab-text-active-light dark:text-sidebar-tab-text-active-dark" : "text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark"]])
 			}, {
-				default: J(() => [(j(), o(z(e.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [r.value ? "text-white" : "text-gray-400 group-hover:text-gray-600 dark:text-gray-200 dark:group-hover:text-gray-100"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center gap-2", e.isCollapsed ? "w-0" : e.textFitContent ? "w-fit" : "w-48"]) }, [
+				default: J(() => [(j(), o(z(e.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [r.value ? "text-sidebar-tab-text-active-light dark:text-sidebar-tab-text-active-dark" : "text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center gap-2", e.isCollapsed ? "w-0" : e.textFitContent ? "w-fit" : "w-48"]) }, [
 					l("span", { class: C(["whitespace-nowrap", r.value ? "font-medium" : "font-normal"]) }, B(e.name), 3),
 					e.hasExternalIcon ? (j(), o(U(ke), {
 						key: 0,
@@ -12530,7 +12551,7 @@ var wf = {
 					})) : s("", !0),
 					e.hasBadge ? (j(), c("span", {
 						key: 1,
-						class: C(["text-[10px] font-medium px-1.5 py-0.5 rounded-full shrink-0 tabular-nums", [r.value ? "bg-white/20 text-white" : "bg-primary-600 text-white dark:bg-primary-500"]])
+						class: C(["text-[10px] font-medium px-1.5 py-0.5 rounded-full shrink-0 tabular-nums", [r.value ? "bg-sidebar-tab-badge-bg-active-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-bg-active-dark dark:text-sidebar-tab-badge-text-dark" : "bg-sidebar-tab-badge-bg-light text-sidebar-tab-badge-text-light dark:bg-sidebar-tab-badge-bg-dark dark:text-sidebar-tab-badge-text-dark"]])
 					}, B(e.badgeText), 3)) : s("", !0)
 				], 2)]),
 				_: 1
@@ -12541,21 +12562,21 @@ var wf = {
 			]);
 		};
 	}
-}), jp = he("sidebarCollapsed", !1);
-function Mp() {
+}), Mp = he("sidebarCollapsed", !1);
+function Np() {
 	return {
-		isCollapsed: jp,
+		isCollapsed: Mp,
 		toggleCollapse: () => {
-			jp.value = !jp.value;
+			Mp.value = !Mp.value;
 		},
 		expand: () => {
-			jp.value = !1;
+			Mp.value = !1;
 		}
 	};
 }
 //#endregion
 //#region src/composables/useActiveIndicator.ts
-function Np(e) {
+function Pp(e) {
 	let t = se(), n = F(!1), r = F(!1), i = F({
 		top: "0px",
 		height: "0px",
@@ -12622,14 +12643,14 @@ function Np(e) {
 }
 //#endregion
 //#region src/components/Sidebar/SidebarList.vue?vue&type=script&setup=true&lang.ts
-var Pp = { class: "space-y-0.5 relative" }, Fp = ["onClick"], Ip = { class: "overflow-hidden" }, Lp = { class: "pl-6 space-y-0.5 pt-1 pb-1" }, Rp = /* @__PURE__ */ p({
+var Fp = { class: "space-y-0.5 relative" }, Ip = ["onClick"], Lp = { class: "overflow-hidden" }, Rp = { class: "pl-6 space-y-0.5 pt-1 pb-1" }, zp = /* @__PURE__ */ p({
 	__name: "SidebarList",
 	props: {
 		isCollapsed: { type: Boolean },
 		menuItems: {}
 	},
 	setup(e) {
-		let t = e, r = se(), { expand: i } = Mp(), a = K("navRef"), { isInitialized: s, isAnimating: u, activeIndicatorStyle: d, trackAnimation: p } = Np(a), m = F(/* @__PURE__ */ new Set()), h = F(/* @__PURE__ */ new Set()), g = (e) => e.children?.some((e) => r.path === e.route || r.path.startsWith(e.route + "/")) ?? !1, _ = (e) => h.value.has(e.route) ? !1 : m.value.has(e.route) || g(e), v = (e) => {
+		let t = e, r = se(), { expand: i } = Np(), a = K("navRef"), { isInitialized: s, isAnimating: u, activeIndicatorStyle: d, trackAnimation: p } = Pp(a), m = F(/* @__PURE__ */ new Set()), h = F(/* @__PURE__ */ new Set()), g = (e) => e.children?.some((e) => r.path === e.route || r.path.startsWith(e.route + "/")) ?? !1, _ = (e) => h.value.has(e.route) ? !1 : m.value.has(e.route) || g(e), v = (e) => {
 			if (t.isCollapsed) {
 				i(), m.value.add(e), h.value.delete(e), p();
 				return;
@@ -12641,22 +12662,22 @@ var Pp = { class: "space-y-0.5 relative" }, Fp = ["onClick"], Ip = { class: "ove
 		}), q(() => t.isCollapsed, () => {
 			p();
 		}), (r, i) => {
-			let p = Ap;
+			let p = jp;
 			return j(), c("nav", {
 				ref_key: "navRef",
 				ref: a,
 				class: "flex-1 px-3 py-2 relative"
 			}, [l("div", {
-				class: C(["absolute left-3 right-3 bg-primary-600 dark:bg-primary-500 rounded-xl", U(s) ? U(u) ? "transition-opacity duration-150 ease-out" : "transition-all duration-300 ease-out" : ""]),
+				class: C(["absolute left-3 right-3 bg-sidebar-tab-bg-active-light dark:bg-sidebar-tab-bg-active-dark rounded-xl", U(s) ? U(u) ? "transition-opacity duration-150 ease-out" : "transition-all duration-300 ease-out" : ""]),
 				style: T({
 					top: U(d).top,
 					height: U(d).height,
 					opacity: U(d).opacity
 				})
-			}, null, 6), l("ul", Pp, [(j(!0), c(n, null, I(t.menuItems, (t) => (j(), c("li", { key: t.route }, [t.children?.length ? (j(), c(n, { key: 0 }, [l("button", {
-				class: C(["group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 outline-none", [g(t) ? "text-primary-500 dark:text-primary-400" : "text-gray-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800/50"]]),
+			}, null, 6), l("ul", Fp, [(j(!0), c(n, null, I(t.menuItems, (t) => (j(), c("li", { key: t.route }, [t.children?.length ? (j(), c(n, { key: 0 }, [l("button", {
+				class: C(["group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 outline-none", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark"]]),
 				onClick: (e) => v(t.route)
-			}, [(j(), o(z(t.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [g(t) ? "text-primary-500 dark:text-primary-400" : "text-gray-400 group-hover:text-gray-600 dark:text-gray-200 dark:group-hover:text-gray-100"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center justify-between flex-1", e.isCollapsed ? "w-0" : "w-48"]) }, [l("span", { class: C([g(t) ? "font-medium" : "font-normal", "whitespace-nowrap"]) }, B(t.name), 3), f(U(Me), { class: C(["w-4 h-4 shrink-0 transition-transform duration-300 ease-in-out", _(t) ? "rotate-180" : ""]) }, null, 8, ["class"])], 2)], 10, Fp), l("div", { class: C(["grid transition-all duration-300 ease-in-out", _(t) && !e.isCollapsed ? "grid-rows-[1fr]" : "grid-rows-[0fr]"]) }, [l("div", Ip, [l("ul", Lp, [(j(!0), c(n, null, I(t.children, (t) => (j(), c("li", { key: t.route }, [f(p, {
+			}, [(j(), o(z(t.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center justify-between flex-1", e.isCollapsed ? "w-0" : "w-48"]) }, [l("span", { class: C([g(t) ? "font-medium" : "font-normal", "whitespace-nowrap"]) }, B(t.name), 3), f(U(Me), { class: C(["w-4 h-4 shrink-0 transition-transform duration-300 ease-in-out", _(t) ? "rotate-180" : ""]) }, null, 8, ["class"])], 2)], 10, Ip), l("div", { class: C(["grid transition-all duration-300 ease-in-out", _(t) && !e.isCollapsed ? "grid-rows-[1fr]" : "grid-rows-[0fr]"]) }, [l("div", Lp, [l("ul", Rp, [(j(!0), c(n, null, I(t.children, (t) => (j(), c("li", { key: t.route }, [f(p, {
 				to: t.route,
 				name: t.name,
 				icon: t.icon,
@@ -12682,35 +12703,35 @@ var Pp = { class: "space-y-0.5 relative" }, Fp = ["onClick"], Ip = { class: "ove
 			]))]))), 128))])], 512);
 		};
 	}
-}), zp = F(!1), Bp = F(!1), Vp = F(!1);
-function Hp() {
+}), Bp = F(!1), Vp = F(!1), Hp = F(!1);
+function Up() {
 	let e = () => {
 		let e = window.innerWidth;
-		zp.value = e < 1024, Bp.value = e >= 768 && e < 1024, Vp.value = e >= 1024;
+		Bp.value = e < 1024, Vp.value = e >= 768 && e < 1024, Hp.value = e >= 1024;
 	};
 	return O(() => {
 		e(), window.addEventListener("resize", e);
 	}), A(() => {
 		window.removeEventListener("resize", e);
 	}), {
-		isMobile: zp,
-		isTablet: Bp,
-		isDesktop: Vp,
+		isMobile: Bp,
+		isTablet: Vp,
+		isDesktop: Hp,
 		checkScreenSize: e
 	};
 }
 //#endregion
 //#region src/components/Sidebar.vue?vue&type=script&setup=true&lang.ts
-var Up = { class: "p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex items-center" }, Wp = {
+var Wp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark h-20 flex items-center" }, Gp = {
 	key: 0,
 	class: "flex items-center space-x-2"
-}, Gp = { class: "w-8 h-8" }, Kp = ["src", "alt"], qp = { class: "overflow-hidden transition-all duration-300 w-auto" }, Jp = { class: "text-lg font-semibold whitespace-nowrap text-gray-900 dark:text-white" }, Yp = { class: "text-sm whitespace-nowrap text-gray-500 dark:text-gray-400" }, Xp = { class: "flex-1 overflow-y-auto" }, Zp = {
+}, Kp = { class: "w-8 h-8" }, qp = ["src", "alt"], Jp = { class: "overflow-hidden transition-all duration-300 w-auto" }, Yp = { class: "text-lg font-semibold whitespace-nowrap text-sidebar-title-text-light dark:text-sidebar-title-text-dark" }, Xp = { class: "text-sm whitespace-nowrap text-sidebar-subtitle-text-light dark:text-sidebar-subtitle-text-dark" }, Zp = { class: "flex-1 overflow-y-auto" }, Qp = {
 	key: 0,
-	class: "px-4 pb-1 text-left text-[10px] text-gray-400 dark:text-gray-500"
-}, Qp = { class: "p-4 border-t-2 border-gray-200 dark:border-gray-700" }, $p = {
+	class: "px-4 pb-1 text-left text-[10px] text-sidebar-version-text-light dark:text-sidebar-version-text-dark"
+}, $p = { class: "p-4 border-t-2 border-default-light dark:border-default-dark" }, em = {
 	key: 0,
-	class: "text-sm text-gray-900 dark:text-white whitespace-nowrap"
-}, em = /* @__PURE__ */ p({
+	class: "text-sm text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark whitespace-nowrap"
+}, tm = /* @__PURE__ */ p({
 	__name: "Sidebar",
 	props: {
 		isCollapsed: { type: Boolean },
@@ -12726,51 +12747,51 @@ var Up = { class: "p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex
 			m("toggle-collapse");
 		};
 		return (e, t) => {
-			let a = Rp;
-			return j(), c("aside", { class: C(["h-screen flex flex-col border-r-2 transition-all duration-300 bg-white text-gray-900 border-gray-200 dark:bg-gray-900 dark:text-white dark:border-gray-700", v.value]) }, [
-				l("div", Up, [l("div", { class: C(["flex items-center w-full", n.isCollapsed ? "justify-center" : "justify-between"]) }, [n.isCollapsed ? s("", !0) : (j(), c("div", Wp, [l("div", Gp, [l("img", {
+			let a = zp;
+			return j(), c("aside", { class: C(["h-screen flex flex-col border-r-2 transition-all duration-300 bg-sidebar-bg-light dark:bg-sidebar-bg-dark text-sidebar-title-text-light dark:text-sidebar-title-text-dark border-default-light dark:border-default-dark", v.value]) }, [
+				l("div", Wp, [l("div", { class: C(["flex items-center w-full", n.isCollapsed ? "justify-center" : "justify-between"]) }, [n.isCollapsed ? s("", !0) : (j(), c("div", Gp, [l("div", Kp, [l("img", {
 					src: U(r),
 					alt: U(i),
 					class: "w-full h-full object-contain"
-				}, null, 8, Kp)]), l("div", qp, [l("h1", Jp, B(U(i)), 1), l("p", Yp, B(U(u)), 1)])])), U(zp) ? (j(), c("button", {
+				}, null, 8, qp)]), l("div", Jp, [l("h1", Yp, B(U(i)), 1), l("p", Xp, B(U(u)), 1)])])), U(Bp) ? (j(), c("button", {
 					key: 1,
 					onClick: t[0] ||= (t) => e.$emit("close"),
-					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
-				}, [f(U(Ke), { class: "w-4 h-4 text-gray-600 dark:text-gray-400" })])) : n.isCollapsed ? (j(), c("button", {
+					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
+				}, [f(U(Ke), { class: "w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" })])) : n.isCollapsed ? (j(), c("button", {
 					key: 3,
 					onClick: y,
-					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
-				}, [f(U(Pe), { class: "w-4 h-4 text-gray-600 dark:text-gray-400" })])) : (j(), c("button", {
+					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
+				}, [f(U(Pe), { class: "w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" })])) : (j(), c("button", {
 					key: 2,
 					onClick: y,
-					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
-				}, [f(U(Ne), { class: "w-4 h-4 text-gray-600 dark:text-gray-400" })]))], 2)]),
-				l("div", Xp, [f(a, {
+					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
+				}, [f(U(Ne), { class: "w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" })]))], 2)]),
+				l("div", Zp, [f(a, {
 					"is-collapsed": n.isCollapsed,
 					"menu-items": U(p)
 				}, null, 8, ["is-collapsed", "menu-items"])]),
-				n.isCollapsed ? s("", !0) : (j(), c("p", Zp, " v" + B(U(d)), 1)),
-				l("div", Qp, [l("button", {
+				n.isCollapsed ? s("", !0) : (j(), c("p", Qp, " v" + B(U(d)), 1)),
+				l("div", $p, [l("button", {
 					onClick: t[1] ||= (...e) => U(g) && U(g)(...e),
-					class: C(["w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700", n.isCollapsed ? "justify-center" : ""]),
+					class: C(["w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-sidebar-theme-toggle-bg-light hover:bg-sidebar-theme-toggle-bg-hover-light dark:bg-sidebar-theme-toggle-bg-dark dark:hover:bg-sidebar-theme-toggle-bg-hover-dark", n.isCollapsed ? "justify-center" : ""]),
 					"aria-label": "Toggle theme"
-				}, [(j(), o(z(_.value), { class: "w-5 h-5 text-gray-900 dark:text-white flex-shrink-0" })), n.isCollapsed ? s("", !0) : (j(), c("span", $p, B(U(h) ? "Modo claro" : "Modo oscuro"), 1))], 2)])
+				}, [(j(), o(z(_.value), { class: "w-5 h-5 text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark flex-shrink-0" })), n.isCollapsed ? s("", !0) : (j(), c("span", em, B(U(h) ? "Modo claro" : "Modo oscuro"), 1))], 2)])
 			], 2);
 		};
 	}
-}), tm = /* @__PURE__ */ p({
+}), nm = /* @__PURE__ */ p({
 	__name: "SidebarNav",
 	props: { items: {} },
 	setup(e) {
-		let t = K("navRef"), { isInitialized: r, activeIndicatorStyle: i } = Np(t);
+		let t = K("navRef"), { isInitialized: r, activeIndicatorStyle: i } = Pp(t);
 		return (a, s) => {
-			let u = Ap;
+			let u = jp;
 			return j(), c("nav", {
 				ref_key: "navRef",
 				ref: t,
 				class: "relative space-y-2 flex gap-4 overflow-x-auto lg:flex-col lg:gap-0 lg:overflow-x-hidden"
 			}, [l("div", {
-				class: C(["absolute left-0 right-0 bg-primary-600 dark:bg-primary-500 rounded-xl hidden lg:block", U(r) ? "transition-all duration-300 ease-out" : ""]),
+				class: C(["absolute left-0 right-0 bg-sidebar-tab-bg-active-light dark:bg-sidebar-tab-bg-active-dark rounded-xl hidden lg:block", U(r) ? "transition-all duration-300 ease-out" : ""]),
 				style: T({
 					top: U(i).top,
 					height: U(i).height,
@@ -12791,7 +12812,7 @@ var Up = { class: "p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex
 			]))), 128))], 512);
 		};
 	}
-}), nm = 3e3, rm = /* @__PURE__ */ p({
+}), rm = 3e3, im = /* @__PURE__ */ p({
 	__name: "SnackBarItem",
 	props: {
 		message: {
@@ -12815,7 +12836,7 @@ var Up = { class: "p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex
 			a.value = !1, setTimeout(() => {
 				r("expired");
 			}, 300);
-		}, nm);
+		}, rm);
 		let s = (e) => {
 			e && (e.preventDefault(), e.stopPropagation()), a.value = !1, setTimeout(() => {
 				r("cancel", n.message);
@@ -12825,7 +12846,7 @@ var Up = { class: "p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex
 			"enter-active-class": "animate-fade-in-up-fast",
 			"leave-active-class": "animate-fade-out"
 		}, {
-			default: J(() => [Y(l("div", { class: C(["min-h-12 mb-4 snack-content flex items-center justify-between rounded-lg pointer-events-auto", [e.error ? "border border-danger-200 dark:border-danger-800 bg-danger-50 dark:bg-danger-900" : "border border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-900"]]) }, [l("div", { class: C(["p-4 flex-1", [e.error ? "text-danger-700 dark:text-danger-100" : "text-success-700 dark:text-success-100"]]) }, B(e.message.text), 3), l("div", null, [l("button", {
+			default: J(() => [Y(l("div", { class: C(["min-h-12 mb-4 snack-content flex items-center justify-between rounded-lg pointer-events-auto", [e.error ? "border border-danger-muted-light dark:border-danger-muted-dark bg-danger-50 dark:bg-danger-900" : "border border-success-muted-light dark:border-success-muted-dark bg-success-50 dark:bg-success-900"]]) }, [l("div", { class: C(["p-4 flex-1", [e.error ? "text-danger-700 dark:text-danger-100" : "text-success-700 dark:text-success-100"]]) }, B(e.message.text), 3), l("div", null, [l("button", {
 				class: C(["px-3 py-2 text-center text-sm uppercase font-semibold cursor-pointer hover:opacity-70 transition-opacity", [e.error ? "text-danger-700 dark:text-danger-100" : "text-success-700 dark:text-success-100"]]),
 				onClick: ae(s, ["stop"])
 			}, [f(U(Ke), {
@@ -12835,34 +12856,34 @@ var Up = { class: "p-4 border-b-2 border-gray-200 dark:border-gray-700 h-20 flex
 			_: 1
 		}));
 	}
-}), im = F([]);
-function am() {
+}), am = F([]);
+function om() {
 	return {
-		messages: im,
+		messages: am,
 		pushMessage: (e, t = !1) => {
-			im.value.push({
+			am.value.push({
 				ts: Date.now(),
 				text: e,
 				error: t
 			});
 		},
 		shiftMessage: () => {
-			im.value.shift();
+			am.value.shift();
 		}
 	};
 }
 //#endregion
 //#region src/components/Snack/SnackBar.vue?vue&type=script&setup=true&lang.ts
-var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden z-50 w-80" }, sm = /* @__PURE__ */ p({
+var sm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden z-50 w-80" }, cm = /* @__PURE__ */ p({
 	__name: "SnackBar",
 	props: { active: Boolean },
 	setup(e) {
-		let { messages: t, shiftMessage: r } = am(), i = () => {
+		let { messages: t, shiftMessage: r } = om(), i = () => {
 			r();
 		};
 		return (e, r) => {
-			let a = rm;
-			return j(), c("div", om, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
+			let a = im;
+			return j(), c("div", sm, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
 				key: e.ts,
 				active: !0,
 				message: e,
@@ -12871,19 +12892,19 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}, null, 8, ["message", "error"]))), 128))]);
 		};
 	}
-}), cm = { class: "flex items-center gap-1.5" }, lm = { class: "text-sm font-medium text-gray-600 dark:text-gray-300" }, um = {
+}), lm = { class: "flex items-center gap-1.5" }, um = { class: "text-sm font-medium text-stat-card-title-text-light dark:text-stat-card-title-text-dark" }, dm = {
 	key: 0,
-	class: "text-2xl font-bold text-gray-400 dark:text-gray-500 mt-1"
-}, dm = {
-	key: 1,
-	class: "text-2xl font-bold text-gray-900 dark:text-white mt-1 tabular-nums"
+	class: "text-2xl font-bold text-stat-card-empty-text-light dark:text-stat-card-empty-text-dark mt-1"
 }, fm = {
+	key: 1,
+	class: "text-2xl font-bold text-stat-card-value-text-light dark:text-stat-card-value-text-dark mt-1 tabular-nums"
+}, pm = {
 	key: 0,
 	class: "mt-4 flex items-center"
-}, pm = {
+}, mm = {
 	key: 1,
-	class: "text-sm text-gray-500 dark:text-gray-400 ml-1"
-}, mm = /* @__PURE__ */ p({
+	class: "text-sm text-stat-card-description-text-light dark:text-stat-card-description-text-dark ml-1"
+}, hm = /* @__PURE__ */ p({
 	__name: "StatCard",
 	props: {
 		title: {},
@@ -12896,34 +12917,34 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	setup(e) {
 		let t = a(() => e.value === null), n = a(() => {
 			switch (e.changeType) {
-				case "positive": return "text-success-600 dark:text-success-400";
-				case "negative": return "text-danger-600 dark:text-danger-400";
-				case "neutral": return "text-warning-600 dark:text-warning-400";
-				case "info": return "text-secondary-600 dark:text-secondary-400";
-				default: return "text-gray-600 dark:text-gray-400";
+				case "positive": return "text-stat-card-change-positive-text-light dark:text-stat-card-change-positive-text-dark";
+				case "negative": return "text-stat-card-change-negative-text-light dark:text-stat-card-change-negative-text-dark";
+				case "neutral": return "text-stat-card-change-neutral-text-light dark:text-stat-card-change-neutral-text-dark";
+				case "info": return "text-stat-card-change-info-text-light dark:text-stat-card-change-info-text-dark";
+				default: return "text-stat-card-change-default-text-light dark:text-stat-card-change-default-text-dark";
 			}
 		});
 		return (r, i) => {
-			let a = cp, u = bt;
+			let a = lp, u = bt;
 			return j(), o(u, null, {
-				default: J(() => [l("div", null, [l("div", cm, [l("p", lm, B(e.title), 1), e.help ? (j(), o(a, {
+				default: J(() => [l("div", null, [l("div", lm, [l("p", um, B(e.title), 1), e.help ? (j(), o(a, {
 					key: 0,
 					tooltip: e.help
-				}, null, 8, ["tooltip"])) : s("", !0)]), U(t) ? (j(), c("p", um, "Sin datos")) : (j(), c("p", dm, B(e.value), 1))]), e.change !== void 0 || e.description ? (j(), c("div", fm, [e.change === void 0 ? s("", !0) : (j(), c("span", {
+				}, null, 8, ["tooltip"])) : s("", !0)]), U(t) ? (j(), c("p", dm, "Sin datos")) : (j(), c("p", fm, B(e.value), 1))]), e.change !== void 0 || e.description ? (j(), c("div", pm, [e.change === void 0 ? s("", !0) : (j(), c("span", {
 					key: 0,
 					class: C(["text-sm font-medium tabular-nums", U(n)])
-				}, B(e.change), 3)), e.description ? (j(), c("span", pm, B(e.description), 1)) : s("", !0)])) : s("", !0)]),
+				}, B(e.change), 3)), e.description ? (j(), c("span", mm, B(e.description), 1)) : s("", !0)])) : s("", !0)]),
 				_: 1
 			});
 		};
 	}
-}), hm = {
+}), gm = {
 	key: 0,
-	class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-}, gm = { class: "flex items-center space-x-3" }, _m = ["disabled"], vm = {
+	class: "mb-2 block text-sm font-medium text-switch-input-label-text-light dark:text-switch-input-label-text-dark"
+}, _m = { class: "flex items-center space-x-3" }, vm = ["disabled"], ym = {
 	key: 0,
-	class: "text-sm text-gray-700 dark:text-gray-300"
-}, ym = /* @__PURE__ */ p({
+	class: "text-sm text-switch-input-label-text-light dark:text-switch-input-label-text-dark"
+}, bm = /* @__PURE__ */ p({
 	__name: "SwitchInput",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -12950,14 +12971,14 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 		let t = G(e, "modelValue"), n = () => {
 			e.disabled || (t.value = !t.value);
 		};
-		return (r, i) => (j(), c("div", null, [e.label ? (j(), c("label", hm, B(e.label), 1)) : s("", !0), l("div", gm, [l("button", {
+		return (r, i) => (j(), c("div", null, [e.label ? (j(), c("label", gm, B(e.label), 1)) : s("", !0), l("div", _m, [l("button", {
 			type: "button",
 			onClick: n,
 			disabled: e.disabled,
-			class: C(["relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed", t.value ? "bg-primary-600" : "bg-gray-300 dark:bg-gray-600"])
-		}, [l("span", { class: C(["pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out", t.value ? "translate-x-5" : "translate-x-0"]) }, null, 2)], 10, _m), e.showLabel ? (j(), c("span", vm, B(t.value ? e.trueLabel : e.falseLabel), 1)) : s("", !0)])]));
+			class: C(["relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed", t.value ? "bg-switch-input-track-bg-on-light dark:bg-switch-input-track-bg-on-dark" : "bg-switch-input-track-bg-off-light dark:bg-switch-input-track-bg-off-dark"])
+		}, [l("span", { class: C(["pointer-events-none inline-block h-5 w-5 transform rounded-full bg-switch-input-thumb-bg-light dark:bg-switch-input-thumb-bg-dark shadow ring-0 transition duration-200 ease-in-out", t.value ? "translate-x-5" : "translate-x-0"]) }, null, 2)], 10, vm), e.showLabel ? (j(), c("span", ym, B(t.value ? e.trueLabel : e.falseLabel), 1)) : s("", !0)])]));
 	}
-}), bm = { class: "space-y-4" }, xm = ["aria-label"], Sm = ["data-tabs-indicator"], Cm = [
+}), xm = { class: "space-y-4" }, Sm = ["aria-label"], Cm = ["data-tabs-indicator"], wm = [
 	"id",
 	"aria-selected",
 	"aria-controls",
@@ -12965,7 +12986,7 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	"tabindex",
 	"onClick",
 	"onKeydown"
-], wm = { class: "tab-content" }, Tm = ["id", "aria-labelledby"], Em = /*#__PURE__*/ Je(/* @__PURE__ */ p({
+], Tm = { class: "tab-content" }, Em = ["id", "aria-labelledby"], Dm = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "Tabs",
 	props: {
 		tabs: {},
@@ -12976,9 +12997,9 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	emits: ["update:modelValue", "change"],
 	setup(e, { emit: t }) {
 		let r = e, u = t, d = W(), p = F(null), m = F([]), h = F(null), g = a(() => ({
-			segmented: "w-full space-x-2 rounded-lg bg-gray-200 px-3 py-2 dark:bg-gray-800",
+			segmented: "w-full space-x-2 rounded-lg bg-tabs-segmented-bg-light px-3 py-2 dark:bg-tabs-segmented-bg-dark",
 			pills: "pill-tab-list flex-wrap items-center gap-2",
-			underline: "w-full min-w-max items-center gap-2 border-b border-gray-200 dark:border-gray-800"
+			underline: "w-full min-w-max items-center gap-2 border-b border-muted-light dark:border-muted-dark"
 		})[r.variant]), _ = a(() => ({
 			segmented: "flex-1 rounded-lg px-3 py-2",
 			pills: "shrink-0 rounded-xl px-4 py-2.5",
@@ -12995,8 +13016,8 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			height: `${r.variant === "underline" ? 2 : h.value.height}px`
 		} : {});
 		function w(e, t) {
-			let n = v.value === t, i = r.variant === "underline" ? n && !e.disabled && !h.value ? "border-primary-600 dark:border-primary-400" : "border-transparent" : "";
-			return e.disabled ? [i, "cursor-not-allowed text-gray-400 dark:text-gray-600"] : r.variant === "underline" ? [i, n ? "cursor-pointer text-primary-600 dark:text-primary-400" : "cursor-pointer text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white"] : r.variant === "pills" ? n ? ["cursor-pointer text-white", !h.value && "bg-primary-600 hover:bg-primary-700"] : "cursor-pointer text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-white" : n ? "cursor-pointer text-gray-900 dark:text-white" : "cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300";
+			let n = v.value === t, i = r.variant === "underline" ? n && !e.disabled && !h.value ? "border-primary-active-light dark:border-primary-active-dark" : "border-transparent" : "";
+			return e.disabled ? [i, "cursor-not-allowed text-tabs-text-disabled-light dark:text-tabs-text-disabled-dark"] : r.variant === "underline" ? [i, n ? "cursor-pointer text-tabs-underline-text-active-light dark:text-tabs-underline-text-active-dark" : "cursor-pointer text-tabs-underline-text-inactive-light hover:bg-tabs-underline-bg-hover-light hover:text-tabs-underline-text-hover-light dark:text-tabs-underline-text-inactive-dark dark:hover:bg-tabs-underline-bg-hover-dark dark:hover:text-tabs-underline-text-hover-dark"] : r.variant === "pills" ? n ? ["cursor-pointer text-tabs-pills-text-active-light dark:text-tabs-pills-text-active-dark", !h.value && "bg-tabs-pills-bg-active-light hover:bg-tabs-pills-bg-active-hover-light dark:bg-tabs-pills-bg-active-dark dark:hover:bg-tabs-pills-bg-active-hover-dark"] : "cursor-pointer text-tabs-pills-text-inactive-light hover:bg-tabs-pills-bg-inactive-hover-light hover:text-tabs-pills-text-inactive-hover-light dark:text-tabs-pills-text-inactive-dark dark:hover:bg-tabs-pills-bg-inactive-hover-dark dark:hover:text-tabs-pills-text-inactive-hover-dark" : n ? "cursor-pointer text-tabs-segmented-text-active-light dark:text-tabs-segmented-text-active-dark" : "cursor-pointer text-tabs-segmented-text-inactive-light hover:text-tabs-segmented-text-inactive-hover-light dark:text-tabs-segmented-text-inactive-dark dark:hover:text-tabs-segmented-text-inactive-hover-dark";
 		}
 		function E() {
 			if (r.variant === "segmented" || !y.value || y.value.disabled) {
@@ -13050,7 +13071,7 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}
 			e.preventDefault(), D(a), p.value?.querySelectorAll("[role=\"tab\"]")[a]?.focus();
 		}
-		return (t, r) => (j(), c("div", bm, [l("div", { class: C(e.variant === "segmented" ? "h-16 flex items-center transition-transform duration-300" : ["flex items-center", e.variant === "underline" && "overflow-x-auto"]) }, [l("div", {
+		return (t, r) => (j(), c("div", xm, [l("div", { class: C(e.variant === "segmented" ? "h-16 flex items-center transition-transform duration-300" : ["flex items-center", e.variant === "underline" && "overflow-x-auto"]) }, [l("div", {
 			ref_key: "tabList",
 			ref: p,
 			role: "tablist",
@@ -13060,16 +13081,16 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			e.variant === "segmented" && y.value ? (j(), c("div", {
 				key: 0,
 				"aria-hidden": "true",
-				class: "absolute top-1 bottom-1 rounded-lg bg-white shadow-sm transition-all duration-300 ease-in-out motion-reduce:transition-none dark:bg-gray-700",
+				class: "absolute top-1 bottom-1 rounded-lg bg-tabs-segmented-indicator-bg-light dark:bg-tabs-segmented-indicator-bg-dark shadow-sm transition-all duration-300 ease-in-out motion-reduce:transition-none",
 				style: T(x.value)
 			}, null, 4)) : s("", !0),
 			e.variant !== "segmented" && h.value ? (j(), c("div", {
 				key: 1,
 				"data-tabs-indicator": e.variant,
 				"aria-hidden": "true",
-				class: C(["pointer-events-none absolute left-0 top-0 bg-primary-600 transition-all duration-300 ease-in-out motion-reduce:transition-none", e.variant === "pills" ? "pill-indicator rounded-xl" : "rounded-full dark:bg-primary-400"]),
+				class: C(["pointer-events-none absolute left-0 top-0 transition-all duration-300 ease-in-out motion-reduce:transition-none", e.variant === "pills" ? "bg-tabs-pills-bg-active-light dark:bg-tabs-pills-bg-active-dark pill-indicator rounded-xl" : "bg-tabs-underline-indicator-bg-light dark:bg-tabs-underline-indicator-bg-dark rounded-full"]),
 				style: T(S.value)
-			}, null, 14, Sm)) : s("", !0),
+			}, null, 14, Cm)) : s("", !0),
 			(j(!0), c(n, null, I(e.tabs, (e, t) => (j(), c("button", {
 				ref_for: !0,
 				ref_key: "tabButtons",
@@ -13082,7 +13103,7 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				"aria-controls": `${U(d)}-panel-${t}`,
 				disabled: e.disabled,
 				tabindex: t === b.value && !e.disabled ? 0 : -1,
-				class: C(["relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 motion-reduce:transition-none dark:focus-visible:ring-offset-gray-950", [_.value, w(e, t)]]),
+				class: C(["relative z-10 inline-flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tabs-ring-focus-light focus-visible:ring-offset-2 focus-visible:ring-offset-tabs-ring-offset-focus-light dark:focus-visible:ring-tabs-ring-focus-dark dark:focus-visible:ring-offset-tabs-ring-offset-focus-dark motion-reduce:transition-none", [_.value, w(e, t)]]),
 				onClick: (e) => D(t),
 				onKeydown: (e) => k(e, t)
 			}, [e.icon ? (j(), o(z(V(e.icon)), {
@@ -13090,8 +13111,8 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				class: "h-4 w-4 shrink-0",
 				"aria-hidden": "true",
 				focusable: "false"
-			})) : s("", !0), l("span", null, B(e.label), 1)], 42, Cm))), 128))
-		], 10, xm)], 2), l("div", wm, [f(i, {
+			})) : s("", !0), l("span", null, B(e.label), 1)], 42, wm))), 128))
+		], 10, Sm)], 2), l("div", Tm, [f(i, {
 			name: "tab-content",
 			mode: "out-in",
 			appear: ""
@@ -13106,11 +13127,11 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}, [L(t.$slots, `tab-${v.value}`, {
 				activeTab: e.tabs[v.value],
 				activeTabIndex: v.value
-			}, () => [r[0] ||= l("div", { class: "text-gray-500 dark:text-gray-400 text-center py-8" }, " No content available for this tab ", -1)], !0)], 8, Tm)) : s("", !0)]),
+			}, () => [r[0] ||= l("div", { class: "text-tabs-empty-text-light dark:text-tabs-empty-text-dark text-center py-8" }, " No content available for this tab ", -1)], !0)], 8, Em)) : s("", !0)]),
 			_: 3
 		})])]));
 	}
-}), [["__scopeId", "data-v-9a42b686"]]), Dm = ["src", "alt"], Om = /* @__PURE__ */ p({
+}), [["__scopeId", "data-v-d97d4c27"]]), Om = ["src", "alt"], km = /* @__PURE__ */ p({
 	__name: "UserAvatar",
 	props: {
 		imageUrl: { default: null },
@@ -13141,39 +13162,39 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			src: e.imageUrl,
 			alt: e.name,
 			class: "w-full h-full object-cover"
-		}, null, 8, Dm)) : (j(), c("div", {
+		}, null, 8, Om)) : (j(), c("div", {
 			key: 1,
 			class: C(["w-full h-full flex items-center justify-center bg-linear-to-br from-primary-500 to-secondary-500 text-white font-semibold", U(r)])
 		}, B(U(t)), 3))], 2));
 	}
-}), km = { class: "flex -space-x-2" }, Am = /* @__PURE__ */ p({
+}), Am = { class: "flex -space-x-2" }, jm = /* @__PURE__ */ p({
 	__name: "UserAvatars",
 	props: { users: {} },
 	setup(e) {
-		return (t, r) => (j(), c("div", km, [(j(!0), c(n, null, I(e.users, (t, n) => (j(), c("div", {
+		return (t, r) => (j(), c("div", Am, [(j(!0), c(n, null, I(e.users, (t, n) => (j(), c("div", {
 			key: n,
 			class: "relative"
 		}, [l("div", {
-			class: "w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white text-xs font-medium border-2 border-white",
+			class: "w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white text-xs font-medium border-2 border-avatar-light dark:border-avatar-dark",
 			style: T({ zIndex: e.users.length - n })
 		}, B(t.initials), 5)]))), 128))]));
 	}
-}), jm = { class: "flex items-center gap-2 sm:gap-3" }, Mm = {
+}), Mm = { class: "flex items-center gap-2 sm:gap-3" }, Nm = {
 	key: 0,
 	class: "absolute -top-1 -right-1 bg-danger-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium tabular-nums"
-}, Nm = {
+}, Pm = {
 	key: 0,
-	class: "absolute right-0 top-14 w-80 bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg shadow-lg z-50"
-}, Pm = { class: "max-h-96 overflow-y-auto" }, Fm = {
+	class: "absolute right-0 top-14 w-80 bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
+}, Fm = { class: "max-h-96 overflow-y-auto" }, Im = {
 	key: 0,
-	class: "py-2 px-4 border-t border-gray-200 dark:border-gray-700 text-center"
-}, Im = { class: "w-10 h-10 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center sm:mr-3 overflow-hidden" }, Lm = { class: "text-gray-900 dark:text-white text-lg" }, Rm = {
+	class: "py-2 px-4 border-t border-default-light dark:border-default-dark text-center"
+}, Lm = { class: "w-10 h-10 bg-profile-avatar-bg-light dark:bg-profile-avatar-bg-dark rounded-full flex items-center justify-center sm:mr-3 overflow-hidden" }, Rm = { class: "text-profile-avatar-text-light dark:text-profile-avatar-text-dark text-lg" }, zm = {
 	class: "hidden sm:flex items-center",
 	style: { gap: "0" }
-}, zm = { class: "mr-3" }, Bm = { class: "text-gray-900 dark:text-white font-medium" }, Vm = { class: "flex items-center" }, Hm = { class: "text-sm text-gray-600 dark:text-gray-400" }, Um = {
+}, Bm = { class: "mr-3" }, Vm = { class: "text-profile-name-text-light dark:text-profile-name-text-dark font-medium" }, Hm = { class: "flex items-center" }, Um = { class: "text-sm text-profile-role-text-light dark:text-profile-role-text-dark" }, Wm = {
 	key: 0,
-	class: "absolute right-0 top-14 w-56 sm:w-full bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg shadow-lg z-50"
-}, Wm = { class: "py-2" }, Gm = /* @__PURE__ */ p({
+	class: "absolute right-0 top-14 w-56 sm:w-full bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
+}, Gm = { class: "py-2" }, Km = /* @__PURE__ */ p({
 	__name: "UserProfileDropdown",
 	props: {
 		userName: {},
@@ -13193,7 +13214,7 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	],
 	setup(e, { emit: t }) {
 		let r = t;
-		Hp();
+		Up();
 		let i = F(!1), a = F(null), u = F(!1), d = F(null);
 		function p() {
 			i.value = !i.value, i.value && (u.value = !1);
@@ -13205,7 +13226,7 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			m(), e.onClick?.();
 		}
 		function g() {
-			if (r("bell-click"), zp.value) return;
+			if (r("bell-click"), Bp.value) return;
 			let e = u.value;
 			_(), !e && u.value && r("panel-open");
 		}
@@ -13225,20 +13246,20 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			window.removeEventListener("keydown", y);
 		}), (t, m) => {
 			let _ = Lt, v = sf;
-			return j(), c("div", jm, [e.showNotifications ? (j(), c("div", {
+			return j(), c("div", Mm, [e.showNotifications ? (j(), c("div", {
 				key: 0,
 				class: "relative",
 				ref_key: "notificationDropdownRef",
 				ref: d
 			}, [l("button", {
 				onClick: ae(g, ["stop"]),
-				class: "w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 relative cursor-pointer",
+				class: "w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-profile-notification-trigger-bg-light hover:bg-profile-notification-trigger-bg-hover-light dark:bg-profile-notification-trigger-bg-dark dark:hover:bg-profile-notification-trigger-bg-hover-dark relative cursor-pointer",
 				"aria-label": "Show notifications"
-			}, [f(U(Ae), { class: "w-5 h-5 text-gray-900 dark:text-white" }), e.unreadNotificationsCount > 0 ? (j(), c("div", Mm, B(e.unreadNotificationsCount > 9 ? "9+" : e.unreadNotificationsCount), 1)) : s("", !0)]), f(_, null, {
-				default: J(() => [u.value && !U(zp) ? (j(), c("div", Nm, [
-					m[1] ||= l("div", { class: "py-2 px-4 border-b border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white font-semibold" }, " Notificaciones ", -1),
-					l("div", Pm, [L(t.$slots, "notifications")]),
-					e.unreadNotificationsCount > 0 ? (j(), c("div", Fm, [l("button", {
+			}, [f(U(Ae), { class: "w-5 h-5 text-profile-notification-trigger-icon-text-light dark:text-profile-notification-trigger-icon-text-dark" }), e.unreadNotificationsCount > 0 ? (j(), c("div", Nm, B(e.unreadNotificationsCount > 9 ? "9+" : e.unreadNotificationsCount), 1)) : s("", !0)]), f(_, null, {
+				default: J(() => [u.value && !U(Bp) ? (j(), c("div", Pm, [
+					m[1] ||= l("div", { class: "py-2 px-4 border-b border-default-light dark:border-default-dark text-sm text-profile-notification-title-text-light dark:text-profile-notification-title-text-dark font-semibold" }, " Notificaciones ", -1),
+					l("div", Fm, [L(t.$slots, "notifications")]),
+					e.unreadNotificationsCount > 0 ? (j(), c("div", Im, [l("button", {
 						onClick: m[0] ||= (e) => r("mark-all-read"),
 						class: "text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline focus:outline-none cursor-pointer"
 					}, " Marcar todo como leído ")])) : s("", !0)
@@ -13252,11 +13273,11 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				class: "flex items-center",
 				onClick: p
 			}, [
-				l("div", Im, [L(t.$slots, "avatar", {}, () => [l("span", Lm, B(e.userInitials), 1)])]),
-				l("div", Rm, [l("div", zm, [l("div", Bm, B(e.userName), 1), l("div", Vm, [l("span", Hm, B(e.userRole), 1)])]), f(U(Me), { class: C(["w-4 h-4 text-gray-600 dark:text-gray-400", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])]),
-				f(U(Me), { class: C(["sm:hidden w-4 h-4 text-gray-600 dark:text-gray-400 ml-2", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])
+				l("div", Lm, [L(t.$slots, "avatar", {}, () => [l("span", Rm, B(e.userInitials), 1)])]),
+				l("div", zm, [l("div", Bm, [l("div", Vm, B(e.userName), 1), l("div", Hm, [l("span", Um, B(e.userRole), 1)])]), f(U(Me), { class: C(["w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])]),
+				f(U(Me), { class: C(["sm:hidden w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark ml-2", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])
 			]), f(_, null, {
-				default: J(() => [i.value ? (j(), c("div", Um, [l("ul", Wm, [(j(!0), c(n, null, I(e.menuItems, (e) => (j(), o(v, {
+				default: J(() => [i.value ? (j(), c("div", Wm, [l("ul", Gm, [(j(!0), c(n, null, I(e.menuItems, (e) => (j(), o(v, {
 					key: e.label,
 					label: e.label,
 					icon: e.icon,
@@ -13274,7 +13295,7 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			})], 512)]);
 		};
 	}
-}), Km = { class: "flex items-start justify-between gap-4 flex-col md:flex-row" }, qm = { class: "space-y-2" }, Jm = { class: "text-3xl font-bold text-gray-900 dark:text-white" }, Ym = { class: "flex space-x-2 justify-start flex-col gap-3 md:gap-0 md:flex-row items-center" }, Xm = { class: "text-gray-600 dark:text-gray-400 text-sm" }, Zm = { class: "flex items-center space-x-3" }, Qm = /* @__PURE__ */ p({
+}), qm = { class: "flex items-start justify-between gap-4 flex-col md:flex-row" }, Jm = { class: "space-y-2" }, Ym = { class: "text-3xl font-bold text-view-header-title-text-light dark:text-view-header-title-text-dark" }, Xm = { class: "flex space-x-2 justify-start flex-col gap-3 md:gap-0 md:flex-row items-center" }, Zm = { class: "text-view-header-subtitle-text-light dark:text-view-header-subtitle-text-dark text-sm" }, Qm = { class: "flex items-center space-x-3" }, $m = /* @__PURE__ */ p({
 	__name: "ViewHeader",
 	props: {
 		subtitle: {},
@@ -13284,21 +13305,21 @@ var om = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	setup(e) {
 		return (t, n) => {
 			let r = at;
-			return j(), c("div", null, [l("div", Km, [l("div", qm, [l("h1", Jm, B(e.title), 1), l("div", Ym, [l("span", Xm, B(e.subtitle), 1), e.badgeText ? (j(), o(r, {
+			return j(), c("div", null, [l("div", qm, [l("div", Jm, [l("h1", Ym, B(e.title), 1), l("div", Xm, [l("span", Zm, B(e.subtitle), 1), e.badgeText ? (j(), o(r, {
 				key: 0,
 				variant: "neutral",
 				text: "sm"
 			}, {
 				default: J(() => [d(B(e.badgeText), 1)]),
 				_: 1
-			})) : s("", !0)])]), l("div", Zm, [L(t.$slots, "right")])])]);
+			})) : s("", !0)])]), l("div", Qm, [L(t.$slots, "right")])])]);
 		};
 	}
-}), $m = { class: "flex items-start gap-3 p-4 rounded-lg border border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-500/15" }, eh = { class: "flex-1 text-sm text-warning-700 dark:text-warning-300" }, th = /* @__PURE__ */ p({
+}), eh = { class: "flex items-start gap-3 p-4 rounded-lg border border-warning-muted-light dark:border-warning-muted-dark bg-warning-50 dark:bg-warning-500/15" }, th = { class: "flex-1 text-sm text-warning-700 dark:text-warning-300" }, nh = /* @__PURE__ */ p({
 	__name: "WarningAlert",
 	setup(e) {
-		return (e, t) => (j(), c("div", $m, [f(U(Oe), { class: "w-5 h-5 text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5" }), l("div", eh, [L(e.$slots, "default")])]));
+		return (e, t) => (j(), c("div", eh, [f(U(Oe), { class: "w-5 h-5 text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5" }), l("div", th, [L(e.$slots, "default")])]));
 	}
 });
 //#endregion
-export { Ye as Alert, at as Badge, Qe as BaseButton, et as BaseButtonIcon, mt as BottomModal, it as Breadcrumb, bt as Card, Dt as CardPaginations, Ot as CollapseTransition, rf as ConfirmationModal, qf as DataTable, At as Divider, lf as Dropdown, Lt as DropdownAnimation, sf as DropdownItem, Yf as DropdownMenu, tf as FormInput, np as FormSelect, sp as FormTextarea, cp as HelpTooltip, lp as IconButton, dp as ImageLightbox, mp as InfoItem, xp as Item, Cp as List, Rt as LoadingSVG, It as Modal, kp as Navbar, of as ResultCount, nn as SearchableSelect, em as Sidebar, Ap as SidebarItem, Rp as SidebarList, tm as SidebarNav, sm as SnackBar, rm as SnackBarItem, mm as StatCard, ym as SwitchInput, vf as TableHeader, hf as TablePagination, xf as TableSkeleton, Em as Tabs, Om as UserAvatar, Am as UserAvatars, Gm as UserProfileDropdown, Qm as ViewHeader, th as WarningAlert, Nd as initTheme, Vp as isDesktop, zp as isMobile, Bp as isTablet, Np as useActiveIndicator, am as useMessages, Hp as useMobile, zt as useRequestKey, Mp as useSidebar, Cf as useTable, Pd as useTheme, e as yup };
+export { Ye as Alert, at as Badge, Qe as BaseButton, et as BaseButtonIcon, mt as BottomModal, it as Breadcrumb, bt as Card, Dt as CardPaginations, Ot as CollapseTransition, rf as ConfirmationModal, Jf as DataTable, At as Divider, lf as Dropdown, Lt as DropdownAnimation, sf as DropdownItem, Xf as DropdownMenu, tf as FormInput, rp as FormSelect, cp as FormTextarea, lp as HelpTooltip, up as IconButton, fp as ImageLightbox, hp as InfoItem, Sp as Item, wp as List, Rt as LoadingSVG, It as Modal, Ap as Navbar, of as ResultCount, nn as SearchableSelect, tm as Sidebar, jp as SidebarItem, zp as SidebarList, nm as SidebarNav, cm as SnackBar, im as SnackBarItem, hm as StatCard, bm as SwitchInput, vf as TableHeader, hf as TablePagination, xf as TableSkeleton, Dm as Tabs, km as UserAvatar, jm as UserAvatars, Km as UserProfileDropdown, $m as ViewHeader, nh as WarningAlert, Nd as initTheme, Hp as isDesktop, Bp as isMobile, Vp as isTablet, Pp as useActiveIndicator, om as useMessages, Up as useMobile, zt as useRequestKey, Np as useSidebar, Cf as useTable, Pd as useTheme, e as yup };
