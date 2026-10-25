@@ -52,9 +52,9 @@ The utilities include base, hover, and active backgrounds, plus text, border, an
 The corresponding CSS variables live in `src/tokens.css` and follow `--ds-color-btn-{variant}-{light|dark}`. Background states add `-hover` or `-active`; text variables add `-text`, `-text-hover`, or `-text-active`; border variables add `-border`. The danger focus-ring variables add `-focus`. Override these variables to re-skin button variants without editing their components.
 
 Default values reference design-system color primitives, including
-`--ds-color-primary-*`, `--ds-color-danger-*`, `--ds-color-neutral-*`, and
-`--ds-color-white`. Tailwind palette variables are mapped to these primitives,
-so palette changes flow through to `BaseButton` and `BaseButtonIcon`.
+`--ds-color-primary-*`, `--ds-color-error-*`, `--ds-color-neutral-*`, and
+`--ds-color-white`, which default to Tailwind's base palettes. The `danger`
+button variant continues to use the `error` palette.
 
 ```vue
 <BaseButton variant="primary" size="auto">Save</BaseButton>

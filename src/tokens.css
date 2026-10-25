@@ -12,38 +12,32 @@
         "Noto Color Emoji";
 
     /* Primitive neutral palette */
-    --ds-color-white: #fff;
-    --ds-color-black: #000;
-    --ds-color-neutral-50: #f9fafb;
-    --ds-color-neutral-100: #f3f4f6;
-    --ds-color-neutral-200: #e5e7eb;
-    --ds-color-neutral-300: #d1d5db;
-    --ds-color-neutral-400: #9ca3af;
-    --ds-color-neutral-500: #6b7280;
-    --ds-color-neutral-600: #4b5563;
-    --ds-color-neutral-700: #374151;
-    --ds-color-neutral-800: #1f2937;
-    --ds-color-neutral-900: #111827;
-    --ds-color-neutral-950: #030712;
+    --ds-color-white: var(--color-white);
+    --ds-color-black: var(--color-black);
+    --ds-color-neutral-50: var(--color-gray-50);
+    --ds-color-neutral-100: var(--color-gray-100);
+    --ds-color-neutral-200: var(--color-gray-200);
+    --ds-color-neutral-300: var(--color-gray-300);
+    --ds-color-neutral-400: var(--color-gray-400);
+    --ds-color-neutral-500: var(--color-gray-500);
+    --ds-color-neutral-600: var(--color-gray-600);
+    --ds-color-neutral-700: var(--color-gray-700);
+    --ds-color-neutral-800: var(--color-gray-800);
+    --ds-color-neutral-900: var(--color-gray-900);
+    --ds-color-neutral-950: var(--color-gray-950);
 
     /* Primitive pink palette */
-    --ds-color-pink-50: #fdf2f8;
-    --ds-color-pink-100: #fce7f3;
-    --ds-color-pink-200: #fbcfe8;
-    --ds-color-pink-300: #f9a8d4;
-    --ds-color-pink-400: #f472b6;
-    --ds-color-pink-500: #ec4899;
-    --ds-color-pink-600: #db2777;
-    --ds-color-pink-700: #be185d;
-    --ds-color-pink-800: #9d174d;
-    --ds-color-pink-900: #831843;
-    --ds-color-pink-950: #500724;
-
-    /* Primitive Material neutral colors */
-    --ds-color-material-neutral-100: #e6e1e5;
-    --ds-color-material-neutral-300: #cac4d0;
-    --ds-color-material-neutral-700: #49454f;
-    --ds-color-material-neutral-900: #1d1b20;
+    --ds-color-pink-50: var(--color-pink-50);
+    --ds-color-pink-100: var(--color-pink-100);
+    --ds-color-pink-200: var(--color-pink-200);
+    --ds-color-pink-300: var(--color-pink-300);
+    --ds-color-pink-400: var(--color-pink-400);
+    --ds-color-pink-500: var(--color-pink-500);
+    --ds-color-pink-600: var(--color-pink-600);
+    --ds-color-pink-700: var(--color-pink-700);
+    --ds-color-pink-800: var(--color-pink-800);
+    --ds-color-pink-900: var(--color-pink-900);
+    --ds-color-pink-950: var(--color-pink-950);
 
     /* Primitive translucent neutral colors */
     --ds-color-black-alpha-5: color-mix(in oklab, var(--ds-color-black) 5%, transparent);
@@ -61,82 +55,97 @@
     --ds-color-neutral-800-alpha-70: color-mix(in oklab, var(--ds-color-neutral-800) 70%, transparent);
     --ds-color-neutral-800-alpha-80: color-mix(in oklab, var(--ds-color-neutral-800) 80%, transparent);
     --ds-color-neutral-800-alpha-90: color-mix(in oklab, var(--ds-color-neutral-800) 90%, transparent);
+    --ds-color-neutral-500-alpha-30: color-mix(in oklab, var(--ds-color-neutral-500) 30%, transparent);
+    --ds-color-neutral-400-alpha-30: color-mix(in oklab, var(--ds-color-neutral-400) 30%, transparent);
     --ds-color-neutral-700-alpha-30: color-mix(in oklab, var(--ds-color-neutral-700) 30%, transparent);
     --ds-color-neutral-700-alpha-50: color-mix(in oklab, var(--ds-color-neutral-700) 50%, transparent);
     --ds-color-neutral-700-alpha-70: color-mix(in oklab, var(--ds-color-neutral-700) 70%, transparent);
 
     /* Primary - indigo */
-    --ds-color-primary-50: #eef2ff;
-    --ds-color-primary-100: #e0e7ff;
-    --ds-color-primary-200: #c7d2fe;
-    --ds-color-primary-300: #a5b4fc;
-    --ds-color-primary-400: #818cf8;
-    --ds-color-primary-500: #6366f1;
-    --ds-color-primary-600: #4f46e5;
-    --ds-color-primary-700: #4338ca;
-    --ds-color-primary-800: #3730a3;
-    --ds-color-primary-900: #312e81;
-    --ds-color-primary-950: #1e1b4b;
+    --ds-color-primary-50: var(--color-indigo-50);
+    --ds-color-primary-100: var(--color-indigo-100);
+    --ds-color-primary-200: var(--color-indigo-200);
+    --ds-color-primary-300: var(--color-indigo-300);
+    --ds-color-primary-400: var(--color-indigo-400);
+    --ds-color-primary-500: var(--color-indigo-500);
+    --ds-color-primary-600: var(--color-indigo-600);
+    --ds-color-primary-700: var(--color-indigo-700);
+    --ds-color-primary-800: var(--color-indigo-800);
+    --ds-color-primary-900: var(--color-indigo-900);
+    --ds-color-primary-950: var(--color-indigo-950);
 
-    /* Secondary - sky */
-    --ds-color-secondary-50: #f0f9ff;
-    --ds-color-secondary-100: #e0f2fe;
-    --ds-color-secondary-200: #bae6fd;
-    --ds-color-secondary-300: #7dd3fc;
-    --ds-color-secondary-400: #38bdf8;
-    --ds-color-secondary-500: #0ea5e9;
-    --ds-color-secondary-600: #0284c7;
-    --ds-color-secondary-700: #0369a1;
-    --ds-color-secondary-800: #075985;
-    --ds-color-secondary-900: #0c4a6e;
-    --ds-color-secondary-950: #082f49;
+    /* Informative palette - sky Tailwind defaults */
+    --ds-color-informative-50: var(--color-sky-50);
+    --ds-color-informative-100: var(--color-sky-100);
+    --ds-color-informative-200: var(--color-sky-200);
+    --ds-color-informative-300: var(--color-sky-300);
+    --ds-color-informative-400: var(--color-sky-400);
+    --ds-color-informative-500: var(--color-sky-500);
+    --ds-color-informative-600: var(--color-sky-600);
+    --ds-color-informative-700: var(--color-sky-700);
+    --ds-color-informative-800: var(--color-sky-800);
+    --ds-color-informative-900: var(--color-sky-900);
+    --ds-color-informative-950: var(--color-sky-950);
+
+    /* Secondary defaults to informative; override per shade when needed. */
+    --ds-color-secondary-50: var(--ds-color-informative-50);
+    --ds-color-secondary-100: var(--ds-color-informative-100);
+    --ds-color-secondary-200: var(--ds-color-informative-200);
+    --ds-color-secondary-300: var(--ds-color-informative-300);
+    --ds-color-secondary-400: var(--ds-color-informative-400);
+    --ds-color-secondary-500: var(--ds-color-informative-500);
+    --ds-color-secondary-600: var(--ds-color-informative-600);
+    --ds-color-secondary-700: var(--ds-color-informative-700);
+    --ds-color-secondary-800: var(--ds-color-informative-800);
+    --ds-color-secondary-900: var(--ds-color-informative-900);
+    --ds-color-secondary-950: var(--ds-color-informative-950);
 
     /* Tertiary - violet */
-    --ds-color-tertiary-50: #f5f3ff;
-    --ds-color-tertiary-100: #ede9fe;
-    --ds-color-tertiary-200: #ddd6fe;
-    --ds-color-tertiary-300: #c4b5fd;
-    --ds-color-tertiary-400: #a78bfa;
-    --ds-color-tertiary-500: #8b5cf6;
-    --ds-color-tertiary-600: #7c3aed;
-    --ds-color-tertiary-700: #6d28d9;
-    --ds-color-tertiary-800: #5b21b6;
-    --ds-color-tertiary-900: #4c1d95;
-    --ds-color-tertiary-950: #2e1065;
+    --ds-color-tertiary-50: var(--color-violet-50);
+    --ds-color-tertiary-100: var(--color-violet-100);
+    --ds-color-tertiary-200: var(--color-violet-200);
+    --ds-color-tertiary-300: var(--color-violet-300);
+    --ds-color-tertiary-400: var(--color-violet-400);
+    --ds-color-tertiary-500: var(--color-violet-500);
+    --ds-color-tertiary-600: var(--color-violet-600);
+    --ds-color-tertiary-700: var(--color-violet-700);
+    --ds-color-tertiary-800: var(--color-violet-800);
+    --ds-color-tertiary-900: var(--color-violet-900);
+    --ds-color-tertiary-950: var(--color-violet-950);
 
     /* Primitive status palette - success (emerald) */
-    --ds-color-success-50: #ecfdf5;
-    --ds-color-success-100: #d1fae5;
-    --ds-color-success-200: #a7f3d0;
-    --ds-color-success-400: #34d399;
-    --ds-color-success-500: #10b981;
-    --ds-color-success-600: #059669;
-    --ds-color-success-700: #047857;
-    --ds-color-success-800: #065f46;
-    --ds-color-success-900: #064e3b;
+    --ds-color-success-50: var(--color-emerald-50);
+    --ds-color-success-100: var(--color-emerald-100);
+    --ds-color-success-200: var(--color-emerald-200);
+    --ds-color-success-400: var(--color-emerald-400);
+    --ds-color-success-500: var(--color-emerald-500);
+    --ds-color-success-600: var(--color-emerald-600);
+    --ds-color-success-700: var(--color-emerald-700);
+    --ds-color-success-800: var(--color-emerald-800);
+    --ds-color-success-900: var(--color-emerald-900);
 
     /* Primitive status palette - warning (amber) */
-    --ds-color-warning-50: #fffbeb;
-    --ds-color-warning-100: #fef3c7;
-    --ds-color-warning-200: #fde68a;
-    --ds-color-warning-400: #fbbf24;
-    --ds-color-warning-500: #f59e0b;
-    --ds-color-warning-600: #d97706;
-    --ds-color-warning-700: #b45309;
-    --ds-color-warning-800: #92400e;
-    --ds-color-warning-900: #78350f;
+    --ds-color-warning-50: var(--color-amber-50);
+    --ds-color-warning-100: var(--color-amber-100);
+    --ds-color-warning-200: var(--color-amber-200);
+    --ds-color-warning-400: var(--color-amber-400);
+    --ds-color-warning-500: var(--color-amber-500);
+    --ds-color-warning-600: var(--color-amber-600);
+    --ds-color-warning-700: var(--color-amber-700);
+    --ds-color-warning-800: var(--color-amber-800);
+    --ds-color-warning-900: var(--color-amber-900);
 
-    /* Primitive status palette - danger (red) */
-    --ds-color-danger-50: #fef2f2;
-    --ds-color-danger-100: #fee2e2;
-    --ds-color-danger-200: #fecaca;
-    --ds-color-danger-400: #f87171;
-    --ds-color-danger-500: #ef4444;
-    --ds-color-danger-600: #dc2626;
-    --ds-color-danger-700: #b91c1c;
-    --ds-color-danger-800: #991b1b;
-    --ds-color-danger-900: #7f1d1d;
-    --ds-color-danger-900-alpha-50: color-mix(in oklab, var(--ds-color-danger-900) 50%, transparent);
+    /* Primitive status palette - error (red) */
+    --ds-color-error-50: var(--color-red-50);
+    --ds-color-error-100: var(--color-red-100);
+    --ds-color-error-200: var(--color-red-200);
+    --ds-color-error-400: var(--color-red-400);
+    --ds-color-error-500: var(--color-red-500);
+    --ds-color-error-600: var(--color-red-600);
+    --ds-color-error-700: var(--color-red-700);
+    --ds-color-error-800: var(--color-red-800);
+    --ds-color-error-900: var(--color-red-900);
+    --ds-color-error-900-alpha-50: color-mix(in oklab, var(--ds-color-error-900) 50%, transparent);
 
     /* Utility brand color */
     --ds-color-whatsapp: #25d366;
@@ -202,37 +211,37 @@
     --ds-color-btn-primary-outline-dark-text-active: var(--ds-color-white);
     --ds-color-btn-primary-outline-dark-border: var(--ds-color-primary-500);
 
-    --ds-color-btn-danger-light: var(--ds-color-danger-600);
-    --ds-color-btn-danger-light-hover: var(--ds-color-danger-700);
-    --ds-color-btn-danger-light-active: var(--ds-color-danger-900);
-    --ds-color-btn-danger-light-focus: var(--ds-color-danger-500);
+    --ds-color-btn-danger-light: var(--ds-color-error-600);
+    --ds-color-btn-danger-light-hover: var(--ds-color-error-700);
+    --ds-color-btn-danger-light-active: var(--ds-color-error-900);
+    --ds-color-btn-danger-light-focus: var(--ds-color-error-500);
     --ds-color-btn-danger-light-text: var(--ds-color-white);
     --ds-color-btn-danger-light-text-hover: var(--ds-color-white);
     --ds-color-btn-danger-light-text-active: var(--ds-color-white);
-    --ds-color-btn-danger-light-border: var(--ds-color-danger-600);
-    --ds-color-btn-danger-dark: var(--ds-color-danger-500);
-    --ds-color-btn-danger-dark-hover: var(--ds-color-danger-600);
-    --ds-color-btn-danger-dark-active: var(--ds-color-danger-700);
-    --ds-color-btn-danger-dark-focus: var(--ds-color-danger-500);
+    --ds-color-btn-danger-light-border: var(--ds-color-error-600);
+    --ds-color-btn-danger-dark: var(--ds-color-error-500);
+    --ds-color-btn-danger-dark-hover: var(--ds-color-error-600);
+    --ds-color-btn-danger-dark-active: var(--ds-color-error-700);
+    --ds-color-btn-danger-dark-focus: var(--ds-color-error-500);
     --ds-color-btn-danger-dark-text: var(--ds-color-white);
     --ds-color-btn-danger-dark-text-hover: var(--ds-color-white);
     --ds-color-btn-danger-dark-text-active: var(--ds-color-white);
-    --ds-color-btn-danger-dark-border: var(--ds-color-danger-500);
+    --ds-color-btn-danger-dark-border: var(--ds-color-error-500);
 
     --ds-color-btn-danger-outline-light: transparent;
-    --ds-color-btn-danger-outline-light-hover: var(--ds-color-danger-600);
-    --ds-color-btn-danger-outline-light-active: var(--ds-color-danger-700);
-    --ds-color-btn-danger-outline-light-text: var(--ds-color-danger-600);
+    --ds-color-btn-danger-outline-light-hover: var(--ds-color-error-600);
+    --ds-color-btn-danger-outline-light-active: var(--ds-color-error-700);
+    --ds-color-btn-danger-outline-light-text: var(--ds-color-error-600);
     --ds-color-btn-danger-outline-light-text-hover: var(--ds-color-white);
     --ds-color-btn-danger-outline-light-text-active: var(--ds-color-white);
-    --ds-color-btn-danger-outline-light-border: var(--ds-color-danger-600);
+    --ds-color-btn-danger-outline-light-border: var(--ds-color-error-600);
     --ds-color-btn-danger-outline-dark: transparent;
-    --ds-color-btn-danger-outline-dark-hover: var(--ds-color-danger-500);
-    --ds-color-btn-danger-outline-dark-active: var(--ds-color-danger-600);
-    --ds-color-btn-danger-outline-dark-text: var(--ds-color-danger-400);
+    --ds-color-btn-danger-outline-dark-hover: var(--ds-color-error-500);
+    --ds-color-btn-danger-outline-dark-active: var(--ds-color-error-600);
+    --ds-color-btn-danger-outline-dark-text: var(--ds-color-error-400);
     --ds-color-btn-danger-outline-dark-text-hover: var(--ds-color-white);
     --ds-color-btn-danger-outline-dark-text-active: var(--ds-color-white);
-    --ds-color-btn-danger-outline-dark-border: var(--ds-color-danger-500);
+    --ds-color-btn-danger-outline-dark-border: var(--ds-color-error-500);
 
     --ds-color-btn-overlay-light: var(--ds-color-black-alpha-60);
     --ds-color-btn-overlay-light-hover: var(--ds-color-black-alpha-80);
@@ -264,8 +273,8 @@
     --ds-color-border-tooltip-dark: var(--ds-color-neutral-700);
     --ds-color-border-card-light: transparent;
     --ds-color-border-card-dark: var(--ds-color-neutral-700);
-    --ds-color-border-divider-light: rgb(121 116 126 / 30%);
-    --ds-color-border-divider-dark: rgb(147 143 153 / 30%);
+    --ds-color-border-divider-light: var(--ds-color-neutral-500-alpha-30);
+    --ds-color-border-divider-dark: var(--ds-color-neutral-400-alpha-30);
     --ds-color-border-avatar-light: var(--ds-color-white);
     --ds-color-border-avatar-dark: var(--ds-color-white);
 
@@ -291,14 +300,14 @@
     --ds-color-border-warning-subtle-dark: color-mix(in oklab, var(--ds-color-warning-900) 50%, transparent);
     --ds-color-border-warning-muted-light: var(--ds-color-warning-200);
     --ds-color-border-warning-muted-dark: var(--ds-color-warning-800);
-    --ds-color-border-danger-light: var(--ds-color-danger-500);
-    --ds-color-border-danger-dark: var(--ds-color-danger-500);
-    --ds-color-border-danger-emphasis-light: var(--ds-color-danger-600);
-    --ds-color-border-danger-emphasis-dark: var(--ds-color-danger-500);
-    --ds-color-border-danger-subtle-light: var(--ds-color-danger-200);
-    --ds-color-border-danger-subtle-dark: var(--ds-color-danger-900-alpha-50);
-    --ds-color-border-danger-muted-light: var(--ds-color-danger-200);
-    --ds-color-border-danger-muted-dark: var(--ds-color-danger-800);
+    --ds-color-border-danger-light: var(--ds-color-error-500);
+    --ds-color-border-danger-dark: var(--ds-color-error-500);
+    --ds-color-border-danger-emphasis-light: var(--ds-color-error-600);
+    --ds-color-border-danger-emphasis-dark: var(--ds-color-error-500);
+    --ds-color-border-danger-subtle-light: var(--ds-color-error-200);
+    --ds-color-border-danger-subtle-dark: var(--ds-color-error-900-alpha-50);
+    --ds-color-border-danger-muted-light: var(--ds-color-error-200);
+    --ds-color-border-danger-muted-dark: var(--ds-color-error-800);
     --ds-color-border-pink-light: var(--ds-color-pink-500);
     --ds-color-border-pink-dark: var(--ds-color-pink-500);
 
@@ -530,12 +539,12 @@
     --ds-color-stat-card-description-dark: var(--ds-color-neutral-400);
     --ds-color-stat-card-change-positive-light: var(--ds-color-success-600);
     --ds-color-stat-card-change-positive-dark: var(--ds-color-success-400);
-    --ds-color-stat-card-change-negative-light: var(--ds-color-danger-600);
-    --ds-color-stat-card-change-negative-dark: var(--ds-color-danger-400);
+    --ds-color-stat-card-change-negative-light: var(--ds-color-error-600);
+    --ds-color-stat-card-change-negative-dark: var(--ds-color-error-400);
     --ds-color-stat-card-change-neutral-light: var(--ds-color-warning-600);
     --ds-color-stat-card-change-neutral-dark: var(--ds-color-warning-400);
-    --ds-color-stat-card-change-info-light: var(--ds-color-secondary-600);
-    --ds-color-stat-card-change-info-dark: var(--ds-color-secondary-400);
+    --ds-color-stat-card-change-info-light: var(--ds-color-informative-600);
+    --ds-color-stat-card-change-info-dark: var(--ds-color-informative-400);
 
     /* Navbar surface and mobile menu button */
     --ds-color-navbar-bg-light: var(--ds-color-white);
@@ -589,21 +598,21 @@
     --ds-color-bottom-modal-scrim-bg-light: var(--ds-color-black-alpha-32);
     --ds-color-bottom-modal-scrim-bg-dark: var(--ds-color-black-alpha-32);
     --ds-color-bottom-modal-panel-bg-light: var(--ds-color-white);
-    --ds-color-bottom-modal-panel-bg-dark: var(--ds-color-material-neutral-900);
-    --ds-color-bottom-modal-text-light: var(--ds-color-material-neutral-900);
-    --ds-color-bottom-modal-text-dark: var(--ds-color-material-neutral-100);
-    --ds-color-bottom-modal-title-light: var(--ds-color-material-neutral-900);
-    --ds-color-bottom-modal-title-dark: var(--ds-color-material-neutral-100);
-    --ds-color-bottom-modal-subtitle-light: var(--ds-color-material-neutral-700);
-    --ds-color-bottom-modal-subtitle-dark: var(--ds-color-material-neutral-300);
-    --ds-color-bottom-modal-close-text-light: var(--ds-color-material-neutral-700);
-    --ds-color-bottom-modal-close-text-dark: var(--ds-color-material-neutral-300);
+    --ds-color-bottom-modal-panel-bg-dark: var(--ds-color-neutral-900);
+    --ds-color-bottom-modal-text-light: var(--ds-color-neutral-900);
+    --ds-color-bottom-modal-text-dark: var(--ds-color-neutral-200);
+    --ds-color-bottom-modal-title-light: var(--ds-color-neutral-900);
+    --ds-color-bottom-modal-title-dark: var(--ds-color-neutral-200);
+    --ds-color-bottom-modal-subtitle-light: var(--ds-color-neutral-600);
+    --ds-color-bottom-modal-subtitle-dark: var(--ds-color-neutral-300);
+    --ds-color-bottom-modal-close-text-light: var(--ds-color-neutral-600);
+    --ds-color-bottom-modal-close-text-dark: var(--ds-color-neutral-300);
     --ds-color-bottom-modal-close-hover-bg-light: var(--ds-color-black-alpha-5);
     --ds-color-bottom-modal-close-hover-bg-dark: var(--ds-color-white-alpha-10);
-    --ds-color-bottom-modal-close-hover-text-light: var(--ds-color-material-neutral-900);
-    --ds-color-bottom-modal-close-hover-text-dark: var(--ds-color-material-neutral-100);
-    --ds-color-bottom-modal-close-focus-light: var(--ds-color-material-neutral-700);
-    --ds-color-bottom-modal-close-focus-dark: var(--ds-color-material-neutral-300);
+    --ds-color-bottom-modal-close-hover-text-light: var(--ds-color-neutral-900);
+    --ds-color-bottom-modal-close-hover-text-dark: var(--ds-color-neutral-200);
+    --ds-color-bottom-modal-close-focus-light: var(--ds-color-neutral-600);
+    --ds-color-bottom-modal-close-focus-dark: var(--ds-color-neutral-300);
 
     /* Item and List colors - light and dark */
     --ds-color-item-bg-light: var(--ds-color-white);
@@ -682,18 +691,18 @@
     --ds-color-icon-button-success-outline-bg-hover-light: var(--ds-color-success-50);
     --ds-color-icon-button-success-outline-bg-hover-dark: color-mix(in oklab, var(--ds-color-success-900) 30%, transparent);
 
-    --ds-color-icon-button-danger-bg-light: var(--ds-color-danger-100);
-    --ds-color-icon-button-danger-bg-dark: var(--ds-color-danger-900-alpha-50);
-    --ds-color-icon-button-danger-bg-hover-light: var(--ds-color-danger-200);
-    --ds-color-icon-button-danger-bg-hover-dark: color-mix(in oklab, var(--ds-color-danger-900) 80%, transparent);
-    --ds-color-icon-button-danger-text-light: var(--ds-color-danger-700);
-    --ds-color-icon-button-danger-text-dark: var(--ds-color-danger-200);
+    --ds-color-icon-button-danger-bg-light: var(--ds-color-error-100);
+    --ds-color-icon-button-danger-bg-dark: var(--ds-color-error-900-alpha-50);
+    --ds-color-icon-button-danger-bg-hover-light: var(--ds-color-error-200);
+    --ds-color-icon-button-danger-bg-hover-dark: color-mix(in oklab, var(--ds-color-error-900) 80%, transparent);
+    --ds-color-icon-button-danger-text-light: var(--ds-color-error-700);
+    --ds-color-icon-button-danger-text-dark: var(--ds-color-error-200);
     --ds-color-icon-button-danger-outline-border-light: var(--ds-color-border-danger);
     --ds-color-icon-button-danger-outline-border-dark: var(--ds-color-border-danger);
-    --ds-color-icon-button-danger-outline-text-light: var(--ds-color-danger-600);
-    --ds-color-icon-button-danger-outline-text-dark: var(--ds-color-danger-400);
-    --ds-color-icon-button-danger-outline-bg-hover-light: var(--ds-color-danger-50);
-    --ds-color-icon-button-danger-outline-bg-hover-dark: color-mix(in oklab, var(--ds-color-danger-900) 30%, transparent);
+    --ds-color-icon-button-danger-outline-text-light: var(--ds-color-error-600);
+    --ds-color-icon-button-danger-outline-text-dark: var(--ds-color-error-400);
+    --ds-color-icon-button-danger-outline-bg-hover-light: var(--ds-color-error-50);
+    --ds-color-icon-button-danger-outline-bg-hover-dark: color-mix(in oklab, var(--ds-color-error-900) 30%, transparent);
 
     --ds-color-icon-button-warning-bg-light: var(--ds-color-warning-600);
     --ds-color-icon-button-warning-bg-dark: var(--ds-color-warning-700);
@@ -738,7 +747,7 @@
     --ds-color-table-skeleton-placeholder-bg-dark: var(--ds-color-neutral-700);
 
     /* Component-specific surfaces */
-    --ds-color-datepicker-dark-bg: #172030;
+    --ds-color-datepicker-dark-bg: var(--ds-color-neutral-900);
 }
 
 .dark {

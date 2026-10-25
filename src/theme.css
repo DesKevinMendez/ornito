@@ -12,22 +12,7 @@
     /* Shared typography */
     --font-sans: var(--ds-font-family);
 
-    /* Primitive neutral palette */
-    --color-white: var(--ds-color-white);
-    --color-black: var(--ds-color-black);
-    --color-gray-50: var(--ds-color-neutral-50);
-    --color-gray-100: var(--ds-color-neutral-100);
-    --color-gray-200: var(--ds-color-neutral-200);
-    --color-gray-300: var(--ds-color-neutral-300);
-    --color-gray-400: var(--ds-color-neutral-400);
-    --color-gray-500: var(--ds-color-neutral-500);
-    --color-gray-600: var(--ds-color-neutral-600);
-    --color-gray-700: var(--ds-color-neutral-700);
-    --color-gray-800: var(--ds-color-neutral-800);
-    --color-gray-900: var(--ds-color-neutral-900);
-    --color-gray-950: var(--ds-color-neutral-950);
-
-    /* Primary - indigo */
+    /* Primary - Tailwind indigo defaults */
     --color-primary-50: var(--ds-color-primary-50);
     --color-primary-100: var(--ds-color-primary-100);
     --color-primary-200: var(--ds-color-primary-200);
@@ -40,7 +25,7 @@
     --color-primary-900: var(--ds-color-primary-900);
     --color-primary-950: var(--ds-color-primary-950);
 
-    /* Secondary - sky */
+    /* Secondary defaults to informative */
     --color-secondary-50: var(--ds-color-secondary-50);
     --color-secondary-100: var(--ds-color-secondary-100);
     --color-secondary-200: var(--ds-color-secondary-200);
@@ -53,7 +38,7 @@
     --color-secondary-900: var(--ds-color-secondary-900);
     --color-secondary-950: var(--ds-color-secondary-950);
 
-    /* Tertiary - violet */
+    /* Tertiary - Tailwind violet defaults */
     --color-tertiary-50: var(--ds-color-tertiary-50);
     --color-tertiary-100: var(--ds-color-tertiary-100);
     --color-tertiary-200: var(--ds-color-tertiary-200);
@@ -66,7 +51,20 @@
     --color-tertiary-900: var(--ds-color-tertiary-900);
     --color-tertiary-950: var(--ds-color-tertiary-950);
 
-    /* Semantic status - success (emerald) */
+    /* Informative status (sky) */
+    --color-informative-50: var(--ds-color-informative-50);
+    --color-informative-100: var(--ds-color-informative-100);
+    --color-informative-200: var(--ds-color-informative-200);
+    --color-informative-300: var(--ds-color-informative-300);
+    --color-informative-400: var(--ds-color-informative-400);
+    --color-informative-500: var(--ds-color-informative-500);
+    --color-informative-600: var(--ds-color-informative-600);
+    --color-informative-700: var(--ds-color-informative-700);
+    --color-informative-800: var(--ds-color-informative-800);
+    --color-informative-900: var(--ds-color-informative-900);
+    --color-informative-950: var(--ds-color-informative-950);
+
+    /* Success - Tailwind emerald defaults */
     --color-success-50: var(--ds-color-success-50);
     --color-success-100: var(--ds-color-success-100);
     --color-success-200: var(--ds-color-success-200);
@@ -77,7 +75,7 @@
     --color-success-800: var(--ds-color-success-800);
     --color-success-900: var(--ds-color-success-900);
 
-    /* Semantic status - warning (amber) */
+    /* Warning - Tailwind amber defaults */
     --color-warning-50: var(--ds-color-warning-50);
     --color-warning-100: var(--ds-color-warning-100);
     --color-warning-200: var(--ds-color-warning-200);
@@ -88,32 +86,29 @@
     --color-warning-800: var(--ds-color-warning-800);
     --color-warning-900: var(--ds-color-warning-900);
 
-    /* Semantic status - danger (red) */
-    --color-danger-50: var(--ds-color-danger-50);
-    --color-danger-100: var(--ds-color-danger-100);
-    --color-danger-200: var(--ds-color-danger-200);
-    --color-danger-400: var(--ds-color-danger-400);
-    --color-danger-500: var(--ds-color-danger-500);
-    --color-danger-600: var(--ds-color-danger-600);
-    --color-danger-700: var(--ds-color-danger-700);
-    --color-danger-800: var(--ds-color-danger-800);
-    --color-danger-900: var(--ds-color-danger-900);
+    /* Error palette (red); danger remains a Tailwind alias for existing components */
+    --color-error-50: var(--ds-color-error-50);
+    --color-error-100: var(--ds-color-error-100);
+    --color-error-200: var(--ds-color-error-200);
+    --color-error-400: var(--ds-color-error-400);
+    --color-error-500: var(--ds-color-error-500);
+    --color-error-600: var(--ds-color-error-600);
+    --color-error-700: var(--ds-color-error-700);
+    --color-error-800: var(--ds-color-error-800);
+    --color-error-900: var(--ds-color-error-900);
+
+    --color-danger-50: var(--ds-color-error-50);
+    --color-danger-100: var(--ds-color-error-100);
+    --color-danger-200: var(--ds-color-error-200);
+    --color-danger-400: var(--ds-color-error-400);
+    --color-danger-500: var(--ds-color-error-500);
+    --color-danger-600: var(--ds-color-error-600);
+    --color-danger-700: var(--ds-color-error-700);
+    --color-danger-800: var(--ds-color-error-800);
+    --color-danger-900: var(--ds-color-error-900);
 
     /* Utility brand color */
     --color-whatsapp: var(--ds-color-whatsapp);
-
-    /* Primitive pink palette */
-    --color-pink-50: var(--ds-color-pink-50);
-    --color-pink-100: var(--ds-color-pink-100);
-    --color-pink-200: var(--ds-color-pink-200);
-    --color-pink-300: var(--ds-color-pink-300);
-    --color-pink-400: var(--ds-color-pink-400);
-    --color-pink-500: var(--ds-color-pink-500);
-    --color-pink-600: var(--ds-color-pink-600);
-    --color-pink-700: var(--ds-color-pink-700);
-    --color-pink-800: var(--ds-color-pink-800);
-    --color-pink-900: var(--ds-color-pink-900);
-    --color-pink-950: var(--ds-color-pink-950);
 
     /* Semantic borders */
     --color-default-light: var(--ds-color-border-default-light);

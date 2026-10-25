@@ -101,25 +101,30 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 | Palette | Shades | Variables |
 | --- | --- | --- |
 | `primary` (indigo) | 50–950 | `--ds-color-primary-50` … `--ds-color-primary-950` |
-| `secondary` (sky) | 50–950 | `--ds-color-secondary-50` … `--ds-color-secondary-950` |
+| `informative` (sky) | 50–950 | `--ds-color-informative-50` … `--ds-color-informative-950` |
+| `secondary` (defaults to informative) | 50–950 | `--ds-color-secondary-50` … `--ds-color-secondary-950` |
 | `tertiary` (violet) | 50–950 | `--ds-color-tertiary-50` … `--ds-color-tertiary-950` |
 | `success` (emerald) | 50, 100, 200, 400–900 | `--ds-color-success-50` … `--ds-color-success-900` |
 | `warning` (amber) | 50, 100, 200, 400–900 | `--ds-color-warning-50` … `--ds-color-warning-900` |
-| `danger` (red) | 50, 100, 200, 400–900 | `--ds-color-danger-50` … `--ds-color-danger-900` |
+| `error` (red) | 50, 100, 200, 400–900 | `--ds-color-error-50` … `--ds-color-error-900` |
 | `neutral` | 50–950 | `--ds-color-neutral-50` … `--ds-color-neutral-950` |
 | `pink` | 50–950 | `--ds-color-pink-50` … `--ds-color-pink-950` |
 | — | — | `--ds-color-whatsapp` |
 | Neutral | — | `--ds-color-white`, `--ds-color-black` |
-| Material neutral | 100, 300, 700, 900 | `--ds-color-material-neutral-100`, `--ds-color-material-neutral-300`, `--ds-color-material-neutral-700`, `--ds-color-material-neutral-900` |
 | — | — | `--ds-color-datepicker-dark-bg` |
 | Typography | — | `--ds-font-family` |
 
 ### Primitive color tokens
 
-Primitive palettes are the shared base colors used by semantic component
-tokens. For example, the table header and table body hover both default to
-`--ds-color-neutral-50`. Changing that primitive updates every default that
-references it; a component token can still be overridden on its own.
+Primitive palettes use design-system names and default to Tailwind's base
+palette variables: `neutral` uses `gray`, `informative` and `secondary` use
+`sky`, `primary` uses `indigo`, `tertiary` uses `violet`, `success` uses
+`emerald`, `warning` uses `amber`, `error` uses `red`, and `pink` uses Tailwind
+`pink`. White and black use Tailwind's matching base variables. For example,
+the table header and body hover both default to `--ds-color-neutral-50`.
+Changing that primitive updates its defaults; an individual component token
+can still be overridden on its own. Divider, BottomModal, and datepicker
+neutrals also use the shared Tailwind-backed neutral scale.
 
 ```css
 :root {
@@ -139,9 +144,9 @@ they do not depend on Tailwind names. To change one role, override its semantic
 token directly, such as `--ds-color-border-strong-light`. To change all roles
 that use a primitive, override that primitive instead.
 
-Tailwind's `gray-*` utilities map to the design system's `neutral-*` scale;
-`pink-*`, `white`, and `black` utilities map to their matching primitives.
-Translucent primitives such as
+Tailwind's base palettes remain the source of these defaults. `outline` names
+a button style, not a color palette; outlined buttons use the palette selected
+for their variant. Translucent primitives such as
 `--ds-color-neutral-800-alpha-30` are derived from their base color, so changing
 the base palette also updates the translucent states.
 
