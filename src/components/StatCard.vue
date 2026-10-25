@@ -22,15 +22,15 @@ const isNull = computed(() => value === null)
 const colorClass = computed(() => {
   switch (changeType) {
     case 'positive':
-      return 'text-success-600 dark:text-success-400';
+      return 'text-stat-card-change-positive-light dark:text-stat-card-change-positive-dark';
     case 'negative':
-      return 'text-danger-600 dark:text-danger-400';
+      return 'text-stat-card-change-negative-light dark:text-stat-card-change-negative-dark';
     case 'neutral':
-      return 'text-warning-600 dark:text-warning-400';
+      return 'text-stat-card-change-neutral-light dark:text-stat-card-change-neutral-dark';
     case 'info':
-      return 'text-secondary-600 dark:text-secondary-400';
+      return 'text-stat-card-change-info-light dark:text-stat-card-change-info-dark';
     default:
-      return 'text-gray-600 dark:text-gray-400';
+      return 'text-stat-card-change-neutral-light dark:text-stat-card-change-neutral-dark';
   }
 });
 </script>
@@ -39,17 +39,17 @@ const colorClass = computed(() => {
   <Card>
     <div>
       <div class="flex items-center gap-1.5">
-        <p class="text-sm font-medium text-gray-600 dark:text-gray-300">{{ title }}</p>
+        <p class="text-sm font-medium text-stat-card-title-light dark:text-stat-card-title-dark">{{ title }}</p>
         <HelpTooltip v-if="help" :tooltip="help" />
       </div>
-      <p v-if="isNull" class="text-2xl font-bold text-gray-400 dark:text-gray-500 mt-1">Sin datos</p>
-      <p v-else class="text-2xl font-bold text-gray-900 dark:text-white mt-1 tabular-nums">{{ value }}</p>
+      <p v-if="isNull" class="text-2xl font-bold text-stat-card-empty-light dark:text-stat-card-empty-dark mt-1">Sin datos</p>
+      <p v-else class="text-2xl font-bold text-stat-card-value-light dark:text-stat-card-value-dark mt-1 tabular-nums">{{ value }}</p>
     </div>
     <div v-if="change !== undefined || description" class="mt-4 flex items-center">
       <span v-if="change !== undefined" :class="['text-sm font-medium tabular-nums', colorClass]">
         {{ change }}
       </span>
-      <span v-if="description" class="text-sm text-gray-500 dark:text-gray-400 ml-1">{{ description }}</span>
+      <span v-if="description" class="text-sm text-stat-card-description-light dark:text-stat-card-description-dark ml-1">{{ description }}</span>
     </div>
   </Card>
 </template>

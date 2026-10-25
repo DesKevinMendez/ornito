@@ -19,6 +19,18 @@ optional help tooltip.
 - `neutral` — amber text. Default.
 - `info` — blue text (secondary palette).
 
+### CSS color variants
+
+The title, value, empty state, description, and all four change states have
+paired light/dark variables. Override light values on `:root` and dark values
+under `.dark`.
+
+| Part | Variables |
+| --- | --- |
+| Title and value | `--ds-color-stat-card-title-{light|dark}`, `--ds-color-stat-card-value-{light|dark}` |
+| Empty state and description | `--ds-color-stat-card-empty-{light|dark}`, `--ds-color-stat-card-description-{light|dark}` |
+| Change states | `--ds-color-stat-card-change-{positive|negative|neutral|info}-{light|dark}` |
+
 ```vue
 <StatCard title="Active vehicles" value="42" change="+3" change-type="positive" description="vs. last month" />
 ```

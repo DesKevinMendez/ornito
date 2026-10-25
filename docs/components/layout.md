@@ -27,6 +27,13 @@ slot for filters/actions.
 </ViewHeader>
 ```
 
+### CSS color variants
+
+The title and subtitle use paired light/dark CSS variables:
+`--ds-color-view-header-title-{light|dark}` and
+`--ds-color-view-header-subtitle-{light|dark}`. Override the light values on
+`:root` and the dark values under `.dark`.
+
 ## InfoItem
 
 Label + value pair for read-only detail views. Value goes in the default

@@ -385,6 +385,70 @@
     --ds-color-form-suggestion-icon-light: #4b5563;
     --ds-color-form-suggestion-icon-dark: #9ca3af;
 
+    /* Dashboard view header colors */
+    --ds-color-view-header-title-light: #111827;
+    --ds-color-view-header-title-dark: #fff;
+    --ds-color-view-header-subtitle-light: #4b5563;
+    --ds-color-view-header-subtitle-dark: #9ca3af;
+
+    /* Card surface and header text */
+    --ds-color-card-bg-light: #fff;
+    --ds-color-card-bg-dark: #111827;
+    --ds-color-card-title-light: #111827;
+    --ds-color-card-title-dark: #fff;
+    --ds-color-card-subtitle-light: #6b7280;
+    --ds-color-card-subtitle-dark: #9ca3af;
+
+    /* StatCard labels, values, descriptions, and change states */
+    --ds-color-stat-card-title-light: #4b5563;
+    --ds-color-stat-card-title-dark: #d1d5db;
+    --ds-color-stat-card-value-light: #111827;
+    --ds-color-stat-card-value-dark: #fff;
+    --ds-color-stat-card-empty-light: #9ca3af;
+    --ds-color-stat-card-empty-dark: #6b7280;
+    --ds-color-stat-card-description-light: #6b7280;
+    --ds-color-stat-card-description-dark: #9ca3af;
+    --ds-color-stat-card-change-positive-light: var(--ds-color-success-600);
+    --ds-color-stat-card-change-positive-dark: var(--ds-color-success-400);
+    --ds-color-stat-card-change-negative-light: var(--ds-color-danger-600);
+    --ds-color-stat-card-change-negative-dark: var(--ds-color-danger-400);
+    --ds-color-stat-card-change-neutral-light: var(--ds-color-warning-600);
+    --ds-color-stat-card-change-neutral-dark: var(--ds-color-warning-400);
+    --ds-color-stat-card-change-info-light: var(--ds-color-secondary-600);
+    --ds-color-stat-card-change-info-dark: var(--ds-color-secondary-400);
+
+    /* Navbar surface and mobile menu button */
+    --ds-color-navbar-bg-light: #fff;
+    --ds-color-navbar-bg-dark: #111827;
+    --ds-color-navbar-mobile-menu-bg-light: #f3f4f6;
+    --ds-color-navbar-mobile-menu-bg-dark: #1f2937;
+    --ds-color-navbar-mobile-menu-hover-bg-light: #e5e7eb;
+    --ds-color-navbar-mobile-menu-hover-bg-dark: #374151;
+    --ds-color-navbar-mobile-menu-icon-light: #111827;
+    --ds-color-navbar-mobile-menu-icon-dark: #fff;
+
+    /* User profile and notification dropdown colors */
+    --ds-color-profile-notification-trigger-bg-light: #f3f4f6;
+    --ds-color-profile-notification-trigger-bg-dark: #1f2937;
+    --ds-color-profile-notification-trigger-hover-bg-light: #e5e7eb;
+    --ds-color-profile-notification-trigger-hover-bg-dark: #374151;
+    --ds-color-profile-notification-trigger-icon-light: #111827;
+    --ds-color-profile-notification-trigger-icon-dark: #fff;
+    --ds-color-profile-panel-bg-light: #fff;
+    --ds-color-profile-panel-bg-dark: rgb(31 41 55 / 90%);
+    --ds-color-profile-notification-title-light: #111827;
+    --ds-color-profile-notification-title-dark: #fff;
+    --ds-color-profile-avatar-bg-light: #d1d5db;
+    --ds-color-profile-avatar-bg-dark: #4b5563;
+    --ds-color-profile-avatar-text-light: #111827;
+    --ds-color-profile-avatar-text-dark: #fff;
+    --ds-color-profile-name-light: #111827;
+    --ds-color-profile-name-dark: #fff;
+    --ds-color-profile-role-light: #4b5563;
+    --ds-color-profile-role-dark: #9ca3af;
+    --ds-color-profile-chevron-light: #4b5563;
+    --ds-color-profile-chevron-dark: #9ca3af;
+
     /* Component-specific surfaces */
     --ds-color-datepicker-dark-bg: #172030;
 }

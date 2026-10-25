@@ -21,6 +21,19 @@ a `headerButtons` slot. Content goes in the default slot.
 </Card>
 ```
 
+### CSS color variants
+
+The card surface, title, and subtitle use paired light/dark CSS variables.
+Defaults preserve the current appearance.
+
+| Part | Variables |
+| --- | --- |
+| Surface | `--ds-color-card-bg-{light|dark}` |
+| Title | `--ds-color-card-title-{light|dark}` |
+| Subtitle | `--ds-color-card-subtitle-{light|dark}` |
+
+Set light values on `:root` and dark values under `.dark`.
+
 ## CardPaginations
 
 Server-side pagination controls (page numbers + prev/next), styled for use

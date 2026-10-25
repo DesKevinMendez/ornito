@@ -14,6 +14,16 @@ Top app bar with a mobile menu toggle and a `right` slot for actions
 </Navbar>
 ```
 
+### CSS color variants
+
+The navbar surface and mobile menu button use paired light/dark variables.
+Override light values on `:root` and dark values under `.dark`.
+
+| Part | Variables |
+| --- | --- |
+| Navbar surface | `--ds-color-navbar-bg-{light|dark}` |
+| Mobile menu button | `--ds-color-navbar-mobile-menu-bg-{light|dark}`, `--ds-color-navbar-mobile-menu-hover-bg-{light|dark}`, `--ds-color-navbar-mobile-menu-icon-{light|dark}` |
+
 ## UserProfileDropdown
 
 Presentational user menu — avatar, name/role, a list of menu items, and an
@@ -49,3 +59,17 @@ it's given. Emits `bell-click`, `panel-open`, `mark-all-read`.
   <template #notifications><NotificationsList :notifications="notifications" /></template>
 </UserProfileDropdown>
 ```
+
+### CSS color variants
+
+The notification trigger, dropdown panel, notification heading, avatar,
+profile text, and chevron use paired light/dark variables. Menu rows inherit
+the shared `DropdownItem` tokens documented in
+[Dropdown](./dropdown.md#css-color-variants).
+
+| Part | Variables |
+| --- | --- |
+| Notification trigger | `--ds-color-profile-notification-trigger-bg-{light|dark}`, `--ds-color-profile-notification-trigger-hover-bg-{light|dark}`, `--ds-color-profile-notification-trigger-icon-{light|dark}` |
+| Dropdown panel and notification heading | `--ds-color-profile-panel-bg-{light|dark}`, `--ds-color-profile-notification-title-{light|dark}` |
+| Avatar | `--ds-color-profile-avatar-bg-{light|dark}`, `--ds-color-profile-avatar-text-{light|dark}` |
+| Profile text | `--ds-color-profile-name-{light|dark}`, `--ds-color-profile-role-{light|dark}`, `--ds-color-profile-chevron-{light|dark}` |

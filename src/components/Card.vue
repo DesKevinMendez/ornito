@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-900 rounded-xl border border-card shadow-sm"
+    class="bg-card-bg-light dark:bg-card-bg-dark rounded-xl border border-card shadow-sm"
     :class="{ 'overflow-hidden flex flex-col': noPadding }"
   >
     <div v-if="showHeader" class="px-6 pt-5">
@@ -11,13 +11,13 @@
         <div class="flex-1 min-w-0">
           <h3
             v-if="title"
-            class="text-base font-semibold tracking-tight text-gray-900 dark:text-white"
+            class="text-base font-semibold tracking-tight text-card-title-light dark:text-card-title-dark"
           >
             {{ title }}
           </h3>
           <p
             v-if="subtitle"
-            class="mt-0.5 text-sm text-gray-500 dark:text-gray-400"
+            class="mt-0.5 text-sm text-card-subtitle-light dark:text-card-subtitle-dark"
           >
             {{ subtitle }}
           </p>

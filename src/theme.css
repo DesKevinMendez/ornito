@@ -265,6 +265,70 @@
     --color-form-suggestion-hover-bg-dark: var(--ds-color-form-suggestion-hover-bg-dark);
     --color-form-suggestion-icon-light: var(--ds-color-form-suggestion-icon-light);
     --color-form-suggestion-icon-dark: var(--ds-color-form-suggestion-icon-dark);
+
+    /* Dashboard view header */
+    --color-view-header-title-light: var(--ds-color-view-header-title-light);
+    --color-view-header-title-dark: var(--ds-color-view-header-title-dark);
+    --color-view-header-subtitle-light: var(--ds-color-view-header-subtitle-light);
+    --color-view-header-subtitle-dark: var(--ds-color-view-header-subtitle-dark);
+
+    /* Card */
+    --color-card-bg-light: var(--ds-color-card-bg-light);
+    --color-card-bg-dark: var(--ds-color-card-bg-dark);
+    --color-card-title-light: var(--ds-color-card-title-light);
+    --color-card-title-dark: var(--ds-color-card-title-dark);
+    --color-card-subtitle-light: var(--ds-color-card-subtitle-light);
+    --color-card-subtitle-dark: var(--ds-color-card-subtitle-dark);
+
+    /* StatCard */
+    --color-stat-card-title-light: var(--ds-color-stat-card-title-light);
+    --color-stat-card-title-dark: var(--ds-color-stat-card-title-dark);
+    --color-stat-card-value-light: var(--ds-color-stat-card-value-light);
+    --color-stat-card-value-dark: var(--ds-color-stat-card-value-dark);
+    --color-stat-card-empty-light: var(--ds-color-stat-card-empty-light);
+    --color-stat-card-empty-dark: var(--ds-color-stat-card-empty-dark);
+    --color-stat-card-description-light: var(--ds-color-stat-card-description-light);
+    --color-stat-card-description-dark: var(--ds-color-stat-card-description-dark);
+    --color-stat-card-change-positive-light: var(--ds-color-stat-card-change-positive-light);
+    --color-stat-card-change-positive-dark: var(--ds-color-stat-card-change-positive-dark);
+    --color-stat-card-change-negative-light: var(--ds-color-stat-card-change-negative-light);
+    --color-stat-card-change-negative-dark: var(--ds-color-stat-card-change-negative-dark);
+    --color-stat-card-change-neutral-light: var(--ds-color-stat-card-change-neutral-light);
+    --color-stat-card-change-neutral-dark: var(--ds-color-stat-card-change-neutral-dark);
+    --color-stat-card-change-info-light: var(--ds-color-stat-card-change-info-light);
+    --color-stat-card-change-info-dark: var(--ds-color-stat-card-change-info-dark);
+
+    /* Navbar */
+    --color-navbar-bg-light: var(--ds-color-navbar-bg-light);
+    --color-navbar-bg-dark: var(--ds-color-navbar-bg-dark);
+    --color-navbar-mobile-menu-bg-light: var(--ds-color-navbar-mobile-menu-bg-light);
+    --color-navbar-mobile-menu-bg-dark: var(--ds-color-navbar-mobile-menu-bg-dark);
+    --color-navbar-mobile-menu-hover-bg-light: var(--ds-color-navbar-mobile-menu-hover-bg-light);
+    --color-navbar-mobile-menu-hover-bg-dark: var(--ds-color-navbar-mobile-menu-hover-bg-dark);
+    --color-navbar-mobile-menu-icon-light: var(--ds-color-navbar-mobile-menu-icon-light);
+    --color-navbar-mobile-menu-icon-dark: var(--ds-color-navbar-mobile-menu-icon-dark);
+
+    /* User profile dropdown */
+    --color-profile-notification-trigger-bg-light: var(--ds-color-profile-notification-trigger-bg-light);
+    --color-profile-notification-trigger-bg-dark: var(--ds-color-profile-notification-trigger-bg-dark);
+    --color-profile-notification-trigger-hover-bg-light: var(--ds-color-profile-notification-trigger-hover-bg-light);
+    --color-profile-notification-trigger-hover-bg-dark: var(--ds-color-profile-notification-trigger-hover-bg-dark);
+    --color-profile-notification-trigger-icon-light: var(--ds-color-profile-notification-trigger-icon-light);
+    --color-profile-notification-trigger-icon-dark: var(--ds-color-profile-notification-trigger-icon-dark);
+    --color-profile-panel-bg-light: var(--ds-color-profile-panel-bg-light);
+    --color-profile-panel-bg-dark: var(--ds-color-profile-panel-bg-dark);
+    --color-profile-notification-title-light: var(--ds-color-profile-notification-title-light);
+    --color-profile-notification-title-dark: var(--ds-color-profile-notification-title-dark);
+    --color-profile-avatar-bg-light: var(--ds-color-profile-avatar-bg-light);
+    --color-profile-avatar-bg-dark: var(--ds-color-profile-avatar-bg-dark);
+    --color-profile-avatar-text-light: var(--ds-color-profile-avatar-text-light);
+    --color-profile-avatar-text-dark: var(--ds-color-profile-avatar-text-dark);
+    --color-profile-name-light: var(--ds-color-profile-name-light);
+    --color-profile-name-dark: var(--ds-color-profile-name-dark);
+    --color-profile-role-light: var(--ds-color-profile-role-light);
+    --color-profile-role-dark: var(--ds-color-profile-role-dark);
+    --color-profile-chevron-light: var(--ds-color-profile-chevron-light);
+    --color-profile-chevron-dark: var(--ds-color-profile-chevron-dark);
 }
 
 /* Semantic color utilities shared by BaseButton and BaseButtonIcon. */
