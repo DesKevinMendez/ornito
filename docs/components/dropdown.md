@@ -15,6 +15,39 @@ Select-style dropdown backed by a fixed list of `DropdownItem`s. Uses
 | `triggerSmall` | `boolean` | No | — |
 | `position` | `'bottom-left' \| 'bottom-right' \| 'top-left' \| 'top-right'` | No | — menu placement relative to the trigger |
 
+### CSS color variants
+
+The trigger, panel, and items use paired light/dark runtime CSS variables. Their
+defaults preserve the current appearance. Override the variables on `:root`
+for light mode and `.dark` for dark mode.
+
+| Part | Variables |
+| --- | --- |
+| Trigger | `--ds-color-dropdown-trigger-bg-{light\|dark}`, `--ds-color-dropdown-trigger-text-{light\|dark}`, `--ds-color-dropdown-trigger-border-{light\|dark}`, `--ds-color-dropdown-trigger-hover-bg-{light\|dark}` |
+| Panel | `--ds-color-dropdown-panel-bg-{light\|dark}`, `--ds-color-dropdown-panel-border-{light\|dark}` |
+| Items | `--ds-color-dropdown-item-text-{light\|dark}`, `--ds-color-dropdown-item-hover-bg-{light\|dark}`, `--ds-color-dropdown-item-hover-text-{light\|dark}`, `--ds-color-dropdown-item-active-bg-{light\|dark}`, `--ds-color-dropdown-item-active-text-{light\|dark}` |
+
+```css
+:root {
+  --ds-color-dropdown-trigger-bg-light: #fff;
+  --ds-color-dropdown-trigger-text-light: #1e3a8a;
+  --ds-color-dropdown-panel-bg-light: #eff6ff;
+  --ds-color-dropdown-item-hover-bg-light: #dbeafe;
+  --ds-color-dropdown-item-active-bg-light: #bfdbfe;
+}
+
+.dark {
+  --ds-color-dropdown-trigger-bg-dark: #172554;
+  --ds-color-dropdown-trigger-text-dark: #dbeafe;
+  --ds-color-dropdown-panel-bg-dark: #0f172a;
+  --ds-color-dropdown-item-hover-bg-dark: #1e3a8a;
+  --ds-color-dropdown-item-active-bg-dark: #1d4ed8;
+}
+```
+
+Item variables also affect `DropdownItem` in `UserProfileDropdown`, where that
+row component is shared.
+
 ## DropdownItem
 
 Single row inside a dropdown/menu (used by `Dropdown` and

@@ -12,9 +12,9 @@ system without rebuilding it.
   with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have light defaults on `:root` and dark values under
   `.dark`. Their names describe their role rather than the gray shade used.
-- Sidebar, `Tabs`, and `DataTable` component colors have paired `-light` and
-  `-dark` tokens, so each mode can be configured independently while retaining
-  the current appearance by default.
+- Sidebar, `Tabs`, `DataTable`, and `Dropdown` component colors have paired
+  `-light` and `-dark` tokens, so each mode can be configured independently
+  while retaining the current appearance by default.
 - `src/style.css` maps Tailwind's theme onto those variables with
   `@theme inline`, so utilities like `.bg-primary-500` compile to
   `background-color: var(--ds-color-primary-500)` instead of a literal hex
@@ -132,10 +132,13 @@ tab states. `Tabs` tokens use `--ds-color-tabs-*-{light|dark}` and cover the
 segmented, pills, and underline variants, shared disabled labels, and focus
 colors. DataTable tokens use `--ds-color-table-*-{light|dark}` for header,
 body, and footer surfaces and text, including body row hover. The component
-guides list each state token:
+guides list each state token. Dropdown tokens use
+`--ds-color-dropdown-*-{light|dark}` for the trigger, panel, and item hover and
+selected states:
 [Sidebar](components/sidebar.md#css-color-variants),
 [Tabs](components/tabs.md#css-color-variants), and
-[DataTable](components/data-table.md#css-color-variants).
+[DataTable](components/data-table.md#css-color-variants), and
+[Dropdown](components/dropdown.md#css-color-variants).
 
 Each palette follows the standard Tailwind shade scale (50 = lightest, 950 =
 darkest). `primary`/`secondary`/`tertiary` define the full 50–950 range;

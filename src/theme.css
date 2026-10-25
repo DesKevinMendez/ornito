@@ -211,6 +211,30 @@
     --color-table-footer-bg-dark: var(--ds-color-table-footer-bg-dark);
     --color-table-footer-text-light: var(--ds-color-table-footer-text-light);
     --color-table-footer-text-dark: var(--ds-color-table-footer-text-dark);
+
+    /* Dropdown */
+    --color-dropdown-trigger-bg-light: var(--ds-color-dropdown-trigger-bg-light);
+    --color-dropdown-trigger-bg-dark: var(--ds-color-dropdown-trigger-bg-dark);
+    --color-dropdown-trigger-text-light: var(--ds-color-dropdown-trigger-text-light);
+    --color-dropdown-trigger-text-dark: var(--ds-color-dropdown-trigger-text-dark);
+    --color-dropdown-trigger-border-light: var(--ds-color-dropdown-trigger-border-light);
+    --color-dropdown-trigger-border-dark: var(--ds-color-dropdown-trigger-border-dark);
+    --color-dropdown-trigger-hover-bg-light: var(--ds-color-dropdown-trigger-hover-bg-light);
+    --color-dropdown-trigger-hover-bg-dark: var(--ds-color-dropdown-trigger-hover-bg-dark);
+    --color-dropdown-panel-bg-light: var(--ds-color-dropdown-panel-bg-light);
+    --color-dropdown-panel-bg-dark: var(--ds-color-dropdown-panel-bg-dark);
+    --color-dropdown-panel-border-light: var(--ds-color-dropdown-panel-border-light);
+    --color-dropdown-panel-border-dark: var(--ds-color-dropdown-panel-border-dark);
+    --color-dropdown-item-text-light: var(--ds-color-dropdown-item-text-light);
+    --color-dropdown-item-text-dark: var(--ds-color-dropdown-item-text-dark);
+    --color-dropdown-item-hover-bg-light: var(--ds-color-dropdown-item-hover-bg-light);
+    --color-dropdown-item-hover-bg-dark: var(--ds-color-dropdown-item-hover-bg-dark);
+    --color-dropdown-item-hover-text-light: var(--ds-color-dropdown-item-hover-text-light);
+    --color-dropdown-item-hover-text-dark: var(--ds-color-dropdown-item-hover-text-dark);
+    --color-dropdown-item-active-bg-light: var(--ds-color-dropdown-item-active-bg-light);
+    --color-dropdown-item-active-bg-dark: var(--ds-color-dropdown-item-active-bg-dark);
+    --color-dropdown-item-active-text-light: var(--ds-color-dropdown-item-active-text-light);
+    --color-dropdown-item-active-text-dark: var(--ds-color-dropdown-item-active-text-dark);
 }
 
 /* Semantic color utilities shared by BaseButton and BaseButtonIcon. */

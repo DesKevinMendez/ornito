@@ -327,6 +327,32 @@
     --ds-color-table-footer-text-light: #4b5563;
     --ds-color-table-footer-text-dark: #9ca3af;
 
+    /* Dropdown colors - trigger, panel, and items */
+    --ds-color-dropdown-trigger-bg-light: #fff;
+    --ds-color-dropdown-trigger-bg-dark: rgb(31 41 55 / 70%);
+    --ds-color-dropdown-trigger-text-light: #111827;
+    --ds-color-dropdown-trigger-text-dark: #fff;
+    --ds-color-dropdown-trigger-border-light: #d1d5db;
+    --ds-color-dropdown-trigger-border-dark: rgb(55 65 81 / 70%);
+    --ds-color-dropdown-trigger-hover-bg-light: #f9fafb;
+    --ds-color-dropdown-trigger-hover-bg-dark: rgb(55 65 81 / 70%);
+
+    --ds-color-dropdown-panel-bg-light: #fff;
+    --ds-color-dropdown-panel-bg-dark: rgb(31 41 55 / 80%);
+    --ds-color-dropdown-panel-border-light: #e5e7eb;
+    --ds-color-dropdown-panel-border-dark: rgb(55 65 81 / 50%);
+
+    --ds-color-dropdown-item-text-light: #374151;
+    --ds-color-dropdown-item-text-dark: #e5e7eb;
+    --ds-color-dropdown-item-hover-bg-light: #f3f4f6;
+    --ds-color-dropdown-item-hover-bg-dark: rgb(55 65 81 / 30%);
+    --ds-color-dropdown-item-hover-text-light: #111827;
+    --ds-color-dropdown-item-hover-text-dark: #fff;
+    --ds-color-dropdown-item-active-bg-light: #f3f4f6;
+    --ds-color-dropdown-item-active-bg-dark: rgb(55 65 81 / 50%);
+    --ds-color-dropdown-item-active-text-light: #111827;
+    --ds-color-dropdown-item-active-text-dark: #fff;
+
     /* Component-specific surfaces */
     --ds-color-datepicker-dark-bg: #172030;
 }
