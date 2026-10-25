@@ -46,28 +46,28 @@ const componentToRender = computed(() => {
 const colorClasses = computed(() => {
   const filledMap: Record<string, string> = {
     gray: "bg-icon-button-gray-bg-light hover:bg-icon-button-gray-bg-hover-light dark:bg-icon-button-gray-bg-dark dark:hover:bg-icon-button-gray-bg-hover-dark text-icon-button-gray-text-light dark:text-icon-button-gray-text-dark",
-    primary: "bg-primary-600 hover:bg-primary-500 dark:bg-primary-700 dark:hover:bg-primary-600 text-white",
-    secondary: "bg-secondary-600 hover:bg-secondary-500 dark:bg-secondary-700 dark:hover:bg-secondary-600 text-white",
-    success: "bg-success-600 hover:bg-success-500 dark:bg-success-700 dark:hover:bg-success-600 text-white",
-    green: "bg-success-600 hover:bg-success-500 dark:bg-success-700 dark:hover:bg-success-600 text-white",
-    danger: "bg-danger-100 hover:bg-danger-200 dark:bg-danger-900/50 dark:hover:bg-danger-900/80 text-danger-700 dark:text-danger-200",
-    red: "bg-danger-100 hover:bg-danger-200 dark:bg-danger-900/50 dark:hover:bg-danger-900/80 text-danger-700 dark:text-danger-200",
-    warning: "bg-warning-600 hover:bg-warning-500 dark:bg-warning-700 dark:hover:bg-warning-600 text-white",
-    yellow: "bg-warning-600 hover:bg-warning-500 dark:bg-warning-700 dark:hover:bg-warning-600 text-white",
+    primary: "bg-icon-button-primary-bg-light hover:bg-icon-button-primary-bg-hover-light dark:bg-icon-button-primary-bg-dark dark:hover:bg-icon-button-primary-bg-hover-dark text-icon-button-primary-text-light dark:text-icon-button-primary-text-dark",
+    secondary: "bg-icon-button-secondary-bg-light hover:bg-icon-button-secondary-bg-hover-light dark:bg-icon-button-secondary-bg-dark dark:hover:bg-icon-button-secondary-bg-hover-dark text-icon-button-secondary-text-light dark:text-icon-button-secondary-text-dark",
+    success: "bg-icon-button-success-bg-light hover:bg-icon-button-success-bg-hover-light dark:bg-icon-button-success-bg-dark dark:hover:bg-icon-button-success-bg-hover-dark text-icon-button-success-text-light dark:text-icon-button-success-text-dark",
+    green: "bg-icon-button-success-bg-light hover:bg-icon-button-success-bg-hover-light dark:bg-icon-button-success-bg-dark dark:hover:bg-icon-button-success-bg-hover-dark text-icon-button-success-text-light dark:text-icon-button-success-text-dark",
+    danger: "bg-icon-button-danger-bg-light hover:bg-icon-button-danger-bg-hover-light dark:bg-icon-button-danger-bg-dark dark:hover:bg-icon-button-danger-bg-hover-dark text-icon-button-danger-text-light dark:text-icon-button-danger-text-dark",
+    red: "bg-icon-button-danger-bg-light hover:bg-icon-button-danger-bg-hover-light dark:bg-icon-button-danger-bg-dark dark:hover:bg-icon-button-danger-bg-hover-dark text-icon-button-danger-text-light dark:text-icon-button-danger-text-dark",
+    warning: "bg-icon-button-warning-bg-light hover:bg-icon-button-warning-bg-hover-light dark:bg-icon-button-warning-bg-dark dark:hover:bg-icon-button-warning-bg-hover-dark text-icon-button-warning-text-light dark:text-icon-button-warning-text-dark",
+    yellow: "bg-icon-button-warning-bg-light hover:bg-icon-button-warning-bg-hover-light dark:bg-icon-button-warning-bg-dark dark:hover:bg-icon-button-warning-bg-hover-dark text-icon-button-warning-text-light dark:text-icon-button-warning-text-dark",
     pink: "bg-icon-button-pink-bg-light hover:bg-icon-button-pink-bg-hover-light dark:bg-icon-button-pink-bg-dark dark:hover:bg-icon-button-pink-bg-hover-dark text-icon-button-pink-text-light dark:text-icon-button-pink-text-dark",
   };
 
   const outlineMap: Record<string, string> = {
-    gray: "border border-input text-icon-button-gray-outline-text-light dark:text-icon-button-gray-outline-text-dark hover:bg-icon-button-gray-outline-bg-hover-light dark:hover:bg-icon-button-gray-outline-bg-hover-dark",
-    primary: "border border-primary-subtle text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30",
-    secondary: "border border-secondary text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-900/30",
-    success: "border border-success text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
-    green: "border border-success text-success-600 dark:text-success-400 hover:bg-success-50 dark:hover:bg-success-900/30",
-    danger: "border border-danger text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
-    red: "border border-danger text-danger-600 dark:text-danger-400 hover:bg-danger-50 dark:hover:bg-danger-900/30",
-    warning: "border border-warning text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
-    yellow: "border border-warning text-warning-600 dark:text-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30",
-    pink: "border border-pink text-icon-button-pink-outline-text-light dark:text-icon-button-pink-outline-text-dark hover:bg-icon-button-pink-outline-bg-hover-light dark:hover:bg-icon-button-pink-outline-bg-hover-dark",
+    gray: "border border-icon-button-gray-outline-border-light dark:border-icon-button-gray-outline-border-dark text-icon-button-gray-outline-text-light dark:text-icon-button-gray-outline-text-dark hover:bg-icon-button-gray-outline-bg-hover-light dark:hover:bg-icon-button-gray-outline-bg-hover-dark",
+    primary: "border border-icon-button-primary-outline-border-light dark:border-icon-button-primary-outline-border-dark text-icon-button-primary-outline-text-light dark:text-icon-button-primary-outline-text-dark hover:bg-icon-button-primary-outline-bg-hover-light dark:hover:bg-icon-button-primary-outline-bg-hover-dark",
+    secondary: "border border-icon-button-secondary-outline-border-light dark:border-icon-button-secondary-outline-border-dark text-icon-button-secondary-outline-text-light dark:text-icon-button-secondary-outline-text-dark hover:bg-icon-button-secondary-outline-bg-hover-light dark:hover:bg-icon-button-secondary-outline-bg-hover-dark",
+    success: "border border-icon-button-success-outline-border-light dark:border-icon-button-success-outline-border-dark text-icon-button-success-outline-text-light dark:text-icon-button-success-outline-text-dark hover:bg-icon-button-success-outline-bg-hover-light dark:hover:bg-icon-button-success-outline-bg-hover-dark",
+    green: "border border-icon-button-success-outline-border-light dark:border-icon-button-success-outline-border-dark text-icon-button-success-outline-text-light dark:text-icon-button-success-outline-text-dark hover:bg-icon-button-success-outline-bg-hover-light dark:hover:bg-icon-button-success-outline-bg-hover-dark",
+    danger: "border border-icon-button-danger-outline-border-light dark:border-icon-button-danger-outline-border-dark text-icon-button-danger-outline-text-light dark:text-icon-button-danger-outline-text-dark hover:bg-icon-button-danger-outline-bg-hover-light dark:hover:bg-icon-button-danger-outline-bg-hover-dark",
+    red: "border border-icon-button-danger-outline-border-light dark:border-icon-button-danger-outline-border-dark text-icon-button-danger-outline-text-light dark:text-icon-button-danger-outline-text-dark hover:bg-icon-button-danger-outline-bg-hover-light dark:hover:bg-icon-button-danger-outline-bg-hover-dark",
+    warning: "border border-icon-button-warning-outline-border-light dark:border-icon-button-warning-outline-border-dark text-icon-button-warning-outline-text-light dark:text-icon-button-warning-outline-text-dark hover:bg-icon-button-warning-outline-bg-hover-light dark:hover:bg-icon-button-warning-outline-bg-hover-dark",
+    yellow: "border border-icon-button-warning-outline-border-light dark:border-icon-button-warning-outline-border-dark text-icon-button-warning-outline-text-light dark:text-icon-button-warning-outline-text-dark hover:bg-icon-button-warning-outline-bg-hover-light dark:hover:bg-icon-button-warning-outline-bg-hover-dark",
+    pink: "border border-icon-button-pink-outline-border-light dark:border-icon-button-pink-outline-border-dark text-icon-button-pink-outline-text-light dark:text-icon-button-pink-outline-text-dark hover:bg-icon-button-pink-outline-bg-hover-light dark:hover:bg-icon-button-pink-outline-bg-hover-dark",
   };
 
   const map = props.outline ? outlineMap : filledMap;

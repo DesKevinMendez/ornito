@@ -51,6 +51,11 @@ The utilities include base, hover, and active backgrounds, plus text, border, an
 
 The corresponding CSS variables live in `src/tokens.css` and follow `--ds-color-btn-{variant}-{light|dark}`. Background states add `-hover` or `-active`; text variables add `-text`, `-text-hover`, or `-text-active`; border variables add `-border`. The danger focus-ring variables add `-focus`. Override these variables to re-skin button variants without editing their components.
 
+Default values reference the matching Tailwind palette variables, including
+`--ds-color-primary-*`, `--ds-color-danger-*`, `--color-gray-*`, and
+`--color-white`, so palette changes flow through to `BaseButton` and
+`BaseButtonIcon`.
+
 ```vue
 <BaseButton variant="primary" size="auto">Save</BaseButton>
 <BaseButton variant="danger-outline" :icon="IconTrash">Delete</BaseButton>
@@ -95,14 +100,30 @@ Compact icon button with a flat palette of named colors instead of
 
 ### CSS color variants
 
-The gray and pink colors use component-specific light/dark variables for the
-filled and outline styles. The primary, secondary, success, danger, and warning
-colors use the corresponding semantic palette variables (and green/red/yellow
-remain aliases).
+Every color uses component-specific light/dark variables for the filled and
+outline styles. Their defaults reference the Tailwind palette variables, keeping
+the current colors while allowing each IconButton color to be overridden
+independently. `green`, `red`, and `yellow` use the same tokens as `success`,
+`danger`, and `warning`.
 
-| Color | Component variables |
+| Style | Variables |
 | --- | --- |
-| Gray filled | `--ds-color-icon-button-gray-bg-{light|dark}`, `--ds-color-icon-button-gray-bg-hover-{light|dark}`, `--ds-color-icon-button-gray-text-{light|dark}` |
-| Gray outline | `--ds-color-icon-button-gray-outline-text-{light|dark}`, `--ds-color-icon-button-gray-outline-bg-hover-{light|dark}` |
-| Pink filled | `--ds-color-icon-button-pink-bg-{light|dark}`, `--ds-color-icon-button-pink-bg-hover-{light|dark}`, `--ds-color-icon-button-pink-text-{light|dark}` |
-| Pink outline | `--ds-color-icon-button-pink-outline-text-{light|dark}`, `--ds-color-icon-button-pink-outline-bg-hover-{light|dark}` |
+| Filled | `--ds-color-icon-button-{color}-bg-{light|dark}`, `--ds-color-icon-button-{color}-bg-hover-{light|dark}`, `--ds-color-icon-button-{color}-text-{light|dark}` |
+| Outline | `--ds-color-icon-button-{color}-outline-border-{light|dark}`, `--ds-color-icon-button-{color}-outline-text-{light|dark}`, `--ds-color-icon-button-{color}-outline-bg-hover-{light|dark}` |
+
+`{color}` can be `gray`, `primary`, `secondary`, `success`, `danger`,
+`warning`, or `pink`.
+
+```css
+:root {
+  --ds-color-icon-button-primary-bg-light: var(--ds-color-secondary-600);
+  --ds-color-icon-button-primary-bg-hover-light: var(--ds-color-secondary-500);
+  --ds-color-icon-button-primary-outline-text-light: var(--ds-color-secondary-600);
+}
+
+.dark {
+  --ds-color-icon-button-primary-bg-dark: var(--ds-color-secondary-700);
+  --ds-color-icon-button-primary-bg-hover-dark: var(--ds-color-secondary-600);
+  --ds-color-icon-button-primary-outline-text-dark: var(--ds-color-secondary-400);
+}
+```
