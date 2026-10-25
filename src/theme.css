@@ -12,6 +12,21 @@
     /* Shared typography */
     --font-sans: var(--ds-font-family);
 
+    /* Primitive neutral palette */
+    --color-white: var(--ds-color-white);
+    --color-black: var(--ds-color-black);
+    --color-gray-50: var(--ds-color-neutral-50);
+    --color-gray-100: var(--ds-color-neutral-100);
+    --color-gray-200: var(--ds-color-neutral-200);
+    --color-gray-300: var(--ds-color-neutral-300);
+    --color-gray-400: var(--ds-color-neutral-400);
+    --color-gray-500: var(--ds-color-neutral-500);
+    --color-gray-600: var(--ds-color-neutral-600);
+    --color-gray-700: var(--ds-color-neutral-700);
+    --color-gray-800: var(--ds-color-neutral-800);
+    --color-gray-900: var(--ds-color-neutral-900);
+    --color-gray-950: var(--ds-color-neutral-950);
+
     /* Primary - indigo */
     --color-primary-50: var(--ds-color-primary-50);
     --color-primary-100: var(--ds-color-primary-100);
@@ -59,6 +74,7 @@
     --color-success-500: var(--ds-color-success-500);
     --color-success-600: var(--ds-color-success-600);
     --color-success-700: var(--ds-color-success-700);
+    --color-success-800: var(--ds-color-success-800);
     --color-success-900: var(--ds-color-success-900);
 
     /* Semantic status - warning (amber) */
@@ -69,6 +85,7 @@
     --color-warning-500: var(--ds-color-warning-500);
     --color-warning-600: var(--ds-color-warning-600);
     --color-warning-700: var(--ds-color-warning-700);
+    --color-warning-800: var(--ds-color-warning-800);
     --color-warning-900: var(--ds-color-warning-900);
 
     /* Semantic status - danger (red) */
@@ -79,10 +96,24 @@
     --color-danger-500: var(--ds-color-danger-500);
     --color-danger-600: var(--ds-color-danger-600);
     --color-danger-700: var(--ds-color-danger-700);
+    --color-danger-800: var(--ds-color-danger-800);
     --color-danger-900: var(--ds-color-danger-900);
 
     /* Utility brand color */
     --color-whatsapp: var(--ds-color-whatsapp);
+
+    /* Primitive pink palette */
+    --color-pink-50: var(--ds-color-pink-50);
+    --color-pink-100: var(--ds-color-pink-100);
+    --color-pink-200: var(--ds-color-pink-200);
+    --color-pink-300: var(--ds-color-pink-300);
+    --color-pink-400: var(--ds-color-pink-400);
+    --color-pink-500: var(--ds-color-pink-500);
+    --color-pink-600: var(--ds-color-pink-600);
+    --color-pink-700: var(--ds-color-pink-700);
+    --color-pink-800: var(--ds-color-pink-800);
+    --color-pink-900: var(--ds-color-pink-900);
+    --color-pink-950: var(--ds-color-pink-950);
 
     /* Semantic borders */
     --color-default-light: var(--ds-color-border-default-light);

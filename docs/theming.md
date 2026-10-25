@@ -7,7 +7,7 @@ system without rebuilding it.
 
 ## How it works
 
-- `src/tokens.css` defines the color palette and semantic tokens as
+- `src/tokens.css` defines primitive palettes and semantic tokens as
   `--ds-color-*` variables (e.g. `--ds-color-primary-500: #6366f1;`), along
   with `--ds-font-family` for the shared typeface.
 - Semantic border tokens have explicit `-light` and `-dark` values. The
@@ -103,12 +103,47 @@ document.documentElement.style.setProperty('--ds-color-primary-500', '#16a34a')
 | `primary` (indigo) | 50–950 | `--ds-color-primary-50` … `--ds-color-primary-950` |
 | `secondary` (sky) | 50–950 | `--ds-color-secondary-50` … `--ds-color-secondary-950` |
 | `tertiary` (violet) | 50–950 | `--ds-color-tertiary-50` … `--ds-color-tertiary-950` |
-| `success` (emerald) | 50, 100, 200, 400, 500, 600, 700, 900 | `--ds-color-success-50` … `--ds-color-success-900` |
-| `warning` (amber) | 50, 100, 200, 400, 500, 600, 700, 900 | `--ds-color-warning-50` … `--ds-color-warning-900` |
-| `danger` (red) | 50, 100, 200, 400, 500, 600, 700, 900 | `--ds-color-danger-50` … `--ds-color-danger-900` |
+| `success` (emerald) | 50, 100, 200, 400–900 | `--ds-color-success-50` … `--ds-color-success-900` |
+| `warning` (amber) | 50, 100, 200, 400–900 | `--ds-color-warning-50` … `--ds-color-warning-900` |
+| `danger` (red) | 50, 100, 200, 400–900 | `--ds-color-danger-50` … `--ds-color-danger-900` |
+| `neutral` | 50–950 | `--ds-color-neutral-50` … `--ds-color-neutral-950` |
+| `pink` | 50–950 | `--ds-color-pink-50` … `--ds-color-pink-950` |
 | — | — | `--ds-color-whatsapp` |
+| Neutral | — | `--ds-color-white`, `--ds-color-black` |
+| Material neutral | 100, 300, 700, 900 | `--ds-color-material-neutral-100`, `--ds-color-material-neutral-300`, `--ds-color-material-neutral-700`, `--ds-color-material-neutral-900` |
 | — | — | `--ds-color-datepicker-dark-bg` |
 | Typography | — | `--ds-font-family` |
+
+### Primitive color tokens
+
+Primitive palettes are the shared base colors used by semantic component
+tokens. For example, the table header and table body hover both default to
+`--ds-color-neutral-50`. Changing that primitive updates every default that
+references it; a component token can still be overridden on its own.
+
+```css
+:root {
+  /* Changes all defaults that reference this shared primitive. */
+  --ds-color-neutral-50: #f5f7fa;
+
+  /* Changes only this role; neutral-300 stays unchanged. */
+  --ds-color-border-strong-light: #9ca3af;
+
+  /* Changes only this table state, without changing neutral-50. */
+  --ds-color-table-body-hover-bg-light: #eef2f7;
+}
+```
+
+Component tokens reference design-system primitives such as `neutral-300`;
+they do not depend on Tailwind names. To change one role, override its semantic
+token directly, such as `--ds-color-border-strong-light`. To change all roles
+that use a primitive, override that primitive instead.
+
+Tailwind's `gray-*` utilities map to the design system's `neutral-*` scale;
+`pink-*`, `white`, and `black` utilities map to their matching primitives.
+Translucent primitives such as
+`--ds-color-neutral-800-alpha-30` are derived from their base color, so changing
+the base palette also updates the translucent states.
 
 ### Semantic border variables
 

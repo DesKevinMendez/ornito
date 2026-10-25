@@ -18,7 +18,7 @@
       >
         <div class="bottom-modal__scrim absolute inset-0 bg-bottom-modal-scrim-bg-light dark:bg-bottom-modal-scrim-bg-dark" aria-hidden="true" @click="requestClose" />
         <section
-          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-bottom-modal-panel-bg-light text-bottom-modal-text-light shadow-[0_-2px_8px_rgba(0,0,0,0.12)] dark:bg-bottom-modal-panel-bg-dark dark:text-bottom-modal-text-dark"
+          class="bottom-modal__panel relative z-10 flex w-full max-w-none flex-col overflow-hidden rounded-t-3xl bg-bottom-modal-panel-bg-light text-bottom-modal-text-light shadow-[0_-2px_8px_var(--ds-color-black-alpha-12)] dark:bg-bottom-modal-panel-bg-dark dark:text-bottom-modal-text-dark"
         >
           <header class="shrink-0">
             <div class="flex items-start justify-between gap-4 px-6 pb-5 pt-6">
