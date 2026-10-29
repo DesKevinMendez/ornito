@@ -19,7 +19,6 @@ const expired = () => {
     <SnackBarItem
       v-for="message in messages"
       :key="message.ts"
-      :active="true"
       :message="message"
       :error="message.error"
       @expired="expired"

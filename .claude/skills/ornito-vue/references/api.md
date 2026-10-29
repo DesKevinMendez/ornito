@@ -1,6 +1,6 @@
 # Ornito Vue API reference
 
-Generated from the library sources (v0.12.0) by `scripts/gen_api_reference.py`; don't
+Generated from the library sources (v0.12.1) by `scripts/gen_api_reference.py`; don't
 edit by hand. Prop names are camelCase here; in templates use either
 `:icon-position` or `:iconPosition`. "Required" means Vue warns when the prop is
 missing. Events are listened to as `@kebab-case`.

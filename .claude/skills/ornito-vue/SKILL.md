@@ -45,7 +45,7 @@ Icons are [Tabler](https://tabler.io/icons) Vue components passed as values:
    `informative`, `success`, `warning`, `error` (alias `danger`) — e.g.
    `text-error-600 dark:text-error-400` — or a component token utility such as
    `bg-card-bg-light dark:bg-card-bg-dark`. `success`, `warning` and `error` have no
-   300 or 950 shade, so `text-danger-300` renders nothing. Neutral text and borders
+   950 shade, so `text-danger-950` renders nothing. Neutral text and borders
    may use `gray-*` (the DS neutral defaults to gray) or the semantic borders
    `border-default-light dark:border-default-dark`. Always pair the two modes.
 4. **Customize at the right level.** App-wide (brand color, a component's color in
@@ -83,7 +83,7 @@ Icons are [Tabler](https://tabler.io/icons) Vue components passed as values:
 Install from a release tag (each tag contains the built `dist/`; `main` does not):
 
 ```bash
-pnpm add "ornito@git+https://github.com/DesKevinMendez/ornito.git#v0.12.0"
+pnpm add "ornito@git+https://github.com/DesKevinMendez/ornito.git#v0.12.1"
 pnpm add vue-router vee-validate yup @vueuse/core @tabler/icons-vue   # peers + icons
 ```
 

@@ -7,7 +7,7 @@ reports:
 - names imported from 'ornito' that it doesn't export
 - props, v-models, events and slots that an Ornito component doesn't have, and
   required props that are missing
-- --ds-color-* variables and DS color utilities (bg-card-bg-light, success-300…)
+- --ds-color-* variables and DS color utilities (bg-card-bg-light, success-950…)
   that don't exist, so they would silently do nothing
 - colors that bypass the theme: hex/rgb literals in components and raw Tailwind
   palettes that have a DS palette (indigo → primary, red → error/danger…)
@@ -212,7 +212,7 @@ def check_component(name, attrs, spec, problems, line):
     given, spread = set(), False
     for raw, value in attrs:
         attr = raw
-        if attr in ("v-bind",) or attr.startswith("v-bind=") or attr == ":":
+        if attr in ("v-bind", "...", "…") or attr.startswith("v-bind=") or attr == ":":
             spread = True
             continue
         if attr.startswith(("v-if", "v-else", "v-for", "v-show", "v-once", "v-memo", "v-html", "v-text", "v-cloak", "v-pre")):

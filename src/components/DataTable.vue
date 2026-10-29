@@ -19,7 +19,7 @@
           label=""
           id="table-search"
           name="table-search"
-          placeholder="Buscar..."
+          :placeholder="searchPlaceholder"
           :left-icon="IconSearch"
           small
           :disabled="isSearching"

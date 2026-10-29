@@ -548,6 +548,13 @@ def render_tokens(version, sections, colors):
     for name, token in colors.items():
         (same if token == "--ds-color-" + name else renamed).append((name, token))
     palettes = sorted({re.sub(r"-\d+$", "", n) for n in colors if re.search(r"-\d+$", n)})
+    shades = {}
+    for n in colors:
+        m = re.match(r"^([a-z]+)-(\d+)$", n)
+        if m:
+            shades.setdefault(m.group(1), set()).add(int(m.group(2)))
+    full = max(shades.values(), key=len) if shades else set()
+    missing = ["`{}-{}`".format(p, s) for p in sorted(shades) for s in sorted(full - shades[p])]
     mapped = set(colors.values())
     unmapped = [n for _, decls in sections for n, _ in decls
                 if re.search(r"-(light|dark)$", n) and n not in mapped]
@@ -560,8 +567,8 @@ def render_tokens(version, sections, colors):
         "(`hover:`, `dark:`). A name not listed here generates no CSS.",
         "",
         "- Palettes (`{palette}-{shade}`): " + ", ".join("`{}`".format(p) for p in palettes) +
-        ". `success`, `warning`, `error` and `danger` have no 300 or 950 shade; `danger`"
-        " is an alias of the `error` palette.",
+        ". `danger` is an alias of the `error` palette. Shades a palette doesn't have: " +
+        (", ".join(missing) if missing else "none") + ".",
         "- Every component token `--ds-color-{name}` is the color `{name}`, e.g.",
         "  `--ds-color-card-bg-light` → `bg-card-bg-light`" +
         (", except {} (read through `var()` only).".format(", ".join("`{}`".format(n) for n in unmapped))

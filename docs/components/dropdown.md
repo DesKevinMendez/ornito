@@ -9,11 +9,11 @@ Select-style dropdown backed by a fixed list of `DropdownItem`s. Uses
 | --- | --- | --- | --- |
 | `modelValue` (`v-model`) | `string \| undefined` | No | — |
 | `items` | `DropdownItem[]` — `{ label, value, icon? }` | Yes | — |
-| `placeholder` | `string` | No | — |
-| `triggerVariant` | `'primary' \| 'secondary' \| 'outline'` | No | — style of the trigger button |
-| `triggerSize` | `'full' \| 'auto'` | No | — |
-| `triggerSmall` | `boolean` | No | — |
-| `position` | `'bottom-left' \| 'bottom-right' \| 'top-left' \| 'top-right'` | No | — menu placement relative to the trigger |
+| `placeholder` | `string` | No | `'Select an option'` |
+| `triggerVariant` | `'primary' \| 'secondary' \| 'outline'` | No | `'outline'` — style of the trigger button |
+| `triggerSize` | `'full' \| 'auto'` | No | `'auto'` — trigger width |
+| `triggerSmall` | `boolean` | No | `false` — smaller trigger text; combines with either `triggerSize` |
+| `position` | `'bottom-left' \| 'bottom-right' \| 'top-left' \| 'top-right'` | No | `'bottom-left'` — menu placement relative to the trigger |
 
 ### CSS color variants
 

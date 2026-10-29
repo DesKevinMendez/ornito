@@ -1,6 +1,6 @@
 # Ornito Vue token defaults
 
-Generated from `src/tokens.css` and `src/theme.css` (v0.12.0) by
+Generated from `src/tokens.css` and `src/theme.css` (v0.12.1) by
 `scripts/gen_api_reference.py`; don't edit by hand. Override any of these on
 `:root` in the consuming app's CSS. `-light` tokens are read in light mode and
 `-dark` tokens through the `dark:` variant, so set both when a color changes in both
@@ -155,6 +155,7 @@ Contents: Shared typography, Primitive white and black, Neutral - gray (Tailwind
 --ds-color-success-50: #ecfdf5;
 --ds-color-success-100: #d1fae5;
 --ds-color-success-200: #a7f3d0;
+--ds-color-success-300: #6ee7b7;
 --ds-color-success-400: #34d399;
 --ds-color-success-500: #10b981;
 --ds-color-success-600: var(--ds-color-success);
@@ -170,6 +171,7 @@ Contents: Shared typography, Primitive white and black, Neutral - gray (Tailwind
 --ds-color-warning-50: #fffbeb;
 --ds-color-warning-100: #fef3c7;
 --ds-color-warning-200: #fde68a;
+--ds-color-warning-300: #fcd34d;
 --ds-color-warning-400: #fbbf24;
 --ds-color-warning-500: #f59e0b;
 --ds-color-warning-600: var(--ds-color-warning);
@@ -185,6 +187,7 @@ Contents: Shared typography, Primitive white and black, Neutral - gray (Tailwind
 --ds-color-error-50: #fef2f2;
 --ds-color-error-100: #fee2e2;
 --ds-color-error-200: #fecaca;
+--ds-color-error-300: #fca5a5;
 --ds-color-error-400: #f87171;
 --ds-color-error-500: #ef4444;
 --ds-color-error-600: var(--ds-color-error);
@@ -917,7 +920,7 @@ utility works with it: `bg-`, `text-`, `border-`, `ring-`, `divide-`,
 `placeholder-`, `from-`/`to-`, with opacity (`bg-primary-600/10`) and variants
 (`hover:`, `dark:`). A name not listed here generates no CSS.
 
-- Palettes (`{palette}-{shade}`): `danger`, `error`, `informative`, `primary`, `secondary`, `success`, `tertiary`, `warning`. `success`, `warning`, `error` and `danger` have no 300 or 950 shade; `danger` is an alias of the `error` palette.
+- Palettes (`{palette}-{shade}`): `danger`, `error`, `informative`, `primary`, `secondary`, `success`, `tertiary`, `warning`. `danger` is an alias of the `error` palette. Shades a palette doesn't have: `danger-950`, `error-950`, `success-950`, `warning-950`.
 - Every component token `--ds-color-{name}` is the color `{name}`, e.g.
   `--ds-color-card-bg-light` → `bg-card-bg-light`, except `--ds-color-datepicker-bg-light`, `--ds-color-datepicker-bg-dark`, `--ds-color-datepicker-primary-bg-light`, `--ds-color-datepicker-primary-bg-dark` (read through `var()` only).
 - Semantic borders drop the `border-` segment (use them with `border-`, `divide-`

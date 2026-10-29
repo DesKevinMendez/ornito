@@ -11,8 +11,7 @@
       <BaseButton
             :disabled="internalPaginationServer.current_page === 1"
         variant="outline"
-        size="auto"
-        :small="true"
+        size="small"
         :icon="IconChevronLeft"
         icon-class="h-4 w-4"
         class="px-2.5!"
@@ -25,8 +24,7 @@
           <BaseButton
             v-if="page !== -1"
             :variant="page === internalPaginationServer.current_page ? 'primary' : 'outline'"
-            size="auto"
-            :small="true"
+            size="small"
             class="tabular-nums"
             @click="goToPage(page)"
           >
@@ -40,8 +38,7 @@
       <BaseButton
         :disabled="internalPaginationServer.current_page === internalPaginationServer.last_page"
         variant="outline"
-        size="auto"
-        :small="true"
+        size="small"
         :icon="IconChevronRight"
         icon-class="h-4 w-4"
         class="px-2.5!"

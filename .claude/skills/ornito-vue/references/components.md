@@ -241,9 +241,6 @@ const columns: TableField<Driver>[] = [
   `useTable().refreshTable()` (it signals every mounted server `DataTable`) or change
   the `url` (e.g. a filter in the query string) or the component `:key`.
 - `@pagination-loaded` emits the pagination after each server load.
-- In v0.12.0 the search box always shows "Buscar...": `search-placeholder` is
-  declared but not wired yet. Pass it anyway (it will apply once fixed), but don't
-  promise the user a custom placeholder.
 - Put it inside a `Card`; it is responsive (cards on mobile).
 
 `useTable()` exposes the same loader for custom layouts

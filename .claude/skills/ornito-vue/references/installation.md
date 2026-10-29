@@ -20,9 +20,9 @@ so installing it without a tag gives an empty package.
 
 ```bash
 # exact tag (DteSales)
-pnpm add "ornito@git+https://github.com/DesKevinMendez/ornito.git#v0.12.0"
+pnpm add "ornito@git+https://github.com/DesKevinMendez/ornito.git#v0.12.1"
 # or a semver range over the tags (Gento Fit, Rutely) — needs SSH access to GitHub
-pnpm add "ornito@git+ssh://git@github.com:DesKevinMendez/ornito#semver:^0.12.0"
+pnpm add "ornito@git+ssh://git@github.com:DesKevinMendez/ornito#semver:^0.12.1"
 ```
 
 Peer dependencies the app must have: `vue` ^3.5, `vue-router` ^4.6 (buttons and
