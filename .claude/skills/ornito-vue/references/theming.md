@@ -144,8 +144,7 @@ Load the font in the app first (Google Fonts, `@font-face`, a package). Ornito m
 Avoid: `#hex`, `rgb()`, `bg-[#…]`, and raw Tailwind palettes the theme can't recolor
 (`indigo`, `violet`, `purple`, `sky`, `blue`, `cyan`, `emerald`, `green`, `teal`,
 `amber`, `yellow`, `orange`, `red`, `rose`). `success`, `warning`, `error` and
-`danger` have no 300 or 950 shade: `text-danger-300` generates no CSS (use 200 or
-400). The full list of color names is at the end of [tokens.md](tokens.md).
+`danger` stop at 900: `text-danger-950` generates no CSS. The full list of color names is at the end of [tokens.md](tokens.md).
 
 ## Recipes
 
