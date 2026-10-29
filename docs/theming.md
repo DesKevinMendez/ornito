@@ -154,9 +154,9 @@ hold raw colors or Tailwind variables.
 | `informative` (sky) | 50–950 | `--ds-color-informative-50` … `--ds-color-informative-950` |
 | `secondary` (defaults to informative) | 50–950 | `--ds-color-secondary-50` … `--ds-color-secondary-950` |
 | `tertiary` (violet) | 50–950 | `--ds-color-tertiary-50` … `--ds-color-tertiary-950` |
-| `success` (emerald) | 50, 100, 200, 400–900 | `--ds-color-success-50` … `--ds-color-success-900` |
-| `warning` (amber) | 50, 100, 200, 400–900 | `--ds-color-warning-50` … `--ds-color-warning-900` |
-| `error` (red) | 50, 100, 200, 400–900 | `--ds-color-error-50` … `--ds-color-error-900` |
+| `success` (emerald) | 50–900 | `--ds-color-success-50` … `--ds-color-success-900` |
+| `warning` (amber) | 50–900 | `--ds-color-warning-50` … `--ds-color-warning-900` |
+| `error` (red) | 50–900 | `--ds-color-error-50` … `--ds-color-error-900` |
 | `neutral` | 50–950 | `--ds-color-neutral-50` … `--ds-color-neutral-950` |
 | `pink` | 50–950 | `--ds-color-pink-50` … `--ds-color-pink-950` |
 | — | — | `--ds-color-whatsapp` |
@@ -262,9 +262,8 @@ See the component guides for the available token groups:
 
 Each palette follows the standard Tailwind shade scale (50 = lightest, 950 =
 darkest). `primary`/`secondary`/`tertiary` define the full 50–950 range;
-the semantic status palettes (`success`/`warning`/`danger`) only define the
-shades currently used by the components (300, 800 and 950 are intentionally
-absent).
+the semantic status palettes (`success`/`warning`/`error`, with `danger` as an
+alias of `error`) define 50–900; 950 is intentionally absent.
 
 ## Known limitation
 

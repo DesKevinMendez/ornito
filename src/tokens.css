@@ -126,6 +126,7 @@
     --ds-color-success-50: #ecfdf5;
     --ds-color-success-100: #d1fae5;
     --ds-color-success-200: #a7f3d0;
+    --ds-color-success-300: #6ee7b7;
     --ds-color-success-400: #34d399;
     --ds-color-success-500: #10b981;
     --ds-color-success-600: var(--ds-color-success);
@@ -138,6 +139,7 @@
     --ds-color-warning-50: #fffbeb;
     --ds-color-warning-100: #fef3c7;
     --ds-color-warning-200: #fde68a;
+    --ds-color-warning-300: #fcd34d;
     --ds-color-warning-400: #fbbf24;
     --ds-color-warning-500: #f59e0b;
     --ds-color-warning-600: var(--ds-color-warning);
@@ -150,6 +152,7 @@
     --ds-color-error-50: #fef2f2;
     --ds-color-error-100: #fee2e2;
     --ds-color-error-200: #fecaca;
+    --ds-color-error-300: #fca5a5;
     --ds-color-error-400: #f87171;
     --ds-color-error-500: #ef4444;
     --ds-color-error-600: var(--ds-color-error);
@@ -895,6 +898,7 @@
         --ds-color-success-50: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.948813) calc(c * 0.162298) calc(h + 2.887452));
         --ds-color-success-100: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.877378) calc(c * 0.398222) calc(h - 0.174599));
         --ds-color-success-200: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.764721) calc(c * 0.702315) calc(h + 0.924681));
+        --ds-color-success-300: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.616824) calc(c * 1.019857) calc(h + 1.752763));
         --ds-color-success-400: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.438021) calc(c * 1.20462) calc(h - 0.002327));
         --ds-color-success-500: oklch(from var(--ds-color-success) calc(l + (1 - l) * 0.247264) calc(c * 1.16996) calc(h - 0.7458));
         --ds-color-success-700: oklch(from var(--ds-color-success) calc(l * 0.852604) calc(c * 0.823577) calc(h + 2.386679));
@@ -904,6 +908,7 @@
         --ds-color-warning-50: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.960735) calc(c * 0.135959) calc(h + 36.959083));
         --ds-color-warning-100: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.885971) calc(c * 0.368608) calc(h + 37.299104));
         --ds-color-warning-200: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.773393) calc(c * 0.731325) calc(h + 37.42752));
+        --ds-color-warning-300: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.637799) calc(c * 0.974578) calc(h + 33.287032));
         --ds-color-warning-400: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.511793) calc(c * 1.044463) calc(h + 26.110288));
         --ds-color-warning-500: oklch(from var(--ds-color-warning) calc(l + (1 - l) * 0.307489) calc(c * 1.045973) calc(h + 11.76205));
         --ds-color-warning-700: oklch(from var(--ds-color-warning) calc(l * 0.833959) calc(c * 0.924299) calc(h - 9.320811));
@@ -913,6 +918,7 @@
         --ds-color-error-50: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.930309) calc(c * 0.060174) calc(h - 9.94535));
         --ds-color-error-100: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.847815) calc(c * 0.143597) calc(h - 9.607884));
         --ds-color-error-200: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.726987) calc(c * 0.275417) calc(h - 8.99098));
+        --ds-color-error-300: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.545259) calc(c * 0.480978) calc(h - 7.754409));
         --ds-color-error-400: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.315744) calc(c * 0.772218) calc(h - 5.108825));
         --ds-color-error-500: oklch(from var(--ds-color-error) calc(l + (1 - l) * 0.14125) calc(c * 0.966035) calc(h - 1.993721));
         --ds-color-error-700: oklch(from var(--ds-color-error) calc(l * 0.875794) calc(c * 0.88537) calc(h + 0.193054));
