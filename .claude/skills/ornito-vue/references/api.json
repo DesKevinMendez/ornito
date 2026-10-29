@@ -1,0 +1,2965 @@
+{
+ "version": "0.12.0",
+ "components": {
+  "Alert": {
+   "root": "Transition",
+   "props": {
+    "type": {
+     "type": "AlertType",
+     "required": true,
+     "values": [
+      "warning",
+      "danger",
+      "info",
+      "success"
+     ]
+    },
+    "show": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "BaseButton": {
+   "root": "component",
+   "props": {
+    "type": {
+     "type": "\"button\" | \"submit\" | \"reset\"",
+     "required": false,
+     "default": "\"button\"",
+     "values": [
+      "button",
+      "submit",
+      "reset"
+     ]
+    },
+    "variant": {
+     "type": "ButtonVariant",
+     "required": false,
+     "default": "\"primary\"",
+     "values": [
+      "primary",
+      "secondary",
+      "outline",
+      "primary-outline",
+      "danger",
+      "danger-outline",
+      "overlay"
+     ]
+    },
+    "size": {
+     "type": "\"full\" | \"auto\" | \"small\"",
+     "required": false,
+     "default": "\"full\"",
+     "values": [
+      "full",
+      "auto",
+      "small"
+     ]
+    },
+    "icon": {
+     "type": "any",
+     "required": false,
+     "default": "null"
+    },
+    "iconPosition": {
+     "type": "\"left\" | \"right\"",
+     "required": false,
+     "default": "\"left\"",
+     "values": [
+      "left",
+      "right"
+     ]
+    },
+    "iconClass": {
+     "type": "string",
+     "required": false,
+     "default": "\"\""
+    },
+    "disabled": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "loading": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "to": {
+     "type": "string | RouteLocationRaw",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "BaseButtonIcon": {
+   "root": "button",
+   "props": {
+    "icon": {
+     "type": "any",
+     "required": true
+    },
+    "type": {
+     "type": "\"button\" | \"submit\" | \"reset\"",
+     "required": false,
+     "values": [
+      "button",
+      "submit",
+      "reset"
+     ]
+    },
+    "variant": {
+     "type": "ButtonVariant",
+     "required": false,
+     "default": "\"secondary\"",
+     "values": [
+      "primary",
+      "secondary",
+      "outline",
+      "primary-outline",
+      "danger",
+      "danger-outline",
+      "overlay"
+     ]
+    },
+    "size": {
+     "type": "Size",
+     "required": false,
+     "default": "\"md\"",
+     "values": [
+      "sm",
+      "md",
+      "lg"
+     ]
+    },
+    "disabled": {
+     "type": "boolean",
+     "required": false
+    },
+    "loading": {
+     "type": "boolean",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "Breadcrumb": {
+   "root": "nav",
+   "props": {
+    "items": {
+     "type": "BreadcrumbItem[]",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "Badge": {
+   "root": "span",
+   "props": {
+    "variant": {
+     "type": "BadgeVariant",
+     "required": true,
+     "default": "'neutral'",
+     "values": [
+      "success",
+      "warning",
+      "neutral",
+      "danger",
+      "info"
+     ]
+    },
+    "text": {
+     "type": "'xs' | 'sm' | 'base'",
+     "required": false,
+     "default": "'base'",
+     "values": [
+      "xs",
+      "sm",
+      "base"
+     ]
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "BottomModal": {
+   "root": "Teleport",
+   "props": {
+    "open": {
+     "type": "boolean",
+     "required": true
+    },
+    "title": {
+     "type": "string",
+     "required": false
+    },
+    "subtitle": {
+     "type": "string",
+     "required": false
+    },
+    "showFooterDivider": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    }
+   },
+   "models": {},
+   "emits": {
+    "update:open": "value: boolean",
+    "close": ""
+   },
+   "slots": {
+    "default": [],
+    "footer": []
+   },
+   "dynamic_slots": []
+  },
+  "Card": {
+   "root": "div",
+   "props": {
+    "title": {
+     "type": "string",
+     "required": false
+    },
+    "subtitle": {
+     "type": "string",
+     "required": false
+    },
+    "colInMobile": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "noPadding": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "headerButtons": [],
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "CardPaginations": {
+   "root": "div",
+   "props": {
+    "pagination": {
+     "type": "tApiPagination | null",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {
+    "page-change": "page: number"
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "CollapseTransition": {
+   "root": "Transition",
+   "props": {},
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "ConfirmationModal": {
+   "root": "Modal",
+   "props": {
+    "open": {
+     "type": "boolean",
+     "required": true
+    },
+    "loading": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "title": {
+     "type": "string",
+     "required": false,
+     "default": "'Confirmar Acción'"
+    },
+    "subtitle": {
+     "type": "string",
+     "required": false,
+     "default": "'Esta acción no se puede deshacer. Escribe \\'Confirmar\\' para continuar.'"
+    }
+   },
+   "models": {},
+   "emits": {
+    "close": "",
+    "confirm": ""
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "DataTable": {
+   "root": "div",
+   "props": {
+    "columns": {
+     "type": "TableField<T>[]",
+     "required": true
+    },
+    "data": {
+     "type": "T[]",
+     "required": false
+    },
+    "url": {
+     "type": "string",
+     "required": false
+    },
+    "showSearch": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    },
+    "searchPlaceholder": {
+     "type": "string",
+     "required": false,
+     "default": "\"Buscar...\""
+    },
+    "actionsLabel": {
+     "type": "string",
+     "required": false,
+     "default": "\"Actions\""
+    },
+    "searchBy": {
+     "type": "string[] | string",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {
+    "row-selected": "",
+    "pagination-loaded": ""
+   },
+   "slots": {
+    "actions": [
+     "row"
+    ]
+   },
+   "dynamic_slots": [
+    {
+     "expression": "column.slot",
+     "props": [
+      "row",
+      "value"
+     ]
+    }
+   ]
+  },
+  "Divider": {
+   "root": "div",
+   "props": {},
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "Dropdown": {
+   "root": "div",
+   "props": {
+    "items": {
+     "type": "DropdownItem[]",
+     "required": true
+    },
+    "placeholder": {
+     "type": "string",
+     "required": false,
+     "default": "'Select an option'"
+    },
+    "triggerVariant": {
+     "type": "'primary' | 'secondary' | 'outline'",
+     "required": false,
+     "default": "'outline'",
+     "values": [
+      "primary",
+      "secondary",
+      "outline"
+     ]
+    },
+    "triggerSize": {
+     "type": "'full' | 'auto'",
+     "required": false,
+     "default": "'auto'",
+     "values": [
+      "full",
+      "auto"
+     ]
+    },
+    "triggerSmall": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "position": {
+     "type": "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'",
+     "required": false,
+     "default": "'bottom-left'",
+     "values": [
+      "bottom-left",
+      "bottom-right",
+      "top-left",
+      "top-right"
+     ]
+    }
+   },
+   "models": {
+    "modelValue": {
+     "type": "string",
+     "required": false
+    }
+   },
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "DropdownAnimation": {
+   "root": "Transition",
+   "props": {},
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "DropdownItem": {
+   "root": "RouterLink",
+   "props": {
+    "label": {
+     "type": "string",
+     "required": true
+    },
+    "icon": {
+     "type": "any",
+     "required": false
+    },
+    "active": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "to": {
+     "type": "string",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {
+    "click": "value: string"
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "DropdownMenu": {
+   "root": "div",
+   "props": {
+    "items": {
+     "type": "MenuItem[]",
+     "required": true
+    },
+    "ariaLabel": {
+     "type": "string",
+     "required": false,
+     "default": "\"Opciones\""
+    },
+    "position": {
+     "type": "\"bottom-left\" | \"bottom-right\"",
+     "required": false,
+     "default": "\"bottom-right\"",
+     "values": [
+      "bottom-left",
+      "bottom-right"
+     ]
+    },
+    "buttonVariant": {
+     "type": "\"outline\" | \"secondary\"",
+     "required": false,
+     "default": "\"outline\"",
+     "values": [
+      "outline",
+      "secondary"
+     ]
+    },
+    "icon": {
+     "type": "any",
+     "required": false,
+     "default": "IconDotsVertical"
+    }
+   },
+   "models": {},
+   "emits": {
+    "select": "item: MenuItem"
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "FormInput": {
+   "root": "div",
+   "props": {
+    "label": {
+     "type": "string",
+     "required": true
+    },
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "name": {
+     "type": "string",
+     "required": true
+    },
+    "type": {
+     "type": "\"text\" | \"email\" | \"password\" | \"tel\" | \"date\" | \"datetime\" | \"time\" | \"number\" | \"money\" | \"range\"",
+     "required": false,
+     "default": "\"text\"",
+     "values": [
+      "text",
+      "email",
+      "password",
+      "tel",
+      "date",
+      "datetime",
+      "time",
+      "number",
+      "money",
+      "range"
+     ]
+    },
+    "placeholder": {
+     "type": "string",
+     "required": false,
+     "default": "\"\""
+    },
+    "leftIcon": {
+     "type": "any",
+     "required": false
+    },
+    "rightIcon": {
+     "type": "any",
+     "required": false
+    },
+    "rules": {
+     "type": "any",
+     "required": false
+    },
+    "small": {
+     "type": "boolean",
+     "required": false
+    },
+    "min": {
+     "type": "number | string",
+     "required": false
+    },
+    "max": {
+     "type": "number | string",
+     "required": false
+    },
+    "step": {
+     "type": "number | string",
+     "required": false
+    },
+    "mask": {
+     "type": "string",
+     "required": false
+    },
+    "help": {
+     "type": "string",
+     "required": false
+    },
+    "url": {
+     "type": "string",
+     "required": false
+    },
+    "searchBy": {
+     "type": "string",
+     "required": false
+    },
+    "labelKey": {
+     "type": "string",
+     "required": false
+    },
+    "valueKey": {
+     "type": "string",
+     "required": false
+    },
+    "subtitleKey": {
+     "type": "string | string[]",
+     "required": false
+    },
+    "disabled": {
+     "type": "boolean",
+     "required": false
+    },
+    "loading": {
+     "type": "boolean",
+     "required": false
+    },
+    "minDate": {
+     "type": "Date | string | null",
+     "required": false
+    },
+    "maxDate": {
+     "type": "Date | string | null",
+     "required": false
+    },
+    "autocomplete": {
+     "type": "string",
+     "required": false,
+     "default": "\"off\""
+    },
+    "disabledDates": {
+     "type": "Date[] | string[] | ((date: Date) => boolean)",
+     "required": false
+    }
+   },
+   "models": {
+    "modelValue": {
+     "type": "string | number | undefined | null",
+     "required": true
+    }
+   },
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "FormSelect": {
+   "root": "div",
+   "props": {
+    "label": {
+     "type": "string",
+     "required": true
+    },
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "name": {
+     "type": "string",
+     "required": true
+    },
+    "placeholder": {
+     "type": "string",
+     "required": false,
+     "default": "\"Selecciona una opción\""
+    },
+    "leftIcon": {
+     "type": "any",
+     "required": false
+    },
+    "rules": {
+     "type": "any",
+     "required": false
+    },
+    "small": {
+     "type": "boolean",
+     "required": false
+    },
+    "options": {
+     "type": "Option[]",
+     "required": true
+    }
+   },
+   "models": {
+    "modelValue": {
+     "type": "string | number | undefined | null",
+     "required": true
+    }
+   },
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "FormTextarea": {
+   "root": "div",
+   "props": {
+    "label": {
+     "type": "string",
+     "required": true
+    },
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "name": {
+     "type": "string",
+     "required": true
+    },
+    "placeholder": {
+     "type": "string",
+     "required": false,
+     "default": "''"
+    },
+    "rules": {
+     "type": "any",
+     "required": false
+    },
+    "small": {
+     "type": "boolean",
+     "required": false
+    },
+    "rows": {
+     "type": "number",
+     "required": false,
+     "default": "3"
+    },
+    "maxLength": {
+     "type": "number",
+     "required": false
+    }
+   },
+   "models": {
+    "modelValue": {
+     "type": "string | undefined | null",
+     "required": true
+    }
+   },
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "HelpTooltip": {
+   "root": "div",
+   "props": {
+    "tooltip": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "IconButton": {
+   "root": "component",
+   "props": {
+    "icon": {
+     "type": "any",
+     "required": true
+    },
+    "color": {
+     "type": "string",
+     "required": false,
+     "default": "\"gray\""
+    },
+    "to": {
+     "type": "string | object",
+     "required": false
+    },
+    "rounded": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "outline": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "ImageLightbox": {
+   "root": "Teleport",
+   "props": {
+    "open": {
+     "type": "boolean",
+     "required": true
+    },
+    "src": {
+     "type": "string | null",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {
+    "close": ""
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "InfoItem": {
+   "root": "div",
+   "props": {
+    "label": {
+     "type": "string",
+     "required": true
+    },
+    "column": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "Item": {
+   "root": "component",
+   "props": {
+    "title": {
+     "type": "string",
+     "required": true
+    },
+    "subtitle": {
+     "type": "string",
+     "required": false
+    },
+    "image": {
+     "type": "string",
+     "required": false
+    },
+    "imageAlt": {
+     "type": "string",
+     "required": false,
+     "default": "''"
+    },
+    "icon": {
+     "type": "Component",
+     "required": false
+    },
+    "border": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "hoverable": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    },
+    "clickable": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "id": {
+     "type": "ItemId",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {
+    "click": "id: ItemId | undefined"
+   },
+   "slots": {
+    "image": [],
+    "title": [],
+    "subtitle": [],
+    "icon": []
+   },
+   "dynamic_slots": []
+  },
+  "List": {
+   "root": "ul",
+   "props": {
+    "border": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "pagination": {
+     "type": "ListPagination | null",
+     "required": false
+    },
+    "scrollDistance": {
+     "type": "number",
+     "required": false,
+     "default": "50"
+    },
+    "loading": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    }
+   },
+   "models": {},
+   "emits": {
+    "request": "page: number"
+   },
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "LoadingSVG": {
+   "root": "svg",
+   "props": {
+    "customClass": {
+     "type": "string",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "Modal": {
+   "root": "Teleport",
+   "props": {
+    "open": {
+     "type": "boolean",
+     "required": true
+    },
+    "title": {
+     "type": "string",
+     "required": false
+    },
+    "subtitle": {
+     "type": "string",
+     "required": false
+    },
+    "size": {
+     "type": "'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+     "required": false,
+     "values": [
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl"
+     ]
+    }
+   },
+   "models": {},
+   "emits": {
+    "update:open": "",
+    "close": ""
+   },
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  },
+  "Navbar": {
+   "root": "nav",
+   "props": {},
+   "models": {},
+   "emits": {
+    "toggle-mobile-sidebar": ""
+   },
+   "slots": {
+    "right": []
+   },
+   "dynamic_slots": []
+  },
+  "SearchableSelect": {
+   "root": "div",
+   "props": {
+    "url": {
+     "type": "string",
+     "required": true
+    },
+    "searchBy": {
+     "type": "string",
+     "required": true
+    },
+    "placeholder": {
+     "type": "string",
+     "required": false,
+     "default": "\"Buscar...\""
+    },
+    "leftIcon": {
+     "type": "any",
+     "required": false
+    },
+    "id": {
+     "type": "string",
+     "required": false,
+     "default": "\"searchable-select\""
+    },
+    "name": {
+     "type": "string",
+     "required": false
+    },
+    "label": {
+     "type": "string",
+     "required": false
+    },
+    "rules": {
+     "type": "any",
+     "required": false
+    },
+    "small": {
+     "type": "boolean",
+     "required": false
+    },
+    "labelKey": {
+     "type": "string",
+     "required": false,
+     "default": "\"label\""
+    },
+    "valueKey": {
+     "type": "string",
+     "required": false,
+     "default": "\"value\""
+    },
+    "subtitleKey": {
+     "type": "string | string[]",
+     "required": false
+    },
+    "disabled": {
+     "type": "boolean",
+     "required": false
+    },
+    "multiple": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "localSearchFirst": {
+     "type": "boolean",
+     "required": false
+    }
+   },
+   "models": {
+    "modelValue": {
+     "type": "string | number | (string | number)[] | undefined | null",
+     "required": false
+    }
+   },
+   "emits": {
+    "select": "item: SelectItem",
+    "data": "raw: any"
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "Sidebar": {
+   "root": "aside",
+   "props": {
+    "isCollapsed": {
+     "type": "boolean",
+     "required": true
+    },
+    "logo": {
+     "type": "string",
+     "required": true
+    },
+    "title": {
+     "type": "string",
+     "required": true
+    },
+    "subtitle": {
+     "type": "string",
+     "required": true
+    },
+    "version": {
+     "type": "string",
+     "required": true
+    },
+    "menuItems": {
+     "type": "RoutesLink[]",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {
+    "toggle-collapse": "",
+    "close": ""
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "SidebarItem": {
+   "root": "RouterLink",
+   "props": {
+    "to": {
+     "type": "string",
+     "required": true
+    },
+    "name": {
+     "type": "string",
+     "required": true
+    },
+    "icon": {
+     "type": "any",
+     "required": true
+    },
+    "isCollapsed": {
+     "type": "boolean",
+     "required": true
+    },
+    "hasExternalIcon": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "hasBadge": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "badgeText": {
+     "type": "string",
+     "required": false,
+     "default": "''"
+    },
+    "textFitContent": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "showActiveBackground": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "useExternalIndicator": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "SidebarList": {
+   "root": "nav",
+   "props": {
+    "isCollapsed": {
+     "type": "boolean",
+     "required": true
+    },
+    "menuItems": {
+     "type": "RoutesLink[]",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "SidebarNav": {
+   "root": "nav",
+   "props": {
+    "items": {
+     "type": "SidebarItem[]",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "TableSkeleton": {
+   "root": "tbody",
+   "props": {
+    "rows": {
+     "type": "number",
+     "required": false,
+     "default": "10"
+    },
+    "columns": {
+     "type": "TableField<any>[]",
+     "required": true
+    },
+    "showActions": {
+     "type": "boolean",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "SnackBar": {
+   "root": "div",
+   "props": {
+    "active": {
+     "type": "Boolean",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "SnackBarItem": {
+   "root": "transition",
+   "props": {
+    "message": {
+     "type": "Object",
+     "required": true
+    },
+    "error": {
+     "type": "Boolean",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {
+    "expired": "",
+    "cancel": ""
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "StatCard": {
+   "root": "Card",
+   "props": {
+    "title": {
+     "type": "string",
+     "required": true
+    },
+    "value": {
+     "type": "string | number | null",
+     "required": true
+    },
+    "change": {
+     "type": "string | number",
+     "required": false
+    },
+    "changeType": {
+     "type": "'positive' | 'negative' | 'neutral' | 'info'",
+     "required": false,
+     "default": "'neutral'",
+     "values": [
+      "positive",
+      "negative",
+      "neutral",
+      "info"
+     ]
+    },
+    "description": {
+     "type": "string",
+     "required": false,
+     "default": "''"
+    },
+    "help": {
+     "type": "string",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "SwitchInput": {
+   "root": "div",
+   "props": {
+    "label": {
+     "type": "string",
+     "required": false
+    },
+    "modelValue": {
+     "type": "boolean",
+     "required": true
+    },
+    "disabled": {
+     "type": "boolean",
+     "required": false,
+     "default": "false"
+    },
+    "trueLabel": {
+     "type": "string",
+     "required": false,
+     "default": "\"Activo\""
+    },
+    "falseLabel": {
+     "type": "string",
+     "required": false,
+     "default": "\"Inactivo\""
+    },
+    "showLabel": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    }
+   },
+   "models": {
+    "modelValue": {
+     "type": "boolean",
+     "required": true
+    }
+   },
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "Tabs": {
+   "root": "div",
+   "props": {
+    "tabs": {
+     "type": "Tab[]",
+     "required": true
+    },
+    "modelValue": {
+     "type": "number",
+     "required": false,
+     "default": "0"
+    },
+    "variant": {
+     "type": "TabsVariant",
+     "required": false,
+     "default": "'segmented'",
+     "values": [
+      "segmented",
+      "pills",
+      "underline"
+     ]
+    },
+    "label": {
+     "type": "string",
+     "required": false,
+     "default": "'Tabs'"
+    }
+   },
+   "models": {},
+   "emits": {
+    "update:modelValue": "value: number",
+    "change": "tab: Tab, index: number"
+   },
+   "slots": {},
+   "dynamic_slots": [
+    {
+     "expression": "tab-{activeTabIndex}",
+     "props": [
+      "active-tab",
+      "active-tab-index"
+     ]
+    }
+   ]
+  },
+  "ResultCount": {
+   "root": "div",
+   "props": {
+    "internalPaginationServer": {
+     "type": "tApiPagination",
+     "required": true
+    },
+    "totalItems": {
+     "type": "number",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "TableHeader": {
+   "root": "thead",
+   "props": {
+    "columns": {
+     "type": "TableField<T>[]",
+     "required": true
+    },
+    "showActions": {
+     "type": "boolean",
+     "required": false
+    },
+    "actionsLabel": {
+     "type": "string",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "TablePagination": {
+   "root": "div",
+   "props": {
+    "internalPaginationServer": {
+     "type": "tApiPagination",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {
+    "page-change": "page: number"
+   },
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "UserAvatar": {
+   "root": "div",
+   "props": {
+    "imageUrl": {
+     "type": "string | null",
+     "required": false,
+     "default": "null"
+    },
+    "name": {
+     "type": "string",
+     "required": true
+    },
+    "size": {
+     "type": "'sm' | 'md' | 'lg' | 'xl'",
+     "required": false,
+     "default": "'md'",
+     "values": [
+      "sm",
+      "md",
+      "lg",
+      "xl"
+     ]
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "UserAvatars": {
+   "root": "div",
+   "props": {
+    "users": {
+     "type": "User[]",
+     "required": true
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {},
+   "dynamic_slots": []
+  },
+  "UserProfileDropdown": {
+   "root": "div",
+   "props": {
+    "userName": {
+     "type": "string",
+     "required": true
+    },
+    "userInitials": {
+     "type": "string",
+     "required": true
+    },
+    "userRole": {
+     "type": "string",
+     "required": true
+    },
+    "menuItems": {
+     "type": "DropdownMenuItem[]",
+     "required": true
+    },
+    "showNotifications": {
+     "type": "boolean",
+     "required": false,
+     "default": "true"
+    },
+    "unreadNotificationsCount": {
+     "type": "number",
+     "required": false,
+     "default": "0"
+    }
+   },
+   "models": {},
+   "emits": {
+    "bell-click": "",
+    "panel-open": "",
+    "mark-all-read": ""
+   },
+   "slots": {
+    "notifications": [],
+    "avatar": []
+   },
+   "dynamic_slots": []
+  },
+  "ViewHeader": {
+   "root": "div",
+   "props": {
+    "subtitle": {
+     "type": "string",
+     "required": true
+    },
+    "title": {
+     "type": "string",
+     "required": true
+    },
+    "badgeText": {
+     "type": "string",
+     "required": false
+    }
+   },
+   "models": {},
+   "emits": {},
+   "slots": {
+    "right": []
+   },
+   "dynamic_slots": []
+  },
+  "WarningAlert": {
+   "root": "div",
+   "props": {},
+   "models": {},
+   "emits": {},
+   "slots": {
+    "default": []
+   },
+   "dynamic_slots": []
+  }
+ },
+ "exports": [
+  "Alert",
+  "BaseButton",
+  "BaseButtonIcon",
+  "Breadcrumb",
+  "Badge",
+  "BottomModal",
+  "Card",
+  "CardPaginations",
+  "CollapseTransition",
+  "ConfirmationModal",
+  "DataTable",
+  "Divider",
+  "Dropdown",
+  "DropdownAnimation",
+  "DropdownItem",
+  "DropdownMenu",
+  "FormInput",
+  "FormSelect",
+  "FormTextarea",
+  "HelpTooltip",
+  "IconButton",
+  "ImageLightbox",
+  "InfoItem",
+  "Item",
+  "List",
+  "LoadingSVG",
+  "Modal",
+  "Navbar",
+  "SearchableSelect",
+  "Sidebar",
+  "SidebarItem",
+  "SidebarList",
+  "SidebarNav",
+  "TableSkeleton",
+  "SnackBar",
+  "SnackBarItem",
+  "StatCard",
+  "SwitchInput",
+  "Tabs",
+  "ResultCount",
+  "TableHeader",
+  "TablePagination",
+  "UserAvatar",
+  "UserAvatars",
+  "UserProfileDropdown",
+  "ViewHeader",
+  "WarningAlert",
+  "useMobile",
+  "isMobile",
+  "isTablet",
+  "isDesktop",
+  "useTheme",
+  "initTheme",
+  "useSidebar",
+  "useActiveIndicator",
+  "useMessages",
+  "useTable",
+  "useRequestKey",
+  "BadgeVariant",
+  "BreadcrumbItem",
+  "RoutesLink",
+  "TableField",
+  "DropdownMenuItem",
+  "ItemId",
+  "ListPagination",
+  "Tab",
+  "TabsVariant",
+  "GetFn",
+  "UseRequestFactory",
+  "yup"
+ ],
+ "tokens": [
+  "--ds-font-family",
+  "--ds-color-white",
+  "--ds-color-black",
+  "--ds-color-neutral",
+  "--ds-color-neutral-50",
+  "--ds-color-neutral-100",
+  "--ds-color-neutral-200",
+  "--ds-color-neutral-300",
+  "--ds-color-neutral-400",
+  "--ds-color-neutral-500",
+  "--ds-color-neutral-600",
+  "--ds-color-neutral-700",
+  "--ds-color-neutral-800",
+  "--ds-color-neutral-900",
+  "--ds-color-neutral-950",
+  "--ds-color-pink",
+  "--ds-color-pink-50",
+  "--ds-color-pink-100",
+  "--ds-color-pink-200",
+  "--ds-color-pink-300",
+  "--ds-color-pink-400",
+  "--ds-color-pink-500",
+  "--ds-color-pink-600",
+  "--ds-color-pink-700",
+  "--ds-color-pink-800",
+  "--ds-color-pink-900",
+  "--ds-color-pink-950",
+  "--ds-color-black-alpha-5",
+  "--ds-color-black-alpha-12",
+  "--ds-color-black-alpha-32",
+  "--ds-color-black-alpha-40",
+  "--ds-color-black-alpha-60",
+  "--ds-color-black-alpha-80",
+  "--ds-color-black-alpha-90",
+  "--ds-color-white-alpha-10",
+  "--ds-color-white-alpha-20",
+  "--ds-color-neutral-800-alpha-20",
+  "--ds-color-neutral-800-alpha-30",
+  "--ds-color-neutral-800-alpha-50",
+  "--ds-color-neutral-800-alpha-70",
+  "--ds-color-neutral-800-alpha-80",
+  "--ds-color-neutral-800-alpha-90",
+  "--ds-color-neutral-500-alpha-30",
+  "--ds-color-neutral-400-alpha-30",
+  "--ds-color-neutral-700-alpha-30",
+  "--ds-color-neutral-700-alpha-50",
+  "--ds-color-neutral-700-alpha-70",
+  "--ds-color-primary",
+  "--ds-color-primary-50",
+  "--ds-color-primary-100",
+  "--ds-color-primary-200",
+  "--ds-color-primary-300",
+  "--ds-color-primary-400",
+  "--ds-color-primary-500",
+  "--ds-color-primary-600",
+  "--ds-color-primary-700",
+  "--ds-color-primary-800",
+  "--ds-color-primary-900",
+  "--ds-color-primary-950",
+  "--ds-color-informative",
+  "--ds-color-informative-50",
+  "--ds-color-informative-100",
+  "--ds-color-informative-200",
+  "--ds-color-informative-300",
+  "--ds-color-informative-400",
+  "--ds-color-informative-500",
+  "--ds-color-informative-600",
+  "--ds-color-informative-700",
+  "--ds-color-informative-800",
+  "--ds-color-informative-900",
+  "--ds-color-informative-950",
+  "--ds-color-secondary",
+  "--ds-color-secondary-50",
+  "--ds-color-secondary-100",
+  "--ds-color-secondary-200",
+  "--ds-color-secondary-300",
+  "--ds-color-secondary-400",
+  "--ds-color-secondary-500",
+  "--ds-color-secondary-600",
+  "--ds-color-secondary-700",
+  "--ds-color-secondary-800",
+  "--ds-color-secondary-900",
+  "--ds-color-secondary-950",
+  "--ds-color-tertiary",
+  "--ds-color-tertiary-50",
+  "--ds-color-tertiary-100",
+  "--ds-color-tertiary-200",
+  "--ds-color-tertiary-300",
+  "--ds-color-tertiary-400",
+  "--ds-color-tertiary-500",
+  "--ds-color-tertiary-600",
+  "--ds-color-tertiary-700",
+  "--ds-color-tertiary-800",
+  "--ds-color-tertiary-900",
+  "--ds-color-tertiary-950",
+  "--ds-color-success",
+  "--ds-color-success-50",
+  "--ds-color-success-100",
+  "--ds-color-success-200",
+  "--ds-color-success-400",
+  "--ds-color-success-500",
+  "--ds-color-success-600",
+  "--ds-color-success-700",
+  "--ds-color-success-800",
+  "--ds-color-success-900",
+  "--ds-color-warning",
+  "--ds-color-warning-50",
+  "--ds-color-warning-100",
+  "--ds-color-warning-200",
+  "--ds-color-warning-400",
+  "--ds-color-warning-500",
+  "--ds-color-warning-600",
+  "--ds-color-warning-700",
+  "--ds-color-warning-800",
+  "--ds-color-warning-900",
+  "--ds-color-error",
+  "--ds-color-error-50",
+  "--ds-color-error-100",
+  "--ds-color-error-200",
+  "--ds-color-error-400",
+  "--ds-color-error-500",
+  "--ds-color-error-600",
+  "--ds-color-error-700",
+  "--ds-color-error-800",
+  "--ds-color-error-900",
+  "--ds-color-error-900-alpha-50",
+  "--ds-color-whatsapp",
+  "--ds-color-material-neutral-10",
+  "--ds-color-material-neutral-90",
+  "--ds-color-material-neutral-variant-30",
+  "--ds-color-material-neutral-variant-50",
+  "--ds-color-material-neutral-variant-60",
+  "--ds-color-material-neutral-variant-80",
+  "--ds-color-material-neutral-variant-50-alpha-30",
+  "--ds-color-material-neutral-variant-60-alpha-30",
+  "--ds-color-midnight",
+  "--ds-color-button-primary-bg-light",
+  "--ds-color-button-primary-bg-hover-light",
+  "--ds-color-button-primary-bg-active-light",
+  "--ds-color-button-primary-text-light",
+  "--ds-color-button-primary-text-hover-light",
+  "--ds-color-button-primary-text-active-light",
+  "--ds-color-button-primary-border-light",
+  "--ds-color-button-primary-bg-dark",
+  "--ds-color-button-primary-bg-hover-dark",
+  "--ds-color-button-primary-bg-active-dark",
+  "--ds-color-button-primary-text-dark",
+  "--ds-color-button-primary-text-hover-dark",
+  "--ds-color-button-primary-text-active-dark",
+  "--ds-color-button-primary-border-dark",
+  "--ds-color-button-secondary-bg-light",
+  "--ds-color-button-secondary-bg-hover-light",
+  "--ds-color-button-secondary-bg-active-light",
+  "--ds-color-button-secondary-text-light",
+  "--ds-color-button-secondary-text-hover-light",
+  "--ds-color-button-secondary-text-active-light",
+  "--ds-color-button-secondary-border-light",
+  "--ds-color-button-secondary-bg-dark",
+  "--ds-color-button-secondary-bg-hover-dark",
+  "--ds-color-button-secondary-bg-active-dark",
+  "--ds-color-button-secondary-text-dark",
+  "--ds-color-button-secondary-text-hover-dark",
+  "--ds-color-button-secondary-text-active-dark",
+  "--ds-color-button-secondary-border-dark",
+  "--ds-color-button-outline-bg-light",
+  "--ds-color-button-outline-bg-hover-light",
+  "--ds-color-button-outline-bg-active-light",
+  "--ds-color-button-outline-text-light",
+  "--ds-color-button-outline-text-hover-light",
+  "--ds-color-button-outline-text-active-light",
+  "--ds-color-button-outline-border-light",
+  "--ds-color-button-outline-bg-dark",
+  "--ds-color-button-outline-bg-hover-dark",
+  "--ds-color-button-outline-bg-active-dark",
+  "--ds-color-button-outline-text-dark",
+  "--ds-color-button-outline-text-hover-dark",
+  "--ds-color-button-outline-text-active-dark",
+  "--ds-color-button-outline-border-dark",
+  "--ds-color-button-primary-outline-bg-light",
+  "--ds-color-button-primary-outline-bg-hover-light",
+  "--ds-color-button-primary-outline-bg-active-light",
+  "--ds-color-button-primary-outline-text-light",
+  "--ds-color-button-primary-outline-text-hover-light",
+  "--ds-color-button-primary-outline-text-active-light",
+  "--ds-color-button-primary-outline-border-light",
+  "--ds-color-button-primary-outline-bg-dark",
+  "--ds-color-button-primary-outline-bg-hover-dark",
+  "--ds-color-button-primary-outline-bg-active-dark",
+  "--ds-color-button-primary-outline-text-dark",
+  "--ds-color-button-primary-outline-text-hover-dark",
+  "--ds-color-button-primary-outline-text-active-dark",
+  "--ds-color-button-primary-outline-border-dark",
+  "--ds-color-button-danger-bg-light",
+  "--ds-color-button-danger-bg-hover-light",
+  "--ds-color-button-danger-bg-active-light",
+  "--ds-color-button-danger-ring-focus-light",
+  "--ds-color-button-danger-text-light",
+  "--ds-color-button-danger-text-hover-light",
+  "--ds-color-button-danger-text-active-light",
+  "--ds-color-button-danger-border-light",
+  "--ds-color-button-danger-bg-dark",
+  "--ds-color-button-danger-bg-hover-dark",
+  "--ds-color-button-danger-bg-active-dark",
+  "--ds-color-button-danger-ring-focus-dark",
+  "--ds-color-button-danger-text-dark",
+  "--ds-color-button-danger-text-hover-dark",
+  "--ds-color-button-danger-text-active-dark",
+  "--ds-color-button-danger-border-dark",
+  "--ds-color-button-danger-outline-bg-light",
+  "--ds-color-button-danger-outline-bg-hover-light",
+  "--ds-color-button-danger-outline-bg-active-light",
+  "--ds-color-button-danger-outline-text-light",
+  "--ds-color-button-danger-outline-text-hover-light",
+  "--ds-color-button-danger-outline-text-active-light",
+  "--ds-color-button-danger-outline-border-light",
+  "--ds-color-button-danger-outline-bg-dark",
+  "--ds-color-button-danger-outline-bg-hover-dark",
+  "--ds-color-button-danger-outline-bg-active-dark",
+  "--ds-color-button-danger-outline-text-dark",
+  "--ds-color-button-danger-outline-text-hover-dark",
+  "--ds-color-button-danger-outline-text-active-dark",
+  "--ds-color-button-danger-outline-border-dark",
+  "--ds-color-button-overlay-bg-light",
+  "--ds-color-button-overlay-bg-hover-light",
+  "--ds-color-button-overlay-bg-active-light",
+  "--ds-color-button-overlay-text-light",
+  "--ds-color-button-overlay-text-hover-light",
+  "--ds-color-button-overlay-text-active-light",
+  "--ds-color-button-overlay-border-light",
+  "--ds-color-button-overlay-bg-dark",
+  "--ds-color-button-overlay-bg-hover-dark",
+  "--ds-color-button-overlay-bg-active-dark",
+  "--ds-color-button-overlay-text-dark",
+  "--ds-color-button-overlay-text-hover-dark",
+  "--ds-color-button-overlay-text-active-dark",
+  "--ds-color-button-overlay-border-dark",
+  "--ds-color-button-primary-spinner-text-light",
+  "--ds-color-button-primary-spinner-text-dark",
+  "--ds-color-button-secondary-spinner-text-light",
+  "--ds-color-button-secondary-spinner-text-dark",
+  "--ds-color-button-outline-spinner-text-light",
+  "--ds-color-button-outline-spinner-text-dark",
+  "--ds-color-button-primary-outline-spinner-text-light",
+  "--ds-color-button-primary-outline-spinner-text-dark",
+  "--ds-color-button-danger-spinner-text-light",
+  "--ds-color-button-danger-spinner-text-dark",
+  "--ds-color-button-danger-outline-spinner-text-light",
+  "--ds-color-button-danger-outline-spinner-text-dark",
+  "--ds-color-button-overlay-spinner-text-light",
+  "--ds-color-button-overlay-spinner-text-dark",
+  "--ds-color-button-icon-primary-spinner-text-light",
+  "--ds-color-button-icon-primary-spinner-text-dark",
+  "--ds-color-button-icon-secondary-spinner-text-light",
+  "--ds-color-button-icon-secondary-spinner-text-dark",
+  "--ds-color-button-icon-outline-spinner-text-light",
+  "--ds-color-button-icon-outline-spinner-text-dark",
+  "--ds-color-button-icon-primary-outline-spinner-text-light",
+  "--ds-color-button-icon-primary-outline-spinner-text-dark",
+  "--ds-color-button-icon-danger-spinner-text-light",
+  "--ds-color-button-icon-danger-spinner-text-dark",
+  "--ds-color-button-icon-danger-outline-spinner-text-light",
+  "--ds-color-button-icon-danger-outline-spinner-text-dark",
+  "--ds-color-button-icon-overlay-spinner-text-light",
+  "--ds-color-button-icon-overlay-spinner-text-dark",
+  "--ds-color-border-default-light",
+  "--ds-color-border-default-dark",
+  "--ds-color-border-input-light",
+  "--ds-color-border-input-dark",
+  "--ds-color-border-muted-light",
+  "--ds-color-border-muted-dark",
+  "--ds-color-border-strong-light",
+  "--ds-color-border-strong-dark",
+  "--ds-color-border-hover-light",
+  "--ds-color-border-hover-dark",
+  "--ds-color-border-tooltip-light",
+  "--ds-color-border-tooltip-dark",
+  "--ds-color-border-card-light",
+  "--ds-color-border-card-dark",
+  "--ds-color-border-divider-light",
+  "--ds-color-border-divider-dark",
+  "--ds-color-border-avatar-light",
+  "--ds-color-border-avatar-dark",
+  "--ds-color-border-primary-light",
+  "--ds-color-border-primary-dark",
+  "--ds-color-border-primary-active-light",
+  "--ds-color-border-primary-active-dark",
+  "--ds-color-border-primary-subtle-light",
+  "--ds-color-border-primary-subtle-dark",
+  "--ds-color-border-secondary-light",
+  "--ds-color-border-secondary-dark",
+  "--ds-color-border-secondary-subtle-light",
+  "--ds-color-border-secondary-subtle-dark",
+  "--ds-color-border-success-light",
+  "--ds-color-border-success-dark",
+  "--ds-color-border-success-subtle-light",
+  "--ds-color-border-success-subtle-dark",
+  "--ds-color-border-success-muted-light",
+  "--ds-color-border-success-muted-dark",
+  "--ds-color-border-warning-light",
+  "--ds-color-border-warning-dark",
+  "--ds-color-border-warning-subtle-light",
+  "--ds-color-border-warning-subtle-dark",
+  "--ds-color-border-warning-muted-light",
+  "--ds-color-border-warning-muted-dark",
+  "--ds-color-border-danger-light",
+  "--ds-color-border-danger-dark",
+  "--ds-color-border-danger-emphasis-light",
+  "--ds-color-border-danger-emphasis-dark",
+  "--ds-color-border-danger-subtle-light",
+  "--ds-color-border-danger-subtle-dark",
+  "--ds-color-border-danger-muted-light",
+  "--ds-color-border-danger-muted-dark",
+  "--ds-color-border-pink-light",
+  "--ds-color-border-pink-dark",
+  "--ds-color-sidebar-bg-light",
+  "--ds-color-sidebar-bg-dark",
+  "--ds-color-sidebar-title-text-light",
+  "--ds-color-sidebar-title-text-dark",
+  "--ds-color-sidebar-subtitle-text-light",
+  "--ds-color-sidebar-subtitle-text-dark",
+  "--ds-color-sidebar-version-text-light",
+  "--ds-color-sidebar-version-text-dark",
+  "--ds-color-sidebar-collapse-bg-light",
+  "--ds-color-sidebar-collapse-bg-dark",
+  "--ds-color-sidebar-collapse-bg-hover-light",
+  "--ds-color-sidebar-collapse-bg-hover-dark",
+  "--ds-color-sidebar-collapse-icon-text-light",
+  "--ds-color-sidebar-collapse-icon-text-dark",
+  "--ds-color-sidebar-theme-toggle-bg-light",
+  "--ds-color-sidebar-theme-toggle-bg-dark",
+  "--ds-color-sidebar-theme-toggle-bg-hover-light",
+  "--ds-color-sidebar-theme-toggle-bg-hover-dark",
+  "--ds-color-sidebar-theme-toggle-content-text-light",
+  "--ds-color-sidebar-theme-toggle-content-text-dark",
+  "--ds-color-sidebar-tab-bg-active-light",
+  "--ds-color-sidebar-tab-bg-active-dark",
+  "--ds-color-sidebar-tab-text-active-light",
+  "--ds-color-sidebar-tab-text-active-dark",
+  "--ds-color-sidebar-tab-text-inactive-light",
+  "--ds-color-sidebar-tab-text-inactive-dark",
+  "--ds-color-sidebar-tab-bg-hover-light",
+  "--ds-color-sidebar-tab-bg-hover-dark",
+  "--ds-color-sidebar-tab-icon-text-light",
+  "--ds-color-sidebar-tab-icon-text-dark",
+  "--ds-color-sidebar-tab-icon-text-hover-light",
+  "--ds-color-sidebar-tab-icon-text-hover-dark",
+  "--ds-color-sidebar-tab-group-text-active-light",
+  "--ds-color-sidebar-tab-group-text-active-dark",
+  "--ds-color-sidebar-tab-badge-bg-light",
+  "--ds-color-sidebar-tab-badge-bg-dark",
+  "--ds-color-sidebar-tab-badge-text-light",
+  "--ds-color-sidebar-tab-badge-text-dark",
+  "--ds-color-sidebar-tab-badge-bg-active-light",
+  "--ds-color-sidebar-tab-badge-bg-active-dark",
+  "--ds-color-tabs-segmented-bg-light",
+  "--ds-color-tabs-segmented-bg-dark",
+  "--ds-color-tabs-segmented-indicator-bg-light",
+  "--ds-color-tabs-segmented-indicator-bg-dark",
+  "--ds-color-tabs-segmented-text-active-light",
+  "--ds-color-tabs-segmented-text-active-dark",
+  "--ds-color-tabs-segmented-text-inactive-light",
+  "--ds-color-tabs-segmented-text-inactive-dark",
+  "--ds-color-tabs-segmented-text-inactive-hover-light",
+  "--ds-color-tabs-segmented-text-inactive-hover-dark",
+  "--ds-color-tabs-pills-bg-active-light",
+  "--ds-color-tabs-pills-bg-active-dark",
+  "--ds-color-tabs-pills-bg-active-hover-light",
+  "--ds-color-tabs-pills-bg-active-hover-dark",
+  "--ds-color-tabs-pills-text-active-light",
+  "--ds-color-tabs-pills-text-active-dark",
+  "--ds-color-tabs-pills-text-inactive-light",
+  "--ds-color-tabs-pills-text-inactive-dark",
+  "--ds-color-tabs-pills-bg-inactive-hover-light",
+  "--ds-color-tabs-pills-bg-inactive-hover-dark",
+  "--ds-color-tabs-pills-text-inactive-hover-light",
+  "--ds-color-tabs-pills-text-inactive-hover-dark",
+  "--ds-color-tabs-underline-text-active-light",
+  "--ds-color-tabs-underline-text-active-dark",
+  "--ds-color-tabs-underline-text-inactive-light",
+  "--ds-color-tabs-underline-text-inactive-dark",
+  "--ds-color-tabs-underline-bg-hover-light",
+  "--ds-color-tabs-underline-bg-hover-dark",
+  "--ds-color-tabs-underline-text-hover-light",
+  "--ds-color-tabs-underline-text-hover-dark",
+  "--ds-color-tabs-underline-indicator-bg-light",
+  "--ds-color-tabs-underline-indicator-bg-dark",
+  "--ds-color-tabs-text-disabled-light",
+  "--ds-color-tabs-text-disabled-dark",
+  "--ds-color-tabs-ring-focus-light",
+  "--ds-color-tabs-ring-focus-dark",
+  "--ds-color-tabs-ring-offset-focus-light",
+  "--ds-color-tabs-ring-offset-focus-dark",
+  "--ds-color-tabs-empty-text-light",
+  "--ds-color-tabs-empty-text-dark",
+  "--ds-color-table-header-bg-light",
+  "--ds-color-table-header-bg-dark",
+  "--ds-color-table-header-text-light",
+  "--ds-color-table-header-text-dark",
+  "--ds-color-table-body-bg-light",
+  "--ds-color-table-body-bg-dark",
+  "--ds-color-table-body-text-light",
+  "--ds-color-table-body-text-dark",
+  "--ds-color-table-body-bg-hover-light",
+  "--ds-color-table-body-bg-hover-dark",
+  "--ds-color-table-footer-bg-light",
+  "--ds-color-table-footer-bg-dark",
+  "--ds-color-table-footer-text-light",
+  "--ds-color-table-footer-text-dark",
+  "--ds-color-table-card-label-text-light",
+  "--ds-color-table-card-label-text-dark",
+  "--ds-color-table-card-skeleton-bg-light",
+  "--ds-color-table-card-skeleton-bg-dark",
+  "--ds-color-dropdown-trigger-bg-light",
+  "--ds-color-dropdown-trigger-bg-dark",
+  "--ds-color-dropdown-trigger-text-light",
+  "--ds-color-dropdown-trigger-text-dark",
+  "--ds-color-dropdown-trigger-border-light",
+  "--ds-color-dropdown-trigger-border-dark",
+  "--ds-color-dropdown-trigger-bg-hover-light",
+  "--ds-color-dropdown-trigger-bg-hover-dark",
+  "--ds-color-dropdown-trigger-bg-active-light",
+  "--ds-color-dropdown-trigger-bg-active-dark",
+  "--ds-color-dropdown-panel-bg-light",
+  "--ds-color-dropdown-panel-bg-dark",
+  "--ds-color-dropdown-panel-border-light",
+  "--ds-color-dropdown-panel-border-dark",
+  "--ds-color-dropdown-item-text-light",
+  "--ds-color-dropdown-item-text-dark",
+  "--ds-color-dropdown-item-bg-hover-light",
+  "--ds-color-dropdown-item-bg-hover-dark",
+  "--ds-color-dropdown-item-text-hover-light",
+  "--ds-color-dropdown-item-text-hover-dark",
+  "--ds-color-dropdown-item-bg-active-light",
+  "--ds-color-dropdown-item-bg-active-dark",
+  "--ds-color-dropdown-item-text-active-light",
+  "--ds-color-dropdown-item-text-active-dark",
+  "--ds-color-form-label-text-light",
+  "--ds-color-form-label-text-dark",
+  "--ds-color-form-control-bg-light",
+  "--ds-color-form-control-bg-dark",
+  "--ds-color-form-control-text-light",
+  "--ds-color-form-control-text-dark",
+  "--ds-color-form-control-placeholder-text-light",
+  "--ds-color-form-control-placeholder-text-dark",
+  "--ds-color-form-control-border-focus-light",
+  "--ds-color-form-control-border-focus-dark",
+  "--ds-color-form-control-icon-text-light",
+  "--ds-color-form-control-icon-text-dark",
+  "--ds-color-form-control-icon-text-hover-light",
+  "--ds-color-form-control-icon-text-hover-dark",
+  "--ds-color-form-supporting-text-light",
+  "--ds-color-form-supporting-text-dark",
+  "--ds-color-form-range-bound-text-light",
+  "--ds-color-form-range-bound-text-dark",
+  "--ds-color-form-range-value-text-light",
+  "--ds-color-form-range-value-text-dark",
+  "--ds-color-form-select-placeholder-bg-light",
+  "--ds-color-form-select-placeholder-bg-dark",
+  "--ds-color-form-select-placeholder-text-light",
+  "--ds-color-form-select-placeholder-text-dark",
+  "--ds-color-form-suggestion-panel-bg-light",
+  "--ds-color-form-suggestion-panel-bg-dark",
+  "--ds-color-form-suggestion-bg-hover-light",
+  "--ds-color-form-suggestion-bg-hover-dark",
+  "--ds-color-form-suggestion-icon-text-light",
+  "--ds-color-form-suggestion-icon-text-dark",
+  "--ds-color-switch-input-label-text-light",
+  "--ds-color-switch-input-label-text-dark",
+  "--ds-color-switch-input-track-bg-on-light",
+  "--ds-color-switch-input-track-bg-on-dark",
+  "--ds-color-switch-input-track-bg-off-light",
+  "--ds-color-switch-input-track-bg-off-dark",
+  "--ds-color-switch-input-thumb-bg-light",
+  "--ds-color-switch-input-thumb-bg-dark",
+  "--ds-color-view-header-title-text-light",
+  "--ds-color-view-header-title-text-dark",
+  "--ds-color-view-header-subtitle-text-light",
+  "--ds-color-view-header-subtitle-text-dark",
+  "--ds-color-card-bg-light",
+  "--ds-color-card-bg-dark",
+  "--ds-color-card-title-text-light",
+  "--ds-color-card-title-text-dark",
+  "--ds-color-card-subtitle-text-light",
+  "--ds-color-card-subtitle-text-dark",
+  "--ds-color-stat-card-title-text-light",
+  "--ds-color-stat-card-title-text-dark",
+  "--ds-color-stat-card-value-text-light",
+  "--ds-color-stat-card-value-text-dark",
+  "--ds-color-stat-card-empty-text-light",
+  "--ds-color-stat-card-empty-text-dark",
+  "--ds-color-stat-card-description-text-light",
+  "--ds-color-stat-card-description-text-dark",
+  "--ds-color-stat-card-change-positive-text-light",
+  "--ds-color-stat-card-change-positive-text-dark",
+  "--ds-color-stat-card-change-negative-text-light",
+  "--ds-color-stat-card-change-negative-text-dark",
+  "--ds-color-stat-card-change-neutral-text-light",
+  "--ds-color-stat-card-change-neutral-text-dark",
+  "--ds-color-stat-card-change-info-text-light",
+  "--ds-color-stat-card-change-info-text-dark",
+  "--ds-color-stat-card-change-default-text-light",
+  "--ds-color-stat-card-change-default-text-dark",
+  "--ds-color-navbar-bg-light",
+  "--ds-color-navbar-bg-dark",
+  "--ds-color-navbar-mobile-menu-bg-light",
+  "--ds-color-navbar-mobile-menu-bg-dark",
+  "--ds-color-navbar-mobile-menu-bg-hover-light",
+  "--ds-color-navbar-mobile-menu-bg-hover-dark",
+  "--ds-color-navbar-mobile-menu-icon-text-light",
+  "--ds-color-navbar-mobile-menu-icon-text-dark",
+  "--ds-color-profile-notification-trigger-bg-light",
+  "--ds-color-profile-notification-trigger-bg-dark",
+  "--ds-color-profile-notification-trigger-bg-hover-light",
+  "--ds-color-profile-notification-trigger-bg-hover-dark",
+  "--ds-color-profile-notification-trigger-icon-text-light",
+  "--ds-color-profile-notification-trigger-icon-text-dark",
+  "--ds-color-profile-panel-bg-light",
+  "--ds-color-profile-panel-bg-dark",
+  "--ds-color-profile-notification-title-text-light",
+  "--ds-color-profile-notification-title-text-dark",
+  "--ds-color-profile-avatar-bg-light",
+  "--ds-color-profile-avatar-bg-dark",
+  "--ds-color-profile-avatar-text-light",
+  "--ds-color-profile-avatar-text-dark",
+  "--ds-color-profile-name-text-light",
+  "--ds-color-profile-name-text-dark",
+  "--ds-color-profile-role-text-light",
+  "--ds-color-profile-role-text-dark",
+  "--ds-color-profile-chevron-text-light",
+  "--ds-color-profile-chevron-text-dark",
+  "--ds-color-dropdown-menu-panel-bg-light",
+  "--ds-color-dropdown-menu-panel-bg-dark",
+  "--ds-color-modal-scrim-bg-light",
+  "--ds-color-modal-scrim-bg-dark",
+  "--ds-color-modal-panel-bg-light",
+  "--ds-color-modal-panel-bg-dark",
+  "--ds-color-modal-title-text-light",
+  "--ds-color-modal-title-text-dark",
+  "--ds-color-modal-subtitle-text-light",
+  "--ds-color-modal-subtitle-text-dark",
+  "--ds-color-modal-close-text-light",
+  "--ds-color-modal-close-text-dark",
+  "--ds-color-modal-close-text-hover-light",
+  "--ds-color-modal-close-text-hover-dark",
+  "--ds-color-modal-close-ring-focus-light",
+  "--ds-color-modal-close-ring-focus-dark",
+  "--ds-color-bottom-modal-scrim-bg-light",
+  "--ds-color-bottom-modal-scrim-bg-dark",
+  "--ds-color-bottom-modal-panel-bg-light",
+  "--ds-color-bottom-modal-panel-bg-dark",
+  "--ds-color-bottom-modal-text-light",
+  "--ds-color-bottom-modal-text-dark",
+  "--ds-color-bottom-modal-title-text-light",
+  "--ds-color-bottom-modal-title-text-dark",
+  "--ds-color-bottom-modal-subtitle-text-light",
+  "--ds-color-bottom-modal-subtitle-text-dark",
+  "--ds-color-bottom-modal-close-text-light",
+  "--ds-color-bottom-modal-close-text-dark",
+  "--ds-color-bottom-modal-close-bg-hover-light",
+  "--ds-color-bottom-modal-close-bg-hover-dark",
+  "--ds-color-bottom-modal-close-text-hover-light",
+  "--ds-color-bottom-modal-close-text-hover-dark",
+  "--ds-color-bottom-modal-close-ring-focus-light",
+  "--ds-color-bottom-modal-close-ring-focus-dark",
+  "--ds-color-bottom-modal-divider-border-light",
+  "--ds-color-bottom-modal-divider-border-dark",
+  "--ds-color-item-bg-light",
+  "--ds-color-item-bg-dark",
+  "--ds-color-item-bg-hover-light",
+  "--ds-color-item-bg-hover-dark",
+  "--ds-color-item-title-text-light",
+  "--ds-color-item-title-text-dark",
+  "--ds-color-item-subtitle-text-light",
+  "--ds-color-item-subtitle-text-dark",
+  "--ds-color-item-icon-text-light",
+  "--ds-color-item-icon-text-dark",
+  "--ds-color-list-bg-light",
+  "--ds-color-list-bg-dark",
+  "--ds-color-help-tooltip-trigger-bg-light",
+  "--ds-color-help-tooltip-trigger-bg-dark",
+  "--ds-color-help-tooltip-trigger-text-light",
+  "--ds-color-help-tooltip-trigger-text-dark",
+  "--ds-color-help-tooltip-panel-bg-light",
+  "--ds-color-help-tooltip-panel-bg-dark",
+  "--ds-color-help-tooltip-panel-text-light",
+  "--ds-color-help-tooltip-panel-text-dark",
+  "--ds-color-icon-button-gray-bg-light",
+  "--ds-color-icon-button-gray-bg-dark",
+  "--ds-color-icon-button-gray-bg-hover-light",
+  "--ds-color-icon-button-gray-bg-hover-dark",
+  "--ds-color-icon-button-gray-text-light",
+  "--ds-color-icon-button-gray-text-dark",
+  "--ds-color-icon-button-gray-outline-border-light",
+  "--ds-color-icon-button-gray-outline-border-dark",
+  "--ds-color-icon-button-gray-outline-text-light",
+  "--ds-color-icon-button-gray-outline-text-dark",
+  "--ds-color-icon-button-gray-outline-bg-hover-light",
+  "--ds-color-icon-button-gray-outline-bg-hover-dark",
+  "--ds-color-icon-button-primary-bg-light",
+  "--ds-color-icon-button-primary-bg-dark",
+  "--ds-color-icon-button-primary-bg-hover-light",
+  "--ds-color-icon-button-primary-bg-hover-dark",
+  "--ds-color-icon-button-primary-text-light",
+  "--ds-color-icon-button-primary-text-dark",
+  "--ds-color-icon-button-primary-outline-border-light",
+  "--ds-color-icon-button-primary-outline-border-dark",
+  "--ds-color-icon-button-primary-outline-text-light",
+  "--ds-color-icon-button-primary-outline-text-dark",
+  "--ds-color-icon-button-primary-outline-bg-hover-light",
+  "--ds-color-icon-button-primary-outline-bg-hover-dark",
+  "--ds-color-icon-button-secondary-bg-light",
+  "--ds-color-icon-button-secondary-bg-dark",
+  "--ds-color-icon-button-secondary-bg-hover-light",
+  "--ds-color-icon-button-secondary-bg-hover-dark",
+  "--ds-color-icon-button-secondary-text-light",
+  "--ds-color-icon-button-secondary-text-dark",
+  "--ds-color-icon-button-secondary-outline-border-light",
+  "--ds-color-icon-button-secondary-outline-border-dark",
+  "--ds-color-icon-button-secondary-outline-text-light",
+  "--ds-color-icon-button-secondary-outline-text-dark",
+  "--ds-color-icon-button-secondary-outline-bg-hover-light",
+  "--ds-color-icon-button-secondary-outline-bg-hover-dark",
+  "--ds-color-icon-button-success-bg-light",
+  "--ds-color-icon-button-success-bg-dark",
+  "--ds-color-icon-button-success-bg-hover-light",
+  "--ds-color-icon-button-success-bg-hover-dark",
+  "--ds-color-icon-button-success-text-light",
+  "--ds-color-icon-button-success-text-dark",
+  "--ds-color-icon-button-success-outline-border-light",
+  "--ds-color-icon-button-success-outline-border-dark",
+  "--ds-color-icon-button-success-outline-text-light",
+  "--ds-color-icon-button-success-outline-text-dark",
+  "--ds-color-icon-button-success-outline-bg-hover-light",
+  "--ds-color-icon-button-success-outline-bg-hover-dark",
+  "--ds-color-icon-button-danger-bg-light",
+  "--ds-color-icon-button-danger-bg-dark",
+  "--ds-color-icon-button-danger-bg-hover-light",
+  "--ds-color-icon-button-danger-bg-hover-dark",
+  "--ds-color-icon-button-danger-text-light",
+  "--ds-color-icon-button-danger-text-dark",
+  "--ds-color-icon-button-danger-outline-border-light",
+  "--ds-color-icon-button-danger-outline-border-dark",
+  "--ds-color-icon-button-danger-outline-text-light",
+  "--ds-color-icon-button-danger-outline-text-dark",
+  "--ds-color-icon-button-danger-outline-bg-hover-light",
+  "--ds-color-icon-button-danger-outline-bg-hover-dark",
+  "--ds-color-icon-button-warning-bg-light",
+  "--ds-color-icon-button-warning-bg-dark",
+  "--ds-color-icon-button-warning-bg-hover-light",
+  "--ds-color-icon-button-warning-bg-hover-dark",
+  "--ds-color-icon-button-warning-text-light",
+  "--ds-color-icon-button-warning-text-dark",
+  "--ds-color-icon-button-warning-outline-border-light",
+  "--ds-color-icon-button-warning-outline-border-dark",
+  "--ds-color-icon-button-warning-outline-text-light",
+  "--ds-color-icon-button-warning-outline-text-dark",
+  "--ds-color-icon-button-warning-outline-bg-hover-light",
+  "--ds-color-icon-button-warning-outline-bg-hover-dark",
+  "--ds-color-icon-button-pink-bg-light",
+  "--ds-color-icon-button-pink-bg-dark",
+  "--ds-color-icon-button-pink-bg-hover-light",
+  "--ds-color-icon-button-pink-bg-hover-dark",
+  "--ds-color-icon-button-pink-text-light",
+  "--ds-color-icon-button-pink-text-dark",
+  "--ds-color-icon-button-pink-outline-border-light",
+  "--ds-color-icon-button-pink-outline-border-dark",
+  "--ds-color-icon-button-pink-outline-text-light",
+  "--ds-color-icon-button-pink-outline-text-dark",
+  "--ds-color-icon-button-pink-outline-bg-hover-light",
+  "--ds-color-icon-button-pink-outline-bg-hover-dark",
+  "--ds-color-card-pagination-summary-text-light",
+  "--ds-color-card-pagination-summary-text-dark",
+  "--ds-color-card-pagination-page-text-light",
+  "--ds-color-card-pagination-page-text-dark",
+  "--ds-color-card-pagination-button-bg-light",
+  "--ds-color-card-pagination-button-bg-dark",
+  "--ds-color-card-pagination-button-bg-hover-light",
+  "--ds-color-card-pagination-button-bg-hover-dark",
+  "--ds-color-card-pagination-button-text-light",
+  "--ds-color-card-pagination-button-text-dark",
+  "--ds-color-table-skeleton-placeholder-bg-light",
+  "--ds-color-table-skeleton-placeholder-bg-dark",
+  "--ds-color-breadcrumb-separator-text-light",
+  "--ds-color-breadcrumb-separator-text-dark",
+  "--ds-color-breadcrumb-link-text-light",
+  "--ds-color-breadcrumb-link-text-dark",
+  "--ds-color-breadcrumb-link-text-hover-light",
+  "--ds-color-breadcrumb-link-text-hover-dark",
+  "--ds-color-breadcrumb-current-text-light",
+  "--ds-color-breadcrumb-current-text-dark",
+  "--ds-color-breadcrumb-item-text-light",
+  "--ds-color-breadcrumb-item-text-dark",
+  "--ds-color-info-item-label-text-light",
+  "--ds-color-info-item-label-text-dark",
+  "--ds-color-info-item-value-text-light",
+  "--ds-color-info-item-value-text-dark",
+  "--ds-color-loading-svg-text-light",
+  "--ds-color-loading-svg-text-dark",
+  "--ds-color-datepicker-bg-light",
+  "--ds-color-datepicker-bg-dark",
+  "--ds-color-datepicker-primary-bg-light",
+  "--ds-color-datepicker-primary-bg-dark"
+ ],
+ "colors": [
+  "avatar-dark",
+  "avatar-light",
+  "bottom-modal-close-bg-hover-dark",
+  "bottom-modal-close-bg-hover-light",
+  "bottom-modal-close-ring-focus-dark",
+  "bottom-modal-close-ring-focus-light",
+  "bottom-modal-close-text-dark",
+  "bottom-modal-close-text-hover-dark",
+  "bottom-modal-close-text-hover-light",
+  "bottom-modal-close-text-light",
+  "bottom-modal-divider-border-dark",
+  "bottom-modal-divider-border-light",
+  "bottom-modal-panel-bg-dark",
+  "bottom-modal-panel-bg-light",
+  "bottom-modal-scrim-bg-dark",
+  "bottom-modal-scrim-bg-light",
+  "bottom-modal-subtitle-text-dark",
+  "bottom-modal-subtitle-text-light",
+  "bottom-modal-text-dark",
+  "bottom-modal-text-light",
+  "bottom-modal-title-text-dark",
+  "bottom-modal-title-text-light",
+  "breadcrumb-current-text-dark",
+  "breadcrumb-current-text-light",
+  "breadcrumb-item-text-dark",
+  "breadcrumb-item-text-light",
+  "breadcrumb-link-text-dark",
+  "breadcrumb-link-text-hover-dark",
+  "breadcrumb-link-text-hover-light",
+  "breadcrumb-link-text-light",
+  "breadcrumb-separator-text-dark",
+  "breadcrumb-separator-text-light",
+  "button-danger-bg-active-dark",
+  "button-danger-bg-active-light",
+  "button-danger-bg-dark",
+  "button-danger-bg-hover-dark",
+  "button-danger-bg-hover-light",
+  "button-danger-bg-light",
+  "button-danger-border-dark",
+  "button-danger-border-light",
+  "button-danger-outline-bg-active-dark",
+  "button-danger-outline-bg-active-light",
+  "button-danger-outline-bg-dark",
+  "button-danger-outline-bg-hover-dark",
+  "button-danger-outline-bg-hover-light",
+  "button-danger-outline-bg-light",
+  "button-danger-outline-border-dark",
+  "button-danger-outline-border-light",
+  "button-danger-outline-spinner-text-dark",
+  "button-danger-outline-spinner-text-light",
+  "button-danger-outline-text-active-dark",
+  "button-danger-outline-text-active-light",
+  "button-danger-outline-text-dark",
+  "button-danger-outline-text-hover-dark",
+  "button-danger-outline-text-hover-light",
+  "button-danger-outline-text-light",
+  "button-danger-ring-focus-dark",
+  "button-danger-ring-focus-light",
+  "button-danger-spinner-text-dark",
+  "button-danger-spinner-text-light",
+  "button-danger-text-active-dark",
+  "button-danger-text-active-light",
+  "button-danger-text-dark",
+  "button-danger-text-hover-dark",
+  "button-danger-text-hover-light",
+  "button-danger-text-light",
+  "button-icon-danger-outline-spinner-text-dark",
+  "button-icon-danger-outline-spinner-text-light",
+  "button-icon-danger-spinner-text-dark",
+  "button-icon-danger-spinner-text-light",
+  "button-icon-outline-spinner-text-dark",
+  "button-icon-outline-spinner-text-light",
+  "button-icon-overlay-spinner-text-dark",
+  "button-icon-overlay-spinner-text-light",
+  "button-icon-primary-outline-spinner-text-dark",
+  "button-icon-primary-outline-spinner-text-light",
+  "button-icon-primary-spinner-text-dark",
+  "button-icon-primary-spinner-text-light",
+  "button-icon-secondary-spinner-text-dark",
+  "button-icon-secondary-spinner-text-light",
+  "button-outline-bg-active-dark",
+  "button-outline-bg-active-light",
+  "button-outline-bg-dark",
+  "button-outline-bg-hover-dark",
+  "button-outline-bg-hover-light",
+  "button-outline-bg-light",
+  "button-outline-border-dark",
+  "button-outline-border-light",
+  "button-outline-spinner-text-dark",
+  "button-outline-spinner-text-light",
+  "button-outline-text-active-dark",
+  "button-outline-text-active-light",
+  "button-outline-text-dark",
+  "button-outline-text-hover-dark",
+  "button-outline-text-hover-light",
+  "button-outline-text-light",
+  "button-overlay-bg-active-dark",
+  "button-overlay-bg-active-light",
+  "button-overlay-bg-dark",
+  "button-overlay-bg-hover-dark",
+  "button-overlay-bg-hover-light",
+  "button-overlay-bg-light",
+  "button-overlay-border-dark",
+  "button-overlay-border-light",
+  "button-overlay-spinner-text-dark",
+  "button-overlay-spinner-text-light",
+  "button-overlay-text-active-dark",
+  "button-overlay-text-active-light",
+  "button-overlay-text-dark",
+  "button-overlay-text-hover-dark",
+  "button-overlay-text-hover-light",
+  "button-overlay-text-light",
+  "button-primary-bg-active-dark",
+  "button-primary-bg-active-light",
+  "button-primary-bg-dark",
+  "button-primary-bg-hover-dark",
+  "button-primary-bg-hover-light",
+  "button-primary-bg-light",
+  "button-primary-border-dark",
+  "button-primary-border-light",
+  "button-primary-outline-bg-active-dark",
+  "button-primary-outline-bg-active-light",
+  "button-primary-outline-bg-dark",
+  "button-primary-outline-bg-hover-dark",
+  "button-primary-outline-bg-hover-light",
+  "button-primary-outline-bg-light",
+  "button-primary-outline-border-dark",
+  "button-primary-outline-border-light",
+  "button-primary-outline-spinner-text-dark",
+  "button-primary-outline-spinner-text-light",
+  "button-primary-outline-text-active-dark",
+  "button-primary-outline-text-active-light",
+  "button-primary-outline-text-dark",
+  "button-primary-outline-text-hover-dark",
+  "button-primary-outline-text-hover-light",
+  "button-primary-outline-text-light",
+  "button-primary-spinner-text-dark",
+  "button-primary-spinner-text-light",
+  "button-primary-text-active-dark",
+  "button-primary-text-active-light",
+  "button-primary-text-dark",
+  "button-primary-text-hover-dark",
+  "button-primary-text-hover-light",
+  "button-primary-text-light",
+  "button-secondary-bg-active-dark",
+  "button-secondary-bg-active-light",
+  "button-secondary-bg-dark",
+  "button-secondary-bg-hover-dark",
+  "button-secondary-bg-hover-light",
+  "button-secondary-bg-light",
+  "button-secondary-border-dark",
+  "button-secondary-border-light",
+  "button-secondary-spinner-text-dark",
+  "button-secondary-spinner-text-light",
+  "button-secondary-text-active-dark",
+  "button-secondary-text-active-light",
+  "button-secondary-text-dark",
+  "button-secondary-text-hover-dark",
+  "button-secondary-text-hover-light",
+  "button-secondary-text-light",
+  "card-bg-dark",
+  "card-bg-light",
+  "card-dark",
+  "card-light",
+  "card-pagination-button-bg-dark",
+  "card-pagination-button-bg-hover-dark",
+  "card-pagination-button-bg-hover-light",
+  "card-pagination-button-bg-light",
+  "card-pagination-button-text-dark",
+  "card-pagination-button-text-light",
+  "card-pagination-page-text-dark",
+  "card-pagination-page-text-light",
+  "card-pagination-summary-text-dark",
+  "card-pagination-summary-text-light",
+  "card-subtitle-text-dark",
+  "card-subtitle-text-light",
+  "card-title-text-dark",
+  "card-title-text-light",
+  "danger-100",
+  "danger-200",
+  "danger-400",
+  "danger-50",
+  "danger-500",
+  "danger-600",
+  "danger-700",
+  "danger-800",
+  "danger-900",
+  "danger-dark",
+  "danger-emphasis-dark",
+  "danger-emphasis-light",
+  "danger-light",
+  "danger-muted-dark",
+  "danger-muted-light",
+  "danger-subtle-dark",
+  "danger-subtle-light",
+  "default-dark",
+  "default-light",
+  "divider-dark",
+  "divider-light",
+  "dropdown-item-bg-active-dark",
+  "dropdown-item-bg-active-light",
+  "dropdown-item-bg-hover-dark",
+  "dropdown-item-bg-hover-light",
+  "dropdown-item-text-active-dark",
+  "dropdown-item-text-active-light",
+  "dropdown-item-text-dark",
+  "dropdown-item-text-hover-dark",
+  "dropdown-item-text-hover-light",
+  "dropdown-item-text-light",
+  "dropdown-menu-panel-bg-dark",
+  "dropdown-menu-panel-bg-light",
+  "dropdown-panel-bg-dark",
+  "dropdown-panel-bg-light",
+  "dropdown-panel-border-dark",
+  "dropdown-panel-border-light",
+  "dropdown-trigger-bg-active-dark",
+  "dropdown-trigger-bg-active-light",
+  "dropdown-trigger-bg-dark",
+  "dropdown-trigger-bg-hover-dark",
+  "dropdown-trigger-bg-hover-light",
+  "dropdown-trigger-bg-light",
+  "dropdown-trigger-border-dark",
+  "dropdown-trigger-border-light",
+  "dropdown-trigger-text-dark",
+  "dropdown-trigger-text-light",
+  "error-100",
+  "error-200",
+  "error-400",
+  "error-50",
+  "error-500",
+  "error-600",
+  "error-700",
+  "error-800",
+  "error-900",
+  "form-control-bg-dark",
+  "form-control-bg-light",
+  "form-control-border-focus-dark",
+  "form-control-border-focus-light",
+  "form-control-icon-text-dark",
+  "form-control-icon-text-hover-dark",
+  "form-control-icon-text-hover-light",
+  "form-control-icon-text-light",
+  "form-control-placeholder-text-dark",
+  "form-control-placeholder-text-light",
+  "form-control-text-dark",
+  "form-control-text-light",
+  "form-label-text-dark",
+  "form-label-text-light",
+  "form-range-bound-text-dark",
+  "form-range-bound-text-light",
+  "form-range-value-text-dark",
+  "form-range-value-text-light",
+  "form-select-placeholder-bg-dark",
+  "form-select-placeholder-bg-light",
+  "form-select-placeholder-text-dark",
+  "form-select-placeholder-text-light",
+  "form-suggestion-bg-hover-dark",
+  "form-suggestion-bg-hover-light",
+  "form-suggestion-icon-text-dark",
+  "form-suggestion-icon-text-light",
+  "form-suggestion-panel-bg-dark",
+  "form-suggestion-panel-bg-light",
+  "form-supporting-text-dark",
+  "form-supporting-text-light",
+  "help-tooltip-panel-bg-dark",
+  "help-tooltip-panel-bg-light",
+  "help-tooltip-panel-text-dark",
+  "help-tooltip-panel-text-light",
+  "help-tooltip-trigger-bg-dark",
+  "help-tooltip-trigger-bg-light",
+  "help-tooltip-trigger-text-dark",
+  "help-tooltip-trigger-text-light",
+  "hover-dark",
+  "hover-light",
+  "icon-button-danger-bg-dark",
+  "icon-button-danger-bg-hover-dark",
+  "icon-button-danger-bg-hover-light",
+  "icon-button-danger-bg-light",
+  "icon-button-danger-outline-bg-hover-dark",
+  "icon-button-danger-outline-bg-hover-light",
+  "icon-button-danger-outline-border-dark",
+  "icon-button-danger-outline-border-light",
+  "icon-button-danger-outline-text-dark",
+  "icon-button-danger-outline-text-light",
+  "icon-button-danger-text-dark",
+  "icon-button-danger-text-light",
+  "icon-button-gray-bg-dark",
+  "icon-button-gray-bg-hover-dark",
+  "icon-button-gray-bg-hover-light",
+  "icon-button-gray-bg-light",
+  "icon-button-gray-outline-bg-hover-dark",
+  "icon-button-gray-outline-bg-hover-light",
+  "icon-button-gray-outline-border-dark",
+  "icon-button-gray-outline-border-light",
+  "icon-button-gray-outline-text-dark",
+  "icon-button-gray-outline-text-light",
+  "icon-button-gray-text-dark",
+  "icon-button-gray-text-light",
+  "icon-button-pink-bg-dark",
+  "icon-button-pink-bg-hover-dark",
+  "icon-button-pink-bg-hover-light",
+  "icon-button-pink-bg-light",
+  "icon-button-pink-outline-bg-hover-dark",
+  "icon-button-pink-outline-bg-hover-light",
+  "icon-button-pink-outline-border-dark",
+  "icon-button-pink-outline-border-light",
+  "icon-button-pink-outline-text-dark",
+  "icon-button-pink-outline-text-light",
+  "icon-button-pink-text-dark",
+  "icon-button-pink-text-light",
+  "icon-button-primary-bg-dark",
+  "icon-button-primary-bg-hover-dark",
+  "icon-button-primary-bg-hover-light",
+  "icon-button-primary-bg-light",
+  "icon-button-primary-outline-bg-hover-dark",
+  "icon-button-primary-outline-bg-hover-light",
+  "icon-button-primary-outline-border-dark",
+  "icon-button-primary-outline-border-light",
+  "icon-button-primary-outline-text-dark",
+  "icon-button-primary-outline-text-light",
+  "icon-button-primary-text-dark",
+  "icon-button-primary-text-light",
+  "icon-button-secondary-bg-dark",
+  "icon-button-secondary-bg-hover-dark",
+  "icon-button-secondary-bg-hover-light",
+  "icon-button-secondary-bg-light",
+  "icon-button-secondary-outline-bg-hover-dark",
+  "icon-button-secondary-outline-bg-hover-light",
+  "icon-button-secondary-outline-border-dark",
+  "icon-button-secondary-outline-border-light",
+  "icon-button-secondary-outline-text-dark",
+  "icon-button-secondary-outline-text-light",
+  "icon-button-secondary-text-dark",
+  "icon-button-secondary-text-light",
+  "icon-button-success-bg-dark",
+  "icon-button-success-bg-hover-dark",
+  "icon-button-success-bg-hover-light",
+  "icon-button-success-bg-light",
+  "icon-button-success-outline-bg-hover-dark",
+  "icon-button-success-outline-bg-hover-light",
+  "icon-button-success-outline-border-dark",
+  "icon-button-success-outline-border-light",
+  "icon-button-success-outline-text-dark",
+  "icon-button-success-outline-text-light",
+  "icon-button-success-text-dark",
+  "icon-button-success-text-light",
+  "icon-button-warning-bg-dark",
+  "icon-button-warning-bg-hover-dark",
+  "icon-button-warning-bg-hover-light",
+  "icon-button-warning-bg-light",
+  "icon-button-warning-outline-bg-hover-dark",
+  "icon-button-warning-outline-bg-hover-light",
+  "icon-button-warning-outline-border-dark",
+  "icon-button-warning-outline-border-light",
+  "icon-button-warning-outline-text-dark",
+  "icon-button-warning-outline-text-light",
+  "icon-button-warning-text-dark",
+  "icon-button-warning-text-light",
+  "info-item-label-text-dark",
+  "info-item-label-text-light",
+  "info-item-value-text-dark",
+  "info-item-value-text-light",
+  "informative-100",
+  "informative-200",
+  "informative-300",
+  "informative-400",
+  "informative-50",
+  "informative-500",
+  "informative-600",
+  "informative-700",
+  "informative-800",
+  "informative-900",
+  "informative-950",
+  "input-dark",
+  "input-light",
+  "item-bg-dark",
+  "item-bg-hover-dark",
+  "item-bg-hover-light",
+  "item-bg-light",
+  "item-icon-text-dark",
+  "item-icon-text-light",
+  "item-subtitle-text-dark",
+  "item-subtitle-text-light",
+  "item-title-text-dark",
+  "item-title-text-light",
+  "list-bg-dark",
+  "list-bg-light",
+  "loading-svg-text-dark",
+  "loading-svg-text-light",
+  "modal-close-ring-focus-dark",
+  "modal-close-ring-focus-light",
+  "modal-close-text-dark",
+  "modal-close-text-hover-dark",
+  "modal-close-text-hover-light",
+  "modal-close-text-light",
+  "modal-panel-bg-dark",
+  "modal-panel-bg-light",
+  "modal-scrim-bg-dark",
+  "modal-scrim-bg-light",
+  "modal-subtitle-text-dark",
+  "modal-subtitle-text-light",
+  "modal-title-text-dark",
+  "modal-title-text-light",
+  "muted-dark",
+  "muted-light",
+  "navbar-bg-dark",
+  "navbar-bg-light",
+  "navbar-mobile-menu-bg-dark",
+  "navbar-mobile-menu-bg-hover-dark",
+  "navbar-mobile-menu-bg-hover-light",
+  "navbar-mobile-menu-bg-light",
+  "navbar-mobile-menu-icon-text-dark",
+  "navbar-mobile-menu-icon-text-light",
+  "pink-dark",
+  "pink-light",
+  "primary-100",
+  "primary-200",
+  "primary-300",
+  "primary-400",
+  "primary-50",
+  "primary-500",
+  "primary-600",
+  "primary-700",
+  "primary-800",
+  "primary-900",
+  "primary-950",
+  "primary-active-dark",
+  "primary-active-light",
+  "primary-dark",
+  "primary-light",
+  "primary-subtle-dark",
+  "primary-subtle-light",
+  "profile-avatar-bg-dark",
+  "profile-avatar-bg-light",
+  "profile-avatar-text-dark",
+  "profile-avatar-text-light",
+  "profile-chevron-text-dark",
+  "profile-chevron-text-light",
+  "profile-name-text-dark",
+  "profile-name-text-light",
+  "profile-notification-title-text-dark",
+  "profile-notification-title-text-light",
+  "profile-notification-trigger-bg-dark",
+  "profile-notification-trigger-bg-hover-dark",
+  "profile-notification-trigger-bg-hover-light",
+  "profile-notification-trigger-bg-light",
+  "profile-notification-trigger-icon-text-dark",
+  "profile-notification-trigger-icon-text-light",
+  "profile-panel-bg-dark",
+  "profile-panel-bg-light",
+  "profile-role-text-dark",
+  "profile-role-text-light",
+  "secondary-100",
+  "secondary-200",
+  "secondary-300",
+  "secondary-400",
+  "secondary-50",
+  "secondary-500",
+  "secondary-600",
+  "secondary-700",
+  "secondary-800",
+  "secondary-900",
+  "secondary-950",
+  "secondary-dark",
+  "secondary-light",
+  "secondary-subtle-dark",
+  "secondary-subtle-light",
+  "sidebar-bg-dark",
+  "sidebar-bg-light",
+  "sidebar-collapse-bg-dark",
+  "sidebar-collapse-bg-hover-dark",
+  "sidebar-collapse-bg-hover-light",
+  "sidebar-collapse-bg-light",
+  "sidebar-collapse-icon-text-dark",
+  "sidebar-collapse-icon-text-light",
+  "sidebar-subtitle-text-dark",
+  "sidebar-subtitle-text-light",
+  "sidebar-tab-badge-bg-active-dark",
+  "sidebar-tab-badge-bg-active-light",
+  "sidebar-tab-badge-bg-dark",
+  "sidebar-tab-badge-bg-light",
+  "sidebar-tab-badge-text-dark",
+  "sidebar-tab-badge-text-light",
+  "sidebar-tab-bg-active-dark",
+  "sidebar-tab-bg-active-light",
+  "sidebar-tab-bg-hover-dark",
+  "sidebar-tab-bg-hover-light",
+  "sidebar-tab-group-text-active-dark",
+  "sidebar-tab-group-text-active-light",
+  "sidebar-tab-icon-text-dark",
+  "sidebar-tab-icon-text-hover-dark",
+  "sidebar-tab-icon-text-hover-light",
+  "sidebar-tab-icon-text-light",
+  "sidebar-tab-text-active-dark",
+  "sidebar-tab-text-active-light",
+  "sidebar-tab-text-inactive-dark",
+  "sidebar-tab-text-inactive-light",
+  "sidebar-theme-toggle-bg-dark",
+  "sidebar-theme-toggle-bg-hover-dark",
+  "sidebar-theme-toggle-bg-hover-light",
+  "sidebar-theme-toggle-bg-light",
+  "sidebar-theme-toggle-content-text-dark",
+  "sidebar-theme-toggle-content-text-light",
+  "sidebar-title-text-dark",
+  "sidebar-title-text-light",
+  "sidebar-version-text-dark",
+  "sidebar-version-text-light",
+  "stat-card-change-default-text-dark",
+  "stat-card-change-default-text-light",
+  "stat-card-change-info-text-dark",
+  "stat-card-change-info-text-light",
+  "stat-card-change-negative-text-dark",
+  "stat-card-change-negative-text-light",
+  "stat-card-change-neutral-text-dark",
+  "stat-card-change-neutral-text-light",
+  "stat-card-change-positive-text-dark",
+  "stat-card-change-positive-text-light",
+  "stat-card-description-text-dark",
+  "stat-card-description-text-light",
+  "stat-card-empty-text-dark",
+  "stat-card-empty-text-light",
+  "stat-card-title-text-dark",
+  "stat-card-title-text-light",
+  "stat-card-value-text-dark",
+  "stat-card-value-text-light",
+  "strong-dark",
+  "strong-light",
+  "success-100",
+  "success-200",
+  "success-400",
+  "success-50",
+  "success-500",
+  "success-600",
+  "success-700",
+  "success-800",
+  "success-900",
+  "success-dark",
+  "success-light",
+  "success-muted-dark",
+  "success-muted-light",
+  "success-subtle-dark",
+  "success-subtle-light",
+  "switch-input-label-text-dark",
+  "switch-input-label-text-light",
+  "switch-input-thumb-bg-dark",
+  "switch-input-thumb-bg-light",
+  "switch-input-track-bg-off-dark",
+  "switch-input-track-bg-off-light",
+  "switch-input-track-bg-on-dark",
+  "switch-input-track-bg-on-light",
+  "table-body-bg-dark",
+  "table-body-bg-hover-dark",
+  "table-body-bg-hover-light",
+  "table-body-bg-light",
+  "table-body-text-dark",
+  "table-body-text-light",
+  "table-card-label-text-dark",
+  "table-card-label-text-light",
+  "table-card-skeleton-bg-dark",
+  "table-card-skeleton-bg-light",
+  "table-footer-bg-dark",
+  "table-footer-bg-light",
+  "table-footer-text-dark",
+  "table-footer-text-light",
+  "table-header-bg-dark",
+  "table-header-bg-light",
+  "table-header-text-dark",
+  "table-header-text-light",
+  "table-skeleton-placeholder-bg-dark",
+  "table-skeleton-placeholder-bg-light",
+  "tabs-empty-text-dark",
+  "tabs-empty-text-light",
+  "tabs-pills-bg-active-dark",
+  "tabs-pills-bg-active-hover-dark",
+  "tabs-pills-bg-active-hover-light",
+  "tabs-pills-bg-active-light",
+  "tabs-pills-bg-inactive-hover-dark",
+  "tabs-pills-bg-inactive-hover-light",
+  "tabs-pills-text-active-dark",
+  "tabs-pills-text-active-light",
+  "tabs-pills-text-inactive-dark",
+  "tabs-pills-text-inactive-hover-dark",
+  "tabs-pills-text-inactive-hover-light",
+  "tabs-pills-text-inactive-light",
+  "tabs-ring-focus-dark",
+  "tabs-ring-focus-light",
+  "tabs-ring-offset-focus-dark",
+  "tabs-ring-offset-focus-light",
+  "tabs-segmented-bg-dark",
+  "tabs-segmented-bg-light",
+  "tabs-segmented-indicator-bg-dark",
+  "tabs-segmented-indicator-bg-light",
+  "tabs-segmented-text-active-dark",
+  "tabs-segmented-text-active-light",
+  "tabs-segmented-text-inactive-dark",
+  "tabs-segmented-text-inactive-hover-dark",
+  "tabs-segmented-text-inactive-hover-light",
+  "tabs-segmented-text-inactive-light",
+  "tabs-text-disabled-dark",
+  "tabs-text-disabled-light",
+  "tabs-underline-bg-hover-dark",
+  "tabs-underline-bg-hover-light",
+  "tabs-underline-indicator-bg-dark",
+  "tabs-underline-indicator-bg-light",
+  "tabs-underline-text-active-dark",
+  "tabs-underline-text-active-light",
+  "tabs-underline-text-hover-dark",
+  "tabs-underline-text-hover-light",
+  "tabs-underline-text-inactive-dark",
+  "tabs-underline-text-inactive-light",
+  "tertiary-100",
+  "tertiary-200",
+  "tertiary-300",
+  "tertiary-400",
+  "tertiary-50",
+  "tertiary-500",
+  "tertiary-600",
+  "tertiary-700",
+  "tertiary-800",
+  "tertiary-900",
+  "tertiary-950",
+  "tooltip-dark",
+  "tooltip-light",
+  "view-header-subtitle-text-dark",
+  "view-header-subtitle-text-light",
+  "view-header-title-text-dark",
+  "view-header-title-text-light",
+  "warning-100",
+  "warning-200",
+  "warning-400",
+  "warning-50",
+  "warning-500",
+  "warning-600",
+  "warning-700",
+  "warning-800",
+  "warning-900",
+  "warning-dark",
+  "warning-light",
+  "warning-muted-dark",
+  "warning-muted-light",
+  "warning-subtle-dark",
+  "warning-subtle-light",
+  "whatsapp"
+ ]
+}

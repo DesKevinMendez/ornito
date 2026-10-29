@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: fix-broken-view
+expected_outcome: |
+  InvoicesView.vue is fixed: the header action moves from #actions to ViewHeader's
+  #right slot, BaseButton small becomes size="small" (or size auto), text-danger-300
+  becomes an existing shade (200/400) and raw indigo/red classes become DS palettes,
+  the DataTable search-by becomes the field name instead of filter[number], the
+  FormInput's required attribute is replaced by a yup rule, and the Badge's invalid
+  variant "error" becomes "danger". check_ornito_usage.py reports OK.
+context:
+  scaffold_script: place-files.sh
