@@ -11617,10 +11617,13 @@ var Fd = {
 				size: e.triggerSize,
 				icon: U(Me),
 				iconPosition: "right",
-				small: e.triggerSmall,
 				iconClass: U(i) ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200",
 				onClick: h,
-				class: C(["backdrop-blur-sm focus:ring-0", ["bg-dropdown-trigger-bg-light dark:bg-dropdown-trigger-bg-dark border-dropdown-trigger-border-light dark:border-dropdown-trigger-border-dark hover:bg-dropdown-trigger-bg-hover-light dark:hover:bg-dropdown-trigger-bg-hover-dark active:bg-dropdown-trigger-bg-active-light dark:active:bg-dropdown-trigger-bg-active-dark focus:border-hover-light dark:focus:border-hover-dark", e.triggerVariant === "outline" ? "text-dropdown-trigger-text-light dark:text-dropdown-trigger-text-dark" : ""]])
+				class: C(["backdrop-blur-sm focus:ring-0", [
+					"bg-dropdown-trigger-bg-light dark:bg-dropdown-trigger-bg-dark border-dropdown-trigger-border-light dark:border-dropdown-trigger-border-dark hover:bg-dropdown-trigger-bg-hover-light dark:hover:bg-dropdown-trigger-bg-hover-dark active:bg-dropdown-trigger-bg-active-light dark:active:bg-dropdown-trigger-bg-active-dark focus:border-hover-light dark:focus:border-hover-dark",
+					e.triggerVariant === "outline" ? "text-dropdown-trigger-text-light dark:text-dropdown-trigger-text-dark" : "",
+					e.triggerSmall ? "text-sm" : ""
+				]])
 			}, {
 				default: J(() => [d(B(U(p)?.label || e.placeholder), 1)]),
 				_: 1
@@ -11628,7 +11631,6 @@ var Fd = {
 				"variant",
 				"size",
 				"icon",
-				"small",
 				"iconClass",
 				"class"
 			]), f(v, null, {
@@ -11678,8 +11680,7 @@ var Fd = {
 				f(i, {
 					disabled: e.internalPaginationServer.current_page === 1,
 					variant: "outline",
-					size: "auto",
-					small: !0,
+					size: "small",
 					icon: U(Ne),
 					"icon-class": "h-4 w-4",
 					class: "px-2.5!",
@@ -11688,8 +11689,7 @@ var Fd = {
 				l("div", pf, [(j(!0), c(n, null, I(s.value, (t) => (j(), c(n, { key: t }, [t === -1 ? (j(), c("span", mf, "...")) : (j(), o(i, {
 					key: 0,
 					variant: t === e.internalPaginationServer.current_page ? "primary" : "outline",
-					size: "auto",
-					small: !0,
+					size: "small",
 					class: "tabular-nums",
 					onClick: (e) => u(t)
 				}, {
@@ -11699,8 +11699,7 @@ var Fd = {
 				f(i, {
 					disabled: e.internalPaginationServer.current_page === e.internalPaginationServer.last_page,
 					variant: "outline",
-					size: "auto",
-					small: !0,
+					size: "small",
 					icon: U(Pe),
 					"icon-class": "h-4 w-4",
 					class: "px-2.5!",
@@ -11942,12 +11941,13 @@ var wf = {
 					label: "",
 					id: "table-search",
 					name: "table-search",
-					placeholder: "Buscar...",
+					placeholder: e.searchPlaceholder,
 					"left-icon": U(Ue),
 					small: "",
 					disabled: U(y)
 				}, null, 8, [
 					"modelValue",
+					"placeholder",
 					"left-icon",
 					"disabled"
 				]), U(y) ? (j(), c("div", Df, [...r[2] ||= [l("div", { class: "animate-spin rounded-full h-4 w-4 border-b-2 border-primary-subtle-light dark:border-primary-subtle-dark" }, null, -1)]])) : s("", !0)])])) : s("", !0),
@@ -12885,7 +12885,6 @@ var sm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			let a = im;
 			return j(), c("div", sm, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
 				key: e.ts,
-				active: !0,
 				message: e,
 				error: e.error,
 				onExpired: i
