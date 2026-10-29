@@ -73,6 +73,12 @@ app.provide(useRequestKey, useRequest)
 app.mount('#app')
 ```
 
+Whenever you write or show an app's entry file, keep all three Ornito lines even if
+the task is only about theming: `import 'ornito/style.css'` (or its `@import` in the
+CSS), `initTheme()` before mount, and `app.provide(useRequestKey, useRequest)` (use
+the app's own request composable; without it server tables and `SearchableSelect`
+break).
+
 `initTheme()` must run before mount so the first paint has the right mode. The
 choice is shared with `useTheme()` (the sidebar's toggle uses it) and persisted.
 

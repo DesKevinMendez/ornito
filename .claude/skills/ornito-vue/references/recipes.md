@@ -120,8 +120,10 @@ async function confirmDelete() {
 ```
 
 `useRequest` is the app's own request composable (the one provided with
-`useRequestKey`); use whatever the app already has for POST/PUT/DELETE and adapt
-the error handling to it (some return an `error` ref instead of throwing).
+`useRequestKey`); import it directly for POST/PUT/DELETE, because the injected
+factory only guarantees `get`. Use the path and method names the app already has
+(look for `provide(useRequestKey, …)` in its entry file) and adapt the error
+handling to it (some return an `error` ref instead of throwing).
 
 ## Form in a modal
 

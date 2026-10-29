@@ -2,7 +2,10 @@
 
 Every color Ornito renders is a runtime CSS variable. An app re-skins the design
 system by overriding variables on `:root` in its own CSS — no fork, no rebuild, no
-component edits. Exact names and defaults: [tokens.md](tokens.md).
+component edits. Exact names and defaults: [tokens.md](tokens.md). Theming only
+works on top of a complete setup (CSS imports, `@source`, dark variant and the entry
+file with `ornito/style.css`, `initTheme()` and `useRequestKey`): when you write
+those files, follow [installation.md](installation.md#css).
 
 ## Contents
 
