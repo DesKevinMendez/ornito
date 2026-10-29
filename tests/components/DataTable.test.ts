@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { h, nextTick } from 'vue'
+import { h, nextTick, ref } from 'vue'
 
 import DataTable from '../../src/components/DataTable.vue'
 import { useRequestKey } from '../../src/composables/useDataRequest'
@@ -120,5 +120,25 @@ describe('DataTable local data', () => {
     mountTable({ url: '/employees', get })
 
     expect(get).not.toHaveBeenCalled()
+  })
+})
+
+describe('DataTable server search', () => {
+  it('shows the searchPlaceholder prop in the search input', async () => {
+    setViewportWidth(1024)
+    const get = vi.fn().mockResolvedValue({
+      data: ref({
+        data: [],
+        pagination: { total: 0, per_page: 10, current_page: 1, from: 0, to: 0, last_page: 1 },
+      }),
+    })
+    const wrapper = mount(DataTable, {
+      props: { columns, url: '/employees', searchPlaceholder: 'Buscar empleado...' },
+      global: { provide: { [useRequestKey as symbol]: () => ({ get }) } },
+    })
+    mountedWrappers.push(wrapper)
+    await nextTick()
+
+    expect(wrapper.get('#table-search').attributes('placeholder')).toBe('Buscar empleado...')
   })
 })
