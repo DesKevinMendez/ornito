@@ -39,11 +39,7 @@ tags by hand.
 
 ## Skill
 
-`.claude/skills/ornito-vue/` documents how to use and configure the library. Its
-`references/api.md`, `references/tokens.md` and `references/api.json` are
-generated: after changing props, emits, slots, exports or tokens, run
-`python3 .claude/skills/ornito-vue/scripts/gen_api_reference.py` and update the
-hand-written references if usage changed.
+The `ornito-vue` skill for this library lives in a separate repository: `DesKevinMendez/skills` (folder `ornito-vue/`).
 
 ## Commits
 
