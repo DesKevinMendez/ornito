@@ -1,8 +1,10 @@
+import { RoutesLinkActive } from '../../types/RoutesLink';
 interface Props {
     to: string;
     name: string;
     icon: any;
     isCollapsed: boolean;
+    active?: RoutesLinkActive;
     hasExternalIcon?: boolean;
     hasBadge?: boolean;
     badgeText?: string;
