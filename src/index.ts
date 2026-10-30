@@ -52,7 +52,7 @@ export { default as WarningAlert } from './components/WarningAlert.vue'
 
 export type { BadgeVariant } from './types/Badge'
 export type { BreadcrumbItem } from './types/Breadcrumb'
-export type { RoutesLink } from './types/RoutesLink'
+export type { RoutesLink, RoutesLinkActive } from './types/RoutesLink'
 export type { TableField } from './types/Table'
 export type { DropdownMenuItem } from './types/DropdownMenuItem'
 export type { ItemId } from './types/Item'

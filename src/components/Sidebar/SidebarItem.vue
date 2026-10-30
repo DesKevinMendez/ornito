@@ -2,12 +2,15 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { IconArrowUpRight } from '@tabler/icons-vue';
+import { matchesRouteActive } from '../../utils/matchesRouteActive';
+import type { RoutesLinkActive } from '../../types/RoutesLink';
 
 interface Props {
   to: string;
   name: string;
   icon: any;
   isCollapsed: boolean;
+  active?: RoutesLinkActive;
   hasExternalIcon?: boolean;
   hasBadge?: boolean;
   badgeText?: string;
@@ -28,7 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
 const route = useRoute();
 
 const isActive = computed(() => {
-  return route.path === props.to;
+  return matchesRouteActive(route.path, props.to, props.active);
 });
 </script>
 
