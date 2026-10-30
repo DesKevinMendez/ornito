@@ -13,7 +13,33 @@ resolved internally. Emits `toggle-collapse`.
 | `title` | `string` | Yes | — |
 | `subtitle` | `string` | Yes | — |
 | `version` | `string` | Yes | — e.g. app version string |
-| `menuItems` | `RoutesLink[]` — `{ route, name, icon, children?: RoutesLink[] }` | Yes | — supports one level of nested children |
+| `menuItems` | `RoutesLink[]` — `{ route, name, icon, active?, children?: RoutesLink[] }` | Yes | — supports one level of nested children |
+
+Each item is active on an exact path match by default. Set `active` to choose a
+different path rule. This is useful when a detail route should keep its parent
+tab selected, such as `/customer/42` keeping `/customer` active.
+
+```ts
+const menuItems: RoutesLink[] = [
+  {
+    route: '/customer',
+    name: 'Customer',
+    icon: IconUsers,
+    active: { starts_with: '/customer' },
+  },
+]
+```
+
+`active` accepts one of these matchers:
+
+- `starts_with`: the current path starts with the value.
+- `ends_with`: the current path ends with the value.
+- `exact`: exact path match against the value.
+- `regex`: the current path matches the regular expression string.
+
+When an item has children, its active state and expansion follow the active
+child. A custom `active` matcher on the group itself can also keep the group
+label selected.
 
 ```vue
 <Sidebar
