@@ -15,6 +15,12 @@ import type { RoutesLink } from '../../../types/RoutesLink';
 const menuItems: RoutesLink[] = [
   { route: '/', name: 'Dashboard', icon: IconHome },
   {
+    route: '/customers',
+    name: 'Customers',
+    icon: IconUser,
+    active: { starts_with: '/customers' },
+  },
+  {
     route: '/settings',
     name: 'Settings',
     icon: IconSettings,
@@ -30,6 +36,7 @@ const routerDecorator = (story: ReturnType<NonNullable<Meta<typeof SidebarList>[
     history: createMemoryHistory(),
     routes: [
       { path: '/', component: { template: '<div />' } },
+      { path: '/customers/:pathMatch(.*)*', component: { template: '<div />' } },
       { path: '/settings/:pathMatch(.*)*', component: { template: '<div />' } },
     ],
   });

@@ -4,6 +4,7 @@ import { useSidebar } from "../../composables/useSidebar";
 import { useActiveIndicator } from "../../composables/useActiveIndicator";
 import { IconChevronDown } from "@tabler/icons-vue";
 import type { RoutesLink } from "@/types/RoutesLink";
+import { matchesRouteActive } from "../../utils/matchesRouteActive";
 
 interface Props {
   isCollapsed: boolean;
@@ -20,8 +21,15 @@ const { isInitialized, isAnimating, activeIndicatorStyle, trackAnimation } = use
 const expandedGroups = ref<Set<string>>(new Set());
 const collapsedGroups = ref<Set<string>>(new Set());
 
-const isChildActive = (item: RoutesLink) =>
-  item.children?.some(c => route.path === c.route || route.path.startsWith(c.route + '/')) ?? false;
+const isChildActive = (item: RoutesLink) => {
+  const itemMatches = item.active
+    ? matchesRouteActive(route.path, item.route, item.active)
+    : false;
+
+  return itemMatches || (item.children?.some(child =>
+    matchesRouteActive(route.path, child.route, child.active, true)
+  ) ?? false);
+};
 
 const isGroupExpanded = (item: RoutesLink) => {
   if (collapsedGroups.value.has(item.route)) return false;
@@ -113,6 +121,7 @@ watch(() => props.isCollapsed, () => {
                     :to="child.route"
                     :name="child.name"
                     :icon="child.icon"
+                    :active="child.active"
                     :is-collapsed="isCollapsed"
                     use-external-indicator
                   />
@@ -127,6 +136,7 @@ watch(() => props.isCollapsed, () => {
             :to="item.route"
             :name="item.name"
             :icon="item.icon"
+            :active="item.active"
             :is-collapsed="isCollapsed"
             use-external-indicator
           />
