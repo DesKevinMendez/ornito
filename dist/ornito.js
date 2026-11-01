@@ -872,11 +872,13 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 	setup(e, { emit: t }) {
 		let r = e, { placeholder: i = "Buscar...", id: u = "searchable-select", labelKey: p = "label", valueKey: m = "value", multiple: h = !1 } = r, g = G(e, "modelValue"), y = _(zt);
 		if (!y) throw Error("SearchableSelect: no request instance provided. Call app.provide(useRequestKey, useRequest) in the consuming app.");
-		let { get: b } = y(), x = F(!1), S = F(""), w = F([]), T = F([]), E = F(/* @__PURE__ */ new Map()), D = F(null), k = F([]), M = F(!1), N = F(), P = F(), L = F(""), R = F(!1), V = F(!1), ee = F(!1), H = a(() => g.value ? D.value && D.value.value === g.value ? D.value : w.value.find((e) => e.value === g.value) || T.value.find((e) => e.value === g.value) : null), W = a(() => "absolute w-full bg-form-suggestion-panel-bg-light dark:bg-form-suggestion-panel-bg-dark border border-default-light dark:border-default-dark rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden"), te = a(() => Array.isArray(g.value) ? g.value : []), K = (e, t) => {
+		let { get: b } = y(), x = F(!1), S = F(""), w = F([]), T = F([]), E = F(/* @__PURE__ */ new Map()), D = F(null), k = F([]), M = F(!1), N = F(), P = F(), L = F(""), R = F(!1), V = F(!1), ee = null, H = (e) => {
+			S.value !== e && (ee = e, S.value = e);
+		}, W = a(() => g.value ? D.value && D.value.value === g.value ? D.value : w.value.find((e) => e.value === g.value) || T.value.find((e) => e.value === g.value) : null), te = a(() => "absolute w-full bg-form-suggestion-panel-bg-light dark:bg-form-suggestion-panel-bg-dark border border-default-light dark:border-default-dark rounded-xl shadow-lg z-[9999] mt-2 overflow-hidden"), K = a(() => Array.isArray(g.value) ? g.value : []), re = (e, t) => {
 			let n = t.toLocaleLowerCase();
 			return [e.label, ...e.subtitles].some((e) => e.toLocaleLowerCase().includes(n));
-		}, re = (e) => T.value.filter((t) => K(t, e)), ie = (e) => h ? te.value.includes(e.value) : H.value?.value === e.value, ae = 0, oe = async () => {
-			let e = ++ae, t = te.value;
+		}, ie = (e) => T.value.filter((t) => re(t, e)), ae = (e) => h ? K.value.includes(e.value) : W.value?.value === e.value, oe = 0, se = async () => {
+			let e = ++oe, t = K.value;
 			if (t.length === 0) {
 				k.value = [];
 				return;
@@ -888,37 +890,37 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			let i = t.filter((e) => !n.has(e));
 			if (i.length && r.url) {
 				if (T.value.length === 0) {
-					if (await me(), e !== ae) return;
+					if (await he(), e !== oe) return;
 					for (let e of T.value) n.set(e.value, e);
 					i = t.filter((e) => !n.has(e));
 				}
 				for (let t of i) try {
 					let i = r.url.includes("?") ? "&" : "?", { data: a } = await b(`${r.url}${i}filter[${m}]=${t}`);
-					if (e !== ae) return;
+					if (e !== oe) return;
 					let o = Array.isArray(a.value) ? a.value : a.value?.data || [];
-					o.length && n.set(t, pe(o[0]));
+					o.length && n.set(t, me(o[0]));
 				} catch {}
 			}
-			e === ae && (k.value = t.map((e) => n.get(e) ?? {
+			e === oe && (k.value = t.map((e) => n.get(e) ?? {
 				label: String(e),
 				value: e,
 				subtitles: []
 			}));
-		}, se = (e, t) => {
-			ee.value = !0;
-			let n = te.value.filter((t) => t !== e);
+		}, ue = (e, t) => {
+			V.value = !0;
+			let n = K.value.filter((t) => t !== e);
 			g.value = n, t(n), k.value = k.value.filter((t) => t.value !== e);
 		};
-		function ue(e, t) {
+		function de(e, t) {
 			return t.trim().split(".").reduce((e, t) => e?.[t], e);
 		}
-		function de(e, t) {
+		function fe(e, t) {
 			let n = [...e.matchAll(/\{([^}]+)\}/g)];
 			if (n.length === 0) {
-				let n = ue(t, e);
+				let n = de(t, e);
 				return n == null ? "" : String(n);
 			}
-			let r = n.map((e) => ue(t, e[1]));
+			let r = n.map((e) => de(t, e[1]));
 			if (r.every((e) => e == null || e === "")) return "";
 			let i = e;
 			return n.forEach((e, t) => {
@@ -926,18 +928,18 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 				i = i.replace(e[0], n == null ? "" : String(n));
 			}), i.replace(/^[\s\-:|,·]+/, "").replace(/[\s\-:|,·]+$/, "").replace(/\s+/g, " ").trim();
 		}
-		function fe(e) {
-			return r.subtitleKey ? (Array.isArray(r.subtitleKey) ? r.subtitleKey : [r.subtitleKey]).map((t) => de(t, e)).filter(Boolean) : [];
+		function pe(e) {
+			return r.subtitleKey ? (Array.isArray(r.subtitleKey) ? r.subtitleKey : [r.subtitleKey]).map((t) => fe(t, e)).filter(Boolean) : [];
 		}
-		let pe = (e) => {
+		let me = (e) => {
 			let t = {
-				label: de(p, e),
-				value: ue(e, m),
+				label: fe(p, e),
+				value: de(e, m),
 				icon: e.icon,
-				subtitles: fe(e)
+				subtitles: pe(e)
 			};
 			return E.value.set(t.value, e), t;
-		}, me = async (e = {}) => {
+		}, he = async (e = {}) => {
 			if (!r.url) return;
 			let t = r.url;
 			if (e.searchWithId && g.value) {
@@ -948,7 +950,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			try {
 				let { data: e } = await b(t);
 				if (e.value) {
-					let t = (Array.isArray(e.value) ? e.value : e.value.data || []).map(pe);
+					let t = (Array.isArray(e.value) ? e.value : e.value.data || []).map(me);
 					w.value = t, T.value = t;
 				}
 			} catch (e) {
@@ -956,13 +958,13 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			} finally {
 				M.value = !1;
 			}
-		}, he = async (e) => {
+		}, ge = async (e) => {
 			if (!r.url || !e.trim()) {
 				w.value = T.value;
 				return;
 			}
 			if (r.localSearchFirst) {
-				let t = re(e);
+				let t = ie(e);
 				if (t.length > 0) {
 					w.value = t;
 					return;
@@ -972,7 +974,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			try {
 				let t = r.url.includes("?") ? "&" : "?", n = `${r.url}${t}${r.searchBy}=${encodeURIComponent(e)}`, { data: i } = await b(n);
 				if (i.value) {
-					let e = (Array.isArray(i.value) ? i.value : i.value.data || []).map(pe);
+					let e = (Array.isArray(i.value) ? i.value : i.value.data || []).map(me);
 					w.value = e;
 				}
 			} catch (e) {
@@ -980,65 +982,65 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			} finally {
 				M.value = !1;
 			}
-		}, ge = () => {
-			x.value = !0, L.value = S.value, V.value = !0, S.value = "", T.value.length === 0 ? me() : (w.value = T.value, D.value && !w.value.find((e) => e.value === D.value.value) && (w.value = [D.value, ...w.value])), P.value && P.value.select();
 		}, ve = () => {
+			x.value = !0, L.value = S.value, H(""), T.value.length === 0 ? he() : (w.value = T.value, D.value && !w.value.find((e) => e.value === D.value.value) && (w.value = [D.value, ...w.value])), P.value && P.value.select();
+		}, ye = () => {
 			setTimeout(() => {
-				x.value = !1, V.value = !0, h ? S.value = "" : g.value && H.value ? S.value = H.value.label : g.value || (S.value = ""), L.value = "";
+				x.value = !1, h ? H("") : g.value && W.value ? H(W.value.label) : g.value || H(""), L.value = "";
 			}, 200);
 		};
 		_e(S, (e) => {
-			if (V.value) {
-				V.value = !1;
-				return;
+			if (ee !== null) {
+				let t = e === ee;
+				if (ee = null, t) return;
 			}
 			let t = e.trim();
-			t && !R.value ? (he(t), R.value = !1) : w.value = T.value;
+			t && !R.value ? (ge(t), R.value = !1) : w.value = T.value;
 		}, { debounce: 500 });
-		let ye = t, be = (e, t, n) => {
+		let be = t, xe = (e, t, n) => {
 			if (t && (t.preventDefault(), t.stopPropagation()), h) {
-				if (V.value = !0, ee.value = !0, te.value.includes(e.value)) {
-					let t = te.value.filter((t) => t !== e.value);
+				if (V.value = !0, K.value.includes(e.value)) {
+					let t = K.value.filter((t) => t !== e.value);
 					g.value = t, n(t), k.value = k.value.filter((t) => t.value !== e.value);
 				} else {
-					let t = [...te.value, e.value];
+					let t = [...K.value, e.value];
 					g.value = t, n(t), k.value.find((t) => t.value === e.value) || k.value.push(e);
 				}
-				S.value = "", w.value = T.value, ye("select", e);
+				H(""), w.value = T.value, be("select", e);
 				let t = E.value.get(e.value);
-				t !== void 0 && ye("data", t), P.value && P.value.focus();
+				t !== void 0 && be("data", t), P.value && P.value.focus();
 				return;
 			}
-			V.value = !0, g.value = e.value, n(e.value), S.value = e.label, D.value = e, x.value = !1, P.value && P.value.blur(), ye("select", e);
+			g.value = e.value, n(e.value), H(e.label), D.value = e, x.value = !1, P.value && P.value.blur(), be("select", e);
 			let r = E.value.get(e.value);
-			r !== void 0 && ye("data", r);
-		}, xe = (e) => {
+			r !== void 0 && be("data", r);
+		}, Se = (e) => {
 			let t = e.target;
 			N.value && !N.value.contains(t) && (x.value = !1);
 		};
 		O(() => {
-			if (document.addEventListener("click", xe), h) {
-				oe();
+			if (document.addEventListener("click", Se), h) {
+				se();
 				return;
 			}
-			g.value && g.value !== "" ? Se(g.value) : g.value && H.value && (S.value = H.value.label, D.value = H.value);
+			g.value && g.value !== "" ? Ce(g.value) : g.value && W.value && (S.value = W.value.label, D.value = W.value);
 		}), A(() => {
-			document.removeEventListener("click", xe);
+			document.removeEventListener("click", Se);
 		}), q(g, (e, t) => {
 			if (h) {
-				if (ee.value) {
-					ee.value = !1;
+				if (V.value) {
+					V.value = !1;
 					return;
 				}
-				oe();
+				se();
 				return;
 			}
-			e && e !== t ? H.value && H.value.value === e ? (S.value = H.value.label, D.value ||= H.value) : (!D.value || D.value.value !== e) && Se(e) : e || (S.value = "", D.value = null);
+			e && e !== t ? W.value && W.value.value === e ? (S.value = W.value.label, D.value ||= W.value) : (!D.value || D.value.value !== e) && Ce(e) : e || (S.value = "", D.value = null);
 		});
-		let Se = async (e) => {
-			R.value = !0, await me();
+		let Ce = async (e) => {
+			R.value = !0, await he();
 			let t = w.value.find((t) => t.value === e);
-			if (t) V.value = !0, S.value = t.label, D.value = t;
+			if (t) H(t.label), D.value = t;
 			else {
 				let t = r.url.includes("?") ? "&" : "?", n = `${r.url}${t}filter[${r.valueKey}]=${e}`;
 				try {
@@ -1046,8 +1048,8 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 					if (e.value) {
 						let t = Array.isArray(e.value) ? e.value : e.value.data || [];
 						if (t.length > 0) {
-							let e = pe(t[0]);
-							w.value = [e, ...w.value], T.value = [e, ...T.value], D.value = e, V.value = !0, S.value = e.label;
+							let e = me(t[0]);
+							w.value = [e, ...w.value], T.value = [e, ...T.value], D.value = e, H(e.label);
 						}
 					}
 				} catch (e) {
@@ -1081,9 +1083,9 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 								ref_key: "inputRef",
 								ref: P,
 								"onUpdate:modelValue": a[0] ||= (e) => v(S) ? S.value = e : null,
-								onFocus: ge,
+								onFocus: ve,
 								onBlur: (e) => {
-									t.onBlur(e), ve();
+									t.onBlur(e), ye();
 								},
 								placeholder: U(i),
 								name: t.name,
@@ -1114,19 +1116,19 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 							class: "inline-flex items-center gap-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-3 py-1"
 						}, [d(B(e.label) + " ", 1), l("button", {
 							type: "button",
-							onClick: (t) => se(e.value, _),
+							onClick: (t) => ue(e.value, _),
 							class: "hover:text-primary-900 dark:hover:text-primary-100"
 						}, [f(U(Ke), { class: "h-4 w-4" })], 8, Kt)]))), 128))])) : s("", !0),
 						f(m, null, {
 							default: J(() => [U(x) ? (j(), c("div", {
 								key: 0,
-								class: C(U(W))
+								class: C(U(te))
 							}, [U(M) ? (j(), c("div", qt, [f(p, { "custom-class": "animate-spin -ml-1 mr-3 h-12 w-12 text-form-control-text-light dark:text-form-control-text-dark" })])) : U(w).length === 0 ? (j(), c("div", Jt, " No se encontraron datos ")) : (j(), c("div", Yt, [(j(!0), c(n, null, I(U(w), (e) => (j(), c("div", {
 								key: e.value,
-								onClick: (t) => be(e, t, _),
+								onClick: (t) => xe(e, t, _),
 								class: C(["rounded-lg p-3 border cursor-pointer transition-colors", {
-									"border-primary-subtle-light dark:border-primary-subtle-dark bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30": ie(e),
-									"bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-bg-hover-light dark:hover:bg-form-suggestion-bg-hover-dark": !ie(e)
+									"border-primary-subtle-light dark:border-primary-subtle-dark bg-primary-100 dark:bg-primary-900/20 hover:bg-primary-200 dark:hover:bg-primary-900/30": ae(e),
+									"bg-form-control-bg-light dark:bg-form-control-bg-dark border-default-light dark:border-default-dark hover:bg-form-suggestion-bg-hover-light dark:hover:bg-form-suggestion-bg-hover-dark": !ae(e)
 								}])
 							}, [l("div", Zt, [l("div", Qt, [e.icon ? (j(), o(z(e.icon), {
 								key: 0,
@@ -1134,7 +1136,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 							})) : s("", !0), l("div", $t, [l("span", en, B(e.label), 1), (j(!0), c(n, null, I(e.subtitles, (e, t) => (j(), c("span", {
 								key: t,
 								class: "text-xs text-form-supporting-text-light dark:text-form-supporting-text-dark"
-							}, B(e), 1))), 128))])]), ie(e) ? (j(), c("div", tn, [f(U(je), { class: "h-6 w-6" })])) : s("", !0)])], 10, Xt))), 128))]))], 2)) : s("", !0)]),
+							}, B(e), 1))), 128))])]), ae(e) ? (j(), c("div", tn, [f(U(je), { class: "h-6 w-6" })])) : s("", !0)])], 10, Xt))), 128))]))], 2)) : s("", !0)]),
 							_: 2
 						}, 1024)
 					]),
