@@ -147,13 +147,6 @@ async function focusAndResolveInitialRequest(wrapper: ReturnType<typeof mount>) 
   await nextTick()
 }
 
-async function primeSearchWatcher(wrapper: ReturnType<typeof mount>) {
-  await wrapper.get('input').setValue('__prime__')
-  await vi.advanceTimersByTimeAsync(500)
-  await flushPromises()
-  await nextTick()
-}
-
 async function searchFor(wrapper: ReturnType<typeof mount>, query: string) {
   await wrapper.get('input').setValue(query)
   await vi.advanceTimersByTimeAsync(500)
@@ -320,7 +313,6 @@ describe('SearchableSelect', () => {
     })
 
     await focusAndResolveInitialRequest(wrapper)
-    await primeSearchWatcher(wrapper)
     await searchFor(wrapper, 'Ada')
 
     expect(get).toHaveBeenCalledTimes(2)
@@ -348,7 +340,6 @@ describe('SearchableSelect', () => {
     const { wrapper, get } = mountSearchableSelect({ localSearchFirst: true })
 
     await focusAndResolveInitialRequest(wrapper)
-    await primeSearchWatcher(wrapper)
     await searchFor(wrapper, 'admiral')
 
     expect(get).toHaveBeenCalledTimes(1)
@@ -376,7 +367,6 @@ describe('SearchableSelect', () => {
     })
 
     await focusAndResolveInitialRequest(wrapper)
-    await primeSearchWatcher(wrapper)
     await searchFor(wrapper, 'Linus')
 
     expect(get).toHaveBeenCalledTimes(2)
@@ -397,6 +387,54 @@ describe('SearchableSelect', () => {
     ])
 
     vi.useRealTimers()
+  })
+
+  it('searches the first query typed after focusing an empty input', async () => {
+    vi.useFakeTimers()
+    const { wrapper, get } = mountSearchableSelect({
+      searchItems: [{ id: 3, name: 'Ada Byron', role: 'Mathematician' }],
+    })
+
+    await focusAndResolveInitialRequest(wrapper)
+    await searchFor(wrapper, 'Ada')
+
+    expect(get).toHaveBeenCalledTimes(2)
+    expect(get).toHaveBeenLastCalledWith('/users?filter[name]=Ada')
+    expect(wrapper.text()).toContain('Ada Byron')
+  })
+
+  it('does not search the selected label it clears on focus', async () => {
+    vi.useFakeTimers()
+    const { wrapper, get } = mountSearchableSelect({ modelValue: 2 })
+    await flushPromises()
+    await nextTick()
+    expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+    get.mockClear()
+
+    await wrapper.get('input').trigger('focus')
+    await vi.advanceTimersByTimeAsync(500)
+    await flushPromises()
+
+    expect(wrapper.get('input').element.value).toBe('')
+    expect(get).not.toHaveBeenCalled()
+  })
+
+  it('searches a query typed right after focus clears the selected label', async () => {
+    vi.useFakeTimers()
+    const { wrapper, get } = mountSearchableSelect({
+      modelValue: 2,
+      searchItems: [{ id: 3, name: 'Ada Byron', role: 'Mathematician' }],
+    })
+    await flushPromises()
+    await nextTick()
+    get.mockClear()
+
+    await wrapper.get('input').trigger('focus')
+    await searchFor(wrapper, 'Ada')
+
+    expect(get).toHaveBeenCalledTimes(1)
+    expect(get).toHaveBeenLastCalledWith('/users?filter[name]=Ada')
+    expect(wrapper.text()).toContain('Ada Byron')
   })
 
   it('an empty required rule shows the Field/ErrorMessage validation error after blur', async () => {
