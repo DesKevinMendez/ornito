@@ -215,8 +215,19 @@ const selectRef = ref<HTMLElement>();
 const inputRef = ref<HTMLInputElement>();
 const savedSearchQuery = ref("");
 const preventSearch = ref(false);
-const isSelecting = ref(false);
 const isInternalModelUpdate = ref(false);
+let silentSearchQuery: string | null = null;
+
+/**
+ * Sets the input text without searching for it. Only a real change arms the
+ * skip, and only for that exact text, so the next query the user types is
+ * always searched.
+ */
+const setSearchQuerySilently = (value: string) => {
+  if (searchQuery.value === value) return;
+  silentSearchQuery = value;
+  searchQuery.value = value;
+};
 const selectedItem = computed(() => {
   if (!modelValue.value) return null;
   if (
@@ -430,8 +441,7 @@ const searchData = async (query: string) => {
 const handleFocus = () => {
   isOpen.value = true;
   savedSearchQuery.value = searchQuery.value;
-  isSelecting.value = true;
-  searchQuery.value = "";
+  setSearchQuerySilently("");
   if (initialItems.value.length === 0) {
     fetchInitialData();
   } else {
@@ -451,13 +461,12 @@ const handleFocus = () => {
 const handleBlur = () => {
   setTimeout(() => {
     isOpen.value = false;
-    isSelecting.value = true;
     if (multiple) {
-      searchQuery.value = "";
+      setSearchQuerySilently("");
     } else if (modelValue.value && selectedItem.value) {
-      searchQuery.value = selectedItem.value.label;
+      setSearchQuerySilently(selectedItem.value.label);
     } else if (!modelValue.value) {
-      searchQuery.value = "";
+      setSearchQuerySilently("");
     }
     savedSearchQuery.value = "";
   }, 200);
@@ -466,9 +475,10 @@ const handleBlur = () => {
 watchDebounced(
   searchQuery,
   (newQuery) => {
-    if (isSelecting.value) {
-      isSelecting.value = false;
-      return;
+    if (silentSearchQuery !== null) {
+      const isSilentUpdate = newQuery === silentSearchQuery;
+      silentSearchQuery = null;
+      if (isSilentUpdate) return;
     }
     const trimmedQuery = newQuery.trim();
     if (trimmedQuery && !preventSearch.value) {
@@ -496,7 +506,6 @@ const selectItem = (
     event.stopPropagation();
   }
   if (multiple) {
-    isSelecting.value = true;
     isInternalModelUpdate.value = true;
     if (selectedValues.value.includes(item.value)) {
       const newValue = selectedValues.value.filter((v) => v !== item.value);
@@ -513,7 +522,7 @@ const selectItem = (
         selectedItemsData.value.push(item);
       }
     }
-    searchQuery.value = "";
+    setSearchQuerySilently("");
     items.value = initialItems.value;
     emit("select", item);
     const rawMultiple = rawItemsMap.value.get(item.value);
@@ -523,10 +532,9 @@ const selectItem = (
     }
     return;
   }
-  isSelecting.value = true;
   modelValue.value = item.value;
   handleChange(item.value);
-  searchQuery.value = item.label;
+  setSearchQuerySilently(item.label);
   selectedItemData.value = item;
   isOpen.value = false;
   if (inputRef.value) {
@@ -592,8 +600,7 @@ const findingItemInServer = async (newValue: string | number) => {
 
   const itemAlreadyExists = items.value.find((item) => item.value === newValue);
   if (itemAlreadyExists) {
-    isSelecting.value = true;
-    searchQuery.value = itemAlreadyExists.label;
+    setSearchQuerySilently(itemAlreadyExists.label);
     selectedItemData.value = itemAlreadyExists;
   } else {
     const separator = props.url.includes('?') ? '&' : '?';
@@ -609,8 +616,7 @@ const findingItemInServer = async (newValue: string | number) => {
           items.value = [foundItem, ...items.value];
           initialItems.value = [foundItem, ...initialItems.value];
           selectedItemData.value = foundItem;
-          isSelecting.value = true;
-          searchQuery.value = foundItem.label;
+          setSearchQuerySilently(foundItem.label);
         }
       }
     } catch (error) {
