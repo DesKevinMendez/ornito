@@ -21,9 +21,9 @@
           @blur="field.onBlur"
           :value
           :class="[
-            'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
+            'w-full appearance-none bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
             leftIcon ? 'pl-10' : 'pl-4',
-            'pr-4',
+            'pr-10',
             errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
             small ? 'py-2' : 'py-3',
           ]"
@@ -47,6 +47,16 @@
           </option>
         </select>
         <div
+          class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+        >
+          <IconChevronDown
+            :class="[
+              small ? 'h-4 w-4' : 'h-5 w-5',
+              'text-form-control-icon-text-light dark:text-form-control-icon-text-dark',
+            ]"
+          />
+        </div>
+        <div
           v-if="leftIcon"
           class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
         >
@@ -69,6 +79,7 @@
 </template>
 
 <script setup lang="ts">
+import { IconChevronDown } from "@tabler/icons-vue";
 import { Field, ErrorMessage } from "vee-validate";
 
 interface Option {
