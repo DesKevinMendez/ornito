@@ -12121,10 +12121,10 @@ var wf = {
 	value: "",
 	class: "bg-form-select-placeholder-bg-light dark:bg-form-select-placeholder-bg-dark text-form-select-placeholder-text-light dark:text-form-select-placeholder-text-dark",
 	disabled: ""
-}, tp = ["value", "selected"], np = {
+}, tp = ["value", "selected"], np = { class: "absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none" }, rp = {
 	key: 0,
 	class: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-}, rp = /* @__PURE__ */ p({
+}, ip = /* @__PURE__ */ p({
 	__name: "FormSelect",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -12157,25 +12157,29 @@ var wf = {
 				modelValue: i.value,
 				"onUpdate:modelValue": u[0] ||= (e) => i.value = e
 			}, {
-				default: J(({ field: t, value: i, errorMessage: u, handleChange: d }) => [l("div", Qf, [l("select", {
-					id: e.id,
-					name: t.name,
-					onChange: (e) => a(e, d),
-					onBlur: t.onBlur,
-					value: i,
-					class: C([
-						"w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark",
-						e.leftIcon ? "pl-10" : "pl-4",
-						"pr-4",
-						u ? "border-danger-light dark:border-danger-dark" : "",
-						e.small ? "py-2" : "py-3"
-					])
-				}, [U(r) ? (j(), c("option", ep, B(U(r)), 1)) : s("", !0), (j(!0), c(n, null, I(e.options, (e) => (j(), c("option", {
-					key: e.value,
-					value: e.value,
-					selected: i != null && String(i) === String(e.value),
-					class: "bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark"
-				}, B(e.label), 9, tp))), 128))], 42, $f), e.leftIcon ? (j(), c("div", np, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark"]) }, null, 8, ["class"]))])) : s("", !0)])]),
+				default: J(({ field: t, value: i, errorMessage: u, handleChange: d }) => [l("div", Qf, [
+					l("select", {
+						id: e.id,
+						name: t.name,
+						onChange: (e) => a(e, d),
+						onBlur: t.onBlur,
+						value: i,
+						class: C([
+							"w-full appearance-none bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark",
+							e.leftIcon ? "pl-10" : "pl-4",
+							"pr-10",
+							u ? "border-danger-light dark:border-danger-dark" : "",
+							e.small ? "py-2" : "py-3"
+						])
+					}, [U(r) ? (j(), c("option", ep, B(U(r)), 1)) : s("", !0), (j(!0), c(n, null, I(e.options, (e) => (j(), c("option", {
+						key: e.value,
+						value: e.value,
+						selected: i != null && String(i) === String(e.value),
+						class: "bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark"
+					}, B(e.label), 9, tp))), 128))], 42, $f),
+					l("div", np, [f(U(Me), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark"]) }, null, 8, ["class"])]),
+					e.leftIcon ? (j(), c("div", rp, [(j(), o(z(e.leftIcon), { class: C([e.small ? "h-4 w-4" : "h-5 w-5", "text-form-control-icon-text-light dark:text-form-control-icon-text-dark"]) }, null, 8, ["class"]))])) : s("", !0)
+				])]),
 				_: 1
 			}, 8, [
 				"name",
@@ -12188,14 +12192,14 @@ var wf = {
 			}, null, 8, ["name"])
 		]));
 	}
-}), ip = ["for"], ap = { class: "relative" }, op = [
+}), ap = ["for"], op = { class: "relative" }, sp = [
 	"id",
 	"value",
 	"onInput",
 	"placeholder",
 	"rows",
 	"maxlength"
-], sp = { class: "mt-1 flex items-start justify-between gap-2" }, cp = /* @__PURE__ */ p({
+], cp = { class: "mt-1 flex items-start justify-between gap-2" }, lp = /* @__PURE__ */ p({
 	__name: "FormTextarea",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -12217,11 +12221,11 @@ var wf = {
 			key: 0,
 			for: e.id,
 			class: "block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
-		}, B(e.label), 9, ip)) : s("", !0), f(U(le), {
+		}, B(e.label), 9, ap)) : s("", !0), f(U(le), {
 			name: e.name,
 			rules: e.rules
 		}, {
-			default: J(({ field: r, errorMessage: i }) => [l("div", null, [l("div", ap, [l("textarea", x({ id: e.id }, r, {
+			default: J(({ field: r, errorMessage: i }) => [l("div", null, [l("div", op, [l("textarea", x({ id: e.id }, r, {
 				value: t.value,
 				onInput: (e) => {
 					r.onChange(e), t.value = e.target.value;
@@ -12234,7 +12238,7 @@ var wf = {
 					i ? "border-danger-light dark:border-danger-dark" : "",
 					e.small ? "py-2" : "py-3"
 				]
-			}), null, 16, op)]), l("div", sp, [f(U(ce), {
+			}), null, 16, sp)]), l("div", cp, [f(U(ce), {
 				name: e.name,
 				class: "text-sm text-danger-600 dark:text-danger-400"
 			}, null, 8, ["name"]), e.maxLength ? (j(), c("span", {
@@ -12244,7 +12248,7 @@ var wf = {
 			_: 1
 		}, 8, ["name", "rules"])]));
 	}
-}), lp = /* @__PURE__ */ p({
+}), up = /* @__PURE__ */ p({
 	__name: "HelpTooltip",
 	props: { tooltip: {} },
 	setup(e) {
@@ -12265,7 +12269,7 @@ var wf = {
 			style: T({ transform: `translateX(calc(-50% + ${U(r)}px))` })
 		}, [d(B(e.tooltip) + " ", 1), o[0] ||= l("div", { class: "absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-help-tooltip-panel-bg-light dark:border-t-help-tooltip-panel-bg-dark" }, null, -1)], 4)], 544));
 	}
-}), up = /* @__PURE__ */ p({
+}), dp = /* @__PURE__ */ p({
 	__name: "IconButton",
 	props: {
 		icon: {},
@@ -12319,7 +12323,7 @@ var wf = {
 			_: 3
 		}, 8, ["to", "class"]));
 	}
-}), dp = ["src"], fp = /*#__PURE__*/ Je(/* @__PURE__ */ p({
+}), fp = ["src"], pp = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "ImageLightbox",
 	props: {
 		open: { type: Boolean },
@@ -12348,11 +12352,11 @@ var wf = {
 				src: e.src,
 				alt: "Vista ampliada",
 				class: "max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-			}, null, 8, dp)) : s("", !0)])) : s("", !0)]),
+			}, null, 8, fp)) : s("", !0)])) : s("", !0)]),
 			_: 1
 		})]));
 	}
-}), [["__scopeId", "data-v-1bea9514"]]), pp = { class: "text-base font-medium text-info-item-label-text-light dark:text-info-item-label-text-dark block mb-1" }, mp = { class: "text-info-item-value-text-light dark:text-info-item-value-text-dark text-base w-fit" }, hp = /* @__PURE__ */ p({
+}), [["__scopeId", "data-v-1bea9514"]]), mp = { class: "text-base font-medium text-info-item-label-text-light dark:text-info-item-label-text-dark block mb-1" }, hp = { class: "text-info-item-value-text-light dark:text-info-item-value-text-dark text-base w-fit" }, gp = /* @__PURE__ */ p({
 	__name: "InfoItem",
 	props: {
 		label: {},
@@ -12363,18 +12367,18 @@ var wf = {
 	},
 	setup(e) {
 		let t = e, n = a(() => t.column ? "" : "flex items-center space-x-2");
-		return (t, r) => (j(), c("div", { class: C(U(n)) }, [l("span", pp, B(e.label), 1), l("div", mp, [L(t.$slots, "default")])], 2));
+		return (t, r) => (j(), c("div", { class: C(U(n)) }, [l("span", mp, B(e.label), 1), l("div", hp, [L(t.$slots, "default")])], 2));
 	}
-}), gp = {
+}), _p = {
 	key: 0,
 	class: "h-12 w-12 shrink-0 overflow-hidden rounded-full"
-}, _p = ["src", "alt"], vp = { class: "min-w-0 flex-1" }, yp = { class: "block break-words text-sm font-medium text-item-title-text-light dark:text-item-title-text-dark" }, bp = {
+}, vp = ["src", "alt"], yp = { class: "min-w-0 flex-1" }, bp = { class: "block break-words text-sm font-medium text-item-title-text-light dark:text-item-title-text-dark" }, xp = {
 	key: 0,
 	class: "mt-0.5 block break-words text-sm text-item-subtitle-text-light dark:text-item-subtitle-text-dark"
-}, xp = {
+}, Sp = {
 	key: 1,
 	class: "flex shrink-0 items-center justify-center text-item-icon-text-light dark:text-item-icon-text-dark"
-}, Sp = /* @__PURE__ */ p({
+}, Cp = /* @__PURE__ */ p({
 	__name: "Item",
 	props: {
 		title: {},
@@ -12413,13 +12417,13 @@ var wf = {
 			onClick: r
 		}, {
 			default: J(() => [
-				e.image || t.$slots.image ? (j(), c("span", gp, [L(t.$slots, "image", {}, () => [l("img", {
+				e.image || t.$slots.image ? (j(), c("span", _p, [L(t.$slots, "image", {}, () => [l("img", {
 					src: e.image,
 					alt: e.imageAlt,
 					class: "h-full w-full object-cover"
-				}, null, 8, _p)])])) : s("", !0),
-				l("span", vp, [l("span", yp, [L(t.$slots, "title", {}, () => [d(B(e.title), 1)])]), e.subtitle || t.$slots.subtitle ? (j(), c("span", bp, [L(t.$slots, "subtitle", {}, () => [d(B(e.subtitle), 1)])])) : s("", !0)]),
-				e.icon || t.$slots.icon ? (j(), c("span", xp, [L(t.$slots, "icon", {}, () => [(j(), o(z(e.icon), {
+				}, null, 8, vp)])])) : s("", !0),
+				l("span", yp, [l("span", bp, [L(t.$slots, "title", {}, () => [d(B(e.title), 1)])]), e.subtitle || t.$slots.subtitle ? (j(), c("span", xp, [L(t.$slots, "subtitle", {}, () => [d(B(e.subtitle), 1)])])) : s("", !0)]),
+				e.icon || t.$slots.icon ? (j(), c("span", Sp, [L(t.$slots, "icon", {}, () => [(j(), o(z(e.icon), {
 					class: "h-5 w-5",
 					"aria-hidden": "true",
 					focusable: "false"
@@ -12432,7 +12436,7 @@ var wf = {
 			"class"
 		]));
 	}
-}), Cp = ["aria-busy", "tabindex"], wp = /* @__PURE__ */ p({
+}), wp = ["aria-busy", "tabindex"], Tp = /* @__PURE__ */ p({
 	__name: "List",
 	props: {
 		border: {
@@ -12496,18 +12500,18 @@ var wf = {
 			}]),
 			"aria-busy": e.pagination ? e.loading : void 0,
 			tabindex: e.pagination ? 0 : void 0
-		}, [L(t.$slots, "default")], 10, Cp));
+		}, [L(t.$slots, "default")], 10, wp));
 	}
-}), Tp = { class: "bg-navbar-bg-light border-b-2 border-default-light dark:border-default-dark dark:bg-navbar-bg-dark px-6 h-20 flex items-center" }, Ep = { class: "flex items-center justify-between w-full" }, Dp = { class: "flex gap-4" }, Op = { class: "flex items-center lg:hidden" }, kp = { class: "flex items-center space-x-4" }, Ap = /* @__PURE__ */ p({
+}), Ep = { class: "bg-navbar-bg-light border-b-2 border-default-light dark:border-default-dark dark:bg-navbar-bg-dark px-6 h-20 flex items-center" }, Dp = { class: "flex items-center justify-between w-full" }, Op = { class: "flex gap-4" }, kp = { class: "flex items-center lg:hidden" }, Ap = { class: "flex items-center space-x-4" }, jp = /* @__PURE__ */ p({
 	__name: "Navbar",
 	emits: ["toggle-mobile-sidebar"],
 	setup(e) {
-		return (e, t) => (j(), c("nav", Tp, [l("div", Ep, [l("div", Dp, [l("div", Op, [l("button", {
+		return (e, t) => (j(), c("nav", Ep, [l("div", Dp, [l("div", Op, [l("div", kp, [l("button", {
 			onClick: t[0] ||= (t) => e.$emit("toggle-mobile-sidebar"),
 			class: "w-10 h-10 bg-navbar-mobile-menu-bg-light hover:bg-navbar-mobile-menu-bg-hover-light dark:bg-navbar-mobile-menu-bg-dark dark:hover:bg-navbar-mobile-menu-bg-hover-dark rounded-lg flex items-center justify-center transition-colors"
-		}, [f(U(Ve), { class: "w-5 h-5 text-navbar-mobile-menu-icon-text-light dark:text-navbar-mobile-menu-icon-text-dark" })])])]), l("div", kp, [L(e.$slots, "right")])])]));
+		}, [f(U(Ve), { class: "w-5 h-5 text-navbar-mobile-menu-icon-text-light dark:text-navbar-mobile-menu-icon-text-dark" })])])]), l("div", Ap, [L(e.$slots, "right")])])]));
 	}
-}), jp = (e, t, n, r = !1) => {
+}), Mp = (e, t, n, r = !1) => {
 	if (!n) return r ? e === t || e.startsWith(`${t}/`) : e === t;
 	if ("starts_with" in n) return e.startsWith(n.starts_with);
 	if ("ends_with" in n) return e.endsWith(n.ends_with);
@@ -12518,7 +12522,7 @@ var wf = {
 		return !1;
 	}
 	return !1;
-}, Mp = /* @__PURE__ */ p({
+}, Np = /* @__PURE__ */ p({
 	__name: "SidebarItem",
 	props: {
 		to: {},
@@ -12549,7 +12553,7 @@ var wf = {
 		}
 	},
 	setup(e) {
-		let t = e, n = se(), r = a(() => jp(n.path, t.to, t.active));
+		let t = e, n = se(), r = a(() => Mp(n.path, t.to, t.active));
 		return (t, n) => {
 			let i = R("RouterLink");
 			return j(), o(i, {
@@ -12576,21 +12580,21 @@ var wf = {
 			]);
 		};
 	}
-}), Np = he("sidebarCollapsed", !1);
-function Pp() {
+}), Pp = he("sidebarCollapsed", !1);
+function Fp() {
 	return {
-		isCollapsed: Np,
+		isCollapsed: Pp,
 		toggleCollapse: () => {
-			Np.value = !Np.value;
+			Pp.value = !Pp.value;
 		},
 		expand: () => {
-			Np.value = !1;
+			Pp.value = !1;
 		}
 	};
 }
 //#endregion
 //#region src/composables/useActiveIndicator.ts
-function Fp(e) {
+function Ip(e) {
 	let t = se(), n = F(!1), r = F(!1), i = F({
 		top: "0px",
 		height: "0px",
@@ -12657,14 +12661,14 @@ function Fp(e) {
 }
 //#endregion
 //#region src/components/Sidebar/SidebarList.vue?vue&type=script&setup=true&lang.ts
-var Ip = { class: "space-y-0.5 relative" }, Lp = ["onClick"], Rp = { class: "overflow-hidden" }, zp = { class: "pl-6 space-y-0.5 pt-1 pb-1" }, Bp = /* @__PURE__ */ p({
+var Lp = { class: "space-y-0.5 relative" }, Rp = ["onClick"], zp = { class: "overflow-hidden" }, Bp = { class: "pl-6 space-y-0.5 pt-1 pb-1" }, Vp = /* @__PURE__ */ p({
 	__name: "SidebarList",
 	props: {
 		isCollapsed: { type: Boolean },
 		menuItems: {}
 	},
 	setup(e) {
-		let t = e, r = se(), { expand: i } = Pp(), a = K("navRef"), { isInitialized: s, isAnimating: u, activeIndicatorStyle: d, trackAnimation: p } = Fp(a), m = F(/* @__PURE__ */ new Set()), h = F(/* @__PURE__ */ new Set()), g = (e) => (e.active ? jp(r.path, e.route, e.active) : !1) || (e.children?.some((e) => jp(r.path, e.route, e.active, !0)) ?? !1), _ = (e) => h.value.has(e.route) ? !1 : m.value.has(e.route) || g(e), v = (e) => {
+		let t = e, r = se(), { expand: i } = Fp(), a = K("navRef"), { isInitialized: s, isAnimating: u, activeIndicatorStyle: d, trackAnimation: p } = Ip(a), m = F(/* @__PURE__ */ new Set()), h = F(/* @__PURE__ */ new Set()), g = (e) => (e.active ? Mp(r.path, e.route, e.active) : !1) || (e.children?.some((e) => Mp(r.path, e.route, e.active, !0)) ?? !1), _ = (e) => h.value.has(e.route) ? !1 : m.value.has(e.route) || g(e), v = (e) => {
 			if (t.isCollapsed) {
 				i(), m.value.add(e), h.value.delete(e), p();
 				return;
@@ -12676,7 +12680,7 @@ var Ip = { class: "space-y-0.5 relative" }, Lp = ["onClick"], Rp = { class: "ove
 		}), q(() => t.isCollapsed, () => {
 			p();
 		}), (r, i) => {
-			let p = Mp;
+			let p = Np;
 			return j(), c("nav", {
 				ref_key: "navRef",
 				ref: a,
@@ -12688,10 +12692,10 @@ var Ip = { class: "space-y-0.5 relative" }, Lp = ["onClick"], Rp = { class: "ove
 					height: U(d).height,
 					opacity: U(d).opacity
 				})
-			}, null, 6), l("ul", Ip, [(j(!0), c(n, null, I(t.menuItems, (t) => (j(), c("li", { key: t.route }, [t.children?.length ? (j(), c(n, { key: 0 }, [l("button", {
+			}, null, 6), l("ul", Lp, [(j(!0), c(n, null, I(t.menuItems, (t) => (j(), c("li", { key: t.route }, [t.children?.length ? (j(), c(n, { key: 0 }, [l("button", {
 				class: C(["group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 outline-none", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark"]]),
 				onClick: (e) => v(t.route)
-			}, [(j(), o(z(t.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center justify-between flex-1", e.isCollapsed ? "w-0" : "w-48"]) }, [l("span", { class: C([g(t) ? "font-medium" : "font-normal", "whitespace-nowrap"]) }, B(t.name), 3), f(U(Me), { class: C(["w-4 h-4 shrink-0 transition-transform duration-300 ease-in-out", _(t) ? "rotate-180" : ""]) }, null, 8, ["class"])], 2)], 10, Lp), l("div", { class: C(["grid transition-all duration-300 ease-in-out", _(t) && !e.isCollapsed ? "grid-rows-[1fr]" : "grid-rows-[0fr]"]) }, [l("div", Rp, [l("ul", zp, [(j(!0), c(n, null, I(t.children, (t) => (j(), c("li", { key: t.route }, [f(p, {
+			}, [(j(), o(z(t.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center justify-between flex-1", e.isCollapsed ? "w-0" : "w-48"]) }, [l("span", { class: C([g(t) ? "font-medium" : "font-normal", "whitespace-nowrap"]) }, B(t.name), 3), f(U(Me), { class: C(["w-4 h-4 shrink-0 transition-transform duration-300 ease-in-out", _(t) ? "rotate-180" : ""]) }, null, 8, ["class"])], 2)], 10, Rp), l("div", { class: C(["grid transition-all duration-300 ease-in-out", _(t) && !e.isCollapsed ? "grid-rows-[1fr]" : "grid-rows-[0fr]"]) }, [l("div", zp, [l("ul", Bp, [(j(!0), c(n, null, I(t.children, (t) => (j(), c("li", { key: t.route }, [f(p, {
 				to: t.route,
 				name: t.name,
 				icon: t.icon,
@@ -12721,35 +12725,35 @@ var Ip = { class: "space-y-0.5 relative" }, Lp = ["onClick"], Rp = { class: "ove
 			]))]))), 128))])], 512);
 		};
 	}
-}), Vp = F(!1), Hp = F(!1), Up = F(!1);
-function Wp() {
+}), Hp = F(!1), Up = F(!1), Wp = F(!1);
+function Gp() {
 	let e = () => {
 		let e = window.innerWidth;
-		Vp.value = e < 1024, Hp.value = e >= 768 && e < 1024, Up.value = e >= 1024;
+		Hp.value = e < 1024, Up.value = e >= 768 && e < 1024, Wp.value = e >= 1024;
 	};
 	return O(() => {
 		e(), window.addEventListener("resize", e);
 	}), A(() => {
 		window.removeEventListener("resize", e);
 	}), {
-		isMobile: Vp,
-		isTablet: Hp,
-		isDesktop: Up,
+		isMobile: Hp,
+		isTablet: Up,
+		isDesktop: Wp,
 		checkScreenSize: e
 	};
 }
 //#endregion
 //#region src/components/Sidebar.vue?vue&type=script&setup=true&lang.ts
-var Gp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark h-20 flex items-center" }, Kp = {
+var Kp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark h-20 flex items-center" }, qp = {
 	key: 0,
 	class: "flex items-center space-x-2"
-}, qp = { class: "w-8 h-8" }, Jp = ["src", "alt"], Yp = { class: "overflow-hidden transition-all duration-300 w-auto" }, Xp = { class: "text-lg font-semibold whitespace-nowrap text-sidebar-title-text-light dark:text-sidebar-title-text-dark" }, Zp = { class: "text-sm whitespace-nowrap text-sidebar-subtitle-text-light dark:text-sidebar-subtitle-text-dark" }, Qp = { class: "flex-1 overflow-y-auto" }, $p = {
+}, Jp = { class: "w-8 h-8" }, Yp = ["src", "alt"], Xp = { class: "overflow-hidden transition-all duration-300 w-auto" }, Zp = { class: "text-lg font-semibold whitespace-nowrap text-sidebar-title-text-light dark:text-sidebar-title-text-dark" }, Qp = { class: "text-sm whitespace-nowrap text-sidebar-subtitle-text-light dark:text-sidebar-subtitle-text-dark" }, $p = { class: "flex-1 overflow-y-auto" }, em = {
 	key: 0,
 	class: "px-4 pb-1 text-left text-[10px] text-sidebar-version-text-light dark:text-sidebar-version-text-dark"
-}, em = { class: "p-4 border-t-2 border-default-light dark:border-default-dark" }, tm = {
+}, tm = { class: "p-4 border-t-2 border-default-light dark:border-default-dark" }, nm = {
 	key: 0,
 	class: "text-sm text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark whitespace-nowrap"
-}, nm = /* @__PURE__ */ p({
+}, rm = /* @__PURE__ */ p({
 	__name: "Sidebar",
 	props: {
 		isCollapsed: { type: Boolean },
@@ -12765,13 +12769,13 @@ var Gp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			m("toggle-collapse");
 		};
 		return (e, t) => {
-			let a = Bp;
+			let a = Vp;
 			return j(), c("aside", { class: C(["h-screen flex flex-col border-r-2 transition-all duration-300 bg-sidebar-bg-light dark:bg-sidebar-bg-dark text-sidebar-title-text-light dark:text-sidebar-title-text-dark border-default-light dark:border-default-dark", v.value]) }, [
-				l("div", Gp, [l("div", { class: C(["flex items-center w-full", n.isCollapsed ? "justify-center" : "justify-between"]) }, [n.isCollapsed ? s("", !0) : (j(), c("div", Kp, [l("div", qp, [l("img", {
+				l("div", Kp, [l("div", { class: C(["flex items-center w-full", n.isCollapsed ? "justify-center" : "justify-between"]) }, [n.isCollapsed ? s("", !0) : (j(), c("div", qp, [l("div", Jp, [l("img", {
 					src: U(r),
 					alt: U(i),
 					class: "w-full h-full object-contain"
-				}, null, 8, Jp)]), l("div", Yp, [l("h1", Xp, B(U(i)), 1), l("p", Zp, B(U(u)), 1)])])), U(Vp) ? (j(), c("button", {
+				}, null, 8, Yp)]), l("div", Xp, [l("h1", Zp, B(U(i)), 1), l("p", Qp, B(U(u)), 1)])])), U(Hp) ? (j(), c("button", {
 					key: 1,
 					onClick: t[0] ||= (t) => e.$emit("close"),
 					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
@@ -12784,26 +12788,26 @@ var Gp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 					onClick: y,
 					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
 				}, [f(U(Ne), { class: "w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" })]))], 2)]),
-				l("div", Qp, [f(a, {
+				l("div", $p, [f(a, {
 					"is-collapsed": n.isCollapsed,
 					"menu-items": U(p)
 				}, null, 8, ["is-collapsed", "menu-items"])]),
-				n.isCollapsed ? s("", !0) : (j(), c("p", $p, " v" + B(U(d)), 1)),
-				l("div", em, [l("button", {
+				n.isCollapsed ? s("", !0) : (j(), c("p", em, " v" + B(U(d)), 1)),
+				l("div", tm, [l("button", {
 					onClick: t[1] ||= (...e) => U(g) && U(g)(...e),
 					class: C(["w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-sidebar-theme-toggle-bg-light hover:bg-sidebar-theme-toggle-bg-hover-light dark:bg-sidebar-theme-toggle-bg-dark dark:hover:bg-sidebar-theme-toggle-bg-hover-dark", n.isCollapsed ? "justify-center" : ""]),
 					"aria-label": "Toggle theme"
-				}, [(j(), o(z(_.value), { class: "w-5 h-5 text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark flex-shrink-0" })), n.isCollapsed ? s("", !0) : (j(), c("span", tm, B(U(h) ? "Modo claro" : "Modo oscuro"), 1))], 2)])
+				}, [(j(), o(z(_.value), { class: "w-5 h-5 text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark flex-shrink-0" })), n.isCollapsed ? s("", !0) : (j(), c("span", nm, B(U(h) ? "Modo claro" : "Modo oscuro"), 1))], 2)])
 			], 2);
 		};
 	}
-}), rm = /* @__PURE__ */ p({
+}), im = /* @__PURE__ */ p({
 	__name: "SidebarNav",
 	props: { items: {} },
 	setup(e) {
-		let t = K("navRef"), { isInitialized: r, activeIndicatorStyle: i } = Fp(t);
+		let t = K("navRef"), { isInitialized: r, activeIndicatorStyle: i } = Ip(t);
 		return (a, s) => {
-			let u = Mp;
+			let u = Np;
 			return j(), c("nav", {
 				ref_key: "navRef",
 				ref: t,
@@ -12830,7 +12834,7 @@ var Gp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			]))), 128))], 512);
 		};
 	}
-}), im = 3e3, am = /* @__PURE__ */ p({
+}), am = 3e3, om = /* @__PURE__ */ p({
 	__name: "SnackBarItem",
 	props: {
 		message: {
@@ -12854,7 +12858,7 @@ var Gp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			a.value = !1, setTimeout(() => {
 				r("expired");
 			}, 300);
-		}, im);
+		}, am);
 		let s = (e) => {
 			e && (e.preventDefault(), e.stopPropagation()), a.value = !1, setTimeout(() => {
 				r("cancel", n.message);
@@ -12874,34 +12878,34 @@ var Gp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			_: 1
 		}));
 	}
-}), om = F([]);
-function sm() {
+}), sm = F([]);
+function cm() {
 	return {
-		messages: om,
+		messages: sm,
 		pushMessage: (e, t = !1) => {
-			om.value.push({
+			sm.value.push({
 				ts: Date.now(),
 				text: e,
 				error: t
 			});
 		},
 		shiftMessage: () => {
-			om.value.shift();
+			sm.value.shift();
 		}
 	};
 }
 //#endregion
 //#region src/components/Snack/SnackBar.vue?vue&type=script&setup=true&lang.ts
-var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden z-50 w-80" }, lm = /* @__PURE__ */ p({
+var lm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden z-50 w-80" }, um = /* @__PURE__ */ p({
 	__name: "SnackBar",
 	props: { active: Boolean },
 	setup(e) {
-		let { messages: t, shiftMessage: r } = sm(), i = () => {
+		let { messages: t, shiftMessage: r } = cm(), i = () => {
 			r();
 		};
 		return (e, r) => {
-			let a = am;
-			return j(), c("div", cm, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
+			let a = om;
+			return j(), c("div", lm, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
 				key: e.ts,
 				message: e,
 				error: e.error,
@@ -12909,19 +12913,19 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}, null, 8, ["message", "error"]))), 128))]);
 		};
 	}
-}), um = { class: "flex items-center gap-1.5" }, dm = { class: "text-sm font-medium text-stat-card-title-text-light dark:text-stat-card-title-text-dark" }, fm = {
+}), dm = { class: "flex items-center gap-1.5" }, fm = { class: "text-sm font-medium text-stat-card-title-text-light dark:text-stat-card-title-text-dark" }, pm = {
 	key: 0,
 	class: "text-2xl font-bold text-stat-card-empty-text-light dark:text-stat-card-empty-text-dark mt-1"
-}, pm = {
+}, mm = {
 	key: 1,
 	class: "text-2xl font-bold text-stat-card-value-text-light dark:text-stat-card-value-text-dark mt-1 tabular-nums"
-}, mm = {
+}, hm = {
 	key: 0,
 	class: "mt-4 flex items-center"
-}, hm = {
+}, gm = {
 	key: 1,
 	class: "text-sm text-stat-card-description-text-light dark:text-stat-card-description-text-dark ml-1"
-}, gm = /* @__PURE__ */ p({
+}, _m = /* @__PURE__ */ p({
 	__name: "StatCard",
 	props: {
 		title: {},
@@ -12942,26 +12946,26 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}
 		});
 		return (r, i) => {
-			let a = lp, u = bt;
+			let a = up, u = bt;
 			return j(), o(u, null, {
-				default: J(() => [l("div", null, [l("div", um, [l("p", dm, B(e.title), 1), e.help ? (j(), o(a, {
+				default: J(() => [l("div", null, [l("div", dm, [l("p", fm, B(e.title), 1), e.help ? (j(), o(a, {
 					key: 0,
 					tooltip: e.help
-				}, null, 8, ["tooltip"])) : s("", !0)]), U(t) ? (j(), c("p", fm, "Sin datos")) : (j(), c("p", pm, B(e.value), 1))]), e.change !== void 0 || e.description ? (j(), c("div", mm, [e.change === void 0 ? s("", !0) : (j(), c("span", {
+				}, null, 8, ["tooltip"])) : s("", !0)]), U(t) ? (j(), c("p", pm, "Sin datos")) : (j(), c("p", mm, B(e.value), 1))]), e.change !== void 0 || e.description ? (j(), c("div", hm, [e.change === void 0 ? s("", !0) : (j(), c("span", {
 					key: 0,
 					class: C(["text-sm font-medium tabular-nums", U(n)])
-				}, B(e.change), 3)), e.description ? (j(), c("span", hm, B(e.description), 1)) : s("", !0)])) : s("", !0)]),
+				}, B(e.change), 3)), e.description ? (j(), c("span", gm, B(e.description), 1)) : s("", !0)])) : s("", !0)]),
 				_: 1
 			});
 		};
 	}
-}), _m = {
+}), vm = {
 	key: 0,
 	class: "mb-2 block text-sm font-medium text-switch-input-label-text-light dark:text-switch-input-label-text-dark"
-}, vm = { class: "flex items-center space-x-3" }, ym = ["disabled"], bm = {
+}, ym = { class: "flex items-center space-x-3" }, bm = ["disabled"], xm = {
 	key: 0,
 	class: "text-sm text-switch-input-label-text-light dark:text-switch-input-label-text-dark"
-}, xm = /* @__PURE__ */ p({
+}, Sm = /* @__PURE__ */ p({
 	__name: "SwitchInput",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -12988,14 +12992,14 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 		let t = G(e, "modelValue"), n = () => {
 			e.disabled || (t.value = !t.value);
 		};
-		return (r, i) => (j(), c("div", null, [e.label ? (j(), c("label", _m, B(e.label), 1)) : s("", !0), l("div", vm, [l("button", {
+		return (r, i) => (j(), c("div", null, [e.label ? (j(), c("label", vm, B(e.label), 1)) : s("", !0), l("div", ym, [l("button", {
 			type: "button",
 			onClick: n,
 			disabled: e.disabled,
 			class: C(["relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed", t.value ? "bg-switch-input-track-bg-on-light dark:bg-switch-input-track-bg-on-dark" : "bg-switch-input-track-bg-off-light dark:bg-switch-input-track-bg-off-dark"])
-		}, [l("span", { class: C(["pointer-events-none inline-block h-5 w-5 transform rounded-full bg-switch-input-thumb-bg-light dark:bg-switch-input-thumb-bg-dark shadow ring-0 transition duration-200 ease-in-out", t.value ? "translate-x-5" : "translate-x-0"]) }, null, 2)], 10, ym), e.showLabel ? (j(), c("span", bm, B(t.value ? e.trueLabel : e.falseLabel), 1)) : s("", !0)])]));
+		}, [l("span", { class: C(["pointer-events-none inline-block h-5 w-5 transform rounded-full bg-switch-input-thumb-bg-light dark:bg-switch-input-thumb-bg-dark shadow ring-0 transition duration-200 ease-in-out", t.value ? "translate-x-5" : "translate-x-0"]) }, null, 2)], 10, bm), e.showLabel ? (j(), c("span", xm, B(t.value ? e.trueLabel : e.falseLabel), 1)) : s("", !0)])]));
 	}
-}), Sm = { class: "space-y-4" }, Cm = ["aria-label"], wm = ["data-tabs-indicator"], Tm = [
+}), Cm = { class: "space-y-4" }, wm = ["aria-label"], Tm = ["data-tabs-indicator"], Em = [
 	"id",
 	"aria-selected",
 	"aria-controls",
@@ -13003,7 +13007,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	"tabindex",
 	"onClick",
 	"onKeydown"
-], Em = { class: "tab-content" }, Dm = ["id", "aria-labelledby"], Om = /*#__PURE__*/ Je(/* @__PURE__ */ p({
+], Dm = { class: "tab-content" }, Om = ["id", "aria-labelledby"], km = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "Tabs",
 	props: {
 		tabs: {},
@@ -13088,7 +13092,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}
 			e.preventDefault(), D(a), p.value?.querySelectorAll("[role=\"tab\"]")[a]?.focus();
 		}
-		return (t, r) => (j(), c("div", Sm, [l("div", { class: C(e.variant === "segmented" ? "h-16 flex items-center transition-transform duration-300" : ["flex items-center", e.variant === "underline" && "overflow-x-auto"]) }, [l("div", {
+		return (t, r) => (j(), c("div", Cm, [l("div", { class: C(e.variant === "segmented" ? "h-16 flex items-center transition-transform duration-300" : ["flex items-center", e.variant === "underline" && "overflow-x-auto"]) }, [l("div", {
 			ref_key: "tabList",
 			ref: p,
 			role: "tablist",
@@ -13107,7 +13111,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				"aria-hidden": "true",
 				class: C(["pointer-events-none absolute left-0 top-0 transition-all duration-300 ease-in-out motion-reduce:transition-none", e.variant === "pills" ? "bg-tabs-pills-bg-active-light dark:bg-tabs-pills-bg-active-dark pill-indicator rounded-xl" : "bg-tabs-underline-indicator-bg-light dark:bg-tabs-underline-indicator-bg-dark rounded-full"]),
 				style: T(S.value)
-			}, null, 14, wm)) : s("", !0),
+			}, null, 14, Tm)) : s("", !0),
 			(j(!0), c(n, null, I(e.tabs, (e, t) => (j(), c("button", {
 				ref_for: !0,
 				ref_key: "tabButtons",
@@ -13128,8 +13132,8 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				class: "h-4 w-4 shrink-0",
 				"aria-hidden": "true",
 				focusable: "false"
-			})) : s("", !0), l("span", null, B(e.label), 1)], 42, Tm))), 128))
-		], 10, Cm)], 2), l("div", Em, [f(i, {
+			})) : s("", !0), l("span", null, B(e.label), 1)], 42, Em))), 128))
+		], 10, wm)], 2), l("div", Dm, [f(i, {
 			name: "tab-content",
 			mode: "out-in",
 			appear: ""
@@ -13144,11 +13148,11 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}, [L(t.$slots, `tab-${v.value}`, {
 				activeTab: e.tabs[v.value],
 				activeTabIndex: v.value
-			}, () => [r[0] ||= l("div", { class: "text-tabs-empty-text-light dark:text-tabs-empty-text-dark text-center py-8" }, " No content available for this tab ", -1)], !0)], 8, Dm)) : s("", !0)]),
+			}, () => [r[0] ||= l("div", { class: "text-tabs-empty-text-light dark:text-tabs-empty-text-dark text-center py-8" }, " No content available for this tab ", -1)], !0)], 8, Om)) : s("", !0)]),
 			_: 3
 		})])]));
 	}
-}), [["__scopeId", "data-v-d97d4c27"]]), km = ["src", "alt"], Am = /* @__PURE__ */ p({
+}), [["__scopeId", "data-v-d97d4c27"]]), Am = ["src", "alt"], jm = /* @__PURE__ */ p({
 	__name: "UserAvatar",
 	props: {
 		imageUrl: { default: null },
@@ -13179,16 +13183,16 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			src: e.imageUrl,
 			alt: e.name,
 			class: "w-full h-full object-cover"
-		}, null, 8, km)) : (j(), c("div", {
+		}, null, 8, Am)) : (j(), c("div", {
 			key: 1,
 			class: C(["w-full h-full flex items-center justify-center bg-linear-to-br from-primary-500 to-secondary-500 text-white font-semibold", U(r)])
 		}, B(U(t)), 3))], 2));
 	}
-}), jm = { class: "flex -space-x-2" }, Mm = /* @__PURE__ */ p({
+}), Mm = { class: "flex -space-x-2" }, Nm = /* @__PURE__ */ p({
 	__name: "UserAvatars",
 	props: { users: {} },
 	setup(e) {
-		return (t, r) => (j(), c("div", jm, [(j(!0), c(n, null, I(e.users, (t, n) => (j(), c("div", {
+		return (t, r) => (j(), c("div", Mm, [(j(!0), c(n, null, I(e.users, (t, n) => (j(), c("div", {
 			key: n,
 			class: "relative"
 		}, [l("div", {
@@ -13196,22 +13200,22 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			style: T({ zIndex: e.users.length - n })
 		}, B(t.initials), 5)]))), 128))]));
 	}
-}), Nm = { class: "flex items-center gap-2 sm:gap-3" }, Pm = {
+}), Pm = { class: "flex items-center gap-2 sm:gap-3" }, Fm = {
 	key: 0,
 	class: "absolute -top-1 -right-1 bg-danger-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium tabular-nums"
-}, Fm = {
+}, Im = {
 	key: 0,
 	class: "absolute right-0 top-14 w-80 bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
-}, Im = { class: "max-h-96 overflow-y-auto" }, Lm = {
+}, Lm = { class: "max-h-96 overflow-y-auto" }, Rm = {
 	key: 0,
 	class: "py-2 px-4 border-t border-default-light dark:border-default-dark text-center"
-}, Rm = { class: "w-10 h-10 bg-profile-avatar-bg-light dark:bg-profile-avatar-bg-dark rounded-full flex items-center justify-center sm:mr-3 overflow-hidden" }, zm = { class: "text-profile-avatar-text-light dark:text-profile-avatar-text-dark text-lg" }, Bm = {
+}, zm = { class: "w-10 h-10 bg-profile-avatar-bg-light dark:bg-profile-avatar-bg-dark rounded-full flex items-center justify-center sm:mr-3 overflow-hidden" }, Bm = { class: "text-profile-avatar-text-light dark:text-profile-avatar-text-dark text-lg" }, Vm = {
 	class: "hidden sm:flex items-center",
 	style: { gap: "0" }
-}, Vm = { class: "mr-3" }, Hm = { class: "text-profile-name-text-light dark:text-profile-name-text-dark font-medium" }, Um = { class: "flex items-center" }, Wm = { class: "text-sm text-profile-role-text-light dark:text-profile-role-text-dark" }, Gm = {
+}, Hm = { class: "mr-3" }, Um = { class: "text-profile-name-text-light dark:text-profile-name-text-dark font-medium" }, Wm = { class: "flex items-center" }, Gm = { class: "text-sm text-profile-role-text-light dark:text-profile-role-text-dark" }, Km = {
 	key: 0,
 	class: "absolute right-0 top-14 w-56 sm:w-full bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
-}, Km = { class: "py-2" }, qm = /* @__PURE__ */ p({
+}, qm = { class: "py-2" }, Jm = /* @__PURE__ */ p({
 	__name: "UserProfileDropdown",
 	props: {
 		userName: {},
@@ -13231,7 +13235,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	],
 	setup(e, { emit: t }) {
 		let r = t;
-		Wp();
+		Gp();
 		let i = F(!1), a = F(null), u = F(!1), d = F(null);
 		function p() {
 			i.value = !i.value, i.value && (u.value = !1);
@@ -13243,7 +13247,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			m(), e.onClick?.();
 		}
 		function g() {
-			if (r("bell-click"), Vp.value) return;
+			if (r("bell-click"), Hp.value) return;
 			let e = u.value;
 			_(), !e && u.value && r("panel-open");
 		}
@@ -13263,7 +13267,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			window.removeEventListener("keydown", y);
 		}), (t, m) => {
 			let _ = Lt, v = sf;
-			return j(), c("div", Nm, [e.showNotifications ? (j(), c("div", {
+			return j(), c("div", Pm, [e.showNotifications ? (j(), c("div", {
 				key: 0,
 				class: "relative",
 				ref_key: "notificationDropdownRef",
@@ -13272,11 +13276,11 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				onClick: ae(g, ["stop"]),
 				class: "w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-profile-notification-trigger-bg-light hover:bg-profile-notification-trigger-bg-hover-light dark:bg-profile-notification-trigger-bg-dark dark:hover:bg-profile-notification-trigger-bg-hover-dark relative cursor-pointer",
 				"aria-label": "Show notifications"
-			}, [f(U(Ae), { class: "w-5 h-5 text-profile-notification-trigger-icon-text-light dark:text-profile-notification-trigger-icon-text-dark" }), e.unreadNotificationsCount > 0 ? (j(), c("div", Pm, B(e.unreadNotificationsCount > 9 ? "9+" : e.unreadNotificationsCount), 1)) : s("", !0)]), f(_, null, {
-				default: J(() => [u.value && !U(Vp) ? (j(), c("div", Fm, [
+			}, [f(U(Ae), { class: "w-5 h-5 text-profile-notification-trigger-icon-text-light dark:text-profile-notification-trigger-icon-text-dark" }), e.unreadNotificationsCount > 0 ? (j(), c("div", Fm, B(e.unreadNotificationsCount > 9 ? "9+" : e.unreadNotificationsCount), 1)) : s("", !0)]), f(_, null, {
+				default: J(() => [u.value && !U(Hp) ? (j(), c("div", Im, [
 					m[1] ||= l("div", { class: "py-2 px-4 border-b border-default-light dark:border-default-dark text-sm text-profile-notification-title-text-light dark:text-profile-notification-title-text-dark font-semibold" }, " Notificaciones ", -1),
-					l("div", Im, [L(t.$slots, "notifications")]),
-					e.unreadNotificationsCount > 0 ? (j(), c("div", Lm, [l("button", {
+					l("div", Lm, [L(t.$slots, "notifications")]),
+					e.unreadNotificationsCount > 0 ? (j(), c("div", Rm, [l("button", {
 						onClick: m[0] ||= (e) => r("mark-all-read"),
 						class: "text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline focus:outline-none cursor-pointer"
 					}, " Marcar todo como leído ")])) : s("", !0)
@@ -13290,11 +13294,11 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				class: "flex items-center",
 				onClick: p
 			}, [
-				l("div", Rm, [L(t.$slots, "avatar", {}, () => [l("span", zm, B(e.userInitials), 1)])]),
-				l("div", Bm, [l("div", Vm, [l("div", Hm, B(e.userName), 1), l("div", Um, [l("span", Wm, B(e.userRole), 1)])]), f(U(Me), { class: C(["w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])]),
+				l("div", zm, [L(t.$slots, "avatar", {}, () => [l("span", Bm, B(e.userInitials), 1)])]),
+				l("div", Vm, [l("div", Hm, [l("div", Um, B(e.userName), 1), l("div", Wm, [l("span", Gm, B(e.userRole), 1)])]), f(U(Me), { class: C(["w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])]),
 				f(U(Me), { class: C(["sm:hidden w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark ml-2", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])
 			]), f(_, null, {
-				default: J(() => [i.value ? (j(), c("div", Gm, [l("ul", Km, [(j(!0), c(n, null, I(e.menuItems, (e) => (j(), o(v, {
+				default: J(() => [i.value ? (j(), c("div", Km, [l("ul", qm, [(j(!0), c(n, null, I(e.menuItems, (e) => (j(), o(v, {
 					key: e.label,
 					label: e.label,
 					icon: e.icon,
@@ -13312,7 +13316,7 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			})], 512)]);
 		};
 	}
-}), Jm = { class: "flex items-start justify-between gap-4 flex-col md:flex-row" }, Ym = { class: "space-y-2" }, Xm = { class: "text-3xl font-bold text-view-header-title-text-light dark:text-view-header-title-text-dark" }, Zm = { class: "flex space-x-2 justify-start flex-col gap-3 md:gap-0 md:flex-row items-center" }, Qm = { class: "text-view-header-subtitle-text-light dark:text-view-header-subtitle-text-dark text-sm" }, $m = { class: "flex items-center space-x-3" }, eh = /* @__PURE__ */ p({
+}), Ym = { class: "flex items-start justify-between gap-4 flex-col md:flex-row" }, Xm = { class: "space-y-2" }, Zm = { class: "text-3xl font-bold text-view-header-title-text-light dark:text-view-header-title-text-dark" }, Qm = { class: "flex space-x-2 justify-start flex-col gap-3 md:gap-0 md:flex-row items-center" }, $m = { class: "text-view-header-subtitle-text-light dark:text-view-header-subtitle-text-dark text-sm" }, eh = { class: "flex items-center space-x-3" }, th = /* @__PURE__ */ p({
 	__name: "ViewHeader",
 	props: {
 		subtitle: {},
@@ -13322,21 +13326,21 @@ var cm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	setup(e) {
 		return (t, n) => {
 			let r = at;
-			return j(), c("div", null, [l("div", Jm, [l("div", Ym, [l("h1", Xm, B(e.title), 1), l("div", Zm, [l("span", Qm, B(e.subtitle), 1), e.badgeText ? (j(), o(r, {
+			return j(), c("div", null, [l("div", Ym, [l("div", Xm, [l("h1", Zm, B(e.title), 1), l("div", Qm, [l("span", $m, B(e.subtitle), 1), e.badgeText ? (j(), o(r, {
 				key: 0,
 				variant: "neutral",
 				text: "sm"
 			}, {
 				default: J(() => [d(B(e.badgeText), 1)]),
 				_: 1
-			})) : s("", !0)])]), l("div", $m, [L(t.$slots, "right")])])]);
+			})) : s("", !0)])]), l("div", eh, [L(t.$slots, "right")])])]);
 		};
 	}
-}), th = { class: "flex items-start gap-3 p-4 rounded-lg border border-warning-muted-light dark:border-warning-muted-dark bg-warning-50 dark:bg-warning-500/15" }, nh = { class: "flex-1 text-sm text-warning-700 dark:text-warning-300" }, rh = /* @__PURE__ */ p({
+}), nh = { class: "flex items-start gap-3 p-4 rounded-lg border border-warning-muted-light dark:border-warning-muted-dark bg-warning-50 dark:bg-warning-500/15" }, rh = { class: "flex-1 text-sm text-warning-700 dark:text-warning-300" }, ih = /* @__PURE__ */ p({
 	__name: "WarningAlert",
 	setup(e) {
-		return (e, t) => (j(), c("div", th, [f(U(Oe), { class: "w-5 h-5 text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5" }), l("div", nh, [L(e.$slots, "default")])]));
+		return (e, t) => (j(), c("div", nh, [f(U(Oe), { class: "w-5 h-5 text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5" }), l("div", rh, [L(e.$slots, "default")])]));
 	}
 });
 //#endregion
-export { Ye as Alert, at as Badge, Qe as BaseButton, et as BaseButtonIcon, mt as BottomModal, it as Breadcrumb, bt as Card, Dt as CardPaginations, Ot as CollapseTransition, rf as ConfirmationModal, Jf as DataTable, At as Divider, lf as Dropdown, Lt as DropdownAnimation, sf as DropdownItem, Xf as DropdownMenu, tf as FormInput, rp as FormSelect, cp as FormTextarea, lp as HelpTooltip, up as IconButton, fp as ImageLightbox, hp as InfoItem, Sp as Item, wp as List, Rt as LoadingSVG, It as Modal, Ap as Navbar, of as ResultCount, nn as SearchableSelect, nm as Sidebar, Mp as SidebarItem, Bp as SidebarList, rm as SidebarNav, lm as SnackBar, am as SnackBarItem, gm as StatCard, xm as SwitchInput, vf as TableHeader, hf as TablePagination, xf as TableSkeleton, Om as Tabs, Am as UserAvatar, Mm as UserAvatars, qm as UserProfileDropdown, eh as ViewHeader, rh as WarningAlert, Nd as initTheme, Up as isDesktop, Vp as isMobile, Hp as isTablet, Fp as useActiveIndicator, sm as useMessages, Wp as useMobile, zt as useRequestKey, Pp as useSidebar, Cf as useTable, Pd as useTheme, e as yup };
+export { Ye as Alert, at as Badge, Qe as BaseButton, et as BaseButtonIcon, mt as BottomModal, it as Breadcrumb, bt as Card, Dt as CardPaginations, Ot as CollapseTransition, rf as ConfirmationModal, Jf as DataTable, At as Divider, lf as Dropdown, Lt as DropdownAnimation, sf as DropdownItem, Xf as DropdownMenu, tf as FormInput, ip as FormSelect, lp as FormTextarea, up as HelpTooltip, dp as IconButton, pp as ImageLightbox, gp as InfoItem, Cp as Item, Tp as List, Rt as LoadingSVG, It as Modal, jp as Navbar, of as ResultCount, nn as SearchableSelect, rm as Sidebar, Np as SidebarItem, Vp as SidebarList, im as SidebarNav, um as SnackBar, om as SnackBarItem, _m as StatCard, Sm as SwitchInput, vf as TableHeader, hf as TablePagination, xf as TableSkeleton, km as Tabs, jm as UserAvatar, Nm as UserAvatars, Jm as UserProfileDropdown, th as ViewHeader, ih as WarningAlert, Nd as initTheme, Wp as isDesktop, Hp as isMobile, Up as isTablet, Ip as useActiveIndicator, cm as useMessages, Gp as useMobile, zt as useRequestKey, Fp as useSidebar, Cf as useTable, Pd as useTheme, e as yup };
