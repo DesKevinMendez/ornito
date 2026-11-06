@@ -292,7 +292,14 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			danger: "bg-button-danger-bg-light dark:bg-button-danger-bg-dark text-button-danger-text-light dark:text-button-danger-text-dark hover:bg-button-danger-bg-hover-light dark:hover:bg-button-danger-bg-hover-dark active:bg-button-danger-bg-active-light dark:active:bg-button-danger-bg-active-dark hover:text-button-danger-text-hover-light dark:hover:text-button-danger-text-hover-dark active:text-button-danger-text-active-light dark:active:text-button-danger-text-active-dark",
 			"danger-outline": "border border-button-danger-outline-border-light dark:border-button-danger-outline-border-dark bg-button-danger-outline-bg-light dark:bg-button-danger-outline-bg-dark text-button-danger-outline-text-light dark:text-button-danger-outline-text-dark hover:bg-button-danger-outline-bg-hover-light dark:hover:bg-button-danger-outline-bg-hover-dark active:bg-button-danger-outline-bg-active-light dark:active:bg-button-danger-outline-bg-active-dark hover:text-button-danger-outline-text-hover-light dark:hover:text-button-danger-outline-text-hover-dark active:text-button-danger-outline-text-active-light dark:active:text-button-danger-outline-text-active-dark",
 			overlay: "bg-button-overlay-bg-light dark:bg-button-overlay-bg-dark text-button-overlay-text-light dark:text-button-overlay-text-dark hover:bg-button-overlay-bg-hover-light dark:hover:bg-button-overlay-bg-hover-dark active:bg-button-overlay-bg-active-light dark:active:bg-button-overlay-bg-active-dark hover:text-button-overlay-text-hover-light dark:hover:text-button-overlay-text-hover-dark active:text-button-overlay-text-active-light dark:active:text-button-overlay-text-active-dark text-sm"
-		}, u = a(() => i[t.variant]), d = a(() => ({
+		}, u = a(() => i[t.variant]), d = a(() => {
+			let e = [
+				"outline",
+				"primary-outline",
+				"danger-outline"
+			].includes(t.variant);
+			return t.size === "small" ? e ? "py-2.5" : "py-[11px]" : t.variant === "overlay" ? "py-[15px]" : e ? "py-3" : "py-[13px]";
+		}), f = a(() => ({
 			primary: "text-button-primary-spinner-text-light dark:text-button-primary-spinner-text-dark",
 			secondary: "text-button-secondary-spinner-text-light dark:text-button-secondary-spinner-text-dark",
 			outline: "text-button-outline-spinner-text-light dark:text-button-outline-spinner-text-dark",
@@ -307,7 +314,8 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 			disabled: e.disabled || e.loading,
 			class: C([
 				"rounded-lg font-medium transition-all duration-200 relative cursor-pointer",
-				"disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2",
+				"disabled:opacity-50 disabled:cursor-not-allowed px-4",
+				U(d),
 				"focus:outline-none",
 				"active:scale-95 shadow-sm hover:shadow",
 				e.size === "full" && "w-full",
@@ -318,7 +326,7 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 		}, {
 			default: J(() => [l("div", Xe, [e.loading ? (j(), c("svg", {
 				key: 0,
-				class: C(["animate-spin h-4 w-4 transition-all duration-300 ease-in-out mr-2", U(d)]),
+				class: C(["animate-spin h-4 w-4 transition-all duration-300 ease-in-out mr-2", U(f)]),
 				xmlns: "http://www.w3.org/2000/svg",
 				fill: "none",
 				viewBox: "0 0 24 24"
@@ -367,11 +375,14 @@ var ve = Object.defineProperty, ye = Object.getOwnPropertyDescriptor, be = Objec
 		loading: { type: Boolean }
 	},
 	setup(e) {
-		let t = a(() => ({
-			sm: "p-1",
+		let t = a(() => e.size === "sm" ? [
+			"outline",
+			"primary-outline",
+			"danger-outline"
+		].includes(e.variant) ? "px-[11px] py-[11px]" : "px-[13px] py-[13px]" : {
 			md: "p-1.5",
 			lg: "p-2"
-		})[e.size]), n = a(() => ({
+		}[e.size]), n = a(() => ({
 			sm: "w-4 h-4",
 			md: "w-5 h-5",
 			lg: "w-6 h-6"
@@ -12314,7 +12325,7 @@ var wf = {
 		return (t, n) => (j(), o(z(r.value), {
 			to: e.to,
 			class: C([
-				"w-8 h-8 flex items-center justify-center transition-colors cursor-pointer",
+				"w-[42px] h-[42px] flex items-center justify-center transition-colors cursor-pointer",
 				e.rounded ? "rounded-full" : "rounded-lg",
 				i.value
 			])
