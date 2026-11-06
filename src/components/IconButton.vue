@@ -3,7 +3,7 @@
     :is="componentToRender"
     :to="to"
     :class="[
-      'w-8 h-8 flex items-center justify-center transition-colors cursor-pointer',
+      'w-[42px] h-[42px] flex items-center justify-center transition-colors cursor-pointer',
       rounded ? 'rounded-full' : 'rounded-lg',
       colorClasses,
     ]"

@@ -43,8 +43,14 @@ interface Props {
 const { variant = "secondary", size = "md" } = defineProps<Props>();
 
 const sizeClasses = computed((): string => {
-  const map: Record<Size, string> = {
-    sm: "p-1",
+  if (size === "sm") {
+    const outlined = ["outline", "primary-outline", "danger-outline"].includes(variant);
+    return outlined
+      ? "px-[11px] py-[11px]"
+      : "px-[13px] py-[13px]";
+  }
+
+  const map: Record<Exclude<Size, "sm">, string> = {
     md: "p-1.5",
     lg: "p-2",
   };

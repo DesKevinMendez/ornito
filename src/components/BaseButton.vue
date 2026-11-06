@@ -6,7 +6,8 @@
     :disabled="disabled || loading"
     :class="[
       'rounded-lg font-medium transition-all duration-200 relative cursor-pointer',
-      'disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2',
+      'disabled:opacity-50 disabled:cursor-not-allowed px-4',
+      verticalPaddingClass,
       'focus:outline-none',
       'active:scale-95 shadow-sm hover:shadow',
       size === 'full' && 'w-full',
@@ -114,6 +115,19 @@ const variantClassMap: Record<ButtonVariant, string> = {
 };
 
 const variantClasses = computed(() => variantClassMap[props.variant]);
+const verticalPaddingClass = computed(() => {
+  const outlined = ['outline', 'primary-outline', 'danger-outline'].includes(props.variant);
+
+  if (props.size === 'small') {
+    return outlined ? 'py-2.5' : 'py-[11px]';
+  }
+
+  if (props.variant === 'overlay') {
+    return 'py-[15px]';
+  }
+
+  return outlined ? 'py-3' : 'py-[13px]';
+});
 const spinnerColorClass = computed(() => {
   const textClassMap: Record<ButtonVariant, string> = {
     primary: "text-button-primary-spinner-text-light dark:text-button-primary-spinner-text-dark",
