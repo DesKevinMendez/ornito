@@ -185,7 +185,7 @@ describe('SearchableSelect', () => {
 
     expect(selected.value).toBe('default')
     expect(wrapper.get('input').element.value).toBe('Default option')
-    expect(wrapper.findAll('button')).toHaveLength(0)
+    expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(true)
   })
 
   it('uses overridden prop values and custom label/value keys', async () => {
@@ -263,6 +263,24 @@ describe('SearchableSelect', () => {
     expect(selected.value).toBe(2)
     expect(get).toHaveBeenCalledWith('/users')
     expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+  })
+
+  it('clears a single selection with the clear button', async () => {
+    const { wrapper, selected } = mountSearchableSelect({ modelValue: 2 })
+
+    await flushPromises()
+    await nextTick()
+
+    expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+    expect(selected.value).toBe(2)
+
+    await wrapper.get('button[aria-label="Limpiar selección"]').trigger('click')
+    await flushPromises()
+    await nextTick()
+
+    expect(selected.value).toBeNull()
+    expect(wrapper.get('input').element.value).toBe('')
+    expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(false)
   })
 
   it('multiple selection adds a value, clears the input, and emits select/data', async () => {

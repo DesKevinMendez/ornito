@@ -31,7 +31,7 @@
         :class="[
           'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
           leftIcon ? 'pl-10' : 'pl-4',
-          'pr-10',
+          !disabled && !multiple && hasSingleSelection ? 'pr-16' : 'pr-10',
           errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
           props.small ? 'py-2' : 'py-3',
         ]"
@@ -49,14 +49,22 @@
           ]"
         />
       </div>
-      <div
-        class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
-      >
+      <div class="absolute inset-y-0 right-0 pr-3 flex items-center gap-2">
+        <button
+          v-if="!disabled && !multiple && hasSingleSelection"
+          type="button"
+          :aria-label="clearLabel"
+          class="rounded text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-text-light dark:hover:text-form-control-text-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+          @mousedown.prevent
+          @click.stop="clearSelection(handleChange)"
+        >
+          <IconX :class="props.small ? 'h-4 w-4' : 'h-5 w-5'" />
+        </button>
         <component
           :is="IconChevronDown"
           :class="[
             props.small ? 'h-4 w-4' : 'h-5 w-5',
-            'text-form-control-icon-text-light dark:text-form-control-icon-text-dark transition-transform duration-200',
+            'pointer-events-none text-form-control-icon-text-light dark:text-form-control-icon-text-dark transition-transform duration-200',
             isOpen ? 'rotate-180' : '',
           ]"
         />
@@ -179,6 +187,7 @@ interface Props {
   disabled?: boolean;
   multiple?: boolean;
   localSearchFirst?: boolean;
+  clearLabel?: string;
 }
 
 const props = defineProps<Props>();
@@ -189,6 +198,7 @@ const {
   labelKey = "label",
   valueKey = "value",
   multiple = false,
+  clearLabel = "Limpiar selección",
 } = props;
 
 const modelValue = defineModel<
@@ -228,8 +238,11 @@ const setSearchQuerySilently = (value: string) => {
   silentSearchQuery = value;
   searchQuery.value = value;
 };
+const hasValue = (value: unknown) =>
+  value !== null && value !== undefined && value !== "";
+
 const selectedItem = computed(() => {
-  if (!modelValue.value) return null;
+  if (!hasValue(modelValue.value)) return null;
   if (
     selectedItemData.value &&
     selectedItemData.value.value === modelValue.value
@@ -241,6 +254,8 @@ const selectedItem = computed(() => {
     initialItems.value.find((item) => item.value === modelValue.value)
   );
 });
+
+const hasSingleSelection = computed(() => hasValue(modelValue.value));
 
 const dropdownClasses = computed(() => {
   const baseClasses =
@@ -323,6 +338,15 @@ const removeItem = (value: string | number, handleChange: (value: any) => void) 
   );
 };
 
+const clearSelection = (handleChange: (value: any) => void) => {
+  modelValue.value = null;
+  handleChange(null);
+  selectedItemData.value = null;
+  setSearchQuerySilently("");
+  isOpen.value = false;
+  inputRef.value?.blur();
+};
+
 function getValueByPath(item: any, path: string): any {
   return path
     .trim()
@@ -379,7 +403,7 @@ const fetchInitialData = async (options: { searchWithId?: boolean } = {}) => {
   if (!props.url) return;
 
   let url = props.url;
-  if (options.searchWithId && modelValue.value) {
+  if (options.searchWithId && hasValue(modelValue.value)) {
     const separator = props.url.includes('?') ? '&' : '?';
     url = `${props.url}${separator}filter[${props.valueKey}]=${modelValue.value}`;
   }
@@ -463,9 +487,9 @@ const handleBlur = () => {
     isOpen.value = false;
     if (multiple) {
       setSearchQuerySilently("");
-    } else if (modelValue.value && selectedItem.value) {
+    } else if (hasValue(modelValue.value) && selectedItem.value) {
       setSearchQuerySilently(selectedItem.value.label);
-    } else if (!modelValue.value) {
+    } else if (!hasValue(modelValue.value)) {
       setSearchQuerySilently("");
     }
     savedSearchQuery.value = "";
@@ -558,11 +582,8 @@ onMounted(() => {
     resolveSelectedLabels();
     return;
   }
-  if (modelValue.value && modelValue.value !== "") {
+  if (hasValue(modelValue.value)) {
     findingItemInServer(modelValue.value as string | number);
-  } else if (modelValue.value && selectedItem.value) {
-    searchQuery.value = selectedItem.value.label;
-    selectedItemData.value = selectedItem.value;
   }
 });
 
@@ -579,7 +600,7 @@ watch(modelValue, (newValue, oldValue) => {
     resolveSelectedLabels();
     return;
   }
-  if (newValue && newValue !== oldValue) {
+  if (hasValue(newValue) && newValue !== oldValue) {
     if (selectedItem.value && selectedItem.value.value === newValue) {
       searchQuery.value = selectedItem.value.label;
       if (!selectedItemData.value) {
@@ -588,7 +609,7 @@ watch(modelValue, (newValue, oldValue) => {
     } else if (!selectedItemData.value || selectedItemData.value.value !== newValue) {
       findingItemInServer(newValue as string | number);
     }
-  } else if (!newValue) {
+  } else if (!hasValue(newValue)) {
     searchQuery.value = "";
     selectedItemData.value = null;
   }

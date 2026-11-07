@@ -37,6 +37,12 @@ import SearchableSelectDemo from '../.vuepress/components/SearchableSelectDemo.v
 | `disabled` | `boolean` | No | `false` |
 | `multiple` | `boolean` | No | `false` — allows selecting more than one item |
 | `localSearchFirst` | `boolean` | No | `false` — when `true`, typed searches check loaded initial options by label/subtitles before calling the server |
+| `clearLabel` | `string` | No | `'Limpiar selección'` — accessible label for the single-selection clear button |
+
+In single-selection mode, the selected value can be cleared with the **X** button.
+Clearing sets `v-model` to `null`. The button is hidden when the control is empty,
+disabled, or in multiple-selection mode; multiple selections are removed from their
+chips.
 
 ```vue
 <SearchableSelect
