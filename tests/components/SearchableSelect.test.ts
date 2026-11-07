@@ -30,6 +30,7 @@ function mountSearchableSelect(options: {
   placeholder?: string
   label?: string
   id?: string
+  disabled?: boolean
   small?: boolean
   labelKey?: string
   valueKey?: string
@@ -55,6 +56,7 @@ function mountSearchableSelect(options: {
       return {
         selected,
         rules: options.rules,
+        disabled: options.disabled ?? false,
         multiple: options.multiple ?? false,
         label: options.label,
         placeholder: options.placeholder,
@@ -74,6 +76,7 @@ function mountSearchableSelect(options: {
           :label="label"
           :placeholder="placeholder"
           :id="id"
+          :disabled="disabled"
           :small="small"
           :local-search-first="localSearchFirst"
           :label-key="labelKey"
@@ -226,6 +229,13 @@ describe('SearchableSelect', () => {
 
     expect(wrapper.find('label').exists()).toBeFalsy()
     expect(wrapper.get('input').classes()).toContain('py-2')
+  })
+
+  it('uses a not-allowed cursor when disabled', () => {
+    const { wrapper } = mountSearchableSelect({ disabled: true })
+
+    expect(wrapper.get('input').attributes('disabled')).toBeDefined()
+    expect(wrapper.get('input').classes()).toContain('disabled:cursor-not-allowed')
   })
 
   it('focus triggers initial request and renders options', async () => {
