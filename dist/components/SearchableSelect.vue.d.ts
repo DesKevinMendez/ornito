@@ -20,6 +20,8 @@ interface Props {
     disabled?: boolean;
     multiple?: boolean;
     localSearchFirst?: boolean;
+    clearLabel?: string;
+    clearable?: boolean;
 }
 type __VLS_Props = Props;
 type __VLS_ModelProps = {
