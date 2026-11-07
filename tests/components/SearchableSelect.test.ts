@@ -30,9 +30,11 @@ function mountSearchableSelect(options: {
   placeholder?: string
   label?: string
   id?: string
+  disabled?: boolean
   small?: boolean
   labelKey?: string
   valueKey?: string
+  clearable?: boolean
   items?: Array<Record<string, unknown>>
   searchItems?: Array<Record<string, unknown>>
   localSearchFirst?: boolean
@@ -54,6 +56,7 @@ function mountSearchableSelect(options: {
       return {
         selected,
         rules: options.rules,
+        disabled: options.disabled ?? false,
         multiple: options.multiple ?? false,
         label: options.label,
         placeholder: options.placeholder,
@@ -61,6 +64,7 @@ function mountSearchableSelect(options: {
         localSearchFirst: options.localSearchFirst ?? false,
         labelKey: options.labelKey ?? 'name',
         valueKey: options.valueKey ?? 'id',
+        clearable: options.clearable ?? true,
       }
     },
     template: `
@@ -72,10 +76,12 @@ function mountSearchableSelect(options: {
           :label="label"
           :placeholder="placeholder"
           :id="id"
+          :disabled="disabled"
           :small="small"
           :local-search-first="localSearchFirst"
           :label-key="labelKey"
           :value-key="valueKey"
+          :clearable="clearable"
           subtitle-key="role"
           name="user"
           :multiple="multiple"
@@ -185,7 +191,7 @@ describe('SearchableSelect', () => {
 
     expect(selected.value).toBe('default')
     expect(wrapper.get('input').element.value).toBe('Default option')
-    expect(wrapper.findAll('button')).toHaveLength(0)
+    expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(true)
   })
 
   it('uses overridden prop values and custom label/value keys', async () => {
@@ -223,6 +229,13 @@ describe('SearchableSelect', () => {
 
     expect(wrapper.find('label').exists()).toBeFalsy()
     expect(wrapper.get('input').classes()).toContain('py-2')
+  })
+
+  it('uses a not-allowed cursor when disabled', () => {
+    const { wrapper } = mountSearchableSelect({ disabled: true })
+
+    expect(wrapper.get('input').attributes('disabled')).toBeDefined()
+    expect(wrapper.get('input').classes()).toContain('disabled:cursor-not-allowed')
   })
 
   it('focus triggers initial request and renders options', async () => {
@@ -263,6 +276,35 @@ describe('SearchableSelect', () => {
     expect(selected.value).toBe(2)
     expect(get).toHaveBeenCalledWith('/users')
     expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+  })
+
+  it('clears a single selection with the clear button', async () => {
+    const { wrapper, selected } = mountSearchableSelect({ modelValue: 2 })
+
+    await flushPromises()
+    await nextTick()
+
+    expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+    expect(selected.value).toBe(2)
+
+    await wrapper.get('button[aria-label="Limpiar selección"]').trigger('click')
+    await flushPromises()
+    await nextTick()
+
+    expect(selected.value).toBeNull()
+    expect(wrapper.get('input').element.value).toBe('')
+    expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(false)
+  })
+
+  it('hides the clear button when clearable is false', async () => {
+    const { wrapper, selected } = mountSearchableSelect({ modelValue: 2, clearable: false })
+
+    await flushPromises()
+    await nextTick()
+
+    expect(selected.value).toBe(2)
+    expect(wrapper.get('input').element.value).toBe('Grace Hopper')
+    expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(false)
   })
 
   it('multiple selection adds a value, clears the input, and emits select/data', async () => {
