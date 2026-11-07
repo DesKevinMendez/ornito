@@ -1,7 +1,7 @@
 <template>
   <div class="relative" ref="selectRef">
     <label
-      v-if="label && !props.small"
+      v-if="label && !small"
       :for="id"
       class="block text-sm font-medium text-form-label-text-light dark:text-form-label-text-dark mb-2"
     >
@@ -31,9 +31,9 @@
         :class="[
           'w-full bg-form-control-bg-light dark:bg-form-control-bg-dark text-form-control-text-light dark:text-form-control-text-dark placeholder-form-control-placeholder-text-light dark:placeholder-form-control-placeholder-text-dark border border-input-light dark:border-input-dark px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-form-control-border-focus-light dark:focus:border-form-control-border-focus-dark',
           leftIcon ? 'pl-10' : 'pl-4',
-          !disabled && !multiple && hasSingleSelection ? 'pr-16' : 'pr-10',
+          clearable && !disabled && !multiple && hasSingleSelection ? 'pr-16' : 'pr-10',
           errorMessage ? 'border-danger-light dark:border-danger-dark' : '',
-          props.small ? 'py-2' : 'py-3',
+          small ? 'py-2' : 'py-3',
         ]"
         :disabled="disabled"
       />
@@ -44,26 +44,26 @@
         <component
           :is="leftIcon"
           :class="[
-            props.small ? 'h-4 w-4' : 'h-5 w-5',
+            small ? 'h-4 w-4' : 'h-5 w-5',
             'text-form-control-icon-text-light dark:text-form-control-icon-text-dark',
           ]"
         />
       </div>
       <div class="absolute inset-y-0 right-0 pr-3 flex items-center gap-2">
         <button
-          v-if="!disabled && !multiple && hasSingleSelection"
+          v-if="clearable && !disabled && !multiple && hasSingleSelection"
           type="button"
           :aria-label="clearLabel"
           class="rounded text-form-control-icon-text-light dark:text-form-control-icon-text-dark hover:text-form-control-text-light dark:hover:text-form-control-text-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
           @mousedown.prevent
           @click.stop="clearSelection(handleChange)"
         >
-          <IconX :class="props.small ? 'h-4 w-4' : 'h-5 w-5'" />
+          <IconX :class="small ? 'h-4 w-4' : 'h-5 w-5'" />
         </button>
         <component
           :is="IconChevronDown"
           :class="[
-            props.small ? 'h-4 w-4' : 'h-5 w-5',
+            small ? 'h-4 w-4' : 'h-5 w-5',
             'pointer-events-none text-form-control-icon-text-light dark:text-form-control-icon-text-dark transition-transform duration-200',
             isOpen ? 'rotate-180' : '',
           ]"
@@ -188,18 +188,28 @@ interface Props {
   multiple?: boolean;
   localSearchFirst?: boolean;
   clearLabel?: string;
+  clearable?: boolean;
 }
 
-const props = defineProps<Props>();
-
 const {
+  url,
+  searchBy,
   placeholder = "Buscar...",
+  leftIcon,
   id = "searchable-select",
+  name,
+  label,
+  rules,
+  small = false,
   labelKey = "label",
   valueKey = "value",
+  subtitleKey,
+  disabled = false,
   multiple = false,
+  localSearchFirst = false,
   clearLabel = "Limpiar selección",
-} = props;
+  clearable = true,
+} = defineProps<Props>();
 
 const modelValue = defineModel<
   string | number | (string | number)[] | undefined | null
@@ -299,7 +309,7 @@ const resolveSelectedLabels = async () => {
   for (const item of initialItems.value) byValue.set(item.value, item);
 
   let missing = values.filter((value) => !byValue.has(value));
-  if (missing.length && props.url) {
+  if (missing.length && url) {
     if (initialItems.value.length === 0) {
       await fetchInitialData();
       if (seq !== resolveSeq) return;
@@ -309,9 +319,9 @@ const resolveSelectedLabels = async () => {
     // Resolve selected values that are beyond the first page by fetching by id.
     for (const value of missing) {
       try {
-        const separator = props.url.includes("?") ? "&" : "?";
+        const separator = url.includes("?") ? "&" : "?";
         const { data } = await get<any>(
-          `${props.url}${separator}filter[${valueKey}]=${value}`
+          `${url}${separator}filter[${valueKey}]=${value}`
         );
         if (seq !== resolveSeq) return;
         const arr = Array.isArray(data.value) ? data.value : data.value?.data || [];
@@ -381,10 +391,8 @@ function resolveTemplate(template: string, item: any): string {
 }
 
 function buildSubtitles(item: any): string[] {
-  if (!props.subtitleKey) return [];
-  const keys = Array.isArray(props.subtitleKey)
-    ? props.subtitleKey
-    : [props.subtitleKey];
+  if (!subtitleKey) return [];
+  const keys = Array.isArray(subtitleKey) ? subtitleKey : [subtitleKey];
   return keys.map((key) => resolveTemplate(key, item)).filter(Boolean);
 }
 
@@ -400,17 +408,17 @@ const mapToSelectItem = (item: any): SelectItem => {
 };
 
 const fetchInitialData = async (options: { searchWithId?: boolean } = {}) => {
-  if (!props.url) return;
+  if (!url) return;
 
-  let url = props.url;
+  let requestUrl = url;
   if (options.searchWithId && hasValue(modelValue.value)) {
-    const separator = props.url.includes('?') ? '&' : '?';
-    url = `${props.url}${separator}filter[${props.valueKey}]=${modelValue.value}`;
+    const separator = url.includes('?') ? '&' : '?';
+    requestUrl = `${url}${separator}filter[${valueKey}]=${modelValue.value}`;
   }
 
   isLoading.value = true;
   try {
-    const { data } = await get<any>(url);
+    const { data } = await get<any>(requestUrl);
     if (data.value) {
       const dataArray = Array.isArray(data.value)
         ? data.value
@@ -429,12 +437,12 @@ const fetchInitialData = async (options: { searchWithId?: boolean } = {}) => {
 };
 
 const searchData = async (query: string) => {
-  if (!props.url || !query.trim()) {
+  if (!url || !query.trim()) {
     items.value = initialItems.value;
     return;
   }
 
-  if (props.localSearchFirst) {
+  if (localSearchFirst) {
     const localMatches = searchInitialItems(query);
     if (localMatches.length > 0) {
       items.value = localMatches;
@@ -444,8 +452,8 @@ const searchData = async (query: string) => {
 
   isLoading.value = true;
   try {
-    const separator = props.url.includes('?') ? '&' : '?';
-    const searchUrl = `${props.url}${separator}${props.searchBy}=${encodeURIComponent(query)}`;
+    const separator = url.includes('?') ? '&' : '?';
+    const searchUrl = `${url}${separator}${searchBy}=${encodeURIComponent(query)}`;
     const { data } = await get<any>(searchUrl);
     if (data.value) {
       const dataArray = Array.isArray(data.value)
@@ -624,8 +632,8 @@ const findingItemInServer = async (newValue: string | number) => {
     setSearchQuerySilently(itemAlreadyExists.label);
     selectedItemData.value = itemAlreadyExists;
   } else {
-    const separator = props.url.includes('?') ? '&' : '?';
-    const filterUrl = `${props.url}${separator}filter[${props.valueKey}]=${newValue}`;
+    const separator = url.includes('?') ? '&' : '?';
+    const filterUrl = `${url}${separator}filter[${valueKey}]=${newValue}`;
     try {
       const { data } = await get<any>(filterUrl);
       if (data.value) {

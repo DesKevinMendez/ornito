@@ -33,6 +33,7 @@ function mountSearchableSelect(options: {
   small?: boolean
   labelKey?: string
   valueKey?: string
+  clearable?: boolean
   items?: Array<Record<string, unknown>>
   searchItems?: Array<Record<string, unknown>>
   localSearchFirst?: boolean
@@ -61,6 +62,7 @@ function mountSearchableSelect(options: {
         localSearchFirst: options.localSearchFirst ?? false,
         labelKey: options.labelKey ?? 'name',
         valueKey: options.valueKey ?? 'id',
+        clearable: options.clearable ?? true,
       }
     },
     template: `
@@ -76,6 +78,7 @@ function mountSearchableSelect(options: {
           :local-search-first="localSearchFirst"
           :label-key="labelKey"
           :value-key="valueKey"
+          :clearable="clearable"
           subtitle-key="role"
           name="user"
           :multiple="multiple"
@@ -280,6 +283,17 @@ describe('SearchableSelect', () => {
 
     expect(selected.value).toBeNull()
     expect(wrapper.get('input').element.value).toBe('')
+    expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(false)
+  })
+
+  it('hides the clear button when clearable is false', async () => {
+    const { wrapper, selected } = mountSearchableSelect({ modelValue: 2, clearable: false })
+
+    await flushPromises()
+    await nextTick()
+
+    expect(selected.value).toBe(2)
+    expect(wrapper.get('input').element.value).toBe('Grace Hopper')
     expect(wrapper.find('button[aria-label="Limpiar selección"]').exists()).toBe(false)
   })
 
