@@ -36,6 +36,7 @@ declare module 'vue' {
     LoadingSVG: typeof import('./src/components/LoadingSVG.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
+    RadioButton: typeof import('./src/components/RadioButton.vue')['default']
     ResultCount: typeof import('./src/components/Table/ResultCount.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

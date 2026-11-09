@@ -51,6 +51,7 @@ export default defineUserConfig({
             'form-select.md',
             'form-textarea.md',
             'searchable-select.md',
+            'radio-button.md',
             'switch-input.md',
             'card.md',
             'layout.md',
