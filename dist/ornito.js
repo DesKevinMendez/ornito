@@ -12549,7 +12549,52 @@ var Tf = {
 			class: "w-10 h-10 bg-navbar-mobile-menu-bg-light hover:bg-navbar-mobile-menu-bg-hover-light dark:bg-navbar-mobile-menu-bg-dark dark:hover:bg-navbar-mobile-menu-bg-hover-dark rounded-lg flex items-center justify-center transition-colors"
 		}, [f(U(Ve), { class: "w-5 h-5 text-navbar-mobile-menu-icon-text-light dark:text-navbar-mobile-menu-icon-text-dark" })])])]), l("div", jp, [L(e.$slots, "right")])])]));
 	}
-}), Np = (e, t, n, r = !1) => {
+}), Np = ["for"], Pp = [
+	"id",
+	"name",
+	"value",
+	"checked",
+	"disabled"
+], Fp = { class: "text-sm font-medium" }, Ip = /* @__PURE__ */ p({
+	__name: "RadioButton",
+	props: /*@__PURE__*/ b({
+		id: {},
+		name: {},
+		value: {},
+		label: {},
+		disabled: {
+			type: Boolean,
+			default: !1
+		}
+	}, {
+		modelValue: { required: !0 },
+		modelModifiers: {}
+	}),
+	emits: ["update:modelValue"],
+	setup(e) {
+		let t = G(e, "modelValue"), n = a(() => t.value === e.value), r = () => {
+			e.disabled || (t.value = e.value);
+		};
+		return (t, i) => (j(), c("label", {
+			for: e.id,
+			class: C([
+				"flex min-h-14 items-center gap-3 rounded-xl border px-4 py-3 transition-colors",
+				e.disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
+				n.value ? "border-radio-button-card-border-selected-light bg-radio-button-card-bg-selected-light text-radio-button-card-text-selected-light ring-1 ring-radio-button-card-ring-selected-light dark:border-radio-button-card-border-selected-dark dark:bg-radio-button-card-bg-selected-dark dark:text-radio-button-card-text-selected-dark dark:ring-radio-button-card-ring-selected-dark" : "border-radio-button-card-border-light bg-radio-button-card-bg-light text-radio-button-card-text-light dark:border-radio-button-card-border-dark dark:bg-radio-button-card-bg-dark dark:text-radio-button-card-text-dark",
+				!n.value && !e.disabled ? "hover:border-radio-button-card-border-hover-light dark:hover:border-radio-button-card-border-hover-dark" : ""
+			])
+		}, [l("input", {
+			id: e.id,
+			type: "radio",
+			name: e.name,
+			value: e.value,
+			checked: n.value,
+			disabled: e.disabled,
+			onChange: r,
+			class: "h-5 w-5 shrink-0 accent-radio-button-control-bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-radio-button-control-ring-focus-light focus-visible:ring-offset-2 focus-visible:ring-offset-radio-button-control-ring-offset-focus-light dark:accent-radio-button-control-bg-dark dark:focus-visible:ring-radio-button-control-ring-focus-dark dark:focus-visible:ring-offset-radio-button-control-ring-offset-focus-dark"
+		}, null, 40, Pp), l("span", Fp, B(e.label), 1)], 10, Np));
+	}
+}), Lp = (e, t, n, r = !1) => {
 	if (!n) return r ? e === t || e.startsWith(`${t}/`) : e === t;
 	if ("starts_with" in n) return e.startsWith(n.starts_with);
 	if ("ends_with" in n) return e.endsWith(n.ends_with);
@@ -12560,7 +12605,7 @@ var Tf = {
 		return !1;
 	}
 	return !1;
-}, Pp = /* @__PURE__ */ p({
+}, Rp = /* @__PURE__ */ p({
 	__name: "SidebarItem",
 	props: {
 		to: {},
@@ -12591,7 +12636,7 @@ var Tf = {
 		}
 	},
 	setup(e) {
-		let t = e, n = se(), r = a(() => Np(n.path, t.to, t.active));
+		let t = e, n = se(), r = a(() => Lp(n.path, t.to, t.active));
 		return (t, n) => {
 			let i = R("RouterLink");
 			return j(), o(i, {
@@ -12618,21 +12663,21 @@ var Tf = {
 			]);
 		};
 	}
-}), Fp = he("sidebarCollapsed", !1);
-function Ip() {
+}), zp = he("sidebarCollapsed", !1);
+function Bp() {
 	return {
-		isCollapsed: Fp,
+		isCollapsed: zp,
 		toggleCollapse: () => {
-			Fp.value = !Fp.value;
+			zp.value = !zp.value;
 		},
 		expand: () => {
-			Fp.value = !1;
+			zp.value = !1;
 		}
 	};
 }
 //#endregion
 //#region src/composables/useActiveIndicator.ts
-function Lp(e) {
+function Vp(e) {
 	let t = se(), n = F(!1), r = F(!1), i = F({
 		top: "0px",
 		height: "0px",
@@ -12699,14 +12744,14 @@ function Lp(e) {
 }
 //#endregion
 //#region src/components/Sidebar/SidebarList.vue?vue&type=script&setup=true&lang.ts
-var Rp = { class: "space-y-0.5 relative" }, zp = ["onClick"], Bp = { class: "overflow-hidden" }, Vp = { class: "pl-6 space-y-0.5 pt-1 pb-1" }, Hp = /* @__PURE__ */ p({
+var Hp = { class: "space-y-0.5 relative" }, Up = ["onClick"], Wp = { class: "overflow-hidden" }, Gp = { class: "pl-6 space-y-0.5 pt-1 pb-1" }, Kp = /* @__PURE__ */ p({
 	__name: "SidebarList",
 	props: {
 		isCollapsed: { type: Boolean },
 		menuItems: {}
 	},
 	setup(e) {
-		let t = e, r = se(), { expand: i } = Ip(), a = K("navRef"), { isInitialized: s, isAnimating: u, activeIndicatorStyle: d, trackAnimation: p } = Lp(a), m = F(/* @__PURE__ */ new Set()), h = F(/* @__PURE__ */ new Set()), g = (e) => (e.active ? Np(r.path, e.route, e.active) : !1) || (e.children?.some((e) => Np(r.path, e.route, e.active, !0)) ?? !1), _ = (e) => h.value.has(e.route) ? !1 : m.value.has(e.route) || g(e), v = (e) => {
+		let t = e, r = se(), { expand: i } = Bp(), a = K("navRef"), { isInitialized: s, isAnimating: u, activeIndicatorStyle: d, trackAnimation: p } = Vp(a), m = F(/* @__PURE__ */ new Set()), h = F(/* @__PURE__ */ new Set()), g = (e) => (e.active ? Lp(r.path, e.route, e.active) : !1) || (e.children?.some((e) => Lp(r.path, e.route, e.active, !0)) ?? !1), _ = (e) => h.value.has(e.route) ? !1 : m.value.has(e.route) || g(e), v = (e) => {
 			if (t.isCollapsed) {
 				i(), m.value.add(e), h.value.delete(e), p();
 				return;
@@ -12718,7 +12763,7 @@ var Rp = { class: "space-y-0.5 relative" }, zp = ["onClick"], Bp = { class: "ove
 		}), q(() => t.isCollapsed, () => {
 			p();
 		}), (r, i) => {
-			let p = Pp;
+			let p = Rp;
 			return j(), c("nav", {
 				ref_key: "navRef",
 				ref: a,
@@ -12730,10 +12775,10 @@ var Rp = { class: "space-y-0.5 relative" }, zp = ["onClick"], Bp = { class: "ove
 					height: U(d).height,
 					opacity: U(d).opacity
 				})
-			}, null, 6), l("ul", Rp, [(j(!0), c(n, null, I(t.menuItems, (t) => (j(), c("li", { key: t.route }, [t.children?.length ? (j(), c(n, { key: 0 }, [l("button", {
+			}, null, 6), l("ul", Hp, [(j(!0), c(n, null, I(t.menuItems, (t) => (j(), c("li", { key: t.route }, [t.children?.length ? (j(), c(n, { key: 0 }, [l("button", {
 				class: C(["group relative flex items-center gap-3 py-2.5 px-3 rounded-xl w-full transition-all duration-200 outline-none", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-text-inactive-light hover:bg-sidebar-tab-bg-hover-light dark:text-sidebar-tab-text-inactive-dark dark:hover:bg-sidebar-tab-bg-hover-dark"]]),
 				onClick: (e) => v(t.route)
-			}, [(j(), o(z(t.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center justify-between flex-1", e.isCollapsed ? "w-0" : "w-48"]) }, [l("span", { class: C([g(t) ? "font-medium" : "font-normal", "whitespace-nowrap"]) }, B(t.name), 3), f(U(Me), { class: C(["w-4 h-4 shrink-0 transition-transform duration-300 ease-in-out", _(t) ? "rotate-180" : ""]) }, null, 8, ["class"])], 2)], 10, zp), l("div", { class: C(["grid transition-all duration-300 ease-in-out", _(t) && !e.isCollapsed ? "grid-rows-[1fr]" : "grid-rows-[0fr]"]) }, [l("div", Bp, [l("ul", Vp, [(j(!0), c(n, null, I(t.children, (t) => (j(), c("li", { key: t.route }, [f(p, {
+			}, [(j(), o(z(t.icon), { class: C(["w-5 h-5 shrink-0 transition-colors duration-200", [g(t) ? "text-sidebar-tab-group-text-active-light dark:text-sidebar-tab-group-text-active-dark" : "text-sidebar-tab-icon-text-light group-hover:text-sidebar-tab-icon-text-hover-light dark:text-sidebar-tab-icon-text-dark dark:group-hover:text-sidebar-tab-icon-text-hover-dark"]]) }, null, 8, ["class"])), l("div", { class: C(["overflow-hidden transition-all duration-300 flex items-center justify-between flex-1", e.isCollapsed ? "w-0" : "w-48"]) }, [l("span", { class: C([g(t) ? "font-medium" : "font-normal", "whitespace-nowrap"]) }, B(t.name), 3), f(U(Me), { class: C(["w-4 h-4 shrink-0 transition-transform duration-300 ease-in-out", _(t) ? "rotate-180" : ""]) }, null, 8, ["class"])], 2)], 10, Up), l("div", { class: C(["grid transition-all duration-300 ease-in-out", _(t) && !e.isCollapsed ? "grid-rows-[1fr]" : "grid-rows-[0fr]"]) }, [l("div", Wp, [l("ul", Gp, [(j(!0), c(n, null, I(t.children, (t) => (j(), c("li", { key: t.route }, [f(p, {
 				to: t.route,
 				name: t.name,
 				icon: t.icon,
@@ -12763,35 +12808,35 @@ var Rp = { class: "space-y-0.5 relative" }, zp = ["onClick"], Bp = { class: "ove
 			]))]))), 128))])], 512);
 		};
 	}
-}), Up = F(!1), Wp = F(!1), Gp = F(!1);
-function Kp() {
+}), qp = F(!1), Jp = F(!1), Yp = F(!1);
+function Xp() {
 	let e = () => {
 		let e = window.innerWidth;
-		Up.value = e < 1024, Wp.value = e >= 768 && e < 1024, Gp.value = e >= 1024;
+		qp.value = e < 1024, Jp.value = e >= 768 && e < 1024, Yp.value = e >= 1024;
 	};
 	return O(() => {
 		e(), window.addEventListener("resize", e);
 	}), A(() => {
 		window.removeEventListener("resize", e);
 	}), {
-		isMobile: Up,
-		isTablet: Wp,
-		isDesktop: Gp,
+		isMobile: qp,
+		isTablet: Jp,
+		isDesktop: Yp,
 		checkScreenSize: e
 	};
 }
 //#endregion
 //#region src/components/Sidebar.vue?vue&type=script&setup=true&lang.ts
-var qp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark h-20 flex items-center" }, Jp = {
+var Zp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark h-20 flex items-center" }, Qp = {
 	key: 0,
 	class: "flex items-center space-x-2"
-}, Yp = { class: "w-8 h-8" }, Xp = ["src", "alt"], Zp = { class: "overflow-hidden transition-all duration-300 w-auto" }, Qp = { class: "text-lg font-semibold whitespace-nowrap text-sidebar-title-text-light dark:text-sidebar-title-text-dark" }, $p = { class: "text-sm whitespace-nowrap text-sidebar-subtitle-text-light dark:text-sidebar-subtitle-text-dark" }, em = { class: "flex-1 overflow-y-auto" }, tm = {
+}, $p = { class: "w-8 h-8" }, em = ["src", "alt"], tm = { class: "overflow-hidden transition-all duration-300 w-auto" }, nm = { class: "text-lg font-semibold whitespace-nowrap text-sidebar-title-text-light dark:text-sidebar-title-text-dark" }, rm = { class: "text-sm whitespace-nowrap text-sidebar-subtitle-text-light dark:text-sidebar-subtitle-text-dark" }, im = { class: "flex-1 overflow-y-auto" }, am = {
 	key: 0,
 	class: "px-4 pb-1 text-left text-[10px] text-sidebar-version-text-light dark:text-sidebar-version-text-dark"
-}, nm = { class: "p-4 border-t-2 border-default-light dark:border-default-dark" }, rm = {
+}, om = { class: "p-4 border-t-2 border-default-light dark:border-default-dark" }, sm = {
 	key: 0,
 	class: "text-sm text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark whitespace-nowrap"
-}, im = /* @__PURE__ */ p({
+}, cm = /* @__PURE__ */ p({
 	__name: "Sidebar",
 	props: {
 		isCollapsed: { type: Boolean },
@@ -12807,13 +12852,13 @@ var qp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			m("toggle-collapse");
 		};
 		return (e, t) => {
-			let a = Hp;
+			let a = Kp;
 			return j(), c("aside", { class: C(["h-screen flex flex-col border-r-2 transition-all duration-300 bg-sidebar-bg-light dark:bg-sidebar-bg-dark text-sidebar-title-text-light dark:text-sidebar-title-text-dark border-default-light dark:border-default-dark", v.value]) }, [
-				l("div", qp, [l("div", { class: C(["flex items-center w-full", n.isCollapsed ? "justify-center" : "justify-between"]) }, [n.isCollapsed ? s("", !0) : (j(), c("div", Jp, [l("div", Yp, [l("img", {
+				l("div", Zp, [l("div", { class: C(["flex items-center w-full", n.isCollapsed ? "justify-center" : "justify-between"]) }, [n.isCollapsed ? s("", !0) : (j(), c("div", Qp, [l("div", $p, [l("img", {
 					src: U(r),
 					alt: U(i),
 					class: "w-full h-full object-contain"
-				}, null, 8, Xp)]), l("div", Zp, [l("h1", Qp, B(U(i)), 1), l("p", $p, B(U(u)), 1)])])), U(Up) ? (j(), c("button", {
+				}, null, 8, em)]), l("div", tm, [l("h1", nm, B(U(i)), 1), l("p", rm, B(U(u)), 1)])])), U(qp) ? (j(), c("button", {
 					key: 1,
 					onClick: t[0] ||= (t) => e.$emit("close"),
 					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
@@ -12826,26 +12871,26 @@ var qp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 					onClick: y,
 					class: "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0 ml-auto bg-sidebar-collapse-bg-light hover:bg-sidebar-collapse-bg-hover-light dark:bg-sidebar-collapse-bg-dark dark:hover:bg-sidebar-collapse-bg-hover-dark"
 				}, [f(U(Ne), { class: "w-4 h-4 text-sidebar-collapse-icon-text-light dark:text-sidebar-collapse-icon-text-dark" })]))], 2)]),
-				l("div", em, [f(a, {
+				l("div", im, [f(a, {
 					"is-collapsed": n.isCollapsed,
 					"menu-items": U(p)
 				}, null, 8, ["is-collapsed", "menu-items"])]),
-				n.isCollapsed ? s("", !0) : (j(), c("p", tm, " v" + B(U(d)), 1)),
-				l("div", nm, [l("button", {
+				n.isCollapsed ? s("", !0) : (j(), c("p", am, " v" + B(U(d)), 1)),
+				l("div", om, [l("button", {
 					onClick: t[1] ||= (...e) => U(g) && U(g)(...e),
 					class: C(["w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-sidebar-theme-toggle-bg-light hover:bg-sidebar-theme-toggle-bg-hover-light dark:bg-sidebar-theme-toggle-bg-dark dark:hover:bg-sidebar-theme-toggle-bg-hover-dark", n.isCollapsed ? "justify-center" : ""]),
 					"aria-label": "Toggle theme"
-				}, [(j(), o(z(_.value), { class: "w-5 h-5 text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark flex-shrink-0" })), n.isCollapsed ? s("", !0) : (j(), c("span", rm, B(U(h) ? "Modo claro" : "Modo oscuro"), 1))], 2)])
+				}, [(j(), o(z(_.value), { class: "w-5 h-5 text-sidebar-theme-toggle-content-text-light dark:text-sidebar-theme-toggle-content-text-dark flex-shrink-0" })), n.isCollapsed ? s("", !0) : (j(), c("span", sm, B(U(h) ? "Modo claro" : "Modo oscuro"), 1))], 2)])
 			], 2);
 		};
 	}
-}), am = /* @__PURE__ */ p({
+}), lm = /* @__PURE__ */ p({
 	__name: "SidebarNav",
 	props: { items: {} },
 	setup(e) {
-		let t = K("navRef"), { isInitialized: r, activeIndicatorStyle: i } = Lp(t);
+		let t = K("navRef"), { isInitialized: r, activeIndicatorStyle: i } = Vp(t);
 		return (a, s) => {
-			let u = Pp;
+			let u = Rp;
 			return j(), c("nav", {
 				ref_key: "navRef",
 				ref: t,
@@ -12872,7 +12917,7 @@ var qp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			]))), 128))], 512);
 		};
 	}
-}), om = 3e3, sm = /* @__PURE__ */ p({
+}), um = 3e3, dm = /* @__PURE__ */ p({
 	__name: "SnackBarItem",
 	props: {
 		message: {
@@ -12896,7 +12941,7 @@ var qp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			a.value = !1, setTimeout(() => {
 				r("expired");
 			}, 300);
-		}, om);
+		}, um);
 		let s = (e) => {
 			e && (e.preventDefault(), e.stopPropagation()), a.value = !1, setTimeout(() => {
 				r("cancel", n.message);
@@ -12916,34 +12961,34 @@ var qp = { class: "p-4 border-b-2 border-default-light dark:border-default-dark 
 			_: 1
 		}));
 	}
-}), cm = F([]);
-function lm() {
+}), fm = F([]);
+function pm() {
 	return {
-		messages: cm,
+		messages: fm,
 		pushMessage: (e, t = !1) => {
-			cm.value.push({
+			fm.value.push({
 				ts: Date.now(),
 				text: e,
 				error: t
 			});
 		},
 		shiftMessage: () => {
-			cm.value.shift();
+			fm.value.shift();
 		}
 	};
 }
 //#endregion
 //#region src/components/Snack/SnackBar.vue?vue&type=script&setup=true&lang.ts
-var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden z-50 w-80" }, dm = /* @__PURE__ */ p({
+var mm = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden z-50 w-80" }, hm = /* @__PURE__ */ p({
 	__name: "SnackBar",
 	props: { active: Boolean },
 	setup(e) {
-		let { messages: t, shiftMessage: r } = lm(), i = () => {
+		let { messages: t, shiftMessage: r } = pm(), i = () => {
 			r();
 		};
 		return (e, r) => {
-			let a = sm;
-			return j(), c("div", um, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
+			let a = dm;
+			return j(), c("div", mm, [(j(!0), c(n, null, I(U(t), (e) => (j(), o(a, {
 				key: e.ts,
 				message: e,
 				error: e.error,
@@ -12951,19 +12996,19 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}, null, 8, ["message", "error"]))), 128))]);
 		};
 	}
-}), fm = { class: "flex items-center gap-1.5" }, pm = { class: "text-sm font-medium text-stat-card-title-text-light dark:text-stat-card-title-text-dark" }, mm = {
+}), gm = { class: "flex items-center gap-1.5" }, _m = { class: "text-sm font-medium text-stat-card-title-text-light dark:text-stat-card-title-text-dark" }, vm = {
 	key: 0,
 	class: "text-2xl font-bold text-stat-card-empty-text-light dark:text-stat-card-empty-text-dark mt-1"
-}, hm = {
+}, ym = {
 	key: 1,
 	class: "text-2xl font-bold text-stat-card-value-text-light dark:text-stat-card-value-text-dark mt-1 tabular-nums"
-}, gm = {
+}, bm = {
 	key: 0,
 	class: "mt-4 flex items-center"
-}, _m = {
+}, xm = {
 	key: 1,
 	class: "text-sm text-stat-card-description-text-light dark:text-stat-card-description-text-dark ml-1"
-}, vm = /* @__PURE__ */ p({
+}, Sm = /* @__PURE__ */ p({
 	__name: "StatCard",
 	props: {
 		title: {},
@@ -12986,24 +13031,24 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 		return (r, i) => {
 			let a = dp, u = bt;
 			return j(), o(u, null, {
-				default: J(() => [l("div", null, [l("div", fm, [l("p", pm, B(e.title), 1), e.help ? (j(), o(a, {
+				default: J(() => [l("div", null, [l("div", gm, [l("p", _m, B(e.title), 1), e.help ? (j(), o(a, {
 					key: 0,
 					tooltip: e.help
-				}, null, 8, ["tooltip"])) : s("", !0)]), U(t) ? (j(), c("p", mm, "Sin datos")) : (j(), c("p", hm, B(e.value), 1))]), e.change !== void 0 || e.description ? (j(), c("div", gm, [e.change === void 0 ? s("", !0) : (j(), c("span", {
+				}, null, 8, ["tooltip"])) : s("", !0)]), U(t) ? (j(), c("p", vm, "Sin datos")) : (j(), c("p", ym, B(e.value), 1))]), e.change !== void 0 || e.description ? (j(), c("div", bm, [e.change === void 0 ? s("", !0) : (j(), c("span", {
 					key: 0,
 					class: C(["text-sm font-medium tabular-nums", U(n)])
-				}, B(e.change), 3)), e.description ? (j(), c("span", _m, B(e.description), 1)) : s("", !0)])) : s("", !0)]),
+				}, B(e.change), 3)), e.description ? (j(), c("span", xm, B(e.description), 1)) : s("", !0)])) : s("", !0)]),
 				_: 1
 			});
 		};
 	}
-}), ym = {
+}), Cm = {
 	key: 0,
 	class: "mb-2 block text-sm font-medium text-switch-input-label-text-light dark:text-switch-input-label-text-dark"
-}, bm = { class: "flex items-center space-x-3" }, xm = ["disabled"], Sm = {
+}, wm = { class: "flex items-center space-x-3" }, Tm = ["disabled"], Em = {
 	key: 0,
 	class: "text-sm text-switch-input-label-text-light dark:text-switch-input-label-text-dark"
-}, Cm = /* @__PURE__ */ p({
+}, Dm = /* @__PURE__ */ p({
 	__name: "SwitchInput",
 	props: /*@__PURE__*/ b({
 		label: {},
@@ -13030,14 +13075,14 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 		let t = G(e, "modelValue"), n = () => {
 			e.disabled || (t.value = !t.value);
 		};
-		return (r, i) => (j(), c("div", null, [e.label ? (j(), c("label", ym, B(e.label), 1)) : s("", !0), l("div", bm, [l("button", {
+		return (r, i) => (j(), c("div", null, [e.label ? (j(), c("label", Cm, B(e.label), 1)) : s("", !0), l("div", wm, [l("button", {
 			type: "button",
 			onClick: n,
 			disabled: e.disabled,
 			class: C(["relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed", t.value ? "bg-switch-input-track-bg-on-light dark:bg-switch-input-track-bg-on-dark" : "bg-switch-input-track-bg-off-light dark:bg-switch-input-track-bg-off-dark"])
-		}, [l("span", { class: C(["pointer-events-none inline-block h-5 w-5 transform rounded-full bg-switch-input-thumb-bg-light dark:bg-switch-input-thumb-bg-dark shadow ring-0 transition duration-200 ease-in-out", t.value ? "translate-x-5" : "translate-x-0"]) }, null, 2)], 10, xm), e.showLabel ? (j(), c("span", Sm, B(t.value ? e.trueLabel : e.falseLabel), 1)) : s("", !0)])]));
+		}, [l("span", { class: C(["pointer-events-none inline-block h-5 w-5 transform rounded-full bg-switch-input-thumb-bg-light dark:bg-switch-input-thumb-bg-dark shadow ring-0 transition duration-200 ease-in-out", t.value ? "translate-x-5" : "translate-x-0"]) }, null, 2)], 10, Tm), e.showLabel ? (j(), c("span", Em, B(t.value ? e.trueLabel : e.falseLabel), 1)) : s("", !0)])]));
 	}
-}), wm = { class: "space-y-4" }, Tm = ["aria-label"], Em = ["data-tabs-indicator"], Dm = [
+}), Om = { class: "space-y-4" }, km = ["aria-label"], Am = ["data-tabs-indicator"], jm = [
 	"id",
 	"aria-selected",
 	"aria-controls",
@@ -13045,7 +13090,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	"tabindex",
 	"onClick",
 	"onKeydown"
-], Om = { class: "tab-content" }, km = ["id", "aria-labelledby"], Am = /*#__PURE__*/ Je(/* @__PURE__ */ p({
+], Mm = { class: "tab-content" }, Nm = ["id", "aria-labelledby"], Pm = /*#__PURE__*/ Je(/* @__PURE__ */ p({
 	__name: "Tabs",
 	props: {
 		tabs: {},
@@ -13130,7 +13175,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}
 			e.preventDefault(), D(a), p.value?.querySelectorAll("[role=\"tab\"]")[a]?.focus();
 		}
-		return (t, r) => (j(), c("div", wm, [l("div", { class: C(e.variant === "segmented" ? "h-16 flex items-center transition-transform duration-300" : ["flex items-center", e.variant === "underline" && "overflow-x-auto"]) }, [l("div", {
+		return (t, r) => (j(), c("div", Om, [l("div", { class: C(e.variant === "segmented" ? "h-16 flex items-center transition-transform duration-300" : ["flex items-center", e.variant === "underline" && "overflow-x-auto"]) }, [l("div", {
 			ref_key: "tabList",
 			ref: p,
 			role: "tablist",
@@ -13149,7 +13194,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				"aria-hidden": "true",
 				class: C(["pointer-events-none absolute left-0 top-0 transition-all duration-300 ease-in-out motion-reduce:transition-none", e.variant === "pills" ? "bg-tabs-pills-bg-active-light dark:bg-tabs-pills-bg-active-dark pill-indicator rounded-xl" : "bg-tabs-underline-indicator-bg-light dark:bg-tabs-underline-indicator-bg-dark rounded-full"]),
 				style: T(S.value)
-			}, null, 14, Em)) : s("", !0),
+			}, null, 14, Am)) : s("", !0),
 			(j(!0), c(n, null, I(e.tabs, (e, t) => (j(), c("button", {
 				ref_for: !0,
 				ref_key: "tabButtons",
@@ -13170,8 +13215,8 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				class: "h-4 w-4 shrink-0",
 				"aria-hidden": "true",
 				focusable: "false"
-			})) : s("", !0), l("span", null, B(e.label), 1)], 42, Dm))), 128))
-		], 10, Tm)], 2), l("div", Om, [f(i, {
+			})) : s("", !0), l("span", null, B(e.label), 1)], 42, jm))), 128))
+		], 10, km)], 2), l("div", Mm, [f(i, {
 			name: "tab-content",
 			mode: "out-in",
 			appear: ""
@@ -13186,11 +13231,11 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			}, [L(t.$slots, `tab-${v.value}`, {
 				activeTab: e.tabs[v.value],
 				activeTabIndex: v.value
-			}, () => [r[0] ||= l("div", { class: "text-tabs-empty-text-light dark:text-tabs-empty-text-dark text-center py-8" }, " No content available for this tab ", -1)], !0)], 8, km)) : s("", !0)]),
+			}, () => [r[0] ||= l("div", { class: "text-tabs-empty-text-light dark:text-tabs-empty-text-dark text-center py-8" }, " No content available for this tab ", -1)], !0)], 8, Nm)) : s("", !0)]),
 			_: 3
 		})])]));
 	}
-}), [["__scopeId", "data-v-d97d4c27"]]), jm = ["src", "alt"], Mm = /* @__PURE__ */ p({
+}), [["__scopeId", "data-v-d97d4c27"]]), Fm = ["src", "alt"], Im = /* @__PURE__ */ p({
 	__name: "UserAvatar",
 	props: {
 		imageUrl: { default: null },
@@ -13221,16 +13266,16 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			src: e.imageUrl,
 			alt: e.name,
 			class: "w-full h-full object-cover"
-		}, null, 8, jm)) : (j(), c("div", {
+		}, null, 8, Fm)) : (j(), c("div", {
 			key: 1,
 			class: C(["w-full h-full flex items-center justify-center bg-linear-to-br from-primary-500 to-secondary-500 text-white font-semibold", U(r)])
 		}, B(U(t)), 3))], 2));
 	}
-}), Nm = { class: "flex -space-x-2" }, Pm = /* @__PURE__ */ p({
+}), Lm = { class: "flex -space-x-2" }, Rm = /* @__PURE__ */ p({
 	__name: "UserAvatars",
 	props: { users: {} },
 	setup(e) {
-		return (t, r) => (j(), c("div", Nm, [(j(!0), c(n, null, I(e.users, (t, n) => (j(), c("div", {
+		return (t, r) => (j(), c("div", Lm, [(j(!0), c(n, null, I(e.users, (t, n) => (j(), c("div", {
 			key: n,
 			class: "relative"
 		}, [l("div", {
@@ -13238,22 +13283,22 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			style: T({ zIndex: e.users.length - n })
 		}, B(t.initials), 5)]))), 128))]));
 	}
-}), Fm = { class: "flex items-center gap-2 sm:gap-3" }, Im = {
+}), zm = { class: "flex items-center gap-2 sm:gap-3" }, Bm = {
 	key: 0,
 	class: "absolute -top-1 -right-1 bg-danger-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium tabular-nums"
-}, Lm = {
+}, Vm = {
 	key: 0,
 	class: "absolute right-0 top-14 w-80 bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
-}, Rm = { class: "max-h-96 overflow-y-auto" }, zm = {
+}, Hm = { class: "max-h-96 overflow-y-auto" }, Um = {
 	key: 0,
 	class: "py-2 px-4 border-t border-default-light dark:border-default-dark text-center"
-}, Bm = { class: "w-10 h-10 bg-profile-avatar-bg-light dark:bg-profile-avatar-bg-dark rounded-full flex items-center justify-center sm:mr-3 overflow-hidden" }, Vm = { class: "text-profile-avatar-text-light dark:text-profile-avatar-text-dark text-lg" }, Hm = {
+}, Wm = { class: "w-10 h-10 bg-profile-avatar-bg-light dark:bg-profile-avatar-bg-dark rounded-full flex items-center justify-center sm:mr-3 overflow-hidden" }, Gm = { class: "text-profile-avatar-text-light dark:text-profile-avatar-text-dark text-lg" }, Km = {
 	class: "hidden sm:flex items-center",
 	style: { gap: "0" }
-}, Um = { class: "mr-3" }, Wm = { class: "text-profile-name-text-light dark:text-profile-name-text-dark font-medium" }, Gm = { class: "flex items-center" }, Km = { class: "text-sm text-profile-role-text-light dark:text-profile-role-text-dark" }, qm = {
+}, qm = { class: "mr-3" }, Jm = { class: "text-profile-name-text-light dark:text-profile-name-text-dark font-medium" }, Ym = { class: "flex items-center" }, Xm = { class: "text-sm text-profile-role-text-light dark:text-profile-role-text-dark" }, Zm = {
 	key: 0,
 	class: "absolute right-0 top-14 w-56 sm:w-full bg-profile-panel-bg-light dark:bg-profile-panel-bg-dark backdrop-blur-sm border border-default-light dark:border-default-dark/50 rounded-lg shadow-lg z-50"
-}, Jm = { class: "py-2" }, Ym = /* @__PURE__ */ p({
+}, Qm = { class: "py-2" }, $m = /* @__PURE__ */ p({
 	__name: "UserProfileDropdown",
 	props: {
 		userName: {},
@@ -13273,7 +13318,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	],
 	setup(e, { emit: t }) {
 		let r = t;
-		Kp();
+		Xp();
 		let i = F(!1), a = F(null), u = F(!1), d = F(null);
 		function p() {
 			i.value = !i.value, i.value && (u.value = !1);
@@ -13285,7 +13330,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			m(), e.onClick?.();
 		}
 		function g() {
-			if (r("bell-click"), Up.value) return;
+			if (r("bell-click"), qp.value) return;
 			let e = u.value;
 			_(), !e && u.value && r("panel-open");
 		}
@@ -13305,7 +13350,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			window.removeEventListener("keydown", y);
 		}), (t, m) => {
 			let _ = Lt, v = cf;
-			return j(), c("div", Fm, [e.showNotifications ? (j(), c("div", {
+			return j(), c("div", zm, [e.showNotifications ? (j(), c("div", {
 				key: 0,
 				class: "relative",
 				ref_key: "notificationDropdownRef",
@@ -13314,11 +13359,11 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				onClick: ae(g, ["stop"]),
 				class: "w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-profile-notification-trigger-bg-light hover:bg-profile-notification-trigger-bg-hover-light dark:bg-profile-notification-trigger-bg-dark dark:hover:bg-profile-notification-trigger-bg-hover-dark relative cursor-pointer",
 				"aria-label": "Show notifications"
-			}, [f(U(Ae), { class: "w-5 h-5 text-profile-notification-trigger-icon-text-light dark:text-profile-notification-trigger-icon-text-dark" }), e.unreadNotificationsCount > 0 ? (j(), c("div", Im, B(e.unreadNotificationsCount > 9 ? "9+" : e.unreadNotificationsCount), 1)) : s("", !0)]), f(_, null, {
-				default: J(() => [u.value && !U(Up) ? (j(), c("div", Lm, [
+			}, [f(U(Ae), { class: "w-5 h-5 text-profile-notification-trigger-icon-text-light dark:text-profile-notification-trigger-icon-text-dark" }), e.unreadNotificationsCount > 0 ? (j(), c("div", Bm, B(e.unreadNotificationsCount > 9 ? "9+" : e.unreadNotificationsCount), 1)) : s("", !0)]), f(_, null, {
+				default: J(() => [u.value && !U(qp) ? (j(), c("div", Vm, [
 					m[1] ||= l("div", { class: "py-2 px-4 border-b border-default-light dark:border-default-dark text-sm text-profile-notification-title-text-light dark:text-profile-notification-title-text-dark font-semibold" }, " Notificaciones ", -1),
-					l("div", Rm, [L(t.$slots, "notifications")]),
-					e.unreadNotificationsCount > 0 ? (j(), c("div", zm, [l("button", {
+					l("div", Hm, [L(t.$slots, "notifications")]),
+					e.unreadNotificationsCount > 0 ? (j(), c("div", Um, [l("button", {
 						onClick: m[0] ||= (e) => r("mark-all-read"),
 						class: "text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline focus:outline-none cursor-pointer"
 					}, " Marcar todo como leído ")])) : s("", !0)
@@ -13332,11 +13377,11 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 				class: "flex items-center",
 				onClick: p
 			}, [
-				l("div", Bm, [L(t.$slots, "avatar", {}, () => [l("span", Vm, B(e.userInitials), 1)])]),
-				l("div", Hm, [l("div", Um, [l("div", Wm, B(e.userName), 1), l("div", Gm, [l("span", Km, B(e.userRole), 1)])]), f(U(Me), { class: C(["w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])]),
+				l("div", Wm, [L(t.$slots, "avatar", {}, () => [l("span", Gm, B(e.userInitials), 1)])]),
+				l("div", Km, [l("div", qm, [l("div", Jm, B(e.userName), 1), l("div", Ym, [l("span", Xm, B(e.userRole), 1)])]), f(U(Me), { class: C(["w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])]),
 				f(U(Me), { class: C(["sm:hidden w-4 h-4 text-profile-chevron-text-light dark:text-profile-chevron-text-dark ml-2", i.value ? "rotate-180 transition-transform duration-200" : "transition-transform duration-200"]) }, null, 8, ["class"])
 			]), f(_, null, {
-				default: J(() => [i.value ? (j(), c("div", qm, [l("ul", Jm, [(j(!0), c(n, null, I(e.menuItems, (e) => (j(), o(v, {
+				default: J(() => [i.value ? (j(), c("div", Zm, [l("ul", Qm, [(j(!0), c(n, null, I(e.menuItems, (e) => (j(), o(v, {
 					key: e.label,
 					label: e.label,
 					icon: e.icon,
@@ -13354,7 +13399,7 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 			})], 512)]);
 		};
 	}
-}), Xm = { class: "flex items-start justify-between gap-4 flex-col md:flex-row" }, Zm = { class: "space-y-2" }, Qm = { class: "text-3xl font-bold text-view-header-title-text-light dark:text-view-header-title-text-dark" }, $m = { class: "flex space-x-2 justify-start flex-col gap-3 md:gap-0 md:flex-row items-center" }, eh = { class: "text-view-header-subtitle-text-light dark:text-view-header-subtitle-text-dark text-sm" }, th = { class: "flex items-center space-x-3" }, nh = /* @__PURE__ */ p({
+}), eh = { class: "flex items-start justify-between gap-4 flex-col md:flex-row" }, th = { class: "space-y-2" }, nh = { class: "text-3xl font-bold text-view-header-title-text-light dark:text-view-header-title-text-dark" }, rh = { class: "flex space-x-2 justify-start flex-col gap-3 md:gap-0 md:flex-row items-center" }, ih = { class: "text-view-header-subtitle-text-light dark:text-view-header-subtitle-text-dark text-sm" }, ah = { class: "flex items-center space-x-3" }, oh = /* @__PURE__ */ p({
 	__name: "ViewHeader",
 	props: {
 		subtitle: {},
@@ -13364,21 +13409,21 @@ var um = { class: "fixed top-0 right-0 flex flex-col-reverse p-4 overflow-hidden
 	setup(e) {
 		return (t, n) => {
 			let r = at;
-			return j(), c("div", null, [l("div", Xm, [l("div", Zm, [l("h1", Qm, B(e.title), 1), l("div", $m, [l("span", eh, B(e.subtitle), 1), e.badgeText ? (j(), o(r, {
+			return j(), c("div", null, [l("div", eh, [l("div", th, [l("h1", nh, B(e.title), 1), l("div", rh, [l("span", ih, B(e.subtitle), 1), e.badgeText ? (j(), o(r, {
 				key: 0,
 				variant: "neutral",
 				text: "sm"
 			}, {
 				default: J(() => [d(B(e.badgeText), 1)]),
 				_: 1
-			})) : s("", !0)])]), l("div", th, [L(t.$slots, "right")])])]);
+			})) : s("", !0)])]), l("div", ah, [L(t.$slots, "right")])])]);
 		};
 	}
-}), rh = { class: "flex items-start gap-3 p-4 rounded-lg border border-warning-muted-light dark:border-warning-muted-dark bg-warning-50 dark:bg-warning-500/15" }, ih = { class: "flex-1 text-sm text-warning-700 dark:text-warning-300" }, ah = /* @__PURE__ */ p({
+}), sh = { class: "flex items-start gap-3 p-4 rounded-lg border border-warning-muted-light dark:border-warning-muted-dark bg-warning-50 dark:bg-warning-500/15" }, ch = { class: "flex-1 text-sm text-warning-700 dark:text-warning-300" }, lh = /* @__PURE__ */ p({
 	__name: "WarningAlert",
 	setup(e) {
-		return (e, t) => (j(), c("div", rh, [f(U(Oe), { class: "w-5 h-5 text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5" }), l("div", ih, [L(e.$slots, "default")])]));
+		return (e, t) => (j(), c("div", sh, [f(U(Oe), { class: "w-5 h-5 text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5" }), l("div", ch, [L(e.$slots, "default")])]));
 	}
 });
 //#endregion
-export { Ye as Alert, at as Badge, Qe as BaseButton, et as BaseButtonIcon, mt as BottomModal, it as Breadcrumb, bt as Card, Dt as CardPaginations, Ot as CollapseTransition, af as ConfirmationModal, Yf as DataTable, At as Divider, uf as Dropdown, Lt as DropdownAnimation, cf as DropdownItem, Zf as DropdownMenu, nf as FormInput, ap as FormSelect, up as FormTextarea, dp as HelpTooltip, fp as IconButton, mp as ImageLightbox, _p as InfoItem, wp as Item, Ep as List, Rt as LoadingSVG, It as Modal, Mp as Navbar, sf as ResultCount, rn as SearchableSelect, im as Sidebar, Pp as SidebarItem, Hp as SidebarList, am as SidebarNav, dm as SnackBar, sm as SnackBarItem, vm as StatCard, Cm as SwitchInput, yf as TableHeader, gf as TablePagination, Sf as TableSkeleton, Am as Tabs, Mm as UserAvatar, Pm as UserAvatars, Ym as UserProfileDropdown, nh as ViewHeader, ah as WarningAlert, Pd as initTheme, Gp as isDesktop, Up as isMobile, Wp as isTablet, Lp as useActiveIndicator, lm as useMessages, Kp as useMobile, zt as useRequestKey, Ip as useSidebar, wf as useTable, Fd as useTheme, e as yup };
+export { Ye as Alert, at as Badge, Qe as BaseButton, et as BaseButtonIcon, mt as BottomModal, it as Breadcrumb, bt as Card, Dt as CardPaginations, Ot as CollapseTransition, af as ConfirmationModal, Yf as DataTable, At as Divider, uf as Dropdown, Lt as DropdownAnimation, cf as DropdownItem, Zf as DropdownMenu, nf as FormInput, ap as FormSelect, up as FormTextarea, dp as HelpTooltip, fp as IconButton, mp as ImageLightbox, _p as InfoItem, wp as Item, Ep as List, Rt as LoadingSVG, It as Modal, Mp as Navbar, Ip as RadioButton, sf as ResultCount, rn as SearchableSelect, cm as Sidebar, Rp as SidebarItem, Kp as SidebarList, lm as SidebarNav, hm as SnackBar, dm as SnackBarItem, Sm as StatCard, Dm as SwitchInput, yf as TableHeader, gf as TablePagination, Sf as TableSkeleton, Pm as Tabs, Im as UserAvatar, Rm as UserAvatars, $m as UserProfileDropdown, oh as ViewHeader, lh as WarningAlert, Pd as initTheme, Yp as isDesktop, qp as isMobile, Jp as isTablet, Vp as useActiveIndicator, pm as useMessages, Xp as useMobile, zt as useRequestKey, Bp as useSidebar, wf as useTable, Fd as useTheme, e as yup };

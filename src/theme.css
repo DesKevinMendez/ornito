@@ -325,6 +325,30 @@
     --color-form-suggestion-icon-text-light: var(--ds-color-form-suggestion-icon-text-light);
     --color-form-suggestion-icon-text-dark: var(--ds-color-form-suggestion-icon-text-dark);
 
+    /* RadioButton */
+    --color-radio-button-card-border-light: var(--ds-color-radio-button-card-border-light);
+    --color-radio-button-card-border-dark: var(--ds-color-radio-button-card-border-dark);
+    --color-radio-button-card-border-hover-light: var(--ds-color-radio-button-card-border-hover-light);
+    --color-radio-button-card-border-hover-dark: var(--ds-color-radio-button-card-border-hover-dark);
+    --color-radio-button-card-border-selected-light: var(--ds-color-radio-button-card-border-selected-light);
+    --color-radio-button-card-border-selected-dark: var(--ds-color-radio-button-card-border-selected-dark);
+    --color-radio-button-card-bg-light: var(--ds-color-radio-button-card-bg-light);
+    --color-radio-button-card-bg-dark: var(--ds-color-radio-button-card-bg-dark);
+    --color-radio-button-card-bg-selected-light: var(--ds-color-radio-button-card-bg-selected-light);
+    --color-radio-button-card-bg-selected-dark: var(--ds-color-radio-button-card-bg-selected-dark);
+    --color-radio-button-card-text-light: var(--ds-color-radio-button-card-text-light);
+    --color-radio-button-card-text-dark: var(--ds-color-radio-button-card-text-dark);
+    --color-radio-button-card-text-selected-light: var(--ds-color-radio-button-card-text-selected-light);
+    --color-radio-button-card-text-selected-dark: var(--ds-color-radio-button-card-text-selected-dark);
+    --color-radio-button-card-ring-selected-light: var(--ds-color-radio-button-card-ring-selected-light);
+    --color-radio-button-card-ring-selected-dark: var(--ds-color-radio-button-card-ring-selected-dark);
+    --color-radio-button-control-bg-light: var(--ds-color-radio-button-control-bg-light);
+    --color-radio-button-control-bg-dark: var(--ds-color-radio-button-control-bg-dark);
+    --color-radio-button-control-ring-focus-light: var(--ds-color-radio-button-control-ring-focus-light);
+    --color-radio-button-control-ring-focus-dark: var(--ds-color-radio-button-control-ring-focus-dark);
+    --color-radio-button-control-ring-offset-focus-light: var(--ds-color-radio-button-control-ring-offset-focus-light);
+    --color-radio-button-control-ring-offset-focus-dark: var(--ds-color-radio-button-control-ring-offset-focus-dark);
+
     /* SwitchInput */
     --color-switch-input-label-text-light: var(--ds-color-switch-input-label-text-light);
     --color-switch-input-label-text-dark: var(--ds-color-switch-input-label-text-dark);
