@@ -24,6 +24,7 @@ available variants for any enum-like prop.
 - [FormSelect](./form-select.md)
 - [FormTextarea](./form-textarea.md)
 - [SearchableSelect](./searchable-select.md)
+- [RadioButton](./radio-button.md)
 - [SwitchInput](./switch-input.md)
 
 ## Layout

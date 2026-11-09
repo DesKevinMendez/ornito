@@ -238,6 +238,8 @@ Form control tokens use `--ds-color-form-*-{light|dark}` and
 are shared by `FormInput`, `FormSelect`, `FormTextarea`, and `SearchableSelect`.
 `SwitchInput` has separate tokens for labels, on/off track states, and the
 thumb using the `--ds-color-switch-input-*-{light|dark}` pattern.
+`RadioButton` has card state and native control tokens using the
+`--ds-color-radio-button-*-{light|dark}` pattern.
 Dashboard and shared component tokens cover `ViewHeader`, `StatCard`,
 `Card`, `Navbar`, `UserProfileDropdown`, `DropdownMenu`, `Modal`,
 `BottomModal`, `Item`, `List`, `HelpTooltip`, `IconButton`,
@@ -248,6 +250,7 @@ See the component guides for the available token groups:
 [DataTable](components/data-table.md#css-color-variants),
 [Dropdown](components/dropdown.md#css-color-variants),
 [FormInput](components/form-input.md#css-color-variants),
+[RadioButton](components/radio-button.md#css-color-variants),
 [SwitchInput](components/switch-input.md#css-color-variants),
 [ViewHeader](components/layout.md#css-color-variants),
 [Card](components/card.md#css-color-variants),
