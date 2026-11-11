@@ -1,3 +1,4 @@
+import { Component } from 'vue';
 interface Props {
     title: string;
     value: string | number | null;
@@ -5,6 +6,7 @@ interface Props {
     changeType?: 'positive' | 'negative' | 'neutral' | 'info';
     description?: string;
     help?: string;
+    helpIcon?: Component;
 }
 declare const __VLS_export: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const _default: typeof __VLS_export;
