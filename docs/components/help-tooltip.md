@@ -5,6 +5,18 @@ Small help trigger that reveals a tooltip on hover.
 | Prop | Type | Required | Default |
 | --- | --- | --- | --- |
 | `tooltip` | `string` | Yes | — |
+| `icon` | `Component` | No | — renders `?` when omitted |
+
+```vue
+<script setup lang="ts">
+import { IconInfoCircle } from '@tabler/icons-vue'
+import { HelpTooltip } from 'ornito'
+</script>
+
+<template>
+  <HelpTooltip tooltip="Calculado con los datos del mes" :icon="IconInfoCircle" />
+</template>
+```
 
 ## CSS color variants
 

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const { tooltip } = defineProps<{ tooltip: string }>()
+import type { Component } from 'vue'
+
+const { tooltip, icon } = defineProps<{
+  tooltip: string
+  icon?: Component
+}>()
 
 const triggerRef = ref<HTMLElement | null>(null)
 const tooltipRef = ref<HTMLElement | null>(null)
@@ -20,7 +25,10 @@ const recalc = () => {
 
 <template>
   <div ref="triggerRef" class="relative group" @mouseenter="recalc">
-    <span class="inline-flex items-center justify-center w-4 h-4 rounded-full bg-help-tooltip-trigger-bg-light dark:bg-help-tooltip-trigger-bg-dark text-help-tooltip-trigger-text-light dark:text-help-tooltip-trigger-text-dark text-[10px] font-bold cursor-help leading-none">?</span>
+    <span class="inline-flex items-center justify-center w-4 h-4 rounded-full bg-help-tooltip-trigger-bg-light dark:bg-help-tooltip-trigger-bg-dark text-help-tooltip-trigger-text-light dark:text-help-tooltip-trigger-text-dark text-[10px] font-bold cursor-help leading-none">
+      <component v-if="icon" :is="icon" class="size-3" aria-hidden="true" focusable="false" />
+      <template v-else>?</template>
+    </span>
     <div
       ref="tooltipRef"
       class="absolute bottom-full left-1/2 mb-2 px-3 py-2 text-xs text-help-tooltip-panel-text-light dark:text-help-tooltip-panel-text-dark bg-help-tooltip-panel-bg-light dark:bg-help-tooltip-panel-bg-dark rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 w-48 text-center z-50 pointer-events-none"
