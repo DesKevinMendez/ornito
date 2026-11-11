@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { Component } from 'vue';
+
 interface Props {
   title: string;
   value: string | number | null;
@@ -6,6 +8,7 @@ interface Props {
   changeType?: 'positive' | 'negative' | 'neutral' | 'info';
   description?: string;
   help?: string;
+  helpIcon?: Component;
 }
 
 const {
@@ -15,6 +18,7 @@ const {
   changeType = 'neutral',
   description = '',
   help,
+  helpIcon,
 } = defineProps<Props>();
 
 const isNull = computed(() => value === null)
@@ -40,7 +44,7 @@ const colorClass = computed(() => {
     <div>
       <div class="flex items-center gap-1.5">
         <p class="text-sm font-medium text-stat-card-title-text-light dark:text-stat-card-title-text-dark">{{ title }}</p>
-        <HelpTooltip v-if="help" :tooltip="help" />
+        <HelpTooltip v-if="help" :tooltip="help" :icon="helpIcon" />
       </div>
       <p v-if="isNull" class="text-2xl font-bold text-stat-card-empty-text-light dark:text-stat-card-empty-text-dark mt-1">Sin datos</p>
       <p v-else class="text-2xl font-bold text-stat-card-value-text-light dark:text-stat-card-value-text-dark mt-1 tabular-nums">{{ value }}</p>

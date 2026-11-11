@@ -11,6 +11,7 @@ optional help tooltip.
 | `changeType` | `'positive' \| 'negative' \| 'neutral' \| 'info'` (see below) | No | `'neutral'` |
 | `description` | `string` | No | `''` — text shown next to `change` |
 | `help` | `string` | No | — shown in a `HelpTooltip` next to the title |
+| `helpIcon` | `Component` | No | — the tooltip renders `?` when omitted |
 
 ### Variants (`changeType`)
 
