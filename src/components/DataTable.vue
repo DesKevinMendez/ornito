@@ -22,12 +22,13 @@
           :placeholder="searchPlaceholder"
           :left-icon="IconSearch"
           small
-          :disabled="isSearching"
+          class="[&_input]:pr-9"
         />
         <!-- Loading indicator -->
         <div
           v-if="isSearching"
-          class="absolute right-3 top-1/2 transform -translate-y-1/2"
+          aria-hidden="true"
+          class="pointer-events-none absolute right-3 top-1/2 transform -translate-y-1/2"
         >
           <div
             class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-subtle-light dark:border-primary-subtle-dark"
@@ -266,7 +267,9 @@ const {
 
 // Search state
 const searchQuery = ref("");
+const appliedSearchQuery = ref("");
 const isSearching = ref(false);
+let activeRequest: Promise<void> | undefined;
 
 // Pagination state
 const selectedPageSize = ref("10");
@@ -324,8 +327,7 @@ onUnmounted(() => {
     resizeObserver = null;
   }
 
-  // Reset searching state
-  isSearching.value = false;
+  activeRequest = undefined;
 });
 
 const goToPage = (page: number) => {
@@ -373,13 +375,18 @@ const useFixedLayout = computed(() => {
 // Function to fetch data from URL
 const fetchTableData = async () => {
   if (!props.url || isLocalData.value) return;
-  await fetchData(
+  const request = fetchData(
     props.url,
     currentPage.value,
     selectedPageSize.value,
-    searchQuery.value,
+    appliedSearchQuery.value,
     props.searchBy
   );
+  activeRequest = request;
+  await request;
+  if (activeRequest !== request) return;
+
+  isSearching.value = false;
   currentPage.value = internalPaginationServer.value.current_page;
   emit("pagination-loaded", internalPaginationServer.value);
 };
@@ -396,9 +403,10 @@ watch(
 );
 
 watch(
-  () => [selectedPageSize.value, currentPage.value],
-  () => {
+  [selectedPageSize, currentPage, appliedSearchQuery],
+  ([, , query], [, , previousQuery]) => {
     if (props.url && !isLocalData.value) {
+      if (query !== previousQuery) isSearching.value = true;
       fetchTableData();
     }
   }
@@ -416,17 +424,10 @@ watch(
 // Watch for debounced search query changes
 watchDebounced(
   () => searchQuery.value,
-  async () => {
+  (query) => {
     if (!isLocalData.value && props.url && props.searchBy) {
-      // Reset to first page when searching
       currentPage.value = 1;
-
-      // Set searching state
-      isSearching.value = true;
-
-      // Fetch data with debounced search
-      await fetchTableData();
-      isSearching.value = false;
+      appliedSearchQuery.value = query;
     }
   },
   { debounce: 500 }

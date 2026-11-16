@@ -6,6 +6,7 @@ const refreshData = ref(false);
 export default function () {
     const requestFactory = inject(useRequestKey, undefined as unknown as UseRequestFactory);
     const get = requestFactory?.().get;
+    let latestRequestId = 0;
 
     const isLoading = ref(false);
     const error = ref<string | null>(null);
@@ -33,6 +34,7 @@ export default function () {
             return;
         }
 
+        const requestId = ++latestRequestId;
         isLoading.value = true;
         error.value = null;
 
@@ -51,16 +53,20 @@ export default function () {
             }
 
             const { data } = await get<tServerResponse<any>>(apiUrl);
+            if (requestId !== latestRequestId) return;
+
             if (data.value) {
                 internalData.value = data.value.data;
                 internalPaginationServer.value = data.value.pagination;
             }
         } catch (err) {
+            if (requestId !== latestRequestId) return;
+
             error.value = err instanceof Error ? err.message : "Error fetching data";
             console.error("Error fetching table data:", err);
             internalData.value = [];
         } finally {
-            isLoading.value = false;
+            if (requestId === latestRequestId) isLoading.value = false;
         }
     };
 

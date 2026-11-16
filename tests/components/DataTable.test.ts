@@ -1,8 +1,9 @@
-import { mount } from '@vue/test-utils'
+import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { h, nextTick, ref } from 'vue'
 
 import DataTable from '../../src/components/DataTable.vue'
+import TablePagination from '../../src/components/TablePagination.vue'
 import { useRequestKey } from '../../src/composables/useDataRequest'
 import type { TableField } from '../../src/types/Table'
 
@@ -78,6 +79,7 @@ afterEach(() => {
   }
   vi.unstubAllGlobals()
   vi.restoreAllMocks()
+  vi.useRealTimers()
 })
 
 describe('DataTable local data', () => {
@@ -140,5 +142,57 @@ describe('DataTable server search', () => {
     await nextTick()
 
     expect(wrapper.get('#table-search').attributes('placeholder')).toBe('Buscar empleado...')
+  })
+
+  it('keeps the search focused and editable while loading and displays the latest results', async () => {
+    vi.useFakeTimers()
+    setViewportWidth(1024)
+    const response = (name: string, page = 1) => ({
+      data: ref({
+        data: [{ ...employees[0], name }],
+        pagination: { total: 20, per_page: 10, current_page: page, from: 1, to: 10, last_page: 2 },
+      }),
+    })
+    const firstSearch = Promise.withResolvers<ReturnType<typeof response>>()
+    const secondSearch = Promise.withResolvers<ReturnType<typeof response>>()
+    const get = vi.fn()
+      .mockResolvedValueOnce(response('Primera página'))
+      .mockResolvedValueOnce(response('Segunda página', 2))
+      .mockReturnValueOnce(firstSearch.promise)
+      .mockReturnValueOnce(secondSearch.promise)
+    const wrapper = mount(DataTable, {
+      attachTo: document.body,
+      props: { columns, url: '/employees', searchBy: 'name' },
+      global: { provide: { [useRequestKey as symbol]: () => ({ get }) } },
+    })
+    mountedWrappers.push(wrapper)
+    await flushPromises()
+    wrapper.getComponent(TablePagination).vm.$emit('page-change', 2)
+    await flushPromises()
+    expect(get).toHaveBeenLastCalledWith('/employees?page=2&per_page=10')
+
+    const input = wrapper.get<HTMLInputElement>('#table-search')
+    input.element.focus()
+    await input.setValue('Ana')
+    await vi.advanceTimersByTimeAsync(500)
+
+    expect(input.element.disabled).toBe(false)
+    expect(document.activeElement).toBe(input.element)
+    expect(get).toHaveBeenCalledTimes(3)
+    expect(get).toHaveBeenLastCalledWith('/employees?page=1&per_page=10&filter[name]=Ana')
+
+    await input.setValue('Ana Rivera')
+    await vi.advanceTimersByTimeAsync(500)
+    expect(get).toHaveBeenCalledTimes(4)
+    expect(get).toHaveBeenLastCalledWith('/employees?page=1&per_page=10&filter[name]=Ana%20Rivera')
+
+    secondSearch.resolve(response('Ana Rivera'))
+    await flushPromises()
+    firstSearch.resolve(response('Respuesta anterior'))
+    await flushPromises()
+
+    expect(wrapper.get('tbody').text()).toContain('Ana Rivera')
+    expect(wrapper.get('tbody').text()).not.toContain('Respuesta anterior')
+    expect(document.activeElement).toBe(input.element)
   })
 })
